@@ -1,8 +1,8 @@
-<h1>Listing communities</h1>
+<h1>Communities</h1>
 
 <table>
   <tr>
-    <th>Communityname</th>
+    <th>Community</th>
     <th>Latitude</th>
     <th>Longitude</th>
     <th></th>
@@ -26,7 +26,9 @@
 
 
 <%= link_to 'New Community', new_community_path %>
-<%= #gmaps4rails(@jason) 
+<%= 
+	gmaps4rails(@jason) 
 %>
-<%= gmaps("markers" => {"data" => @jason},
-     "map_options" =>  { "provider" => "openlayers"}) %> 
+<%= #gmaps("markers" => {"data" => @jason},
+    #"map_options" =>  { "provider" => "openlayers"}) 
+    %> 

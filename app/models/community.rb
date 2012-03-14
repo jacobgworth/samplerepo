@@ -4,4 +4,9 @@ class Community < ActiveRecord::Base
   def gmaps4rails_address
     "#{self.latitude}, #{self.longitude}"
   end
+  
+  def gmaps4rails_title
+    "#{self.communityname}"
+  end
+    
 end
