@@ -26,4 +26,7 @@
 
 
 <%= link_to 'New Community', new_community_path %>
-<%= gmaps4rails(@jason) %>
+<%= #gmaps4rails(@jason) 
+%>
+<%= gmaps("markers" => {"data" => @jason},
+     "map_options" =>  { "provider" => "openlayers"}) %> 
