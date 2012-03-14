@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mohhaiti</title>
+  <title>MOH Haiti</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <link rel="stylesheet" href="/openlayers/theme/default/style.css" type="text/css">
   <%= csrf_meta_tags %>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <script src="http://openlayers.org/api/OpenLayers.js"></script>
+   <script defer="defer" type="text/javascript">
+        var map = new OpenLayers.Map("map");
+        var wms = new OpenLayers.Layer.WMS( "OpenLayers WMS",
+            "http://vmap0.tiles.osgeo.org/wms/vmap0", {layers: 'basic',theme: "/openlayers/theme/default/style.css"} );
+        map.addLayer(wms);
+        map.zoomToMaxExtent();
+      </script>
 </head>
 <body>
 
