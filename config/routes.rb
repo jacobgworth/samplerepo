@@ -1,4 +1,6 @@
 Mohhaiti::Application.routes.draw do
+  resources :projects
+
   resources :communities
 
   get "home/index"

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  projectname: MyString
+  latitude: 1.5
+  longitude: 1.5
+  completion: 2012-04-02
+  description: MyString
+
+two:
+  projectname: MyString
+  latitude: 1.5
+  longitude: 1.5
+  completion: 2012-04-02
+  description: MyString
