@@ -1,4 +1,6 @@
 Mohhaiti::Application.routes.draw do
+  resources :users
+
   resources :projects
 
   resources :communities
