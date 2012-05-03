@@ -1,7 +1,16 @@
 Mohhaiti::Application.routes.draw do
+  
+  get "log_in" => "sessions#new", :as => "log_in"
+  
+  #get "sessions/new"
+
+  resources :users
+
   resources :projects
 
   resources :communities
+  
+  resources :sessions
 
   get "home/index"
 

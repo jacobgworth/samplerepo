@@ -1,0 +1,43 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>User name</th>
+    <th>Convio</th>
+    <th>Convio primary email</th>
+    <th>Email</th>
+    <th>First</th>
+    <th>Last</th>
+    <th>Street1</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Convio authtoken</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.user_name %></td>
+    <td><%= user.convio_id %></td>
+    <td><%= user.convio_primary_email %></td>
+    <td><%= user.email %></td>
+    <td><%= user.first %></td>
+    <td><%= user.last %></td>
+    <td><%= user.street1 %></td>
+    <td><%= user.city %></td>
+    <td><%= user.state %></td>
+    <td><%= user.zip %></td>
+    <td><%= user.convio_authtoken %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>

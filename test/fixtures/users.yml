@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_name: MyText
+  convio_id: 1
+  convio_primary_email: MyText
+  email: MyText
+  first: MyText
+  last: MyText
+  street1: MyText
+  city: MyText
+  state: MyText
+  zip: MyText
+  convio_authtoken: MyText
+
+two:
+  user_name: MyText
+  convio_id: 1
+  convio_primary_email: MyText
+  email: MyText
+  first: MyText
+  last: MyText
+  street1: MyText
+  city: MyText
+  state: MyText
+  zip: MyText
+  convio_authtoken: MyText

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120402163702) do
+ActiveRecord::Schema.define(:version => 20120502205954) do
 
   create_table "communities", :force => true do |t|
     t.string   "communityname"
@@ -29,6 +29,27 @@ ActiveRecord::Schema.define(:version => 20120402163702) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "user_name"
+    t.integer  "convio_id"
+    t.string   "convio_primary_email"
+    t.string   "email"
+    t.string   "first"
+    t.string   "last"
+    t.string   "street1"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "convio_authtoken"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.string   "authtoken"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
 end
