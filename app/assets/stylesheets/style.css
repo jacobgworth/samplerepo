@@ -57,6 +57,10 @@ body {
 	font-size:1em;
 	color:#58534a;
 }
+
+.clearfix {
+	clear:both;
+}
 #bgHero {
 	width:100%;
 	height:630px;
@@ -68,7 +72,7 @@ body {
 #heroImg {
 	width:100%;
 	height:100%;
-	background: url(/assets/heroGirl.jpg) no-repeat center center fixed;
+	background: url(/assets/heroGirl.jpg) no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -87,17 +91,120 @@ body {
 }
 #logo {
 	float:left;
-	margin-top:10px;
-	margin-left:20px;
+	margin-top:20px;
+	margin-left:40px;
 }
-#utilityNav ul {
+#utilityBar {
 	float:right;
+	width:130px;
 	color:#e4d4b9;
 	font-size:.75em;
 	text-transform:uppercase;
-	margin-right:20px;
-	margin-top:10px;
+	margin-right:40px;
+	margin-top:20px;
+	width:400px;
+	position:relative;
 }
-#utilityNav li {
+
+ul#utilityNav {
+	float:left;
+	margin-right:20px;
+}
+ul#utilityNav li {
 	display:inline;
 }
+
+ul#utilityNav li a:link, ul#utilityNav a:visited {
+	color:#e4d4b9;
+	text-decoration:none;
+}
+
+ul#utilityNav li a:hover {
+	color:#079367;
+	text-decoration:none;
+}
+
+.donate {
+	position:absolute;
+	top:-5px;
+	right:100px;
+}
+
+.buttonRounded a:link, .buttonRounded a:visited {
+	float:left;
+	text-align:center;
+	color:#E4D4B9;
+	text-decoration:none;
+	padding:5px;
+	text-shadow: 0 .05em #000;
+	
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	-o-border-radius:2px;
+	border-radius:2px;
+	
+	-moz-box-shadow: 1px 1px 1px #000;
+	-webkit-box-shadow: 1px 1px 1px #000;
+	box-shadow: 1px 1px 1px #000;
+	
+	background:#d46b13;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#d46b13), to(#e37e18));
+	background:-moz-linear-gradient(0% 90% 90deg, #d46b13, #e37e18);
+}
+
+.buttonRounded a:hover {
+	color:#E4D4B9;
+	text-shadow: 0 -.05em #000;
+}
+
+.myMOH a:link,.myMOH a:visited {
+	background: url(/assets/pullTag.png) no-repeat;
+	color:#E4D4B9;
+	font-size:1em;
+	text-decoration:none;
+	text-align:center;
+	text-transform:none;
+	text-shadow: 0 .05em #000;
+	width:80px;
+	height:52px;
+	float:left;
+	position:absolute;
+	top:-20px;
+	right:0;
+	padding-top:20px;
+}
+
+.myMOH a:hover {
+	color:#E4D4B9;
+	text-shadow: 0 -.05em #000;
+}
+
+#mainNav ul {
+	float:right;
+	width:800px;
+	margin-top:35px;
+	font-size:.85em;
+}
+
+#mainNav li {
+	display:inline;
+	float:left;
+	border-bottom:2px solid #079367;
+	margin-right:52px;
+	text-transform:uppercase;
+	padding-bottom:5px;
+}
+
+#mainNav li.last {
+	margin-right:none;
+}
+
+#mainNav li a:link, #mainNav li a:visited {
+	color:#079367;
+	text-decoration:none;
+}
+
+#mainNav li a:hover {
+	color:#08c086;
+	text-decoration:none;
+	}
