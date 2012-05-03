@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120502205954) do
+ActiveRecord::Schema.define(:version => 20120503185732) do
 
   create_table "communities", :force => true do |t|
     t.string   "communityname"
@@ -27,6 +27,25 @@ ActiveRecord::Schema.define(:version => 20120502205954) do
     t.float    "longitude"
     t.date     "completion"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "tag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags_updates", :id => false, :force => true do |t|
+    t.integer "tag_id"
+    t.integer "update_id"
+  end
+
+  create_table "updates", :force => true do |t|
+    t.string   "title"
+    t.string   "body"
+    t.string   "media"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
