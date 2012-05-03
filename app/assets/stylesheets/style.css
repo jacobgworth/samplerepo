@@ -120,7 +120,7 @@ ul#utilityNav li a:link, ul#utilityNav a:visited {
 }
 
 ul#utilityNav li a:hover {
-	color:#079367;
+	color:#08c086;
 	text-decoration:none;
 }
 
@@ -196,7 +196,7 @@ ul#utilityNav li a:hover {
 }
 
 #mainNav li.last {
-	margin-right:none;
+	margin-right:0;
 }
 
 #mainNav li a:link, #mainNav li a:visited {
@@ -208,3 +208,24 @@ ul#utilityNav li a:hover {
 	color:#08c086;
 	text-decoration:none;
 	}
+#pull a:link,#pull a:visited {
+	background: url(/assets/pullTag.png) no-repeat;
+	color:#E4D4B9;
+	font-size:.85em;
+	text-decoration:none;
+	text-align:center;
+	text-transform:none;
+	text-shadow: 0 .05em #000;
+	width:80px;
+	height:52px;
+	float:left;
+	position:absolute;
+	top:118px;
+	left:60px;
+	padding-top:10px;
+}
+
+#pull a:hover {
+	color:#E4D4B9;
+	text-shadow: 0 -.05em #000;
+}
