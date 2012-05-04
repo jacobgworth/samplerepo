@@ -365,6 +365,7 @@ h3.CTA {
 #content {
 	width:960px;
 	margin:40px auto;
+	padding-bottom:40px;
 	background:url(/assets/contentDiv.png) center bottom no-repeat;
 }
 #contentLeft {
