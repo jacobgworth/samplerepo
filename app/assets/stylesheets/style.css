@@ -78,6 +78,78 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 }
+
+#heroContent {
+	width:960px;
+	margin:0 auto;
+	position:relative;
+}
+
+#heroContent h1 {
+	position:absolute;
+	top:-425px;
+	left:8px;
+	color:#f6efe5;
+	text-shadow: 0 .1em .2em #666;
+	text-transform:uppercase;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.giantText {
+	font-size: 9.3em;
+	letter-spacing:-.1em;
+	line-height:.5em;
+}
+.largeText1 {
+	font-size:4.45em;
+	letter-spacing:-.06em;
+}
+.largeText2 {
+	font-size:3.5em;
+	letter-spacing:-.06em;
+}
+.largeText3 {
+	font-size:4.35em;
+	letter-spacing:-.02em;
+}
+
+#heroRibbon {
+	position:absolute;
+	background:url(/assets/heroRibbon.png) no-repeat;
+	font-family: 'Montserrat', sans-serif;
+	width:471px;
+	height:76px;
+	top:-220px;
+	right:20px;
+}
+#heroRibbon h2 {
+	float:left;
+	text-transform:uppercase;
+	color:#e4d4b9;
+	font-size:.8em;
+	background:url(/assets/heroRibbonDiv.png)no-repeat 100% 80%;
+	width:120px;
+	padding: 20px 10px 10px 10px;
+}
+#heroRibbon p.news {
+	float:left;
+	padding:25px 10px 10px 10px;
+	font-size:.8em;
+	color:#e4d4b9;
+	width:300px;
+}
+
+#heroRibbon p.news a:link, #heroRibbon p.news a:visited {
+	color:#e4d4b9;
+	text-decoration:none;
+}
+#heroRibbon p.news a:hover {
+	color:#08c086;
+	text-decoration: underline;
+}
+
+
+
 #wrapper {
 	width:1016px;
 	margin:auto;
@@ -102,7 +174,7 @@ body {
 	text-transform:uppercase;
 	margin-right:40px;
 	margin-top:20px;
-	width:400px;
+	width:450px;
 	position:relative;
 }
 
@@ -228,4 +300,9 @@ ul#utilityNav li a:hover {
 #pull a:hover {
 	color:#E4D4B9;
 	text-shadow: 0 -.05em #000;
+}
+
+#superContent {
+	position: absolute;
+	top:600px;
 }
