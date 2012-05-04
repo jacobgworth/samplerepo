@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @updates = Update.all
+    @updates = Update.last(3)
   end
 
 end
