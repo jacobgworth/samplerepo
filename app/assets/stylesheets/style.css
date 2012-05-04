@@ -56,6 +56,22 @@ body {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:1em;
 	color:#58534a;
+	background:#e4d4b9 url(/assets/bodyBG.jpg) top center repeat-y;
+	height:3000px;
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: 'Montserrat', sans-serif;
+}
+
+a:link, a:visited {
+	color:#08c086;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#08c086;
+	text-decoration:underline;
 }
 
 .clearfix {
@@ -87,7 +103,7 @@ body {
 
 #heroContent h1 {
 	position:absolute;
-	top:-425px;
+	top:-430px;
 	left:8px;
 	color:#f6efe5;
 	text-shadow: 0 .1em .2em #666;
@@ -303,6 +319,46 @@ ul#utilityNav li a:hover {
 }
 
 #superContent {
-	position: absolute;
-	top:600px;
+	width:960px;
+	margin:400px auto 0 auto;
+	padding-bottom:40px;
+	background:url(/assets/contentDiv.png) bottom center no-repeat;
 }
+
+.superColumn {
+	float:left;
+	width:270px;
+	margin:0 15px;
+	text-align:center;
+}
+
+.superColumn h2 {
+	margin-top:250px;
+	font-size:1.35em;
+	color:#19302f;
+	text-transform:uppercase;
+}
+
+.superColumn p {
+	line-height:1.5em;
+	padding:8px 0;
+}
+
+h3.CTA {
+	font-size:1em;
+	color:#08c086;
+	text-transform:uppercase;
+}
+
+.churchAdvancement {
+	background:url(/assets/icon-church-advancement.png) top center no-repeat;
+}
+
+.studentSponsorship {
+	background:url(/assets/icon-student-sponsorship.png) top center no-repeat;
+}
+
+.missionTrips {
+	background:url(/assets/icon-mission-trips.png) top center no-repeat;
+}
+
