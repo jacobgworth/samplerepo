@@ -65,13 +65,13 @@ h1,h2,h3,h4,h5 {
 }
 
 a:link, a:visited {
-	color:#08c086;
+	color:#078e60;
 	text-decoration:none;
 }
 
 a:hover {
 	color:#08c086;
-	text-decoration:underline;
+	text-decoration:none;
 }
 
 .clearfix {
@@ -346,7 +346,7 @@ ul#utilityNav li a:hover {
 
 h3.CTA {
 	font-size:1em;
-	color:#08c086;
+	color:#078e60;
 	text-transform:uppercase;
 }
 
@@ -364,21 +364,23 @@ h3.CTA {
 
 #content {
 	width:960px;
-	margin:40px auto;
+	margin:20px auto;
 	padding-bottom:40px;
 	background:url(/assets/contentDiv.png) center bottom no-repeat;
 }
 #contentLeft {
+	float:left;
 	width:470px;
+	margin-right:80px;
 }
 
-#contentLeft h3 {
+#contentLeft h3, #contentRight h3 {
 	color:#19302F;
 	text-transform:uppercase;
 	font-size:2.5em;
 }
 
-#contentLeft h3 .mediumText {
+#contentLeft h3 .mediumText, #contentRight h3 .mediumText {
 	font-size:.5em;
 }
 
@@ -427,8 +429,8 @@ h3.CTA {
 	padding:10px;
 	color:#E4D4B9;
 	text-align:center;
-	font-family: 'Montserrat', sans-serif;color:#E4D4B9;
-	
+	font-family: 'Montserrat', sans-serif;
+		
 	-moz-box-shadow: 3px 3px #c26603;
 	-webkit-box-shadow: 3px 3px #c26603;
 	box-shadow: 3px 3px #c26603;
@@ -444,6 +446,34 @@ h3.CTA {
 	color:#E4D4B9;
 	text-shadow: 0 -.05em #777;
 	text-decoration:none;
+}
+
+#contentRight {
+	float:left;
+	width:410px;
+	position:relative;
+}
+
+.speechBubble {
+	position:absolute;
+	top:0;
+	right:0;
+	background:url(/assets/speechBubble.png) no-repeat;
+	width:98px;
+	height:94px;
+}
+
+.speechBubble p {
+	text-align:right;
+	font-size:.75em;
+	color:#E4D4B9;
+	font-family: 'Montserrat', sans-serif;
+	padding:20px 10px;
+}
+
+.updatePost {
+	border-bottom:1px dotted #19302F;
+	padding:10px 0;
 }
 
 
