@@ -7,7 +7,7 @@
 			<% if @updates != nil && @updates.count > 0
 				@topupdate = @updates.last(1)
 			%>
-				<%@topupdate.each do |m|%><p class="news"><a href=""><%=truncate(m.title,:length=>40,:separator=>' ')%></a></p> <%end%>
+				<%@topupdate.each do |m|%><p class="news"><a href=""><%=truncate(m.body,:length=>40,:separator=>' ')%></a></p> <%end%>
 			<%end%>
 			<!--<p class="news"><a href="">First few words of latest update here...</a></p>-->
 		</div>
