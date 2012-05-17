@@ -83,22 +83,28 @@
 		<div class="speechBubble"><p>action updates here</p></div>
 	<div id="updatesWrapper">
 		<%@updates.each do |m|%>
-			<div class="updateDate">
-				<span class="month">Apr</span><br /><span class="date">24</span><br /><span class="year">2012</span>
-			</div>
-			<div class="updatePost">
-				<h4><%=m.title%></h4>
-				<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a></p>
-				<p class="meta">Projects: Project Name | Posted by: Firstname</p>
+			<div class="update">
+				<div class="updateDate">
+					<span class="month">Apr</span><br /><span class="date">24</span><br /><span class="year">2012</span>
+				</div>
+				<div class="updatePost">
+					<h4><%=m.title%></h4>
+					<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a></p>
+					<p class="meta">Projects: Project Name | Posted by: Firstname</p>
+				</div>
+			<div class="clearfix"><!--x--></div>
 			</div>
 		<%end%>
 		<div id="updateNav"><img src="/assets/updatesNav.png" /></div>
 	</div>
 	</div>
-	<div class="clearfix"><!--x--></div>
+	<div class="clearfix" style="height:40px;"><!--x--></div>
 </div>
 <div id="superFooter">
-	<div class="superFooterCol"><img src="/assets/logoFooter.png" /></div>
+	<div class="superFooterCol">
+		<img src="/assets/logoFooter.png" />
+		
+	</div>
 	<div class="superFooterCol">
 		<div class="social">
 		<h5>We're Also On:</h5>
@@ -108,8 +114,8 @@
 			<li class="vimeo"><a href="">Vimeo</a></li>
 		</ul>
 		</div>
-		<p><a href="">Other ways to contact us &raquo;</a></p>
-		<img src="/assets/button-newsletter.png" alt="Subscribe to our newsletter" />
+		<p class="clearfix"><a href="">Other ways to contact us &raquo;</a></p>
+		<a href=""><img src="/assets/button-newsletter.png" alt="Subscribe to our newsletter" /></a>
 	</div>
 	<div class="superFooterCol">
 		<h5>Learn More About Us</h5>
@@ -120,7 +126,7 @@
 			<li><a href="">Media Inquiries &raquo;</a></li>
 		</ul>
 	</div>
-	<div class="superFooterCol last">
+	<div class="superFooterColLast">
 		<h5>Get Involved</h5>
 		<ul>
 			<li><a href="">Donate &raquo;</a></li>
@@ -129,6 +135,7 @@
 			<li><a href="">Churches &raquo;</a></li>
 		</ul>
 	</div>
+	<p>&copy;2012 Mission of Hope Haiti // Website design & development by ThreeTwelve Creative</p>
 </div>
 </div>
 <div id="footer">

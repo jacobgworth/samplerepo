@@ -474,12 +474,12 @@ h3.CTA {
 	padding:15px 10px;
 }
 
-.updatePost {
+.update {
+	width:410px;
+	margin-top:20px;
 	border-bottom:1px dotted #19302F;
-	padding:15px 0 20px 0;
-	margin:20px 0;
-	line-height:1.2em;
 }
+
 .updateDate {
 	float:left;
 	width:39px;
@@ -494,17 +494,22 @@ h3.CTA {
 	text-align:center;
 }
 
-span.month {
-	line-height:.2em;
+	span.month {
+		line-height:.2em;
+	}
+	span.date {
+		font-size:2em;
+		line-height:.7em;
+	}
+	span.year {
+		line-height:.1em;
+	}
+.updatePost {
+	float:left;
+	width:350px;
+	padding:15px 0 20px 0;
+	line-height:1.2em;
 }
-span.date {
-	font-size:2em;
-	line-height:.7em;
-}
-span.year {
-	line-height:.1em;
-}
-
 .updatePost h4 {
 	color:#19302F;
 	text-transform:uppercase;
@@ -518,7 +523,7 @@ p.meta {
 
 #updateNav {
 	border-bottom:1px dotted #19302F;
-	padding:0px 0 10px 0;
+	padding:10px 0 10px 0;
 	text-align:center;
 }
 #superFooter {
@@ -526,34 +531,38 @@ p.meta {
 	color:#988f80;
 	width:960px;
 	margin:auto;
+	padding-top:20px;
+	font-size:.75em;
+}
+
+#superFooter p {
+	padding:10px 0;
 }
 
 .superFooterCol {
 	float:left;
-	width:212px;
-	font-size:.75em;
-	margin-right:40px;
+	width:200px;
+	margin-right:60px;
 }
 
-.superFooterCol .last {
+.superFooterColLast {
 	margin-right:0;
 	float:right;
-	width:212px;
-	font-size:.75em;
+	width:150px;
 }
 
-.superFooterCol h5 {
+.superFooterCol h5, .superFooterColLast h5 {
 	text-transform:uppercase;
 	margin-bottom:8px;
 }
 
-.superFooterCol a:link, .superFooterCol a:visited {
+.superFooterCol a:link, .superFooterCol a:visited, .superFooterColLast a:link, .superFooterColLast a:visited {
 	color:#988F80;
 }
-.superFooterCol a:hover {
+.superFooterCol a:hover,.superFooterColLast a:hover {
 	text-decoration:underline;
 }
-.superFooterCol li {
+.superFooterCol li, .superFooterColLast li {
 	padding:5px 0;
 }
 
@@ -564,11 +573,11 @@ p.meta {
 }
 .superFooterCol .social ul {
 	float:left;
-	width:100px;
+	width:90px;
 }
 .superFooterCol .social li {
 	display:inline;
-	padding:0 5px;
+	padding:0 3px;
 }
 .superFooterCol li.facebook a {
 	background:url(/assets/icon-facebook.png) no-repeat;
@@ -596,7 +605,7 @@ p.meta {
 }
 
 .superFooterCol p {
-	padding:5px 0;
+	padding:10px 0;
 }
 #footer {
 	width:100%;
