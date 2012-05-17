@@ -88,7 +88,7 @@
 				<% 
 					created = m.created_at 
 					creator = "-"
-					if m.user.first.blank?
+					if m.user.blank?
 						creator = '-'
 					else
 						creator = m.user.first
