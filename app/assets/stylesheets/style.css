@@ -484,7 +484,7 @@ h3.CTA {
 	float:left;
 	width:39px;
 	background:url(/assets/dateFlag.png)no-repeat;
-	height:100px;
+	height:50px;
 	margin-right:10px;
 	padding:8px 5px;
 	font-size:.6em;
@@ -523,10 +523,84 @@ p.meta {
 }
 #superFooter {
 	height:550px;
+	color:#988f80;
+	width:960px;
+	margin:auto;
+}
+
+.superFooterCol {
+	float:left;
+	width:212px;
+	font-size:.75em;
+	margin-right:40px;
+}
+
+.superFooterCol .last {
+	margin-right:0;
+	float:right;
+	width:212px;
+	font-size:.75em;
+}
+
+.superFooterCol h5 {
+	text-transform:uppercase;
+	margin-bottom:8px;
+}
+
+.superFooterCol a:link, .superFooterCol a:visited {
+	color:#988F80;
+}
+.superFooterCol a:hover {
+	text-decoration:underline;
+}
+.superFooterCol li {
+	padding:5px 0;
+}
+
+.superFooterCol .social h5 {
+	float:left;
+	width:auto;
+	margin-right:5px;
+}
+.superFooterCol .social ul {
+	float:left;
+	width:100px;
+}
+.superFooterCol .social li {
+	display:inline;
+	padding:0 5px;
+}
+.superFooterCol li.facebook a {
+	background:url(/assets/icon-facebook.png) no-repeat;
+	text-indent:-99999px;
+	width:16px;
+	height:16px;
+	float:left;
+	padding-right:5px;
+}
+.superFooterCol li.twitter a {
+	background:url(/assets/icon-twitter.png) no-repeat;
+	text-indent:-99999px;
+	width:16px;
+	height:16px;
+	float:left;
+	padding-right:5px;
+}
+.superFooterCol li.vimeo a {
+	background:url(/assets/icon-vimeo.png) no-repeat;
+	text-indent:-99999px;
+	width:16px;
+	height:16px;
+	float:left;
+	padding-right:5px;
+}
+
+.superFooterCol p {
+	padding:5px 0;
 }
 #footer {
 	width:100%;
-	height:310px;
+	height:400px;
 	position: absolute;
 	bottom:0;
 	left:0;
