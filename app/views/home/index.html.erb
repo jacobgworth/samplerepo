@@ -5,7 +5,7 @@
 		<div id="heroRibbon">
 			<h2>See what we've done today!</h2>
 			<% if @updates != nil && @updates.count > 0
-				@topupdate = @updates.last(1)
+				@topupdate = @updates.first(1)
 			%>
 				<%@topupdate.each do |m|%><p class="news"><a href=""><%=truncate(m.body,:length=>40,:separator=>' ')%></a></p> <%end%>
 			<%end%>
@@ -85,7 +85,9 @@
 		<%@updates.each do |m|%>
 			<div class="updateDate">
 				<% created = m.created_at %>
-				<span class="month"><%= created.strftime("%b")%></span><br /><span class="date"><%=created.strftime("%d")%></span><br /><span class="year"><%=created.strftime("%Y")%></span>
+				<span class="month"><%= created.strftime("%b")%></span><br />
+				<span class="date"><%=created.strftime("%d")%></span><br />
+				<span class="year"><%=created.strftime("%Y")%></span>
 			</div>
 			<div class="updatePost">
 				<h4><%=m.title%></h4>
