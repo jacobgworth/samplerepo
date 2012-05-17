@@ -1,4 +1,4 @@
 class PageController < ApplicationController
-  def what-we-do
+  def what_we_do
   end
 end

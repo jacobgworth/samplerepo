@@ -18,8 +18,8 @@ Mohhaiti::Application.routes.draw do
   resources :sessions
 
   get "home/index"
-  get "page/what-we-do"
-  match "/what-we-do" => "page#what-we-do"
+  get "page/what_we_do"
+  match "/what-we-do" => "page#what_we_do"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
