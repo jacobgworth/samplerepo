@@ -87,8 +87,10 @@
 			<div class="updateDate">
 				<% 
 					created = m.created_at 
-					creator = '-'
-					if m.user.first != nil
+					creator = "-"
+					if m.user.first.blank?
+						creator = '-'
+					else
 						creator = m.user.first
 					end
 				%>

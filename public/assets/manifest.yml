@@ -1,17 +1,22 @@
 ---
 arrowRight.png: arrowRight-d1af342cbda686240a45c962c9ea7255.png
 bodyBG.jpg: bodyBG-8f5e4bf4abadf9ab8d43560fa9a48e0b.jpg
+button-newsletter.png: button-newsletter-1db1436664fe9ad3c2a4d95a3f474755.png
 contentDiv.png: contentDiv-4dbe37935c1965106e5a2350e8f33d07.png
 dateFlag.png: dateFlag-08a0f96bed2ef14235185dfc3870ff20.png
-footer.jpg: footer-f9bcc5f2af2bc37222c4dad244165631.jpg
+footer.jpg: footer-1664db392114840cd0d67fc4ed819ef4.jpg
 heroGirl.jpg: heroGirl-563aff8ca873fe6bbb1f9df209167e10.jpg
 heroRibbon.png: heroRibbon-2ed5e0dd06bfa969cfeab2511a84b8b4.png
 heroRibbonDiv.png: heroRibbonDiv-16cc5dc9e594f88d1a364db263333443.png
 icon-church-advancement.png: icon-church-advancement-bc2c2951b4301572e036ffccf7c671f9.png
+icon-facebook.png: icon-facebook-3d8dcc14f4bc9e681c8e07d54556efa6.png
 icon-mission-trips.png: icon-mission-trips-50962e99e4bf2d5253e07f9dd91fde15.png
 icon-student-sponsorship.png: icon-student-sponsorship-c18b76a5b99d81088eca9d345f87a404.png
+icon-twitter.png: icon-twitter-4463534e553fc0a751672f81473b8bf1.png
+icon-vimeo.png: icon-vimeo-a6ec1d41420d8107b522c9d97844cece.png
 logo.png: logo-c0cea4c432480e12149fde24e75c8854.png
 logoFooter.png: logoFooter-cdc1d53520d32395d1e875dd584d9aa3.png
+navArrow.png: navArrow-5c31a197f3c05f634ea5f8bb536107b1.png
 navBar.png: navBar-e2d7f65ac79d331a32ef2587a1624307.png
 promoDots.png: promoDots-5f2248c8f72beeb1b28f1921d5c2f3e8.png
 promoTemp.png: promoTemp-cdf2ef58452ac722cfd385e2f111c167.png
@@ -26,5 +31,5 @@ gmaps4rails/gmaps4rails.mapquest.js: gmaps4rails/gmaps4rails.mapquest-ded4c0eb90
 gmaps4rails/gmaps4rails.openlayers.js: gmaps4rails/gmaps4rails.openlayers-445cf873b99f1feae354340d60668f47.js
 jquery-ui.min.js: jquery-ui.min-4258e47b40673a02bedfda178628bfba.js
 jquery.min.js: jquery.min-17322428695737103f15e8b9db8b5909.js
-application.js: application-dd1992a68596bc37c4a34c9bb04a577a.js
-application.css: application-62da72efd023807f256b2606afc80381.css
+application.js: application-eb8420af643f4894939b4606bf35e249.js
+application.css: application-dd5b286cf46d5e664ee47f5cc624327f.css
