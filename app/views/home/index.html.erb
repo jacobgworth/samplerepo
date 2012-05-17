@@ -82,18 +82,16 @@
 		<h3><span class="mediumText">Mission of Hope</span><br />in Action</h3>
 		<div class="speechBubble"><p>action updates here</p></div>
 	<div id="updatesWrapper">
-		<div class="updateDate"><span class="month">Apr</span><br /><span class="date">24</span><br /><span class="year">2012</span></div>
-		<div class="updatePost">
-			<h4>Post Title</h4>
-			<p>God is doing amazing things at Church of Hope! This morning, in the middle of Pastor Kenol's sermon, a lady felt moved... <a href="">READ MORE</a></p>
-			<p class="meta">Projects: Project Name | Posted by: Firstname</p>
-		</div>
-		<div class="updateDate"><span class="month">Apr</span><br /><span class="date">24</span><br /><span class="year">2012</span></div>
-		<div class="updatePost">
-			<h4>Post Title</h4>
-			<p>God is doing amazing things at Church of Hope! This morning, in the middle of Pastor Kenol's sermon, a lady felt moved... <a href="">READ MORE</a></p>
-			<p class="meta">Projects: Project Name | Posted by: Firstname</p>
-		</div>
+		<%@updates.each do |m|%>
+			<div class="updateDate">
+				<span class="month">Apr</span><br /><span class="date">24</span><br /><span class="year">2012</span>
+			</div>
+			<div class="updatePost">
+				<h4><%=m.title%></h4>
+				<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a></p>
+				<p class="meta">Projects: Project Name | Posted by: Firstname</p>
+			</div>
+		<%end%>
 		<div id="updateNav"><img src="/assets/updatesNav.png" /></div>
 	</div>
 	</div>
