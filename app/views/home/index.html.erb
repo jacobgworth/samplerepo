@@ -85,7 +85,13 @@
 		<%@updates.each do |m|%>
 			<div class="update">
 			<div class="updateDate">
-				<% created = m.created_at %>
+				<% 
+					created = m.created_at 
+					creator = m.user.first
+					if creator == nil
+						creator = '-'
+					end
+				%>
 				<span class="month"><%= created.strftime("%b")%></span><br />
 				<span class="date"><%=created.strftime("%d")%></span><br />
 				<span class="year"><%=created.strftime("%Y")%></span>
@@ -93,7 +99,7 @@
 			<div class="updatePost">
 				<h4><%=m.title%></h4>
 				<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a></p>
-				<p class="meta">Projects: Project Name | Posted by: Firstname</p>
+				<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
 			</div>
 			<div class="clearfix"><!--x--></div>
 			</div>
