@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120503185732) do
+ActiveRecord::Schema.define(:version => 20120517181800) do
 
   create_table "communities", :force => true do |t|
     t.string   "communityname"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20120503185732) do
     t.string   "media"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
