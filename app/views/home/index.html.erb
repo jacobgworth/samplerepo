@@ -84,7 +84,8 @@
 	<div id="updatesWrapper">
 		<%@updates.each do |m|%>
 			<div class="updateDate">
-				<span class="month">Apr</span><br /><span class="date">24</span><br /><span class="year">2012</span>
+				<% created = m.created_at %>
+				<span class="month"><%= created.strftime("%b")%></span><br /><span class="date"><%=created.strftime("%d")%></span><br /><span class="year"><%=created.strftime("%Y")%></span>
 			</div>
 			<div class="updatePost">
 				<h4><%=m.title%></h4>
