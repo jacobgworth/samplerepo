@@ -87,9 +87,9 @@
 			<div class="updateDate">
 				<% 
 					created = m.created_at 
-					creator = m.user.first
-					if creator == nil
-						creator = '-'
+					creator = '-'
+					if m.user.first != nil
+						creator = m.user.first
 					end
 				%>
 				<span class="month"><%= created.strftime("%b")%></span><br />
