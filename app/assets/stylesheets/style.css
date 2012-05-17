@@ -299,6 +299,31 @@ ul#utilityNav li.last {
 	color:#08c086;
 	text-decoration:none;
 	}
+
+#mainNav li.active {
+	background:url(/assets/navArrow.png) 50% -20px no-repeat;
+}	
+.subNav {
+	width:1000px;
+	margin:auto;
+	background-color:#056346;
+	padding:10px 0;
+	margin-top:-10px;
+	font-family: 'Montserrat', sans-serif;
+	font-size:.8em;
+}
+	
+.subNav ul {
+	margin-left:208px;
+}
+
+.subNav li {
+	display:inline;
+	float:left;
+	padding:0 8px ;
+	border-right:1px solid #078E60;
+}
+	
 #pull a:link,#pull a:visited {
 	background: url(/assets/pullTag.png) no-repeat;
 	color:#E4D4B9;
@@ -370,6 +395,11 @@ h3.CTA {
 	margin:20px auto;
 	padding-bottom:40px;
 	background:url(/assets/contentDiv.png) center bottom no-repeat;
+}
+
+#content h1 {
+	font-size:2em;
+	color:#19302F;
 }
 #contentLeft {
 	float:left;
