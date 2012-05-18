@@ -304,17 +304,22 @@ ul#utilityNav li.last {
 	background:url(/assets/navArrow.png) 50% -20px no-repeat;
 }	
 .subNav {
-	width:1000px;
+	width:960px;
 	margin:auto;
 	background-color:#056346;
 	padding:10px 0;
 	margin-top:-10px;
 	font-family: 'Montserrat', sans-serif;
 	font-size:.8em;
+	
+	-moz-border-radius:0 0 5px 5px;
+	-webkit-border-radius:0 0 5px 5px;
+	-o-border-radius:0 0 5px 5px;
+	border-radius:0 0 5px 5px;
 }
 	
 .subNav ul {
-	margin-left:208px;
+	margin-left:180px;
 }
 
 .subNav li {
@@ -398,9 +403,147 @@ h3.CTA {
 }
 
 #content h1 {
-	font-size:2em;
+	font-size:3.5em;
+	padding:10px 0 0 0;
+	color:#19302F;
+	text-transform:uppercase;
+	text-align:center;
+}
+
+#gridWrapper {
+	padding:40px 0;
+}
+
+#gridWrapper h2 {
+	font-size:1.75em;
+	text-transform:uppercase;
 	color:#19302F;
 }
+
+#gridWrapper h2 a:link, #gridWrapper h2 a:visited {
+	color:#19302F;
+}
+
+#gridWrapper h2 a:hover {
+	color:#08C086;
+}
+
+.grid2x2Left {
+	width:440px;
+	float:left;
+	margin-right:80px;
+	padding-bottom:40px;
+	height:180px;
+}
+
+.gridImage {
+	float:left;
+	width:125px;
+	height:125px;
+	padding-right:20px;
+	height:180px;
+}
+
+.churchAdvancementMed a:link {
+	background:url(/assets/icon-church-advancement-med.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+.churchAdvancementMed a:hover  {
+	background:url(/assets/icon-church-advancement-med-hover.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+
+.educationMed a:link {
+	background:url(/assets/icon-student-sponsorship-med.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+.educationMed a:hover  {
+	background:url(/assets/icon-student-sponsorship-med-hover.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+
+.healthMed a:link {
+	background:url(/assets/icon-health-care-med.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+.healthMed a:hover  {
+	background:url(/assets/icon-health-care-med-hover.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+
+.haitiOneMed a:link {
+	background:url(/assets/icon-haitione-med.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+.haitiOneMed a:hover  {
+	background:url(/assets/icon-haitione-med-hover.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+
+.nutritionMed a:link {
+	background:url(/assets/icon-nutrition-med.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+.nutritionMed a:hover  {
+	background:url(/assets/icon-nutrition-med-hover.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+
+.threeCordsMed a:link {
+	background:url(/assets/icon-3Cords-med.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+.threeCordsMed a:hover  {
+	background:url(/assets/icon-3Cords-med-hover.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+.gridText {
+	float:left;
+	width:295px;
+}
+.grid2x2Right {
+	width:440px;
+	float:left;
+	margin-right:0px;
+	padding-bottom:40px;
+}
+/******Home Page********/
 #contentLeft {
 	float:left;
 	width:470px;
