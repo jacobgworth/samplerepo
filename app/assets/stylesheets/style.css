@@ -443,7 +443,20 @@ h3.CTA {
 	padding-right:20px;
 	height:180px;
 }
-
+.projectsMed a:link {
+	background:url(/assets/icon-projects-med.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+.projectsMed a:hover  {
+	background:url(/assets/icon-projects-med-hover.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
 .churchAdvancementMed a:link {
 	background:url(/assets/icon-church-advancement-med.png) no-repeat;
 	text-indent:-9999px;
@@ -453,6 +466,21 @@ h3.CTA {
 }
 .churchAdvancementMed a:hover  {
 	background:url(/assets/icon-church-advancement-med-hover.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+
+.orphanCareMed a:link {
+	background:url(/assets/icon-orphan-care-med.png) no-repeat;
+	text-indent:-9999px;
+	width:125px;
+	height:125px;
+	display:block;
+}
+.orphanCareMed a:hover  {
+	background:url(/assets/icon-orphan-care-med-hover.png) no-repeat;
 	text-indent:-9999px;
 	width:125px;
 	height:125px;
