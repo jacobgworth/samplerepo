@@ -325,8 +325,19 @@ ul#utilityNav li.last {
 .subNav li {
 	display:inline;
 	float:left;
-	padding:0 8px ;
-	border-right:1px solid #078E60;
+	margin-right:8px ;
+	/*border-right:1px solid #078E60;*/
+}
+
+.subNav li a:link {
+	color:#08b17c;
+	padding:2px 5px;
+}
+
+.subNav li a:hover {
+	background:#08b17c;
+	color:#056346;
+	padding:2px 5px;
 }
 	
 #pull a:link,#pull a:visited {
@@ -402,22 +413,60 @@ h3.CTA {
 	background:url(/assets/contentDiv.png) center bottom no-repeat;
 }
 
+#content p {
+	line-height:1.2em;
+}
+
 #content h1 {
-	font-size:3.5em;
-	padding:10px 0 0 0;
+	font-size:4em;
+	padding:0 0 10px 0;
 	color:#19302F;
 	text-transform:uppercase;
 	text-align:center;
+	border-bottom:3px double #056346;
 }
 
+#content h1 span.eyebrow {
+	font-size:.5em;
+	text-transform:none;
+	font-family: 'Mr Dafoe', cursive;
+	color:#056346;
+}
+
+.videoWrapper {
+	width:600px;
+	height:337px;
+	margin:20px auto;
+	text-align:center;
+}
+
+
 #gridWrapper {
-	padding:40px 0;
+	padding:20px 0 0 0;
 }
 
 #gridWrapper h2 {
 	font-size:1.75em;
 	text-transform:uppercase;
-	color:#19302F;
+}
+
+.divHeader {
+	background-color:#056346;
+	padding:10px 0;
+	text-align:center;
+	margin-bottom:40px;	
+	
+}
+
+.divHeader h2 {
+	color:#08b17c;
+}
+
+.divHeader h2 span.eyebrow {
+	font-family: 'Mr Dafoe', cursive;
+	font-size:.85em;
+	text-transform:none;
+	color:#08b17c;
 }
 
 #gridWrapper h2 a:link, #gridWrapper h2 a:visited {
