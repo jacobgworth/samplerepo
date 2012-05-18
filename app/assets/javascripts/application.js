@@ -9,3 +9,4 @@
 //= require_tree .
 //= require gmaps4rails/openlayers.js
 //= require gmaps4rails/googlemaps.js
+//= require gmaps4rails/gmaps4rails.base.js.coffee
