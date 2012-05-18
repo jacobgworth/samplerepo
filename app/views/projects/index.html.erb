@@ -1,34 +1,21 @@
-<h1>Projects</h1>
-
-<table>
-  <tr>
-    <th>Project</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th>Completion</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div style="padding-top:15px;"><h2>Projects</h2></div>
+<div>
 <% @projects.each do |project| %>
-  <tr>
-    <td><%= project.projectname %></td>
-    <td><%= project.latitude %></td>
-    <td><%= project.longitude %></td>
-    <td><%= project.completion %></td>
-    <td><%= project.description %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <div style="padding-bottom:25px;">
+    <h3><%= project.projectname %></h3>
+    <p>Location: <%= project.latitude %> <%= project.longitude %></p>
+    <p>Completion Date: <%= project.completion %></p>
+    <p>Description: <%= project.description %></p>
+	<br />
+    <%= link_to 'Show', project %>
+	<%= link_to 'Edit', edit_project_path(project) %>
+    <%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %>
+  </div>
 <% end %>
-</table>
+</div>
 
 <br />
-
-<%= link_to 'New Project', new_project_path %>
+<div style="padding:10px 0px 10px 0px;"><%= link_to 'Click Me to Create a New Project', new_project_path %></div>
 
 <%= 
 	gmaps4rails(@jason) 
