@@ -66,7 +66,6 @@ gmaps4rails/all_apis.js: gmaps4rails/all_apis-6969871a3b7e3a98aa1a64248c94a004.j
 gmaps4rails/bing.js: gmaps4rails/bing-ed962424dae50c9bf05346259519ef0a.js
 gmaps4rails/googlemaps.js: gmaps4rails/googlemaps-58cd2d3f503850f29903d31a49c2dfa3.js
 gmaps4rails/mapquest.js: gmaps4rails/mapquest-81b0efbb00223f60e6d47e1c48bc855f.js
-gmaps4rails/openlayers.js: gmaps4rails/openlayers-5c2ac0d118153225a0acaf0abc21fbb3.js
 communities.css: communities-1c9609bc58b1e77c196de29021583379.css
 gmaps4rails.css: gmaps4rails-cd11de25463faaba8315107bb3ef4621.css
 home.css: home-1c9609bc58b1e77c196de29021583379.css
