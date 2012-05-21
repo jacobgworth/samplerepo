@@ -8,5 +8,5 @@
 //= require jquery_ujs
 //= require_tree .
 //= require gmaps4rails/OpenLayers.js
-//= require gmaps4rails/googlemaps.js
+
 //= require gmaps4rails/gmaps4rails.base.js.coffee
