@@ -16,6 +16,9 @@ Mohhaiti::Application.configure do
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
+  
+  # Precompile gmaps4rails
+    config.assets.precompile += "gmaps4rails.css"
 
   # Generate digests for assets URLs
   config.assets.digest = true
