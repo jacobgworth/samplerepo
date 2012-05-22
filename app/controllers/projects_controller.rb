@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
+  layout "sparseLayout"
+  
   def index
     @projects = Project.all
     @jason = Project.all.to_gmaps4rails
