@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
-  layout "sparseLayout"
   
   def index
     @projects = Project.all

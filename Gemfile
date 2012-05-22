@@ -7,7 +7,7 @@ gem 'rails', '3.1.0'
 
 #gem 'sqlite3'
 
-gem 'gmaps4rails'
+gem 'gmaps4rails', ">=1.5.2"
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
