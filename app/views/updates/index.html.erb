@@ -1,15 +1,14 @@
-<div><h1>Mission of Hope Updates</h1></div>
+<div style="padding:25px 0px 0px 0px;font-size: 25px;"><h1>Mission of Hope Updates</h1></div>
 
 
 <% @updates.each do |update| %>
-  <div>
-  <tr>
-    <td><%= update.title %></td>
+  <div style=padding-top:20px;>
+  <h2><%= update.created_at.strftime("%b %e, %Y") %> - <%= update.title %></h2>
     <td><%= update.body %></td>
     <td><%= update.media %></td>
-    <td><%= link_to 'Show', update %></td>
+    <!--<td><%= link_to 'Show', update %></td>
     <td><%= link_to 'Edit', edit_update_path(update) %></td>
-    <td><%= link_to 'Destroy', update, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Destroy', update, confirm: 'Are you sure?', method: :delete %></td>-->
   </tr>
   </div>
 <% end %>
