@@ -1,5 +1,7 @@
 Mohhaiti::Application.routes.draw do
   
+  
+
   resources :tags
 
   resources :updates
@@ -20,7 +22,10 @@ Mohhaiti::Application.routes.draw do
   get "home/index"
   get "page/what_we_do"
   match "/what-we-do" => "page#what_we_do"
-
+  
+  get "advancement/index"
+  match "/church-advancement" => "Advancement#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
