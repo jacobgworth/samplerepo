@@ -1,5 +1,5 @@
 Mohhaiti::Application.routes.draw do
-  
+
 
   resources :tags
 
@@ -30,6 +30,9 @@ Mohhaiti::Application.routes.draw do
   
   get "take_action/index"
   match "/take-action" => "TakeAction#index"
+  
+  get "connected/index"
+  match "/stay-connected" => "Connected#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
