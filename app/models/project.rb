@@ -10,6 +10,6 @@ class Project < ActiveRecord::Base
   end
   
   def gmaps4rails_infowindow
-      "<h1>#{self.projectname}</h1><div>#{self.description}</div><div>Completion: #{self.completion}</div>"
+      "<h4>#{self.projectname}</h4><p>#{self.description}</p><p>Completion: #{self.completion}</p>"
   end
 end

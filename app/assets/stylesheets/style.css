@@ -330,7 +330,7 @@ ul#utilityNav li.last {
 }
 
 .subNav li a:link {
-	color:#08b17c;
+	color:#5cceaa;
 	padding:2px 5px;
 }
 
@@ -423,7 +423,7 @@ h3.CTA {
 	color:#19302F;
 	text-transform:uppercase;
 	text-align:center;
-	border-bottom:3px double #056346;
+	border-bottom:3px dotted #056346;
 }
 
 #content h1 span.eyebrow {
@@ -464,7 +464,7 @@ h3.CTA {
 
 .divHeader h2 span.eyebrow {
 	font-family: 'Mr Dafoe', cursive;
-	font-size:.85em;
+	font-size:1.2em;
 	text-transform:none;
 	color:#08b17c;
 }
@@ -620,6 +620,21 @@ h3.CTA {
 	margin-right:0px;
 	padding-bottom:40px;
 }
+
+
+/*******Project Map***********/
+
+.map_container {
+	margin:20px auto;
+}
+
+.projectColumn {
+	float:left;
+	width:300px;
+	margin:10px;
+}
+
+
 /******Home Page********/
 #contentLeft {
 	float:left;

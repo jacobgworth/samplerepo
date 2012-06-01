@@ -1,7 +1,11 @@
-<div style="padding-top:15px;"><h2>Projects</h2></div>
+<div id="content">
+<h1><span class="eyebrow">Mission of Hope Haiti</span><br />Projects</h1>
 <div>
+	<%= 
+	gmaps4rails(@jason) 
+%>
 <% @projects.each do |project| %>
-  <div style="padding-bottom:25px;">
+  <div class="projectColumn">
     <h3><%= project.projectname %></h3>
     <p>Location: <%= project.latitude %> <%= project.longitude %></p>
     <p>Completion Date: <%= project.completion %></p>
@@ -15,8 +19,7 @@
 </div>
 
 <br />
-<div style="padding:10px 0px 10px 0px;"><%= link_to 'Click Me to Create a New Project', new_project_path %></div>
+<div style="clear:both; padding:10px 0px 10px 0px;"><%= link_to 'Click Me to Create a New Project', new_project_path %></div>
 
-<%= 
-	gmaps4rails(@jason) 
-%>
+
+</div>
