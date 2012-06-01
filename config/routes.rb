@@ -28,6 +28,9 @@ Mohhaiti::Application.routes.draw do
   get "sponsorship/index"
   match "/child-sponsorship" => "Sponsorship#index"
   
+  get "take_action/index"
+  match "/take-action" => "TakeAction#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
