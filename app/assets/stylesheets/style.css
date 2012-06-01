@@ -329,7 +329,7 @@ ul#utilityNav li.last {
 	/*border-right:1px solid #078E60;*/
 }
 
-.subNav li a:link {
+.subNav li a:link, .subNav li a:visited {
 	color:#5cceaa;
 	padding:2px 5px;
 }
@@ -339,6 +339,95 @@ ul#utilityNav li.last {
 	color:#056346;
 	padding:2px 5px;
 }
+
+/*Test Nav*/
+
+#nav li {
+	position: relative;
+}
+/* main level link */
+#nav a {
+	display: block;
+}
+/* main level link hover */
+#nav .current a, #nav li:hover > a {
+	
+}
+/* sub levels link hover */
+#nav ul li:hover a, #nav li:hover li a {
+	background: none;
+	border-bottom:1px solid #182e2c;
+	color:#5cceaa;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	padding:8px 0;
+	text-indent:10px;
+}
+
+#nav ul li:last-child > a {
+	border-bottom:none;
+}
+#nav ul a:hover {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	text-shadow: 0 1px 0px #000;
+}
+/* level 2 list */
+#nav ul {
+	background: #056346;
+
+	display: none;
+	margin: 0;
+	padding: 5px 0;
+	width: 250px;
+	position: absolute;
+	top: 35px;
+	left: -55px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+/* dropdown */
+#nav li:hover > ul {
+	display: block;
+}
+#nav ul li {
+	float: none;
+	margin: 0;
+	padding: 0;
+}
+#nav ul a {
+	font-weight: normal;
+}
+/* level 3+ list */
+#nav ul ul {
+	left: 181px;
+	top: -3px;
+}
+/* rounded corners for first and last child */
+
+/* clearfix */
+#nav:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+#nav {
+	display: inline-block;
+}
+html[xmlns] #nav {
+	display: block;
+}
+* html #nav {
+	height: 1%;
+}
+
 	
 #pull a:link,#pull a:visited {
 	background: url(/assets/pullTag.png) no-repeat;
