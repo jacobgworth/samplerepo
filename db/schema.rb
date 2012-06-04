@@ -11,12 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120517181800) do
+ActiveRecord::Schema.define(:version => 20120604141651) do
 
   create_table "communities", :force => true do |t|
     t.string   "communityname"
     t.float    "latitude"
     t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contents", :force => true do |t|
+    t.string   "url"
+    t.text     "content"
+    t.string   "headline"
+    t.string   "description"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
