@@ -1,6 +1,8 @@
 Mohhaiti::Application.routes.draw do
 
 
+  resources :contents
+
   resources :tags
 
   resources :updates
