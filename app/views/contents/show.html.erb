@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+
+<p style="padding-top:25px;"> 
   <b>Url:</b>
   <%= @content.url %>
 </p>
+
+
+<%=@content.content.html_safe%>
 
 
 <%= link_to 'Edit', edit_content_path(@content) %> |

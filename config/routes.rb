@@ -37,6 +37,9 @@ Mohhaiti::Application.routes.draw do
   get "connected/index"
   match "/stay-connected" => "Connected#index"
   
+  #For the custom Content model URLs
+  match '/:url' => "Contents#show"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

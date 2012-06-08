@@ -13,7 +13,11 @@ class ContentsController < ApplicationController
   # GET /contents/1
   # GET /contents/1.json
   def show
-    @content = Content.find(params[:id])
+    #@content = Content.find(params[:id])
+    #@content = Content.find(1)
+    #@thisParam = request.fullpath #params[:id]
+    @content = Content.find_by_url(params[:url])
+
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +38,8 @@ class ContentsController < ApplicationController
 
   # GET /contents/1/edit
   def edit
-    @content = Content.find(params[:id])
+    #@content = Content.find(params[:id])
+    @content = Content.find_by_url(params[:id])
   end
 
   # POST /contents

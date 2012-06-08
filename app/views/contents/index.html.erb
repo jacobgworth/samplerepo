@@ -15,8 +15,8 @@
     <td><%= content.url %></td>
 	<td><%= content.headline %></td>
 	<td><%= content.content %></td>
-    <td><%= link_to 'Show', content %></td>
-    <td><%= link_to 'Edit', edit_content_path(content) %></td>
+    <td><a href="/<%=content.url%>">View this Page</a></td>&nbsp;
+    <td><%= link_to 'Edit', edit_content_path(content) %></td>&nbsp;
     <td><%= link_to 'Destroy', content, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
