@@ -1,9 +1,9 @@
 class Content < ActiveRecord::Base
 
-  def to_param
-    
-    url
+  validates_uniqueness_of :url
 
+  def to_param
+    url
   end
 
 end

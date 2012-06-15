@@ -1,26 +1,16 @@
 <h1>Listing contents</h1>
 
-<table>
-  <tr>
-    <th>Url</th>
-    <th>Headline</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
 
 <% @contents.each do |content| %>
-  <tr>
+  <div>
     <td><%= content.url %></td>
 	<td><%= content.headline %></td>
 	<td><%= content.content %></td>
     <td><a href="/<%=content.url%>">View this Page</a></td>&nbsp;
-    <td><%= link_to 'Edit', edit_content_path(content) %></td>&nbsp;
-    <td><%= link_to 'Destroy', content, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+   
+  </div>
 <% end %>
-</table>
 
 <br />
 

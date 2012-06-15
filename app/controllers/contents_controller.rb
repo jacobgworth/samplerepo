@@ -16,7 +16,11 @@ class ContentsController < ApplicationController
     #@content = Content.find(params[:id])
     #@content = Content.find(1)
     #@thisParam = request.fullpath #params[:id]
-    @content = Content.find_by_url(params[:url])
+    if params[:path].nil?
+      @content = Content.find_by_url(params[:url])
+    else
+      @content = Content.find_by_url(params[:path] + '/' + params[:url])
+    end
 
 
     respond_to do |format|
@@ -49,7 +53,7 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       if @content.save
-        format.html { redirect_to @content, notice: 'Content was successfully created.' }
+        format.html { redirect_to '/' + params[:content][:url], notice: 'Content was successfully created.' }
         format.json { render json: @content, status: :created, location: @content }
       else
         format.html { render action: "new" }

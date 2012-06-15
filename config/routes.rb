@@ -38,6 +38,8 @@ Mohhaiti::Application.routes.draw do
   match "/stay-connected" => "Connected#index"
   
   #For the custom Content model URLs
+  match '*path/:url' => "Contents#show"
+  match '*path/:url/delete' => "Contents#delete"
   match '/:url' => "Contents#show"
   
   # The priority is based upon order of creation:

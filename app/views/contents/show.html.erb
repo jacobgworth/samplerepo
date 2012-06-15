@@ -2,13 +2,10 @@
 
 
 <p style="padding-top:25px;"> 
-  <b>Url:</b>
-  <%= @content.url %>
+	&nbsp;<br />
 </p>
 
 
 <%=@content.content.html_safe%>
 
-
-<%= link_to 'Edit', edit_content_path(@content) %> |
 <%= link_to 'Back', contents_path %>
