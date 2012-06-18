@@ -2,5 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @content %> |
-<%= link_to 'Back', contents_path %>
+<a href="/<%=@content.url%>">View this Page</a> | <%= link_to 'Back', contents_path %>

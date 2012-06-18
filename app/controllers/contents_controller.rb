@@ -43,7 +43,10 @@ class ContentsController < ApplicationController
   # GET /contents/1/edit
   def edit
     #@content = Content.find(params[:id])
-    @content = Content.find_by_url(params[:id])
+    @content = Content.find_by_id(params[:id])
+    #@content = Content.find_by_url(params[:id])
+    #@content = Content.where("id = 20")
+    #@content = Content.find_by_url("no-path")
   end
 
   # POST /contents
@@ -65,11 +68,13 @@ class ContentsController < ApplicationController
   # PUT /contents/1
   # PUT /contents/1.json
   def update
-    @content = Content.find(params[:id])
+    @content = Content.find_by_id(params[:id])
+    #@content = Content.where("id = ?",params[:id])
+    #@content = Content.find_by_url("no-path")
 
     respond_to do |format|
       if @content.update_attributes(params[:content])
-        format.html { redirect_to @content, notice: 'Content was successfully updated.' }
+        format.html { redirect_to '/' + params[:content][:url], notice: 'Content was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
