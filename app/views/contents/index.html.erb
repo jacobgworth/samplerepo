@@ -7,11 +7,11 @@
     <td><%= content.url %></td>
 	<td><%= content.headline %></td>
 	<td><%= content.content %></td>
-    <td><a href="/<%=content.url%>">View this Page</a></td>&nbsp;
+    <td><a href="/<%=content.url%>">View this Page</a></td>&nbsp;| <a href="/contents/<%=content.id%>/edit">Edit this Page</a>
    
   </div>
 <% end %>
 
 <br />
 
-<%= link_to 'New Content', new_content_path %>
+<%= link_to 'New Content', new_content_path %> 

@@ -1,3 +1,11 @@
+<script type="text/javascript" src="insertYourPath/tinymce/jscripts/tiny_mce/tiny_mce.js" ></script >
+<script type="text/javascript" >
+tinyMCE.init({
+        mode : "textareas",
+        theme : "simple"   //(n.b. no trailing comma, this will be critical as you experiment later)
+});
+</script >
+
 <%= form_for(@content, :url=>'/contents/' + @content.id.to_s()) do |f| %>
 
 
@@ -5,7 +13,7 @@
     <%= f.label :url %><br />
     <%= f.text_field :url %><br />
     <%= f.label :content %><br />
-    <%= f.text_field :content %><br />
+    <%= f.text_area :content %><br />
     <%= f.label :headline %><br />
     <%= f.text_field :headline %><br />
   </div>
