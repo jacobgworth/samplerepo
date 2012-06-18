@@ -1,14 +1,14 @@
-<h1>Listing contents</h1>
-
+<p style="padding-top:30px;">
+<h1>Edit or Create Content Pages</h1>
+</p>
 
 
 <% @contents.each do |content| %>
-  <div>
-    <td><%= content.url %></td>
-	<td><%= content.headline %></td>
-	<td><%= content.content %></td>
-    <td><a href="/<%=content.url%>">View this Page</a></td>&nbsp;| <a href="/contents/<%=content.id%>/edit">Edit this Page</a>
-   
+  <div style="padding-top:25px;">
+    <p>URL: <%= content.url %></p>
+	<p>Headline: <%= content.headline %></p>
+	<p>Page HTML: <%= truncate(content.content,:length=>100,:separator=>' ')%></p>
+    <p><a href="/<%=content.url%>">View this Page</a></td>&nbsp;| <a href="/contents/<%=content.id%>/edit">Edit this Page</a> | <a href="/contents/<%=content.id%>" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Delete this Page</a></p>
   </div>
 <% end %>
 

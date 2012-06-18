@@ -86,7 +86,8 @@ class ContentsController < ApplicationController
   # DELETE /contents/1
   # DELETE /contents/1.json
   def destroy
-    @content = Content.find(params[:id])
+    #@content = Content.find(params[:id])
+    @content = Content.find_by_id(params[:id])
     @content.destroy
 
     respond_to do |format|
