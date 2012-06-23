@@ -74,6 +74,11 @@ a:hover {
 	text-decoration:none;
 }
 
+strong {
+	font-weight:bold;
+	
+}
+
 .clearfix {
 	clear:both;
 }
@@ -708,6 +713,71 @@ h3.CTA {
 	float:left;
 	margin-right:0px;
 	padding-bottom:40px;
+}
+
+
+/*******CMS***********/
+#cms {
+	padding:10px 0 20px 0;
+}
+
+#cms h2 {
+	padding:20px 0;
+	font-size:24px;
+	text-transform:uppercase;
+}
+
+
+.field {
+	margin:20px 0;
+}
+
+.field input, .field textarea {
+	padding:10px;
+}
+
+.field input {
+	width:600px;
+}
+
+#cms .field h2 {
+	margin:20px 0 5px 0;
+	text-transform:uppercase;
+}
+
+.actions input {
+	font-family: 'Montserrat', sans-serif;
+	text-align:center;
+	color:#E4D4B9;
+	text-decoration:none;
+	padding:5px;
+	
+	background:#d46b13;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#d46b13), to(#e37e18));
+	background:-moz-linear-gradient(0% 90% 90deg, #d46b13, #e37e18);
+	border:1px solid #E37E18;
+}
+
+.actions input:hover {
+	font-family: 'Montserrat', sans-serif;
+	text-align:center;
+	color:#E4D4B9;
+	text-decoration:none;
+	padding:5px;
+	
+	background:#d46b13;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#e37e18), to(#d46b13));
+	background:-moz-linear-gradient(0% 90% 90deg, #e37e18, #d46b13);
+	border:1px solid #E37E18;
+}
+
+.smallLink  {
+	font-size:12px;
+	padding:10px 0;
+}
+
+.contentList {
+	padding:0px 0 30px 0;
 }
 
 

@@ -1,7 +1,8 @@
-<div style="padding-top:35px;">
-<h1>Editing content</h1>
-
+<div id="content">
+<h1>Edit content</h1>
+<div id="cms">
 <%= render 'form' %>
 
-<a href="/<%=@content.url%>">View this Page</a> | <%= link_to 'Back', contents_path %>
+<div class="smallLink"><a href="/<%=@content.url%>">View this Page</a> | <%= link_to 'Back', contents_path %></div>
+</div>
 </div>

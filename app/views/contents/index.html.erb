@@ -1,17 +1,16 @@
-<p style="padding-top:30px;">
-<h1>Edit or Create Content Pages</h1>
-</p>
-
-
+<div id="content">
+<h1>Edit or Create Content</h1>
+<div id="cms">
+<h2><%= link_to 'Create New Content', new_content_path %></h2> 
+<h2>Edit Existing Content</h2>
 <% @contents.each do |content| %>
-  <div style="padding-top:25px;">
-    <p>URL: <%= content.url %></p>
-	<p>Headline: <%= content.headline %></p>
-	<p>Page HTML: <%= truncate(content.content,:length=>100,:separator=>' ')%></p>
-    <p><a href="/<%=content.url%>">View this Page</a></td>&nbsp;| <a href="/contents/<%=content.id%>/edit">Edit this Page</a> | <a href="/contents/<%=content.id%>" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Delete this Page</a></p>
+  <div class="contentList">
+    <p><strong>URL:</strong> <%= content.url %></p>
+	<p><strong>Headline:</strong> <%= content.headline %></p>
+	<p><strong>Page HTML:</strong> <%= truncate(content.content,:length=>100,:separator=>' ')%></p>
+    <p class="smallLink"><a href="/<%=content.url%>">View this Page</a></td>&nbsp;| <a href="/contents/<%=content.id%>/edit">Edit this Page</a> | <a href="/contents/<%=content.id%>" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Delete this Page</a></p>
   </div>
 <% end %>
+</div>
 
-<br />
-
-<%= link_to 'New Content', new_content_path %> 
+</div>
