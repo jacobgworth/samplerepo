@@ -1,5 +1,7 @@
 Mohhaiti::Application.routes.draw do
 
+  resources :partners
+
   root :to => 'home#index'
 
   resources :contents

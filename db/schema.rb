@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120604141651) do
+ActiveRecord::Schema.define(:version => 20120704141955) do
 
   create_table "communities", :force => true do |t|
     t.string   "communityname"
@@ -31,6 +31,18 @@ ActiveRecord::Schema.define(:version => 20120604141651) do
     t.datetime "updated_at"
   end
 
+  create_table "partners", :force => true do |t|
+    t.string   "partnername"
+    t.string   "partnerURL"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "partners_projects", :id => false, :force => true do |t|
+    t.integer "partner_id"
+    t.integer "project_id"
+  end
+
   create_table "projects", :force => true do |t|
     t.string   "projectname"
     t.float    "latitude"
@@ -39,6 +51,11 @@ ActiveRecord::Schema.define(:version => 20120604141651) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "goal"
+    t.decimal  "progress"
+    t.decimal  "fundsneeded"
+    t.decimal  "fundsraised"
+    t.date     "startdate"
   end
 
   create_table "tags", :force => true do |t|
