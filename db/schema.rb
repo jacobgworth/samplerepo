@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120704151656) do
+ActiveRecord::Schema.define(:version => 20120713213950) do
 
   create_table "communities", :force => true do |t|
     t.string   "communityname"
@@ -61,6 +61,10 @@ ActiveRecord::Schema.define(:version => 20120704151656) do
     t.decimal  "fundsneeded"
     t.decimal  "fundsraised"
     t.date     "startdate"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "tags", :force => true do |t|

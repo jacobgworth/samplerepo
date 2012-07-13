@@ -5,6 +5,13 @@ class Project < ActiveRecord::Base
   
   has_and_belongs_to_many :communities
   
+  #Paperclip method for group avatar
+  has_attached_file :photo, 
+    :storage => :s3,
+    :bucket => "MOH",
+    :s3_credentials => "#{Rails.root}/config/s3_credentials.yml",
+    :styles => { :large => "300x300#", :medium => "160x160#", :thumb => "90x90#"}
+  
   def gmaps4rails_address
     "#{self.latitude}, #{self.longitude}"
   end
