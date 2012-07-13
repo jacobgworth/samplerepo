@@ -11,6 +11,11 @@ gem 'gmaps4rails', ">=1.5.2"
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
+gem "paperclip", "~> 3.0"
+
+#Gem to connect to Amazon S3
+gem "aws-s3"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
