@@ -5,6 +5,8 @@ class Project < ActiveRecord::Base
   
   has_and_belongs_to_many :communities
   
+  attr_accessible :photo
+  
   #Paperclip method for group avatar
   has_attached_file :photo, 
     :storage => :s3,
