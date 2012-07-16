@@ -5,7 +5,7 @@ class Project < ActiveRecord::Base
   
   has_and_belongs_to_many :communities
   
-  attr_accessible :photo
+  attr_accessible :photo,:projectname,:latitude,:longitude,:completion,:description
   
   #Paperclip method for group avatar
   has_attached_file :photo, 
