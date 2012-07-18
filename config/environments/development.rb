@@ -27,4 +27,7 @@ Mohhaiti::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  # Path to my ImageMagick
+  Paperclip.options[:command_path] = "/c/ImageMagick-6.5.6-Q8/"
 end

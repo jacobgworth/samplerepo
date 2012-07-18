@@ -11,7 +11,7 @@ gem 'gmaps4rails', ">=1.5.2"
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
-gem "paperclip", "~> 3.0"
+gem "paperclip", "~> 2.7"
 
 #Gem to connect to Amazon S3
 gem "aws-s3"
