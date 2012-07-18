@@ -5,6 +5,8 @@ class Project < ActiveRecord::Base
   
   has_and_belongs_to_many :communities
   
+  has_and_belongs_to_many :experiences
+  
   attr_accessible :photo,:projectname,:latitude,:longitude,:completion,:description
   
   #Paperclip method for group avatar
