@@ -25,5 +25,7 @@
 </table>
 
 <br />
-
+<% if @user != nil %>
+	<p>Welcome, <%=@user.first%></p>
+<% end %>
 <%= link_to 'New Experience', new_experience_path %>

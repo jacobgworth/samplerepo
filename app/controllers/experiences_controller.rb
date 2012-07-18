@@ -3,6 +3,7 @@ class ExperiencesController < ApplicationController
   # GET /experiences.json
   def index
     @experiences = Experience.all
+    @user = current_user
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +26,7 @@ class ExperiencesController < ApplicationController
   # GET /experiences/new.json
   def new
     @experience = Experience.new
+    @user = current_user 
 
     respond_to do |format|
       format.html # new.html.erb

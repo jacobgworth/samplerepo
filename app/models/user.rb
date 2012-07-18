@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
   
   has_many :updates
+  has_many :experiences
   
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
