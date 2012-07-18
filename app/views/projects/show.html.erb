@@ -25,6 +25,12 @@
   <%= @project.description %>
 </p>
 
+<p>
+	<% if @project.photo.exists? %>
+  		<%= image_tag @project.photo.url(:large) %>
+  	<%end%>
+</p>
+
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
