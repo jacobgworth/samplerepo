@@ -1,4 +1,4 @@
-<%= form_for(@experience) do |f| %>
+<%= form_for(@experience, :html => { :multipart => true }) do |f| %>
   <% if @experience.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
@@ -26,6 +26,10 @@
   <div class="field">
     <%= f.label :user_id %><br />
     <%= f.number_field :user_id %>
+  </div>
+  <div>
+  	<%= f.label :photo %><br />
+  	<%= f.file_field :photo %>
   </div>
   <div class="actions">
     <%= f.submit %>

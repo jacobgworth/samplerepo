@@ -16,10 +16,16 @@
 </p>
 <br />
 <p>
+	<% if @experience.photo.exists? %>
+  		<%= image_tag @experience.photo.url(:large) %>
+  	<%end%>
+</p>
+<br />
+<p>
 	<% if @projects.count > 0 %>
 		<h3>Related Projects:</h3>
 		<%	@projects.each do |project| %>
-			<a href="/projects/<%=project.id%>"><%=project.projectname%></a>
+			<p><a href="/projects/<%=project.id%>"><%=project.projectname%></a></p>
 		<% end %>
 	<%end%>
 </p>
