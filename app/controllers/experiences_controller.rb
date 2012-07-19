@@ -15,6 +15,7 @@ class ExperiencesController < ApplicationController
   # GET /experiences/1.json
   def show
     @experience = Experience.find(params[:id])
+    @projects = @experience.projects.all
 
     respond_to do |format|
       format.html # show.html.erb

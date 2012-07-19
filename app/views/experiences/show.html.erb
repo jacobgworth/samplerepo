@@ -1,25 +1,31 @@
+
+<div style="padding-top:30px;">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Headline:</b>
+
+<h1>
   <%= @experience.headline %>
-</p>
+</h1>
 
 <p>
-  <b>Summary:</b>
   <%= @experience.summary %>
 </p>
-
+<p><br /></p>
 <p>
-  <b>Description:</b>
   <%= @experience.description %>
 </p>
-
+<br />
 <p>
-  <b>User:</b>
-  <%= @experience.user_id %>
+	<% if @projects.count > 0 %>
+		<h3>Related Projects:</h3>
+		<%	@projects.each do |project| %>
+			<a href="/projects/<%=project.id%>"><%=project.projectname%></a>
+		<% end %>
+	<%end%>
 </p>
 
-
+<p><br /></p>
 <%= link_to 'Edit', edit_experience_path(@experience) %> |
 <%= link_to 'Back', experiences_path %>
+
+</div>
