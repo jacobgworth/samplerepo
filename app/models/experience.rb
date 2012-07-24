@@ -2,11 +2,14 @@ class Experience < ActiveRecord::Base
   
   belongs_to :users
   
+  has_many :assets
+  
   has_and_belongs_to_many :projects
   
   has_and_belongs_to_many :communities
   
-  attr_accessible :photo,:headline,:summary,:description,:user_id
+  attr_accessible :photo,:headline,:summary,:description,:user_id,:assets
+  accepts_nested_attributes_for :assets, :allow_destroy => true
   
   #Paperclip method for group avatar
   has_attached_file :photo, 
