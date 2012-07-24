@@ -14,12 +14,7 @@
 <p>
   <%= @experience.description %>
 </p>
-<br />
-<p>
-	<% if @experience.photo.exists? %>
-  		<%= image_tag @experience.photo.url(:large) %>
-  	<%end%>
-</p>
+
 <br />
 <p>
 	<% if @projects.count > 0 %>

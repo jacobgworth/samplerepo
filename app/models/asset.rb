@@ -2,6 +2,7 @@ class Asset < ActiveRecord::Base
 
   belongs_to :experience
   
+  
   #Paperclip method for Experience images
   has_attached_file :asset, 
     :storage => :s3,
