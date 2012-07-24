@@ -9,6 +9,6 @@ class Asset < ActiveRecord::Base
     :s3_credentials => "#{Rails.root}/config/s3_credentials.yml",
     :styles => { :large => "600x600#", :medium => "300x300#", :thumb => "90x90#"}
     
-  validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
+  validates_attachment_content_type :asset, :content_type => ['image/jpeg', 'image/png']
 
 end
