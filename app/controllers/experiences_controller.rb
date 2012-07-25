@@ -16,6 +16,7 @@ class ExperiencesController < ApplicationController
   def show
     @experience = Experience.find(params[:id])
     @projects = @experience.projects.all
+    @assets = @experience.assets.all
 
     respond_to do |format|
       format.html # show.html.erb

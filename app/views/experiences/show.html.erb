@@ -14,7 +14,15 @@
 <p>
   <%= @experience.description %>
 </p>
-
+<br />
+<p>
+	<% if @assets.count > 0 %>
+		<h3>My photos</h3>
+		<% @assets.each do |photo| %>
+			<p><%= image_tag photo.asset.url(:large) %></p>
+		<% end %>
+	<% end %>
+</p>
 <br />
 <p>
 	<% if @projects.count > 0 %>
