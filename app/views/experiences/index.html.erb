@@ -12,6 +12,15 @@
   </tr>
 
 <% @experiences.each do |experience| %>
+	<tr>
+  	<td>
+  		<% if experience.assets(1).exists? %>
+  			<% experience.assets(1).each do |photo| %>
+  				<%= image_tag photo.asset.url(:thumb) %>
+  			<% end %>
+  		<% end %>
+  	</td>
+  </tr>
   <tr>
     <td><%= experience.headline %></td>
     <td><%= experience.summary %></td>
@@ -21,6 +30,7 @@
     <td><%= link_to 'Edit', edit_experience_path(experience) %></td>
     <td><%= link_to 'Destroy', experience, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
+  
   
 <% end %>
 </table>
