@@ -39,7 +39,7 @@ class ExperiencesController < ApplicationController
   # GET /experiences/1/edit
   def edit
     @experience = Experience.find(params[:id])
-    5.times {@experience.assets.build}
+    #5.times {@experience.assets.build}
   end
 
   # POST /experiences
