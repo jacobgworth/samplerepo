@@ -1,37 +1,17 @@
 <h1>Listing experiences</h1>
 
-<table>
-  <tr>
-    <th>Headline</th>
-    <th>Summary</th>
-    <th>Description</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div id="container">
 <% @experiences.each do |experience| %>
-	<tr>
-  	<td>
-  		<% if experience.photo.exists? %>
-  		<%= image_tag experience.photo.url(:thumb) %>
-  	<%end%>
-  	</td>
-  </tr>
-  <tr>
-    <td><%= experience.headline %></td>
-    <td><%= experience.summary %></td>
-    <td><%= experience.description %></td>
-    <td><%= experience.user_id %></td>
-    <td><%= link_to 'Show', experience %></td>
-    <td><%= link_to 'Edit', edit_experience_path(experience) %></td>
-    <td><%= link_to 'Destroy', experience, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-  
-  
+	<div class="floating-thumb">
+		<% if experience.photo.exists? %>
+  			<%= image_tag experience.photo.url(:medium) %>
+  		<%end%>
+  	</div>
+  	
+   
+
 <% end %>
-</table>
+</div>
 
 <br />
 <% if @user != nil %>
