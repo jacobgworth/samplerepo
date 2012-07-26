@@ -1,4 +1,8 @@
 class ExperiencesController < ApplicationController
+
+layout "applicationWithMasonry"
+
+
   # GET /experiences
   # GET /experiences.json
   def index

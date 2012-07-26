@@ -18,7 +18,7 @@ class Experience < ActiveRecord::Base
     :storage => :s3,
     :bucket => "MOH",
     :s3_credentials => "#{Rails.root}/config/s3_credentials.yml",
-    :styles => { :large => "300x300#", :medium => "160x160#", :thumb => "90x90#"}
+    :styles => { :large => "600", :medium => "300", :thumb => "90x90#"}
     
    validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
   

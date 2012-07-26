@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MOH Haiti</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag "gmaps4rails" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= yield :head %>
+<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="/assets/javascript/jquery.masonry.min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+<div id="navBar">
+	<div id="logo"><a href="/"><img src="/assets/logo.png"></a></div>
+	<div id="utilityBar">
+		<ul id="utilityNav">
+			<li><a href="">About Us</a> // </li>
+			<li><a href="">Contact Us</a> // </li>
+			<li class="last"><% if current_user %>
+    <%= link_to "Logout", log_out_path %>
+  <% else %>
+    <%= link_to "Login", log_in_path %>
+  <% end %>
+  </li>
+		</ul>
+		<div class="buttonRounded donate"><a href="">Donate Today</a></div>
+		<div class="myMOH"><a href="">myMOH</a></div>
+	</div>
+	<div id="mainNav">
+		<ul id="nav">
+			<li class="active"><a href="/what-we-do">What<br />We Do</a>
+				<ul>
+					<li><a href="/projects">Projects</a></li>
+					<li><a href="/church-advancement">Church Advancement</a></li>
+					<li><a href="">Orphan Care</a></li>
+					<li><a href="">Education</a></li>
+					<li><a href="">Health Care</a></li>
+					<li><a href="">HaitiOne</a></li>
+					<li><a href="">Nutrition</a></li>
+					<li><a href="">3 Cords</a></li>
+				</ul>
+			</li>
+			<li><a href="/church-advancement">Church<br />Advancement</a>
+				<ul>
+					<li><a href="">Communities Impacted</a></li>
+					<li><a href="">Become a Church Partner</a></li>
+					<li><a href="">Take a Vision Trip</a></li>
+				</ul>
+			</li>
+			<li><a href="/child-sponsorship">Child<br />Sponsorship</a>
+				<ul>
+					<li><a href="">Sponsor a Child</a></li>
+					<li><a href="">Learn About Sponsorship</a></li>
+					<li><a href="">Sponsorship FAQs</a></li>
+					<li><a href="">Gift Store</a></li>
+					<li><a href="">Write Your Child</a></li>
+				</ul>
+			</li>
+			<li><a href="">Mission<br />Trips</a>
+				<ul>
+					<li><a href="">Take a Mission Trip</a></li>
+					<li><a href="">Medical Mission Trips</a></li>
+					<li><a href="">Trip Dates</a></li>
+					<li><a href="">Trip Costs</a></li>
+					<li><a href="">Trip FAQs</a></li>
+					<li><a href="">Preparing for a Trip</a></li>
+					<li><a href="">Mission Trip Experiences</a></li>
+				</ul>
+			</li>
+			<li><a href="/take-action">Take<br />Action</a>
+				<ul>
+					<li><a href="/projects">Projects</a></li>
+					<li><a href="/church-advancement">Church Advancement</a></li>
+					<li><a href="">Orphan Care</a></li>
+					<li><a href="">Education</a></li>
+					<li><a href="">Health Care</a></li>
+					<li><a href="">HaitiOne</a></li>
+					<li><a href="">Nutrition</a></li>
+					<li><a href="">3 Cords</a></li>
+				</ul>
+			</li>
+			<li class="last"><a href="/stay-connected">Stay<br />Connected</a>
+				<ul>
+					<li><a href="">Blog</a></li>
+					<li><a href="">Updates</a></li>
+					<li><a href="">Videos</a></li>
+				</ul>
+			</li>
+
+		</ul>
+			
+		
+	</div>
+	
+	<div id="pull"><a href="">pull me</a></div>
+</div>
+<div class="subNav">
+		<ul id="sub-what-we-do">
+			<li><a href="/projects">Projects</a></li>
+			<li><a href="/church-advancement">Church Advancement</a></li>
+			<li><a href="">Orphan Care</a></li>
+			<li><a href="">Education</a></li>
+			<li><a href="">Health Care</a></li>
+			<li><a href="">HaitiOne</a></li>
+			<li><a href="">Nutrition</a></li>
+			<li><a href="">3 Cords</a></li>
+		</ul>
+		<ul id="sub-church-advancement" style="display:none">
+			<li><a href="">Communities Impacted</a></li>
+			<li><a href="">Become a Church Partner</a></li>
+			<li><a href="">Take a Vision Trip</a></li>
+		</ul>
+		<ul id="sub-child-sponsorship" style="display:none">
+			<li><a href="">Sponsor a Child</a></li>
+			<li><a href="">Learn About Sponsorship</a></li>
+			<li><a href="">Sponsorship FAQs</a></li>
+			<li><a href="">Gift Store</a></li>
+			<li><a href="">Write Your Child</a></li>
+		</ul>
+		<ul id="sub-mission-trips" style="display:none">
+			<li><a href="">Take a Mission Trip</a></li>
+			<li><a href="">Medical Mission Trips</a></li>
+			<li><a href="">Trip Dates</a></li>
+			<li><a href="">Trip Costs</a></li>
+			<li><a href="">Trip FAQs</a></li>
+			<li><a href="">Preparing for a Trip</a></li>
+			<li><a href="">Mission Trip Experiences</a></li>
+		</ul>
+		<ul id="sub-stay-connected" style="display:none">
+			<li><a href="">Blog</a></li>
+			<li><a href="">Updates</a></li>
+			<li><a href="">Videos</a></li>
+		</ul>
+		<ul id="sub-take-action" style="display:none">
+			<li><a href="">Make a Donation</a></li>
+			<li><a href="">Be a Partner of Hope</a></li>
+			<li><a href="">Fundraise for Hope</a></li>
+			<li><a href="">Volunteer</a></li>
+			<li><a href="">Share Your Photos</a></li>
+			<li><a href="">Events</a></li>
+			<li><a href="">Downloads</a></li>
+		</ul>
+		<ul id="sub-about" style="display:none">
+			<li><a href="">Vision & Mission</a></li>
+			<li><a href="">Our Story</a></li>
+			<li><a href="">What We Believe</a></li>
+			<li><a href="">Meet the Staff</a></li>
+			<li><a href="">Our Partners</a></li>
+			<li><a href="">Internships</a></li>
+			<li><a href="">About Haiti</a></li>
+			<li><a href="">Contact Us</a></li>
+			<li><a href="">Financials</a></li>
+			<li><a href="">Press</a></li>
+		</ul>
+		<ul id="sub-my-moh" style="display:none">
+			<li><a href="">My Account</a></li>
+			<li><a href="">Subscriptions</a></li>
+			<li><a href="">My Giving</a></li>
+			<li><a href="">My Communities & Projects</a></li>
+			<li><a href="">My Sponsorships</a></li>
+			<li><a href="">My Mission Trips</a></li>
+			<li><a href="">Share My Experience</a></li>
+		</ul>
+	<div class="clearfix"><!--x---></div>
+	</div>
+<%= yield %>
+
+<div><%= yield :scripts %></div>
+<div id="user_nav" style="position:absolute;top:-100px;">
+  <% if current_user %>
+    Logged in as <%= current_user.email %>
+    <%= link_to "Log out", log_out_path %>
+  <% else %>
+    <%= link_to "Log in", log_in_path %>
+  <% end %>
+</div>
+<div><% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash#{name}" %>
+  <% end %></div>
+
+<div id="superFooter">
+	<div class="superFooterCol">
+		<img src="/assets/logoFooter.png" />
+		
+	</div>
+	<div class="superFooterCol">
+		<div class="social">
+		<h5>We're Also On:</h5>
+		<ul>
+			<li class="facebook"><a href="">Facebook</a></li>
+			<li class="twitter"><a href="">Twitter</a></li>
+			<li class="vimeo"><a href="">Vimeo</a></li>
+		</ul>
+		</div>
+		<p class="clearfix"><a href="">Other ways to contact us &raquo;</a></p>
+		<a href=""><img src="/assets/button-newsletter.png" alt="Subscribe to our newsletter" /></a>
+	</div>
+	<div class="superFooterCol">
+		<h5>Learn More About Us</h5>
+		<ul>
+			<li><a href="">Vision, Mission & Resolutions &raquo;</a></li>
+			<li><a href="">FAQs &raquo;</a></li>
+			<li><a href="">Privacy Policy &raquo;</a></li>
+			<li><a href="">Media Inquiries &raquo;</a></li>
+		</ul>
+	</div>
+	<div class="superFooterColLast">
+		<h5>Get Involved</h5>
+		<ul>
+			<li><a href="">Donate &raquo;</a></li>
+			<li><a href="">Child Sponsorship &raquo;</a></li>
+			<li><a href="">Mission Trips &raquo;</a></li>
+			<li><a href="">Churches &raquo;</a></li>
+		</ul>
+	</div>
+	<p>&copy;<%= Date.today.year %> Mission of Hope Haiti // <a href="http://threetwelvecreative.com">Website design & development by ThreeTwelve Creative</a></p>
+</div>
+</div>
+<div id="footer">
+	<div id="footerImg"><!--x--></div>
+</div>
+</body>
+</html>
