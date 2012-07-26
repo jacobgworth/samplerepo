@@ -1,20 +1,32 @@
 <h1>Listing experiences</h1>
 
-<div id="container">
+<div style="width:100%;">
+<div id="container" class="transitions-enabled clearfix" style="clear:both;">
 <% @experiences.each do |experience| %>
-	<div class="floating-thumb">
-		<% if experience.photo.exists? %>
-  			<%= image_tag experience.photo.url(:medium) %>
-  		<%end%>
-  	</div>
-  	
-   
-
+	<% if experience.photo.exists? %>
+		<div class="item">
+  			<%= image_tag experience.photo.url(:medium),:title=>experience.summary,:alt=>experience.summary  %>
+  			<%= experience.summary %>
+  			<%= link_to 'Edit', edit_experience_path(experience)%>
+  		</div>
+  	<%end%>
 <% end %>
 </div>
-
+</div>
 <br />
 <% if @user != nil %>
 	<p>Welcome, <%=@user.first%></p>
 <% end %>
 <%= link_to 'New Experience', new_experience_path %>
+<script>
+	var $container = $('#container');
+	$container.imagesLoaded(function(){
+  		$container.masonry({
+  			//containerStyle: { position: 'absolute' },
+  			isResizable : true,
+  			isAnimated : true,
+    		itemSelector : '.item',
+    		columnWidth : 1
+  		});
+	});
+</script>

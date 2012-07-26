@@ -24,6 +24,13 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+/*For floating thumbnail Masonry page */
+.item {
+  width: 300px;
+  margin: 10px;
+  float: left;
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
