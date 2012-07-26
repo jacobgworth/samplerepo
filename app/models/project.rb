@@ -1,13 +1,15 @@
 class Project < ActiveRecord::Base
   acts_as_gmappable :process_geocoding => false
   
+  has_many :assets
+  
   has_and_belongs_to_many :partners
   
   has_and_belongs_to_many :communities
   
   has_and_belongs_to_many :experiences
   
-  attr_accessible :photo,:projectname,:latitude,:longitude,:completion,:description
+  attr_accessible :photo,:projectname,:latitude,:longitude,:completion,:description,:assets_attributes
   
   #Paperclip method for group avatar
   has_attached_file :photo, 
