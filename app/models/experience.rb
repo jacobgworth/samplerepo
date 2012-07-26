@@ -14,6 +14,13 @@ class Experience < ActiveRecord::Base
   has_and_belongs_to_many :communities
   
   
+  has_attached_file :photo, 
+    :storage => :s3,
+    :bucket => "MOH",
+    :s3_credentials => "#{Rails.root}/config/s3_credentials.yml",
+    :styles => { :large => "300x300#", :medium => "160x160#", :thumb => "90x90#"}
+    
+   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
   
   
 end

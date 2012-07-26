@@ -14,11 +14,9 @@
 <% @experiences.each do |experience| %>
 	<tr>
   	<td>
-  		<% if experience.assets(1).exists? %>
-  			<% experience.assets(1).each do |photo| %>
-  				<%= image_tag photo.asset.url(:thumb) %>
-  			<% end %>
-  		<% end %>
+  		<% if experience.photo.exists? %>
+  		<%= image_tag experience.photo.url(:thumb) %>
+  	<%end%>
   	</td>
   </tr>
   <tr>
