@@ -4,7 +4,7 @@ class Experience < ActiveRecord::Base
   
   has_many :assets
   
-  attr_accessible :headline,:summary,:description,:user_id,:assets_attributes
+  attr_accessible :photo,:headline,:summary,:description,:user_id,:assets_attributes
   
   accepts_nested_attributes_for :assets, :allow_destroy => true
   
