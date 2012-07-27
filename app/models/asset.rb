@@ -1,6 +1,6 @@
 class Asset < ActiveRecord::Base
 
-  belongs_to :experience
+  belongs_to :project
   
   
   #Paperclip method for Experience images
