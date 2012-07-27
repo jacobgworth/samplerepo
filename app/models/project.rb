@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  
   acts_as_gmappable :process_geocoding => false
   
   has_many :assets
@@ -11,14 +12,9 @@ class Project < ActiveRecord::Base
   
   attr_accessible :photo,:projectname,:latitude,:longitude,:completion,:description,:assets_attributes
   
-  #Paperclip method for group avatar
-  has_attached_file :photo, 
-    :storage => :s3,
-    :bucket => "MOH",
-    :s3_credentials => "#{Rails.root}/config/s3_credentials.yml",
-    :styles => { :large => "300x300#", :medium => "160x160#", :thumb => "90x90#"}
-    
-   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
+  accepts_nested_attributes_for :assets, :allow_destroy => true
+  
+  
   
   def gmaps4rails_address
     "#{self.latitude}, #{self.longitude}"
