@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
   
   has_and_belongs_to_many :experiences
   
-  attr_accessible :photo,:projectname,:latitude,:longitude,:completion,:description,:assets_attributes
+  attr_accessible :projectname,:latitude,:longitude,:completion,:description,:assets_attributes,:stage
   
   accepts_nested_attributes_for :assets, :allow_destroy => true
   

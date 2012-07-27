@@ -31,7 +31,9 @@
     <%= f.label :description %><br />
     <%= f.text_field :description %>
   </div>
-  
+  <div>
+  	<%= select( "project", "stage", { "Planning" => "Planning", "Construction" => "Construction", "Complete" => "Complete"}) %>
+  </div>
   <div>
   <%= f.fields_for :assets do |asset_fields| %>
   	<% if asset_fields.object.new_record? %>
