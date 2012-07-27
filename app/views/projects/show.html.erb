@@ -25,11 +25,12 @@
   <%= @project.description %>
 </p>
 
-<p>
-	<% if @project.photo.exists? %>
-  		<%= image_tag @project.photo.url(:large) %>
-  	<%end%>
-</p>
+<% if @assets.count > 0 %>
+		<h3>My photos</h3>
+		<% @assets.each do |photo| %>
+			<p><%= image_tag photo.asset.url(:medium) %></p>
+		<% end %>
+	<% end %>
 
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
