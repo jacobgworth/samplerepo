@@ -15,10 +15,10 @@
                      thumb_opacity: 0.7,
                      animate_first_image: false,
                      animation_speed: 400,
-                     width: 120,
+                     width: 300,
                      height: false,
                      display_next_and_prev: true,
-                     display_back_and_forward: false,
+                     display_back_and_forward: true,
                      scroll_jump: 0, // If 0, it jumps the width of the container
                      slideshow: {
                        enable: false,
@@ -32,7 +32,7 @@
                        onStart: false,
                        onStop: false
                      },
-                     effect: 'slide-hori', // or 'slide-vert', 'fade', or 'resize', 'none'
+                     effect: 'fade', // 'slide-hori', 'slide-vert', 'fade', or 'resize', 'none'
                      enable_keyboard_move: false,
                      cycle: true,
                      callbacks: {
@@ -545,7 +545,7 @@
       if(this.images[index]) {
         var context = this;
         var image = this.images[index];
-        document.getElementById("item__item_image_name").value = image.image;
+        //document.getElementById("item__item_image_name").value = image.image;
         var img_container = $(document.createElement('div')).addClass('ad-image');
         var img = $(new Image()).attr('src', image.image);
         if(image.link) {

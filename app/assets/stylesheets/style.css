@@ -1059,7 +1059,7 @@ p.meta {
 /*Image slider classes*/
 #divImgThumbs {
 	width:120px;
-	float:left;
+	/*float:left;*/
 	margin-right:5px;
 	margin-top:10px
 }
@@ -1072,8 +1072,8 @@ margin: 0;
 padding: 0;
 }
 .ad-gallery .ad-image-wrapper {
-width:120px;
-height: 100px;
+width:300px;
+height: 400px;
 margin-bottom: 5px;
 position: relative;
 overflow: hidden;

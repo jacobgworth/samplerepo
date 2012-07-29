@@ -26,14 +26,44 @@
   <b>Description:</b>
   <%= @project.description %>
 </p>
-
+<div id="divImgThumbs">
+	<div id="gallery" class="ad-gallery">
+		<div class="ad-image-wrapper">
+			<div class="ad-image"></div>
+		</div>
+		<div class="ad-controls"></div>
+		<div class="ad-nav">
+			<div class="ad-back"></div>
+			<div class="ad-thumbs">
+						&nbsp;
+						<ul class="ad-thumb-list">
+							<% if @assets.count > 0 
+								@counter = 0
+								@assets.each do |photo| 
+									@classname = "image" + @counter.to_s
+							%>
+									<!--<p><%= image_tag photo.asset.url(:medium) %></p>-->
+									<li >
+										<a href="<%= photo.asset.url(:medium)%>"><img src="<%= photo.asset.url(:thumb) %>" alt="" title="" longdesc="" class="<%= @classname%>" /></a>
+									</li>
+									<% @counter = @counter + 1%>
+								<% end %>
+							<% end %>
+						</ul>
+			</div>
+			<div class="ad-forward"></div>
+		</div>
+	</div>
+</div>
+<div class="clear">&nbsp;</div>
 <% if @assets.count > 0 %>
-		<h3>My photos</h3>
+	<!--	<h3>My photos</h3> -->
 		<% @assets.each do |photo| %>
-			<p><%= image_tag photo.asset.url(:medium) %></p>
+			<!-- <p><%= image_tag photo.asset.url(:medium) %></p> -->
 		<% end %>
 	<% end %>
-
+<br />
+<div>
 <% if @user.nil? %>
 	<%= link_to 'Back', projects_path %>
 <% elsif @user.is_admin == 1%>
@@ -42,3 +72,4 @@
 <% else %>
 	<%= link_to 'Back', projects_path %>
 <%end%>
+</div>
