@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
     @user = current_user
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {render :layout=>"applicationWithAdGallery"}# show.html.erb
       format.json { render json: @project }
     end
   end
