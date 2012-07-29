@@ -1,4 +1,5 @@
-<h1>Listing experiences</h1>
+<br />
+<h1>Experience Mission of Hope</h1>
 
 <div style="width:100%;">
 <div id="container" class="transitions-enabled clearfix" style="clear:both;">
@@ -17,7 +18,7 @@
 <% if @user != nil %>
 	<p>Welcome, <%=@user.first%></p>
 <% end %>
-<%= link_to 'New Experience', new_experience_path %>
+<%= link_to 'Share your Experience', new_experience_path,{:style=>"font-size:24px;"} %>
 <script>
 	var $container = $('#container');
 	$container.imagesLoaded(function(){

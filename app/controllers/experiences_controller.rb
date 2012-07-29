@@ -44,6 +44,7 @@ layout "applicationWithMasonry"
   # GET /experiences/1/edit
   def edit
     @experience = Experience.find(params[:id])
+    @user = current_user
     #@experience.assets.build
   end
 

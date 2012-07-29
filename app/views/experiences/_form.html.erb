@@ -23,15 +23,11 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
   <div>
   	<%= f.label :photo %><br />
   	<%= f.file_field :photo %>
   </div>
-  
+  <%= hidden_field_tag 'experience[user_id]', @user.id %>
   <div class="actions">
     <%= f.submit %>
   </div>
