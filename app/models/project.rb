@@ -10,10 +10,11 @@ class Project < ActiveRecord::Base
   
   has_and_belongs_to_many :experiences
   
-  attr_accessible :projectname,:latitude,:longitude,:completion,:description,:assets_attributes,:stage
+  attr_accessible :projectname,:latitude,:longitude,:completion,:description,:assets_attributes,:stage,:fundsneeded,:fundsraised,:goal
   
   accepts_nested_attributes_for :assets, :allow_destroy => true
   
+  validates_length_of :goal, :minimum => 1, :maximum => 100, :allow_blank => true
   
   
   def gmaps4rails_address

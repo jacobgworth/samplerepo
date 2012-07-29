@@ -16,6 +16,19 @@
     <%= f.text_field :projectname %>
   </div>
   <div class="field">
+  	Goal: <%= f.text_field :goal %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+  	Funds Needed: <%= f.text_field :fundsneeded%>
+  </div>
+   <div class="field">
+  	Funds Raised: <%= f.text_field :fundsraised%>
+  </div>
+  <div class="field">
     <%= f.label :latitude %><br />
     <%= f.text_field :latitude %>
   </div>
@@ -27,10 +40,7 @@
     <%= f.label :completion %><br />
     <%= f.date_select :completion %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
+  
   <div>
   	<%= select( "project", "stage", { "Planning" => "Planning", "Construction" => "Construction", "Complete" => "Complete"}) %>
   </div>

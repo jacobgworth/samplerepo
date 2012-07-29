@@ -5,20 +5,19 @@
   <%= @project.projectname %>
 </p>
 <p>
+	Goal: <%= @project.goal%>
+</p>
+<p>
 	Stage: <%=@project.stage%>
 </p>
 <p>
-  <b>Latitude:</b>
-  <%= @project.latitude %>
+	Funds Needed: <%= number_to_currency(@project.fundsneeded, :unit => "$") %>
 </p>
-
 <p>
-  <b>Longitude:</b>
-  <%= @project.longitude %>
+	Funds Raised: <%= number_to_currency(@project.fundsraised, :unit => "$") %><%= ", " + number_to_percentage((@project.fundsraised/@project.fundsneeded)*100,:precision=>2) if !@project.fundsneeded.nil? && @project.fundsneeded > 0 %>
 </p>
-
 <p>
-  <b>Completion:</b>
+  <b>Estimated Completion Date:</b>
   <%= @project.completion %>
 </p>
 

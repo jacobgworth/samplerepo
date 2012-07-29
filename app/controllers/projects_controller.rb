@@ -64,6 +64,9 @@ class ProjectsController < ApplicationController
   # PUT /projects/1.json
   def update
     @project = Project.find(params[:id])
+    params[:project][:fundsneeded] = params[:project][:fundsneeded].gsub(/[^\d\.]/, '')
+    params[:project][:fundsraised] = params[:project][:fundsraised].gsub(/[^\d\.]/, '')
+
 
     respond_to do |format|
       if @project.update_attributes(params[:project])
