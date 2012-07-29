@@ -11,15 +11,23 @@
     <p>Completion Date: <%= project.completion %></p>
     <p>Description: <%= project.description %></p>
 	<br />
-    <%= link_to 'Show', project %>
-	<%= link_to 'Edit', edit_project_path(project) %>
-    <%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %>
+	<% if @user.nil? %>
+    	<%= link_to 'Show', project %>
+    <% elsif @user.is_admin == 1 %>
+    	<%= link_to 'Show', project %>
+		<%= link_to 'Edit', edit_project_path(project) %>
+    	<%= link_to 'Delete', project, confirm: 'Are you sure?', method: :delete %>
+    <% else%>
+    	<%= link_to 'Show', project %>
+    <% end %>
   </div>
 <% end %>
 </div>
 
 <br />
-<div style="clear:both; padding:10px 0px 10px 0px;"><%= link_to 'Click Me to Create a New Project', new_project_path %></div>
+<% if !@user.nil? && @user.is_admin == 1 %>
+	<div style="clear:both; padding:10px 0px 10px 0px;"><%= link_to 'Click Me to Create a New Project', new_project_path %></div>
+<% end %>
 
 
 </div>

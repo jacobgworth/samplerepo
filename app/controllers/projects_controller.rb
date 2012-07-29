@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     @jason = Project.all.to_gmaps4rails
+    @user = current_user
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,6 +18,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @assets = @project.assets.all
+    @user = current_user
 
     respond_to do |format|
       format.html # show.html.erb
