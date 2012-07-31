@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
   
   has_and_belongs_to_many :experiences
   
-  has_many :categories, :as => :categorizable
+  has_and_belongs_to_many :categories
   
   attr_accessible :projectname,:latitude,:longitude,:completion,:description,:assets_attributes,:stage,:fundsneeded,:fundsraised,:goal
   

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120731105501) do
+ActiveRecord::Schema.define(:version => 20120731170409) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -30,6 +30,21 @@ ActiveRecord::Schema.define(:version => 20120731105501) do
     t.string   "categorizable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "categories_posts", :id => false, :force => true do |t|
+    t.integer "category_id"
+    t.integer "post_id"
+  end
+
+  create_table "categories_projects", :id => false, :force => true do |t|
+    t.integer "category_id"
+    t.integer "project_id"
+  end
+
+  create_table "categories_updates", :id => false, :force => true do |t|
+    t.integer "category_id"
+    t.integer "update_id"
   end
 
   create_table "communities", :force => true do |t|
