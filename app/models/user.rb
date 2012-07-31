@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   
   has_many :updates
   has_many :experiences
+  has_many :posts
   
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create

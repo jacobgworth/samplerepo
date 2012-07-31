@@ -1,5 +1,7 @@
 Mohhaiti::Application.routes.draw do
 
+  resources :posts
+
   resources :experiences
 
   resources :partners
