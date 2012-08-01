@@ -2,8 +2,6 @@ Mohhaiti::Application.routes.draw do
 
   resources :categories
 
-  resources :categoys
-
   get "category/index"
 
   get "category/show"
