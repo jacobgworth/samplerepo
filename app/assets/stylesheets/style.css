@@ -124,6 +124,42 @@ strong {
 	-o-background-size: cover;
 	background-size: cover;
 }
+#heroContentSpon{
+	color:white;
+	width:960px;
+	margin:0 auto;
+	position:relative;
+}
+#heroContentSpon h1{
+	position:absolute;
+	top:-490px;
+	left:10px;
+	color:#faf6f1;
+	padding-top:30px;
+	padding-left:10px;
+	padding-right:20px;
+	padding-bottom:10px;
+	text-shadow: 0 .1em .2em #666;
+	text-transform:uppercase;
+	font-family: 'Montserrat', sans-serif;	
+}
+#secondTextHero h1{
+	position:absolute;
+	top:-240px;
+	left:10px;
+	color:#faf6f1;
+	padding-top:30px;
+	padding-left:10px;
+	padding-right:20px;
+	padding-bottom:10px;
+	text-shadow: 0 .1em .2em #666;
+	text-transform:uppercase;
+	font-family: 'Montserrat', sans-serif;	
+}
+#twoButtonPush{
+	padding-left:200px;
+	padding-right:10px;
+}
 #orphanHero{
 	width:100%;
 	height:100%;
@@ -317,6 +353,18 @@ strong {
 	font-size:1.35em;
 	letter-spacing:4px;
 	width:395px;
+}
+.largeText500{
+	font-size:100px;	
+}
+#sponsorPageIcons{
+	position:absolute;
+	top:-330px;
+	left:200px;
+}
+#sponsorPageIcons li{
+	display: inline;
+	padding-left:13px;
 }
 #heroRibbon {
 	position:absolute;
