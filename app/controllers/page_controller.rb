@@ -3,5 +3,8 @@ class PageController < ApplicationController
   end
   
   def haiti_one
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
   end
 end

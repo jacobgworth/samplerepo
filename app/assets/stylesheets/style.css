@@ -106,13 +106,36 @@ strong {
 	-o-background-size: cover;
 	background-size: cover;
 }
-
+#haitiOneHeroImg{
+	width:100%;
+	height:100%;
+	background: url(/assets/haiti-one-hero.png) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
 #heroContent {
 	width:960px;
 	margin:0 auto;
 	position:relative;
 }
-
+#heroContentHaitiOne{
+	color:white
+	width:960px;
+	margin:0 auto;
+	position:relative;
+}
+#heroContentHaitiOne h1 {
+	background-image: url(/assets/greenBG.png);
+	position:absolute;
+	top:-430px;
+	left:240px;
+	color:white;
+	text-shadow: 0 .1em .2em #666;
+	text-transform:uppercase;
+	font-family: 'Montserrat', sans-serif;
+}
 #heroContent h1 {
 	position:absolute;
 	top:-430px;
@@ -140,7 +163,10 @@ strong {
 	font-size:4.35em;
 	letter-spacing:-.02em;
 }
-
+.largeText4{
+	font-size:2.35em;
+	letter-spacing:-.02em;
+}
 #heroRibbon {
 	position:absolute;
 	background:url(/assets/heroRibbon.png) no-repeat;
@@ -506,7 +532,34 @@ h3.CTA {
 .missionTrips {
 	background:url(/assets/icon-mission-trips.png) top center no-repeat;
 }
-
+#contentHaitiOne{
+	margin-top:520px;
+	width:560px;
+	float:left;
+}
+#contentHaitiOne h1{
+	font-size:36px;
+	padding:0 0 10px 0;
+	color:#19302F;
+	text-transform:uppercase;
+}
+#contentHaitiOne p{
+	padding-bottom:15px;
+	line-height: 26px;
+	font-size: 16px;
+}
+#contentHaitiOne ol{
+	list-style:decimal;
+	padding-left:22px;
+	line-height: 26px;
+}
+#rightCol{
+	margin-top:520px;
+	float:right;
+	width:260px;
+	background-color:#079367;
+	padding: 4px;
+}
 #content {
 	width:960px;
 	margin:20px auto;
@@ -550,6 +603,18 @@ h3.CTA {
 	font-size:1.75em;
 	text-transform:uppercase;
 }
+#gridWrapperProjects {
+	margin-top:10px;
+	margin-bottom:10px;
+	padding:20px 0 0 0;
+}
+
+#gridWrapperProjects h2 {
+	font-size:1.75em;
+	margin-bottom: 10px;
+	text-transform:uppercase;
+}
+
 
 .divHeader {
 	background-color:#056346;
