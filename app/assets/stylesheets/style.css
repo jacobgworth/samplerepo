@@ -115,6 +115,15 @@ strong {
 	-o-background-size: cover;
 	background-size: cover;
 }
+#sponHero{
+	width:100%;
+	height:100%;
+	background: url(/assets/childSponserHero.png) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
 #orphanHero{
 	width:100%;
 	height:100%;
@@ -217,7 +226,7 @@ strong {
 }
 #videoWrapper{
 	top:-430px;
-	left:617px;
+	left:398px;
 	position:absolute;
 	background-image: url(/assets/videoBG.png);
 	width: 599px;
@@ -227,7 +236,7 @@ strong {
 #heroContentAdvancement h1 {
 	position:absolute;
 	top:-430px;
-	left:210px;
+	left:-30px;
 	color:#e4d4b9;
 	text-shadow: 0 .1em .2em #666;
 	text-transform:uppercase;
@@ -252,7 +261,7 @@ strong {
 	background-image: url(/assets/greenBG.png);
 	position:absolute;
 	top:-430px;
-	left:240px;
+	left:20px;
 	color:white;
 	padding-top:30px;
 	padding-left:10px;
@@ -302,6 +311,11 @@ strong {
 	font-size:1.35em;
 	letter-spacing:4px;
 	background-image:url(/assets/greenBG.png);
+	width:395px;
+}
+.largeText6{
+	font-size:1.35em;
+	letter-spacing:4px;
 	width:395px;
 }
 #heroRibbon {

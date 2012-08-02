@@ -10,7 +10,7 @@ class PageController < ApplicationController
   
   def orphan_care
     respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+      format.html {render :layout=>"homeLayout"}# orphan_care.html.erb
     end
   end
 end
