@@ -237,6 +237,7 @@ strong {
 	margin-top:520px;
 	width:600px;
 	float:left;
+	background: url(/assets/contentDiv.png) bottom center no-repeat;
 }
 #contentOrphan h3{
 	font-size:24px;
@@ -365,6 +366,20 @@ strong {
 #sponsorPageIcons li{
 	display: inline;
 	padding-left:13px;
+}
+#sponIconsList ul{
+	width: 450px;
+}
+#sponIconsList li{
+	width:120px;
+	display:inline;
+	border: 1px solid black;
+}
+#sponIconsList p{
+
+}
+#clear{
+	clear:both;
 }
 #heroRibbon {
 	position:absolute;
@@ -898,6 +913,8 @@ h3.CTA {
 }
 #contentAdvance{
 	margin-top:550px;
+	padding-bottom: 20px;
+	background:url(/assets/contentDiv.png) bottom center no-repeat;
 }
 #contentAdvance h1{
 	font-size:24px;
@@ -1092,7 +1109,7 @@ h3.CTA {
 	display:block;
 }
 .haitiOneMed a:hover  {
-	background:url(/assets/icon-haitione-med-hover.png) no-repeat;
+	background:url(/assets/icon-haitione-med-hvoer.png) no-repeat;
 	text-indent:-9999px;
 	width:125px;
 	height:125px;
