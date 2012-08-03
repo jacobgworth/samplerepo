@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     @jason = Project.all.to_gmaps4rails
+    @categories = Category.all
     @user = current_user
 
     respond_to do |format|
