@@ -45,6 +45,9 @@ Mohhaiti::Application.routes.draw do
   get "page/orphan_care"
   match "/orphan_care" => "page#orphan_care"
   
+  get "page/education"
+  match "/education" => "page#education"
+  
   get "advancement/index"
   match "/church-advancement" => "Advancement#index"
   
