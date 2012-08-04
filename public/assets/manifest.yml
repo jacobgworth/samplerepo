@@ -8,8 +8,11 @@ childSponserHero.png: childSponserHero-0089d05696289b22046f0602b1ed212d.png
 contentDiv.png: contentDiv-b35204c245c777300df2c2b658a97b02.png
 dateFlag.png: dateFlag-4ea4cfa615d88c4930ba8438bd1dd8f4.png
 donateButton.png: donateButton-7071d501f74669deacec32086e339f8b.png
+donateSchoolOfHope.png: donateSchoolOfHope-114195ebd8785dbb323d92c7d659f78f.png
 donateToday.png: donateToday-49f7b7dc77695b78dd83dbe6fb53301d.png
+educationHero.png: educationHero-777148d6702b37e27f483faf44289de8.png
 educationIcon.png: educationIcon-3ada1fea8c49646ae751096f2f530ad5.png
+educationNoRibbion.png: educationNoRibbion-55adbc5164bbae00231c13173f246184.png
 footer.jpg: footer-6bab1814244b7b351aa2dbd9ca48fa61.jpg
 greenBG.png: greenBG-1a107c68d79165d24c9ae0cdf1de42bb.png
 haiti-one-hero.png: haiti-one-hero-33c571c044bf448f775639bf0eaf2ce1.png
@@ -18,6 +21,7 @@ heroGirl.jpg: heroGirl-82689026eac2eeb88d0281bf5032abf5.jpg
 heroRibbon.png: heroRibbon-cb05ed7c69af6b8faaa91f1f9c80a888.png
 heroRibbonDiv.png: heroRibbonDiv-4783008ce6b8489d395bef310061ead9.png
 hopeIcon.png: hopeIcon-a9050c5ff93e5782ba12dae999a19e3a.png
+hopeNoRibbon.png: hopeNoRibbon-56b4bb41b8fead80eefcace2cfbf3ea7.png
 icon-3Cords-med-hover.png: icon-3Cords-med-hover-a91b3b59789baed67ac3b544cff62746.png
 icon-3Cords-med.png: icon-3Cords-med-43afbc778018de59b91cf5a81985c780.png
 icon-church-advancement-med-hover.png: icon-church-advancement-med-hover-c3dc500a4f4bc0d68381011e5c49a08d.png
@@ -46,6 +50,7 @@ logoFooter.png: logoFooter-d1a530510f5913615490efce65fb87d7.png
 navArrow.png: navArrow-c3a9c54667dfd97dd00adcb978a8579a.png
 navBar.png: navBar-ddca9c3e35c607a99093bc3bced67056.png
 nutritionIcon.png: nutritionIcon-c6c5235d696a855651ee85e685eb6d86.png
+nutritionNoRibbion.png: nutritionNoRibbion-f0d84c0425897b5bf690dc3e1386ab26.png
 orphanHero.png: orphanHero-cad165e0c44da9f119503cff3f1993ad.png
 partnerButton.png: partnerButton-452658f24368c0de89ae894db7b9d4de.png
 presponsorButton.png: presponsorButton-23575ed87d132eb3f7a572ccd0780ed2.png
@@ -54,6 +59,7 @@ promoTemp.png: promoTemp-5ccd2f1f034f6ce600b6415e9018803b.png
 pullTag.png: pullTag-70bc71f05f0f3801debdee23959d13a3.png
 rails.png: rails-d6b1b5287cfe6296a9d2b1ff9fd33406.png
 speechBubble.png: speechBubble-28be1a8db63349dcd73b363680c93390.png
+sponderAStudent.png: sponderAStudent-d41df867be4ab14bf02eef2662165cd0.png
 updatesNav.png: updatesNav-83f1427bf93b3ae3a33a6a9c3702b37c.png
 videoBG.png: videoBG-b91509a6a8baf3165310c29cb9edc316.png
 gmaps4rails/gmaps4rails.base.js: gmaps4rails/gmaps4rails.base-e201c889f937fe6f6b63e75ec867d37a.js
@@ -64,7 +70,7 @@ gmaps4rails/gmaps4rails.openlayers.js: gmaps4rails/gmaps4rails.openlayers-bbf2bb
 jquery-ui.min.js: jquery-ui.min-bcb2f78c9ed3fa2aba736ba6e6b462e1.js
 jquery.min.js: jquery.min-223bff6ea42ed0d5e2b560fdceee811b.js
 application.js: application-3607cae36d16915e43fd10e494e6fb5c.js
-application.css: application-ac42d07f713e091eb194b778ef00cb57.css
+application.css: application-be2126001d84961fc6f4a2e11f24aeec.css
 advancement.js: advancement-c2b0db25c3a77754b130af70a4041844.js
 categories.js: categories-c2b0db25c3a77754b130af70a4041844.js
 category.js: category-c2b0db25c3a77754b130af70a4041844.js
@@ -102,7 +108,7 @@ projects.css: projects-7c92aed0d9ced75baa9ca7d4c44adb74.css
 scaffolds.css: scaffolds-81a91cc3343e840400a2533dbc39212f.css
 sessions.css: sessions-7c92aed0d9ced75baa9ca7d4c44adb74.css
 sponsorship.css: sponsorship-7c92aed0d9ced75baa9ca7d4c44adb74.css
-style.css: style-712af1226be6ab3ecfe1d089679b4dc3.css
+style.css: style-edd62ac807166b85ed6c4d1430a1b3e6.css
 tags.css: tags-7c92aed0d9ced75baa9ca7d4c44adb74.css
 take_action.css: take_action-7c92aed0d9ced75baa9ca7d4c44adb74.css
 updates.css: updates-7c92aed0d9ced75baa9ca7d4c44adb74.css
