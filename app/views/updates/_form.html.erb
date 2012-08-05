@@ -19,6 +19,12 @@
     <%= f.label :body %><br />
     <%= f.text_field :body %>
   </div>
+  <div>
+  	Select Category: <%= collection_select 'update', 'category_ids', Category.order("categoryname asc"), :id, :categoryname, { :include_blank => 'None'}, { :multiple => true, :categoryname =>'update[category_ids][]',:selected => 0 } %>
+  </div>
+  <div>
+  	Select Related Projects: <%= collection_select 'update', 'project_ids', Project.order("projectname asc"), :id, :projectname, { :include_blank => 'None'}, { :multiple => true, :projectname =>'update[project_ids][]',:selected => 0 } %>
+  </div>
   <div class="field">
     <%= f.label :media %><br />
     <%= f.text_field :media %>
