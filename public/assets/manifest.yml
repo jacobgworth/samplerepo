@@ -1,5 +1,6 @@
 ---
 advanceInfographic.png: advanceInfographic-84828190ed60fd569cfc2c58b702ddd2.png
+advancementHero.jpg: advancementHero-93edaf80634817c6c3258ea5be152d2a.jpg
 advancementHero.png: advancementHero-e74c6782b3239893e5d1c2af8b9843ec.png
 arrowRight.png: arrowRight-f9a2897684ea9ad5d2dd0e0d08d3a235.png
 bodyBG.jpg: bodyBG-99acf91e62a295481c71ded8ff1d1d74.jpg
@@ -17,9 +18,12 @@ footer.jpg: footer-6bab1814244b7b351aa2dbd9ca48fa61.jpg
 greenBG.png: greenBG-1a107c68d79165d24c9ae0cdf1de42bb.png
 haiti-one-hero.png: haiti-one-hero-33c571c044bf448f775639bf0eaf2ce1.png
 haitiBG.png: haitiBG-34e4e0ac68a63c52eea4d6840dea5eb8.png
+heroAdvancement.jpg: heroAdvancement-706c8cced8896d40668d90d867e5d87f.jpg
 heroGirl.jpg: heroGirl-82689026eac2eeb88d0281bf5032abf5.jpg
 heroRibbon.png: heroRibbon-cb05ed7c69af6b8faaa91f1f9c80a888.png
 heroRibbonDiv.png: heroRibbonDiv-4783008ce6b8489d395bef310061ead9.png
+heroTemplate.psd: heroTemplate-f1e8b939ab4c6f5617c8524952935981.psd
+heroWhatWeDo.jpg: heroWhatWeDo-23be296546bc95b69f4add4ed52e5d54.jpg
 hopeIcon.png: hopeIcon-a9050c5ff93e5782ba12dae999a19e3a.png
 hopeNoRibbon.png: hopeNoRibbon-56b4bb41b8fead80eefcace2cfbf3ea7.png
 icon-3Cords-med-hover.png: icon-3Cords-med-hover-a91b3b59789baed67ac3b544cff62746.png
@@ -70,7 +74,7 @@ gmaps4rails/gmaps4rails.openlayers.js: gmaps4rails/gmaps4rails.openlayers-bbf2bb
 jquery-ui.min.js: jquery-ui.min-bcb2f78c9ed3fa2aba736ba6e6b462e1.js
 jquery.min.js: jquery.min-223bff6ea42ed0d5e2b560fdceee811b.js
 application.js: application-3607cae36d16915e43fd10e494e6fb5c.js
-application.css: application-be2126001d84961fc6f4a2e11f24aeec.css
+application.css: application-126bf28ece6f66d5aafde743206bb788.css
 advancement.js: advancement-c2b0db25c3a77754b130af70a4041844.js
 categories.js: categories-c2b0db25c3a77754b130af70a4041844.js
 category.js: category-c2b0db25c3a77754b130af70a4041844.js
@@ -99,16 +103,16 @@ communities.css: communities-7c92aed0d9ced75baa9ca7d4c44adb74.css
 connected.css: connected-7c92aed0d9ced75baa9ca7d4c44adb74.css
 contents.css: contents-7c92aed0d9ced75baa9ca7d4c44adb74.css
 experiences.css: experiences-7c92aed0d9ced75baa9ca7d4c44adb74.css
-gmaps4rails.css: gmaps4rails-9f38417d1f54c1946b0b9d36f8c2803d.css
+gmaps4rails.css: gmaps4rails-3bcd24c66df1ffee3921f743726325f9.css
 home.css: home-7c92aed0d9ced75baa9ca7d4c44adb74.css
 page.css: page-7c92aed0d9ced75baa9ca7d4c44adb74.css
 partners.css: partners-7c92aed0d9ced75baa9ca7d4c44adb74.css
 posts.css: posts-7c92aed0d9ced75baa9ca7d4c44adb74.css
 projects.css: projects-7c92aed0d9ced75baa9ca7d4c44adb74.css
-scaffolds.css: scaffolds-81a91cc3343e840400a2533dbc39212f.css
+scaffolds.css: scaffolds-7c92aed0d9ced75baa9ca7d4c44adb74.css
 sessions.css: sessions-7c92aed0d9ced75baa9ca7d4c44adb74.css
 sponsorship.css: sponsorship-7c92aed0d9ced75baa9ca7d4c44adb74.css
-style.css: style-edd62ac807166b85ed6c4d1430a1b3e6.css
+style.css: style-357d66803b993a4f90ae040dc8de56d0.css
 tags.css: tags-7c92aed0d9ced75baa9ca7d4c44adb74.css
 take_action.css: take_action-7c92aed0d9ced75baa9ca7d4c44adb74.css
 updates.css: updates-7c92aed0d9ced75baa9ca7d4c44adb74.css

@@ -79,42 +79,18 @@
 					<li><a href="">Videos</a></li>
 				</ul>
 			</li>
-
 		</ul>
-			
-		
 	</div>
 	<div id="pull"><a href="">pull me</a></div>
 </div>
 
-<div id="content" style="padding-top:0;">
-<div id="gridWrapperProjects">
-			<h1><span class="eyebrow">Mission of Hope</span><br />Projects </h1>
-	<% @categories.each do |category| %>
-		<% if @itemCount.modulo(2) == 0 %>
-			<div class="grid2x2Left">
-				<div class="gridImage projectsMed" style="background-image: none;')"><a href="" style="background-image: url('/assets/<%=category.categoryicon%>')"></a></div>
-				<div class="gridText">
-					<h2><a href="/projects"><%=category.categoryname%> Projects</a></h2>
-					<p>Through the Church of Hope and other partnering churches, Mission of Hope strives to bring the hope of Jesus to the Haitian community.</p>
-					<h3 class="projectDetailButton">No. of Projects: <span class="darkGreen"><%=category.projects.count%></span><a class="alignRight" href="">View All &raquo;</a></h3>
-				</div>
-			</div>
-		<%else%>
-			<div class="grid2x2Right">
-				<div class="gridImage projectsMed" style="background-image: none;')"><a href="" style="background-image: url('/assets/<%=category.categoryicon%>')"></a></div>
-				<div class="gridText">
-					<h2><a href="/projects"><%=category.categoryname%> Projects</a></h2>
-					<p>Through the Church of Hope and other partnering churches, Mission of Hope strives to bring the hope of Jesus to the Haitian community.</p>
-					<h3 class="projectDetailButton">No. of Projects: <span class="darkGreen"><%=category.projects.count%></span><a class="alignRight" href="">View All &raquo;</a></h3>
-				</div>
-			</div>
-			<div class="clearfix"></div>		
-		<%end%>
-		<% @itemCount = @itemCount + 1 %>
+
+<div id="content" style="padding:0px;">
+	<% if @cid.nil?%>
+		<%=render 'projectsAllCats'%>
+	<% else %>
+		<%=render 'projectsOneCat'%>
 	<%end%>
-	
-</div>
 <br />
 <% if !@user.nil? && @user.is_admin == 1 %>
 	<div style="clear:both; padding:10px 0px 10px 0px;"><%= link_to 'Click Me to Create a New Project', new_project_path %></div>

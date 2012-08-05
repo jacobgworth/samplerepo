@@ -3,11 +3,18 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   
   def index
-    @projects = Project.all
-    @jason = Project.all.to_gmaps4rails
-    @categories = Category.joins(:projects).order("categoryname asc").uniq
+    @cid = params[:cid]
     @user = current_user
     @itemCount = 0
+    if @cid.nil?
+      @jason = Project.all.to_gmaps4rails
+      @categories = Category.joins(:projects).order("categoryname asc").uniq
+      @projects = Project.all
+    else
+      @projects = Project.joins(:categories).where("category_id=" + @cid)
+      @jason = @projects.to_gmaps4rails
+      @category = Category.find(@cid)
+    end
 
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# index.html.erb
