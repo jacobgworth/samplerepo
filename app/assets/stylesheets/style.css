@@ -944,7 +944,7 @@ h3.CTA {
 
 #content p {
 	line-height:1.2em;
-	padding:8px 0;
+	padding-bottom:8px;
 }
 
 #content h1 {
@@ -995,16 +995,18 @@ h3#missionStatement {
 #gridWrapper h2 {
 	font-size:1.35em;
 	text-transform:uppercase;
+	margin-bottom:0;
+	padding-bottom: 0;
 }
 #gridWrapperProjects {
-	margin-top:370px;
-	margin-bottom:10px;
+	margin:30px 0 10px 0;
 	padding:10px 0 0 0;
 }
 
 #gridWrapperProjects h2 {
-	font-size:1.35em;
-	margin-bottom: 10px;
+	font-size:1.15em;
+	margin-bottom:0;
+	padding-bottom: 0;
 	text-transform:uppercase;
 }
 

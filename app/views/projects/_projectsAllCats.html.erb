@@ -1,7 +1,5 @@
-
-
+<h1><span class="eyebrow">Mission of Hope</span><br />Projects </h1>
 <div id="gridWrapperProjects">
-			<h1><span class="eyebrow">Mission of Hope</span><br />Projects </h1>
 	<% @categories.each do |category| %>
 		<% if @itemCount.modulo(2) == 0 %>
 			<div class="grid2x2Left">
@@ -25,5 +23,4 @@
 		<%end%>
 		<% @itemCount = @itemCount + 1 %>
 	<%end%>
-	
 </div>
