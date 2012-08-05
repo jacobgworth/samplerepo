@@ -1,9 +1,6 @@
-
 <div id="bgHero">
 	<div id="mapHeroImg"><%= gmaps4rails(@jason) %></div>
-	<div id="heroContent">
-		
-	</div>
+	
 </div>
 <div id="wrapper">
 <div id="navBar">
@@ -90,13 +87,13 @@
 	<div id="pull"><a href="">pull me</a></div>
 </div>
 
+
 <div id="content">
 	<% if @cid.nil?%>
 		<%=render 'projectsAllCats'%>
 	<% else %>
 		<%=render 'projectsOneCat'%>
 	<%end%>
-<!--this is where I cut from -->
 <br />
 <% if !@user.nil? && @user.is_admin == 1 %>
 	<div style="clear:both; padding:10px 0px 10px 0px;"><%= link_to 'Click Me to Create a New Project', new_project_path %></div>
