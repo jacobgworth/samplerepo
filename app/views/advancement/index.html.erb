@@ -1,17 +1,6 @@
 <div id="bgHero">
 	<div id="advancementHeroImg"><!--x--></div>
-	<div id="heroContentAdvancement">
-		<h1>
-			<span class="giantText1">Church<br></span><span class="heroTextAdvance">Advancement</span><br />
-			<span class="largeText5">an alliance of partners<br> working together as<br> the Body of Christ</span>
-			<br>
-			<br>
-			<img src="/assets/partnerButton.png" />
-			</h1>
-		<div id="videoWrapper">
-		<iframe src="http://player.vimeo.com/video/25459309" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-		</div>
-	</div>
+	
 </div>
 <div id="wrapper">
 <div id="navBar">
@@ -97,13 +86,53 @@
 	</div>
 	<div id="pull"><a href="">pull me</a></div>
 </div>
-<div id="contentAdvance">
-	<h1>Church advancement defined</h1>
+<div id="content">
+	<div id="heroContent">
+		<h1 style="padding-top:40px;">
+			<span class="giantText1">Church<br></span><span class="largeText2_5">Advancement</span><br />
+			<span class="largeText5 greenTransBG">An alliance of partners<br> working together as<br> the Body of Christ</span>
+			</h1>
+			<div class="buttonSquareOrange" style="position:absolute; top:-200px; left:100px; width:280px"><a href="">Become Our Partner Today!</a></div>
+		<div class="videoWrapper">
+		<iframe src="http://player.vimeo.com/video/25459309" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		</div>
+	</div>
+	<h1><span class="eyebrow">Mission of Hope</span><br />Church Advancement Defined</h1>
 <p>Church advancement is the Church of North America partnering with Mission of Hope, Haiti to serve the Church in Haiti. Singularly, or along with other churches. Your church will have the opportunity to partner with an individual village to focus your efforts of Church Advancement. Through this progress, the goal is to see the church in Haiti strengthened, villages changed, the Gospel proclaimed and lives transformed. Church advancment focuses specifically on four areas: Ministry, Education, Haiti 1, Health Care.</p>
-	<img src="/assets/advanceInfographic.png" />
-	<img src="/assets/partnerButton.png" id="center"/>
+	<p><img src="/assets/advanceInfographic.png" /></p>
+		<div class="buttonSquareOrange" style="margin:20px auto 0 auto; width:280px"><a href="">Become Our Partner Today!</a></div>
+	<div id="contentRight">
+		<h3><span class="mediumText">Mission of Hope</span><br />in Action</h3>
+		<div class="speechBubble"><p>action updates here</p></div>
+	<div id="updatesWrapper">
+		<%@updates.each do |m|%>
+			<div class="update">
+			<div class="updateDate">
+				<% 
+					created = m.created_at 
+					creator = "-"
+					if m.user.blank?
+						creator = '-'
+					else
+						creator = m.user.first
+					end
+				%>
+				<span class="month"><%= created.strftime("%b")%></span><br />
+				<span class="date"><%=created.strftime("%d")%></span><br />
+				<span class="year"><%=created.strftime("%Y")%></span>
+			</div>
+			<div class="updatePost">
+				<h4><%=m.title%></h4>
+				<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a></p>
+				<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
+			</div>
+			<div class="clearfix"><!--x--></div>
+			</div>
+		<%end%>
+		<div id="updateNav"><img src="/assets/updatesNav.png" /></div>
+	</div>
+	</div>
 </div>
-<h1>Need for dynamic content!</h1>
 	<div class="clearfix" style="height:40px;"><!--x--></div>
 
 <!--<h1>Ministry of Hope Haiti Redesign Project</h1>
