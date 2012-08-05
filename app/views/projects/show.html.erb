@@ -20,10 +20,10 @@
   <b>Estimated Completion Date:</b>
   <%= @project.completion %>
 </p>
-
+<p>Category: <%=@category.categoryname%><img src="/assets/<%=@category.categoryicon%>"></p>
 <p>
   <b>Description:</b>
-  <%= @project.description %>
+  <%= simple_format(@project.description) %>
 </p>
 <div id="divImgThumbs">
 	<div id="gallery" class="ad-gallery">

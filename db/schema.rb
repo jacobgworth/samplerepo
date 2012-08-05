@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120805140728) do
+ActiveRecord::Schema.define(:version => 20120805155214) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(:version => 20120805140728) do
     t.float    "latitude"
     t.float    "longitude"
     t.date     "completion"
-    t.string   "description"
+    t.text     "description",        :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "goal"

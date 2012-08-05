@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @assets = @project.assets.all
     @user = current_user
+    @category = @project.categories.first
 
     respond_to do |format|
       format.html {render :layout=>"applicationWithAdGallery"}# show.html.erb
