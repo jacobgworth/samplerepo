@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
     @user = current_user
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render :layout=>"homeLayout"}# index.html.erb
       format.json { render json: @projects }
     end
   end
