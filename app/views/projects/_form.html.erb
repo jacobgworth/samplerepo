@@ -20,7 +20,7 @@
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </div>
   <div class="field">
   	Funds Needed: <%= f.text_field :fundsneeded%>
@@ -42,9 +42,14 @@
   </div>
   
   <div>
-  	<%= select( "project", "stage", { "Planning" => "Planning", "Construction" => "Construction", "Complete" => "Complete"}) %>
+  	Select Stage:<%= select( "project", "stage", { "Planning" => "Planning", "Fundraising" => "Fundraising","Construction" => "Construction", "Operational" => "Operational"}) %>
   </div>
+  <p><br /></p>
   <div>
+  	Select Category: <%= collection_select 'project', 'category_ids', Category.order("categoryname asc"), :id, :categoryname, { :include_blank => 'None'}, { :multiple => true, :categoryname =>'project[category_ids][]',:selected => 0 } %>
+  </div>
+  <p><br /></p>
+  <div>Add image(s):
   <%= f.fields_for :assets do |asset_fields| %>
   	<% if asset_fields.object.new_record? %>
   		<p>

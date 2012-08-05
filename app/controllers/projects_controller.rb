@@ -5,8 +5,9 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     @jason = Project.all.to_gmaps4rails
-    @categories = Category.all
+    @categories = Category.joins(:projects).order("categoryname asc").uniq
     @user = current_user
+    @itemCount = 0
 
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# index.html.erb
@@ -20,6 +21,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @assets = @project.assets.all
     @user = current_user
+    @category = @project.categories.first
 
     respond_to do |format|
       format.html {render :layout=>"applicationWithAdGallery"}# show.html.erb
