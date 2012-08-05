@@ -5,7 +5,7 @@
 	<% @projects.each do |project| %>
 		<% if @itemCount.modulo(2) == 0 %>
 			<div class="grid2x2Left">
-				<div class="gridImage projectsMed" style="background-image: none;')"><a href="/projects/<%=project.id%>" ></a></div>
+				
 				<div class="gridText">
 					<h2><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h2>
 					<p><%=project.goal%></p>
@@ -14,7 +14,7 @@
 			</div>
 		<%else%>
 			<div class="grid2x2Right">
-				<div class="gridImage projectsMed" style="background-image: none;')"><a href="/projects/<%=project.id%>" ></a></div>
+				
 				<div class="gridText">
 					<h2><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h2>
 					<p><%=project.goal%></p>
