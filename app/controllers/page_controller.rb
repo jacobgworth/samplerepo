@@ -2,6 +2,12 @@ class PageController < ApplicationController
   def what_we_do
   end
   
+  def what_we_do
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+    
   def haiti_one
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
