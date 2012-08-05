@@ -1,7 +1,5 @@
-
-
+<h1><span class="eyebrow">Mission of Hope</span><br /><%=@category.categoryname%> Projects </h1>
 <div id="gridWrapperProjects">
-			<h1><span class="eyebrow">Mission of Hope</span><br /><%=@category.categoryname%> Projects </h1>
 	<% @projects.each do |project| %>
 		<% if @itemCount.modulo(2) == 0 %>
 			<div class="grid2x2Left">
@@ -9,7 +7,9 @@
 				<div class="gridText">
 					<h2><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h2>
 					<p><%=project.goal%></p>
-					<h3 class="projectDetailButton"><a class="alignRight" href="/projects/<%=project.id%>">View More &raquo;</a></h3>
+					<h3 class="projectDetailButton">Village Served <span class="darkGreen">Village Name</span></h3>
+					<h3 class="projectDetailButton">Project Stage <span class="darkGreen"><%=project.stage%></span></h3>
+					<h3 class="projectDetailButton"><a href="/projects/<%=project.id%>">View Project Details &raquo;</a></h3>
 				</div>
 			</div>
 		<%else%>
@@ -18,7 +18,9 @@
 				<div class="gridText">
 					<h2><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h2>
 					<p><%=project.goal%></p>
-					<h3 class="projectDetailButton"><a class="alignRight" href="/projects/<%=project.id%>">View More &raquo;</a></h3>
+					<h3 class="projectDetailButton">Village Served <span class="darkGreen">Village Name</span></h3>
+					<h3 class="projectDetailButton">Project Stage <span class="darkGreen"><%=project.stage%></span></h3>
+					<h3 class="projectDetailButton"><a href="/projects/<%=project.id%>">View Project Details &raquo;</a></h3>
 				</div>
 			</div>
 			<div class="clearfix"></div>		
