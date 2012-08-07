@@ -88,7 +88,7 @@
 <div id="content" style="padding-top:370px;">
 <div id="heroContent">
 		<h1 style="padding-top:40px;">
-			<span class="giantText1"><%= @project.projectname %><br /></span>
+			<span class="largeText1"><%= @project.projectname %><br /></span>
 			<span class="largeText5 greenTransBG"><%= @project.goal%></span>
 			</h1>
 			<div class="buttonSquareOrange" style="position:absolute; top:-200px; left:100px; width:280px"><a href="">Support this project &raquo;</a></div>
@@ -142,7 +142,9 @@
 				<%end%>
 				<div class="updateNavRight"><a href="">View All Posts &raquo;</a></div>
 			</div>
-	</div>	
+	</div>
+		<div id="contentRight300">
+	
 	<div id="divImgThumbs">
 	<div id="gallery" class="ad-gallery">
 		<div class="ad-image-wrapper">
@@ -172,6 +174,7 @@
 		</div>
 	</div>
 </div>
+</div></div>
 <div class="clear">&nbsp;</div>
 <% if @assets.count > 0 %>
 	<!--	<h3>My photos</h3> -->
@@ -179,11 +182,12 @@
 			<!-- <p><%= image_tag photo.asset.url(:medium) %></p> -->
 		<% end %>
 <% end %>
-	
+	<div class="clear">&nbsp;</div>
+
 </div>
 
 
-<div>
+
 <% if @user.nil? %>
 	<%= link_to 'Back', projects_path %>
 <% elsif @user.is_admin == 1%>
