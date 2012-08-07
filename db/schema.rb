@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120807144748) do
+ActiveRecord::Schema.define(:version => 20120807154451) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(:version => 20120807144748) do
     t.string   "imagelink"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "author"
   end
 
   create_table "posts_projects", :id => false, :force => true do |t|
