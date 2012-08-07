@@ -23,6 +23,12 @@
     <%= f.label :body %><br />
     <%= f.text_area :body %>
   </div>
+  <div>
+  	Select Categories: <%= collection_select 'post', 'category_ids', Category.order("categoryname asc"), :id, :categoryname, { :include_blank => 'None'}, { :multiple => true, :categoryname =>'post[category_ids][]',:selected => 0 } %>
+  </div>
+  <div>
+  	Select Related Projects: <%= collection_select 'post', 'project_ids', Project.order("projectname asc"), :id, :projectname, { :include_blank => 'None'}, { :multiple => true, :projectname =>'post[project_ids][]',:selected => 0 } %>
+  </div>
   <div class="field">
     <%= f.label :imagelink %><br />
     <%= f.text_field :imagelink %>
