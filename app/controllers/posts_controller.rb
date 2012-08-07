@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @assets = @post.assets.all
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +26,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    @post.assets.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +37,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @post.assets.build
   end
 
   # POST /posts
