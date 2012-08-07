@@ -30,6 +30,7 @@ class ProjectsController < ApplicationController
     @user = current_user
     @category = @project.categories.first
     @updates = @project.updates.all
+    @posts = @project.posts.all
 
     respond_to do |format|
       format.html {render :layout=>"applicationWithAdGallery"}# show.html.erb
