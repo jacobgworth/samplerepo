@@ -4,13 +4,16 @@ class Project < ActiveRecord::Base
   
   has_many :assets
   
-  has_and_belongs_to_many :partners
+  
+  has_and_belongs_to_many :categories
   
   has_and_belongs_to_many :communities
   
   has_and_belongs_to_many :experiences
   
-  has_and_belongs_to_many :categories
+  has_and_belongs_to_many :posts
+  
+  has_and_belongs_to_many :partners
   
   has_and_belongs_to_many :updates
   
