@@ -116,10 +116,10 @@
 			<div class="updatesWrapper">
 			<h3><span class="eyebrow">Church Advancement</span><br />Blog Posts</h3>
 				<div class="speechBubble"><p>latest<br />blog posts</p></div>
-				<!--<%@updates.each do |m|%>-->
+				<%@updates.each do |m|%>
 					<div class="update560">
 					<div class="updateDate">
-						<!--<% 
+						<% 
 							created = m.created_at 
 							creator = "-"
 							if m.user.blank?
@@ -127,19 +127,19 @@
 							else
 								creator = m.user.first
 							end
-						%>-->
-						<span class="month"><!--<%= created.strftime("%b")%>--></span><br />
-						<span class="date"><!--<%=created.strftime("%d")%>--></span><br />
-						<span class="year"><!--<%=created.strftime("%Y")%>--></span>
+						%>
+						<span class="month"><%= created.strftime("%b")%></span><br />
+						<span class="date"><%=created.strftime("%d")%></span><br />
+						<span class="year"><%=created.strftime("%Y")%></span>
 					</div>
 					<div class="updatePost560">
-						<h4><a href=""><!--<%=m.title%></a>--></h4>
-						<p><!--<%=truncate(m.body,:length=>100,:separator=>' ')%>--> <a href="">READ MORE</a></p>
-						<p class="meta">Projects: Project Name | Posted by: <!--<%=creator%>--></p>
+						<h4><a href=""><%=m.title%></a></h4>
+						<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="/updates/<%=m.id%>">READ MORE</a></p>
+						<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
 					</div>
-					<div class="clearfix"></div>-->
+					<div class="clearfix"></div>
 					</div>
-				<!--<%end%>-->
+				<%end%>
 				<div class="updateNavRight"><a href="">View All Posts &raquo;</a></div>
 			</div>
 	</div>	
