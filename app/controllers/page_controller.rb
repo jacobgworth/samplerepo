@@ -24,4 +24,9 @@ class PageController < ApplicationController
       format.html {render :layout=>"homeLayout"}# orphan_care.html.erb
     end
   end
+  def console
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# console.html.erb
+    end
+  end
 end

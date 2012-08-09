@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120807202310) do
+ActiveRecord::Schema.define(:version => 20120809150357) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -185,7 +185,7 @@ ActiveRecord::Schema.define(:version => 20120807202310) do
     t.datetime "updated_at"
     t.string   "password_hash"
     t.string   "password_salt"
-    t.string   "authtoken"
+    t.string   "auth_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
     t.integer  "is_admin"
