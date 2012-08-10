@@ -36,6 +36,7 @@ Mohhaiti::Application.routes.draw do
   resources :sessions
 
   get "home/index"
+  
   get "page/what_we_do"
   match "/what-we-do" => "page#what_we_do"
   
