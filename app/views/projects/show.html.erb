@@ -226,7 +226,7 @@
 					<h3 class="darkGreen">Funds Raised</h3>	
 					<a href=""><img src="/assets/percent80.png"></a>
 					<div class="dollarBubble">
-						<span class="darkGreen"><%= number_to_currency(@project.fundsraised, :unit => "$") %><br />Raised <%= number_to_percentage((@project.fundsraised/@project.fundsneeded)*100,:precision=>2) if !@project.fundsneeded.nil? && @project.fundsneeded > 0 %></span>
+						<span class="darkGreen"><%= number_to_currency(@project.fundsraised, :unit => "$") %><br />RAISED <%= number_to_percentage((@project.fundsraised/@project.fundsneeded)*100,:precision=>2) if !@project.fundsneeded.nil? && @project.fundsneeded > 0 %></span>
 					</div>
 					
 				</div>
@@ -238,28 +238,28 @@
 			<div id="contentLeft560">
 
 			<div class="updatesWrapper">
-				<h3><span class="eyebrow">Church Advancement</span>
+				<h3><span class="eyebrow"><%= @project.projectname %></span>
 				<br />
-				Blog Posts</h3>
+				Updates</h3>
 				<div class="speechBubble">
 					<p>
 						latest
 						<br />
-						blog posts
+						updates
 					</p>
 				</div>
 				<%@updates.each do |m|%>
 				<div class="update560">
 					<div class="updateDate">
 						<%
- created = m.created_at
-              creator = "-"
-              if m.user.blank?
-                creator = '-'
-              else
-                creator = m.user.first
-              end
-%>
+						 created = m.created_at
+						              creator = "-"
+						              if m.user.blank?
+						                creator = '-'
+						              else
+						                creator = m.user.first
+						              end
+						%>
 						<span class="month"><%= created.strftime("%b")%></span>
 						<br />
 						<span class="date"><%= created.strftime("%d")%></span>
@@ -279,7 +279,53 @@
 				</div>
 				<%end%>
 				<div class="updateNavRight">
-					<a href="">View All Posts &raquo;</a>
+					<a href="/updates/">View All Updates &raquo;</a>
+				</div>
+			</div>
+			<!--start posts-->
+						<div class="updatesWrapper">
+				<h3><span class="eyebrow"><%= @project.projectname %></span>
+				<br />
+				Posts</h3>
+				<div class="speechBubble">
+					<p>
+						latest
+						<br />
+						posts
+					</p>
+				</div>
+				<%@posts.each do |m|%>
+				<div class="update560">
+					<div class="updateDate">
+						<%
+						 created = m.created_at
+						              creator = "-"
+						              if m.user.blank?
+						                creator = '-'
+						              else
+						                creator = m.user.first
+						              end
+						%>
+						<span class="month"><%= created.strftime("%b")%></span>
+						<br />
+						<span class="date"><%= created.strftime("%d")%></span>
+						<br />
+						<span class="year"><%= created.strftime("%Y")%></span>
+					</div>
+					<div class="updatePost560">
+						<h4><a href=""><%= m.title%></a></h4>
+						<p>
+							<%= truncate(m.body,:length=>100,:separator=>' ')%> <a href="/posts/<%= m.id%>">READ MORE</a>
+						</p>
+						<p class="meta">
+							Projects: Project Name | Posted by: <%= creator%>
+						</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<%end%>
+				<div class="updateNavRight">
+					<a href="/posts/">View All Posts &raquo;</a>
 				</div>
 			</div>
 		</div>
@@ -290,7 +336,7 @@
 						<div id="divImgThumbs">
 				<div id="gallery" class="ad-gallery">
 					<div class="ad-image-wrapper">
-						<div class="ad-image"></div>
+						<div class="ad-image shadow"></div>
 					</div><!--wrapper-->
 					<div class="ad-controls"></div><!--controls-->
 					<div class="ad-nav">

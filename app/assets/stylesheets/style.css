@@ -329,7 +329,7 @@ span.eyebrow {
 	left:30px;
 	background: url(/assets/dollarBubble.png) no-repeat;
 	height:62px;
-	width:109px;
+	width:150px;
 	z-index: 100;
 	font-family: 'Montserrat', sans-serif;
 	font-size:1em;
@@ -1728,19 +1728,30 @@ p.meta {
 
 .ad-gallery {
 width: 120px;
+background:#ccb99a;
+border:1px solid #c2b092;
+
+
 }
 .ad-gallery, .ad-gallery * {
 margin: 0;
 padding: 0;
 }
 .ad-gallery .ad-image-wrapper {
-width:300px;
-height: 400px;
+width:263px;
+height: 171px;
 margin-bottom: 5px;
 position: relative;
 overflow: hidden;
-
+padding:10px;
 }
+.ad-image {
+	border:5px solid #fff;
+	width:283px;
+	height:191px;
+}
+
+
 .ad-gallery .ad-image-wrapper .ad-loader {
 position: absolute;
 z-index: 10;
@@ -1773,7 +1784,7 @@ z-index: 100;
 background: url(non-existing.jpg);
 }
 .ad-gallery .ad-image-wrapper .ad-prev .ad-prev-image, .ad-gallery .ad-image-wrapper .ad-next .ad-next-image {
-background: url(/images/ad_prev.png);
+/*background: url(/images/ad_prev.png);*/
 width: 30px;
 height: 30px;
 display: none;
@@ -1783,14 +1794,14 @@ left: 0;
 z-index: 101;
 }
 .ad-gallery .ad-image-wrapper .ad-next .ad-next-image {
-background: url(/images/ad_next.png);
+/*background: url(/images/ad_next.png);*/
 width: 30px;
 height: 30px;
 right: 0;
 left: auto;
 }
 .ad-gallery .ad-image-wrapper .ad-image {
-position: absolute;
+/*position: absolute;*/
 overflow: hidden;
 top: 0;
 left: 0;
@@ -1861,16 +1872,16 @@ height: 100px;
 }
 .ad-gallery .ad-back {
 cursor: pointer;
-left: -20px;
-width: 13px;
+left: 10px;
+width: 23px;
 display: block;
 background: url(/images/ad_scroll_back.png) 0px 22px no-repeat;
 }
 .ad-gallery .ad-forward {
 cursor: pointer;
 display: block;
-right: -20px;
-width: 13px;
+right: 10px;
+width: 23px;
 background: url(/images/ad_scroll_forward.png) 0px 22px no-repeat;
 }
 .ad-gallery .ad-nav .ad-thumbs {
