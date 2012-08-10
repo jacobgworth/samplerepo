@@ -291,6 +291,7 @@ span.eyebrow {
 	padding-left:22px;
 	line-height: 26px;
 }
+
 .videoWrapper {
 	width:500px;
 	height:281px;
@@ -299,6 +300,47 @@ span.eyebrow {
 	position:absolute;
 	border:5px solid #E4D4B9;
 }
+
+.percentComplete {
+	width:360px;
+	height:180px;
+	top:-430px;
+	right:0px;
+	position:absolute;
+	background-color:#078E60;
+	color:#E4D4B9;
+	text-align:center;
+	padding:60px 10px 0 10px;
+}
+
+.percentComplete h2 {
+	font-size:1.5em;
+	text-transform:uppercase;
+}
+
+.fundsRaised {
+	position:relative;
+}
+
+.dollarBubble {
+	position:absolute;
+	display: none;
+	bottom:-75px;
+	left:30px;
+	background: url(/assets/dollarBubble.png) no-repeat;
+	height:62px;
+	width:109px;
+	z-index: 100;
+	font-family: 'Montserrat', sans-serif;
+	font-size:1em;
+	padding:15px 0 5px 0;
+	text-align:center;
+}
+
+.fundsRaised a:hover + div.dollarBubble {
+    display: block;
+}
+
 
 #heroContentAdvancement h1 {
 	position:absolute;
@@ -342,7 +384,7 @@ span.eyebrow {
 	position:absolute;
 	top:-430px;
 	left:8px;
-	color:#f6efe5;
+	color:#E4D4B9;
 	text-shadow: 0 .1em .2em #666;
 	text-transform:uppercase;
 	font-family: 'Montserrat', sans-serif;
@@ -355,6 +397,13 @@ span.eyebrow {
 	letter-spacing:-.1em;
 	line-height:.5em;
 }
+
+.giantText2 {
+	font-size: 8em;
+	letter-spacing:-.1em;
+	line-height:.5em;
+}
+
 .giantText1 {
 	font-size: 6.0em;
 	letter-spacing:-.1em;
@@ -395,6 +444,10 @@ span.eyebrow {
 	display:block;
 }
 
+.lowercase {
+	text-transform: none;
+}
+
 .initialCaps {
 	text-transform: capitalize;
 }
@@ -419,9 +472,7 @@ span.eyebrow {
 #sponIconsList p{
 
 }
-#clear{
-	clear:both;
-}
+
 #heroRibbon {
 	position:absolute;
 	background:url(/assets/heroRibbon.png) no-repeat;
@@ -947,15 +998,35 @@ h3.CTA {
 	padding-bottom:8px;
 }
 
+#content h1, #content h2, #content h3 {
+	color:#19302F;
+	text-transform:uppercase;	
+}
+
 #content h1 {
 	font-size:3em;
 	padding:0;
-	color:#19302F;
-	text-transform:uppercase;
 }
 
 #content h1 span.eyebrow {
 	font-size:40%;
+}
+
+.contentHeader {
+	background:url(/assets/contentDiv.png) center bottom no-repeat;
+	padding-bottom: 20px;
+	margin-bottom:20px;
+}
+
+.contentHeaderLeft {
+	float:left;
+	width:560px;
+} 
+
+.contentHeaderRight {
+	float:right;
+	width:300px;
+	padding-top:20px;
 }
 
 #contentLeft560 {
@@ -1010,13 +1081,25 @@ h3#missionStatement {
 	text-transform:uppercase;
 }
 
-h3.projectDetailButton {
+h3.projectDetailButton, h3.projectDetailButtonLeft, h3.projectDetailButtonRight {
 	background-color:#078E60;
 	padding:8px;
 	color:#e4d4b9;
 	text-transform:uppercase;
 	font-size:.7em;
 	margin-top:10px;
+}
+
+h3.projectDetailButtonLeft {
+	width:130px;
+	float:left;
+	margin-bottom:10px;
+}
+
+h3.projectDetailButtonRight {
+	width:130px;
+	float:right;
+	margin-bottom:10px;
 }
 h4.projectDetailButton {
 	background-color:#078E60;
@@ -1043,18 +1126,28 @@ h4.projectDetailButton {
 }
 
 
-h3.projectDetailButton a:link, h3.projectDetailButton a:visited {
+h3.projectDetailButton a:link, h3.projectDetailButton a:visited, h3.projectDetailButtonLeft a:link, h3.projectDetailButtonLeft a:visited, h3.projectDetailButtonLeft a:link, h3.projectDetailButtonLeft a:visited {
 	color:#E4D4B9;
 }
 
-h3.projectDetailButton a:hover {
+h3.projectDetailButton a:hover, h3.projectDetailButtonLeft a:hover, h3.projectDetailButtonRight a:hover {
 	color:#08C086;
 }
+
+
 
 span.darkGreen {
 	color:#19302f;
 	padding-left:5px;
 	font-weight:bold;
+	text-transform:none;
+}
+
+span.darkGreenLarge {
+	color:#19302f;
+	font-weight:bold;
+	font-size:200%;
+	text-transform:none;
 }
 
 .divHeader {
@@ -1371,7 +1464,7 @@ span.darkGreen {
 	width:195px;
 	background:#ea861b;
 	padding:10px;
-	color:#f6efe5;
+	color:#E4D4B9;
 	text-align:center;
 	font-family: 'Montserrat', sans-serif;
 		
@@ -1383,7 +1476,7 @@ span.darkGreen {
 .buttonSquareOrange {
 	background:#ea861b;
 	padding:10px;
-	color:#f6efe5;
+	color:#E4D4B9;
 	text-align:center;
 	font-family: 'Montserrat', sans-serif;
 		
@@ -1393,13 +1486,13 @@ span.darkGreen {
 }
 
 .buttonSquareOrange a, .buttonSquareOrange a:visited, #heroContent .buttonSquareOrange a, #heroContent .buttonSquareOrange a:visited {
-	color:#f6efe5;
+	color:#E4D4B9;
 	text-shadow: 0 .05em #777;
 	text-transform:uppercase;
 }
 
 .buttonSquareOrange a:hover, #heroContent .buttonSquareOrange a:hover {
-	color:#f6efe5;
+	color:#E4D4B9;
 	text-shadow: 0 -.05em #777;
 	text-decoration:none;
 }

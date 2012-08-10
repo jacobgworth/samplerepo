@@ -1,199 +1,331 @@
 <div id="bgHero">
-	<div id="advancementHeroImg"><!--x--></div>
+	<div id="advancementHeroImg">
+		<!--x-->
+	</div>
 </div>
 
 <div id="wrapper">
-<div id="navBar">
-	<div id="logo"><a href="/"><img src="/assets/logo.png"></a></div>
-	<div id="utilityBar">
-		<ul id="utilityNav">
-			<li><a href="">About Us</a> // </li>
-			<li><a href="">Contact Us</a> // </li>
-			<li class="last"><% if current_user %>
-    <%= link_to "Logout", log_out_path %>
-  <% else %>
-    <%= link_to "Login", log_in_path %>
-  <% end %>
-  </li>
-		</ul>
-		<div class="buttonRounded donate"><a href="">Donate Today</a></div>
-		<div class="myMOH"><a href="">myMOH</a></div>
+	<div id="navBar">
+		<div id="logo">
+			<a href="/"><img src="/assets/logo.png"></a>
+		</div>
+		<div id="utilityBar">
+			<ul id="utilityNav">
+				<li>
+					<a href="">About Us</a> //
+				</li>
+				<li>
+					<a href="">Contact Us</a> //
+				</li>
+				<li class="last">
+					<% if current_user %>
+					<%= link_to "Logout", log_out_path %>
+					<% else %>
+					<%= link_to "Login", log_in_path %>
+					<% end %>
+				</li>
+			</ul>
+			<div class="buttonRounded donate">
+				<a href="">Donate Today</a>
+			</div>
+			<div class="myMOH">
+				<a href="">myMOH</a>
+			</div>
+		</div>
+		<div id="mainNav">
+			<ul id="nav">
+				<li class="active">
+					<a href="/what-we-do">What
+					<br />
+					We Do</a>
+					<ul>
+						<li>
+							<a href="/projects">Projects</a>
+						</li>
+						<li>
+							<a href="/church-advancement">Church Advancement</a>
+						</li>
+						<li>
+							<a href="">Orphan Care</a>
+						</li>
+						<li>
+							<a href="">Education</a>
+						</li>
+						<li>
+							<a href="">Health Care</a>
+						</li>
+						<li>
+							<a href="/haiti_one">HaitiOne</a>
+						</li>
+						<li>
+							<a href="">Nutrition</a>
+						</li>
+						<li>
+							<a href="">3 Cords</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/church-advancement">Church
+					<br />
+					Advancement</a>
+					<ul>
+						<li>
+							<a href="">Communities Impacted</a>
+						</li>
+						<li>
+							<a href="">Become a Church Partner</a>
+						</li>
+						<li>
+							<a href="">Take a Vision Trip</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/child-sponsorship">Child
+					<br />
+					Sponsorship</a>
+					<ul>
+						<li>
+							<a href="">Sponsor a Child</a>
+						</li>
+						<li>
+							<a href="">Learn About Sponsorship</a>
+						</li>
+						<li>
+							<a href="">Sponsorship FAQs</a>
+						</li>
+						<li>
+							<a href="">Gift Store</a>
+						</li>
+						<li>
+							<a href="">Write Your Child</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="">Mission
+					<br />
+					Trips</a>
+					<ul>
+						<li>
+							<a href="">Take a Mission Trip</a>
+						</li>
+						<li>
+							<a href="">Medical Mission Trips</a>
+						</li>
+						<li>
+							<a href="">Trip Dates</a>
+						</li>
+						<li>
+							<a href="">Trip Costs</a>
+						</li>
+						<li>
+							<a href="">Trip FAQs</a>
+						</li>
+						<li>
+							<a href="">Preparing for a Trip</a>
+						</li>
+						<li>
+							<a href="">Mission Trip Experiences</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/take-action">Take
+					<br />
+					Action</a>
+					<ul>
+						<li>
+							<a href="/projects">Projects</a>
+						</li>
+						<li>
+							<a href="/church-advancement">Church Advancement</a>
+						</li>
+						<li>
+							<a href="">Orphan Care</a>
+						</li>
+						<li>
+							<a href="">Education</a>
+						</li>
+						<li>
+							<a href="">Health Care</a>
+						</li>
+						<li>
+							<a href="">HaitiOne</a>
+						</li>
+						<li>
+							<a href="">Nutrition</a>
+						</li>
+						<li>
+							<a href="">3 Cords</a>
+						</li>
+					</ul>
+				</li>
+				<li class="last">
+					<a href="/stay-connected">Stay
+					<br />
+					Connected</a>
+					<ul>
+						<li>
+							<a href="">Blog</a>
+						</li>
+						<li>
+							<a href="">Updates</a>
+						</li>
+						<li>
+							<a href="">Videos</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="pull">
+			<a href="">pull me</a>
+		</div>
 	</div>
-	<div id="mainNav">
-		<ul id="nav">
-			<li class="active"><a href="/what-we-do">What<br />We Do</a>
-				<ul>
-					<li><a href="/projects">Projects</a></li>
-					<li><a href="/church-advancement">Church Advancement</a></li>
-					<li><a href="">Orphan Care</a></li>
-					<li><a href="">Education</a></li>
-					<li><a href="">Health Care</a></li>
-					<li><a href="/haiti_one">HaitiOne</a></li>
-					<li><a href="">Nutrition</a></li>
-					<li><a href="">3 Cords</a></li>
-				</ul>
-			</li>
-			<li><a href="/church-advancement">Church<br />Advancement</a>
-				<ul>
-					<li><a href="">Communities Impacted</a></li>
-					<li><a href="">Become a Church Partner</a></li>
-					<li><a href="">Take a Vision Trip</a></li>
-				</ul>
-			</li>
-			<li><a href="/child-sponsorship">Child<br />Sponsorship</a>
-				<ul>
-					<li><a href="">Sponsor a Child</a></li>
-					<li><a href="">Learn About Sponsorship</a></li>
-					<li><a href="">Sponsorship FAQs</a></li>
-					<li><a href="">Gift Store</a></li>
-					<li><a href="">Write Your Child</a></li>
-				</ul>
-			</li>
-			<li><a href="">Mission<br />Trips</a>
-				<ul>
-					<li><a href="">Take a Mission Trip</a></li>
-					<li><a href="">Medical Mission Trips</a></li>
-					<li><a href="">Trip Dates</a></li>
-					<li><a href="">Trip Costs</a></li>
-					<li><a href="">Trip FAQs</a></li>
-					<li><a href="">Preparing for a Trip</a></li>
-					<li><a href="">Mission Trip Experiences</a></li>
-				</ul>
-			</li>
-			<li><a href="/take-action">Take<br />Action</a>
-				<ul>
-					<li><a href="/projects">Projects</a></li>
-					<li><a href="/church-advancement">Church Advancement</a></li>
-					<li><a href="">Orphan Care</a></li>
-					<li><a href="">Education</a></li>
-					<li><a href="">Health Care</a></li>
-					<li><a href="">HaitiOne</a></li>
-					<li><a href="">Nutrition</a></li>
-					<li><a href="">3 Cords</a></li>
-				</ul>
-			</li>
-			<li class="last"><a href="/stay-connected">Stay<br />Connected</a>
-				<ul>
-					<li><a href="">Blog</a></li>
-					<li><a href="">Updates</a></li>
-					<li><a href="">Videos</a></li>
-				</ul>
-			</li>
-		</ul>
-	</div>
-	<div id="pull"><a href="">pull me</a></div>
-</div>
 
+	<div id="content">
+		<div id="heroContent">
+			<div id="heroLeft">
+				<h1 style="padding-top:40px; width:500px"><span class="largeText4 greenTransBG" style="margin-bottom:15px;"><%= @project.projectname %>
+					<br />
+				</span><span class="largeText6 greenTransBG lowercase"><%= @project.goal%></span></h1>
+				<div class="buttonSquareOrange" style="position:absolute; top:-250px; left:200px; width:280px">
+					<a href="">Support this project &raquo;</a>
+				</div>
+			</div>
+			<div class="percentComplete">
+				<h2>Percent Complete
+				<br/>
+				<span class="largeText1" style="line-height: 1em;"><%= number_to_percentage(@project.percentcomplete,:precision=>2)%></span></h2>
+			</div>
+		</div>
 
-<div id="content" style="padding-top:370px;">
-<div id="heroContent">
-		<h1 style="padding-top:40px;">
-			<span class="largeText1"><%= @project.projectname %><br /></span>
-			<span class="largeText5 greenTransBG"><%= @project.goal%></span>
-			</h1>
-			<div class="buttonSquareOrange" style="position:absolute; top:-200px; left:100px; width:280px"><a href="">Support this project &raquo;</a></div>
-		<div class="percentComplete">
-		Percent Complete
+<div class="contentHeader">
+			<div class="contentHeaderLeft">
+				<h1><span class="eyebrow">Mission of Hope Haiti Project</span>
+				<br />
+				<%= @project.projectname %></h1>
+				<p>
+					<%= simple_format(@project.description) %>
+				</p>
+			</div>
+			<div class="contentHeaderRight">
+				<h3 class="projectDetailButton" style="padding-top:20px; background-image: url('/assets/gr-<%=@category.categoryicon%>'); background-repeat:no-repeat; background-position:95% 50%; height:60px;">Project Type
+				<br />
+				<span class="darkGreenLarge"><%= @category.categoryname%></span></h3>
+				<h3 class="projectDetailButtonLeft">Population Served
+				<br />
+				<span class="darkGreenLarge">10000</span></h3>
+				<h3 class="projectDetailButtonRight">Project Stage
+				<br />
+				<span class="darkGreenLarge"><%= @project.stage%></span></h3>
+				<div class="clear"></div>
+				<div class="fundsRaised">
+					<h3 class="darkGreen">Funds Raised</h3>	
+					<a href=""><img src="/assets/percent80.png"></a>
+					<div class="dollarBubble">
+						<span class="darkGreen"><%= number_to_currency(@project.fundsraised, :unit => "$") %><br />Raised <%= number_to_percentage((@project.fundsraised/@project.fundsneeded)*100,:precision=>2) if !@project.fundsneeded.nil? && @project.fundsneeded > 0 %></span>
+					</div>
+					
+				</div>
+			</div>
+			<div class="clearfix">
+				<!--x-->
+			</div>
 		</div>
-	</div>
-	<div class="contentHeader">
-		<div class="contentHeaderLeft">
-			<h1><%= @project.projectname %></h1>
-		<p><%= simple_format(@project.description) %></p>
-		</div>
-		<div class="contentHeaderRight">
-			<h3 class="projectDetailButton">Project Type<br /><span class="darkGreenLarge"><%=@category.categoryname%></span></h3>
-			<h3 class="projectDetailButton">Population Served<br /><span class="darkGreen">10000</span></h3>
-			<h3 class="projectDetailButton">Project Stage<br /><span class="darkGreen"><%=@project.stage%></span></h3>
-			<h3>Funds Raised</h3>
-			<%= number_to_currency(@project.fundsraised, :unit => "$") %><%= ", " + number_to_percentage((@project.fundsraised/@project.fundsneeded)*100,:precision=>2) if !@project.fundsneeded.nil? && @project.fundsneeded > 0 %>
-			
-		</div>
-	</div>
-	
-	<div id="contentLeft560">
-		
+			<div id="contentLeft560">
+
 			<div class="updatesWrapper">
-			<h3><span class="eyebrow">Church Advancement</span><br />Blog Posts</h3>
-				<div class="speechBubble"><p>latest<br />blog posts</p></div>
+				<h3><span class="eyebrow">Church Advancement</span>
+				<br />
+				Blog Posts</h3>
+				<div class="speechBubble">
+					<p>
+						latest
+						<br />
+						blog posts
+					</p>
+				</div>
 				<%@updates.each do |m|%>
-					<div class="update560">
+				<div class="update560">
 					<div class="updateDate">
-						<% 
-							created = m.created_at 
-							creator = "-"
-							if m.user.blank?
-								creator = '-'
-							else
-								creator = m.user.first
-							end
-						%>
-						<span class="month"><%= created.strftime("%b")%></span><br />
-						<span class="date"><%=created.strftime("%d")%></span><br />
-						<span class="year"><%=created.strftime("%Y")%></span>
+						<%
+ created = m.created_at
+              creator = "-"
+              if m.user.blank?
+                creator = '-'
+              else
+                creator = m.user.first
+              end
+%>
+						<span class="month"><%= created.strftime("%b")%></span>
+						<br />
+						<span class="date"><%= created.strftime("%d")%></span>
+						<br />
+						<span class="year"><%= created.strftime("%Y")%></span>
 					</div>
 					<div class="updatePost560">
-						<h4><a href=""><%=m.title%></a></h4>
-						<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="/updates/<%=m.id%>">READ MORE</a></p>
-						<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
+						<h4><a href=""><%= m.title%></a></h4>
+						<p>
+							<%= truncate(m.body,:length=>100,:separator=>' ')%> <a href="/updates/<%= m.id%>">READ MORE</a>
+						</p>
+						<p class="meta">
+							Projects: Project Name | Posted by: <%= creator%>
+						</p>
 					</div>
 					<div class="clearfix"></div>
-					</div>
+				</div>
 				<%end%>
-				<div class="updateNavRight"><a href="">View All Posts &raquo;</a></div>
+				<div class="updateNavRight">
+					<a href="">View All Posts &raquo;</a>
+				</div>
 			</div>
-	</div>
+		</div>
 		<div id="contentRight300">
-	
-	<div id="divImgThumbs">
-	<div id="gallery" class="ad-gallery">
-		<div class="ad-image-wrapper">
-			<div class="ad-image"></div>
-		</div>
-		<div class="ad-controls"></div>
-		<div class="ad-nav">
-			<div class="ad-back"></div>
-			<div class="ad-thumbs">
-						&nbsp;
-						<ul class="ad-thumb-list">
-							<% if @assets.count > 0 
+
+			<div class="contentRightWrapper">
+			<h3><span class="eyebrow">Learn More About</span><br />Our Reach</h3>
+						<div id="divImgThumbs">
+				<div id="gallery" class="ad-gallery">
+					<div class="ad-image-wrapper">
+						<div class="ad-image"></div>
+					</div><!--wrapper-->
+					<div class="ad-controls"></div><!--controls-->
+					<div class="ad-nav">
+						<div class="ad-back"></div>
+						<div class="ad-thumbs">
+							&nbsp;
+							<ul class="ad-thumb-list">
+								<% if @assets.count > 0
 								@counter = 0
-								@assets.each do |photo| 
-									@classname = "image" + @counter.to_s
-							%>
-									<!--<p><%= image_tag photo.asset.url(:medium) %></p>-->
-									<li >
-										<a href="<%= photo.asset.url(:medium)%>"><img src="<%= photo.asset.url(:thumb) %>" alt="" title="" longdesc="" class="<%= @classname%>" /></a>
-									</li>
-									<% @counter = @counter + 1%>
+								@assets.each do |photo|
+								@classname = "image" + @counter.to_s
+								%>
+								<!--<p><%= image_tag photo.asset.url(:medium) %></p>-->
+								<li >
+									<a href="<%= photo.asset.url(:medium)%>"><img src="<%= photo.asset.url(:thumb) %>" alt="" title="" longdesc="" class="<%= @classname%>" /></a>
+								</li>
+								<% @counter = @counter + 1%>
 								<% end %>
-							<% end %>
-						</ul>
-			</div>
-			<div class="ad-forward"></div>
-		</div>
-	</div>
-</div>
-</div></div>
-<div class="clear">&nbsp;</div>
-<% if @assets.count > 0 %>
-	<!--	<h3>My photos</h3> -->
-		<% @assets.each do |photo| %>
-			<!-- <p><%= image_tag photo.asset.url(:medium) %></p> -->
-		<% end %>
-<% end %>
-	<div class="clear">&nbsp;</div>
-
-</div>
-
-
-
-<% if @user.nil? %>
+								<% end %>
+							</ul>
+						</div>
+						<div class="ad-forward"></div>
+					</div><!--adnav-->
+				</div><!--gallery-->
+		</div><!--thumbs-->
+		</div><!--contentRightWrapper-->
+		</div><!--contentRight-->
+		<div class="clearfix"><!--x--></div>
+	<% if @user.nil? %>
 	<%= link_to 'Back', projects_path %>
-<% elsif @user.is_admin == 1%>
+	<% elsif @user.is_admin == 1%>
 	<%= link_to 'Edit', edit_project_path(@project) %> |
 	<%= link_to 'Back', projects_path %>
-<% else %>
+	<% else %>
 	<%= link_to 'Back', projects_path %>
-<%end%>
-</div>
+	<%end%>
+	</div><!--content-->
+
