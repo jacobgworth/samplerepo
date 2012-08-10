@@ -4,7 +4,6 @@ class Project < ActiveRecord::Base
   
   has_many :assets
   
-  
   has_and_belongs_to_many :categories
   
   has_and_belongs_to_many :communities
@@ -17,11 +16,12 @@ class Project < ActiveRecord::Base
   
   has_and_belongs_to_many :updates
   
-  attr_accessible :projectname,:latitude,:longitude,:completion,:description,:assets_attributes,:stage,:fundsneeded,:fundsraised,:goal,:category_ids
+  attr_accessible :projectname,:latitude,:longitude,:completion,:description,:assets_attributes,:stage,:fundsneeded,:fundsraised,:goal,:category_ids,:percentcomplete
   
   accepts_nested_attributes_for :assets, :allow_destroy => true
   
   validates_length_of :goal, :minimum => 1, :maximum => 100, :allow_blank => true
+  validates :percentcomplete, :numericality => { :only_integer => true },:allow_blank=>true
   
   
   def gmaps4rails_address
