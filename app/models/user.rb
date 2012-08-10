@@ -25,8 +25,8 @@ class User < ActiveRecord::Base
   end
   
   def self.authenticate(email, password)
-    #user = find_by_email(email)
-    user = find(:first,:conditions=>['lower(email) = :email',:email=>email.downcase])
+    user = find_by_email(email)
+    #user = find(:first,:conditions=>['lower(email) = :email',:email=>email.downcase])
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
       user
     else

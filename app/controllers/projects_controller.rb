@@ -60,6 +60,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
+    @project.percentcomplete = 0 if project.percentcomplete == ''
 
     respond_to do |format|
       if @project.save
@@ -78,7 +79,9 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     params[:project][:fundsneeded] = params[:project][:fundsneeded].gsub(/[^\d\.]/, '')
     params[:project][:fundsraised] = params[:project][:fundsraised].gsub(/[^\d\.]/, '')
-
+    if params[:project][:percentcomplete].nil? || params[:project][:percentcomplete] == ''
+       params[:project][:percentcomplete] = 0
+    end
 
     respond_to do |format|
       if @project.update_attributes(params[:project])
