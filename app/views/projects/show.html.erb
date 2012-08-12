@@ -224,7 +224,7 @@
 				<div class="clear"></div>
 				<div class="fundsRaised">
 					<h3 class="darkGreen">Funds Raised</h3>	
-					<a href=""><img src="/assets/percent80.png"></a>
+					<a href=""><img src="/assets/<%=@fundPercentImage%>"></a>
 					<div class="dollarBubble">
 						<span class="darkGreen"><%= number_to_currency(@project.fundsraised, :unit => "$") %><br />RAISED <%= number_to_percentage((@project.fundsraised/@project.fundsneeded)*100,:precision=>2) if !@project.fundsneeded.nil? && @project.fundsneeded > 0 %></span>
 					</div>
