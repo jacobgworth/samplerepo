@@ -13,7 +13,7 @@ class Community < ActiveRecord::Base
   
   acts_as_gmappable :process_geocoding => false
   
-  attr_accessible :communityname,:population,:project_ids,:assets_attributes,:partner_ids
+  
   
   def gmaps4rails_address
     "#{self.latitude}, #{self.longitude}"
