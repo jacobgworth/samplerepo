@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120809150357) do
+ActiveRecord::Schema.define(:version => 20120812153651) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20120809150357) do
     t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "population"
   end
 
   create_table "communities_experiences", :id => false, :force => true do |t|
