@@ -351,7 +351,7 @@
 								%>
 								<!--<p><%= image_tag photo.asset.url(:medium) %></p>-->
 								<li >
-									<a href="<%= photo.asset.url(:medium)%>"><img src="<%= photo.asset.url(:thumb) %>" alt="" title="" longdesc="" class="<%= @classname%>" /></a>
+									<a href="<%= photo.asset.url(:medium)%>"><img src="<%= photo.asset.url(:thumb) %>" alt="" title="" longdesc="" class="<%= @classname%>" style="width:65px;" /></a>
 								</li>
 								<% @counter = @counter + 1%>
 								<% end %>

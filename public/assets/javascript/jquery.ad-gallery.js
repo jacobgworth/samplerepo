@@ -163,7 +163,7 @@
       this.setupElements();
       this.setupAnimations();
       if(this.settings.width) {
-        this.image_wrapper_width = this.settings.width;
+        this.image_wrapper_width = 280;//this.settings.width;
         this.image_wrapper.width(this.settings.width);
         this.wrapper.width(this.settings.width);
       } else {
