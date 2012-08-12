@@ -85,7 +85,7 @@
 </div>
 
 
-<div id="content" style="padding-top:370px;">
+<div id="content" style="padding-top:370px;border:1px solid red">
 
 	<% if @cid.nil?%>
 		<%=render 'projectsAllCats'%>
@@ -96,4 +96,6 @@
 <% if !@user.nil? && @user.is_admin == 1 %>
 	<div style="clear:both; padding:10px 0px 10px 0px;"><%= link_to 'Click Me to Create a New Project', new_project_path %></div>
 <% end %>
+<div class="clearfix"></div>
+
 </div>

@@ -333,12 +333,12 @@
       var inter = setInterval(
         function() {
           if(thumb_count == thumbs_loaded) {
-            thumb_wrapper_width -= 100;
+            thumb_wrapper_width -= 50;
             var list = context.nav.find('.ad-thumb-list');
             list.css('width', thumb_wrapper_width +'px');
             var i = 1;
             var last_height = list.height();
-            while(i < 160) {
+            while(i < 200) {
               list.css('width', (thumb_wrapper_width + i) +'px');
               if(last_height != list.height()) {
                 break;
