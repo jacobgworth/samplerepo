@@ -7,7 +7,7 @@
 				<div class="gridText">
 					<h2><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h2>
 					<p><%=project.goal%></p>
-					<h3 class="projectDetailButton">Village Served <span class="darkGreen">Village Name</span></h3>
+					<h3 class="projectDetailButton">Village Served <span class="darkGreen"><%=project.communities.first.communityname unless project.communities.first.nil? %></span></h3>
 					<h3 class="projectDetailButton">Project Stage <span class="darkGreen"><%=project.stage%></span></h3>
 					<h3 class="projectDetailButton"><a href="/projects/<%=project.id%>">View Project Details &raquo;</a></h3>
 				</div>
@@ -18,7 +18,7 @@
 				<div class="gridText">
 					<h2><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h2>
 					<p><%=project.goal%></p>
-					<h3 class="projectDetailButton">Village Served <span class="darkGreen">Village Name</span></h3>
+					<h3 class="projectDetailButton">Village Served <span class="darkGreen"><%=project.communities.first.communityname unless project.communities.first.nil?%></span></h3>
 					<h3 class="projectDetailButton">Project Stage <span class="darkGreen"><%=project.stage%></span></h3>
 					<h3 class="projectDetailButton"><a href="/projects/<%=project.id%>">View Project Details &raquo;</a></h3>
 				</div>
