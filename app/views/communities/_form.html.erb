@@ -23,6 +23,12 @@
     <%= f.label :longitude %><br />
     <%= f.text_field :longitude %>
   </div>
+  <div>
+  	Select Related Projects: <%= collection_select 'community', 'project_ids', Project.order("projectname asc"), :id, :projectname, { :include_blank => 'None'}, { :multiple => true, :projectname =>'community[project_ids][]',:selected => 0 } %>
+  </div>
+  <div>
+  	Select Partners: <%= collection_select 'community', 'partner_ids', Partner.order("partnername asc"), :id, :partnername, { :include_blank => 'None'}, { :multiple => true, :partnername =>'community[partner_ids][]',:selected => 0 } %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
