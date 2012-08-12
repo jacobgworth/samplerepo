@@ -1904,9 +1904,14 @@ right: 10px;
 width: 23px;
 background: url(/images/ad_scroll_forward.png) 0px 22px no-repeat;
 }
-.ad-gallery .ad-nav .ad-thumbs {
+.ad-gallery .ad-nav  {
 	overflow: hidden;
 	width: 300px;
+	margin:0 auto;
+}
+.ad-thumbs {
+	width:220px;
+	overflow: hidden;
 	margin:0 auto;
 }
 .ad-gallery .ad-thumbs .ad-thumb-list {
