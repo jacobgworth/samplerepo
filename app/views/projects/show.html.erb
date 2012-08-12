@@ -214,19 +214,19 @@
 			<div class="contentHeaderRight">
 				<h3 class="projectDetailButton" style="padding-top:20px; background-image: url('/assets/gr-<%=@category.categoryicon%>'); background-repeat:no-repeat; background-position:95% 50%; height:60px;">Project Type
 				<br />
-				<span class="darkGreenLarge"><%= @category.categoryname%></span></h3>
+				<span class="darkGreenLarge"><a href=""><%= @category.categoryname%></span></a></h3>
 				<h3 class="projectDetailButtonLeft">Population Served
 				<br />
-				<span class="darkGreenLarge">10000</span></h3>
+				<span class="darkGreenMedium">10000</span></h3>
 				<h3 class="projectDetailButtonRight">Project Stage
 				<br />
-				<span class="darkGreenLarge"><%= @project.stage%></span></h3>
+				<span class="darkGreenMedium"><%= @project.stage%></span></h3>
 				<div class="clear"></div>
 				<div class="fundsRaised">
-					<h3 class="darkGreen">Funds Raised</h3>	
+					<h3 class="darkGreen">Funds Raised of <%= number_to_currency(@project.fundsneeded, :unit => "$") %> Needed</h3>	
 					<a href=""><img src="/assets/<%=@fundPercentImage%>"></a>
 					<div class="dollarBubble">
-						<span class="darkGreen"><%= number_to_currency(@project.fundsraised, :unit => "$") %><br />RAISED <%= number_to_percentage((@project.fundsraised/@project.fundsneeded)*100,:precision=>2) if !@project.fundsneeded.nil? && @project.fundsneeded > 0 %></span>
+						<span class="darkGreen"><%= number_to_currency(@project.fundsraised, :unit => "$") %><br />RAISED </span>
 					</div>
 					
 				</div>
