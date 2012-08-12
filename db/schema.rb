@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120812153651) do
+ActiveRecord::Schema.define(:version => 20120812162941) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -64,9 +64,24 @@ ActiveRecord::Schema.define(:version => 20120812153651) do
     t.integer "experience_id"
   end
 
+  create_table "communities_partners", :id => false, :force => true do |t|
+    t.integer "community_id"
+    t.integer "partner_id"
+  end
+
+  create_table "communities_posts", :id => false, :force => true do |t|
+    t.integer "community_id"
+    t.integer "post_id"
+  end
+
   create_table "communities_projects", :id => false, :force => true do |t|
     t.integer "community_id"
     t.integer "project_id"
+  end
+
+  create_table "communities_updates", :id => false, :force => true do |t|
+    t.integer "community_id"
+    t.integer "update_id"
   end
 
   create_table "contents", :force => true do |t|
