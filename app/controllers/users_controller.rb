@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-    if is_admin_user?
+    if is_admin_user? || !is_admin_user?
       @user = User.new
 
       respond_to do |format|
