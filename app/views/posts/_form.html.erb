@@ -16,7 +16,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    Author: <%= f.number_field :author %>
+    Author: <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    Posted on: <%= date_select :post, :postdate %>
   </div>
   <div class="field">
     <%= f.label :body %><br />
