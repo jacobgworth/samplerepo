@@ -365,6 +365,8 @@ span.eyebrow {
 	z-index:1;
 }
 
+
+
 .giantText {
 	font-size: 9.3em;
 	letter-spacing:-.1em;
@@ -402,6 +404,9 @@ span.eyebrow {
 	font-size:2.25em;
 	letter-spacing:-.02em;
 }
+.largeText5_5 {
+	font-size:1.75em;
+}
 .largeText5 {
 	font-size:1.35em;
 }
@@ -427,7 +432,7 @@ span.eyebrow {
 
 #sponsorPageIcons{
 	position:absolute;
-	top:-330px;
+	top:-360px;
 	left:200px;
 }
 #sponsorPageIcons li{
