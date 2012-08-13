@@ -5,6 +5,9 @@
 			<div class="grid2x2Left">
 				
 				<div class="gridText">
+					<%unless project.assets.first.nil?%>
+						<p><img src="<%=project.assets.first.asset.url(:thumb)%>" /></p>
+					<%end%>
 					<h2><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h2>
 					<p><%=project.goal%></p>
 					<h3 class="projectDetailButton">Village Served <span class="darkGreen"><%=project.communities.first.communityname unless project.communities.first.nil? %></span></h3>
@@ -16,6 +19,9 @@
 			<div class="grid2x2Right">
 				
 				<div class="gridText">
+					<%unless project.assets.first.nil?%>
+						<p><img src="<%=project.assets.first.asset.url(:thumb)%>" /></p>
+					<%end%>
 					<h2><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h2>
 					<p><%=project.goal%></p>
 					<h3 class="projectDetailButton">Village Served <span class="darkGreen"><%=project.communities.first.communityname unless project.communities.first.nil?%></span></h3>

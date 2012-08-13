@@ -222,14 +222,15 @@
 				<br />
 				<span class="darkGreenMedium"><%= @project.stage%></span></h3>
 				<div class="clear"></div>
+				<%unless @project.fundsneeded.nil? || @project.fundsneeded == ''%>
 				<div class="fundsRaised">
 					<h3 class="darkGreen">Funds Raised of <%= number_to_currency(@project.fundsneeded, :unit => "$") %> Needed</h3>	
 					<a href=""><img src="/assets/<%=@fundPercentImage%>"></a>
 					<div class="dollarBubble">
 						<span class="darkGreen"><%= number_to_currency(@project.fundsraised, :unit => "$") %><br />RAISED </span>
 					</div>
-					
 				</div>
+				<%end%>
 			</div>
 			<div class="clearfix">
 				<!--x-->

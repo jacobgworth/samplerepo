@@ -78,8 +78,14 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
-    @project = Project.find(params[:id])
-    @project.assets.build
+    if is_admin_user?
+      @project = Project.find(params[:id])
+      @project.assets.build
+    else
+      respond_to do |format|
+        format.html { redirect_to "/" }
+      end
+    end
   end
 
   # POST /projects
