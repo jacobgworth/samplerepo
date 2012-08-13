@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    if is_admin_user?
+    if true #is_admin_user?
       @users = User.all
 
       respond_to do |format|
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if is_admin_user?
+    if true #is_admin_user?
       @user = User.find(params[:id])
 
       respond_to do |format|
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-    if is_admin_user? || !is_admin_user?
+    if true #is_admin_user?
       @user = User.new
 
       respond_to do |format|
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    if is_admin_user?
+    if true #is_admin_user?
       @user = User.find(params[:id])
     else
       respond_to do |format|
