@@ -11,6 +11,14 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_uniqueness_of :email
   
+  attr_accessible :auth_token,:user_name,:first,:last,:email,:password,:password_confirmation,:zip,:street1,:city,:state,:is_admin
+  
+  #Comment Login-specific functionality starts here
+  before_save :encrypt_password
+  
+  before_create { generate_token(:auth_token) }
+  
+  
   def generate_token(column)
     begin
       self[column] = SecureRandom.urlsafe_base64
