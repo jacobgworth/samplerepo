@@ -15,6 +15,11 @@ class PageController < ApplicationController
   end
   
   def orphan_care
+    @category = Category.find_by_categoryname("Orphanage")
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s)
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s)
+    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s)
+    @jason = @projects.to_gmaps4rails
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# orphan_care.html.erb
     end

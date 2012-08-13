@@ -26,6 +26,16 @@
 			<h1><span class="eyebrow">Haiti's Need for</span>
 			<br />
 			Orphan Care</h1>
+			<!--This is how you do the posts, updates, etc. -->
+			<%@posts.each do |post|%>
+				<p>Post: <%=post.body%></p>
+			<%end%>
+			<%@projects.each do |project|%>
+				<p>Project: <%=project.projectname%></p>
+			<%end%>
+			<%@updates.each do |update|%>
+				<p>Update: <%=update.title%></p>
+			<%end%>
 			<p>
 				There are over 400,000 children without parents in Haiti.  Despite these staggering numbers, we believe God has a plan to give every child a hope and a future.  The question to us as North Americans is this: Will we assume responsibility – the ability to respond – or will we allow God’s children to carry these burdens alone?
 			</p>
