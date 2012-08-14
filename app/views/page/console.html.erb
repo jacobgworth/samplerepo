@@ -1,0 +1,128 @@
+
+<div id="wrapper">
+<div id="navBar">
+	<div id="logo"><a href=""><img src="/assets/logo.png"></a></div>
+	<div id="utilityBar">
+		<ul id="utilityNav">
+			<li><a href="">About Us</a> // </li>
+			<li><a href="">Contact Us</a> // </li>
+			<li class="last"><% if current_user %>
+    <%= link_to "Logout", log_out_path %>
+  <% else %>
+    <%= link_to "Login", log_in_path %>
+  <% end %>
+  </li>
+		</ul>
+		<div class="buttonRounded donate"><a href="">Donate Today</a></div>
+		<div class="myMOH"><a href="">myMOH</a></div>
+	</div>
+	<div id="mainNav">
+		<ul id="nav">
+			<li class="active"><a href="/what-we-do">What<br />We Do</a>
+				<ul>
+					<li><a href="/projects">Projects</a></li>
+					<li><a href="/church-advancement">Church Advancement</a></li>
+					<li><a href="">Orphan Care</a></li>
+					<li><a href="">Education</a></li>
+					<li><a href="">Health Care</a></li>
+					<li><a href="/haiti_one">HaitiOne</a></li>
+					<li><a href="">Nutrition</a></li>
+					<li><a href="">3 Cords</a></li>
+				</ul>
+			</li>
+			<li><a href="/church-advancement">Church<br />Advancement</a>
+				<ul>
+					<li><a href="">Communities Impacted</a></li>
+					<li><a href="">Become a Church Partner</a></li>
+					<li><a href="">Take a Vision Trip</a></li>
+				</ul>
+			</li>
+			<li><a href="/child-sponsorship">Child<br />Sponsorship</a>
+				<ul>
+					<li><a href="">Sponsor a Child</a></li>
+					<li><a href="">Learn About Sponsorship</a></li>
+					<li><a href="">Sponsorship FAQs</a></li>
+					<li><a href="">Gift Store</a></li>
+					<li><a href="">Write Your Child</a></li>
+				</ul>
+			</li>
+			<li><a href="">Mission<br />Trips</a>
+				<ul>
+					<li><a href="">Take a Mission Trip</a></li>
+					<li><a href="">Medical Mission Trips</a></li>
+					<li><a href="">Trip Dates</a></li>
+					<li><a href="">Trip Costs</a></li>
+					<li><a href="">Trip FAQs</a></li>
+					<li><a href="">Preparing for a Trip</a></li>
+					<li><a href="">Mission Trip Experiences</a></li>
+				</ul>
+			</li>
+			<li><a href="/take-action">Take<br />Action</a>
+				<ul>
+					<li><a href="/projects">Projects</a></li>
+					<li><a href="/church-advancement">Church Advancement</a></li>
+					<li><a href="">Orphan Care</a></li>
+					<li><a href="">Education</a></li>
+					<li><a href="">Health Care</a></li>
+					<li><a href="">HaitiOne</a></li>
+					<li><a href="">Nutrition</a></li>
+					<li><a href="">3 Cords</a></li>
+				</ul>
+			</li>
+			<li class="last"><a href="/stay-connected">Stay<br />Connected</a>
+				<ul>
+					<li><a href="">Blog</a></li>
+					<li><a href="">Updates</a></li>
+					<li><a href="">Videos</a></li>
+				</ul>
+			</li>
+
+		</ul>
+			
+		
+	</div>
+	<div id="pull"><a href="">pull me</a></div>
+</div>
+<div style="padding:50px 0px 0px 10px;">
+<h1 style="font-size:1.5em;">Admin Console</h1>
+<div>Click a link to add, edit or delete items.
+	<div style="line-height:18px;width:250px;padding-top:10px;">
+		<h2 style="width:250px;border-bottom:solid 2px #58534A;padding-bottom:3px;">EXPERIENCES</h2>
+	<p style="padding-top:3px;"><a href="/experiences/new/">Add an Experience</a>
+	<p><a href="/experiences/">All Experiences</a></p>
+	</div>
+	<div style="line-height:18px;width:250px;padding-top:10px;">
+		<h2 style="width:250px;border-bottom:solid 2px #58534A;padding-bottom:3px;">POSTS</h2>
+	<p style="padding-top:3px;"><a href="/posts/new/">Add a Post</a>
+	<p><a href="/posts/">All Posts</a></p>
+	</div>
+	<div style="line-height:18px;width:250px;padding-top:10px;">
+		<h2 style="width:250px;border-bottom:solid 2px #58534A;padding-bottom:3px;">PROJECTS</h2>
+	<p style="padding-top:3px;"><a href="/projects/new/">Add a Project</a>
+	<p><a href="/projects/">All Projects</a></p>
+	</div>
+	<div style="line-height:18px;width:250px;padding-top:10px;">
+		<h2 style="width:250px;border-bottom:solid 2px #58534A;padding-bottom:3px;">UPDATES</h2>
+	<p style="padding-top:3px;"><a href="/updates/new/">Add an Update</a>
+	<p><a href="/updates/">All Updates</a></p>
+	</div>
+	<div style="line-height:18px;width:250px;padding-top:10px;">
+		<h2 style="width:250px;border-bottom:solid 2px #58534A;padding-bottom:3px;">USERS</h2>
+	<p style="padding-top:3px;"><a href="/users/new/">Add a User</a>
+	<p><a href="/users/">All Users</a></p>
+	</div>
+	<div style="line-height:18px;width:250px;padding-top:10px;">
+		<h2 style="width:250px;border-bottom:solid 2px #58534A;padding-bottom:3px;">VILLAGES</h2>
+	<p style="padding-top:3px;"><a href="/communities/new/">Add a Village</a>
+	<p><a href="/communities/">All Villages</a></p>
+	</div>
+</div>
+</div>
+
+	<div class="clearfix" style="height:40px;"><!--x--></div>
+
+<!--<h1>Ministry of Hope Haiti Redesign Project</h1>
+
+<div><h2>Click to see a map of our <a href="/communities/">Mission of Hope communities in Haiti</a></h2></div>
+<div><h2>Click to see a map of our <a href="/projects/">ongoing Mission of Hope Projects in Haiti</a></h2></div>
+-->

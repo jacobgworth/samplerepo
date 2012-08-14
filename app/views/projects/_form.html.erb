@@ -23,6 +23,9 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
+  	Percent Complete: <%= f.text_field :percentcomplete%>
+  </div>
+  <div class="field">
   	Funds Needed: <%= f.text_field :fundsneeded%>
   </div>
    <div class="field">
@@ -47,6 +50,9 @@
   <p><br /></p>
   <div>
   	Select Category: <%= collection_select 'project', 'category_ids', Category.order("categoryname asc"), :id, :categoryname, { :include_blank => 'None'}, { :multiple => true, :categoryname =>'project[category_ids][]',:selected => 0 } %>
+  </div>
+  <div>
+  	Select Village: <%= collection_select 'project', 'community_ids', Community.order("communityname asc"), :id, :communityname, { :include_blank => 'None'}, { :multiple => true, :communityname =>'project[community_ids][]',:selected => 0 } %>
   </div>
   <p><br /></p>
   <div>Add image(s):

@@ -36,6 +36,7 @@ Mohhaiti::Application.routes.draw do
   resources :sessions
 
   get "home/index"
+  
   get "page/what_we_do"
   match "/what-we-do" => "page#what_we_do"
   
@@ -44,9 +45,13 @@ Mohhaiti::Application.routes.draw do
     
   get "page/orphan_care"
   match "/orphan_care" => "page#orphan_care"
+  match "/orphan-care" => "page#orphan_care"
   
   get "page/education"
   match "/education" => "page#education"
+  
+  get "page/console"
+  match "/console" => "page#console"
   
   get "advancement/index"
   match "/church-advancement" => "Advancement#index"

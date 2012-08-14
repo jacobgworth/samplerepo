@@ -1,6 +1,7 @@
 class Asset < ActiveRecord::Base
 
   belongs_to :project
+  belongs_to :post
   
   
   #Paperclip method for Experience images

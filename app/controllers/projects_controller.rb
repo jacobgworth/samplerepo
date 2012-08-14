@@ -29,6 +29,34 @@ class ProjectsController < ApplicationController
     @assets = @project.assets.all
     @user = current_user
     @category = @project.categories.first
+    @updates = @project.updates.all
+    @posts = @project.posts.all
+    @fundpercent = 0
+    if !@project.fundsneeded.nil? && @project.fundsneeded > 0
+      @fundpercent = (@project.fundsraised/@project.fundsneeded) * 100.00
+    end
+    @fundPercentImage = 'percent0.png'
+    if @fundpercent >= 10 && @fundpercent < 20
+      @fundPercentImage = 'percent10.png'
+    elsif @fundpercent >= 20 && @fundpercent < 30
+      @fundPercentImage = 'percent20.png'
+    elsif @fundpercent >= 30 && @fundpercent < 40
+      @fundPercentImage = 'percent30.png'
+    elsif @fundpercent >= 40 && @fundpercent < 50
+      @fundPercentImage = 'percent40.png'
+    elsif @fundpercent >= 50 && @fundpercent < 60
+      @fundPercentImage = 'percent50.png'
+    elsif @fundpercent >= 60 && @fundpercent < 70
+      @fundPercentImage = 'percent60.png'
+    elsif @fundpercent >= 70 && @fundpercent < 80
+      @fundPercentImage = 'percent70.png'
+    elsif @fundpercent >= 80 && @fundpercent < 90
+      @fundPercentImage = 'percent80.png'
+    elsif @fundpercent >= 90 && @fundpercent < 97
+      @fundPercentImage = 'percent90.png'
+    elsif @fundpercent >= 97
+      @fundPercentImage = 'percent100.png'
+    end
 
     respond_to do |format|
       format.html {render :layout=>"applicationWithAdGallery"}# show.html.erb
@@ -50,14 +78,21 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
-    @project = Project.find(params[:id])
-    @project.assets.build
+    if is_admin_user?
+      @project = Project.find(params[:id])
+      @project.assets.build
+    else
+      respond_to do |format|
+        format.html { redirect_to "/" }
+      end
+    end
   end
 
   # POST /projects
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
+    @project.percentcomplete = 0 if project.percentcomplete == ''
 
     respond_to do |format|
       if @project.save
@@ -76,7 +111,9 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     params[:project][:fundsneeded] = params[:project][:fundsneeded].gsub(/[^\d\.]/, '')
     params[:project][:fundsraised] = params[:project][:fundsraised].gsub(/[^\d\.]/, '')
-
+    if params[:project][:percentcomplete].nil? || params[:project][:percentcomplete] == ''
+       params[:project][:percentcomplete] = 0
+    end
 
     respond_to do |format|
       if @project.update_attributes(params[:project])

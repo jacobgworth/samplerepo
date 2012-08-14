@@ -102,6 +102,10 @@ strong {
 span.eyebrow {
 	font-size:40%;
 }
+
+.relative {
+	position:relative;
+}
 #bgHero {
 	width:100%;
 	height:630px;
@@ -147,9 +151,6 @@ span.eyebrow {
 	background-size: cover;
 }
 #heroContentSpon{
-	color:white;
-	width:960px;
-	margin:0 auto;
 	position:relative;
 }
 #heroContentSpon h1{
@@ -263,34 +264,7 @@ span.eyebrow {
 	font-size: 99px;
 	line-height:68px;
 }
-#contentOrphan{
-	margin-top:520px;
-	width:600px;
-	float:left;
-	background: url(/assets/contentDiv.png) bottom center no-repeat;
-}
-#contentOrphan h3{
-	font-size:24px;
-	padding:0 0 10px 0;
-	color:#19302F;
-	text-transform:uppercase;
-}
-#contentOrphan h1{
-	font-size:36px;
-	padding:0 0 10px 0;
-	color:#19302F;
-	text-transform:uppercase;
-}
-#contentOrphan p{
-	padding-bottom:15px;
-	line-height: 26px;
-	font-size: 16px;
-}
-#contentOrphan ol{
-	list-style:decimal;
-	padding-left:22px;
-	line-height: 26px;
-}
+
 .videoWrapper {
 	width:500px;
 	height:281px;
@@ -299,6 +273,47 @@ span.eyebrow {
 	position:absolute;
 	border:5px solid #E4D4B9;
 }
+
+.percentComplete {
+	width:360px;
+	height:180px;
+	top:-430px;
+	right:0px;
+	position:absolute;
+	background-color:#078E60;
+	color:#E4D4B9;
+	text-align:center;
+	padding:60px 10px 0 10px;
+}
+
+.percentComplete h2 {
+	font-size:1.5em;
+	text-transform:uppercase;
+}
+
+.fundsRaised {
+	position:relative;
+}
+
+.dollarBubble {
+	position:absolute;
+	display: none;
+	bottom:-75px;
+	left:30px;
+	background: url(/assets/dollarBubble.png) no-repeat;
+	height:62px;
+	width:150px;
+	z-index: 100;
+	font-family: 'Montserrat', sans-serif;
+	font-size:1em;
+	padding:15px 0 5px 0;
+	text-align:center;
+}
+
+.fundsRaised a:hover + div.dollarBubble {
+    display: block;
+}
+
 
 #heroContentAdvancement h1 {
 	position:absolute;
@@ -342,7 +357,7 @@ span.eyebrow {
 	position:absolute;
 	top:-430px;
 	left:8px;
-	color:#f6efe5;
+	color:#E4D4B9;
 	text-shadow: 0 .1em .2em #666;
 	text-transform:uppercase;
 	font-family: 'Montserrat', sans-serif;
@@ -350,11 +365,20 @@ span.eyebrow {
 	z-index:1;
 }
 
+
+
 .giantText {
 	font-size: 9.3em;
 	letter-spacing:-.1em;
 	line-height:.5em;
 }
+
+.giantText2 {
+	font-size: 8em;
+	letter-spacing:-.1em;
+	line-height:.5em;
+}
+
 .giantText1 {
 	font-size: 6.0em;
 	letter-spacing:-.1em;
@@ -380,6 +404,9 @@ span.eyebrow {
 	font-size:2.25em;
 	letter-spacing:-.02em;
 }
+.largeText5_5 {
+	font-size:1.75em;
+}
 .largeText5 {
 	font-size:1.35em;
 }
@@ -395,13 +422,17 @@ span.eyebrow {
 	display:block;
 }
 
+.lowercase {
+	text-transform: none;
+}
+
 .initialCaps {
 	text-transform: capitalize;
 }
 
 #sponsorPageIcons{
 	position:absolute;
-	top:-330px;
+	top:-360px;
 	left:200px;
 }
 #sponsorPageIcons li{
@@ -419,9 +450,7 @@ span.eyebrow {
 #sponIconsList p{
 
 }
-#clear{
-	clear:both;
-}
+
 #heroRibbon {
 	position:absolute;
 	background:url(/assets/heroRibbon.png) no-repeat;
@@ -772,35 +801,34 @@ h3.CTA {
 	padding-left:22px;
 	line-height: 26px;
 }
-.rightColOprhan{
-	margin-top:520px;
-	float:right;
+#content .rightBoxGreen {
 	width:260px;
 	background-color:#079367;
-	padding-top: 5px;
-	padding-bottom:25px;
-	padding-left:15px;
+	padding:20px;
+	margin-bottom:10px;
 }
-.rightColOprhan h2{
-	font-size: 17px;
-	padding-top:8px;
-	padding-bottom:8px;
+#content .rightBoxGreen h2{
+	font-size: 1em;
+	padding:8px 0 0 0;
 	color:#e4d4b9;
 	text-transform: uppercase;
 }
-.rightColOprhan h3{
+#content .rightBoxGreen h3{
 	color:#19302f;
 	font-size:14px;
-	padding-top:10px;
-	padding-bottom:3px;
+	padding-bottom:0px;
 }
-.rightColOprhan p{
+#content .rightBoxGreen p {
 	line-height:16px;
-	padding-right:5px;
-	font-size:14px;
+	font-size:.85em;
 	color:#19302f;
+	font-family: 'Montserrat', sans-serif;
 }
-.rightColOprhan ul{
+
+.relativeWrapper {
+	position:relative;
+}
+.rightBoxGreen ul{
 	line-height:16px;
 	padding-left:29px;
 	font-size:14px;
@@ -947,15 +975,41 @@ h3.CTA {
 	padding-bottom:8px;
 }
 
+#content h1, #content h2, #content h3 {
+	color:#19302F;
+	text-transform:uppercase;	
+}
+
 #content h1 {
 	font-size:3em;
 	padding:0;
-	color:#19302F;
-	text-transform:uppercase;
 }
 
 #content h1 span.eyebrow {
 	font-size:40%;
+}
+
+#contentLeft560 h2 {
+	font-size:2em;
+	padding:20px 0 0 0;
+}
+
+
+.contentHeader {
+	background:url(/assets/contentDiv.png) center bottom no-repeat;
+	padding-bottom: 20px;
+	margin-bottom:20px;
+}
+
+.contentHeaderLeft {
+	float:left;
+	width:560px;
+} 
+
+.contentHeaderRight {
+	float:right;
+	width:300px;
+	padding-top:20px;
 }
 
 #contentLeft560 {
@@ -972,7 +1026,8 @@ h3.CTA {
 
 #contentRight300 {
 	float:right;
-	width:300px
+	width:300px;
+	margin-top:30px;
 }
 
 
@@ -1010,13 +1065,25 @@ h3#missionStatement {
 	text-transform:uppercase;
 }
 
-h3.projectDetailButton {
+#content h3.projectDetailButton, #content h3.projectDetailButtonLeft, #content h3.projectDetailButtonRight {
 	background-color:#078E60;
 	padding:8px;
 	color:#e4d4b9;
 	text-transform:uppercase;
 	font-size:.7em;
 	margin-top:10px;
+}
+
+h3.projectDetailButtonLeft {
+	width:130px;
+	float:left;
+	margin-bottom:10px;
+}
+
+h3.projectDetailButtonRight {
+	width:130px;
+	float:right;
+	margin-bottom:10px;
 }
 h4.projectDetailButton {
 	background-color:#078E60;
@@ -1043,18 +1110,48 @@ h4.projectDetailButton {
 }
 
 
-h3.projectDetailButton a:link, h3.projectDetailButton a:visited {
+h3.projectDetailButton a:link, h3.projectDetailButton a:visited, h3.projectDetailButtonLeft a:link, h3.projectDetailButtonLeft a:visited, h3.projectDetailButtonLeft a:link, h3.projectDetailButtonLeft a:visited {
 	color:#E4D4B9;
 }
 
-h3.projectDetailButton a:hover {
+h3.projectDetailButton a:hover, h3.projectDetailButtonLeft a:hover, h3.projectDetailButtonRight a:hover {
 	color:#08C086;
 }
 
-span.darkGreen {
+
+
+span.darkGreen, span.darkGreen a:link, span.darkGreen a:visited  {
 	color:#19302f;
 	padding-left:5px;
 	font-weight:bold;
+	text-transform:none;
+}
+
+span.darkGreen a:hover, span.darkGreenMedium a:hover, span.darkGreenLarge a:hover  {
+	color:#08C086;
+	text-decoration:underline;
+}
+
+span.darkGreenMedium, span.darkGreenMedium a:link, span.darkGreenMedium a:visited {
+	color:#19302f;
+	font-weight:bold;
+	font-size:150%;
+	text-transform:none;
+}
+
+span.darkGreenMedium a:link, span.darkGreenMedium a:visited, span.darkGreenMedium a:hover {
+	font-size:100%;
+}
+
+span.darkGreenLarge, span.darkGreenLarge a:link, span.darkGreenLarge a:visited {
+	color:#19302f;
+	font-weight:bold;
+	font-size:200%;
+	text-transform:none;
+}
+
+span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a:hover {
+	font-size:100%;
 }
 
 .divHeader {
@@ -1371,7 +1468,7 @@ span.darkGreen {
 	width:195px;
 	background:#ea861b;
 	padding:10px;
-	color:#f6efe5;
+	color:#E4D4B9;
 	text-align:center;
 	font-family: 'Montserrat', sans-serif;
 		
@@ -1383,7 +1480,7 @@ span.darkGreen {
 .buttonSquareOrange {
 	background:#ea861b;
 	padding:10px;
-	color:#f6efe5;
+	color:#E4D4B9;
 	text-align:center;
 	font-family: 'Montserrat', sans-serif;
 		
@@ -1393,13 +1490,13 @@ span.darkGreen {
 }
 
 .buttonSquareOrange a, .buttonSquareOrange a:visited, #heroContent .buttonSquareOrange a, #heroContent .buttonSquareOrange a:visited {
-	color:#f6efe5;
+	color:#E4D4B9;
 	text-shadow: 0 .05em #777;
 	text-transform:uppercase;
 }
 
 .buttonSquareOrange a:hover, #heroContent .buttonSquareOrange a:hover {
-	color:#f6efe5;
+	color:#E4D4B9;
 	text-shadow: 0 -.05em #777;
 	text-decoration:none;
 }
@@ -1635,19 +1732,30 @@ p.meta {
 
 .ad-gallery {
 width: 120px;
+background:#ccb99a;
+border:1px solid #c2b092;
+
+
 }
 .ad-gallery, .ad-gallery * {
 margin: 0;
 padding: 0;
 }
 .ad-gallery .ad-image-wrapper {
-width:300px;
-height: 400px;
+width:263px;
+height: 171px;
 margin-bottom: 5px;
 position: relative;
 overflow: hidden;
-
+padding:10px;
 }
+.ad-image {
+	border:5px solid #fff;
+	width:283px;
+	height:191px;
+}
+
+
 .ad-gallery .ad-image-wrapper .ad-loader {
 position: absolute;
 z-index: 10;
@@ -1656,45 +1764,45 @@ left: 48%;
 border: 1px solid #CCC;
 }
 .ad-gallery .ad-image-wrapper .ad-next {
-position: absolute;
+/*position: absolute;
 right: 0;
 top: 0;
 width: 25%;
 height: 100%;
 cursor: pointer;
 display: block;
-z-index: 100;
+z-index: 100;*/
 }
 .ad-gallery .ad-image-wrapper .ad-prev {
-position: absolute;
+/*position: absolute;
 left: 0;
 top: 0;
 width: 25%;
 height: 100%;
 cursor: pointer;
 display: block;
-z-index: 100;
+z-index: 100;*/
 }
 .ad-gallery .ad-image-wrapper .ad-prev, .ad-gallery .ad-image-wrapper .ad-next {
 /* Or else IE will hide it */
 background: url(non-existing.jpg);
 }
 .ad-gallery .ad-image-wrapper .ad-prev .ad-prev-image, .ad-gallery .ad-image-wrapper .ad-next .ad-next-image {
-background: url(/images/ad_prev.png);
+/*background: url(/images/ad_prev.png);
 width: 30px;
 height: 30px;
 display: none;
 position: absolute;
 top: 75%;
 left: 0;
-z-index: 101;
+z-index: 101;*/
 }
 .ad-gallery .ad-image-wrapper .ad-next .ad-next-image {
-background: url(/images/ad_next.png);
+/*background: url(/images/ad_next.png);
 width: 30px;
 height: 30px;
 right: 0;
-left: auto;
+left: auto;*/
 }
 .ad-gallery .ad-image-wrapper .ad-image {
 position: absolute;
@@ -1768,40 +1876,45 @@ height: 100px;
 }
 .ad-gallery .ad-back {
 cursor: pointer;
-left: -20px;
-width: 13px;
+left: 10px;
+width: 23px;
 display: block;
 background: url(/images/ad_scroll_back.png) 0px 22px no-repeat;
 }
 .ad-gallery .ad-forward {
 cursor: pointer;
 display: block;
-right: -20px;
-width: 13px;
+right: 10px;
+width: 23px;
 background: url(/images/ad_scroll_forward.png) 0px 22px no-repeat;
 }
-.ad-gallery .ad-nav .ad-thumbs {
-overflow: hidden;
-width: 100%;
+.ad-gallery .ad-nav  {
+	overflow: hidden;
+	width: 300px;
+	margin:0 auto;
+}
+.ad-thumbs {
+	width:220px;
+	overflow: hidden;
+	margin:0 auto;
 }
 .ad-gallery .ad-thumbs .ad-thumb-list {
-float: left;
-width: 9000px;
-list-style: none;
+	float: left;
+	list-style: none;
 }
 .ad-gallery .ad-thumbs li {
-float: left;
-padding-right: 5px;
+	float: left;
+	padding-right: 5px;
 }
 .ad-gallery .ad-thumbs li a {
-display: block;
+	display: block;
 }
 .ad-gallery .ad-thumbs li a img {
-border: 3px solid #CCC;
-display: block;
+	border: 3px solid #fff;
+	display: block;
 }
 .ad-gallery .ad-thumbs li a.ad-active img {
-border: 3px solid #616161;
+	border: 3px solid #fff;
 }
 /* Can't do display none, since Opera won't load the images then */
 .ad-preloads {
