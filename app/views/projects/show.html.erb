@@ -249,6 +249,9 @@
 						updates
 					</p>
 				</div>
+				<% if @updates.count == 0 %>
+					<div class="update560">No updates for <%= @project.projectname %></div>
+				<% else %>
 				<%@updates.each do |m|%>
 				<div class="update560">
 					<div class="updateDate">
@@ -273,18 +276,20 @@
 							<%= truncate(m.body,:length=>100,:separator=>' ')%> <a href="/updates/<%= m.id%>">READ MORE</a>
 						</p>
 						<p class="meta">
-							Projects: Project Name | Posted by: <%= creator%>
+							Projects: <%= @project.projectname %> | Posted by: <%= creator%>
 						</p>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 				<%end%>
+				
 				<div class="updateNavRight">
 					<a href="/updates/">View All Updates &raquo;</a>
 				</div>
+				<% end %>
 			</div>
 			<!--start posts-->
-						<div class="updatesWrapper">
+			<div class="updatesWrapper">
 				<h3><span class="eyebrow"><%= @project.projectname %></span>
 				<br />
 				Posts</h3>
@@ -295,6 +300,9 @@
 						posts
 					</p>
 				</div>
+				<% if @posts.count == 0 %>
+					<div class="update560">No posts for <%= @project.projectname %></div>
+				<%else%>
 				<%@posts.each do |m|%>
 				<div class="update560">
 					<div class="updateDate">
@@ -325,9 +333,11 @@
 					<div class="clearfix"></div>
 				</div>
 				<%end%>
+				
 				<div class="updateNavRight">
 					<a href="/posts/">View All Posts &raquo;</a>
 				</div>
+				<%end%>
 			</div>
 		</div>
 		<div id="contentRight300">
