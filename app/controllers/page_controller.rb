@@ -16,15 +16,22 @@ class PageController < ApplicationController
   
   def orphan_care
     @category = Category.find_by_categoryname("Orphanage")
-    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s)
-    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s)
-    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s)
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(6).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    
     @jason = @projects.to_gmaps4rails
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# orphan_care.html.erb
     end
   end
   def education
+    @category = Category.find_by_categoryname("Education")
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(6).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @villages = Community.joins(:projects=>:categories).where("category_id=?",@category.id.to_s)
+    
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# orphan_care.html.erb
     end
