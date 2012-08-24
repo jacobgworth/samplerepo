@@ -92,7 +92,14 @@ strong {
 
 .alignRight {
 	float:right;
+	padding:0 0 10px 10px;
 }
+
+.alignLeft {
+	float:left;
+	padding:0 10px 10px 0;
+}
+
 
 .contentDiv {
 	background: url(/assets/contentDiv.png) bottom center no-repeat;
@@ -186,7 +193,7 @@ span.eyebrow {
 #orphanHero{
 	width:100%;
 	height:100%;
-	background: url(/assets/orphanHero.png) no-repeat center center;
+	background: url(/assets/orphanHero.jpg) no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -439,16 +446,26 @@ span.eyebrow {
 	display: inline;
 	padding-left:13px;
 }
+
+#sponIconsList {
+	padding:20px 0;
+}
 #sponIconsList ul{
-	width: 450px;
+	font-family: 'Montserrat', sans-serif;
+	text-transform:uppercase;
+	color:#182E2C;
+	font-size:.85em;
 }
 #sponIconsList li{
-	width:120px;
+	float:left;
+	width:186px;
 	display:inline;
-	border: 1px solid black;
+	text-align:center;
+	margin:0 auto;
 }
-#sponIconsList p{
 
+#sponIconsList img {
+	padding-bottom:10px;
 }
 
 #heroRibbon {
@@ -815,12 +832,35 @@ h3.CTA {
 }
 #content .rightBoxGreen h3{
 	color:#19302f;
-	font-size:14px;
+	font-size:1em;
 	padding-bottom:0px;
 }
 #content .rightBoxGreen p {
 	line-height:16px;
 	font-size:.85em;
+	color:#19302f;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#content .rightBox {
+	width:260px;
+	background:url(/assets/contentDiv.png) no-repeat bottom center;
+	margin-bottom:10px;
+	padding-bottom:20px;
+	margin-bottom:20px;
+}
+#content .rightBox h2{
+	font-size: 1em;
+	padding:8px 0;
+	text-transform: uppercase;
+}
+#content .rightBox h3{
+	font-size:1em;
+	padding-bottom:0px;
+}
+#content .rightBox p {
+	line-height:16px;
+	font-size:.8em;
 	color:#19302f;
 	font-family: 'Montserrat', sans-serif;
 }
@@ -971,7 +1011,7 @@ h3.CTA {
 }
 
 #content p {
-	line-height:1.2em;
+	line-height:1.4em;
 	padding-bottom:8px;
 }
 
@@ -1017,10 +1057,17 @@ h3.CTA {
 	width:560px;
 }
 
-#contentLeft560 h3, #contentRight300 h3 {
+#contentLeft560 h3 {
 	color:#19302F;
 	text-transform:uppercase;
 	font-size:2.5em;
+}
+
+#contentLeft560 h4 {
+	color:#19302F;
+	text-transform:uppercase;
+	font-size:1.25em;
+	margin-top:20px;
 }
 
 
@@ -1029,6 +1076,19 @@ h3.CTA {
 	width:300px;
 	margin-top:30px;
 }
+
+#contentRight300 h2 {
+	color:#19302F;
+	text-transform:uppercase;
+	font-size:1.25em;
+}
+
+#contentRight300 h3 {
+	color:#19302F;
+	text-transform:uppercase;
+	font-size:1em;
+}
+
 
 
 h3#missionStatement {
@@ -1417,6 +1477,14 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	font-size:2.5em;
 }
 
+#contentLeft h4 {
+	color:#19302F;
+	text-transform:uppercase;
+	font-size:1.25em;
+	margin-top:20px;
+}
+
+
 .contentRightWrapper {
 	margin-bottom:30px;
 }
@@ -1483,6 +1551,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	color:#E4D4B9;
 	text-align:center;
 	font-family: 'Montserrat', sans-serif;
+	font-size:.85em;
 		
 	-moz-box-shadow: 3px 3px #c26603;
 	-webkit-box-shadow: 3px 3px #c26603;

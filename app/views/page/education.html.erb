@@ -12,7 +12,12 @@
 <div id="wrapper">
 <%=render 'layouts/navBar'%>
 <div id="contentHaitiOne">
-	<h1>Haiti one</h1>
+	<h1>Education</h1>
+	<p>Villages:</p>
+	<%@villages.each do |village|%>
+		<%=village.communityname%><br />
+	<%end%>
+	<p>Total Population Served: <%=@villages.sum('population')%></p>
 	<p>HaitiOne is a ministry started by Mission of Hope with the goal of uniting missions/organizations throughout Haiti. Through this unity, we can all be more effective in bringing positive change to Haiti.</p>
 
 <h2>Vision</h2>

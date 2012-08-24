@@ -31,6 +31,9 @@
   <div>
   	Select Related Projects: <%= collection_select 'post', 'project_ids', Project.order("projectname asc"), :id, :projectname, { :include_blank => 'None'}, { :multiple => true, :projectname =>'post[project_ids][]',:selected => 0 } %>
   </div>
+  <div>
+  	Select Related Villages: <%= collection_select 'post', 'community_ids', Community.order("communityname asc"), :id, :communityname, { :include_blank => 'None'}, { :multiple => true, :communityname =>'post[community_ids][]',:selected => 0 } %>
+  </div>
   <div class="field">
     <div>Add image(s):
   <%= f.fields_for :assets do |asset_fields| %>

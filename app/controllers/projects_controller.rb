@@ -29,8 +29,8 @@ class ProjectsController < ApplicationController
     @assets = @project.assets.all
     @user = current_user
     @category = @project.categories.first
-    @updates = @project.updates.all
-    @posts = @project.posts.all
+    @updates = @project.updates.last(3).reverse #Update.last(3).reverse
+    @posts = @project.posts.last(3).reverse
     @fundpercent = 0
     if !@project.fundsneeded.nil? && @project.fundsneeded > 0
       @fundpercent = (@project.fundsraised/@project.fundsneeded) * 100.00

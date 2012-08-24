@@ -25,6 +25,9 @@
   <div>
   	Select Related Projects: <%= collection_select 'update', 'project_ids', Project.order("projectname asc"), :id, :projectname, { :include_blank => 'None'}, { :multiple => true, :projectname =>'update[project_ids][]',:selected => 0 } %>
   </div>
+  <div>
+  	Select Related Villages: <%= collection_select 'update', 'community_ids', Community.order("communityname asc"), :id, :communityname, { :include_blank => 'None'}, { :multiple => true, :communityname =>'update[community_ids][]',:selected => 0 } %>
+  </div>
   <div class="field">
     <%= f.label :media %><br />
     <%= f.text_field :media %>
