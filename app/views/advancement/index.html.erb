@@ -30,23 +30,37 @@
 				<img src="/assets/icon-projects-mini.png" />
 			</div>
 			<div class="updateProjects560Left">
-				<h4><a href="">Project Name</a></h4>
-				<h4><a href="">Project Name</a></h4>
-				<h4><a href="">Project Name</a></h4>
+			<% 
+				@counter = 1
+				@projects.each do |project|
+					break if @counter > 3
+			%>
+				<h4><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h4>
+			<% 
+				@counter = @counter + 1
+				end 
+			%>
 			</div>
 			<div class="updateProjects560Right">
-				<h4><a href="">Project Name</a></h4>
-				<h4><a href="">Project Name</a></h4>
-				<h4><a href="">Project Name</a></h4>
+			<% 
+				@counter = 1
+				@projects.each do |project|
+					if @counter > 3
+			%>
+				<h4><a href="/project/<%@project.id%>"><%=@project.projectname%></a></h4>
+					<%end
+					@counter = @counter + 1%>
+			<%end%>
 			</div>
 			<div class="clearfix"><!--x--></div>
 			</div>
-		<div class="updateNavRight"><a href="">View All Projects &raquo;</a></div>
+		<div class="updateNavRight"><a href="/projects/?cid=<%=@category.id%>">View All Projects &raquo;</a></div>
 	</div>
 	
 	<div class="updatesWrapper">
 	<h3><span class="eyebrow">Church Advancement</span><br />Updates</h3>
 		<div class="speechBubble"><p>latest updates</p></div>
+		<%if @updates.count > 0%>
 		<%@updates.each do |m|%>
 			<div class="update560">
 			<div class="updateDate">
@@ -72,12 +86,16 @@
 			</div>
 		<%end%>
 		<div class="updateNavRight"><a href="">View All Updates &raquo;</a></div>
+		<%else%>
+			<div class="update560">No Church Advancement Updates</div>
+		<%end%>
 	</div>
 	
 	<div class="updatesWrapper">
 	<h3><span class="eyebrow">Church Advancement</span><br />Blog Posts</h3>
 		<div class="speechBubble"><p>latest<br />blog posts</p></div>
-		<%@updates.each do |m|%>
+		<% if @posts.count > 0%>
+		<%@posts.each do |m|%>
 			<div class="update560">
 			<div class="updateDate">
 				<% 
@@ -102,6 +120,9 @@
 			</div>
 		<%end%>
 		<div class="updateNavRight"><a href="">View All Posts &raquo;</a></div>
+		<%else%>
+			<div class="update560">No Church Advancement Blog Posts</div>
+		<%end%>
 	</div>
 	
 	
@@ -110,9 +131,9 @@
 		<div class="contentRightWrapper">
 			<h3><span class="eyebrow">Learn More About</span><br />Our Reach</h3>
 			<p>Lorem ipsum</p>
-				<h4 class="projectDetailButton iconDetailVillages">Total No. of Villages Served <span class="darkGreen">8</span></h4>
-				<h4 class="projectDetailButton iconDetailPopulation">Total Population Reached <span class="darkGreen">86,000</span></h4>
-				<h4 class="projectDetailButton iconDetailProjects">Total No. of Projects Under Way <span class="darkGreen">98</span></h4>
+				<h4 class="projectDetailButton iconDetailVillages">Total No. of Villages Served <span class="darkGreen"><%=@villages.count%></span></h4>
+				<h4 class="projectDetailButton iconDetailPopulation">Total Population Reached <span class="darkGreen"><%=@villages.sum('population')%></span></h4>
+				<h4 class="projectDetailButton iconDetailProjects">Total No. of Projects Under Way <span class="darkGreen"><%=@projects.count%></span></h4>
 		</div>
 		<div class="contentDiv"></div>
 		<div class="contentRightWrapper">	
