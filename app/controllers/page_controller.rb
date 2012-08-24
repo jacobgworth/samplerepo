@@ -14,6 +14,12 @@ class PageController < ApplicationController
     end
   end
   
+  def mission_trips
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}
+    end
+  end  
+  
   def orphan_care
     @category = Category.find_by_categoryname("Orphanage")
     @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(6).reverse
