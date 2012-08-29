@@ -133,7 +133,25 @@ span.eyebrow {
 #haitiOneHeroImg{
 	width:100%;
 	height:100%;
-	background: url(/assets/haiti-one-hero.png) no-repeat center center;
+	background: url(/assets/haitiOneHero.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#nutritionHero{
+	width:100%;
+	height:100%;
+	background: url(/assets/nutritionHero.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#healthCareHero{
+	width:100%;
+	height:100%;
+	background: url(/assets/healthCareHero.jpg) no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;

@@ -55,10 +55,83 @@ Mohhaiti::Application.routes.draw do
   get "page/education"
   match "/education" => "page#education"
   
+  get "page/health_care"
+  match "/health_care" => "page#health_care"
+  
+  get "page/three_cords"
+  match "/three_cords" => "page#three_cords"
+    
+  get "page/nutrition"
+  match "/nutrition" => "page#nutrition"
+     
+  get "page/medical_mission_trips"
+  match "/medical_mission_trips" => "page#medical_mission_trips"
+     
+  get "page/mission_trip_experinces"
+  match "/mission_trip_experinces" => "page#mission_trip_experinces"
+     
+  get "page/preparing_for_trip"
+  match "/preparing_for_trip" => "page#preparing_for_trip"
+     
+  get "page/take_a_trip"
+  match "/take_a_trip" => "page#take_a_trip"
+     
+  get "page/trip_costs"
+  match "/trip_costs" => "page#trip_costs"
+     
+  get "page/trip_dates"
+  match "/trip_dates" => "page#trip_dates"
+     
+  get "page/trip_faqs"
+  match "/trip_faqs" => "page#trip_faqs"
+        
+  get "page/communities_impacted"
+  match "/communities_impacted" => "page#communities_impacted"
+        
+  get "page/church_partner"
+  match "/church_partner" => "page#church_partner"
+        
+  get "page/vision_trip"
+  match "/vision_trip" => "page#vision_trip"
+    
+  get "page/downloads"
+  match "/downloads" => "page#downloads"
+    
+  get "page/make_donation"
+  match "/make_donation" => "page#make_donation"
+    
+  get "page/be_a_partner"
+  match "/be_a_partner" => "page#be_a_partner"
+ 
+  get "page/volunteer"
+  match "/volunteer" => "page#volunteer"   
+    
+  get "page/share_photos"
+  match "/share_photos" => "page#share_photos"
+    
+  get "page/event"
+  match "/event" => "page#event"
+          
+  get "page/sponsor_child"
+  match "/sponsor_child" => "page#sponsor_child"
+          
+  get "page/learn_sponsor"
+  match "/learn_sponsor" => "page#learn_sponsor"
+          
+  get "page/sponsor_faq"
+  match "/sponsor_faq" => "page#sponsor_faq"
+          
+  get "page/gift_store"
+  match "/gift_store" => "page#gift_store"
+          
+  get "page/write_to_child"
+  match "/write_to_child" => "page#write_to_child"
+      
   get "page/console"
   match "/console" => "page#console"
   
   get "advancement/index"
+  match "/church-advancement" => "Advancement#index"
   match "/church-advancement" => "Advancement#index"
   
   get "sponsorship/index"
