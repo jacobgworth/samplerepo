@@ -131,7 +131,7 @@ Mohhaiti::Application.routes.draw do
   match "/console" => "page#console"
   
   get "advancement/index"
-  match "/church-advancement" => "Advancement#index"
+  match "/church_advancement" => "Advancement#index"
   match "/church-advancement" => "Advancement#index"
   
   get "sponsorship/index"

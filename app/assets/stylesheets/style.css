@@ -284,6 +284,11 @@ span.eyebrow {
 	letter-spacing:-.1em;
 	line-height:110px;
 }
+.educationLarge{
+	font-size: 8.3em;
+	letter-spacing:-.1em;
+	line-height:110px;
+}
 .orphanChildrenText{
 	letter-spacing: 10px;
 	font-size: 76px;
@@ -374,16 +379,55 @@ span.eyebrow {
 	margin:0 auto;
 	position:relative;
 }
+#content #heroContentEducation h1{
+	background-image: url(/assets/greenBG.png);
+	padding-top:10px;
+	padding-left:20px;
+	padding-right:30px;
+	padding-bottom:10px;
+	color:white;
+}
+#content #heroContentEducation h1{
+	background-image: url(/assets/greenBG.png);
+	padding-top:10px;
+	padding-left:20px;
+	padding-right:30px;
+	padding-bottom:10px;
+	color:white;
+}
+
+#content #heroContentNutrition h1{
+	background-image: url(/assets/greenBG.png);
+	padding-top:10px;
+	padding-left:20px;
+	padding-right:30px;
+	padding-bottom:10px;
+	color:white;
+}
+
+
+#content .subEducation{
+	color:white;
+	background-image: url(/assets/greenBG.png);
+	padding-top:5px;
+	padding-left:5px;
+	padding-right:5px;
+	padding-bottom:5px;
+	position:absolute;
+	top:500px;
+	left:36px;
+	font-size:45px;
+}
 #heroContentHaitiOne h1 {
 	background-image: url(/assets/greenBG.png);
-	position:absolute;
-	top:-430px;
-	left:20px;
-	color:white;
 	padding-top:30px;
 	padding-left:10px;
 	padding-right:20px;
 	padding-bottom:10px;
+	position:absolute;
+	top:-430px;
+	left:20px;
+	color:white;
 	text-shadow: 0 .1em .2em #666;
 	text-transform:uppercase;
 	font-family: 'Montserrat', sans-serif;
@@ -587,7 +631,22 @@ ul#utilityNav li.last {
 	top:-5px;
 	right:100px;
 }
-
+.educationORButton{
+	display:block;
+	width:30px;
+	height:30px;
+	border-radius:15px;
+	font-size:14px;
+	color:#E4D4B9;
+	line-height:30px;
+	text-align:center;
+	background:#d46b13;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	-o-border-radius:15px;
+	border-radius:15px;
+	background:#ea861b;
+}
 .buttonRounded a:link, .buttonRounded a:visited {
 	float:left;
 	text-align:center;
@@ -1079,7 +1138,9 @@ h3.CTA {
 	width:300px;
 	padding-top:20px;
 }
-
+.singleCol{
+	width:990px;
+}
 #contentLeft560 {
 	float:left;
 	width:560px;
