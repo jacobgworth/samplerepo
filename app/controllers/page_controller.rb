@@ -8,11 +8,94 @@ class PageController < ApplicationController
     end
   end
     
+  def medical_mission_trips
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+      
+    
+  def mission_trip_experinces
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+      
+    
+  def preparing_for_trip
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+      
+    
+  def take_a_trip
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+      
+    
+  def trip_costs
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+      
+    
+  def trip_dates
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+
+   
+   def trip_faqs
+     respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
+   
   def haiti_one
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
   end
+  
+  def health_care
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# health_care.html.erb
+    end
+  end
+  
+    def three_cords
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# three_cords.html.erb
+    end
+  end
+      def vision_trip
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# three_cords.html.erb
+    end
+  end
+      def church_partner
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# three_cords.html.erb
+    end
+  end
+      def communities_impacted
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# three_cords.html.erb
+    end
+  end
+  
+    def nutrition
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# nutrition.html.erb
+    end
+  end
+  
   
   def mission_trips
     respond_to do |format|
@@ -20,6 +103,76 @@ class PageController < ApplicationController
     end
   end  
   
+    def downloads
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
+    def make_donation
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+      
+  
+    def be_a_partner
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+      
+  
+    def volunteer
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+      
+  
+    def share_photos
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+      
+  
+    def event
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
+    def sponsor_child
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
+    def learn_sponsor
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
+    def sponsor_faq
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
+    def gift_store
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+      
+    def write_to_child
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+    
   def orphan_care
     @category = Category.find_by_categoryname("Orphanage")
     @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(6).reverse
