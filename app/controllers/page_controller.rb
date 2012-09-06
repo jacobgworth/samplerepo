@@ -58,6 +58,10 @@ class PageController < ApplicationController
   
    
   def haiti_one
+    @category = Category.find_by_categoryname("Haiti One")
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
@@ -75,17 +79,23 @@ class PageController < ApplicationController
     end
   end
   
-    def three_cords
+  def three_cords
+    @category = Category.find_by_categoryname("3 Cords")
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# three_cords.html.erb
     end
   end
-      def vision_trip
+  
+  def vision_trip
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# three_cords.html.erb
     end
   end
-      def church_partner
+  
+  def church_partner
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# three_cords.html.erb
     end
@@ -96,11 +106,15 @@ class PageController < ApplicationController
     end
   end
   
-    def nutrition
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# nutrition.html.erb
-    end
+def nutrition
+  @category = Category.find_by_categoryname("Nutrition")
+  @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
+  @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+  @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+  respond_to do |format|
+    format.html {render :layout=>"homeLayout"}# nutrition.html.erb
   end
+end
   
   
   def mission_trips
