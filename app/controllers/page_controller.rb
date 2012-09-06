@@ -65,7 +65,7 @@ class PageController < ApplicationController
   
   def health_care
     @category = Category.find_by_categoryname("Health Care")
-    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(6).reverse
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
     @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     
@@ -181,7 +181,7 @@ class PageController < ApplicationController
     
   def orphan_care
     @category = Category.find_by_categoryname("Orphanage")
-    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(6).reverse
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
     @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     
@@ -192,7 +192,7 @@ class PageController < ApplicationController
   end
   def education
     @category = Category.find_by_categoryname("Education")
-    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(6).reverse
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
     @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     @villages = Community.joins(:projects=>:categories).where("category_id=?",@category.id.to_s)

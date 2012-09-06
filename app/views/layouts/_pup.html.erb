@@ -1,0 +1,105 @@
+<div class="updatesWrapper"><!--Projects-->
+	<h3><span class="eyebrow"><%=@category.categoryname%></span><br />Projects</h3>
+	<div class="speechBubble"><p>projects under way</p></div>	
+	<div class="update560">
+		<div class="updateDate">
+			<img src="/assets/icon-projects-mini.png" />
+		</div>
+		<div class="updateProjects560Left">
+			<% 
+				@counter = 1
+				@projects.each do |project|
+					break if @counter > 4
+			%>
+			<h4><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h4>
+			<% 
+					@counter = @counter + 1
+				end 
+			%>
+		</div>
+		<div class="updateProjects560Right">
+		<% 
+			@counter = 1
+			@projects.each do |project|
+				if @counter > 4
+		%>
+			<h4><a href="/project/<%@project.id%>"><%=@project.projectname%></a></h4>
+		<%		end
+				@counter = @counter + 1
+			end %> 
+	</div>
+	<div class="clearfix"><!--x--></div>
+	</div>
+	<div class="updateNavRight"><a href="/projects/?cid=<%=@category.id%>">View All Projects &raquo;</a></div>
+	<% if @projects.count == 0%>
+		<div class="update560">No Current <%=@category.categoryname%> Projects </div>
+	<% end %>
+</div>
+
+<div class="updatesWrapper"><!--Updates-->
+	<h3><span class="eyebrow"><%=@category.categoryname%></span><br />Updates</h3>
+	<div class="speechBubble"><p>latest updates</p></div>
+<%if @updates.count > 0%>
+	<%@updates.each do |m|%>
+	<div class="update560">
+		<div class="updateDate">
+			<% 
+				created = m.created_at 
+				creator = "-"
+				if m.user.blank?
+					creator = '-'
+				else
+					creator = m.user.first
+				end
+			%>
+			<span class="month"><%= created.strftime("%b")%></span><br />
+			<span class="date"><%=created.strftime("%d")%></span><br />
+			<span class="year"><%=created.strftime("%Y")%></span>
+		</div>
+		<div class="updatePost560">
+			<h4><a href=""><%=m.title%></a></h4>
+			<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a></p>
+			<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
+		</div>
+		<div class="clearfix"><!--x--></div>
+	</div>
+	<%end%>
+	<div class="updateNavRight"><a href="/updates/?cid=<%=@category.id%>">View All Updates &raquo;</a></div>
+<%else%>
+	<div class="update560">No <%=@category.categoryname%> Updates</div>
+<%end%>
+</div>
+
+<div class="updatesWrapper"><!--Posts-->
+	<h3><span class="eyebrow"><%=@category.categoryname%></span><br />Posts</h3>
+	<div class="speechBubble"><p>latest posts</p></div>	
+	<% if @posts.count > 0%>
+		<%@posts.each do |m|%>
+			<div class="update560">
+			<div class="updateDate">
+				<% 
+					created = m.created_at 
+					creator = "-"
+					if m.user.blank?
+						creator = '-'
+					else
+						creator = m.user.first
+					end
+				%>
+				<span class="month"><%= created.strftime("%b")%></span><br />
+				<span class="date"><%=created.strftime("%d")%></span><br />
+				<span class="year"><%=created.strftime("%Y")%></span>
+			</div>
+			<div class="updatePost560">
+				<h4><a href=""><%=m.title%></a></h4>
+				<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a></p>
+				<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
+			</div>
+			<div class="clearfix"><!--x--></div>
+			</div>
+		<%end%>
+		<div class="updateNavRight"><a href="/posts/?cid=<%=@category.id%>">View All Posts &raquo;</a></div>
+		<%else%>
+			<div class="update560">No <%=@category.categoryname%> Blog Posts</div>
+		<%end%>
+</div>
