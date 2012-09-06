@@ -64,6 +64,12 @@ class PageController < ApplicationController
   end
   
   def health_care
+    @category = Category.find_by_categoryname("Health Care")
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(6).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    
+    @jason = @projects.to_gmaps4rails
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# health_care.html.erb
     end
