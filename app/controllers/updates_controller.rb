@@ -2,10 +2,23 @@ class UpdatesController < ApplicationController
   # GET /updates
   # GET /updates.json
   def index
-    @updates = Update.all.reverse
+    #@updates = Update.all.reverse
+    
+    @cid = params[:cid]
+    @user = current_user
+    @itemCount = 0
+    if @cid.nil?
+      #@jason = Update.all.to_gmaps4rails
+      @categories = Category.joins(:updates).order("categoryname asc").uniq
+      @updates = Update.all.reverse
+    else
+      @updates = Update.joins(:categories).where("category_id=" + @cid).reverse
+      #@jason = @updates.to_gmaps4rails
+      @category = Category.find(@cid)
+    end
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render :layout=>"homeLayout"}# index.html.erb
       format.json { render json: @updates }
     end
   end

@@ -1,4 +1,12 @@
-<div style="padding:25px 0px 0px 0px;font-size: 25px;"><h1>Mission of Hope Updates</h1></div>
+<div id="wrapper">
+<%=render 'layouts/navBar'%>
+<div style="padding:50px 0px 0px 0px;font-size: 25px;">
+<% if @cid.nil?%>
+	<h1>Mission of Hope Updates</h1>
+<% else %>
+	<h1><%=@category.categoryname %> Updates</h1>
+<% end %>
+</div>
 
 
 <% @updates.each do |update| %>
