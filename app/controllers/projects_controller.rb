@@ -26,6 +26,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
+    @population = @project.communities.sum('population')#Community.joins(:projects).where("project_id=" + @category.id.to_s)
     @assets = @project.assets.all
     @user = current_user
     @category = @project.categories.first
