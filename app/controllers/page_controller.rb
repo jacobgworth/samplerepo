@@ -100,9 +100,15 @@ class PageController < ApplicationController
       format.html {render :layout=>"homeLayout"}# three_cords.html.erb
     end
   end
-      def communities_impacted
+  
+  def communities_impacted
+    @category = Category.find_by_categoryname("Church Advancement")
+    @villages = Community.joins(:projects => :categories).where("category_id=" + @category.id.to_s)
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# three_cords.html.erb
+      format.html {render :layout=>"homeLayout"}# communities_impacted.html.erb
     end
   end
   
