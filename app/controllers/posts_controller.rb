@@ -2,8 +2,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
-
+    @cid = params[:cid]
+    @user = current_user
+    if @cid.nil?
+      @posts = Post.all
+    else
+      @posts = Post.joins(:categories).where("category_id=" + @cid)
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
