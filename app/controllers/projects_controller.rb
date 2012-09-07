@@ -93,7 +93,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
-    @project.percentcomplete = 0 if project.percentcomplete == ''
+    @project.percentcomplete = 0 if @project.percentcomplete == ''
 
     respond_to do |format|
       if @project.save
