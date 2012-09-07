@@ -60,7 +60,7 @@ class PageController < ApplicationController
   def haiti_one
     @category = Category.find_by_categoryname("Haiti One")
     @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
-    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
     @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
@@ -70,7 +70,7 @@ class PageController < ApplicationController
   def health_care
     @category = Category.find_by_categoryname("Health Care")
     @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
-    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
     @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     
     @jason = @projects.to_gmaps4rails
@@ -82,7 +82,7 @@ class PageController < ApplicationController
   def three_cords
     @category = Category.find_by_categoryname("3 Cords")
     @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
-    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
     @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# three_cords.html.erb
@@ -105,7 +105,7 @@ class PageController < ApplicationController
     @category = Category.find_by_categoryname("Church Advancement")
     @villages = Community.joins(:projects => :categories).where("category_id=" + @category.id.to_s)
     @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
-    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
     @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# communities_impacted.html.erb
@@ -115,7 +115,7 @@ class PageController < ApplicationController
 def nutrition
   @category = Category.find_by_categoryname("Nutrition")
   @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
-  @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+  @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
   @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
   respond_to do |format|
     format.html {render :layout=>"homeLayout"}# nutrition.html.erb
@@ -202,7 +202,7 @@ end
   def orphan_care
     @category = Category.find_by_categoryname("Orphanage")
     @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
-    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
     @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     
     @jason = @projects.to_gmaps4rails
@@ -213,7 +213,7 @@ end
   def education
     @category = Category.find_by_categoryname("Education")
     @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
-    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
     @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     @villages = Community.joins(:projects=>:categories).where("category_id=?",@category.id.to_s)
     

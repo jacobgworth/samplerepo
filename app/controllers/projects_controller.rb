@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
     @user = current_user
     @category = @project.categories.first
     @updates = @project.updates.last(3).reverse #Update.last(3).reverse
-    @posts = @project.posts.last(3).reverse
+    @posts = @project.posts.order(:postdate).reverse_order.last(3)
     @fundpercent = 0
     if !@project.fundsneeded.nil? && @project.fundsneeded > 0
       @fundpercent = (@project.fundsraised/@project.fundsneeded) * 100.00
