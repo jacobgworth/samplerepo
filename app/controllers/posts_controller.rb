@@ -42,14 +42,20 @@ class PostsController < ApplicationController
     else
       respond_to do |format|
         format.html { redirect_to "/posts" }
-       end
+      end
     end
   end
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
-    @post.assets.build
+    if is_admin_user?
+      @post = Post.find(params[:id])
+      @post.assets.build
+    else
+      respond_to do |format|
+        format.html { redirect_to "/posts" }
+      end
+    end
   end
 
   # POST /posts
