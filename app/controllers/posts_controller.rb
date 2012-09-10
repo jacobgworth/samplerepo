@@ -18,6 +18,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @isadmin = is_admin_user?
     @post = Post.find(params[:id])
     @assets = @post.assets.all
 
@@ -30,12 +31,18 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.json
   def new
-    @post = Post.new
-    @post.assets.build
+    if is_admin_user?
+      @post = Post.new
+      @post.assets.build
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @post }
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @post }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to "/posts" }
+       end
     end
   end
 
