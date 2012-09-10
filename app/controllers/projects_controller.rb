@@ -68,13 +68,19 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   # GET /projects/new.json
   def new
-    @project = Project.new
-    @project.assets.build
+    if is_admin_user?
+      @project = Project.new
+      @project.assets.build
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @project }
-    end
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @project }
+      end
+     else
+       respond_to do |format|
+        format.html { redirect_to "/projects" }
+       end
+     end
   end
 
   # GET /projects/1/edit

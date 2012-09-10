@@ -136,11 +136,11 @@
 						                creator = m.user.first
 						              end
 						%>
-						<span class="month"><%= created.strftime("%b")%></span>
+						<span class="month"><%= created.strftime("%b") unless created.nil? %></span>
 						<br />
-						<span class="date"><%= created.strftime("%d")%></span>
+						<span class="date"><%= created.strftime("%d") unless created.nil? %></span>
 						<br />
-						<span class="year"><%= created.strftime("%Y")%></span>
+						<span class="year"><%= created.strftime("%Y") unless created.nil? %></span>
 					</div>
 					<div class="updatePost560">
 						<h4><a href=""><%= m.title%></a></h4>
