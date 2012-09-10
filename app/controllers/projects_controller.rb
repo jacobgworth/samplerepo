@@ -90,7 +90,7 @@ class ProjectsController < ApplicationController
       @project.assets.build
     else
       respond_to do |format|
-        format.html { redirect_to "/" }
+        format.html { redirect_to "/projects" }
       end
     end
   end
