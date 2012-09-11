@@ -4,7 +4,8 @@ class CommunitiesController < ApplicationController
   def index
     @communities = Community.all
     @jason = Community.all.to_gmaps4rails
-    @yes = 'test'
+    @user = current_user
+    @itemCount = 0
     
     respond_to do |format|
       format.html # index.html.erb
