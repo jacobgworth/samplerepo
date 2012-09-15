@@ -1,19 +1,7 @@
-<p id="notice"><%= notice %></p>
+<div id="wrapper">
+	<%=render 'layouts/navBar'%>
+		<p><%= @community.communityname %></p>
 
-<p>
-  <b>Communityname:</b>
-  <%= @community.communityname %>
-</p>
-
-<p>
-  <b>Latitude:</b>
-  <%= @community.latitude %>
-</p>
-
-<p>
-  <b>Longitude:</b>
-  <%= @community.longitude %>
-</p>
 
 
 <% if @user.nil? %>
@@ -24,5 +12,5 @@
 	<%= link_to 'Back', communities_path %>
 <%end%>
 
-
+</div>
 
