@@ -12,12 +12,19 @@
   <tr>
     <td><%= event.eventname %></td>
     <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
+    <% if @isadmin %>
+    	<td><%= link_to 'Edit', edit_event_path(event) %></td>
+    	<td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
+    <% else %>
+    	<td></td>
+    	<td></td>
+    <%end%>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Event', new_event_path %>
+<%if @isadmin%>
+	<%= link_to 'Add New Event', new_event_path %>
+<%end%>

@@ -3,6 +3,8 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
+    @isadmin = is_admin_user?
+    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +16,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @category = Category.find(params[:id])
+    @user = current_user
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,17 +27,29 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   # GET /categories/new.json
   def new
-    @category = Category.new
+    if is_admin_user?
+      @category = Category.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @category }
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @category }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to "/categories" }
+      end
     end
   end
 
   # GET /categories/1/edit
   def edit
-    @category = Category.find(params[:id])
+    if is_admin_user?
+      @category = Category.find(params[:id])
+    else
+      respond_to do |format|
+        format.html { redirect_to "/categories" }
+      end
+    end
   end
 
   # POST /categories

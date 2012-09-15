@@ -2,10 +2,24 @@ class UpdatesController < ApplicationController
   # GET /updates
   # GET /updates.json
   def index
-    @updates = Update.all.reverse
+    #@updates = Update.all.reverse
+    
+    @cid = params[:cid]
+    @user = current_user
+    @isadmin = is_admin_user?
+    @itemCount = 0
+    if @cid.nil?
+      #@jason = Update.all.to_gmaps4rails
+      @categories = Category.joins(:updates).order("categoryname asc").uniq
+      @updates = Update.all.reverse
+    else
+      @updates = Update.joins(:categories).where("category_id=" + @cid).reverse
+      #@jason = @updates.to_gmaps4rails
+      @category = Category.find(@cid)
+    end
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render :layout=>"homeLayout"}# index.html.erb
       format.json { render json: @updates }
     end
   end
@@ -14,6 +28,7 @@ class UpdatesController < ApplicationController
   # GET /updates/1.json
   def show
     @update = Update.find(params[:id])
+    @isadmin = is_admin_user?
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,17 +39,29 @@ class UpdatesController < ApplicationController
   # GET /updates/new
   # GET /updates/new.json
   def new
-    @update = Update.new
+    if is_admin_user?
+      @update = Update.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @update }
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @update }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to "/updates/" }
+      end
     end
   end
 
   # GET /updates/1/edit
   def edit
-    @update = Update.find(params[:id])
+    if is_admin_user?
+      @update = Update.find(params[:id])
+    else
+      respond_to do |format|
+        format.html { redirect_to "/updates/" }
+      end
+    end
   end
 
   # POST /updates

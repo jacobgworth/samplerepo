@@ -26,11 +26,12 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
+    @population = @project.communities.sum('population')#Community.joins(:projects).where("project_id=" + @category.id.to_s)
     @assets = @project.assets.all
     @user = current_user
     @category = @project.categories.first
     @updates = @project.updates.last(3).reverse #Update.last(3).reverse
-    @posts = @project.posts.last(3).reverse
+    @posts = @project.posts.order(:postdate).reverse_order.last(3)
     @fundpercent = 0
     if !@project.fundsneeded.nil? && @project.fundsneeded > 0
       @fundpercent = (@project.fundsraised/@project.fundsneeded) * 100.00
@@ -67,13 +68,19 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   # GET /projects/new.json
   def new
-    @project = Project.new
-    @project.assets.build
+    if is_admin_user?
+      @project = Project.new
+      @project.assets.build
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @project }
-    end
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @project }
+      end
+     else
+       respond_to do |format|
+        format.html { redirect_to "/projects" }
+       end
+     end
   end
 
   # GET /projects/1/edit
@@ -83,7 +90,7 @@ class ProjectsController < ApplicationController
       @project.assets.build
     else
       respond_to do |format|
-        format.html { redirect_to "/" }
+        format.html { redirect_to "/projects" }
       end
     end
   end
@@ -92,7 +99,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
-    @project.percentcomplete = 0 if project.percentcomplete == ''
+    @project.percentcomplete = 0 if @project.percentcomplete == ''
 
     respond_to do |format|
       if @project.save

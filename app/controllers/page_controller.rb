@@ -58,43 +58,69 @@ class PageController < ApplicationController
   
    
   def haiti_one
+    @category = Category.find_by_categoryname("Haiti One")
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
+    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
   end
   
   def health_care
+    @category = Category.find_by_categoryname("Health Care")
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
+    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    
+    @jason = @projects.to_gmaps4rails
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# health_care.html.erb
     end
   end
   
-    def three_cords
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# three_cords.html.erb
-    end
-  end
-      def vision_trip
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# three_cords.html.erb
-    end
-  end
-      def church_partner
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# three_cords.html.erb
-    end
-  end
-      def communities_impacted
+  def three_cords
+    @category = Category.find_by_categoryname("3 Cords")
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
+    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# three_cords.html.erb
     end
   end
   
-    def nutrition
+  def vision_trip
     respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# nutrition.html.erb
+      format.html {render :layout=>"homeLayout"}# three_cords.html.erb
     end
   end
+  
+  def church_partner
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# three_cords.html.erb
+    end
+  end
+  
+  def communities_impacted
+    @category = Category.find_by_categoryname("Church Advancement")
+    @villages = Community.joins(:projects => :categories).where("category_id=" + @category.id.to_s)
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
+    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# communities_impacted.html.erb
+    end
+  end
+  
+def nutrition
+  @category = Category.find_by_categoryname("Nutrition")
+  @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
+  @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
+  @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+  respond_to do |format|
+    format.html {render :layout=>"homeLayout"}# nutrition.html.erb
+  end
+end
   
   
   def mission_trips
@@ -175,8 +201,8 @@ class PageController < ApplicationController
     
   def orphan_care
     @category = Category.find_by_categoryname("Orphanage")
-    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(6).reverse
-    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
     @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     
     @jason = @projects.to_gmaps4rails
@@ -186,8 +212,8 @@ class PageController < ApplicationController
   end
   def education
     @category = Category.find_by_categoryname("Education")
-    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(6).reverse
-    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
     @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     @villages = Community.joins(:projects=>:categories).where("category_id=?",@category.id.to_s)
     

@@ -25,8 +25,8 @@ gr-icon-nutrition-med.png: gr-icon-nutrition-med-c666d2be05af2110d59d00895c4cfd6
 gr-icon-projects-med.png: gr-icon-projects-med-91d8877981061a791b42f0e7d0e836e1.png
 gr-icon-student-sponsorship-med.png: gr-icon-student-sponsorship-med-2e0b279c53048b9c542608c7497e102e.png
 greenBG.png: greenBG-1a107c68d79165d24c9ae0cdf1de42bb.png
-haiti-one-hero.jpg: haiti-one-hero-f56f93573e1590780848b822c1e9ffb1.jpg
 haitiBG.png: haitiBG-34e4e0ac68a63c52eea4d6840dea5eb8.png
+haitiOneHero.jpg: haitiOneHero-f56f93573e1590780848b822c1e9ffb1.jpg
 healthCareHero.jpg: healthCareHero-a4aaa736853eebeb788d08d31c8f472e.jpg
 heroAdvancement.jpg: heroAdvancement-706c8cced8896d40668d90d867e5d87f.jpg
 heroGirl.jpg: heroGirl-82689026eac2eeb88d0281bf5032abf5.jpg
@@ -73,7 +73,7 @@ navBar.png: navBar-ddca9c3e35c607a99093bc3bced67056.png
 nutritionHero.jpg: nutritionHero-7a3009c1a5a29c402f7e5928ab7362a2.jpg
 nutritionIcon.png: nutritionIcon-c6c5235d696a855651ee85e685eb6d86.png
 nutritionNoRibbion.png: nutritionNoRibbion-f0d84c0425897b5bf690dc3e1386ab26.png
-orphanHero.jpeg: orphanHero-77b8a15d5014ad3fd8916e60762c12c2.jpeg
+orphanHero.jpg: orphanHero-77b8a15d5014ad3fd8916e60762c12c2.jpg
 partnerButton.png: partnerButton-452658f24368c0de89ae894db7b9d4de.png
 percent0.png: percent0-3364d47688d9fd9c4666a352a488747c.png
 percent10.png: percent10-8592ee018117a1dee87a85ba1d19f830.png
@@ -104,7 +104,7 @@ gmaps4rails/gmaps4rails.openlayers.js: gmaps4rails/gmaps4rails.openlayers-bbf2bb
 jquery-ui.min.js: jquery-ui.min-bcb2f78c9ed3fa2aba736ba6e6b462e1.js
 jquery.min.js: jquery.min-223bff6ea42ed0d5e2b560fdceee811b.js
 application.js: application-34d13eac1b4ebfef1fb0660152f5ef3b.js
-application.css: application-cce1746033e797046e68bfb88b9d9866.css
+application.css: application-ebabfd25643ccb73885e29122792b8c3.css
 advancement.js: advancement-c2b0db25c3a77754b130af70a4041844.js
 categories.js: categories-c2b0db25c3a77754b130af70a4041844.js
 category.js: category-c2b0db25c3a77754b130af70a4041844.js
@@ -144,7 +144,7 @@ projects.css: projects-7c92aed0d9ced75baa9ca7d4c44adb74.css
 scaffolds.css: scaffolds-7c92aed0d9ced75baa9ca7d4c44adb74.css
 sessions.css: sessions-7c92aed0d9ced75baa9ca7d4c44adb74.css
 sponsorship.css: sponsorship-7c92aed0d9ced75baa9ca7d4c44adb74.css
-style.css: style-b0134e9e0b7b7daacc1f673e22c56495.css
+style.css: style-8032720978a0d409fd0b03332e3e8478.css
 tags.css: tags-7c92aed0d9ced75baa9ca7d4c44adb74.css
 take_action.css: take_action-7c92aed0d9ced75baa9ca7d4c44adb74.css
 updates.css: updates-7c92aed0d9ced75baa9ca7d4c44adb74.css

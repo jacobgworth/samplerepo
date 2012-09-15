@@ -4,7 +4,8 @@ class CommunitiesController < ApplicationController
   def index
     @communities = Community.all
     @jason = Community.all.to_gmaps4rails
-    @yes = 'test'
+    @user = current_user
+    @itemCount = 0
     
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +16,7 @@ class CommunitiesController < ApplicationController
   # GET /communities/1
   # GET /communities/1.json
   def show
+    @user = current_user
     @community = Community.find(params[:id])
 
     respond_to do |format|
@@ -26,17 +28,29 @@ class CommunitiesController < ApplicationController
   # GET /communities/new
   # GET /communities/new.json
   def new
-    @community = Community.new
+    if is_admin_user?
+      @community = Community.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @community }
-    end
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @community }
+      end
+     else
+      respond_to do |format|
+        format.html { redirect_to "/communities/" }
+      end
+     end
   end
 
   # GET /communities/1/edit
   def edit
-    @community = Community.find(params[:id])
+    if is_admin_user?
+      @community = Community.find(params[:id])
+    else
+      respond_to do |format|
+        format.html { redirect_to "/communities/" }
+      end
+    end
   end
 
   # POST /communities
