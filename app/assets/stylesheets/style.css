@@ -858,7 +858,7 @@ html[xmlns] #nav {
 .superColumn h2 {
 	margin-top:250px;
 	font-size:1.35em;
-	color:#19302f;
+	color:#0f483b;
 	text-transform:uppercase;
 }
 
@@ -892,7 +892,7 @@ h3.CTA {
 #contentHaitiOne h1{
 	font-size:36px;
 	padding:0 0 10px 0;
-	color:#19302F;
+	color:#0f483b;
 	text-transform:uppercase;
 }
 #contentHaitiOne p{
@@ -918,14 +918,14 @@ h3.CTA {
 	text-transform: uppercase;
 }
 #content .rightBoxGreen h3{
-	color:#19302f;
+	color:#0f483b;
 	font-size:1em;
 	padding-bottom:0px;
 }
 #content .rightBoxGreen p {
 	line-height:16px;
 	font-size:.85em;
-	color:#19302f;
+	color:#0f483b;
 	font-family: 'Montserrat', sans-serif;
 }
 
@@ -948,7 +948,7 @@ h3.CTA {
 #content .rightBox p {
 	line-height:16px;
 	font-size:.8em;
-	color:#19302f;
+	color:#0f483b;
 	font-family: 'Montserrat', sans-serif;
 }
 
@@ -959,7 +959,7 @@ h3.CTA {
 	line-height:16px;
 	padding-left:29px;
 	font-size:14px;
-	color:#19302f;
+	color:#0f483b;
 	list-style:disc;
 }
 .rightColOprhan li{
@@ -981,7 +981,7 @@ h3.CTA {
 	text-transform: uppercase;
 }
 .rightColOprhan2 h3{
-	color:#19302f;
+	color:#0f483b;
 	font-size:14px;
 	padding-top:10px;
 	padding-bottom:3px;
@@ -990,14 +990,14 @@ h3.CTA {
 	line-height:16px;
 	padding-right:5px;
 	font-size:14px;
-	color:#19302f;
+	color:#0f483b;
 
 }
 .rightColOprhan2 ul{
 	line-height:16px;
 	padding-left:29px;
 	font-size:14px;
-	color:#19302f;
+	color:#0f483b;
 	list-style:disc;
 }
 .rightColOprhan2 img{
@@ -1021,7 +1021,7 @@ h3.CTA {
 	color:#e4d4b9;
 }
 .rightCol h3{
-	color:#19302f;
+	color:#0f483b;
 	font-size:14px;
 	padding-top:10px;
 	padding-bottom:3px;
@@ -1033,7 +1033,7 @@ h3.CTA {
 	line-height:16px;
 	padding-left:29px;
 	font-size:14px;
-	color:#19302f;
+	color:#0f483b;
 	list-style:disc;
 }
 .rightCol li{
@@ -1054,7 +1054,7 @@ h3.CTA {
 	color:#e4d4b9;
 }
 .rightCol2 h3{
-	color:#19302f;
+	color:#0f483b;
 	font-size:14px;
 	padding-top:10px;
 	padding-bottom:3px;
@@ -1066,7 +1066,7 @@ h3.CTA {
 	line-height:16px;
 	padding-left:29px;
 	font-size:14px;
-	color:#19302f;
+	color:#0f483b;
 	list-style:disc;
 }
 .rightCol2 li{
@@ -1103,7 +1103,7 @@ h3.CTA {
 }
 
 #content h1, #content h2, #content h3 {
-	color:#19302F;
+	color:#0f483b;
 	text-transform:uppercase;	
 }
 
@@ -1147,13 +1147,13 @@ h3.CTA {
 }
 
 #contentLeft560 h3 {
-	color:#19302F;
+	color:#0f483b;
 	text-transform:uppercase;
 	font-size:2.5em;
 }
 
 #contentLeft560 h4 {
-	color:#19302F;
+	color:#0f483b;
 	text-transform:uppercase;
 	font-size:1.25em;
 	margin-top:20px;
@@ -1167,13 +1167,13 @@ h3.CTA {
 }
 
 #contentRight300 h2 {
-	color:#19302F;
+	color:#0f483b;
 	text-transform:uppercase;
 	font-size:1.25em;
 }
 
 #contentRight300 h3 {
-	color:#19302F;
+	color:#0f483b;
 	text-transform:uppercase;
 	font-size:1em;
 }
@@ -1185,7 +1185,7 @@ h3#missionStatement {
 	margin:20px auto;
 	text-align:center;
 	font-size:1.05em;
-	color:#19302F;
+	color:#0f483b;
 	line-height:1.5em;
 	background:url(/assets/contentDiv.png) center bottom no-repeat;
 	padding-bottom:20px;
@@ -1270,7 +1270,7 @@ h3.projectDetailButton a:hover, h3.projectDetailButtonLeft a:hover, h3.projectDe
 
 
 span.darkGreen, span.darkGreen a:link, span.darkGreen a:visited  {
-	color:#19302f;
+	color:#0f483b;
 	padding-left:5px;
 	font-weight:bold;
 	text-transform:none;
@@ -1282,7 +1282,7 @@ span.darkGreen a:hover, span.darkGreenMedium a:hover, span.darkGreenLarge a:hove
 }
 
 span.darkGreenMedium, span.darkGreenMedium a:link, span.darkGreenMedium a:visited {
-	color:#19302f;
+	color:#0f483b;
 	font-weight:bold;
 	font-size:150%;
 	text-transform:none;
@@ -1293,7 +1293,7 @@ span.darkGreenMedium a:link, span.darkGreenMedium a:visited, span.darkGreenMediu
 }
 
 span.darkGreenLarge, span.darkGreenLarge a:link, span.darkGreenLarge a:visited {
-	color:#19302f;
+	color:#0f483b;
 	font-weight:bold;
 	font-size:200%;
 	text-transform:none;
@@ -1323,7 +1323,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 
 #gridWrapper h2 a:link, #gridWrapper h2 a:visited {
-	color:#19302F;
+	color:#0f483b;
 }
 
 #gridWrapper h2 a:hover {
@@ -1561,13 +1561,13 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 
 #contentLeft h3, #contentRight h3 {
-	color:#19302F;
+	color:#0f483b;
 	text-transform:uppercase;
 	font-size:2.5em;
 }
 
 #contentLeft h4 {
-	color:#19302F;
+	color:#0f483b;
 	text-transform:uppercase;
 	font-size:1.25em;
 	margin-top:20px;
@@ -1691,13 +1691,13 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 .update {
 	width:410px;
 	margin-top:20px;
-	border-bottom:1px dotted #19302F;
+	border-bottom:1px dotted #0f483b;
 }
 
 .update560 {
 	width:560px;
 	margin-top:20px;
-	border-bottom:1px dotted #19302F;
+	border-bottom:1px dotted #0f483b;
 }
 
 .updateDate {
@@ -1743,7 +1743,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	line-height:1.2em;
 }
 .updatePost h4 {
-	color:#19302F;
+	color:#0f483b;
 	text-transform:uppercase;
 	margin-top:-8px;
 }
@@ -1770,13 +1770,13 @@ p.meta {
 }
 
 .updateNav {
-	border-bottom:1px dotted #19302F;
+	border-bottom:1px dotted #0f483b;
 	padding:10px 0 10px 0;
 	text-align:center;
 }
 
 .updateNavRight {
-	border-bottom:1px dotted #19302F;
+	border-bottom:1px dotted #0f483b;
 	padding:10px 0 10px 0;
 	text-align:right;
 	text-transform:uppercase;
