@@ -8,7 +8,7 @@ class CommunitiesController < ApplicationController
     @itemCount = 0
     
     respond_to do |format|
-      format.html # index.html.erb
+format.html {render :layout=>"homeLayout"}# index.html.erb
       #format.json { render json: @communities }
     end
   end
