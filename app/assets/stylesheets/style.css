@@ -711,7 +711,7 @@ ul#utilityNav li.last {
 	float:right;
 	width:800px;
 	margin-top:35px;
-	font-size:.85em;
+	font-size:1em;
 }
 
 #mainNav li {
@@ -745,6 +745,7 @@ ul#utilityNav li.last {
 
 #nav li {
 	position: relative;
+	font-size:.95em;
 }
 /* main level link */
 #nav a {
