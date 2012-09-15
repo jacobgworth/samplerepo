@@ -27,6 +27,42 @@
     <%= f.label :population %><br />
     <%= f.text_field :population %>
   </div>
+  <div class="field">
+    Overview Title: <%= f.text_field :overviewtitle %>
+  </div>
+  <div class="field">
+    Overview Description: <%= f.text_area :overviewdesc %>
+  </div>
+  <div class="field">
+    Spiritual Climate Title: <%= f.text_field :spiritualtitle %>
+  </div>
+  <div class="field">
+    Spiritual Climate Description: <%= f.text_area :spiritualdesc %>
+  </div>
+  <div class="field">
+    Economy Title: <%= f.text_field :econtitle %>
+  </div>
+  <div class="field">
+    Economy Description: <%= f.text_area :econdesc %>
+  </div>
+  <div class="field">
+    Education Title: <%= f.text_field :edtitle %>
+  </div>
+  <div class="field">
+    Education Description: <%= f.text_area :eddesc %>
+  </div>
+  <div class="field">
+    Health Title: <%= f.text_field :healthtitle %>
+  </div>
+  <div class="field">
+    Health Description: <%= f.text_area :healthdesc %>
+  </div>
+  <div class="field">
+    Needs Title: <%= f.text_field :needstitle %>
+  </div>
+  <div class="field">
+    Needs Description: <%= f.text_area :needsdesc %>
+  </div>
   <div>
   	Select Related Projects: <%= collection_select 'community', 'project_ids', Project.order("projectname asc"), :id, :projectname, { :include_blank => 'None'}, { :multiple => true, :projectname =>'community[project_ids][]',:selected => 0 } %>
   </div>

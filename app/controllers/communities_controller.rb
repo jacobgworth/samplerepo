@@ -8,7 +8,7 @@ class CommunitiesController < ApplicationController
     @itemCount = 0
     
     respond_to do |format|
-format.html {render :layout=>"homeLayout"}# index.html.erb
+      format.html {render :layout=>"homeLayout"}# index.html.erb
       #format.json { render json: @communities }
     end
   end
@@ -20,7 +20,7 @@ format.html {render :layout=>"homeLayout"}# index.html.erb
     @community = Community.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {render :layout=>"homeLayout"} # show.html.erb
       format.json { render json: @community }
     end
   end
