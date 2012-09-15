@@ -1,6 +1,24 @@
 <div id="wrapper">
 	<%=render 'layouts/navBar'%>
 		<p><%= @community.communityname %></p>
+		<p>Population: <%= @community.population %></p>
+		<p><b><%= @community.overviewtitle %></b></p>
+		<p><%= @community.overviewdesc.html_safe %></p>
+		
+		<p><%= @community.spiritualtitle %></p>
+		<p><%= @community.spiritualdesc.html_safe %></p>
+		
+		<p><%= @community.econtitle %></p>
+		<p><%= @community.econdesc.html_safe %></p>
+		
+		<p><%= @community.edtitle %></p>
+		<p><%= @community.eddesc.html_safe %></p>
+		
+		<p><%= @community.healthtitle %></p>
+		<p><%= @community.healthdesc.html_safe %></p>
+		
+		<p><%= @community.needstitle %></p>
+		<p><%= @community.needsdesc.html_safe %></p>
 
 
 
