@@ -18,6 +18,7 @@ class CommunitiesController < ApplicationController
   def show
     @user = current_user
     @community = Community.find(params[:id])
+    @assets = @community.assets.all
 
     respond_to do |format|
       format.html {render :layout=>"homeLayout"} # show.html.erb
@@ -30,6 +31,7 @@ class CommunitiesController < ApplicationController
   def new
     if is_admin_user?
       @community = Community.new
+      @community.assets.build
 
       respond_to do |format|
         format.html # new.html.erb
@@ -46,6 +48,7 @@ class CommunitiesController < ApplicationController
   def edit
     if is_admin_user?
       @community = Community.find(params[:id])
+      @community.assets.build
     else
       respond_to do |format|
         format.html { redirect_to "/communities/" }

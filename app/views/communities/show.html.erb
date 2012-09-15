@@ -20,7 +20,35 @@
 		<p><%= @community.needstitle %></p>
 		<p><%= @community.needsdesc.html_safe %></p>
 
-
+<div id="divImgThumbs">
+				<div id="gallery" class="ad-gallery">
+					<div class="ad-image-wrapper">
+						<div class="ad-image shadow"></div>
+					</div><!--wrapper-->
+					<div class="ad-controls"></div><!--controls-->
+					<div class="ad-nav">
+						<div class="ad-back"></div>
+						<div class="ad-thumbs">
+							&nbsp;
+							<ul class="ad-thumb-list">
+								<% if @assets.count > 0
+								@counter = 0
+								@assets.each do |photo|
+								@classname = "image" + @counter.to_s
+								%>
+								<!--<p><%= image_tag photo.asset.url(:medium) %></p>-->
+								<li >
+									<a href="<%= photo.asset.url(:medium)%>"><img src="<%= photo.asset.url(:thumb) %>" alt="" title="" longdesc="" class="<%= @classname%>" style="width:65px;" /></a>
+								</li>
+								<% @counter = @counter + 1%>
+								<% end %>
+								<% end %>
+							</ul>
+						</div>
+						<div class="ad-forward"></div>
+					</div><!--adnav-->
+				</div><!--gallery-->
+		</div><!--thumbs-->
 
 <% if @user.nil? %>
 	<%= link_to 'Back', communities_path %>

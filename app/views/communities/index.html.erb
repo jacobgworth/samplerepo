@@ -17,14 +17,14 @@
 					<p>Project description pulled from Geography on community profiles.</p>
 					<h3 class="projectDetailButton">
 						People Reached:
-						<span class="darkGreen">1</span>
+						<span class="darkGreen"><%=community.population%></span>
 					</h3>
 					<h3 class="projectDetailButton">
 						No. of Projects:
-						<span class="darkGreen">1</span>
+						<span class="darkGreen"><%= community.projects.count%></span>
 					</h3>
 					<h3 class="projectDetailButton">
-						<a href="">View Village Profile &raquo;</a>
+						<a href="/communities/<%=community.id%>">View Village Profile &raquo;</a>
 					</h3>
 				</div>
 			</div>
@@ -36,14 +36,14 @@
 										<p>Project description pulled from Geography on community profiles.</p>
 					<h3 class="projectDetailButton">
 						People Reached:
-						<span class="darkGreen">1</span>
+						<span class="darkGreen"><%=community.population%></span>
 					</h3>
 					<h3 class="projectDetailButton">
 						No. of Projects:
-						<span class="darkGreen">1</span>
+						<span class="darkGreen"><%= community.projects.count%></span>
 					</h3>
 					<h3 class="projectDetailButton">
-						<a href="">View Village Profile &raquo;</a>
+						<a href="<%=community.id%>">View Village Profile &raquo;</a>
 					</h3>
 				</div>
 			</div>
