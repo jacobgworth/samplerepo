@@ -42,6 +42,12 @@ Mohhaiti::Application.routes.draw do
   get "page/what_we_do"
   match "/what-we-do" => "page#what_we_do"
   
+  get "page/about_us"
+  match "/about_us" => "page#about_us"
+  
+  get "page/contact_us"
+  match "/contact_us" => "page#contact_us"
+  
   get "page/videos"
   match "/videos" => "page#videos"
   
@@ -71,7 +77,10 @@ Mohhaiti::Application.routes.draw do
   match "/medical_mission_trips" => "page#medical_mission_trips"
      
   get "page/mission_trip_experinces"
-  match "/mission_trip_experinces" => "page#mission_trip_experinces"
+  match "/mission_trip_experinces" => "page#mission_trip_experiences"
+  
+  get "page/mission_trip_experiences"
+  match "/mission_trip_experiences" => "page#mission_trip_experiences"
      
   get "page/preparing_for_trip"
   match "/preparing_for_trip" => "page#preparing_for_trip"
