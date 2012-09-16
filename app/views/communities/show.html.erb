@@ -1,24 +1,55 @@
+<div id="bgHero">
+	<div id="advancementHeroImg"><!--x--></div>
+	
+</div>
 <div id="wrapper">
 	<%=render 'layouts/navBar'%>
-		<p><%= @community.communityname %></p>
-		<p>Population: <%= @community.population %></p>
-		<p><b><%= @community.overviewtitle %></b></p>
+	<div id="content">
+	<div id="heroContent">
+		<h1 style="padding-top:40px;">
+			<span class="largeText1 greenTransBG"><%= @community.communityname %></span>
+			</h1>
+			
+	</div>
+	<div class="contentHeader">
+			<div class="contentHeaderLeft">
+	<h1><span class="eyebrow">Village Profile</span><br /><%= @community.communityname %></h1>
+		<!--<p><b><%= @community.overviewtitle %></b></p>-->
 		<p><%= @community.overviewdesc.html_safe %></p>
 		
-		<p><%= @community.spiritualtitle %></p>
+		<h3>Population:</strong> <%= @community.population %></h3>
+		<h2><%= @community.spiritualtitle %></h2>
 		<p><%= @community.spiritualdesc.html_safe %></p>
 		
-		<p><%= @community.econtitle %></p>
+		<h2><%= @community.econtitle %></h2>
 		<p><%= @community.econdesc.html_safe %></p>
 		
-		<p><%= @community.edtitle %></p>
+		<h2><%= @community.edtitle %></h2>
 		<p><%= @community.eddesc.html_safe %></p>
 		
-		<p><%= @community.healthtitle %></p>
+		<h2><%= @community.healthtitle %></h2>
 		<p><%= @community.healthdesc.html_safe %></p>
 		
-		<p><%= @community.needstitle %></p>
+		<h2><%= @community.needstitle %></h2>
 		<p><%= @community.needsdesc.html_safe %></p>
+	
+	</div>
+	<div class="contentHeaderRight">
+		<h3 class="projectDetailButton">No of </h3>
+		
+					</div>
+			<div class="clearfix">
+				<!--x-->
+			</div>
+		</div>
+	<div id="contentLeft560">
+
+		
+	
+	</div>
+	<div id="contentRight300">
+		<div class="contentRightWrapper">
+			<h3><span class="eyebrow">Learn More About</span><br />Our Reach</h3>
 
 <div id="divImgThumbs">
 				<div id="gallery" class="ad-gallery">
@@ -49,6 +80,11 @@
 					</div><!--adnav-->
 				</div><!--gallery-->
 		</div><!--thumbs-->
+		</div>
+		<div class="clearfix"><!--x--></div>
+
+</div>
+	<div class="clearfix" style="height:40px;"><!--x--></div>
 
 <% if @user.nil? %>
 	<%= link_to 'Back', communities_path %>
