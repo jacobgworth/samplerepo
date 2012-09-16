@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     @isadmin = is_admin_user?
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render :layout=>"homeLayout"}# index.html.erb
       format.json { render json: @events }
     end
   end
@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @isadmin = is_admin_user?
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {render :layout=>"homeLayout"}# show.html.erb
       format.json { render json: @event }
     end
   end

@@ -71,7 +71,10 @@ Mohhaiti::Application.routes.draw do
   match "/medical_mission_trips" => "page#medical_mission_trips"
      
   get "page/mission_trip_experinces"
-  match "/mission_trip_experinces" => "page#mission_trip_experinces"
+  match "/mission_trip_experinces" => "page#mission_trip_experiences"
+  
+  get "page/mission_trip_experiences"
+  match "/mission_trip_experiences" => "page#mission_trip_experiences"
      
   get "page/preparing_for_trip"
   match "/preparing_for_trip" => "page#preparing_for_trip"
