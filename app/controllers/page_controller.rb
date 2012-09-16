@@ -193,9 +193,15 @@ end
     end
   end
       
-    def write_to_child
+  def write_to_child
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
+  def videos
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"} #videos.html.erb
     end
   end
     
