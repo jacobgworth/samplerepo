@@ -42,6 +42,9 @@ Mohhaiti::Application.routes.draw do
   get "page/what_we_do"
   match "/what-we-do" => "page#what_we_do"
   
+  get "page/about_us"
+  match "/about_us" => "page#about_us"
+  
   get "page/videos"
   match "/videos" => "page#videos"
   
