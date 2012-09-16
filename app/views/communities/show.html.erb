@@ -1,205 +1,282 @@
 <div id="bgHero">
-	<div id="advancementHeroImg"><!--x--></div>
-	
+	<div id="advancementHeroImg">
+		<!--x-->
+	</div>
+
 </div>
 <div id="wrapper">
-	<%=render 'layouts/navBar'%>
+	<%= render 'layouts/navBar'%>
 	<div id="content">
-	<div id="heroContent">
-		<h1 style="padding-top:40px;">
-			<span class="largeText1 greenTransBG"><%= @community.communityname %></span>
-			</h1>
-			
-	</div>
-	<div class="contentHeader">
+		<div id="heroContent">
+			<h1 style="padding-top:40px;"><span class="largeText1 greenTransBG"><%= @community.communityname %></span></h1>
+
+		</div>
+		<div class="contentHeader">
 			<div class="contentHeaderLeft">
-	<h1><span class="eyebrow">Village Profile</span><br /><%= @community.communityname %></h1>
-		<!--<p><b><%= @community.overviewtitle %></b></p>-->
-		<p><%= @community.overviewdesc.html_safe %></p>
-		
-		<h3>Population:</strong> <%= @community.population %></h3>
-		<h2><%= @community.spiritualtitle %></h2>
-		<p><%= @community.spiritualdesc.html_safe %></p>
-		
-		<h2><%= @community.econtitle %></h2>
-		<p><%= @community.econdesc.html_safe %></p>
-		
-		<h2><%= @community.edtitle %></h2>
-		<p><%= @community.eddesc.html_safe %></p>
-		
-		<h2><%= @community.healthtitle %></h2>
-		<p><%= @community.healthdesc.html_safe %></p>
-		
-		<h2><%= @community.needstitle %></h2>
-		<p><%= @community.needsdesc.html_safe %></p>
-	
-	</div>
-	<div class="contentHeaderRight">
-		<h3 class="projectDetailButton">No. of Haitians living<br />in this village </h3>
-		
-					</div>
+				<h1><span class="eyebrow">Village Profile</span>
+				<br />
+				<%= @community.communityname %></h1>
+				<!--<p><b><%= @community.overviewtitle %></b></p>-->
+				<p>
+					<%= @community.overviewdesc.html_safe %>
+				</p>
+
+				<h3>Population:</strong> <%= @community.population %></h3>
+				<h2><%= @community.spiritualtitle %></h2>
+				<p>
+					<%= @community.spiritualdesc.html_safe %>
+				</p>
+
+				<h2><%= @community.econtitle %></h2>
+				<p>
+					<%= @community.econdesc.html_safe %>
+				</p>
+
+				<h2><%= @community.edtitle %></h2>
+				<p>
+					<%= @community.eddesc.html_safe %>
+				</p>
+
+				<h2><%= @community.healthtitle %></h2>
+				<p>
+					<%= @community.healthdesc.html_safe %>
+				</p>
+
+				<h2><%= @community.needstitle %></h2>
+				<p>
+					<%= @community.needsdesc.html_safe %>
+				</p>
+
+			</div>
+			<div class="contentHeaderRight">
+				<h3 class="projectDetailButton">No. of Haitians living
+				<br />
+				in this village <span class="darkGreen"><%= @community.population %></span></h3>
+				<h3 class="projectDetailButton">No. of Projects underway
+				<br />
+				in this village
+				<span class="darkGreen"><%= @community.population %></span></h3>
+			</div>
 			<div class="clearfix">
 				<!--x-->
 			</div>
 		</div>
-	<div id="contentLeft560">
-		<div class="updatesWrapper"><!--Projects-->
-	<h3><span class="eyebrow"><%=@community.communityname%></span><br />Projects</h3>
-	<div class="speechBubble"><p>projects under way</p></div>	
-	<%if @projects.count > 0%>
-	<div class="update560">
-		<div class="updateDate">
-			<img src="/assets/icon-projects-mini.png" />
-		</div>
-		<div class="updateProjects560Left">
-		
-			<% 
-				@counter = 1
-				@projects.each do |project|
-					break if @counter > 4
-			%>
-			<h4><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h4>
-			<% 
-					@counter = @counter + 1
-				end 
-			%>
-		</div>
-		<div class="updateProjects560Right">
-		<% 
-			@counter = 1
-			@projects.each do |project|
-				if @counter > 4
-		%>
-			<h4><a href="/project/<%@project.id%>"><%=@project.projectname%></a></h4>
-		<%		end
-				@counter = @counter + 1
-			end %> 
-	</div>
-	<div class="clearfix"><!--x--></div>
-	</div>
-	<div class="updateNavRight"><a href="/projects/?commid=<%=@community.id%>">View All Projects &raquo;</a></div>
-	<% else %>
-		<div class="update560">No Current <%=@community.communityname%> Projects <div class="clearfix"><!--x--></div></div>
-	<% end %>
-</div>
+		<div id="contentLeft560">
+			<div class="updatesWrapper">
+				<!--Projects-->
+				<h3><span class="eyebrow"><%= @community.communityname%></span>
+				<br />
+				Projects</h3>
+				<div class="speechBubble">
+					<p>
+						projects under way
+					</p>
+				</div>
+				<%if @projects.count > 0%>
+				<div class="update560">
+					<div class="updateDate">
+						<img src="/assets/icon-projects-mini.png" />
+					</div>
+					<div class="updateProjects560Left">
 
-<div class="updatesWrapper"><!--Updates-->
-	<h3><span class="eyebrow"><%=@community.communityname%></span><br />Updates</h3>
-	<div class="speechBubble"><p>latest updates</p></div>
-<%if @updates.count > 0%>
-	<%@updates.each do |m|%>
-	<div class="update560">
-		<div class="updateDate">
-			<% 
-				created = m.created_at 
-				creator = "-"
-				if m.user.blank?
-					creator = '-'
-				else
-					creator = m.user.first
-				end
-			%>
-			<span class="month"><%= created.strftime("%b")%></span><br />
-			<span class="date"><%=created.strftime("%d")%></span><br />
-			<span class="year"><%=created.strftime("%Y")%></span>
-		</div>
-		<div class="updatePost560">
-			<h4><a href=""><%=m.title%></a></h4>
-			<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a></p>
-			<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
-		</div>
-		<div class="clearfix"><!--x--></div>
-	</div>
-	<%end%>
-	<div class="updateNavRight"><a href="/updates/?commid=<%=@community.id%>">View All Updates &raquo;</a></div>
-<%else%>
-	<div class="update560">No <%=@community.communityname%> Updates</div>
-<%end%>
-</div>
+						<%
+						@counter = 1
+						@projects.each do |project|
+						break if @counter > 4
+						%>
+						<h4><a href="/projects/<%= project.id%>"><%= project.projectname%></a></h4>
+						<%
+						@counter = @counter + 1
+						end
+						%>
+					</div>
+					<div class="updateProjects560Right">
+						<%
+						@counter = 1
+						@projects.each do |project|
+						if @counter > 4
+						%>
+						<h4><a href="/project/<% @project.id%>"><%= @project.projectname%></a></h4>
+						<%		end
+						@counter = @counter + 1
+						end %>
+					</div>
+					<div class="clearfix">
+						<!--x-->
+					</div>
+				</div>
+				<div class="updateNavRight">
+					<a href="/projects/?commid=<%= @community.id%>">View All Projects &raquo;</a>
+				</div>
+				<% else %>
+				<div class="update560">
+					No Current <%= @community.communityname%> Projects
+					<div class="clearfix">
+						<!--x-->
+					</div>
+				</div>
+				<% end %>
+			</div>
 
-<div class="updatesWrapper"><!--Posts-->
-	<h3><span class="eyebrow"><%=@community.communityname%></span><br />Posts</h3>
-	<div class="speechBubble"><p>latest posts</p></div>	
-	<% if @posts.count > 0%>
-		<%@posts.each do |m|%>
-			<div class="update560">
-			<div class="updateDate">
-				<% 
-					created = m.postdate 
-					creator = "-"
-					if m.user.blank?
-						creator = '-'
-					else
-						creator = m.user.first
-					end
-				%>
-				<span class="month"><%= created.strftime("%b")%></span><br />
-				<span class="date"><%=created.strftime("%d")%></span><br />
-				<span class="year"><%=created.strftime("%Y")%></span>
+			<div class="updatesWrapper">
+				<!--Updates-->
+				<h3><span class="eyebrow"><%= @community.communityname%></span>
+				<br />
+				Updates</h3>
+				<div class="speechBubble">
+					<p>
+						latest updates
+					</p>
+				</div>
+				<%if @updates.count > 0%>
+				<%@updates.each do |m|%>
+				<div class="update560">
+					<div class="updateDate">
+						<%
+ created = m.created_at
+              creator = "-"
+              if m.user.blank?
+                creator = '-'
+              else
+                creator = m.user.first
+              end
+%>
+						<span class="month"><%= created.strftime("%b")%></span>
+						<br />
+						<span class="date"><%= created.strftime("%d")%></span>
+						<br />
+						<span class="year"><%= created.strftime("%Y")%></span>
+					</div>
+					<div class="updatePost560">
+						<h4><a href=""><%= m.title%></a></h4>
+						<p>
+							<%= truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a>
+						</p>
+						<p class="meta">
+							Projects: Project Name | Posted by: <%= creator%>
+						</p>
+					</div>
+					<div class="clearfix">
+						<!--x-->
+					</div>
+				</div>
+				<%end%>
+				<div class="updateNavRight">
+					<a href="/updates/?commid=<%= @community.id%>">View All Updates &raquo;</a>
+				</div>
+				<%else%>
+				<div class="update560">
+					No <%= @community.communityname%> Updates
+				</div>
+				<%end%>
 			</div>
-			<div class="updatePost560">
-				<h4><a href=""><%=m.title%></a></h4>
-				<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a></p>
-				<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
+
+			<div class="updatesWrapper">
+				<!--Posts-->
+				<h3><span class="eyebrow"><%= @community.communityname%></span>
+				<br />
+				Posts</h3>
+				<div class="speechBubble">
+					<p>
+						latest posts
+					</p>
+				</div>
+				<% if @posts.count > 0%>
+				<%@posts.each do |m|%>
+				<div class="update560">
+					<div class="updateDate">
+						<%
+ created = m.postdate
+              creator = "-"
+              if m.user.blank?
+                creator = '-'
+              else
+                creator = m.user.first
+              end
+%>
+						<span class="month"><%= created.strftime("%b")%></span>
+						<br />
+						<span class="date"><%= created.strftime("%d")%></span>
+						<br />
+						<span class="year"><%= created.strftime("%Y")%></span>
+					</div>
+					<div class="updatePost560">
+						<h4><a href=""><%= m.title%></a></h4>
+						<p>
+							<%= truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a>
+						</p>
+						<p class="meta">
+							Projects: Project Name | Posted by: <%= creator%>
+						</p>
+					</div>
+					<div class="clearfix">
+						<!--x-->
+					</div>
+				</div>
+				<%end%>
+				<div class="updateNavRight">
+					<a href="/posts/?commid=<%= @community.id%>">View All Posts &raquo;</a>
+				</div>
+				<%else%>
+				<div class="update560">
+					No <%= @community.communityname%> Blog Posts
+				</div>
+				<%end%>
 			</div>
-			<div class="clearfix"><!--x--></div>
+
+		</div>
+		<div id="contentRight300">
+			<div class="contentRightWrapper">
+				<h3><span class="eyebrow">Learn More About</span>
+				<br />
+				Our Reach</h3>
+
+				<div id="divImgThumbs">
+					<div id="gallery" class="ad-gallery">
+						<div class="ad-image-wrapper">
+							<div class="ad-image shadow"></div>
+						</div><!--wrapper-->
+						<div class="ad-controls"></div><!--controls-->
+						<div class="ad-nav">
+							<div class="ad-back"></div>
+							<div class="ad-thumbs">
+								&nbsp;
+								<ul class="ad-thumb-list">
+									<% if @assets.count > 0
+									@counter = 0
+									@assets.each do |photo|
+									@classname = "image" + @counter.to_s
+									%>
+									<!--<p><%= image_tag photo.asset.url(:medium) %></p>-->
+									<li >
+										<a href="<%= photo.asset.url(:medium)%>"><img src="<%= photo.asset.url(:thumb) %>" alt="" title="" longdesc="" class="<%= @classname%>" style="width:65px;" /></a>
+									</li>
+									<% @counter = @counter + 1%>
+									<% end %>
+									<% end %>
+								</ul>
+							</div>
+							<div class="ad-forward"></div>
+						</div><!--adnav-->
+					</div><!--gallery-->
+				</div><!--thumbs-->
 			</div>
+			<div class="clearfix">
+				<!--x-->
+			</div>
+
+		</div>
+		<div class="clearfix" style="height:40px;">
+			<!--x-->
+		</div>
+
+		<% if @user.nil? %>
+		<%= link_to 'Back', communities_path %>
+		<% elsif @user.is_admin == 1%>
+		<%= link_to 'Edit', edit_community_path(@community) %> | <%= link_to 'Back', communities_path %>
+		<% else %>
+		<%= link_to 'Back', communities_path %>
 		<%end%>
-		<div class="updateNavRight"><a href="/posts/?commid=<%=@community.id%>">View All Posts &raquo;</a></div>
-		<%else%>
-			<div class="update560">No <%=@community.communityname%> Blog Posts</div>
-		<%end%>
-</div>
 
-		
-	
 	</div>
-	<div id="contentRight300">
-		<div class="contentRightWrapper">
-			<h3><span class="eyebrow">Learn More About</span><br />Our Reach</h3>
-
-<div id="divImgThumbs">
-				<div id="gallery" class="ad-gallery">
-					<div class="ad-image-wrapper">
-						<div class="ad-image shadow"></div>
-					</div><!--wrapper-->
-					<div class="ad-controls"></div><!--controls-->
-					<div class="ad-nav">
-						<div class="ad-back"></div>
-						<div class="ad-thumbs">
-							&nbsp;
-							<ul class="ad-thumb-list">
-								<% if @assets.count > 0
-								@counter = 0
-								@assets.each do |photo|
-								@classname = "image" + @counter.to_s
-								%>
-								<!--<p><%= image_tag photo.asset.url(:medium) %></p>-->
-								<li >
-									<a href="<%= photo.asset.url(:medium)%>"><img src="<%= photo.asset.url(:thumb) %>" alt="" title="" longdesc="" class="<%= @classname%>" style="width:65px;" /></a>
-								</li>
-								<% @counter = @counter + 1%>
-								<% end %>
-								<% end %>
-							</ul>
-						</div>
-						<div class="ad-forward"></div>
-					</div><!--adnav-->
-				</div><!--gallery-->
-		</div><!--thumbs-->
-		</div>
-		<div class="clearfix"><!--x--></div>
-
-</div>
-	<div class="clearfix" style="height:40px;"><!--x--></div>
-
-<% if @user.nil? %>
-	<%= link_to 'Back', communities_path %>
-<% elsif @user.is_admin == 1%>
-	<%= link_to 'Edit', edit_community_path(@community) %> | <%= link_to 'Back', communities_path %>
-<% else %>
-	<%= link_to 'Back', communities_path %>
-<%end%>
-
-</div>
 
