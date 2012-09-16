@@ -49,13 +49,16 @@
 
 			</div>
 			<div class="contentHeaderRight">
-				<h3 class="projectDetailButton">No. of Haitians living
+				<h3 class="projectDetailButton" style="padding-top:20px; background-image: url('/assets/icon-population-inset.png'); background-repeat:no-repeat; background-position:95% 50%; height:60px;">No. of Haitians living
 				<br />
-				in this village <span class="darkGreen"><%= @community.population %></span></h3>
-				<h3 class="projectDetailButton">No. of Projects underway
+				in this village 
+				<br />
+				<span class="darkGreenLarge"><%= @community.population %></span></h3>
+				<h3 class="projectDetailButton" style="padding-top:20px; background-image: url('/assets/icon-projects-inset.png'); background-repeat:no-repeat; background-position:95% 50%; height:60px;">No. of Projects underway
 				<br />
 				in this village
-				<span class="darkGreen"><%= @community.population %></span></h3>
+				<br />
+				<span class="darkGreenLarge"><%= @projectscount %></span><br /><br /><a href="">View all projects &raquo;</a></h3>
 			</div>
 			<div class="clearfix">
 				<!--x-->
@@ -227,9 +230,9 @@
 		</div>
 		<div id="contentRight300">
 			<div class="contentRightWrapper">
-				<h3><span class="eyebrow">Learn More About</span>
+				<h3><span class="eyebrow"><%= @community.communityname%></span>
 				<br />
-				Our Reach</h3>
+				Photos</h3>
 
 				<div id="divImgThumbs">
 					<div id="gallery" class="ad-gallery">

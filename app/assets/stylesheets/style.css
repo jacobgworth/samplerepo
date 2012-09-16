@@ -466,7 +466,11 @@ span.eyebrow {
 	letter-spacing:-.1em;
 	line-height:.5em;
 }
-
+.giantText1_5 {
+	font-size: 7.5em;
+	letter-spacing:-.1em;
+	line-height:.5em;
+}
 .giantText1 {
 	font-size: 6.0em;
 	letter-spacing:-.1em;
@@ -1188,19 +1192,26 @@ h3.CTA {
 #contentRight300 {
 	float:right;
 	width:300px;
-	margin-top:30px;
+	margin-top:0px;
 }
 
 #contentRight300 h2 {
 	color:#0f483b;
 	text-transform:uppercase;
-	font-size:1.25em;
+	font-size:2.25em;
 }
 
 #contentRight300 h3 {
 	color:#0f483b;
 	text-transform:uppercase;
+	font-size:1.75em;
+}
+
+#contentRight300 h4 {
+	color:#0f483b;
+	text-transform:uppercase;
 	font-size:1em;
+	padding:10px 0 5px 0;
 }
 
 
@@ -1267,6 +1278,15 @@ h4.projectDetailButton {
 	margin-top:10px;
 	text-indent:25px;
 	line-height: 16px;
+}
+
+#contentHeaderRight .projectDetailButton, #contentHeaderRight .projectDetailButtonLeft, #contentHeaderRight .projectDetailButtonRight {
+	background-color:#078E60;
+	padding:8px;
+	color:#e4d4b9;
+	text-transform:uppercase;
+	font-size:.7em;
+	margin-top:10px;
 }
 
 .iconDetailVillages {
@@ -1600,6 +1620,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 
 .contentRightWrapper {
 	margin-bottom:30px;
+	padding-top:20px;
 }
 
 #contentLeft h3 .mediumText, #contentRight h3 .mediumText {
@@ -1642,6 +1663,15 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	position:relative;
 }
 
+.featuredImage {
+	border:5px solid #F9F2E7;
+	float:left;
+	margin:10px 10px 10px 0;
+	-webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow:    0px 1px 5px rgba(50, 50, 50, 0.5);
+	box-shadow:         0px 1px 5px rgba(50, 50, 50, 0.5);
+}
+
 #promoWrapper .buttonSquareOrange, #heroContent .buttonSquareOrange {
 	position:absolute;
 	top:140px;
@@ -1652,6 +1682,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	color:#E4D4B9;
 	text-align:center;
 	font-family: 'Montserrat', sans-serif;
+	font-size:1em;
 		
 	-moz-box-shadow: 3px 3px #c26603;
 	-webkit-box-shadow: 3px 3px #c26603;
@@ -1664,7 +1695,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	color:#E4D4B9;
 	text-align:center;
 	font-family: 'Montserrat', sans-serif;
-	font-size:.85em;
+	font-size:1em;
 		
 	-moz-box-shadow: 3px 3px #c26603;
 	-webkit-box-shadow: 3px 3px #c26603;
@@ -1700,7 +1731,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 
 #content .speechBubble p {
 	text-align:right;
-	font-size:.85em;
+	font-size:.95em;
 	color:#E4D4B9;
 	font-family: 'Montserrat', sans-serif;
 	padding:15px 5px;
