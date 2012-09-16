@@ -22,6 +22,7 @@ class CommunitiesController < ApplicationController
     @projects = Project.joins(:communities).where("community_id=" + @community.id.to_s).last(4).reverse
     @posts = Post.joins(:communities).where("community_id=" + @community.id.to_s).order(:postdate).last(3).reverse
     @updates = Update.joins(:communities).where("community_id=" + @community.id.to_s).last(3).reverse
+    @projectscount = Project.joins(:communities).where("community_id=" + @community.id.to_s).count
 
     respond_to do |format|
       format.html {render :layout=>"homeLayout"} # show.html.erb
