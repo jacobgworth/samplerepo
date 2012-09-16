@@ -19,6 +19,9 @@ class CommunitiesController < ApplicationController
     @user = current_user
     @community = Community.find(params[:id])
     @assets = @community.assets.all
+    @projects = Project.joins(:communities).where("community_id=" + @community.id.to_s).last(4).reverse
+    @posts = Post.joins(:communities).where("community_id=" + @community.id.to_s).order(:postdate).last(3).reverse
+    @updates = Update.joins(:communities).where("community_id=" + @community.id.to_s).last(3).reverse
 
     respond_to do |format|
       format.html {render :layout=>"homeLayout"} # show.html.erb
