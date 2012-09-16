@@ -45,6 +45,9 @@ Mohhaiti::Application.routes.draw do
   get "page/about_us"
   match "/about_us" => "page#about_us"
   
+  get "page/contact_us"
+  match "/contact_us" => "page#contact_us"
+  
   get "page/videos"
   match "/videos" => "page#videos"
   

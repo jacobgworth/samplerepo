@@ -8,6 +8,12 @@ class PageController < ApplicationController
     end
   end
   
+  def contact_us
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
   def what_we_do
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
