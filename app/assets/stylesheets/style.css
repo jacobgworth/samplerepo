@@ -466,7 +466,11 @@ span.eyebrow {
 	letter-spacing:-.1em;
 	line-height:.5em;
 }
-
+.giantText1_5 {
+	font-size: 7.5em;
+	letter-spacing:-.1em;
+	line-height:.5em;
+}
 .giantText1 {
 	font-size: 6.0em;
 	letter-spacing:-.1em;
@@ -484,7 +488,7 @@ span.eyebrow {
 	font-size:3.35em;
 	letter-spacing:-.02em;
 }
-.largeText2_5 {
+.largeText4_5 {
 	font-size:2.85em;
 	letter-spacing:-.02em;
 }
@@ -1129,9 +1133,33 @@ h3.CTA {
 	padding:20px 0;
 }
 
+#contentLeft560 ul {
+	margin:5px 20px;
+}
+
+#contentLeft560 li {
+	padding:8px 0;
+	line-height:21px;
+}
+
 #contentLeft560 h2 {
 	font-size:2em;
 	padding:20px 0;
+}
+
+#contentLeft560 h3 {
+	font-size:1.5em;
+	padding:20px 0;
+}
+
+#contentLeft440 {
+	float:left;
+	width:440px;
+}
+
+#contentRight440 {
+	float:right;
+	width:440px;
 }
 
 
@@ -1157,10 +1185,10 @@ h3.CTA {
 	padding:0;
 }
 
-.contentHeaderRight ul {
+.contentHeaderRight ul, #contentRight300 ul {
 	margin-top:10px;
 }
-.contentHeaderRight li {
+.contentHeaderRight li, #contentRight300 li {
 	padding:5px 0;
 }
 .singleCol{
@@ -1169,12 +1197,6 @@ h3.CTA {
 #contentLeft560 {
 	float:left;
 	width:560px;
-}
-
-#contentLeft560 h3 {
-	color:#0f483b;
-	text-transform:uppercase;
-	font-size:2.5em;
 }
 
 #contentLeft560 h4 {
@@ -1188,19 +1210,26 @@ h3.CTA {
 #contentRight300 {
 	float:right;
 	width:300px;
-	margin-top:30px;
+	margin-top:0px;
 }
 
 #contentRight300 h2 {
 	color:#0f483b;
 	text-transform:uppercase;
-	font-size:1.25em;
+	font-size:2.25em;
 }
 
 #contentRight300 h3 {
 	color:#0f483b;
 	text-transform:uppercase;
+	font-size:1.75em;
+}
+
+#contentRight300 h4 {
+	color:#0f483b;
+	text-transform:uppercase;
 	font-size:1em;
+	padding:10px 0 5px 0;
 }
 
 
@@ -1267,6 +1296,15 @@ h4.projectDetailButton {
 	margin-top:10px;
 	text-indent:25px;
 	line-height: 16px;
+}
+
+#contentHeaderRight .projectDetailButton, #contentHeaderRight .projectDetailButtonLeft, #contentHeaderRight .projectDetailButtonRight {
+	background-color:#078E60;
+	padding:8px;
+	color:#e4d4b9;
+	text-transform:uppercase;
+	font-size:.7em;
+	margin-top:10px;
 }
 
 .iconDetailVillages {
@@ -1600,6 +1638,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 
 .contentRightWrapper {
 	margin-bottom:30px;
+	padding-top:20px;
 }
 
 #contentLeft h3 .mediumText, #contentRight h3 .mediumText {
@@ -1642,6 +1681,15 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	position:relative;
 }
 
+.featuredImage {
+	border:5px solid #F9F2E7;
+	float:left;
+	margin:10px 10px 10px 0;
+	-webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow:    0px 1px 5px rgba(50, 50, 50, 0.5);
+	box-shadow:         0px 1px 5px rgba(50, 50, 50, 0.5);
+}
+
 #promoWrapper .buttonSquareOrange, #heroContent .buttonSquareOrange {
 	position:absolute;
 	top:140px;
@@ -1652,6 +1700,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	color:#E4D4B9;
 	text-align:center;
 	font-family: 'Montserrat', sans-serif;
+	font-size:1em;
 		
 	-moz-box-shadow: 3px 3px #c26603;
 	-webkit-box-shadow: 3px 3px #c26603;
@@ -1664,7 +1713,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	color:#E4D4B9;
 	text-align:center;
 	font-family: 'Montserrat', sans-serif;
-	font-size:.85em;
+	font-size:1em;
 		
 	-moz-box-shadow: 3px 3px #c26603;
 	-webkit-box-shadow: 3px 3px #c26603;
@@ -1700,7 +1749,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 
 #content .speechBubble p {
 	text-align:right;
-	font-size:.85em;
+	font-size:.95em;
 	color:#E4D4B9;
 	font-family: 'Montserrat', sans-serif;
 	padding:15px 5px;
