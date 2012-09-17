@@ -4,10 +4,11 @@ class CommunitiesController < ApplicationController
   def index
     @communities = Community.all
     @jason = Community.all.to_gmaps4rails
-    @yes = 'test'
+    @user = current_user
+    @itemCount = 0
     
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render :layout=>"homeLayout"}# index.html.erb
       #format.json { render json: @communities }
     end
   end
@@ -15,10 +16,16 @@ class CommunitiesController < ApplicationController
   # GET /communities/1
   # GET /communities/1.json
   def show
+    @user = current_user
     @community = Community.find(params[:id])
+    @assets = @community.assets.all
+    @projects = Project.joins(:communities).where("community_id=" + @community.id.to_s).last(4).reverse
+    @posts = Post.joins(:communities).where("community_id=" + @community.id.to_s).order(:postdate).last(3).reverse
+    @updates = Update.joins(:communities).where("community_id=" + @community.id.to_s).last(3).reverse
+    @projectscount = Project.joins(:communities).where("community_id=" + @community.id.to_s).count
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {render :layout=>"homeLayout"} # show.html.erb
       format.json { render json: @community }
     end
   end
@@ -26,17 +33,31 @@ class CommunitiesController < ApplicationController
   # GET /communities/new
   # GET /communities/new.json
   def new
-    @community = Community.new
+    if is_admin_user?
+      @community = Community.new
+      @community.assets.build
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @community }
-    end
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @community }
+      end
+     else
+      respond_to do |format|
+        format.html { redirect_to "/communities/" }
+      end
+     end
   end
 
   # GET /communities/1/edit
   def edit
-    @community = Community.find(params[:id])
+    if is_admin_user?
+      @community = Community.find(params[:id])
+      @community.assets.build
+    else
+      respond_to do |format|
+        format.html { redirect_to "/communities/" }
+      end
+    end
   end
 
   # POST /communities

@@ -2,8 +2,8 @@
 	<div id="logo"><a href="/"><img src="/assets/logo.png"></a></div>
 	<div id="utilityBar">
 		<ul id="utilityNav">
-			<li><a href="">About Us</a> // </li>
-			<li><a href="">Contact Us</a> // </li>
+			<li><a href="/about_us">About Us</a> // </li>
+			<li><a href="/contact_us">Contact Us</a> // </li>
 			<li class="last"><% if current_user %>
     <%= link_to "Logout", log_out_path %>
   <% else %>
@@ -30,7 +30,7 @@
 			</li>
 			<li><a href="/church_advancement">Church<br />Advancement</a>
 				<ul>
-					<li><a href="/communities_impacted">Communities Impacted</a></li>
+					<li><a href="/communities">Communities Impacted</a></li>
 					<li><a href="/church_partner">Become a Church Partner</a></li>
 					<li><a href="/vision_trip">Take a Vision Trip</a></li>
 				</ul>
@@ -44,7 +44,7 @@
 					<li><a href="/write_to_child">Write Your Child</a></li>
 				</ul>
 			</li>
-			<li><a href="">Mission<br />Trips</a>
+			<li><a href="/mission_trips">Mission<br />Trips</a>
 				<ul>
 					<li><a href="/take_a_trip">Take a Mission Trip</a></li>
 					<li><a href="/medical_mission_trips">Medical Mission Trips</a></li>
@@ -52,7 +52,7 @@
 					<li><a href="/trip_costs">Trip Costs</a></li>
 					<li><a href="/trip_faqs">Trip FAQs</a></li>
 					<li><a href="/preparing_for_trip">Preparing for a Trip</a></li>
-					<li><a href="/mission_trip_experinces">Mission Trip Experiences</a></li>
+					<li><a href="/mission_trip_experiences">Mission Trip Experiences</a></li>
 				</ul>
 			</li>
 			<li><a href="/take-action">Take<br />Action</a>
@@ -61,13 +61,13 @@
 					<li><a href="/be_a_partner">Be a Partner of Hope</a></li>
 					<li><a href="/volunteer">Volunteer</a></li>
 					<li><a href="/share_photos">Share Your Photos</a></li>
-					<li><a href="/event">Events</a></li>
+					<li><a href="/events">Events</a></li>
 					<li><a href="/downloads">Downloads</a></li>
 				</ul>
 			</li>
 			<li class="last"><a href="/stay-connected">Stay<br />Connected</a>
 				<ul>
-					<li><a href="/blog">Blog</a></li>
+					<li><a href="/posts">Blog</a></li>
 					<li><a href="/updates">Updates</a></li>
 					<li><a href="/videos">Videos</a></li>
 				</ul>

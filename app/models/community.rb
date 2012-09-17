@@ -1,5 +1,7 @@
 class Community < ActiveRecord::Base
   
+  has_many :assets
+  
   has_and_belongs_to_many :experiences
   
   has_and_belongs_to_many :partners
@@ -13,7 +15,7 @@ class Community < ActiveRecord::Base
   
   acts_as_gmappable :process_geocoding => false
   
-  
+  accepts_nested_attributes_for :assets, :allow_destroy => true
   
   def gmaps4rails_address
     "#{self.latitude}, #{self.longitude}"

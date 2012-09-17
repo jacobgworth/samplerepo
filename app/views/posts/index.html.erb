@@ -17,13 +17,20 @@
     <td><%= post.user_id %></td>
     <td><%= post.body %></td>
     <td><%= post.imagelink %></td>
+    <% if !@user.nil? && @user.is_admin == 1%>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+    <%else%>
+    <td></td>
+    <td></td>
+    <td></td>
+    <%end%>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Post', new_post_path %>
+<% if !@user.nil? && @user.is_admin == 1%>
+<%= link_to 'Write a New Post', new_post_path %>
+<%end%>

@@ -12,15 +12,16 @@
 				<h1 style="padding-top:40px; width:500px"><span class="largeText4 greenTransBG" style="margin-bottom:15px;"><%= @project.projectname %>
 					<br />
 				</span><span class="largeText6 greenTransBG lowercase"><%= @project.goal%></span></h1>
+				
 				<div class="buttonSquareOrange" style="position:absolute; top:-250px; left:200px; width:280px">
 					<a href="">Support this project &raquo;</a>
 				</div>
 			</div>
-			<div class="percentComplete">
+			<!--<div class="percentComplete">
 				<h2>Percent Complete
 				<br/>
 				<span class="largeText1" style="line-height: 1em;"><%= number_to_percentage(@project.percentcomplete,:precision=>2)%></span></h2>
-			</div>
+			</div>-->
 		</div>
 
 <div class="contentHeader">
@@ -38,7 +39,7 @@
 				<span class="darkGreenLarge"><a href=""><%= @category.categoryname%></span></a></h3>
 				<h3 class="projectDetailButtonLeft">Population Served
 				<br />
-				<span class="darkGreenMedium">10000</span></h3>
+				<span class="darkGreenMedium"><%=@population%></span></h3>
 				<h3 class="projectDetailButtonRight">Project Stage
 				<br />
 				<span class="darkGreenMedium"><%= @project.stage%></span></h3>
@@ -128,7 +129,7 @@
 				<div class="update560">
 					<div class="updateDate">
 						<%
-						 created = m.created_at
+						 created = m.postdate
 						              creator = "-"
 						              if m.user.blank?
 						                creator = '-'
@@ -136,14 +137,14 @@
 						                creator = m.user.first
 						              end
 						%>
-						<span class="month"><%= created.strftime("%b")%></span>
+						<span class="month"><%= created.strftime("%b") unless created.nil? %></span>
 						<br />
-						<span class="date"><%= created.strftime("%d")%></span>
+						<span class="date"><%= created.strftime("%d") unless created.nil? %></span>
 						<br />
-						<span class="year"><%= created.strftime("%Y")%></span>
+						<span class="year"><%= created.strftime("%Y") unless created.nil? %></span>
 					</div>
 					<div class="updatePost560">
-						<h4><a href=""><%= m.title%></a></h4>
+						<h4><a href="/posts/<%= m.id%>"><%= m.title%></a></h4>
 						<p>
 							<%= truncate(m.body,:length=>100,:separator=>' ')%> <a href="/posts/<%= m.id%>">READ MORE</a>
 						</p>

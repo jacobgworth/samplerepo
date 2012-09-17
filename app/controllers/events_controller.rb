@@ -3,9 +3,10 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    @isadmin = is_admin_user?
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render :layout=>"homeLayout"}# index.html.erb
       format.json { render json: @events }
     end
   end
@@ -14,9 +15,10 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
+    @isadmin = is_admin_user?
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {render :layout=>"homeLayout"}# show.html.erb
       format.json { render json: @event }
     end
   end
@@ -24,17 +26,29 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.json
   def new
-    @event = Event.new
+    if is_admin_user?
+      @event = Event.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @event }
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @event }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to "/events/" }
+      end
     end
   end
 
   # GET /events/1/edit
   def edit
-    @event = Event.find(params[:id])
+    if is_admin_user?
+      @event = Event.find(params[:id])
+    else
+      respond_to do |format|
+        format.html { redirect_to "/events/" }
+      end
+    end
   end
 
   # POST /events
