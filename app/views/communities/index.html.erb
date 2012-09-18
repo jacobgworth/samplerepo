@@ -14,7 +14,7 @@
 				<div class="gridImage projectsMed" style="background-image: none;')"><a href="/communities/<%=community.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a></div>
 				<div class="gridText">
 					<h2><a href="/communities/<%=community.id%>"><%=community.communityname%></a></h2>
-					<p>Project description pulled from Geography on community profiles.</p>
+					<p><%=truncate(community.overviewdesc,:length=>100,:separator=>' ') %> </p>
 					<h3 class="projectDetailButton">
 						People Reached:
 						<span class="darkGreen"><%=community.population%></span>
@@ -33,7 +33,7 @@
 				<div class="gridImage projectsMed" style="background-image: none;')"><a href="/communities/<%=community.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a></div>
 				<div class="gridText">
 					<h2><a href="/communities/<%=community.id%>"><%=community.communityname%></a></h2>
-										<p>Project description pulled from Geography on community profiles.</p>
+										<p><%=truncate(community.overviewdesc,:length=>100,:separator=>' ') %></p>
 					<h3 class="projectDetailButton">
 						People Reached:
 						<span class="darkGreen"><%=community.population%></span>
