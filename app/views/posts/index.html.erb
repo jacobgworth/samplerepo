@@ -17,7 +17,7 @@
     <p></p>
     <%end%>
     <h4 style="clear:both;"><%= post.user_id %></h4>
-    <p><%= post.body %></p>
+    <p><%= truncate(post.body,:length=>500,:separator=>' ') %></p>
     <p><%= post.imagelink %></p>
     </div>
 <% end %>
