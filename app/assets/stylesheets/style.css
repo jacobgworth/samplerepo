@@ -66,7 +66,6 @@ body {
 	background:#e4d4b9 url(/assets/bodyBG.jpg) top center repeat-y;
 	position: relative
 }
-
 h1,h2,h3,h4,h5 {
 	font-family: 'Montserrat', sans-serif;
 }
@@ -107,7 +106,8 @@ strong {
 }
 
 span.eyebrow {
-	font-size:40%;
+	font-size:50%;
+	/*Changed from 40% to fix broken post update font size being too small. Also, it looks a little better. Feel free to change it back! */
 }
 
 .relative {
@@ -285,11 +285,11 @@ span.eyebrow {
 	left:600px;
 }
 .orpahanTop{
-	font-size: 51px;
+	font-size: 53px;
 	margin-bottom: 50px;
 }
 .orphanLarge{
-	font-size: 9.3em;
+	font-size: 10.3em;
 	letter-spacing:-.1em;
 	line-height:110px;
 }
@@ -299,19 +299,19 @@ span.eyebrow {
 	line-height:110px;
 }
 .orphanChildrenText{
-	letter-spacing: 10px;
-	font-size: 76px;
+	letter-spacing: 2px;
+	font-size: 87px;
 	line-height:100px;
 }
 .orphanParentsText{
 	letter-spacing: 2px;
 	font-size: 45px;
-	line-height: 7px;
+	line-height: 14px;
 }
 .orphanHaitiText{
-	letter-spacing: 10px;
-	font-size: 99px;
-	line-height:68px;
+	letter-spacing: 2px;
+	font-size: 113px;
+	line-height:90px;
 }
 
 .videoWrapper {
@@ -425,7 +425,7 @@ span.eyebrow {
 	position:absolute;
 	top:500px;
 	left:36px;
-	font-size:45px;
+	font-size:41px;
 }
 #heroContentHaitiOne h1 {
 	background-image: url(/assets/greenBG.png);
@@ -480,6 +480,7 @@ span.eyebrow {
 	font-size:4.45em;
 	letter-spacing:-.06em;
 }
+.
 .largeText2 {
 	font-size:4em;
 	letter-spacing:-.06em;
@@ -1036,7 +1037,7 @@ h3.CTA {
 }
 .rightCol h3{
 	color:#0f483b;
-	font-size:1.25px;
+	font-size:1.25em;
 	padding-top:10px;
 	padding-bottom:3px;
 }
@@ -1228,8 +1229,8 @@ h3.CTA {
 #contentRight300 h4 {
 	color:#0f483b;
 	text-transform:uppercase;
-	font-size:1em;
-	padding:10px 0 5px 0;
+	font-size: 0.8em;
+	padding:10px 0 5px 10px;
 }
 
 
@@ -1962,7 +1963,7 @@ p.meta {
 }
 
 .ad-gallery {
-width: 120px;
+width: 276px;
 background:#ccb99a;
 border:1px solid #c2b092;
 
@@ -2036,10 +2037,11 @@ right: 0;
 left: auto;*/
 }
 .ad-gallery .ad-image-wrapper .ad-image {
-position: absolute;
-overflow: hidden;
-top: 0;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
 left: 0;
+width:267px;
 z-index: 9;
 }
 .ad-gallery .ad-image-wrapper .ad-image a img {
@@ -2154,3 +2156,67 @@ left: -9000px;
 top: -9000px;
 }
 /*end image slider classes*/
+
+/*ROBERTS STYLES 9/17/12 */
+
+#content ul{
+	list-style: disc;
+	
+	margin-left:30px;
+}
+#content li{
+
+}
+#contentRight300 ul{
+	list-style:none;
+}
+.nutritionBottom{
+	font-size:24px;
+}
+.nutritionLarge{
+	font-size:3.9em;
+}
+.nutrtionTop{
+	font-size:41px;
+}
+.topEducation{
+	font-size: 3.1em;
+}
+.middleEducation{
+	font-size:7em;
+	line-height: 45px;
+}
+.bottomEducation{
+	font-size:5.8em;
+}
+.advancementBottomText{
+	font-size:3.1em;
+}
+.advancementTopText{
+	font-size:6.0em;
+}
+.healthCareTop{
+	font-size:61px;
+}
+.healthCareBottom{
+	font-size:54px;
+}
+.updatesWrapper h3{
+	font-size: 1.77em;
+}
+.whatWeDoTop{
+	font-size:4.45em;
+}
+.whatWeDoMiddle{
+	font-size:4.1em;
+}
+.whatWeDoBottom{
+	font-size:2.49em;
+}
+.nutritionSidebar{	
+    color: #e4d4b9;
+    text-transform: none;
+}
+.nutritionSidebarHighlight{
+	font-size:4em;
+}
