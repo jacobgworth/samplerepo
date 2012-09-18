@@ -2247,3 +2247,21 @@ top: -9000px;
 	width:240px;
 	height:100px;
 }
+#flashnotice{
+	display:none;
+}
+#notice{
+	padding-top:20px;
+	font-size: 22px;
+	text-align: center;
+	color: #182e2c;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+}
+.collectionSelector{
+	padding-top:15px;
+}
+.collectionSelector select{
+	width:240px;
+	height:100px;	
+}

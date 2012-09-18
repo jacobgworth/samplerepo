@@ -38,7 +38,7 @@ class CommunitiesController < ApplicationController
       @community.assets.build
 
       respond_to do |format|
-        format.html # new.html.erb
+        format.html {render :layout=>"homeLayout"}# index.html.erb
         format.json { render json: @community }
       end
      else
@@ -53,6 +53,9 @@ class CommunitiesController < ApplicationController
     if is_admin_user?
       @community = Community.find(params[:id])
       @community.assets.build
+      respond_to do |format| 
+        format.html {render :layout=>"homeLayout"}# index.html.erb
+      end
     else
       respond_to do |format|
         format.html { redirect_to "/communities/" }

@@ -10,15 +10,16 @@
   <div class="postsPage">
     <h2><%= post.title %></h2>
     <% if !@user.nil? && @user.is_admin == 1%>
-    <p class="editPostsLink"><%= link_to 'Show', post %> |
+    <p class="editPostsLink">
     <%= link_to 'Edit', edit_post_path(post) %> |
     <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></p>
     <%else%>
     <p></p>
     <%end%>
     <h4 style="clear:both;"><%= post.user_id %></h4>
-    <p><%= truncate(post.body,:length=>500,:separator=>' ') %></p>
+    <p><%= truncate(post.body,:length=>500,:separator=>' ').html_safe %></p>
     <p><%= post.imagelink %></p>
+    <p style="margin-top:-10px;"><%= link_to 'Read More...', post %></p>
     </div>
 <% end %>
 

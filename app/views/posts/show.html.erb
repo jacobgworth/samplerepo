@@ -8,7 +8,7 @@
 
 <h4><%= @post.user_id %></h4>
 
-<p style="clear:both;"><%= @post.body %></p>
+<p style="clear:both;"><%= @post.body.html_safe %></p>
 
 <p><%= @post.imagelink %></p>
 
