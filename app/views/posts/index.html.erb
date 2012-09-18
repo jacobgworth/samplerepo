@@ -3,7 +3,9 @@
 <div id="content" style="padding-top: 30px;">
 	
 	<h1><span class="eyebrow">Mission of Hope</span><br />Blog Posts</h1>
-
+<% if !@user.nil? && @user.is_admin == 1%>
+<h3><%= link_to 'Write a New Post', new_post_path %></h3>
+<%end%>
 <% @posts.each do |post| %>
   <div class="postsPage">
     <h2><%= post.title %></h2>
@@ -25,3 +27,4 @@
 <% if !@user.nil? && @user.is_admin == 1%>
 <h3><%= link_to 'Write a New Post', new_post_path %></h3>
 <%end%>
+</div></div>
