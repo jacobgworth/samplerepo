@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    Title: <%= f.text_field :title %>
+    Title:<br> <%= f.text_field :title %>
   </div>
   <div class="field">
-    Author: <%= f.text_field :author %>
+    Author: <br><%= f.text_field :author %>
   </div>
   <div class="field">
-    Posted on: <%= date_select :post, :postdate %>
+    Posted on: <br><%= date_select :post, :postdate %>
   </div>
   <div class="field">
     <%= f.label :body %><br />
     <%= f.text_area :body %>
   </div>
   <div>
-  	Select Categories: <%= collection_select 'post', 'category_ids', Category.order("categoryname asc"), :id, :categoryname, { :include_blank => 'None'}, { :multiple => true, :categoryname =>'post[category_ids][]',:selected => 0 } %>
+  	Select Categories:<br> <%= collection_select 'post', 'category_ids', Category.order("categoryname asc"), :id, :categoryname, { :include_blank => 'None'}, { :multiple => true, :categoryname =>'post[category_ids][]',:selected => 0 } %>
   </div>
   <div>
-  	Select Related Projects: <%= collection_select 'post', 'project_ids', Project.order("projectname asc"), :id, :projectname, { :include_blank => 'None'}, { :multiple => true, :projectname =>'post[project_ids][]',:selected => 0 } %>
+  	Select Related Projects: <br><%= collection_select 'post', 'project_ids', Project.order("projectname asc"), :id, :projectname, { :include_blank => 'None'}, { :multiple => true, :projectname =>'post[project_ids][]',:selected => 0 } %>
   </div>
   <div>
-  	Select Related Villages: <%= collection_select 'post', 'community_ids', Community.order("communityname asc"), :id, :communityname, { :include_blank => 'None'}, { :multiple => true, :communityname =>'post[community_ids][]',:selected => 0 } %>
+  	Select Related Villages:<br> <%= collection_select 'post', 'community_ids', Community.order("communityname asc"), :id, :communityname, { :include_blank => 'None'}, { :multiple => true, :communityname =>'post[community_ids][]',:selected => 0 } %>
   </div>
   <div class="field">
     <div>Add image(s):

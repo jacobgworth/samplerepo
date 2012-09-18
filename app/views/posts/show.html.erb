@@ -1,26 +1,20 @@
+<div id="wrapper">
+	<%=render 'layouts/navBar'%>
+<div id="content" style="padding-top: 30px;">
+<div class="postsPage">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
+<h2><%= @post.title %></h2>
 
-<p>
-  <b>User:</b>
-  <%= @post.user_id %>
-</p>
+<h4><%= @post.user_id %></h4>
 
-<p>
-  <b>Body:</b>
-  <%= @post.body %>
-</p>
+<p style="clear:both;"><%= @post.body %></p>
 
-<p>
-  <b>Imagelink:</b>
-  <%= @post.imagelink %>
-</p>
+<p><%= @post.imagelink %></p>
 
 <% if @isadmin %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <% end %>
 <%= link_to 'Back', posts_path %>
+	</div>
+	</div>

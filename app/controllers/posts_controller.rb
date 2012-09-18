@@ -10,7 +10,7 @@ class PostsController < ApplicationController
       @posts = Post.joins(:categories).where("category_id=" + @cid)
     end
     respond_to do |format|
-      format.html # index.html.erb
+       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       format.json { render json: @posts }
     end
   end
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     @assets = @post.assets.all
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       format.json { render json: @post }
     end
   end
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
       @post.assets.build
 
       respond_to do |format|
-        format.html # new.html.erb
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
         format.json { render json: @post }
       end
     else
@@ -51,6 +51,9 @@ class PostsController < ApplicationController
     if is_admin_user?
       @post = Post.find(params[:id])
       @post.assets.build
+       respond_to do |format|
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+      end
     else
       respond_to do |format|
         format.html { redirect_to "/posts" }

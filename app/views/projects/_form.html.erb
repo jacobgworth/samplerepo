@@ -16,20 +16,20 @@
     <%= f.text_field :projectname %>
   </div>
   <div class="field">
-  	Goal: <%= f.text_field :goal %>
+  	Goal: <br /><%= f.text_field :goal %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
   <div class="field">
-  	Percent Complete: <%= f.text_field :percentcomplete%>
+  	Percent Complete:<br /> <%= f.text_field :percentcomplete%>
   </div>
   <div class="field">
-  	Funds Needed: <%= f.text_field :fundsneeded%>
+  	Funds Needed:<br /> <%= f.text_field :fundsneeded%>
   </div>
    <div class="field">
-  	Funds Raised: <%= f.text_field :fundsraised%>
+  	Funds Raised:<br /> <%= f.text_field :fundsraised%>
   </div>
   <div class="field">
     <%= f.label :latitude %><br />
@@ -45,14 +45,14 @@
   </div>
   
   <div>
-  	Select Stage:<%= select( "project", "stage", { "Planning" => "Planning", "Fundraising" => "Fundraising","Construction" => "Construction", "Operational" => "Operational"}) %>
+  	Select Stage:<br /><%= select( "project", "stage", { "Planning" => "Planning", "Fundraising" => "Fundraising","Construction" => "Construction", "Operational" => "Operational"}) %>
   </div>
   <p><br /></p>
   <div>
-  	Select Category: <%= collection_select 'project', 'category_ids', Category.order("categoryname asc"), :id, :categoryname, { :include_blank => 'None'}, { :multiple => true, :categoryname =>'project[category_ids][]',:selected => 0 } %>
+  	Select Category:<br /> <%= collection_select 'project', 'category_ids', Category.order("categoryname asc"), :id, :categoryname, { :include_blank => 'None'}, { :multiple => true, :categoryname =>'project[category_ids][]',:selected => 0 } %>
   </div>
   <div>
-  	Select Village: <%= collection_select 'project', 'community_ids', Community.order("communityname asc"), :id, :communityname, { :include_blank => 'None'}, { :multiple => true, :communityname =>'project[community_ids][]',:selected => 0 } %>
+  	Select Village:<br /> <%= collection_select 'project', 'community_ids', Community.order("communityname asc"), :id, :communityname, { :include_blank => 'None'}, { :multiple => true, :communityname =>'project[community_ids][]',:selected => 0 } %>
   </div>
   <p><br /></p>
   <div>Add image(s):

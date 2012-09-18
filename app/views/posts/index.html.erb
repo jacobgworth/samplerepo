@@ -1,39 +1,27 @@
 <div id="wrapper">
 	<%=render 'layouts/navBar'%>
-<div id="content">
+<div id="content" style="padding-top: 30px;">
 	
 	<h1><span class="eyebrow">Mission of Hope</span><br />Blog Posts</h1>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>User</th>
-    <th>Body</th>
-    <th>Imagelink</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.user_id %></td>
-    <td><%= post.body %></td>
-    <td><%= post.imagelink %></td>
+  <div class="postsPage">
+    <h2><%= post.title %></h2>
     <% if !@user.nil? && @user.is_admin == 1%>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+    <p class="editPostsLink"><%= link_to 'Show', post %> |
+    <%= link_to 'Edit', edit_post_path(post) %> |
+    <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></p>
     <%else%>
-    <td></td>
-    <td></td>
-    <td></td>
+    <p></p>
     <%end%>
-  </tr>
+    <h4 style="clear:both;"><%= post.user_id %></h4>
+    <p><%= post.body %></p>
+    <p><%= post.imagelink %></p>
+    </div>
 <% end %>
-</table>
+
 
 <br />
 <% if !@user.nil? && @user.is_admin == 1%>
-<%= link_to 'Write a New Post', new_post_path %>
+<h3><%= link_to 'Write a New Post', new_post_path %></h3>
 <%end%>

@@ -73,7 +73,7 @@ class ProjectsController < ApplicationController
       @project.assets.build
 
       respond_to do |format|
-        format.html # new.html.erb
+       format.html {render :layout=>"homeLayout"}# index.html.erb
         format.json { render json: @project }
       end
      else
@@ -88,6 +88,9 @@ class ProjectsController < ApplicationController
     if is_admin_user?
       @project = Project.find(params[:id])
       @project.assets.build
+      respond_to do |format|
+       format.html {render :layout=>"homeLayout"}# index.html.erb
+       end
     else
       respond_to do |format|
         format.html { redirect_to "/projects" }

@@ -1,3 +1,7 @@
+<div id="wrapper">
+	<%=render 'layouts/navBar'%>
+<div id="content" style="padding-top: 50px;">
+	
 <h1>Editing project</h1>
 
 <%= render 'form' %>
@@ -5,3 +9,6 @@
 <%= link_to 'Show', @project %> | 
 <%= link_to 'Destroy', @project, confirm: 'Are you sure?', method: :delete %> |
 <%= link_to 'Back', projects_path %>
+
+</div>
+</div>

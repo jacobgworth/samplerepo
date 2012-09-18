@@ -480,7 +480,6 @@ span.eyebrow {
 	font-size:4.45em;
 	letter-spacing:-.06em;
 }
-.
 .largeText2 {
 	font-size:4em;
 	letter-spacing:-.06em;
@@ -544,7 +543,7 @@ span.eyebrow {
 }
 #sponIconsList li{
 	float:left;
-	width:186px;
+	width:170px;
 	display:inline;
 	text-align:center;
 	margin:0 auto;
@@ -1556,6 +1555,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 
 .field input, .field textarea {
 	padding:10px;
+	width: 900px;
 }
 
 .field input {
@@ -2157,7 +2157,7 @@ top: -9000px;
 }
 /*end image slider classes*/
 
-/*ROBERTS STYLES 9/17/12 */
+/*ROBERTS STYLES 9/17/12 - 9/18/12 */
 
 #content ul{
 	list-style: disc;
@@ -2219,4 +2219,27 @@ top: -9000px;
 }
 .nutritionSidebarHighlight{
 	font-size:4em;
+}
+.updatesWrapper h3{
+	color:#0F483B;
+}
+.updatesWrapper .speechBubble p{
+	text-align:right;
+	font-size:.95em;
+	color:#E4D4B9;
+	font-family: 'Montserrat', sans-serif;
+	padding:15px 5px;
+	width:80px;
+}
+.editPostsLink{
+	font-size: 12px;
+	float: right;
+	margin-top:35px;
+	margin-right:41px;
+}
+.postsPage h2{
+	float:left;
+}
+.threeCordsBttomText{
+	font-size:2.88em;
 }

@@ -12,7 +12,7 @@
 			<br />
 			<span class="largeText1">three strands
 				<br />
-			</span><span class="largeText2_5">is not quickly broken</span>
+			</span><span class="threeCordsBttomText">is not quickly broken</span>
 			<br />
 			</h1>
 
@@ -34,42 +34,8 @@
 
 <p>One reason is that our main product is a braided headband. However, the main reason can be understood from Ecclesiastes 4:9-12.
 "Two are better than one...If either of them falls down, one can help the other up. But pity anyone who falls and has no one to help them up...Though one may be overpowered, two can defend themselves. A cord of three strands is not quickly broken."</p>
+ 		
  		<img src="/assets/contentDiv-560.png" />
-
-<div class="updatesWrapper"><!--Posts-->
-	<h3><span class="eyebrow"><%=@category.categoryname%></span><br />Posts</h3>
-	<div class="speechBubble"><p>latest posts</p></div>	
-	<% if @posts.count > 0%>
-		<%@posts.each do |m|%>
-			<div class="update560">
-			<div class="updateDate">
-				<% 
-					created = m.postdate 
-					creator = "-"
-					if m.user.blank?
-						creator = '-'
-					else
-						creator = m.user.first
-					end
-				%>
-				<span class="month"><%= created.strftime("%b")%></span><br />
-				<span class="date"><%=created.strftime("%d")%></span><br />
-				<span class="year"><%=created.strftime("%Y")%></span>
-			</div>
-			<div class="updatePost560">
-				<h4><a href=""><%=m.title%></a></h4>
-				<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a></p>
-				<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
-			</div>
-			<div class="clearfix"><!--x--></div>
-			</div>
-		<%end%>
-		<div class="updateNavRight"><a href="/posts/?cid=<%=@category.id%>">View All Posts &raquo;</a></div>
-		<%else%>
-			<div class="update560">No <%=@category.categoryname%> Blog Posts</div>
-		<%end%>
-</div>
-
 		</div>
 		<div id="contentRight300">
 			<div class="contentRightWrapper">
