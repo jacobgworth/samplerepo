@@ -5,7 +5,7 @@ class ContentsController < ApplicationController
     @contents = Content.all
 
     respond_to do |format|
-      format.html # index.html.erb
+     format.html {render :layout=>"homeLayout"}# index.html.erb
       format.json { render json: @contents }
     end
   end
@@ -24,7 +24,7 @@ class ContentsController < ApplicationController
 
 
     respond_to do |format|
-      format.html # show.html.erb
+    format.html {render :layout=>"homeLayout"}# index.html.erb
       format.json { render json: @content }
     end
   end

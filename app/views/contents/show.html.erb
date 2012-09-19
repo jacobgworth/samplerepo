@@ -1,7 +1,10 @@
-<div id="content">
+<div id="wrapper">
+	<%=render 'layouts/navBar'%>
+<div id="content" style="padding-top:50px;">
 <p id="notice"><%= notice %></p>
 
 <%=@content.content.html_safe%>
 
 <div class="smallLink"><%= link_to 'Back', contents_path %></div>
+</div>
 </div>

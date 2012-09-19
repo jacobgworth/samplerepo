@@ -2265,3 +2265,21 @@ top: -9000px;
 	width:240px;
 	height:100px;	
 }
+.noHero{
+	padding-top:50px;
+}
+.takeATripList{
+	padding-left: 55px;
+	list-style: decimal;
+}
+.takeATripList li{
+	padding: 10px 10px;
+	margin-top:-10px;
+}
+.topMissionTrip{
+    font-size: 4.21em;
+}
+.middleMissionTrip{
+    font-size: 3.5em;
+    margin-top: 20px;
+}
