@@ -13,9 +13,8 @@
 		<%=render 'projectsOneCat'%>
 	<%end%>
 <br />
-<% if !@user.nil? && @user.is_admin == 1 %>
-	<div style="clear:both; padding:10px 0px 10px 0px;"><%= link_to 'Click Me to Create a New Project', new_project_path %></div>
-<% end %>
 <div class="clearfix"></div>
-
+<% if !@user.nil? && @user.is_admin == 1 %>
+	<div class="createNewProject"><%= link_to 'Click Me to Create a New Project', new_project_path %></div>
+<% end %>
 </div>

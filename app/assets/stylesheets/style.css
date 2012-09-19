@@ -2283,3 +2283,13 @@ top: -9000px;
     font-size: 3.5em;
     margin-top: 20px;
 }
+.tripCostsList{
+	margin-top:-10px;
+}
+.tripCostsList li{
+	margin-bottom:-8px;
+}
+.createNewProject{
+	clear:both; 
+	padding:140px 0px 10px 0px;
+}
