@@ -35,7 +35,7 @@ class ContentsController < ApplicationController
     @content = Content.new
 
     respond_to do |format|
-      format.html # new.html.erb
+     format.html {render :layout=>"homeLayout"}# index.html.erb
       format.json { render json: @content }
     end
   end
@@ -44,6 +44,9 @@ class ContentsController < ApplicationController
   def edit
     #@content = Content.find(params[:id])
     @content = Content.find_by_id(params[:id])
+    respond do |format|
+      format.html {render :layout=>"homeLayout"}# index.html.erb
+    end
     #@content = Content.find_by_url(params[:id])
     #@content = Content.where("id = 20")
     #@content = Content.find_by_url("no-path")
