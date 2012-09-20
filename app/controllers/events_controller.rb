@@ -44,6 +44,9 @@ class EventsController < ApplicationController
   def edit
     if is_admin_user?
       @event = Event.find(params[:id])
+      respond_to do |format|
+         format.html {render :layout=>"homeLayout"}# index.html.erb
+       end
     else
       respond_to do |format|
         format.html { redirect_to "/events/" }

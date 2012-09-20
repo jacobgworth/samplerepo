@@ -1,11 +1,15 @@
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+	<div id="content" style="padding-top: 50px;">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Eventname:</b>
-  <%= @event.eventname %>
+<h2><%= @event.eventname %></h2>
 </p>
 
 <%if @isadmin%>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%end%>
 <%= link_to 'Back', events_path %>
+</div>
+</div>
