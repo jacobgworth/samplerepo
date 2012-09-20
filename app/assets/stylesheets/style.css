@@ -1216,7 +1216,7 @@ h3.CTA {
 #contentRight300 h2 {
 	color:#0f483b;
 	text-transform:uppercase;
-	font-size:2.25em;
+	font-size:1.25em;
 }
 
 #contentRight300 h3 {
@@ -1660,6 +1660,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	margin-bottom:20px;
 	padding:10px;
 	color:#E4D4B9;
+	height: 52px;
 	text-align:center;
 	font-family: 'Montserrat', sans-serif;
 	text-shadow: 0 -.05em #000;
@@ -2264,4 +2265,64 @@ top: -9000px;
 .collectionSelector select{
 	width:240px;
 	height:100px;	
+}
+.noHero{
+	padding-top:50px;
+}
+.takeATripList{
+	padding-left: 55px;
+	list-style: decimal;
+}
+.takeATripList li{
+	padding: 10px 10px;
+	margin-top:-10px;
+}
+.topMissionTrip{
+    font-size: 4.21em;
+}
+.middleMissionTrip{
+    font-size: 3.5em;
+    margin-top: 20px;
+}
+.tripCostsList{
+	margin-top:-10px;
+}
+.tripCostsList li{
+	margin-bottom:-8px;
+}
+.createNewProject{
+	clear:both; 
+	padding:140px 0px 10px 0px;
+}
+.churchPartnerContent ul li{
+	margin-top:-10px;
+}
+.haitiOneFirst{	
+    font-size: 8em;
+    letter-spacing: -0.01em;
+}
+.HaitiOneSecond{
+    font-size: 3em;
+    letter-spacing: -0.03em;
+}
+.haitiOneThird{
+    font-size: 6em;
+    letter-spacing: -0.03em;
+}
+.haitiOneLast{
+    font-size: 5em;
+    letter-spacing: -0.03em;
+}
+.learnSponsor{
+	padding-left: 30px;
+}
+.learnSponsor li{
+	margin-top:-10px;
+}
+.eventsAdminShow{
+	float:right;
+}
+#contentRight300 .haitiOneSideList{
+	padding-left: 10px;
+	list-style: disc;
 }

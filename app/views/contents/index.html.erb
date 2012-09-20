@@ -1,4 +1,6 @@
-<div id="content">
+<div id="wrapper">
+	<%=render 'layouts/navBar'%>
+<div id="content" style="padding-top:50px;">
 <h1>Edit or Create Content</h1>
 <div id="cms">
 <h2><%= link_to 'Create New Content', new_content_path %></h2> 
@@ -7,10 +9,11 @@
   <div class="contentList">
     <p><strong>URL:</strong> <%= content.url %></p>
 	<p><strong>Headline:</strong> <%= content.headline %></p>
-	<p><strong>Page HTML:</strong> <%= truncate(content.content,:length=>100,:separator=>' ')%></p>
+	<p><strong>Page HTML:</strong> <%= truncate(content.content,:length=>100,:separator=>' ').html_safe%></p>
     <p class="smallLink"><a href="/<%=content.url%>">View this Page</a></td>&nbsp;| <a href="/contents/<%=content.id%>/edit">Edit this Page</a> | <a href="/contents/<%=content.id%>" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Delete this Page</a></p>
   </div>
 <% end %>
 </div>
 
+</div>
 </div>
