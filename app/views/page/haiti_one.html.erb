@@ -1,15 +1,22 @@
 <div id="bgHero">
-	<div id="haitiOneHeroImg"><!--x--></div>
+	<div id="haitiOneHeroImg">
+		<!--x-->
+	</div>
+
+</div>
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+<div id="content">
+		<div id="heroContent">
 	<div id="heroContentHaitiOne">
-		<h1>
-	<span class="giantText">Haiti One</span><br />
-	<span class="largeText4">an alliance of partners<br>working together as<br>the Body of Christ</span>
+		<h1 class="greenTransBG" style="padding-left: 20px; padding-right: 20px;">
+	<span class="haitiOneFirst">Haiti One</span><br />
+	<span class="HaitiOneSecond">an alliance of partners<br></span>
+		<span class="haitiOneThird"> together as<br></span>
+		<span class="haitiOneLast"> Body of Christ</span>
 	</h1>
 	</div>
 </div>
-<div id="wrapper">
-<%=render 'layouts/navBar'%>
-<div id="contentHaitiOne">
 	<h1>Haiti one</h1>
 	<p>HaitiOne is a ministry started by Mission of Hope with the goal of uniting missions/organizations throughout Haiti. Through this unity, we can all be more effective in bringing positive change to Haiti.</p>
 
@@ -33,7 +40,7 @@
 </ol>
 <%= render 'layouts/pup'%>
 </div>
-<div class="rightCol">
+<div id="contentRight300">
 	<h2>Resolutions</h2>
 	<h3>Every child needs</h3>
 	<ul>
@@ -55,9 +62,8 @@
 			<li>An organized system for relief</li>
 			<li>A system of infrastructure</li>
 		</ul>
-</div>
-<div class="rightCol2">
-	<h2>Locales</h2>
+
+<h2>Locales</h2>
 		<ul>
 			<li>North Central (Goniaves)</li>
 			<li>Central Plateau (Hinche)</li>

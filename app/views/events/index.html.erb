@@ -13,41 +13,26 @@
 			</div>
 		</div>
 		<div id="contentLeft560">
-			<h1><span class="eyebrow">Events</span></h1>
-		<!-- 	There was code here that broke the entire page for posts and updates -->
-			<h1>Listing events</h1>
-
-<table>
-  <tr>
-    <th>Eventname</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+			<h1><span class="eyebrow">Event</span><br>Listings</h1>
+			
 
 <% @events.each do |event| %>
-  <tr>
-    <td><%= event.eventname %></td>
-    <td><%= link_to 'Show', event %></td>
+    <h2><%= event.eventname %></h2>
+    <p><%= link_to 'Read more...', event %></p>
     <% if @isadmin %>
-    	<td><%= link_to 'Edit', edit_event_path(event) %></td>
-    	<td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
+    	<p class="eventsAdminShow"><%= link_to 'Edit', edit_event_path(event) %> | <%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></p>
     <% else %>
-    	<td></td>
-    	<td></td>
+    	<p></p>
     <%end%>
   </tr>
 <% end %>
-</table>
-
-<br />
 
 <%if @isadmin%>
-	<%= link_to 'Add New Event', new_event_path %>
+	<h3><%= link_to 'Add New Event', new_event_path %></h3>
 <%end%>
 		</div>
 
-		<div id="contentRight300">
+		<div id="contentRight300" style="padding-top: 50px;">
 			<div class="rightBoxGreen">
 			<h2>Our plans for the future</h2>
 			<p>

@@ -1216,7 +1216,7 @@ h3.CTA {
 #contentRight300 h2 {
 	color:#0f483b;
 	text-transform:uppercase;
-	font-size:2.25em;
+	font-size:1.25em;
 }
 
 #contentRight300 h3 {
@@ -2295,4 +2295,29 @@ top: -9000px;
 }
 .churchPartnerContent ul li{
 	margin-top:-10px;
+}
+.haitiOneFirst{	
+    font-size: 8em;
+    letter-spacing: -0.01em;
+}
+.HaitiOneSecond{
+    font-size: 3em;
+    letter-spacing: -0.03em;
+}
+.haitiOneThird{
+    font-size: 6em;
+    letter-spacing: -0.03em;
+}
+.haitiOneLast{
+    font-size: 5em;
+    letter-spacing: -0.03em;
+}
+.learnSponsor{
+	padding-left: 30px;
+}
+.learnSponsor li{
+	margin-top:-10px;
+}
+.eventsAdminShow{
+	float:right;
 }

@@ -1,7 +1,7 @@
 <div id="wrapper">
 	<%=render 'layouts/navBar'%>
 <div id="content" style="padding-top: 30px;">
-	
+	<div id="contentLeft560">
 	<h1><span class="eyebrow">Mission of Hope</span><br />Blog Posts</h1>
 <% if !@user.nil? && @user.is_admin == 1%>
 <h3><%= link_to 'Write a New Post', new_post_path %></h3>
@@ -28,4 +28,11 @@
 <% if !@user.nil? && @user.is_admin == 1%>
 <h3><%= link_to 'Write a New Post', new_post_path %></h3>
 <%end%>
-</div></div>
+</div><!-- End Content left -->
+<div id="contentRight300">
+	<h2>Content Right.. For catagories!</h2>
+</div><!-- End Content Right -->
+<div class="clearfix" style="height:40px;"></div>
+</div>
+<div class="clearfix" style="height:40px;"></div>
+</div>
