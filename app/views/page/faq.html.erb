@@ -1,67 +1,140 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+			<script>
+   jQuery(document).ready(function(){
+		$( "#accordion" ).accordion({
+			autoHeight: false,
+			navigation: true,
+			collapsible: true,
+			active:false
+		});
+	});
+	</script>
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 	<div id="content" style="padding-top:50px;">
 		<div id="contentLeft560">
-			<h1><span class="eyebrow">Mission of Hope Haiti </span><br />About Us</h1>
-			<h2>Our Story</h2>
-<p>In 1972, Sharon Johnson went to Haiti to direct a choir that was traveling around the country. As she looked into the faces in the crowds, she fell in love with the people of Haiti.
-</p>
-<p>She returned each year to help the people of Haiti with her husband, Bob Johnson. Over time, they began to feel the need to have an on-going work in country, one that would help every day of the year and not just once or twice a year. In 1983 they formed what is today Mission of Hope Haiti. In 1989 they acquired a piece of barren land just north of Port au Prince.  
-</p>
-<p>In 1997, Brad Johnson, Bob & Sharon’s son, and his wife Vanessa went to Haiti on a week-long trip to serve the people there. While serving, they watched an 18 month old baby die as her father held her on their way to a clinic. They learned the baby had starved to death from the parents not having any food. This moment was etched in their mind forever and they could not escape the image of the grieving parents as they mourned the loss of their daughter. A year later, Brad and Vanessa moved full time to Haiti to begin work on the Mission of Hope Haiti property.
-</p>
-<p>Officially founded in 1998, Mission of Hope has since grown from a small mission located on barren piece of land, to a fruitful organization that now houses an onsite orphanage, medical facility, school, and church. Through partnerships, the Mission also serves outside of its property by helping other orphanages, churches, and schools throughout the country.
-</p>
-<h2>What We Believe</h2>
-<h3>Mission of Hope<br /> Doctrinal Statement of Faith</h3>
-<ul>
-<li>We believe in one God, Creator of all things, perfect in love and holiness who exists as three persons: Father, Son, and Holy Spirit.
-</li>
-<li>We believe that Jesus Christ is fully God and entered human form by the miracle of the virgin birth, that He lived a sinless life, and that He Died for our sins. We believe that He rose again on the third day and now sits at the right hand of God as our advocate.
-</li>
-<li>We believe that the Holy Spirit is God. His ministry is to glorify the Lord Jesus Christ and convict the world of sin, righteousness and judgment. We believe that He brings about the new birth, indwells, baptizes, seals, anoints and endows all who are regenerated with spiritual gifts. The Holy Spirit also leads believers who daily surrender their life to Him by guiding, teaching, sanctifying, and filling them.
-</li>
-<li>We believe that the Bible is God’s inspired Word and is the sole authority for all Christian faith and life.
-</li>
-<li>We believe that people are created in the image of God. At that same time, because of Adam’s sin, all people are sinful by nature and choice. Apart from forgiveness in Jesus Christ, all are lost and alienated from God.
-</li>
-<li>We believe that salvation is by grace through faith in the Lord Jesus Christ.
-</li>
-<li>We believe in the resurrection of the body. At death the spirits of the saved go immediately to be with the Lord Jesus Christ in Heaven, and the unsaved descend immediately into hell until the final Day of Judgment.
-</li>
-<li>We believe that the church consist of all who believe in Jesus Christ as Savior.
-</li>
-<li>We believe in the priesthood of all believers, and that every born again person has direct access to God and has the responsibility for personal growth in the grace and knowledge of the Lord Jesus Christ.
-</li>
-<li>We believe that the Holy Spirit gives to every true believer spiritual gift(s). The purpose of spiritual gifts is to enable the church to fulfill its mission of exalting Christ, empowering believers and evangelizing the world.
-</li>
-<li>We believe that God hears and answers prayers today.
-</li>
-<li>We believe that believers are to uniquely demonstrate their faith in the Lord Jesus Christ through baptism and communion.
-</li>
-<li>We believe that the church of Jesus Christ is to be the salt of the earth and the light of the world.</li>
-</ul>
+			<h1><span class="eyebrow">Mission of Hope Haiti </span><br />FAQs</h1>
+		<p>Below is a list of the most commonly asked questions to Mission of Hope. If you have specific questions about Child Sponsorship or Mission Trips please visit the Child Sponsorship FAQs or Mission Trips FAQs pages.
+			</p>
+			<div id="accordion">
+	<h3><a href="#">How do I create an account online?</a></h3>
+	<div>
+		<p>
+			If you would like to create an account with us online,  click on “My MOH” on the top right corner.  Under the “Welcome Guest” heading on the left, click “Register” and enter the required information.  Click “Register” again, and now you have made your account with MOH!
+		</p>
+	</div><!-- End Question -->
+	<h3><a href="#">Why does it still say “Welcome Guest” even after I have registered or logged onto my existing account?</a></h3>
+	<div>
+		<p>
+			This is the way our donor system is setup.  Even though you have registered or logged on, it will still say “Welcome Guest” at the top.  The way you can tell if you are logged in is if you scroll to the bottom of the page and you see the heading “My Account” at the bottom left.  Here you can view your account, change your password, and view your gifts and pledges.
+		</p>
+	</div><!-- End Question -->
+	<h3><a href="#">What should I do if I forget my password?</a></h3>
+	<div>
+		<p>
+			Enter the email address associated with your account in the log in box, and click the link underneath that will send an email to you with a new, temporary password.  Once you’ve logged on with your temporary password, you can change your password back to what you would like it to be using the “Change Password” link under the “My Account” heading.
+		</p>
+	</div><!-- End Question -->
+	<h3><a href="#">How do I make a donation to Mission of Hope online?</a></h3>
+	<div>
+		<p>
+			If you’ve never made an account with us before, you will go through the steps illustrated above to create your account.  Once logged on, you will see the heading “Donations” on the left hand side of the screen.  Click on whichever fund you would like to donate to.  Enter the amount you would like to give, the frequency of the gift (one time, monthly, or annually), and enter your credit card information.  Our website accepts Visa, Mastercard and Discover.  Please enter any details that we need to know about your gift in the “Notes” box.  If you can’t find a link to the exact fund you are looking to give to, such as an intern not listed on the website, you can click on the “General Fund” link, entering the specifics in the “Notes” box.  If you set up a reoccurring gift and would like it taken out on a specific date of the month, please contact our office and we will be more than happy to set it to whatever date is best for you.  Our system will not do this automatically.
+		</p>
+	</div><!-- End Question -->
+	<h3><a href="#">Can I send a donation via check to Mission of Hope?</a></h3>
+	<div>
+		<p>
+			Yes, you can definitely do that!  Any check donations can be sent to our stateside address at: Mission of Hope, PO Box 60004, Fort Myers FL 33906.  Please make sure to include any details about the gift in the memo line of your check.
+		</p>
+	</div><!-- End Question -->
+	<h3><a href="#">How should I donate to Mission of Hope as a Canadian citizen?</a></h3>
+	<div>
+		<p>
+			Mission of Hope has partnered with an organization called Speroway for our Canadian donors who would like to give and be able to receive tax-deductible receipts.  Once logged on to our website, you can click the “Canadian Donations” link on the left hand side of the page which will take you directly to their page.  Or, you can go directly to their website here: http://www.speroway.com/our-partners/international-partners/mission-of-hope.  If you have any questions about gifts that you have given through Speroway, please contact them, as we do not have that information on file.  If you would like to give directly through Mission of Hope and do not mind not receiving a tax-deductible receipt, you are welcome to do that!
+		</p>
+	</div><!-- End Question -->
+	<h3><a href="#">Will I receive a receipt for my gift?</a></h3>
+	<div>
+		<p>
+			One-time gifts made online receive an receipt, recurring monthly gifts will not receive an receipt each time. We send monthly receipts in the mail to child sponsors, and yearly tax receipts in the mail for any gifts given during the year.  If you would like a receipt emailed or sent to you in the mail at any time, please let us know and we would be more than happy to do this for you.
+		</p>
+	</div><!-- End Question -->
+	<h3><a href="#">I’m not sure if my gift processed correctly.  What should I do?</a></h3>
+	<div>
+		<p>
+			If you are not sure if your gift processed, or if you think you gift may have processed more than once, please call our office and we will be more than happy to let you know the status of your gift.  If you believe that your one-time gift went through, but have not received an e-confirmation after a few minutes, then your gift more than likely did not process. If your gift is recurring, you will not receive an email confirmation each month it’s processed. 
+		</p>
+	</div><!-- End Question -->
+	<h3><a href="#">Is my mission trip payment, tax-deductible?</a></h3>
+	<div>
+		<p>
+			Unfortunately, no. Mission of Hope, Haiti does not offer a tax-deductible receipt for mission trip payments due to the fact that we are able to offer you a full refund if your trip is cancelled. If you have any questions regarding this policy, please do not hesitate to ask!
+		</p>
+	</div><!-- End Question -->
+	<h3><a href="#">How do I get on your mailing list?</a></h3>
+	<div>
+		<p>
+			Once you have made an account with us and included a valid address, you will receive a quarterly newsletter in the mail.  We also send e-newsletters every so often, so please include a valid email address when you make your account.  If you would like to opt out of either of these at any time, please contact our office, and we would be more than happy to do this for you!
+		</p>
+	</div><!-- End Question -->
+	<h3><a href="#">I would love for my church to get involved with Mission of Hope somehow.  How do I go about starting this?</a></h3>
+	<div>
+		<p>
+			We love when churches decide to partner with us! If you are interested in partnering with Mission of Hope in any way, submit the <a href="/church_partner"> partnership request form</a> and someone from our Church Partnerships team will be in touch with you. 
+		</p>
+	</div><!-- End Question -->
+	<h3><a href="#">How do I become an intern at Mission of Hope?</a></h3>
+	<div>
+		<p>
+			Please visit our <a href="/intern"> page for more</a>information on how to become an intern!
+		</p>
+	</div><!-- End Question -->
+	<h3><a href="#">Can I send a gift to a staff member or my sponsored child in Haiti?</a></h3>
+	<div>
+		<p>
+			Due to rising baggage fees and the growing number of sponsorships (praise the Lord!), we have reevaluated the guidelines of Sponsor Mail. Please utilize the items below in your communication with sponsors and supporters:
+			<br /><br />
+		<ol style="list-style: decimal; padding-left:50px;">
+		<li>Mailing letters, cards, photos, and/or small, flat items to the MOH US Office: PO Box 60004, Fort Myers, FL 33906. Envelopes should be no larger than 9” x 12” x ½”. No boxes of any size should be sent. Please clearly mark envelopes with your student’s name and student number. Please refrain from sending your student money. $1 USD is a lot of money to a Haitian child and could put them at risk when they return home to their village after school.
+			</li>
+		<li>Purchase a gift from our Online Gift Store [LINKTO: gift store} to be bought in Haiti and delivered in your name. Your money will help support the local economy in Haiti.</li>
+		<li>Send a letter {linkto write your child page} online.</li>
+		</ol>
+		</p>
+	</div><!-- End Question -->
+	<h3><a href="#">What is your Children’s Gift Store?</a></h3>
+	<div>
+		<p>
+			Our Children’s Gift Store is a great way to bless your sponsored student with a gift.  The items are purchased in Haiti so it supports their economy, plus it enables us to save room in our staff suitcases for other needed items at the Mission. 
+		</p>
+	</div><!-- End Question -->
+	<h3><a href="#">What is 3 Cords?</a></h3>
+	<div>
+		<p>
+			We are so glad you asked!  3 Cords is a business operated by Haitian women with prosthetic limbs at Mission of Hope.  They make and sell beautiful corded headbands, purses, and much more.  These items are a big hit with teams who come to MOH, and they are growing in popularity in the States.  Please go to their website at www.3cordshaiti.com to find out more information on buying 3 Cords items or hosting a 3 Cords party.
+		</p>
+	</div><!-- End Question -->
+	</div><!-- End Accordian -->
 		</div>
 
 		<div id="contentRight300">
-			<h4>Learn More About<br />Mission of Hope Haiti</h4>
-			<ul>
-				<li><a href="">Our Story &amp; Beliefs &raquo;</a></li>
-				<li><a href="">Meet Our Staff &raquo;</a></li>
-				<li><a href="">Intern with MOH &raquo;</a></li>
-				<li><a href="">Financial Information &raquo;</a></li>
-				<li><a href="">Press &raquo;</a></li>
-				<li><a href="">Join Our Team &raquo;</a></li>
-				<li><a href="">Contact Us &raquo;</a></li>
+			<div class="rightBoxGreen">
+			<h2>Learn More About<br />Mission of Hope Haiti</h2>
+			<ul class="aboutUsNav">
+				<li><a href="/about_us">Our Story &amp; Beliefs &raquo;</a></li>
+				<li><a href="/meet_our_staff">Meet Our Staff &raquo;</a></li>
+				<li><a href="/intern">Intern with MOH &raquo;</a></li>
+				<li><a href="/financial_info">Financial Information &raquo;</a></li>
+				<li><a href="/press">Press &raquo;</a></li>
+				<li><a href="/join_our_team">Join Our Team &raquo;</a></li>
+				<li><a href="/about_haiti">About Haiti &raquo;</a></li>
+				<li><a href="/faq">FAQs &raquo;</a></li>
+				<li><a href="/contact_us">Contact Us &raquo;</a></li>
 			</ul>
+			</div>
 		</div>
-		<!--<h1>Ministry of Hope Haiti Redesign Project</h1>
-
-		<div><h2>Click to see a map of our <a href="/communities/">Mission of Hope communities in Haiti</a></h2></div>
-		<div><h2>Click to see a map of our <a href="/projects/">ongoing Mission of Hope Projects in Haiti</a></h2></div>
-		-->
-		
-			<div class="clearfix" style="height:40px;">
+	<div class="clearfix" style="height:40px;">
 				<!--x-->
 			</div>
 			</div>

@@ -57,6 +57,9 @@ Mohhaiti::Application.routes.draw do
   get "page/mission_trips"
   match "/mission_trips" => "page#mission_trips"
     
+  get "page/about_haiti"
+  match "/about_haiti" => "page#about_haiti"
+    
   get "page/orphan_care"
   match "/orphan_care" => "page#orphan_care"
   match "/orphan-care" => "page#orphan_care"

@@ -2335,3 +2335,29 @@ top: -9000px;
 .advancementLast{
     font-size: 2.4em;
 }
+#content .aboutUsNav{
+	margin-left:-25px;
+	margin-top:2px;
+}
+.aboutUsNav a{
+	color:#0f483b;
+}
+.aboutUsNav a:hover{
+	color:#182e2c;
+}
+#content .aboutUsNav li{
+	padding: 7px 0 0 0;
+}
+#content .rightColNav{
+	margin-left:-25px;
+	margin-top:2px;
+}
+.rightColNav a{
+	color:#0f483b;
+}
+.rightColNav a:hover{
+	color:#182e2c;
+}
+#content .rightColNav li{
+	padding: 7px 0 0 0;
+}
