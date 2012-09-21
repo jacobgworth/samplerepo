@@ -70,9 +70,24 @@ Mohhaiti::Application.routes.draw do
   get "page/three_cords"
   match "/three_cords" => "page#three_cords"
     
+  get "page/meet_our_staff"
+  match "/meet_our_staff" => "page#meet_our_staff"
+     
+  get "page/intern"
+  match "/intern" => "page#intern"
+  
+  get "page/financial_info"
+  match "/financial_info" => "page#financial_info"
+  
+  get "page/press"
+  match "/press" => "page#press"
+  
+  get "page/join_our_team"
+  match "/join_our_team" => "page#join_our_team"
+  
   get "page/nutrition"
   match "/nutrition" => "page#nutrition"
-     
+  
   get "page/medical_mission_trips"
   match "/medical_mission_trips" => "page#medical_mission_trips"
      
@@ -108,6 +123,9 @@ Mohhaiti::Application.routes.draw do
     
   get "page/downloads"
   match "/downloads" => "page#downloads"
+  
+  get "page/faq"
+  match "/faq" => "page#faq"
     
   get "page/make_donation"
   match "/make_donation" => "page#make_donation"

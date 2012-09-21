@@ -8,7 +8,37 @@ class PageController < ApplicationController
     end
   end
   
-  def contact_us
+  def meet_our_staff
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+   
+   def intern
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+   
+   def financial_info
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+   
+   def press
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+   
+   def contact_us
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+     
+   def join_our_team
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
@@ -38,7 +68,12 @@ class PageController < ApplicationController
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
   end
-      
+     
+      def faq
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end 
     
   def preparing_for_trip
     respond_to do |format|

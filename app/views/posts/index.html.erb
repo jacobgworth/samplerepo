@@ -8,7 +8,7 @@
 <%end%>
 <% @posts.each do |post| %>
   <div class="postsPage">
-    <h2><%= post.title %></h2>
+    <h2><a href="/posts/<%=post.id%>"><%= post.title %></a></h2>
     <% if !@user.nil? && @user.is_admin == 1%>
     <p class="editPostsLink">
     <%= link_to 'Edit', edit_post_path(post) %> |

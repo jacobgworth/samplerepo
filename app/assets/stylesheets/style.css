@@ -1222,7 +1222,7 @@ h3.CTA {
 #contentRight300 h3 {
 	color:#0f483b;
 	text-transform:uppercase;
-	font-size:1.75em;
+	font-size:1.25em;
 }
 
 #contentRight300 h4 {
@@ -2325,4 +2325,13 @@ top: -9000px;
 #contentRight300 .haitiOneSideList{
 	padding-left: 10px;
 	list-style: disc;
+}
+.advancementTop{
+    font-size: 1.8em;
+}
+.advancementMiddle{
+    font-size: 2.06em;	
+}
+.advancementLast{
+    font-size: 2.4em;
 }
