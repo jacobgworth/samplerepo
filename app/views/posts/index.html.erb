@@ -8,11 +8,13 @@
 <%end%>
 <% @posts.each do |post| %>
   <div class="postsPage">
+  	<div class="updateDate">
+	<span class="month"><%= post.postdate.strftime("%b")%></span><br />
+			<span class="date"><%= post.postdate.strftime("%d")%></span><br />
+			<span class="year"><%= post.postdate.strftime("%Y")%></span>	
+	</div>
     <h2><a href="/posts/<%=post.id%>"><%= post.title %></a></h2>
     <% if !@user.nil? && @user.is_admin == 1%>
-    <p class="editPostsLink">
-    <%= link_to 'Edit', edit_post_path(post) %> |
-    <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></p>
     <%else%>
     <p></p>
     <%end%>
@@ -20,6 +22,9 @@
     <p><%= truncate(post.body,:length=>500,:separator=>' ').html_safe %></p>
     <p><%= post.imagelink %></p>
     <p style="margin-top:-10px;"><%= link_to 'Read More...', post %></p>
+    <p class="editPostsLink">
+    <%= link_to 'Edit', edit_post_path(post) %> |
+    <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></p>
     </div>
 <% end %>
 
