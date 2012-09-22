@@ -1,6 +1,6 @@
 <div id="bgHero">
 	<%if !@category.nil? && !@category.categoryhero.nil? && @category.categoryhero != '' %>
-		<div id="advancementHeroImg" style="background: url(/assets/<%=@category.categoryhero%>) no-repeat center center;">
+		<div id="advancementHeroImg" style="background: url(/assets/<%=@category.categoryhero%>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;">
 		<!--x-->
 		</div>
 	<%else%>
