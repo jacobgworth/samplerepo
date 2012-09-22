@@ -1,7 +1,13 @@
 <div id="bgHero">
-	<div id="advancementHeroImg">
+	<%if !@category.nil? && !@category.categoryhero.nil? && @category.categoryhero != '' %>
+		<div id="advancementHeroImg" style="background: url(/assets/<%=@category.categoryhero%>) no-repeat center center;">
 		<!--x-->
-	</div>
+		</div>
+	<%else%>
+		<div id="advancementHeroImg">
+		<!--x-->
+		</div>
+	<%end%>
 </div>
 
 <div id="wrapper">

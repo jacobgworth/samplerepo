@@ -20,6 +20,25 @@ class PageController < ApplicationController
     end
   end
    
+   def vision_mission_resolution
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+   
+   def mwem_kapab
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+   
+   def school_of_hope
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+   
+   
    def financial_info
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
