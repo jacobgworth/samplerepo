@@ -8,28 +8,34 @@ class PageController < ApplicationController
     end
   end
   
+  def clinic
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
+  def community_health
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
+  def intern
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
   def meet_our_staff
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
   end
    
-   def intern
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-    end
-  end
-   def clinic
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-    end
-  end
+   
+   
   
-   def community_health
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-    end
-  end
+   
   
    def prosthetics
     respond_to do |format|
