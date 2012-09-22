@@ -1,6 +1,7 @@
 class AdvancementController < ApplicationController
   def index
     
+    @title = "Church Advancement | MOH Haiti"
    @category = Category.find_by_categoryname("Church Advancement")
    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(6).reverse
    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse

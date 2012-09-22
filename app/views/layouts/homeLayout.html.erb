@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MOH Haiti</title>
+  <title>
+  	<% unless @title.nil? %><%=@title%><%else%>Mission of Hope Haiti<%end%>
+  </title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>

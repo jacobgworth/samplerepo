@@ -2,6 +2,7 @@ class CommunitiesController < ApplicationController
   # GET /communities
   # GET /communities.json
   def index
+    @title = "Villages | MOH Haiti"
     @communities = Community.all
     @jason = Community.all.to_gmaps4rails
     @user = current_user
@@ -18,6 +19,7 @@ class CommunitiesController < ApplicationController
   def show
     @user = current_user
     @community = Community.find(params[:id])
+    @title = @community.communityname + " | MOH Haiti"
     @assets = @community.assets.all
     @projects = Project.joins(:communities).where("community_id=" + @community.id.to_s).last(4).reverse
     @posts = Post.joins(:communities).where("community_id=" + @community.id.to_s).order(:postdate).last(3).reverse
@@ -52,6 +54,7 @@ class CommunitiesController < ApplicationController
   def edit
     if is_admin_user?
       @community = Community.find(params[:id])
+      @title = @community.communityname + " | MOH Haiti"
       @community.assets.build
       respond_to do |format| 
         format.html {render :layout=>"homeLayout"}# index.html.erb
@@ -83,6 +86,7 @@ class CommunitiesController < ApplicationController
   # PUT /communities/1.json
   def update
     @community = Community.find(params[:id])
+    @title = @community.communityname + " | MOH Haiti"
 
     respond_to do |format|
       if @community.update_attributes(params[:community])
