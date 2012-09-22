@@ -2391,3 +2391,11 @@ top: -9000px;
 #accordion h3{
 	text-transform:none;
 }
+
+td {
+	padding:10px 40px 10px 0;
+}
+
+tr {
+	border-bottom:1px solid #C2B092;
+}
