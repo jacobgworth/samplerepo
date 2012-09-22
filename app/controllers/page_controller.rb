@@ -254,7 +254,8 @@ end
   def share_photos
     FlickRaw.api_key = "1df2b5c52c4acb9e2217b7a43842732f"
     FlickRaw.shared_secret = "93aace8a1dba42d1"
-    @photos = flickr.interestingness.getList( :per_page => 5 )
+    #@photos = flickr.interestingness.getList( :per_page => 5 )
+    @photos = flickr.people.getPublicPhotos(:user_id => '55332170@N08',:per_page => '10')
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
