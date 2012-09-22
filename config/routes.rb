@@ -77,6 +77,15 @@ Mohhaiti::Application.routes.draw do
     
   get "page/meet_our_staff"
   match "/meet_our_staff" => "page#meet_our_staff"
+  
+  get "page/clinic"
+  match "/clinic" => "page#clinic"
+  
+  get "page/community_health"
+  match "/community_health" => "page#community_health"
+ 
+  get "page/prosthetics"
+  match "/prosthetics" => "page#prosthetics"
      
   get "page/intern"
   match "/intern" => "page#intern"
