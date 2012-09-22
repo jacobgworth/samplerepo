@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
     
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render :layout=>"homeLayout"}# index.html.erb
       format.json { render json: @categories }
     end
   end
@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
     @user = current_user
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {render :layout=>"homeLayout"}# show.html.erb
       format.json { render json: @category }
     end
   end
@@ -45,6 +45,9 @@ class CategoriesController < ApplicationController
   def edit
     if is_admin_user?
       @category = Category.find(params[:id])
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}
+      end
     else
       respond_to do |format|
         format.html { redirect_to "/categories" }

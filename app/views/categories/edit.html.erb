@@ -1,6 +1,11 @@
-<h1>Editing category</h1>
+<div id="wrapper">
+	<%=render 'layouts/navBar'%>
+	<div id="content" style="padding-top: 50px;">
+	<h1>Edit Category: <%= @category.categoryname %></h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @category %> |
 <%= link_to 'Back', categories_path %>
+</div>
+</div>
