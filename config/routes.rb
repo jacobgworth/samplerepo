@@ -87,6 +87,15 @@ Mohhaiti::Application.routes.draw do
   get "page/press"
   match "/press" => "page#press"
   
+  get "page/school_of_hope"
+  match "/school_of_hope" => "page#school_of_hope"
+  
+  get "page/mwem_kapab"
+  match "/mwem_kapab" => "page#mwem_kapab"
+  
+  get "page/vision_mission_resolution"
+  match "/vision_mission_resolution" => "page#vision_mission_resolution"
+  
   get "page/join_our_team"
   match "/join_our_team" => "page#join_our_team"
   
