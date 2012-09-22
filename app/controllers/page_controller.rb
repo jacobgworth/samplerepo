@@ -251,14 +251,17 @@ end
   end
       
   
-    def share_photos
+  def share_photos
+    FlickRaw.api_key = "1df2b5c52c4acb9e2217b7a43842732f"
+    FlickRaw.shared_secret = "93aace8a1dba42d1"
+    @photos = flickr.interestingness.getList( :per_page => 5 )
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
   end
       
   
-    def event
+  def event
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end

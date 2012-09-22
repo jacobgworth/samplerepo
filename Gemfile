@@ -13,6 +13,8 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 
 gem "paperclip", "~> 2.7"
 
+gem "flickraw"
+
 #Gem to connect to Amazon S3
 gem "aws-s3"
 gem 'aws-sdk', '~> 1.3.4'

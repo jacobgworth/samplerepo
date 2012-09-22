@@ -6,6 +6,12 @@
 			<h1><span class="eyebrow">Mission Of Hope Haiti</span>
 			<br />
 			Snap Back</h1>
+			<% @photos.each do |photo|
+				photo_info = flickr.photos.getInfo(:photo_id => photo.id)
+          		photo_url_m = FlickRaw.url_m(photo_info)
+          		photo_url_z = FlickRaw.url_z(photo_info) %>
+				<p><img src="<%=photo_url_m%>" /></p>
+			<%end%>
 	
 	<div class="buttonSquareOrange" style="width:200px"><a href="#">Add Photos &raquo;</a></div>		
 		</div>
