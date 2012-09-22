@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MOH Haiti</title>
+  <title>
+  	<% unless @title.nil? %><%=@title%><%else%>Mission of Hope Haiti<%end%>
+  </title>
+  <% if @meta.nil?%>
+  	<meta name="description" content="Welcome to Mission of Hope (MOH) Haiti, helping to bring hope to every man, woman and child in Haiti."/>
+  <%else%>
+  	<meta name="description" content="<%=@meta%>" />
+  <%end%>
   <%= stylesheet_link_tag    "application" %>
   <%= stylesheet_link_tag "gmaps4rails" %>
   <%= javascript_include_tag "application" %>

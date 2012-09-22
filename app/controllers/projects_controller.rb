@@ -7,6 +7,8 @@ class ProjectsController < ApplicationController
     @user = current_user
     @itemCount = 0
     if @cid.nil?
+      @title = "Projects | MOH Haiti"
+      @meta = "See all Mission of Hope projects currently underway in Haiti"
       @jason = Project.all.to_gmaps4rails
       @categories = Category.joins(:projects).order("categoryname asc").uniq
       @projects = Project.all
@@ -14,6 +16,8 @@ class ProjectsController < ApplicationController
       @projects = Project.joins(:categories).where("category_id=" + @cid)
       @jason = @projects.to_gmaps4rails
       @category = Category.find(@cid)
+      @title = @category.categoryname + " Projects | MOH Haiti"
+      @meta = "See all " + @category.categoryname + " Mission of Hope projects currently underway in Haiti"
     end
 
     respond_to do |format|
@@ -26,6 +30,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
+    @title = @project.projectname + " | MOH Haiti"
+    @meta = @project.projectname + " is a Mission of Hope Haiti project currently underway in Haiti."
     @population = @project.communities.sum('population')#Community.joins(:projects).where("project_id=" + @category.id.to_s)
     @assets = @project.assets.all
     @user = current_user
