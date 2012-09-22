@@ -133,7 +133,7 @@ span.eyebrow {
 #haitiOneHeroImg{
 	width:100%;
 	height:100%;
-	background: url(/assets/haitiOneHero.jpg) no-repeat center center;
+	background: url(/assets/heroHaitiOne.jpg) no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -142,7 +142,7 @@ span.eyebrow {
 #nutritionHero{
 	width:100%;
 	height:100%;
-	background: url(/assets/nutritionHero.jpg) no-repeat center center;
+	background: url(/assets/heroNutrition.jpg) no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -151,7 +151,7 @@ span.eyebrow {
 #healthCareHero{
 	width:100%;
 	height:100%;
-	background: url(/assets/healthCareHero.jpg) no-repeat center center;
+	background: url(/assets/heroHealthCare.jpg) no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -160,7 +160,7 @@ span.eyebrow {
 #sponHero{
 	width:100%;
 	height:100%;
-	background: url(/assets/childSponserHero.png) no-repeat center center;
+	background: url(/assets/heroChildSponsorship.png) no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -169,7 +169,7 @@ span.eyebrow {
 #educationHero{
 	width:100%;
 	height:100%;
-	background: url(/assets/educationHero.png) no-repeat center center;
+	background: url(/assets/heroEducation.png) no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -179,7 +179,7 @@ span.eyebrow {
 #missionHero{
 	width:100%;
 	height:100%;
-	background: url(/assets/missionTripHero.jpg) no-repeat center center;
+	background: url(/assets/heroMissions.jpg) no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
