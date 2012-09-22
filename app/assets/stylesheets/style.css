@@ -2374,3 +2374,20 @@ top: -9000px;
 	float: left;
 	padding-left:10px;
 }
+.city{
+	width:45%;
+	padding-right:40px;
+	float: left;
+}
+.state{
+	width:20%;
+	padding-right:40px;
+	float: left;
+}
+.zip{
+	width:20%;
+	float: left;
+}
+#accordion h3{
+	text-transform:none;
+}
