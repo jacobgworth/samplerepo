@@ -17,11 +17,6 @@
 			
 
 <% @events.each do |event| %>
-<div class="updateDate">
-	<span class="month"><%= event.postdate.strftime("%b")%></span><br />
-			<span class="date"><%= event.postdate.strftime("%d")%></span><br />
-			<span class="year"><%= event.postdate.strftime("%Y")%></span>	
-	</div>
     <h2><a href="/events/<%=event.id%>"><%= event.eventname %></a></h2>
     <p><%= link_to 'Read more...', event %></p>
     <% if @isadmin %>

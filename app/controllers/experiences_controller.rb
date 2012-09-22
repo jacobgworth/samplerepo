@@ -10,7 +10,7 @@ layout "applicationWithMasonry"
     @user = current_user
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       format.json { render json: @experiences }
     end
   end
@@ -23,7 +23,7 @@ layout "applicationWithMasonry"
     #@assets = @experience.assets.all
 
     respond_to do |format|
-      format.html # show.html.erb
+       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       format.json { render json: @experience }
     end
   end
@@ -36,7 +36,7 @@ layout "applicationWithMasonry"
     #5.times {@experience.assets.build}
 
     respond_to do |format|
-      format.html # new.html.erb
+    format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       format.json { render json: @experience }
     end
   end
@@ -46,6 +46,9 @@ layout "applicationWithMasonry"
     @experience = Experience.find(params[:id])
     @user = current_user
     #@experience.assets.build
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
   end
 
   # POST /experiences
