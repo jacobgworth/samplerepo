@@ -63,7 +63,7 @@ body {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:.90em;
 	color:#58534a;
-	background:#e4d4b9 url(/assets/bodyBG.jpg) top center repeat-y;
+	background:#e4d4b9 url(/assets/bodyBG.jpg) top center no-repeat;
 	position: relative
 }
 h1,h2,h3,h4,h5 {
