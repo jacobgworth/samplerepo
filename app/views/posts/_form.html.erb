@@ -31,10 +31,10 @@ tinyMCE.init({
   <% end %>
 
   <div class="field">
-    Title:<br> <%= f.text_field :title %>
+    Title:<br> <%= f.text_field :title, :required => true %> (Required)
   </div>
   <div class="field">
-    Author: <br><%= f.text_field :author %>
+    Author: <br><%= f.text_field :author, :required => true %> (Required)
   </div>
   <div class="field">
     Posted on: <br><%= date_select :post, :postdate %>
