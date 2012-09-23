@@ -2,6 +2,12 @@ class PageController < ApplicationController
   def what_we_do
   end
   
+  def about_haiti
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
   def about_us
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
@@ -20,6 +26,12 @@ class PageController < ApplicationController
     end
   end
   
+  def financial_info
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
   def intern
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
@@ -32,7 +44,11 @@ class PageController < ApplicationController
     end
   end
    
-   
+  def mwem_kapab
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
    
   
    
@@ -43,36 +59,26 @@ class PageController < ApplicationController
     end
   end
    
+  def school_of_hope
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
    def vision_mission_resolution
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
   end
    
-   def mwem_kapab
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-    end
-  end
-   
-   def school_of_hope
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-    end
-  end
    
    
-   def financial_info
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-    end
-  end
+   
+   
+   
+   
   
-  def about_haiti
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-    end
-  end
+
    
    def press
     respond_to do |format|
