@@ -14,17 +14,17 @@
 			<span class="year"><%= post.postdate.strftime("%Y")%></span>	
 	</div>
     <h2><a href="/posts/<%=post.id%>"><%= post.title %></a></h2>
-    <% if !@user.nil? && @user.is_admin == 1%>
-    <%else%>
-    <p></p>
-    <%end%>
     <h4 style="clear:both;"><%= post.user_id %></h4>
     <p><%= truncate(post.body,:length=>500,:separator=>' ').html_safe %></p>
     <p><%= post.imagelink %></p>
     <p style="margin-top:-10px;"><%= link_to 'Read More...', post %></p>
-    <p class="editPostsLink">
-    <%= link_to 'Edit', edit_post_path(post) %> |
-    <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></p>
+    
+    <% if !@user.nil? && @user.is_admin?%>
+    	<p class="editPostsLink">
+    		<%= link_to 'Edit', edit_post_path(post) %> |
+    		<%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %>
+    	</p>
+    <% end %>
     </div>
 <% end %>
 
@@ -39,7 +39,7 @@
 
 <div id="contentRight300">
 	<div class="rightBoxGreen">
-			<h2>Catagories</h2>
+			<h2>Categories</h2>
 			</div>
 
 </div><!-- End Content Right -->

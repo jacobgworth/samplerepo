@@ -5,10 +5,11 @@ class PostsController < ApplicationController
     @cid = params[:cid]
     @user = current_user
     if @cid.nil?
-      @posts = Post.all
+      @posts = Post.all.reverse
     else
-      @posts = Post.joins(:categories).where("category_id=" + @cid)
+      @posts = Post.joins(:categories).where("category_id=" + @cid).reverse
     end
+    @categories = nil
     respond_to do |format|
        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       format.json { render json: @posts }
