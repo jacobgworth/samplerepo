@@ -26,10 +26,19 @@ time, mark, audio, video {
 }
 /*For floating thumbnail Masonry page */
 .item {
-  width: 300px;
-  margin: 10px;
-  float: left;
+	width: 300px;
+	margin:2px;
+	float: left;
+	padding:8px;
+	background:#ccb99a;
+	border:1px solid #c2b092;
 }
+
+.item img {
+	padding-bottom:10px;
+}
+
+
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -1026,7 +1035,7 @@ h3.CTA {
 	padding-left:29px;
 	font-size:14px;
 	color:#0f483b;
-	list-style:disc;
+	/*list-style:disc;*/
 }
 .rightColOprhan li{
 }
@@ -2390,7 +2399,7 @@ top: -9000px;
     font-size: 2.4em;
 }
 #content .aboutUsNav{
-	margin-left:-25px;
+	margin-left:-30px;
 	margin-top:2px;
 }
 .aboutUsNav a{
@@ -2403,8 +2412,12 @@ top: -9000px;
 	padding: 7px 0 0 0;
 }
 #content .rightColNav{
-	margin-left:-25px;
+	margin-left:-30px;
 	margin-top:2px;
+}
+
+#content .rightColNav ul {
+	list-style:none;
 }
 .rightColNav a{
 	color:#0f483b;
@@ -2414,6 +2427,7 @@ top: -9000px;
 }
 #content .rightColNav li{
 	padding: 7px 0 0 0;
+	list-style-type:none;
 }
 .forms textarea{
 	width:100%;
