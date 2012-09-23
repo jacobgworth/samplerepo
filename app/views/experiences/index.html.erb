@@ -2,7 +2,7 @@
 	<%= render 'layouts/navBar'%>
 	<div id="content" style="padding-top:50px;">
 <h1>Experience Mission of Hope</h1>
-<div style="width:100%; height:100%;">
+<div style="width:975px; height:100%;">
 <div id="container" class="transitions-enabled clearfix" style="clear:both;">
 <% @experiences.each do |experience| %>
 	<% if experience.photo.exists? %>
@@ -20,15 +20,20 @@
 	<p>Welcome, <%=@user.first%></p>
 <% end %>
 <%= link_to 'Share your Experience', new_experience_path,{:style=>"font-size:24px;"} %>
+
+<script src="/assets/javascript/jquery.masonry.min.js"></script>
 <script>
 	var $container = $('#container');
 	$container.imagesLoaded(function(){
   		$container.masonry({
-  			//containerStyle: { position: 'absolute' },
-  			isResizable : true,
-  			isAnimated : true,
-    		itemSelector : '.item',
-    		columnWidth : 1
+  			itemSelector: '.item',
+  			//columnWidth: 1,
+  			isAnimated: true,
+  			animationOptions: {
+    			duration: 500,
+    			easing: 'linear',
+    			queue: false
+  			}
   		});
 	});
 </script>
