@@ -225,6 +225,7 @@ end
   
   
   def mission_trips
+    @experiences = Experience.last(5)
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}
     end

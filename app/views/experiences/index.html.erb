@@ -9,7 +9,9 @@
 		<div class="item">
   			<%= image_tag experience.photo.url(:medium),:title=>experience.summary,:alt=>experience.summary  %>
   			<%= experience.summary %>
-  			<%= link_to 'Edit', edit_experience_path(experience)%>
+  			<% if !@user.nil? && @user.is_admin? %>
+  				<%= link_to 'Edit', edit_experience_path(experience)%>
+  			<%end%>
   		</div>
   	<%end%>
 <% end %>
