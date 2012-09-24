@@ -2485,3 +2485,7 @@ td {
 tr {
 	border-bottom:1px solid #C2B092;
 }
+.onehalf{
+	float:left;
+	padding-bottom: 40px;
+}
