@@ -19,6 +19,12 @@ class PageController < ApplicationController
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
   end
+    
+  def privacy
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
   
   def community_health
     respond_to do |format|
