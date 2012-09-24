@@ -2,23 +2,24 @@
 	<%=render 'layouts/navBar'%>
 <div id="content" style="padding-top: 30px;">
 	<div id="contentLeft560">
-	<h1><span class="eyebrow">Mission of Hope</span><br />Blog Posts</h1>
+	<h1><span class="eyebrow">Mission of Hope Haiti</span><br />Blog Posts</h1>
 <% if !@user.nil? && @user.is_admin == 1%>
 <h3><%= link_to 'Write a New Post', new_post_path %></h3>
 <%end%>
 <% @posts.each do |post| %>
   <div class="postsPage">
-  	<div class="updateDate">
+  	<div class="updateDate" style="margin-top:20px;">
 	<span class="month"><%= post.postdate.strftime("%b")%></span><br />
 			<span class="date"><%= post.postdate.strftime("%d")%></span><br />
 			<span class="year"><%= post.postdate.strftime("%Y")%></span>	
 	</div>
-    <h2><a href="/posts/<%=post.id%>"><%= post.title %></a></h2>
+    <h2 style="padding-bottom:0;><a href="/posts/<%=post.id%>"><%= post.title %></a></h2>
     <h4 style="clear:both;"><%= post.user_id %></h4>
+    <div style="margin-left:60px; margin-top:-20px; border-bottom:1px dotted #0F483B;">
     <p><%= truncate(post.body,:length=>500,:separator=>' ').html_safe %></p>
     <p><%= post.imagelink %></p>
-    <p style="margin-top:-10px;"><%= link_to 'Read More...', post %></p>
-    
+    <p ><%= link_to 'Read More...', post %></p>
+   </div>
     <% if !@user.nil? && @user.is_admin?%>
     	<p class="editPostsLink">
     		<%= link_to 'Edit', edit_post_path(post) %> |

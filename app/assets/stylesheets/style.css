@@ -1488,6 +1488,20 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	padding-right:20px;
 	height:180px;
 }
+
+.gridImage img {
+	width:125px;
+	height:125px;
+}
+
+.gridText {
+	float:left;
+	width:295px;
+}
+
+#content .gridText h2 {
+	padding-top:0;
+}
 .projectsMed a:link {
 	background:url(/assets/icon-projects-med.png) no-repeat;
 	text-indent:-9999px;
@@ -1606,10 +1620,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	height:125px;
 	display:block;
 }
-.gridText {
-	float:left;
-	width:295px;
-}
+
 .grid2x2Right {
 	width:440px;
 	float:left;
@@ -2323,6 +2334,16 @@ top: -9000px;
 }
 .postsPage{
 	margin-bottom: 20px;
+}
+
+.blogPost {
+	margin-top:-20px;
+}
+
+.blogPost img {
+	float:left;
+	border:5px solid #C2B092;
+	margin:10px 20px 10px 0;
 }
 .threeCordsBttomText{
 	font-size:2.88em;
