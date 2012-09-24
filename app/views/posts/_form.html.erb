@@ -39,6 +39,25 @@ tinyMCE.init({
   <div class="field">
     Posted on: <br><%= date_select :post, :postdate %>
   </div>
+    <div class="field">
+    <div>Add image(s). Upload your image and then click on it. Copy the URL and use it when adding the image to your post.
+  <%= f.fields_for :assets do |asset_fields| %>
+  	<% if asset_fields.object.new_record? %>
+  		<p>
+  			<%= asset_fields.file_field :asset%>
+  		</p>
+  	<% end%>
+  <% end %>
+  <%= f.fields_for :assets do |asset_fields| %>
+  	<% unless asset_fields.object.new_record? %>
+  		<p>
+  			<%= link_to image_tag(asset_fields.object.asset.url(:thumb)),asset_fields.object.asset.url(:large),:target=>'_blank'%>
+  			<%= asset_fields.check_box :_destroy %> Remove Image
+  		</p>
+  	<% end %>
+  <% end %>
+  	</div>
+  </div>
   <div class="field">
     <%= f.label :body %><br />
     <%= f.text_area :body %>
@@ -52,25 +71,7 @@ tinyMCE.init({
   <div class="collectionSelector">
   	Select Related Villages:<br> <%= collection_select 'post', 'community_ids', Community.order("communityname asc"), :id, :communityname, { :include_blank => 'None'}, { :multiple => true, :communityname =>'post[community_ids][]',:selected => 0 } %>
   </div>
-  <div class="field">
-    <div>Add image(s):
-  <%= f.fields_for :assets do |asset_fields| %>
-  	<% if asset_fields.object.new_record? %>
-  		<p>
-  			<%= asset_fields.file_field :asset%>
-  		</p>
-  	<% end%>
-  <% end %>
-  <%= f.fields_for :assets do |asset_fields| %>
-  	<% unless asset_fields.object.new_record? %>
-  		<p>
-  			<%= link_to image_tag(asset_fields.object.asset.url(:thumb)),asset_fields.object.asset.url(:large)%>
-  			<%= asset_fields.check_box :_destroy %> Remove Image
-  		</p>
-  	<% end %>
-  <% end %>
-  	</div>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
