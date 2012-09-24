@@ -19,6 +19,34 @@ class PageController < ApplicationController
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
   end
+  
+  def contact_us
+    @name = params[:name]
+    @body = params[:letter]
+    @subject = params[:topics]
+    @fromaddress = params[:email]
+    @phone = params[:phonenumber]
+    if !@name.nil? && !@body.nil? && !@subject.nil? && !@fromaddress.nil? && !@phone.nil?
+      @isvalid = true
+      @data = {
+        :name => @name, 
+        :fromaddress => @fromaddress, 
+        :subject => @subject, 
+        :body => @body,
+        :phone => @phone
+      }
+    end
+    if @isvalid
+      UserMailer.contact_us_mail.(@data).deliver
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+      end
+    else
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+      end
+    end
+  end
     
   def privacy
     respond_to do |format|
@@ -33,6 +61,16 @@ class PageController < ApplicationController
   end
   
   def financial_info
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
+  def haiti_one
+    @category = Category.find_by_categoryname("Haiti One")
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
+    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
@@ -56,7 +94,11 @@ class PageController < ApplicationController
     end
   end
    
-  
+  def press
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
    
   
    def prosthetics
@@ -86,17 +128,9 @@ class PageController < ApplicationController
   
 
    
-   def press
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-    end
-  end
    
-   def contact_us
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-    end
-  end
+   
+   
      
    def join_our_team
     respond_to do |format|
@@ -170,15 +204,7 @@ class PageController < ApplicationController
   end
   
    
-  def haiti_one
-    @category = Category.find_by_categoryname("Haiti One")
-    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
-    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
-    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-    end
-  end
+  
   
   def health_care
     @category = Category.find_by_categoryname("Health Care")
