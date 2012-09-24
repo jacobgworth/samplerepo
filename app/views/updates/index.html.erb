@@ -1,23 +1,22 @@
 <div id="wrapper">
-<%=render 'layouts/navBar'%>
-<div style="padding:50px 0px 0px 0px;font-size: 25px;">
+	<%=render 'layouts/navBar'%>
+<div id="content" style="padding-top: 20px;">
 <% if @cid.nil?%>
-	<h1>Mission of Hope Updates</h1>
+<h1><span class="eyebrow">Mission of Hope Haiti</span><br />Updates</h1>
 <% else %>
 	<h1><%=@category.categoryname %> Updates</h1>
 <% end %>
-</div>
+
 
 
 <% @updates.each do |update| %>
-  <div style=padding-top:20px;>
-  <h2><%= update.created_at.strftime("%b %e, %Y") %> - <%= update.title %></h2>
-    <td><%= update.body %></td>
-    <td><%= update.media %></td>
+  <div style="padding-top:20px; border-bottom:1px dotted #0F483B;">
+  <h3><%= update.created_at.strftime("%b %e, %Y") %> - <%= update.title %></h3>
+    <p><%= update.body %></p>
+    <p><%= update.media %></p>
     <!--<td><%= link_to 'Show', update %></td>
     <td><%= link_to 'Edit', edit_update_path(update) %></td>
     <td><%= link_to 'Destroy', update, confirm: 'Are you sure?', method: :delete %></td>-->
-  </tr>
   </div>
 <% end %>
 
@@ -26,3 +25,4 @@
 <%if @isadmin%>
 <%= link_to 'New Update', new_update_path %>
 <%end%>
+</div>
