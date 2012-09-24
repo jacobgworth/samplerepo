@@ -1,20 +1,16 @@
 <div id="wrapper">
-	
-	<div id="content" style="padding-top: 50px;">
+	<%=render 'layouts/navBar'%>
+<div id="content" style="padding-top: 20px;">
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
+<h1><span class="eyebrow">Mission of Hope Haiti</span><br />Update</h1>
+<h3>
   <%= @update.title %>
-</p>
-
+</h3>
 <p>
-  <b>Body:</b>
   <%= @update.body %>
 </p>
-<p>Category: <%=@update.categories.first.categoryname%></p>
+<h3 style="width:295px;" class="projectDetailButton"><strong>Project Type:</strong><a href="/projects/?cid=<%=@update.categories.first.id%>"> <%=@update.categories.first.categoryname%></a></h3>
 <p>
-  <b>Media:</b>
   <%= @update.media %>
 </p>
 
