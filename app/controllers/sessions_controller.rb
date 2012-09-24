@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def new
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}
+    end
   end
 
   def create
