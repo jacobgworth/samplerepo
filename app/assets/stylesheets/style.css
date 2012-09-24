@@ -73,7 +73,7 @@ body {
 	font-size:.90em;
 	color:#58534a;
 	background:#e4d4b9 url(/assets/bodyBG.jpg) top center no-repeat;
-	position: relative
+	position: relative;
 }
 h1,h2,h3,h4,h5 {
 	font-family: 'Montserrat', sans-serif;
@@ -1665,6 +1665,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	color:#E4D4B9;
 	text-decoration:none;
 	padding:5px;
+	margin-top:20px;
 	
 	background:#d46b13;
 	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#d46b13), to(#e37e18));
@@ -1683,6 +1684,10 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#e37e18), to(#d46b13));
 	background:-moz-linear-gradient(0% 90% 90deg, #e37e18, #d46b13);
 	border:1px solid #E37E18;
+}
+
+#post_assets_attributes_2__destroy {
+	width:30px;
 }
 
 .smallLink  {
@@ -2505,4 +2510,8 @@ td {
 
 tr {
 	border-bottom:1px solid #C2B092;
+}
+.onehalf{
+	float:left;
+	padding-bottom: 40px;
 }

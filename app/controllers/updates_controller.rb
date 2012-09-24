@@ -31,7 +31,7 @@ class UpdatesController < ApplicationController
     @isadmin = is_admin_user?
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {render :layout=>"homeLayout"} # show.html.erb
       format.json { render json: @update }
     end
   end
