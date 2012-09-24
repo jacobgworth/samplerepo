@@ -1,12 +1,6 @@
-<div id="bgHero">
-	<div id="advancementHeroImg"><!--x--></div>
-		<!--x-->
-	</div>
-
-</div>
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
-	<div id="content">
+	<div id="content" style="padding-top:50px;">
 		<div id="heroContent">
 			<div id="heroContentOrphan">
 				
@@ -17,15 +11,16 @@
 			
 
 <% @events.each do |event| %>
-    <h2><a href="/events/<%=event.id%>"><%= event.eventname %></a></h2>
+    <div style="border-bottom:1px dotted #0F483B;">
+    <h3><span class="eyebrow"><%= event.eventdate %></span><br /><a href="/events/<%=event.id%>"><%= event.eventname %></a></h3>
     <p><%= event.description %></p>
-    <p><%= link_to 'Read more...', event %></p>
+    <p><%= link_to 'View details...', event %></p>
     <% if @isadmin %>
     	<p class="eventsAdminShow"><%= link_to 'Edit', edit_event_path(event) %> | <%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></p>
     <% else %>
     	<p></p>
     <%end%>
-  </tr>
+	</div>
 <% end %>
 
 <%if @isadmin%>
@@ -34,11 +29,17 @@
 		</div>
 
 		<div id="contentRight300" style="padding-top: 50px;">
+			<div class="rightBoxGreen">
+			<h2>How You Can Take Action</h2>
+			<ul class="aboutUsNav">
+				<li><a href="https://www.denarionline.com/DonorServices/TemplatePage.Aspx?COMP_REF=_MOHHAITI%20&CONTENT=HOME&master=master:mohr&theme=mohr">Make a Donation &raquo;</a></li>
+				<li><a href="https://www.denarionline.com/DonorServices/TemplatePage.Aspx?COMP_REF=_MOHHAITI%20&CONTENT=HOME&master=master:mohr&theme=mohr">Become a Partner of Hope &raquo;</a></li>
+				<li><a href="/volunteer">Volunteer &raquo;</a></li>
+				<li><a href="/share_photos">Share Your Photos &raquo;</a></li>
+				<li><a href="/events">Events &raquo;</a></li>
+				<li><a href="/downloads">Downloads &raquo;</a></li>
+			</ul>
+			</div>
+			</div>
 			
-			</div>
-			<div class="clearfix" style="height:40px;">
-		</div>
-			<div class="clearfix" style="height:40px;">
-				<!--x-->
-			</div>
 			</div>

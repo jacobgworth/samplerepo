@@ -5,7 +5,7 @@ class VideosController < ApplicationController
     @videos = Video.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render :layout=>"homeLayout"} # index.html.erb
       format.json { render json: @videos }
     end
   end
@@ -16,7 +16,7 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {render :layout=>"homeLayout"} # show.html.erb
       format.json { render json: @video }
     end
   end
@@ -27,7 +27,7 @@ class VideosController < ApplicationController
     @video = Video.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html {render :layout=>"homeLayout"} # new.html.erb
       format.json { render json: @video }
     end
   end

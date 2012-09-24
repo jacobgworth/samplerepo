@@ -4,17 +4,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-<h2><a href="/events/<%=@event.id%>"><%= @event.eventname %></a></h2>
+<h1><span class="eyebrow">Mission of Hope Haiti Events</span><br /><%= @event.eventname %></h1>
 </p>
 <p>
-	<%= @event.description %>
+	<strong>Date:</strong> <%= @event.eventdate %>
 </p>
 <p>
-	<%= @event.location %>
+	<strong>Details:</strong> <%= @event.description %>
 </p>
 <p>
-	<%= @event.eventdate %>
+	<strong>Location:</strong> <%= @event.location %>
 </p>
+
 			
 			
 <%if @isadmin%>

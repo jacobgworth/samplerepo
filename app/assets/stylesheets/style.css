@@ -1005,6 +1005,7 @@ h3.CTA {
 	background-color:#079367;
 	padding:20px;
 	margin-bottom:10px;
+	position:relative;
 }
 #content .rightBoxGreen h2{
 	font-size: 1em;
@@ -1185,6 +1186,7 @@ h3.CTA {
 #content {
 	width:960px;
 	padding-top:500px;
+	min-height:600px;
 	padding-bottom:40px;
 	margin:auto;
 	background:url(/assets/contentDiv.png) center bottom no-repeat;
@@ -2445,8 +2447,10 @@ top: -9000px;
     font-size: 2.4em;
 }
 #content .aboutUsNav{
+	font-family: 'Montserrat', sans-serif;
 	margin-left:-30px;
 	margin-top:2px;
+	font-size:.85em;
 }
 .aboutUsNav a{
 	color:#0f483b;
@@ -2458,8 +2462,10 @@ top: -9000px;
 	padding: 7px 0 0 0;
 }
 #content .rightColNav{
+	font-family: 'Montserrat', sans-serif;
 	margin-left:-30px;
 	margin-top:2px;
+	font-size:.85em;
 }
 
 #content .rightColNav ul {
