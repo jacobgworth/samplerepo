@@ -87,6 +87,10 @@ class PageController < ApplicationController
 
    
    def press
+     @category = Category.find_by_categoryname("Haiti One")
+    @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
+    @posts = Post.joins(:categories).where("category_id=" + @category.id.to_s).order(:postdate).last(3).reverse
+    @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
