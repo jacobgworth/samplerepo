@@ -18,6 +18,7 @@
 
 <% @events.each do |event| %>
     <h2><a href="/events/<%=event.id%>"><%= event.eventname %></a></h2>
+    <p><%= event.description %></p>
     <p><%= link_to 'Read more...', event %></p>
     <% if @isadmin %>
     	<p class="eventsAdminShow"><%= link_to 'Edit', edit_event_path(event) %> | <%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></p>
