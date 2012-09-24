@@ -90,6 +90,9 @@ Mohhaiti::Application.routes.draw do
   get "page/intern"
   match "/intern" => "page#intern"
   
+  get "page/privacy"
+  match "/privacy" => "page#privacy"
+  
   get "page/financial_info"
   match "/financial_info" => "page#financial_info"
   
