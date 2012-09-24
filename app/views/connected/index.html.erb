@@ -6,16 +6,19 @@
 		<h2>Recent Blog Posts</h2>
 		<% @posts.each do |post| %>
 			<div class="postsPage">
-  				<div class="updateDate">
+  				<div class="updateDate" style="margin-top:20px;">
 					<span class="month"><%= post.postdate.strftime("%b")%></span><br />
 					<span class="date"><%= post.postdate.strftime("%d")%></span><br />
 					<span class="year"><%= post.postdate.strftime("%Y")%></span>	
 				</div>
-    			<h3><a href="/posts/<%=post.id%>"><%= post.title %></a></h3>
+    			<h2 style="padding-bottom:0;><a href="/posts/<%=post.id%>"><%= post.title %></a></h2>
     			<h4 style="clear:both;"><%= post.user_id %></h4>
+    			<div style="margin-left:60px; margin-top:-20px; border-bottom:1px dotted #0F483B;">
     			<p><%= truncate(post.body,:length=>170,:separator=>' ').html_safe %></p>
     			<p><%= post.imagelink %></p>
     			<p style="margin-top:-10px;"><%= link_to 'Read More...', post %></p>
+    			   </div>
+
     			<% if !@user.nil? && @user.is_admin?%>
     				<p class="editPostsLink">
     					<%= link_to 'Edit', edit_post_path(post) %> |
