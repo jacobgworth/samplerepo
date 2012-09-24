@@ -1,3 +1,4 @@
+
 <div class="updatesWrapper"><!--Projects-->
 	<h3><span class="eyebrow"><%=@category.categoryname%></span><br />Projects</h3>
 	<div class="speechBubble"><p>projects under way</p></div>	
@@ -43,6 +44,11 @@
 	<div class="speechBubble"><p>latest updates</p></div>
 <%if @updates.count > 0%>
 	<%@updates.each do |m|%>
+	<%
+		@updateproject = m.projects.last(1).reverse
+		@updateprojectname = ' - ' 
+		@updateprojectname = '<a href="/projects/' + @updateproject[0].id.to_s + '">' + @updateproject[0].projectname + '</a>' unless @updateproject.count == 0
+	%>
 	<div class="update560">
 		<div class="updateDate">
 			<% 
@@ -61,7 +67,7 @@
 		<div class="updatePost560">
 			<h4><a href=""><%=m.title%></a></h4>
 			<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a></p>
-			<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
+			<p class="meta">Projects: <%=@updateprojectname.html_safe%> | Posted by: <%=creator%></p>
 		</div>
 		<div class="clearfix"><!--x--></div>
 	</div>

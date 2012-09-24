@@ -3,21 +3,48 @@
 <div id="content" style="padding-top: 50px;">
 	<h1><span class="eyebrow">Mission of Hope</span><br />Stay Connected</h1>
 	<div id="contentLeft560">
-	<h2>Recent Blog Posts</h2>
-	<p>can you make this page take the posts and updates?</p>
+		<h2>Recent Blog Posts</h2>
+		<% @posts.each do |post| %>
+			<div class="postsPage">
+  				<div class="updateDate">
+					<span class="month"><%= post.postdate.strftime("%b")%></span><br />
+					<span class="date"><%= post.postdate.strftime("%d")%></span><br />
+					<span class="year"><%= post.postdate.strftime("%Y")%></span>	
+				</div>
+    			<h3><a href="/posts/<%=post.id%>"><%= post.title %></a></h3>
+    			<h4 style="clear:both;"><%= post.user_id %></h4>
+    			<p><%= truncate(post.body,:length=>170,:separator=>' ').html_safe %></p>
+    			<p><%= post.imagelink %></p>
+    			<p style="margin-top:-10px;"><%= link_to 'Read More...', post %></p>
+    			<% if !@user.nil? && @user.is_admin?%>
+    				<p class="editPostsLink">
+    					<%= link_to 'Edit', edit_post_path(post) %> |
+    					<%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %>
+    				</p>
+    			<% end %>
+    		</div>
+		<% end %>
 	</div>
 	<div id="contentRight300">
 		<div class="contentRightWrapper">
 			<h3>Recent Updates</h3>
-			
+			<% @updates.each do |update| %>
+				<p><a href="/updates/<%=update.id%>"><b><%=update.title%></b></a><br /><%=update.body%></p>
+
+			<% end %>
 		</div>
 		<div class="contentDiv"></div>
 		<div class="contentRightWrapper">	
 			<h3>Featured Videos</h3>
+			<% @videos.each do |video| %>
+				<p><a href="/videos/<%=video.id%>"><b><%=video.title%></b></a></p>
+
+			<% end %>
 		</div>
 	</div>
 	
 		<div class="clearfix"><!--x--></div>
 
 	<div class="clearfix" style="height:40px;"><!--x--></div>
-	</div></div>
+	</div>
+</div>

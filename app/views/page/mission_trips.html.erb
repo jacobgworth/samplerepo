@@ -27,7 +27,7 @@
 		<div class="contentHeaderRight">
 			<div class="rightBoxGreen">
 			<h2>Learn More About<br />Short-Term Missions</h2>
-			<ul class="aboutUsNav">
+			<ul class="rightColNav">
 				<li><a href="/take_a_trip">Take a Mission Trip &raquo;</a></li>
 				<li><a href="/medical_mission_trips">Take a Medical Mission &raquo;</a></li>
 				<li><a href="/trip_dates">Mission Trip Dates &raquo;</a></li>
@@ -43,11 +43,40 @@
 		</div>
 			<div class="singleCol">
 			<h2>The Mission Trip Experience</h2>
+			<div style="width:975px; height:100%;">
+<div id="container" class="transitions-enabled clearfix" style="clear:both;">
+<% @experiences.each do |experience| %>
+	<% if experience.photo.exists? %>
+		<div class="item">
+  			<%= image_tag experience.photo.url(:medium),:title=>experience.summary,:alt=>experience.summary  %>
+  			<%= experience.summary %>
+  			<%= link_to 'Edit', edit_experience_path(experience)%>
+  		</div>
+  	<%end%>
+<% end %>
+</div>
+</div>
 			<div class="clearfix"></div>
-			<div class="buttonSquareOrange alignRight clearfix" style="width:300px;"><a href="">Read More Experiences</a></div>
+			<div class="buttonSquareOrange alignRight clearfix" style="width:300px;"><a href="/experiences">Read More Experiences</a></div>
 		</div>
 
 				<div class="clearfix" style="height:40px;">
 			<!--x-->
 		</div>
+		<script src="/assets/javascript/jquery.masonry.min.js"></script>
+<script>
+	var $container = $('#container');
+	$container.imagesLoaded(function(){
+  		$container.masonry({
+  			itemSelector: '.item',
+  			//columnWidth: 1,
+  			isAnimated: true,
+  			animationOptions: {
+    			duration: 500,
+    			easing: 'linear',
+    			queue: false
+  			}
+  		});
+	});
+</script>
 	</div>
