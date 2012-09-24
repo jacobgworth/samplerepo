@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
       @category = Category.new
 
       respond_to do |format|
-        format.html # new.html.erb
+       format.html {render :layout=>"homeLayout"}# index.html.erb
         format.json { render json: @category }
       end
     else
