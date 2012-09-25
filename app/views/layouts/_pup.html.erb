@@ -66,7 +66,7 @@
 		</div>
 		<div class="updatePost560">
 			<h4><a href=""><%=m.title%></a></h4>
-			<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a></p>
+			<p><%=truncate(m.body,:length=>100,:separator=>' ').html_safe %> <a href="">READ MORE</a></p>
 			<p class="meta">Projects: <%=@updateprojectname.html_safe%> | Posted by: <%=creator%></p>
 		</div>
 		<div class="clearfix"><!--x--></div>
@@ -100,7 +100,7 @@
 			</div>
 			<div class="updatePost560">
 				<h4><a href=""><%=m.title%></a></h4>
-				<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a></p>
+				<p><%=truncate(m.body,:length=>100,:separator=>' ').html_safe %> <a href="">READ MORE</a></p>
 				<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
 			</div>
 			<div class="clearfix"><!--x--></div>
