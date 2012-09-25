@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  headline: MyString
+  bodycontent: MyText
+  postdate: 2012-09-25 12:08:02
+
+two:
+  headline: MyString
+  bodycontent: MyText
+  postdate: 2012-09-25 12:08:02

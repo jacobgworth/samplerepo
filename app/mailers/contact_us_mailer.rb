@@ -1,15 +1,15 @@
 class ContactUsMailer < ActionMailer::Base
   
-  def contact_us_mail(data)
+  def contact_us_mail(data,msgbody)
     
     @data = data
     
-    @body = @data[:body].html_safe
+    @msgbody = msgbody#@data[:bodym]
     @fromaddress = @data[:fromaddress]
-    @subject = @data[:subject]
+    @emailsubject = @data[:subject]
     @name = @data[:name]
     @phone = @data[:phone]
-    mail(:to => "lindsey@mohhaiti.org", :subject => @subject, :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "lindsey@mohhaiti.org", :subject => @emailsubject, :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
   
 end

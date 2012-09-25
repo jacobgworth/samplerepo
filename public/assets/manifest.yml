@@ -2,7 +2,6 @@
 3cords-artist-gernise.jpg: 3cords-artist-gernise-9f8cfab0f2a68e2544431f75b122b69d.jpg
 ad-image-bg.png: ad-image-bg-1ccc2d34167808e486c70d66716072ce.png
 advanceInfographic.png: advanceInfographic-84828190ed60fd569cfc2c58b702ddd2.png
-agricultureicon.png: agricultureicon-875e8d825079c504e433a0cee4d4e82f.png
 arrowRight.png: arrowRight-f9a2897684ea9ad5d2dd0e0d08d3a235.png
 bodyBG.jpg: bodyBG-b4f0dcaf32ec1fe6a45bdf21dbcbb5c3.jpg
 button-newsletter.png: button-newsletter-15e647e9b248c9692bbdffe437a010eb.png
@@ -69,6 +68,7 @@ hopeIcon.png: hopeIcon-a9050c5ff93e5782ba12dae999a19e3a.png
 hopeNoRibbon.png: hopeNoRibbon-56b4bb41b8fead80eefcace2cfbf3ea7.png
 icon-3Cords-med-hover.png: icon-3Cords-med-hover-a91b3b59789baed67ac3b544cff62746.png
 icon-3Cords-med.png: icon-3Cords-med-43afbc778018de59b91cf5a81985c780.png
+icon-agriculture.png: icon-agriculture-875e8d825079c504e433a0cee4d4e82f.png
 icon-church-advancement-med-hover.png: icon-church-advancement-med-hover-c3dc500a4f4bc0d68381011e5c49a08d.png
 icon-church-advancement-med.png: icon-church-advancement-med-9e60ac13223567043261e9f9dabb5895.png
 icon-church-advancement.png: icon-church-advancement-fec3b41cc7987b9a63d53eed81d58c39.png
@@ -78,6 +78,7 @@ icon-haitione-med.png: icon-haitione-med-c1a30c374e825dd85b9bc682df065df1.png
 icon-health-care-med-hover.png: icon-health-care-med-hover-6bd23c1f4c790b370b6e570979a91c2b.png
 icon-health-care-med.png: icon-health-care-med-f8d3afcc53de7c4fdec51657e28c9d1f.png
 icon-mission-trips.png: icon-mission-trips-e11092faf23d3d1657f1776be6cf69f8.png
+icon-moh-500.png: icon-moh-500-b424deabd9088145c62c52c8f2f8f6c0.png
 icon-nutrition-med-hover.png: icon-nutrition-med-hover-cb15337d9261ffc72f74bb82ef8807b7.png
 icon-nutrition-med.png: icon-nutrition-med-8df90d061c5d91acdea2a2c145b51cf7.png
 icon-orphan-care-med-hover.png: icon-orphan-care-med-hover-2297b65725b497176331a16f02cafa76.png
@@ -94,13 +95,13 @@ icon-student-sponsorship.png: icon-student-sponsorship-37372189e32403a9effb10fe2
 icon-twitter.png: icon-twitter-09f92b3e1cfd3942deb154bfcd1b0c61.png
 icon-villages-mini.png: icon-villages-mini-7201a077e834d5dabb00515795037745.png
 icon-vimeo.png: icon-vimeo-594369ff2a4089b234b59e71d5a39915.png
+icon-water.png: icon-water-88ab448853ee5c910c51d95680ce9f4c.png
 iconQuestions.png: iconQuestions-01bd3bb52cf2bc304dbedad310f53d70.png
 iconShop.png: iconShop-60c15264d97809742120f0c2fc5dcad3.png
 iconWrite.png: iconWrite-3094c1c8de0ff5a16284554988f98475.png
 learnSponsorButton.png: learnSponsorButton-d9cdd1b1fecadf3cd3bb2c177c035eea.png
 logo.png: logo-0304a78e2e21375c7c4d3719be9c901c.png
 logoFooter.png: logoFooter-d1a530510f5913615490efce65fb87d7.png
-moh500.png: moh500-b424deabd9088145c62c52c8f2f8f6c0.png
 navArrow.png: navArrow-c3a9c54667dfd97dd00adcb978a8579a.png
 navBar.png: navBar-ddca9c3e35c607a99093bc3bced67056.png
 nutritionHero.jpg: nutritionHero-7a3009c1a5a29c402f7e5928ab7362a2.jpg
@@ -164,7 +165,6 @@ staff-ruben-amy-cenea.jpg: staff-ruben-amy-cenea-0cec5480417d27c1497a7141f1b4c60
 staff-stacy-raby.jpg: staff-stacy-raby-254431ae21ca5a289c4651c944894c7a.jpg
 updatesNav.png: updatesNav-83f1427bf93b3ae3a33a6a9c3702b37c.png
 videoBG.png: videoBG-b91509a6a8baf3165310c29cb9edc316.png
-waterIcon.png: waterIcon-88ab448853ee5c910c51d95680ce9f4c.png
 gmaps4rails/gmaps4rails.base.js: gmaps4rails/gmaps4rails.base-e201c889f937fe6f6b63e75ec867d37a.js
 gmaps4rails/gmaps4rails.bing.js: gmaps4rails/gmaps4rails.bing-bdf4dd5c187728d991d499dc02bdbe16.js
 gmaps4rails/gmaps4rails.googlemaps.js: gmaps4rails/gmaps4rails.googlemaps-51793a6739b285367f2ccff0538e889d.js
@@ -172,8 +172,8 @@ gmaps4rails/gmaps4rails.mapquest.js: gmaps4rails/gmaps4rails.mapquest-6ad04e5c21
 gmaps4rails/gmaps4rails.openlayers.js: gmaps4rails/gmaps4rails.openlayers-bbf2bb5ce52196dfd4ffd98e7dae167e.js
 jquery-ui.min.js: jquery-ui.min-bcb2f78c9ed3fa2aba736ba6e6b462e1.js
 jquery.min.js: jquery.min-223bff6ea42ed0d5e2b560fdceee811b.js
-application.js: application-7107e8d78cc37bb5c02419a6f38d150b.js
-application.css: application-254f396d788a36821d9964cc5fdb9fce.css
+application.js: application-05ec02857f4c9bd22d3279a4a4a83238.js
+application.css: application-08e8b27aa7f05ef981b77ae0431a3eb6.css
 advancement.js: advancement-c2b0db25c3a77754b130af70a4041844.js
 categories.js: categories-c2b0db25c3a77754b130af70a4041844.js
 category.js: category-c2b0db25c3a77754b130af70a4041844.js
@@ -183,6 +183,7 @@ contents.js: contents-c2b0db25c3a77754b130af70a4041844.js
 events.js: events-c2b0db25c3a77754b130af70a4041844.js
 experiences.js: experiences-c2b0db25c3a77754b130af70a4041844.js
 home.js: home-c2b0db25c3a77754b130af70a4041844.js
+news.js: news-c2b0db25c3a77754b130af70a4041844.js
 page.js: page-c2b0db25c3a77754b130af70a4041844.js
 partners.js: partners-c2b0db25c3a77754b130af70a4041844.js
 posts.js: posts-c2b0db25c3a77754b130af70a4041844.js
@@ -207,14 +208,15 @@ events.css: events-7c92aed0d9ced75baa9ca7d4c44adb74.css
 experiences.css: experiences-7c92aed0d9ced75baa9ca7d4c44adb74.css
 gmaps4rails.css: gmaps4rails-3bcd24c66df1ffee3921f743726325f9.css
 home.css: home-7c92aed0d9ced75baa9ca7d4c44adb74.css
+news.css: news-7c92aed0d9ced75baa9ca7d4c44adb74.css
 page.css: page-7c92aed0d9ced75baa9ca7d4c44adb74.css
 partners.css: partners-7c92aed0d9ced75baa9ca7d4c44adb74.css
 posts.css: posts-7c92aed0d9ced75baa9ca7d4c44adb74.css
 projects.css: projects-7c92aed0d9ced75baa9ca7d4c44adb74.css
-scaffolds.css: scaffolds-cb85ae2b5e8626fc3632b3297e6fce41.css
+scaffolds.css: scaffolds-81a91cc3343e840400a2533dbc39212f.css
 sessions.css: sessions-7c92aed0d9ced75baa9ca7d4c44adb74.css
 sponsorship.css: sponsorship-7c92aed0d9ced75baa9ca7d4c44adb74.css
-style.css: style-8b52d9397d13d108f1fec654e4237eab.css
+style.css: style-363730049d8c6a8306e0740b4ebacced.css
 tags.css: tags-7c92aed0d9ced75baa9ca7d4c44adb74.css
 take_action.css: take_action-7c92aed0d9ced75baa9ca7d4c44adb74.css
 updates.css: updates-7c92aed0d9ced75baa9ca7d4c44adb74.css

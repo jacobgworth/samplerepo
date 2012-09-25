@@ -1,5 +1,7 @@
 Mohhaiti::Application.routes.draw do
 
+  resources :news
+
   resources :videos
 
   resources :events
