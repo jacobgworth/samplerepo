@@ -153,7 +153,7 @@ class PageController < ApplicationController
     end
   end
   
-  def intern
+  def internships
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
@@ -230,7 +230,7 @@ class PageController < ApplicationController
     end
   end
    
-  def preparing_for_trip
+  def preparing_for_mission_trips
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
@@ -354,7 +354,7 @@ class PageController < ApplicationController
   end
   
   
-  def write_to_child
+  def write_my_child
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end

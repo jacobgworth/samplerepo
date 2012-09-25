@@ -87,8 +87,8 @@ Mohhaiti::Application.routes.draw do
   get "page/prosthetics"
   match "/prosthetics" => "page#prosthetics"
      
-  get "page/intern"
-  match "/intern" => "page#intern"
+  get "page/internships"
+  match "/internships" => "page#internships"
   
   get "page/privacy"
   match "/privacy" => "page#privacy"
@@ -123,8 +123,8 @@ Mohhaiti::Application.routes.draw do
   get "page/mission_trip_experiences"
   match "/mission_trip_experiences" => "page#mission_trip_experiences"
      
-  get "page/preparing_for_trip"
-  match "/preparing_for_trip" => "page#preparing_for_trip"
+  get "page/preparing_for_mission_trips"
+  match "/preparing_for_mission_trips" => "page#preparing_for_mission_trips"
      
   get "page/take_a_trip"
   match "/take_a_trip" => "page#take_a_trip"
@@ -180,8 +180,8 @@ Mohhaiti::Application.routes.draw do
   get "page/gift_store"
   match "/gift_store" => "page#gift_store"
           
-  get "page/write_to_child"
-  match "/write_to_child" => "page#write_to_child"
+  get "page/write_my_child"
+  match "/write_my_child" => "page#write_my_child"
       
   get "page/console"
   match "/console" => "page#console"
