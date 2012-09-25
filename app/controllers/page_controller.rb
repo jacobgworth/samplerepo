@@ -73,12 +73,12 @@ class PageController < ApplicationController
         :name => @name, 
         :fromaddress => @fromaddress, 
         :subject => @subject, 
-        :body => @body,
+        :bodym => @body,
         :phone => @phone
       }
     end
     if @isvalid
-      ContactUsMailer.contact_us_mail(@data).deliver
+      ContactUsMailer.contact_us_mail(@data,@body).deliver
       respond_to do |format|
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       end
