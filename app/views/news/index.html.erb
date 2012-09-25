@@ -10,8 +10,8 @@
 			<span class="date"><%= news.postdate.strftime("%d")%></span><br />
 			<span class="year"><%= news.postdate.strftime("%Y")%></span>	
 	</div>
-    <h2><a href="/posts/<%=news.id%>"><%= news.headline %></a></h2>
-    <p style="clear:both;"><%= news.bodycontent %></p>
+    <h2><a href="/news/<%=news.id%>"><%= news.headline %></a></h2>
+    <p style="clear:both;"><%= news.bodycontent.html_safe %></p>
     <% if !@user.nil? && @user.is_admin?%>
     	<p class="editPostsLink">
     		<%= link_to 'Edit', edit_news_path(news) %> |

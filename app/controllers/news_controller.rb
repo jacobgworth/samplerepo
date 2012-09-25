@@ -36,6 +36,9 @@ class NewsController < ApplicationController
   # GET /news/1/edit
   def edit
     @news = News.find(params[:id])
+    respond_to do |format|
+       format.html {render :layout=>"homeLayout"}# index.html.erb
+    end
   end
 
   # POST /news
