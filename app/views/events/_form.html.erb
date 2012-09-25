@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    Event Date<br />
+    Event Name<br />
     <%= f.text_field :eventname %>
   </div>
   <div class="field">
@@ -26,6 +26,10 @@
   <div class="field">
     Event Date:<br />
     <%= date_select :event, :eventdate %>
+  </div>
+  <div class="field">
+    Event End Date:<br />
+    <%= date_select :event, :enddate %>
   </div>
   <div class="actions">
     <%= f.submit %>
