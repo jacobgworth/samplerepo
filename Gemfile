@@ -5,7 +5,8 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
+
+gem "mail", ">=2.1.3"
 
 gem 'gmaps4rails', ">=1.5.2"
 

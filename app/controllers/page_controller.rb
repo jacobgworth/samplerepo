@@ -78,7 +78,7 @@ class PageController < ApplicationController
       }
     end
     if @isvalid
-      UserMailer.contact_us_mail.(@data).deliver
+      ContactUsMailer.contact_us_mail(@data).deliver
       respond_to do |format|
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       end
