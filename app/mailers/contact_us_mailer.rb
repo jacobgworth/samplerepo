@@ -4,7 +4,7 @@ class ContactUsMailer < ActionMailer::Base
     
     @data = data
     
-    @body = @data[:body]
+    @body = @data[:body].html_safe
     @fromaddress = @data[:fromaddress]
     @subject = @data[:subject]
     @name = @data[:name]
