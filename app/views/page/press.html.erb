@@ -2,9 +2,14 @@
 	<%= render 'layouts/navBar'%>
 	<div id="content" style="padding-top:50px;">
 		<div id="contentLeft560">
+			
 
 			<h1><span class="eyebrow">Mission of Hope Haiti </span><br />News &amp; Press</h1>
-				<%= render 'layouts/pup'%>
+				<% @press.each do |news|%>
+				<p><%=news.headline%></p>
+				<p><%=news.bodycontent%></p>
+				
+			<%end%>
 		</div>
 
 		<div id="contentRight300">

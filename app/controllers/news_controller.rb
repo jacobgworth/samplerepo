@@ -3,6 +3,7 @@ class NewsController < ApplicationController
   # GET /news.json
   def index
     @news = News.all
+    @user = current_user
 
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# index.html.erb

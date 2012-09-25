@@ -14,15 +14,16 @@
     <p style="clear:both;"><%= news.bodycontent %></p>
     <% if !@user.nil? && @user.is_admin?%>
     	<p class="editPostsLink">
-    		<%= link_to 'Edit', edit_post_path(post) %> |
-    		<%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %>
+    		<%= link_to 'Edit', edit_news_path(news) %> |
+    		<%= link_to 'Destroy', news, confirm: 'Are you sure?', method: :delete %>
     	</p>
     <% end %>
 <% end %>
 
 <br />
-
+<% if !@user.nil? && @user.is_admin?%>
 <h4 style="clear:both;"><%= link_to 'New News', new_news_path %></h4>
+<%end%>
 </div><!-- End posts Page -->
 </div><!-- End wrapper -->
 </div><!-- End Content -->
