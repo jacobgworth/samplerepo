@@ -1,6 +1,6 @@
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
-	<div id="content" style="padding-top:50px;">
+	<div id="content" style="padding-top:50px;  padding-bottom: 90px;">
 		<div id="heroContent">
 			<div id="heroContentOrphan">
 				
@@ -12,7 +12,12 @@
 
 <% @events.each do |event| %>
     <div style="border-bottom:1px dotted #0F483B;">
-    <h3><span class="eyebrow"><%= event.eventdate %></span><br /><a href="/events/<%=event.id%>"><%= event.eventname %></a></h3>
+    	<div class="updateDate" style="margin-top:20px;">
+    	<span class="month"><%= event.eventdate.strftime("%b")%></span><br />
+			<span class="date"><%= event.eventdate.strftime("%d")%></span><br />
+			<span class="year"><%= event.eventdate.strftime("%Y")%></span>	
+			</div><!-- End DateUpdate -->
+    <h3><a href="/events/<%=event.id%>"><%= event.eventname %></a></h3>
     <p><%= event.description %></p>
     <p><%= link_to 'View details...', event %></p>
     <% if @isadmin %>
@@ -39,7 +44,9 @@
 				<li><a href="/events">Events &raquo;</a></li>
 				<li><a href="/downloads">Downloads &raquo;</a></li>
 			</ul>
-			</div>
-			</div>
-			
-			</div>
+			</div><!-- End Green Box -->
+		</div><!-- End Content Right -->
+		<div id="clearfix" style="height: 40px;"></div>
+	</div><!-- End Content -->
+	<div id="clearfix" style="height: 40px;"></div>
+</div><!-- End Wrapper -->

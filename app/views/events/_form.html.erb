@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :eventname %><br />
+    Event Date<br />
     <%= f.text_field :eventname %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+  Description<br />
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :location %><br />
+    Location<br />
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :eventdate %><br />
-    <%= f.text_field :eventdate %>
+    Event Date:<br />
+    <%= date_select :event, :eventdate %>
   </div>
   <div class="actions">
     <%= f.submit %>
