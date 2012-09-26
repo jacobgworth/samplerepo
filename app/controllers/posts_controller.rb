@@ -5,9 +5,9 @@ class PostsController < ApplicationController
     @cid = params[:cid]
     @user = current_user
     if @cid.nil?
-      @posts = Post.all.reverse
+      @posts = Post.order('postdate desc')
     else
-      @posts = Post.joins(:categories).where("category_id=" + @cid).reverse
+      @posts = Post.joins(:categories).where("category_id=" + @cid).order('postdate desc')
     end
     @categories = nil
     respond_to do |format|

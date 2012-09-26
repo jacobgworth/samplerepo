@@ -7,7 +7,11 @@
 <h1><span class="eyebrow">Mission of Hope Haiti Events</span><br /><%= @event.eventname %></h1>
 </p>
 <p>
-	<strong>Date:</strong> <%= @event.eventdate %>
+	<%if @event.enddate.nil?%>
+		<strong>Date:</strong> <%= @event.eventdate.strftime("%b")%> <%= @event.eventdate.strftime("%d")%>, <%= @event.eventdate.strftime("%Y")%>
+	<%else%>
+		<strong>Dates:</strong> <%= @event.eventdate.strftime("%b")%> <%= @event.eventdate.strftime("%d")%> - <%= @event.enddate.strftime("%b")%> <%= @event.enddate.strftime("%d")%>, <%= @event.enddate.strftime("%Y")%>
+	<%end%>
 </p>
 <p>
 	<strong>Details:</strong> <%= @event.description %>

@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
+<<<<<<< HEAD
     Title<br />
     <%= f.text_field :title %>
+=======
+    <%= f.label :title %> (*Required)<br />
+    <%= f.text_field :title, :required=>true %>
+>>>>>>> c5a2de30fd12778c060b5d396ca3ece833b96907
   </div>
   <div class="field">
    Body<br />

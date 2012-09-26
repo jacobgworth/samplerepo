@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
   
   def is_admin_user?
     if is_logged_in?
-      if current_user().email == "dsdewhir@gmail.com" || current_user().email == "david@threetwelvecreative.com" ||  current_user().email == "nmdewhirst@gmail.com" || current_user().email == "lindsey@mohhaiti.org" 
+      if current_user().email == "dsdewhir@gmail.com" || current_user().email == "david@threetwelvecreative.com" || current_user().email=="cammie@mohhaiti.org" || current_user().email == "elizabeth@mohhaiti.org" || current_user().email == "nmdewhirst@gmail.com" || current_user().email == "lindsey@mohhaiti.org" 
         return true
       else
         return false

@@ -191,9 +191,11 @@ Mohhaiti::Application.routes.draw do
   get "advancement/index"
   match "/church_advancement" => "Advancement#index"
   match "/church-advancement" => "Advancement#index"
+
   
   get "sponsorship/index"
   match "/child-sponsorship" => "Sponsorship#index"
+  
   
   get "take_action/index"
   match "/take-action" => "TakeAction#index"

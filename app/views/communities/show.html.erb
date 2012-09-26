@@ -18,33 +18,33 @@
 				<%= @community.communityname %></h1>
 				<!--<p><b><%= @community.overviewtitle %></b></p>-->
 				<p>
-					<%= @community.overviewdesc.html_safe %>
+					<%= @community.overviewdesc.html_safe unless @community.overviewdesc.nil? %>
 				</p>
 
 				<h3>Population:</strong> <%= @community.population %></h3>
 				<h2><%= @community.spiritualtitle %></h2>
 				<p>
-					<%= @community.spiritualdesc.html_safe %>
+					<%= @community.spiritualdesc.html_safe unless @community.spiritualdesc.nil? %>
 				</p>
 
 				<h2><%= @community.econtitle %></h2>
 				<p>
-					<%= @community.econdesc.html_safe %>
+					<%= @community.econdesc.html_safe unless @community.econdesc.nil?%>
 				</p>
 
 				<h2><%= @community.edtitle %></h2>
 				<p>
-					<%= @community.eddesc.html_safe %>
+					<%= @community.eddesc.html_safe unless @community.eddesc.nil? %>
 				</p>
 
 				<h2><%= @community.healthtitle %></h2>
 				<p>
-					<%= @community.healthdesc.html_safe %>
+					<%= @community.healthdesc.html_safe unless @community.healthdesc.nil? %>
 				</p>
 
 				<h2><%= @community.needstitle %></h2>
 				<p>
-					<%= @community.needsdesc.html_safe %>
+					<%= @community.needsdesc.html_safe unless @community.needsdesc.nil? %>
 				</p>
 
 			</div>
