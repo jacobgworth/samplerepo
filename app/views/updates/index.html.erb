@@ -7,11 +7,9 @@
 	<h1><%=@category.categoryname %> Updates</h1>
 <% end %>
 
-
-
 <% @updates.each do |update| %>
   <div style="padding-top:20px; border-bottom:1px dotted #0F483B;">
-  <h3><%= update.created_at.strftime("%b %e, %Y") %> - <%= update.title %></h3>
+  <h3><%= update.created_at.strftime("%b %e, %Y") %> - <a href="/updates/<%=update.id%>"><%= update.title %></a></h3>
     <p><%= update.body %></p>
     <p><%= update.media %></p>
     <!--<td><%= link_to 'Show', update %></td>

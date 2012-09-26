@@ -12,24 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    Title<br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :body %><br />
+   Body<br />
     <%= f.text_field :body %>
   </div>
   <div>
-  	Select Category: <%= collection_select 'update', 'category_ids', Category.order("categoryname asc"), :id, :categoryname, { :include_blank => 'None'}, { :multiple => true, :categoryname =>'update[category_ids][]',:selected => 0 } %>
+  	Select Category: <br /><%= collection_select 'update', 'category_ids', Category.order("categoryname asc"), :id, :categoryname, { :include_blank => 'None'}, { :multiple => true, :categoryname =>'update[category_ids][]',:selected => 0 } %>
   </div>
   <div>
-  	Select Related Projects: <%= collection_select 'update', 'project_ids', Project.order("projectname asc"), :id, :projectname, { :include_blank => 'None'}, { :multiple => true, :projectname =>'update[project_ids][]',:selected => 0 } %>
+  	Select Related Projects: <br /><%= collection_select 'update', 'project_ids', Project.order("projectname asc"), :id, :projectname, { :include_blank => 'None'}, { :multiple => true, :projectname =>'update[project_ids][]',:selected => 0 } %>
   </div>
   <div>
-  	Select Related Villages: <%= collection_select 'update', 'community_ids', Community.order("communityname asc"), :id, :communityname, { :include_blank => 'None'}, { :multiple => true, :communityname =>'update[community_ids][]',:selected => 0 } %>
+  	Select Related Villages: <br /><%= collection_select 'update', 'community_ids', Community.order("communityname asc"), :id, :communityname, { :include_blank => 'None'}, { :multiple => true, :communityname =>'update[community_ids][]',:selected => 0 } %>
   </div>
   <div class="field">
-    <%= f.label :media %><br />
+    Media<br />
     <%= f.text_field :media %>
   </div>
   <div class="actions">

@@ -43,7 +43,7 @@ class UpdatesController < ApplicationController
       @update = Update.new
 
       respond_to do |format|
-        format.html # new.html.erb
+        format.html {render :layout=>"homeLayout"} # new.html.erb
         format.json { render json: @update }
       end
     else
@@ -57,6 +57,9 @@ class UpdatesController < ApplicationController
   def edit
     if is_admin_user?
       @update = Update.find(params[:id])
+      respond_to do |format|
+         format.html {render :layout=>"homeLayout"}
+      end
     else
       respond_to do |format|
         format.html { redirect_to "/updates/" }
@@ -73,6 +76,7 @@ class UpdatesController < ApplicationController
       if @update.save
         format.html { redirect_to @update, notice: 'Update was successfully created.' }
         format.json { render json: @update, status: :created, location: @update }
+        
       else
         format.html { render action: "new" }
         format.json { render json: @update.errors, status: :unprocessable_entity }
