@@ -87,7 +87,7 @@
 						 created = m.created_at
 						              creator = "-"
 						              if m.user.blank?
-						                creator = '-'
+						                creator = ''
 						              else
 						                creator = m.user.first
 						              end
@@ -155,7 +155,7 @@
 							<%= truncate(m.body,:length=>100,:separator=>' ')%> <a href="/posts/<%= m.id%>">READ MORE</a>
 						</p>
 						<p class="meta">
-							Projects: Project Name | Posted by: <%= creator%>
+							Posted by: <%= creator%>
 						</p>
 					</div>
 					<div class="clearfix"></div>

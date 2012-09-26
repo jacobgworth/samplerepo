@@ -89,7 +89,7 @@
 					created = m.postdate 
 					creator = "-"
 					if m.user.blank?
-						creator = '-'
+						creator = ''
 					else
 						creator = m.user.first
 					end
@@ -101,7 +101,12 @@
 			<div class="updatePost560">
 				<h4><a href=""><%=m.title%></a></h4>
 				<p><%=truncate(m.body,:length=>100,:separator=>' ').html_safe %> <a href="">READ MORE</a></p>
-				<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
+				<%	@postproject = m.projects.last
+					if !@postproject.nil? %>
+						<p class="meta">Projects: <a href="/projects/<%=@postproject.id%>"><%=@postproject.projectname %></a> | Posted by: <%=creator%></p>
+					<%else%>
+						<p class="meta">Projects: No Current Projects | Posted by: <%=creator%></p>
+					<% end %>
 			</div>
 			<div class="clearfix"><!--x--></div>
 			</div>
