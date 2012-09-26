@@ -44,4 +44,18 @@ class ContactUsMailer < ActionMailer::Base
     mail(:to => "sponsorship@mohhaiti.org", :subject => "Write My Child", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
   
+  def take_a_trip(data)
+    #change this to missiontrips@mohhaiti.org after testing
+    
+    @data = data
+    
+    @fname = @data[:fname], 
+    @phone = @data[:phone],
+    @fromaddress = @data[:fromaddress], 
+    @comments = @data[:comments],
+    
+    
+    mail(:to => "david.dewhirst@threetwelvecreative.com", :subject => "Write My Child", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
+  end
+  
 end

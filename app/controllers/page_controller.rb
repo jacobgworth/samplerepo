@@ -309,8 +309,26 @@ class PageController < ApplicationController
   end
   
   def take_a_trip
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    @name = params[:name]
+    @comments = params[:letter]
+    @fromaddress = params[:email]
+    @phone = params[:phonenumber]
+    if !@name.nil? && @name != "" && !@letterbody.nil? && @letterbody != "" && !@childnumber.nil? && @childnumber != ""
+      @isvalid = true
+      @data = {
+        :fname => @name, 
+        :fromaddress => @fromaddress, 
+        :comments => @comments,
+        :phone => @phone
+      }
+      respond_to do |format|
+        ContactUsMailer.take_a_trip(@data).deliver
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+      end 
+    else
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+      end
     end
   end
   
