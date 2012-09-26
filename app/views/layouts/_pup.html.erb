@@ -99,7 +99,7 @@
 				<span class="year"><%=created.strftime("%Y")%></span>
 			</div>
 			<div class="updatePost560">
-				<h4><a href=""><%=m.title%></a></h4>
+				<h4><a href="/posts/<%=@post.id%>"><%=m.title%></a></h4>
 				<p><%=truncate(m.body,:length=>100,:separator=>' ').html_safe %> <a href="">READ MORE</a></p>
 				<%	@postproject = m.projects.last
 					if !@postproject.nil? %>
