@@ -12,7 +12,11 @@
 			<% if @updates != nil && @updates.count > 0
 				@topupdate = @updates.first(1)
 			%>
-				<%@topupdate.each do |m|%><p class="news"><a href=""><%=truncate(m.body,:length=>40,:separator=>' ')%></a></p> <%end%>
+				<%@topupdate.each do |m|%>
+					<p class="news">
+						<a href="/updates/">
+						<%=truncate(m.body,:length=>40,:separator=>' ')%></a></p> 
+				<%end%>
 			<%end%>
 		</div>
 	</div>

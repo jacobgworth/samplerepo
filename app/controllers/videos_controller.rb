@@ -3,18 +3,20 @@ class VideosController < ApplicationController
   # GET /videos.json
   def index
     @videos = Video.all
-
-    respond_to do |format|
+      respond_to do |format|
       format.html {render :layout=>"homeLayout"} # index.html.erb
       format.json { render json: @videos }
+       @user = current_user
+    @isadmin = is_admin_user?
     end
   end
 
   # GET /videos/1
   # GET /videos/1.json
   def show
+    @user = current_user
+    @isadmin = is_admin_user?
     @video = Video.find(params[:id])
-
     respond_to do |format|
       format.html {render :layout=>"homeLayout"} # show.html.erb
       format.json { render json: @video }
@@ -35,6 +37,9 @@ class VideosController < ApplicationController
   # GET /videos/1/edit
   def edit
     @video = Video.find(params[:id])
+    respond_to do |format|
+       format.html {render :layout=>"homeLayout"}
+    end
   end
 
   # POST /videos

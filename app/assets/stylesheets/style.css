@@ -2573,3 +2573,6 @@ tr {
 	float:left;
 	padding-bottom: 40px;
 }
+.video{
+    border-bottom: 1px dotted black;
+}

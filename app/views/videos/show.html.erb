@@ -1,20 +1,21 @@
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+	<div id="content" style="padding-top: 50px;">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @video.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @video.description %>
-</p>
-
-<p>
-  <b>Link:</b>
-  <%= @video.link %>
-</p>
+<div class="video">
+ <h2><%= @video.title %></h2>
+<p><%= @video.description %></p>
+<p><a href="<%= @video.link %>">Watch the video!</a></p>
 
 
+<% if !@user.nil? && @user.is_admin?%>
+<p class="editPostsLink">
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>
+</p>
+ <% end %>
+ </div>
+ 
+</div>
+</div>
