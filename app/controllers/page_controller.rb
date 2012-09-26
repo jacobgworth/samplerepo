@@ -376,9 +376,32 @@ class PageController < ApplicationController
   
   
   def write_my_child
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    @name = params[:name]
+    @letterbody = params[:letter]
+    @fromaddress = params[:email]
+    @phone = params[:phonenumber]
+    @childname = params[:childname]
+    @childnumber = params[:childnumber]
+    if !@name.nil? && @name != "" && !@letterbody.nil? && @letterbody != "" && !@childnumber.nil? && @childnumber != ""
+      @isvalid = true
+      @data = {
+        :fname => @name, 
+        :fromaddress => @fromaddress, 
+        :bodym => @letterbody,
+        :phone => @phone,
+        :childname => @childname,
+        :childnumber => @childnumber
+      }
+      respond_to do |format|
+        ContactUsMailer.write_child(@data).deliver
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+      end 
+    else
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+      end  
     end
+    
   end
     
   

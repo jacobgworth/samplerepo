@@ -13,7 +13,7 @@ class ContactUsMailer < ActionMailer::Base
   end
   
   def sponsorship_contact(data)
-    #change this to sponsorship@mohhaiti.org after testing
+    
     
     @data = data
     
@@ -27,6 +27,21 @@ class ContactUsMailer < ActionMailer::Base
     @zip = @data[:zip]  
     
     mail(:to => "sponsorship@mohhaiti.org", :subject => "Child Sponsorship Inquiry", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
+  end
+  
+  def write_child(data)
+    #change this to sponsorship@mohhaiti.org after testing
+    
+    @data = data
+    
+    @fname = @data[:fname], 
+    @phone = @data[:phone],
+    @fromaddress = @data[:fromaddress], 
+    @bodym = @data[:bodym],
+    @childname = @data[:childname],
+    @childnumber = @data[:childnumber]
+    
+    mail(:to => "sponsorship@mohhaiti.org", :subject => "Write My Child", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
   
 end
