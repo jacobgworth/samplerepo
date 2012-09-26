@@ -313,7 +313,7 @@ class PageController < ApplicationController
     @comments = params[:letter]
     @fromaddress = params[:email]
     @phone = params[:phonenumber]
-    if !@name.nil? && @name != "" && !@letterbody.nil? && @letterbody != "" && !@childnumber.nil? && @childnumber != ""
+    if !@name.nil? && @name != "" && !@comments.nil? && @comments != "" && !@fromaddress.nil? && @fromaddress != ""
       @isvalid = true
       @data = {
         :fname => @name, 
@@ -326,6 +326,7 @@ class PageController < ApplicationController
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       end 
     else
+      @isvalid = false
       respond_to do |format|
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       end

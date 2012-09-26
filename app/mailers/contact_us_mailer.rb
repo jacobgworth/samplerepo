@@ -55,7 +55,7 @@ class ContactUsMailer < ActionMailer::Base
     @comments = @data[:comments],
     
     
-    mail(:to => "david.dewhirst@threetwelvecreative.com", :subject => "Write My Child", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "missiontrips@mohhaiti.org", :subject => "Take a Mission Trip", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
   
 end
