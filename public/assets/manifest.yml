@@ -74,7 +74,9 @@ icon-church-advancement-med.png: icon-church-advancement-med-9e60ac1322356704326
 icon-church-advancement.png: icon-church-advancement-fec3b41cc7987b9a63d53eed81d58c39.png
 icon-donate-med-hover.png: icon-donate-med-hover-8901adeeeb923da9f7fcc2f1c4742fbd.png
 icon-donate-med.png: icon-donate-med-70fd95dda592641196fd52fd2118fbd2.png
+icon-downloads--med-hover.png: icon-downloads--med-hover-2c19c76251ee5bd7094ccad90960750c.png
 icon-downloads-hover.png: icon-downloads-hover-25afa679dd251fb96d8963238ca1145e.png
+icon-downloads-med.png: icon-downloads-med-c34af9ee784900935e10a6f24506d2ce.png
 icon-downloads.png: icon-downloads-b7060df84978fb31eed861b7518050bc.png
 icon-events-med-hover.png: icon-events-med-hover-01c6d5cf0608d22c152bf1174ea428a5.png
 icon-events-med.png: icon-events-med-66fba287eb1b7cecdf02107e6746dad2.png
@@ -213,14 +215,14 @@ store/large/backpack.jpg: store/large/backpack-881865591ee2fa9c0f08c71137135723.
 store/large/basketball.jpg: store/large/basketball-83065056a5f5dfbf2a0f248560df4dcf.jpg
 store/large/books-1.jpg: store/large/books-1-7283924b489b9f8e8ff79e0bdbcaf3b5.jpg
 store/large/calculator.jpg: store/large/calculator-e83d31f2da7070346bc46787e22edd2f.jpg
-store/large/file folders.jpg: store/large/file folders-b1bc1ef5dc89afa2485b0cc08cf6c459.jpg
-store/large/geometric tools.jpg: store/large/geometric tools-4e7794f62cd613329b0e2aca03e323b3.jpg
+store/large/file_folders.jpg: store/large/file_folders-b1bc1ef5dc89afa2485b0cc08cf6c459.jpg
+store/large/geometric_tools.jpg: store/large/geometric_tools-4e7794f62cd613329b0e2aca03e323b3.jpg
 store/large/lunchbox.jpg: store/large/lunchbox-9d3eab76210af5365b578c574c2bea04.jpg
 store/large/notebook.jpg: store/large/notebook-de5feabf959f63d9db7368a4956366aa.jpg
-store/large/small backpack.jpg: store/large/small backpack-a31df16f84482d730d4bda1f3d974754.jpg
+store/large/small_backpack.jpg: store/large/small_backpack-a31df16f84482d730d4bda1f3d974754.jpg
 store/large/watch.jpg: store/large/watch-74129c0cd795e0e3cc34550a3ad7d4d1.jpg
-store/large/water bottle.jpg: store/large/water bottle-ee82bbdadb66cd100df31f737df3f431.jpg
-store/large/writing slate.jpg: store/large/writing slate-90357d7902fa5640c5bdaa292d0f02e0.jpg
+store/large/water_bottle.jpg: store/large/water_bottle-ee82bbdadb66cd100df31f737df3f431.jpg
+store/large/writing_slate.jpg: store/large/writing_slate-90357d7902fa5640c5bdaa292d0f02e0.jpg
 store/lunchbox.jpg: store/lunchbox-d205372a2a3bcb3b1cf4a39565d6395e.jpg
 store/notebook.jpg: store/notebook-7b2dce0426dfbda561e8a36312cbe8b6.jpg
 store/small_backpack.jpg: store/small_backpack-9e19d703f7cc8ea8fc33e5d7adf89a51.jpg
@@ -237,7 +239,7 @@ gmaps4rails/gmaps4rails.openlayers.js: gmaps4rails/gmaps4rails.openlayers-bbf2bb
 jquery-ui.min.js: jquery-ui.min-bcb2f78c9ed3fa2aba736ba6e6b462e1.js
 jquery.min.js: jquery.min-223bff6ea42ed0d5e2b560fdceee811b.js
 application.js: application-05ec02857f4c9bd22d3279a4a4a83238.js
-application.css: application-8964df6060e5d03cc4e31a1cb6d75919.css
+application.css: application-4d63e091a0d770d318fb3cc6cdf67e65.css
 advancement.js: advancement-c2b0db25c3a77754b130af70a4041844.js
 categories.js: categories-c2b0db25c3a77754b130af70a4041844.js
 category.js: category-c2b0db25c3a77754b130af70a4041844.js
@@ -280,7 +282,7 @@ projects.css: projects-7c92aed0d9ced75baa9ca7d4c44adb74.css
 scaffolds.css: scaffolds-59d873133cf4fb486c4074c62dde5320.css
 sessions.css: sessions-7c92aed0d9ced75baa9ca7d4c44adb74.css
 sponsorship.css: sponsorship-7c92aed0d9ced75baa9ca7d4c44adb74.css
-style.css: style-5c9ec063e59151355cf8c289a5e64142.css
+style.css: style-f8c0e3c2b635d2fe483aa56572801427.css
 tags.css: tags-7c92aed0d9ced75baa9ca7d4c44adb74.css
 take_action.css: take_action-7c92aed0d9ced75baa9ca7d4c44adb74.css
 updates.css: updates-7c92aed0d9ced75baa9ca7d4c44adb74.css
