@@ -40,8 +40,11 @@
 
 <div id="contentRight300">
 	<div class="rightBoxGreen">
-			<h2>Categories</h2>
-			</div>
+		See More...
+		<%@categories.each do |cat|%>
+			<h2><a href="/posts/<%=cat.id%>"><%=cat.categoryname%> Posts</a></h2>
+		<%end%>
+	</div>
 
 </div><!-- End Content Right -->
 <div class="clearfix" style="height:40px;"></div>

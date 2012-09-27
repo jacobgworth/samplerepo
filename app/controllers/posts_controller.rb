@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.joins(:categories).where("category_id=" + @cid).order('postdate desc')
     end
-    @categories = nil
+    @categories = Category.order("categoryname asc")
     respond_to do |format|
        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       format.json { render json: @posts }
@@ -22,6 +22,7 @@ class PostsController < ApplicationController
     @isadmin = is_admin_user?
     @post = Post.find(params[:id])
     @assets = @post.assets.all
+    @categories = Category.order("categoryname asc")
 
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
