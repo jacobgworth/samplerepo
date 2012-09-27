@@ -72,6 +72,12 @@ icon-agriculture.png: icon-agriculture-875e8d825079c504e433a0cee4d4e82f.png
 icon-church-advancement-med-hover.png: icon-church-advancement-med-hover-c3dc500a4f4bc0d68381011e5c49a08d.png
 icon-church-advancement-med.png: icon-church-advancement-med-9e60ac13223567043261e9f9dabb5895.png
 icon-church-advancement.png: icon-church-advancement-fec3b41cc7987b9a63d53eed81d58c39.png
+icon-donate-med-hover.png: icon-donate-med-hover-8901adeeeb923da9f7fcc2f1c4742fbd.png
+icon-donate-med.png: icon-donate-med-70fd95dda592641196fd52fd2118fbd2.png
+icon-downloads-hover.png: icon-downloads-hover-25afa679dd251fb96d8963238ca1145e.png
+icon-downloads.png: icon-downloads-b7060df84978fb31eed861b7518050bc.png
+icon-events-med-hover.png: icon-events-med-hover-01c6d5cf0608d22c152bf1174ea428a5.png
+icon-events-med.png: icon-events-med-66fba287eb1b7cecdf02107e6746dad2.png
 icon-facebook.png: icon-facebook-0720c5acf4c69ef10d352122bff2e78c.png
 icon-haitione-med-hvoer.png: icon-haitione-med-hvoer-f82ef3a0d6d01d0656c40ac93a32c9c4.png
 icon-haitione-med.png: icon-haitione-med-c1a30c374e825dd85b9bc682df065df1.png
@@ -83,12 +89,16 @@ icon-nutrition-med-hover.png: icon-nutrition-med-hover-cb15337d9261ffc72f74bb82e
 icon-nutrition-med.png: icon-nutrition-med-8df90d061c5d91acdea2a2c145b51cf7.png
 icon-orphan-care-med-hover.png: icon-orphan-care-med-hover-2297b65725b497176331a16f02cafa76.png
 icon-orphan-care-med.png: icon-orphan-care-med-8a2b415c209bc6307d25c8f3945454b4.png
+icon-partner-hope-med-hover.png: icon-partner-hope-med-hover-1cbdd19b85b7955d65dc2653d391f8b6.png
+icon-partner-hope-med.png: icon-partner-hope-med-34b279dfbcf5c818ba415ea81be54a31.png
 icon-population-inset.png: icon-population-inset-be5577efc68a95e0762588e5bdc43ebf.png
 icon-population-mini.png: icon-population-mini-ba9efc31cbc1d0845d4491cee5b639b5.png
 icon-projects-inset.png: icon-projects-inset-b90fda05d3f7ecfbb51f6444fd006969.png
 icon-projects-med-hover.png: icon-projects-med-hover-5f94a88ba897a2d3816ebc060f7dffea.png
 icon-projects-med.png: icon-projects-med-7be45b7391018b8cd3f4a3947b2cfb24.png
 icon-projects-mini.png: icon-projects-mini-84c351512c9e16eb790778020540fd15.png
+icon-snapback-med-hover.png: icon-snapback-med-hover-7abc3cb4ccecfbf1cd831356fc79adf5.png
+icon-snapback-med.png: icon-snapback-med-69c6eff5b83e6f14cb11e8aa7cba38c5.png
 icon-student-sponsorship-med-hover.png: icon-student-sponsorship-med-hover-4632c0bb7c139a0a970041635d2d14e1.png
 icon-student-sponsorship-med.png: icon-student-sponsorship-med-3a533daf12ac198d27dc8f8fbe943ba3.png
 icon-student-sponsorship.png: icon-student-sponsorship-37372189e32403a9effb10fe24e06428.png
@@ -163,6 +173,61 @@ staff-otis-garrison.jpg: staff-otis-garrison-efa7454e5089320afdb0ed9f7ffa9878.jp
 staff-rachael-jankowsky.JPG: staff-rachael-jankowsky-1acdb3246e7881891decc612caee3e2a.JPG
 staff-ruben-amy-cenea.jpg: staff-ruben-amy-cenea-d09d13f1a72da054f44fac1e61bbdf96.jpg
 staff-stacy-raby.jpg: staff-stacy-raby-fff33ed5b81ea5e2a4d87e23b144fa23.jpg
+store/Bracelet_RS.jpg: store/Bracelet_RS-2f571542c315e02f6dc05e8d939eb253.jpg
+store/Colored_pencils.jpg: store/Colored_pencils-00a29f8660f528dbc793598e23d974f5.jpg
+store/Gift_Store_Items.xlsx: store/Gift_Store_Items-c6d30dd48ac0c0fa310c36e29cfcb0b0.xlsx
+store/Girls_doll.jpg: store/Girls_doll-7eca005d0a75c19967107c51e14680f0.jpg
+store/Girls_purse.jpg: store/Girls_purse-8dbaa03044662fb5e434bc0b59324efd.jpg
+store/Hair.jpg: store/Hair-3afae79e757acb239eb83d5905e40e8a.jpg
+store/Modeling_dough.jpg: store/Modeling_dough-1c49b2ec782be9e541d37008b8324e08.jpg
+store/Necklace.jpg: store/Necklace-451a31ce8bddd80353c3dbb5ea6f1268.jpg
+store/Photo_Album.jpg: store/Photo_Album-18eb5ac1cc832ebda5785e750c1afc5b.jpg
+store/Photo_Frame.jpg: store/Photo_Frame-f4a3e2f060401b15cc65967470b39c44.jpg
+store/Puzzle.jpg: store/Puzzle-5c465efec9564a07a5b44d49d9ec7aec.jpg
+store/Sand_toys.jpg: store/Sand_toys-0f40d34009d64ea8abbde88a2ce36159.jpg
+store/Soccer_ball.jpg: store/Soccer_ball-e0327004b7d35e4eff26c92aacce565a.jpg
+store/Teddy_bear.jpg: store/Teddy_bear-698857b23ddf4acca6e35ea64fdd7c63.jpg
+store/Toy_cars.jpg: store/Toy_cars-47746a8e67c784369b6ecfe2c2087435.jpg
+store/alarm_clock.jpg: store/alarm_clock-7d0d9ffb0ba2000b5439a821b3f67f7f.jpg
+store/backpack.jpg: store/backpack-1ba5e8629c28fc75b24b824aa58b08c5.jpg
+store/basketball.jpg: store/basketball-02c2bda3e86e0595f0e42b84d8ec32e0.jpg
+store/books-1.jpg: store/books-1-541761d66658737ccf308e5ace940b7c.jpg
+store/calculator.jpg: store/calculator-ea45f343b607058677e23d6f144e2595.jpg
+store/file folders.jpg: store/file folders-c91c2336c8dd8f66c94b313ab4d5be58.jpg
+store/geometric tools.jpg: store/geometric tools-b2bb21fc97f235cc57f3624e9fec16b7.jpg
+store/large/Bracelet_RS.jpg: store/large/Bracelet_RS-660dfa207f4913fc6eae42c48e6d6243.jpg
+store/large/Colored_pencils.jpg: store/large/Colored_pencils-97cdf3ce5e68562b3eac8d1a71f3ec72.jpg
+store/large/Girls_doll.jpg: store/large/Girls_doll-83b57dc96ba278b2d9fa2029b7ef89cf.jpg
+store/large/Girls_purse.jpg: store/large/Girls_purse-98a0eb694340cbec9812f273d1fae785.jpg
+store/large/Hair.jpg: store/large/Hair-d053d7e01f9f31fbfc483ec991d1aa67.jpg
+store/large/Modeling_dough.jpg: store/large/Modeling_dough-065ff63f1ca3f242cff151c3baedb24c.jpg
+store/large/Necklace.jpg: store/large/Necklace-e3a4b2af89f6aa835392a4aa14bb80e4.jpg
+store/large/Photo_Album.jpg: store/large/Photo_Album-693299cd072fc74c706baabaf45aad9f.jpg
+store/large/Photo_Frame.jpg: store/large/Photo_Frame-68b699776f2d89381e24515dcfed95fc.jpg
+store/large/Puzzle.jpg: store/large/Puzzle-357397361e1cde148951fdce5614faa7.jpg
+store/large/Sand_toys.jpg: store/large/Sand_toys-a541707680088c670712645462394244.jpg
+store/large/Soccer_ball.jpg: store/large/Soccer_ball-7b2bcd10e05aac291308d422ae685f9e.jpg
+store/large/Teddy_bear.jpg: store/large/Teddy_bear-26d66f2874d22207185458861b8f303b.jpg
+store/large/Toy_cars.jpg: store/large/Toy_cars-a5c6743a6101a4f6e289e278496410ad.jpg
+store/large/alarm_clock.jpg: store/large/alarm_clock-3aa258b538c3ce49b54bbfe2dbab32a0.jpg
+store/large/backpack.jpg: store/large/backpack-881865591ee2fa9c0f08c71137135723.jpg
+store/large/basketball.jpg: store/large/basketball-83065056a5f5dfbf2a0f248560df4dcf.jpg
+store/large/books-1.jpg: store/large/books-1-7283924b489b9f8e8ff79e0bdbcaf3b5.jpg
+store/large/calculator.jpg: store/large/calculator-e83d31f2da7070346bc46787e22edd2f.jpg
+store/large/file folders.jpg: store/large/file folders-b1bc1ef5dc89afa2485b0cc08cf6c459.jpg
+store/large/geometric tools.jpg: store/large/geometric tools-4e7794f62cd613329b0e2aca03e323b3.jpg
+store/large/lunchbox.jpg: store/large/lunchbox-9d3eab76210af5365b578c574c2bea04.jpg
+store/large/notebook.jpg: store/large/notebook-de5feabf959f63d9db7368a4956366aa.jpg
+store/large/small backpack.jpg: store/large/small backpack-a31df16f84482d730d4bda1f3d974754.jpg
+store/large/watch.jpg: store/large/watch-74129c0cd795e0e3cc34550a3ad7d4d1.jpg
+store/large/water bottle.jpg: store/large/water bottle-ee82bbdadb66cd100df31f737df3f431.jpg
+store/large/writing slate.jpg: store/large/writing slate-90357d7902fa5640c5bdaa292d0f02e0.jpg
+store/lunchbox.jpg: store/lunchbox-d205372a2a3bcb3b1cf4a39565d6395e.jpg
+store/notebook.jpg: store/notebook-7b2dce0426dfbda561e8a36312cbe8b6.jpg
+store/small backpack.jpg: store/small backpack-9e19d703f7cc8ea8fc33e5d7adf89a51.jpg
+store/watch.jpg: store/watch-bbcea77cc5c1c70b592ad96043c94918.jpg
+store/water bottle.jpg: store/water bottle-14e343a80d76f0d231bb67526425f0d0.jpg
+store/writing slate.jpg: store/writing slate-cede312c4f16af3c227ebd6f03d36bc4.jpg
 updatesNav.png: updatesNav-83f1427bf93b3ae3a33a6a9c3702b37c.png
 videoBG.png: videoBG-b91509a6a8baf3165310c29cb9edc316.png
 gmaps4rails/gmaps4rails.base.js: gmaps4rails/gmaps4rails.base-e201c889f937fe6f6b63e75ec867d37a.js
@@ -173,7 +238,7 @@ gmaps4rails/gmaps4rails.openlayers.js: gmaps4rails/gmaps4rails.openlayers-bbf2bb
 jquery-ui.min.js: jquery-ui.min-bcb2f78c9ed3fa2aba736ba6e6b462e1.js
 jquery.min.js: jquery.min-223bff6ea42ed0d5e2b560fdceee811b.js
 application.js: application-05ec02857f4c9bd22d3279a4a4a83238.js
-application.css: application-3fee689763639842225d0bec7a555b92.css
+application.css: application-e50224af42a30af991c5d22165b5fa85.css
 advancement.js: advancement-c2b0db25c3a77754b130af70a4041844.js
 categories.js: categories-c2b0db25c3a77754b130af70a4041844.js
 category.js: category-c2b0db25c3a77754b130af70a4041844.js
@@ -216,7 +281,7 @@ projects.css: projects-7c92aed0d9ced75baa9ca7d4c44adb74.css
 scaffolds.css: scaffolds-59d873133cf4fb486c4074c62dde5320.css
 sessions.css: sessions-7c92aed0d9ced75baa9ca7d4c44adb74.css
 sponsorship.css: sponsorship-7c92aed0d9ced75baa9ca7d4c44adb74.css
-style.css: style-3d09050869141a9a933693d0cd34ca75.css
+style.css: style-0caf395dd76698ff3492c58c5f8a0a4e.css
 tags.css: tags-7c92aed0d9ced75baa9ca7d4c44adb74.css
 take_action.css: take_action-7c92aed0d9ced75baa9ca7d4c44adb74.css
 updates.css: updates-7c92aed0d9ced75baa9ca7d4c44adb74.css
