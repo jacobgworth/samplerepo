@@ -1308,6 +1308,13 @@ h3.CTA {
 	padding-top:10px;
 }
 
+#contentLeft560 .gift h4 {
+	margin-top:0;
+	padding-top:10px;
+	font-size:16px;
+}
+
+
 .staff, .gift {
 	float:left;
 	width:176px;
@@ -1315,6 +1322,10 @@ h3.CTA {
 	position:relative;
 	margin-bottom:40px;
 	min-height:220px;
+}
+
+.gift {
+	margin-bottom:20px;
 }
 
 
@@ -1328,7 +1339,7 @@ h3.CTA {
 	text-transform:none;
 }
 
-.staffBio, .giftLarge {
+.staffBio {
     background-color: #C2B092;
     border-style: solid;
 	font-size:12px;
@@ -1341,6 +1352,24 @@ h3.CTA {
     top: 175px;
     width: 300px;
     z-index: 100;
+}
+
+.giftLarge {
+    background-color: #C2B092;
+    border:5px solid #C2B092;
+	font-size:12px;
+	text-transform:none;
+	font-family:Arial, Helvetica, sans-serif;
+    display: none;
+    left: 0px;
+    position: absolute;
+    top: -10px;
+    left:180px;
+    z-index: 100;
+}
+
+.giftLarge p {
+	padding-left:5px;
 }
 
 .staffBio h3 {
