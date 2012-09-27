@@ -1,6 +1,6 @@
 <div id="bgHero" >
 	<%if !@community.nil? && !@community.heroimage.nil? && @community.heroimage != '' %>
-		<div id="heroCommunitiesImg" style="background: url(/assets/<%=@community.heroimage%>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;">
+		<div id="heroCommunitiesImg" style="background: url('/assets/images/<%=@community.heroimage%>') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;">
 		<!--x-->
 		</div>
 	<%else%>
