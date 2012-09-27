@@ -1,8 +1,13 @@
-<div id="bgHero">
-	<div id="advancementHeroImg">
+<div id="bgHero" <%=@community.heroimage%>>
+	<%if !@community.nil? && !@community.heroimage.nil? && @community.heroimage != '' %>
+		<div id="heroCommunitiesImg" style="background: url(/assets/<%=@community.heroimage%>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;">
 		<!--x-->
-	</div>
-
+		</div>
+	<%else%>
+		<div id="heroCommunitiesImg">
+		<!--x-->
+		</div>
+	<%end%>
 </div>
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
