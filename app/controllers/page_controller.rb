@@ -12,6 +12,12 @@ class PageController < ApplicationController
     end
   end
   
+  def our_story
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
   def be_a_partner
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb

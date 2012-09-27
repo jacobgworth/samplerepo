@@ -13,7 +13,7 @@
 			<span class="date"><%= post.postdate.strftime("%d")%></span><br />
 			<span class="year"><%= post.postdate.strftime("%Y")%></span>	
 	</div>
-    <h3 style="padding-bottom:0;"><a href="/posts/<%=post.id%>"><%= post.title %></a></h3>
+    <h3 style="padding-bottom:30px;"><a href="/posts/<%=post.id%>"><%= post.title %></a></h3>
     <h4 style="clear:both;"><%= post.user_id %></h4>
     <div style="margin-left:60px; margin-top:-20px; border-bottom:1px dotted #0F483B;">
     <p><%= truncate(post.body,:length=>500,:separator=>' ').html_safe %></p>
