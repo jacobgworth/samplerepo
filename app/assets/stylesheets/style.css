@@ -139,6 +139,17 @@ span.eyebrow {
 	-o-background-size: cover;
 	background-size: cover;
 }
+
+#heroCommunitiesImg {
+	width:100%;
+	height:100%;
+	background: url(/assets/heroWhatWeDo.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 #haitiOneHeroImg{
 	width:100%;
 	height:100%;
@@ -1297,7 +1308,7 @@ h3.CTA {
 	padding-top:10px;
 }
 
-.staff {
+.staff, .gift {
 	float:left;
 	width:176px;
 	padding-right:10px;
@@ -1307,7 +1318,7 @@ h3.CTA {
 }
 
 
-.staff img {
+.staff img, .gift img {
 	border:5px solid #C2B092;
 }
 
@@ -1317,7 +1328,7 @@ h3.CTA {
 	text-transform:none;
 }
 
-.staffBio {
+.staffBio, .giftLarge {
     background-color: #C2B092;
     border-style: solid;
 	font-size:12px;
@@ -1336,7 +1347,7 @@ h3.CTA {
 	color:#fff;
 }
 
-.staff a:hover + div.staffBio {
+.staff a:hover + div.staffBio, .gift a:hover + div.giftLarge {
     display: block;
 }
 
