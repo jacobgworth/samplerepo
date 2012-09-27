@@ -2070,6 +2070,12 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	padding:0px 0 20px 0;
 	line-height:1.2em;
 }
+
+.updatePost560 img {
+	float:left;
+	width:150px;
+	border:2px solid #C2B092;
+}
 .updatePost h4 {
 	color:#0f483b;
 	text-transform:uppercase;
@@ -2495,6 +2501,13 @@ top: -9000px;
 }
 .postsPage{
 	margin-bottom: 20px;
+}
+
+.postsPage img {
+	width:490px;
+	border:5px solid #C2B092;
+	margin-top:-20px;
+
 }
 
 .blogPost {
