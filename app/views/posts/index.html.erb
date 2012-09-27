@@ -40,9 +40,11 @@
 
 <div id="contentRight300">
 	<div class="rightBoxGreen">
-		See More...
+		<h2>See More...</h2>
 		<%@categories.each do |cat|%>
-			<h2><a href="/posts/<%=cat.id%>"><%=cat.categoryname%> Posts</a></h2>
+		<ul class="aboutUsNav">
+			<li><a href="/posts/<%=cat.id%>"><%=cat.categoryname%> Posts</a></li>
+		</ul>
 		<%end%>
 	</div>
 
