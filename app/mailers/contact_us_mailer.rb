@@ -49,13 +49,13 @@ class ContactUsMailer < ActionMailer::Base
     
     @data = data
     
-    @fname = @data[:fname], 
+    @fullname = @data[:fname], 
     @phone = @data[:phone],
     @fromaddress = @data[:fromaddress], 
     @comments = @data[:comments],
     
     
-    mail(:to => "missiontrips@mohhaiti.org", :subject => "Take a Mission Trip", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "david.dewhirst@threetwelvecreative.com", :subject => "Take a Mission Trip", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
   
 end

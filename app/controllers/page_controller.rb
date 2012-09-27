@@ -309,14 +309,14 @@ class PageController < ApplicationController
   end
   
   def take_a_trip
-    @name = params[:name]
+    @fname = params[:fname]
     @comments = params[:letter]
     @fromaddress = params[:email]
     @phone = params[:phonenumber]
-    if !@name.nil? && @name != "" && !@comments.nil? && @comments != "" && !@fromaddress.nil? && @fromaddress != ""
+    if !@fname.nil? && @fname != "" && !@comments.nil? && @comments != "" && !@fromaddress.nil? && @fromaddress != ""
       @isvalid = true
       @data = {
-        :fname => @name, 
+        :fname => @fname, 
         :fromaddress => @fromaddress, 
         :comments => @comments,
         :phone => @phone
