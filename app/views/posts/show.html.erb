@@ -23,11 +23,16 @@
 		</div>
 	</div><!-- End content Left	 -->
 	<div id="contentRight300">
+		<% unless @categories.nil? %>
 		<div class="rightBoxGreen">
-			<h2>Categories here</h2>
-			
-			</div>
-
+		<h2>See More...</h2>
+		<%@categories.each do |cat|%>
+		<ul class="aboutUsNav">
+			<li><a href="/posts/<%=cat.id%>"><%=cat.categoryname%> Posts</a></li>
+		</ul>
+		<%end%>
+	</div>
+		<%end%>
 	</div><!-- End Content Right -->
 	<div class="clearfix" style="height:40px;"></div>
 </div><!-- End content -->
