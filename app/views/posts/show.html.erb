@@ -25,12 +25,13 @@
 	<div id="contentRight300">
 		<% unless @categories.nil? %>
 		<div class="rightBoxGreen">
-			See More...
-			<% @categories.each do |cat|%>
-			<h2><a href="/posts/?cid=<%=cat.id%>"><%=cat.categoryname%> Posts</a></h2>
-			<%end%>
-			
-		</div>
+		<h2>See More...</h2>
+		<%@categories.each do |cat|%>
+		<ul class="aboutUsNav">
+			<li><a href="/posts/<%=cat.id%>"><%=cat.categoryname%> Posts</a></li>
+		</ul>
+		<%end%>
+	</div>
 		<%end%>
 	</div><!-- End Content Right -->
 	<div class="clearfix" style="height:40px;"></div>
