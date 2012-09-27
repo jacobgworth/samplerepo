@@ -9,9 +9,16 @@
 	<h1><span class="eyebrow">Mission of Hope</span><br />Communities </h1>
 <div id="gridWrapperProjects">
 	<% @communities.each do |community| %>
+		<% @communityimage = community.assets.first%>
 		<% if @itemCount.modulo(2) == 0 %>
 			<div class="grid2x2Left">
-				<div class="gridImage projectsMed" style="background-image: none;')"><a href="/communities/<%=community.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a></div>
+				<div class="gridImage projectsMed" style="background-image: none;')">
+					<% if @communityimage.nil? %>
+						<a href="/communities/<%=community.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a>
+					<% else %>
+						<a href="/communities/<%=community.id%>" style="background-image: url('<%=@communityimage.asset.url(:thumb)%>')"></a>
+					<% end %>
+				</div>
 				<div class="gridText">
 					<h2><a href="/communities/<%=community.id%>"><%=community.communityname%></a></h2>
 					<p><%=truncate(community.overviewdesc,:length=>100,:separator=>' ') %> </p>
@@ -30,7 +37,13 @@
 			</div>
 		<%else%>
 			<div class="grid2x2Right">
-				<div class="gridImage projectsMed" style="background-image: none;')"><a href="/communities/<%=community.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a></div>
+				<div class="gridImage projectsMed" style="background-image: none;')">
+					<% if @communityimage.nil? %>
+						<a href="/communities/<%=community.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a>
+					<% else %>
+						<a href="/communities/<%=community.id%>" style="background-image: url('<%=@communityimage.asset.url(:thumb)%>')"></a>
+					<% end %>
+				</div>
 				<div class="gridText">
 					<h2><a href="/communities/<%=community.id%>"><%=community.communityname%></a></h2>
 										<p><%=truncate(community.overviewdesc,:length=>100,:separator=>' ') %></p>
