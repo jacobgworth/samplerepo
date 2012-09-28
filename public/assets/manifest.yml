@@ -34,6 +34,8 @@ heroAgriculture.jpg: heroAgriculture-cc1f6a3703ce899a62b8941be2e3361e.jpg
 heroChildSponsorship.jpg: heroChildSponsorship-e9bffb97ec7ef33a2c0c6f5460f42a1f.jpg
 heroChurchAdvancement.jpg: heroChurchAdvancement-93edaf80634817c6c3258ea5be152d2a.jpg
 heroChurchofHope.jpg: heroChurchofHope-905024da335d6516185e15b89db6eeea.jpg
+heroClinic.jpg: heroClinic-62104ec1daaf7595f6714c84e7205ea1.jpg
+heroCommHealth.jpg: heroCommHealth-3d02af26494209365e5a2426a4600a75.jpg
 heroConstruction.jpg: heroConstruction-adf96542b83e12c5b6b223e075c38ff6.jpg
 heroEducation.jpg: heroEducation-9a4a91006acfe0ff9481890526ff86ca.jpg
 heroGirl.jpg: heroGirl-82689026eac2eeb88d0281bf5032abf5.jpg
@@ -49,6 +51,7 @@ heroMissions2.jpg: heroMissions2-c8cab701ca703146f5e71552276917ed.jpg
 heroMwemKapab.jpg: heroMwemKapab-a29c0130e57e2133fe1f60984b16f8b6.jpg
 heroNutrition.jpg: heroNutrition-0f03a08fe76f3e01f2b3a857f25eeca1.jpg
 heroOrphan.jpg: heroOrphan-9a88091d3fc3aa063bf37d108f61dbf9.jpg
+heroOurStory.jpg: heroOurStory-ee1248d562895729699466f63736c24f.jpg
 heroProsthetics.jpg: heroProsthetics-f0a0954e39f2fa17d9ad456820f8f4d7.jpg
 heroRibbon.png: heroRibbon-cb05ed7c69af6b8faaa91f1f9c80a888.png
 heroRibbonDiv.png: heroRibbonDiv-4783008ce6b8489d395bef310061ead9.png
@@ -62,6 +65,7 @@ heroVillageSourceMatelas.jpg: heroVillageSourceMatelas-cd3cd5b809b473094351e5bdc
 heroVillageTurpin.jpg: heroVillageTurpin-5b77edab2dcd9a6a402c8979044f81a8.jpg
 heroVillageWilliamson.jpg: heroVillageWilliamson-b4fb56e88ebf3df67225a5cbc334d807.jpg
 heroVillages.jpg: heroVillages-de2ceb95831eccf431aca4609a6b2018.jpg
+heroVisionMissionResolution.jpg: heroVisionMissionResolution-bc181ccc33d402acbf2fd23ff9373b72.jpg
 heroWater.jpg: heroWater-fab75090290fc6dbb192a8a256f9b26a.jpg
 heroWhatWeDo.jpg: heroWhatWeDo-fe2334d3e24eddaa4d60b429f69a1010.jpg
 hopeIcon.png: hopeIcon-a9050c5ff93e5782ba12dae999a19e3a.png
@@ -239,7 +243,7 @@ gmaps4rails/gmaps4rails.openlayers.js: gmaps4rails/gmaps4rails.openlayers-bbf2bb
 jquery-ui.min.js: jquery-ui.min-bcb2f78c9ed3fa2aba736ba6e6b462e1.js
 jquery.min.js: jquery.min-223bff6ea42ed0d5e2b560fdceee811b.js
 application.js: application-05ec02857f4c9bd22d3279a4a4a83238.js
-application.css: application-4d63e091a0d770d318fb3cc6cdf67e65.css
+application.css: application-ad99844141ff1aeb45d94e070229fba7.css
 advancement.js: advancement-c2b0db25c3a77754b130af70a4041844.js
 categories.js: categories-c2b0db25c3a77754b130af70a4041844.js
 category.js: category-c2b0db25c3a77754b130af70a4041844.js
@@ -282,7 +286,7 @@ projects.css: projects-7c92aed0d9ced75baa9ca7d4c44adb74.css
 scaffolds.css: scaffolds-59d873133cf4fb486c4074c62dde5320.css
 sessions.css: sessions-7c92aed0d9ced75baa9ca7d4c44adb74.css
 sponsorship.css: sponsorship-7c92aed0d9ced75baa9ca7d4c44adb74.css
-style.css: style-f8c0e3c2b635d2fe483aa56572801427.css
+style.css: style-4d17a8b75a546eb4a1aef72967fd4830.css
 tags.css: tags-7c92aed0d9ced75baa9ca7d4c44adb74.css
 take_action.css: take_action-7c92aed0d9ced75baa9ca7d4c44adb74.css
 updates.css: updates-7c92aed0d9ced75baa9ca7d4c44adb74.css
