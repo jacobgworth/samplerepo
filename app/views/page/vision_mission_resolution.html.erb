@@ -1,21 +1,15 @@
 <div id="bgHero">
-	<div id="heroAboutUs">
+	<div id="heroVison">
 		<!--x-->
 	</div>
 </div>
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 	<div id="content">
-		<div id="heroContent">
-		
-		<div class="videoWrapper">
-			<iframe src="http://player.vimeo.com/video/30163926" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-		</div>
-	</div>
 		<div id="contentLeft560">
-			<h1><span class="eyebrow">Mission of Hope Haiti </span><br />Vision, Mission, & Resolution</h1>
-<h2>Our mission</h2>
-<p>As an organization following Jesus Christ, we exist to bring life transformation to every man, woman, and child in Haiti. Mission of Hope was founded in 1998, and continues to serve Haiti daily by meeting the physical and spiritual needs of the Haitian population.
+			<h1 style="font-size: 2.2em;"><span class="eyebrow">Mission of Hope Haiti </span><br />Vision, Mission, & Resolutions</h1>
+<h2>Mission</h2>
+<p> As an organization following Jesus Christ, Mission of Hope exists to bring life transformation to every man, woman, and child in Haiti. We desire to serve the nation of Haiti, and see lives changed.
 </p>
 
 <p>Our desire is to serve the nation of Haiti, and see lives changed.  Their passion is to see the hopeless find hope through Jesus Christ, and empower future generations through education to bring their country out of poverty.
@@ -48,28 +42,8 @@
 		</div>
 
 		<div id="contentRight300" style="padding-top: 30px;">
-			<div class="rightBoxGreen">
-			<h2>Learn More About<br />Mission of Hope Haiti</h2>
-			<ul class="aboutUsNav">
-				<li><a href="/about_us">Our Story &amp; Beliefs &raquo;</a></li>
-				<li><a href="/meet_our_staff">Meet Our Staff &raquo;</a></li>
-				<li><a href="/vision_mission_resolution">Vision | Mission | Resolution &raquo;</a></li>
-				<li><a href="/internships">Intern with MOH &raquo;</a></li>
-				<li><a href="/financial_info">Financial Information &raquo;</a></li>
-				<li><a href="/press">Press &raquo;</a></li>
-				<li><a href="/join_our_team">Join Our Team &raquo;</a></li>
-				<li><a href="/about_haiti">About Haiti &raquo;</a></li>
-				<li><a href="/faq">FAQs &raquo;</a></li>
-				<li><a href="/contact_us">Contact Us &raquo;</a></li>
-			</ul>
-			</div>
-		</div>
-		<!--<h1>Ministry of Hope Haiti Redesign Project</h1>
-
-		<div><h2>Click to see a map of our <a href="/communities/">Mission of Hope communities in Haiti</a></h2></div>
-		<div><h2>Click to see a map of our <a href="/projects/">ongoing Mission of Hope Projects in Haiti</a></h2></div>
-		-->
-		
+			<%= render '/layouts/aboutNav' %>
+		</div>		
 			<div class="clearfix" style="height:40px;">
 				<!--x-->
 			</div>
