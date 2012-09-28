@@ -2655,12 +2655,18 @@ top: -9000px;
 .forms .field input{
 	width:100%;
 }
+.forms{
+	background-color:#ccb99a;
+	border:1px solid #c2b092;
+	padding-left:20px;
+	padding-right:47px;
+}
 .checkbox{
 	float: left;
 	padding-left:10px;
 }
 .city{
-	width:45%;
+	width:43%;
 	padding-right:40px;
 	float: left;
 }
