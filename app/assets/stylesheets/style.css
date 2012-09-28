@@ -265,6 +265,33 @@ span.eyebrow {
 	background-size: cover;
 }
 
+#heroOurStory{
+	width:100%;
+	height:100%;
+	background: url(/assets/heroOurStory.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#heroClinic{
+	width:100%;
+	height:100%;
+	background: url(/assets/heroClinic.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#heroCommunityHealth{
+	width:100%;
+	height:100%;
+	background: url(/assets/heroCommHealth.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
 #heroProsthetics{
 	width:100%;
 	height:100%;
