@@ -666,8 +666,8 @@ span.eyebrow {
 #sponIconsList ul{
 	font-family: 'Montserrat', sans-serif;
 	text-transform:uppercase;
-	color:#182E2C;
-	font-size:.85em;
+	color:#079367;
+	font-size:1em;
 }
 #sponIconsList li{
 	float:left;
@@ -1055,7 +1055,7 @@ h3.CTA {
 	position:relative;
 }
 #content .rightBoxGreen h2{
-	font-size: 1em;
+	font-size: 1.5em;
 	padding:8px 0 0 0;
 	color:#e4d4b9;
 	text-transform: uppercase;
@@ -1066,8 +1066,7 @@ h3.CTA {
 	padding-bottom:0px;
 }
 #content .rightBoxGreen p {
-	line-height:16px;
-	font-size:.85em;
+	font-size:.9em;
 	color:#0f483b;
 	font-family: 'Montserrat', sans-serif;
 }
@@ -1080,17 +1079,17 @@ h3.CTA {
 	margin-bottom:20px;
 }
 #content .rightBox h2{
-	font-size: 2em;
+	font-size: 1.75em;
 	padding:8px 0;
 	text-transform: uppercase;
 }
 #content .rightBox h3{
-	font-size:1em;
+	font-size:1.25em;
 	padding-bottom:0px;
 }
 #content .rightBox p {
 	line-height:16px;
-	font-size:.8em;
+	font-size:1em;
 	color:#0f483b;
 	font-family: 'Montserrat', sans-serif;
 }
@@ -1274,12 +1273,20 @@ h3.CTA {
 
 #contentLeft560 h2 {
 	font-size:2em;
-	padding:20px 0;
+	padding:20px 0 0 0;
 }
 
 #contentLeft560 h3 {
 	font-size:1.5em;
-	padding:20px 0;
+	padding:20px 0 0 0;
+	color:#079367;
+
+}
+#contentLeft560 h4 {
+	color:#079367;
+	text-transform:uppercase;
+	font-size:1.25em;
+	margin-top:20px;
 }
 
 #contentLeft440 {
@@ -1329,12 +1336,6 @@ h3.CTA {
 	width:560px;
 }
 
-#contentLeft560 h4 {
-	color:#0f483b;
-	text-transform:uppercase;
-	font-size:1.25em;
-	margin-top:20px;
-}
 
 .giftWrapper {
 	margin-top:20px;
@@ -1427,13 +1428,13 @@ h3.CTA {
 #contentRight300 h2 {
 	color:#0f483b;
 	text-transform:uppercase;
-	font-size:1.25em;
+	font-size:1.5em;
 }
 
 #contentRight300 h3 {
 	color:#0f483b;
 	text-transform:uppercase;
-	font-size:1.25em;
+	font-size:1.5em;
 }
 
 #contentRight300 h4 {
@@ -1483,7 +1484,7 @@ h3#missionStatement {
 	padding:8px;
 	color:#e4d4b9;
 	text-transform:uppercase;
-	font-size:.7em;
+	font-size:.9em;
 	margin-top:10px;
 }
 
@@ -1568,12 +1569,14 @@ span.darkGreenMedium a:link, span.darkGreenMedium a:visited, span.darkGreenMediu
 span.darkGreenLarge, span.darkGreenLarge a:link, span.darkGreenLarge a:visited {
 	color:#0f483b;
 	font-weight:bold;
-	font-size:200%;
+	font-size:120%;
 	text-transform:none;
+	display:block;
+	width:80px;
 }
 
 span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a:hover {
-	font-size:100%;
+	font-size:120%;
 }
 
 .divHeader {
@@ -1960,6 +1963,28 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 
 .statsBox .last {
+	margin-right:0;
+}
+
+.statsBoxWide {
+	float:left;
+	width:240px;
+	background:#079367;
+	margin-right:20px;
+	margin-bottom:20px;
+	padding:10px;
+	color:#E4D4B9;
+	height: 52px;
+	text-align:center;
+	font-family: 'Montserrat', sans-serif;
+	text-shadow: 0 -.05em #000;
+	
+	-moz-box-shadow: 3px 3px #056346;
+	-webkit-box-shadow: 3px 3px #056346;
+	box-shadow: 3px 3px #056346;
+}
+
+.statsBoxWide .last {
 	margin-right:0;
 }
 
@@ -2497,8 +2522,10 @@ top: -9000px;
 .healthCareBottom{
 	font-size:54px;
 }
-.updatesWrapper h3{
-	font-size: 1.77em;
+#contentLeft560 .updatesWrapper h3{
+	font-size: 2em;
+	color:#0f483b;
+
 }
 .whatWeDoTop{
 	font-size:4.45em;
@@ -2653,7 +2680,7 @@ top: -9000px;
 	font-family: 'Montserrat', sans-serif;
 	margin-left:-30px;
 	margin-top:2px;
-	font-size:.85em;
+	font-size:.95em;
 }
 .aboutUsNav a{
 	color:#0f483b;
@@ -2668,7 +2695,7 @@ top: -9000px;
 	font-family: 'Montserrat', sans-serif;
 	margin-left:-30px;
 	margin-top:2px;
-	font-size:.85em;
+	font-size:.95em;
 }
 
 #content .rightColNav ul {

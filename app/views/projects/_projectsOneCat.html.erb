@@ -18,7 +18,10 @@
 			</div>
 		<%else%>
 			<div class="grid2x2Right">
-				
+				<div class="gridImage">
+					<%unless project.assets.first.nil?%>
+						<img style="border:1px solid #C2B092" src="<%=project.assets.first.asset.url(:thumb)%>" />
+					<%end%></div>
 				<div class="gridText">
 					<%unless project.assets.first.nil?%>
 						<p><img src="<%=project.assets.first.asset.url(:thumb)%>" /></p>
