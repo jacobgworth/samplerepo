@@ -314,7 +314,7 @@ class PageController < ApplicationController
     end
   end
   
-  def take_a_trip
+  def request_info
     @fname = params[:fname]
     @comments = params[:letter]
     @fromaddress = params[:email]

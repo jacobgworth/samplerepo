@@ -131,8 +131,8 @@ Mohhaiti::Application.routes.draw do
   get "page/preparing_for_mission_trips"
   match "/preparing_for_mission_trips" => "page#preparing_for_mission_trips"
      
-  get "page/take_a_trip"
-  match "/take_a_trip" => "page#take_a_trip"
+  get "page/request_info"
+  match "/request_info" => "page#request_info"
      
   get "page/trip_costs"
   match "/trip_costs" => "page#trip_costs"
