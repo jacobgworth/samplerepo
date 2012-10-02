@@ -65,39 +65,6 @@
 				<br />
 				<span class="darkGreenLarge"><%= @projectscount %></span><br /><br /><a href="">View all projects &raquo;</a></h3>
 			</div>
-			<h3><span class="eyebrow"><%= @community.communityname%></span>
-				<br />
-				Photos</h3>
-
-				<div id="divImgThumbs">
-					<div id="gallery" class="ad-gallery">
-						<div class="ad-image-wrapper">
-							<div class="ad-image shadow"></div>
-						</div><!--wrapper-->
-						<div class="ad-controls"></div><!--controls-->
-						<div class="ad-nav">
-							<div class="ad-back"></div>
-							<div class="ad-thumbs">
-								&nbsp;
-								<ul class="ad-thumb-list">
-									<% if @assets.count > 0
-									@counter = 0
-									@assets.each do |photo|
-									@classname = "image" + @counter.to_s
-									%>
-									<!--<p><%= image_tag photo.asset.url(:medium) %></p>-->
-									<li >
-										<a href="<%= photo.asset.url(:medium)%>"><img src="<%= photo.asset.url(:thumb) %>" alt="" title="" longdesc="" class="<%= @classname%>" style="width:65px;" /></a>
-									</li>
-									<% @counter = @counter + 1%>
-									<% end %>
-									<% end %>
-								</ul>
-							</div>
-							<div class="ad-forward"></div>
-						</div><!--adnav-->
-					</div><!--gallery-->
-				</div><!--thumbs-->
 			<div class="clearfix">
 				<!--x-->
 			</div>
@@ -244,7 +211,7 @@
 					<div class="updatePost560">
 						<h4><a href=""><%= m.title%></a></h4>
 						<p>
-							<%= truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a>
+							<%= truncate(m.body,:length=>100,:separator=>' ').html_safe %> <a href="">READ MORE</a>
 						</p>
 						<p class="meta">
 							Projects: Project Name | Posted by: <%= creator%>
