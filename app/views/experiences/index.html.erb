@@ -14,7 +14,7 @@
   			Posted by <%= experience.author%>:<br />
   			<%= experience.description %>
   			<% if !@user.nil? && @user.is_admin? %>
-  				<%= link_to 'Edit', edit_experience_path(experience)%>
+  				<%= link_to 'Edit', edit_experience_path(experience)%> | <%= link_to 'Delete', experience, confirm: 'Are you sure?', method: :delete %>
   			<%end%>
   		</div>
   	<%end%>
