@@ -55,7 +55,7 @@
   	Select Village:<br /> <%= collection_select 'project', 'community_ids', Community.order("communityname asc"), :id, :communityname, { :include_blank => 'None'}, { :multiple => true, :communityname =>'project[community_ids][]',:selected => 0 } %>
   </div>
   <p><br /></p>
-  <div>Add image(s):
+  <div>Add image(s):<br />Images must be resized to 300px x 200px for optimal display.
   <%= f.fields_for :assets do |asset_fields| %>
   	<% if asset_fields.object.new_record? %>
   		<p>
