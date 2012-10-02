@@ -4,7 +4,7 @@ class Experience < ActiveRecord::Base
   
   has_many :assets
   
-  attr_accessible :photo,:headline,:summary,:description,:user_id,:assets_attributes
+  attr_accessible :photo,:headline,:summary,:description,:user_id,:assets_attributes,:author
   
   
   
