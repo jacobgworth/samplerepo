@@ -1,4 +1,4 @@
-
+<%if @projects.count > 0%>
 <div class="updatesWrapper"><!--Projects-->
 	<h3><span class="eyebrow"><%=@category.categoryname%></span><br />Projects</h3>
 	<div class="speechBubble"><p>projects under way</p></div>	
@@ -38,7 +38,8 @@
 		<div class="update560">No Current <%=@category.categoryname%> Projects <div class="clearfix"><!--x--></div></div>
 	<% end %>
 </div>
-
+<% end %>
+<%if @updates.count > 0%>
 <div class="updatesWrapper"><!--Updates-->
 	<h3><span class="eyebrow"><%=@category.categoryname%></span><br />Updates</h3>
 	<div class="speechBubble"><p>latest updates</p></div>
@@ -77,7 +78,8 @@
 	<div class="update560">No <%=@category.categoryname%> Updates</div>
 <%end%>
 </div>
-
+<%end%>
+<% if @posts.count > 0%>
 <div class="updatesWrapper"><!--Posts-->
 	<h3><span class="eyebrow"><%=@category.categoryname%></span><br />Blog Posts</h3>
 	<div class="speechBubble"><p>latest posts</p></div>	
@@ -116,3 +118,4 @@
 			<div class="update560">No <%=@category.categoryname%> Blog Posts</div>
 		<%end%>
 </div>
+<%end%>

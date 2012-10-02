@@ -10,10 +10,11 @@
 <% @experiences.each do |experience| %>
 	<% if experience.photo.exists? %>
 		<div class="item">
-  			<%= image_tag experience.photo.url(:medium),:title=>experience.summary,:alt=>experience.summary  %>
-  			<%= experience.summary %>
+  			<%= image_tag experience.photo.url(:medium),:title=>experience.description,:alt=>experience.description  %>
+  			Posted by <%= experience.author%>:<br />
+  			<%= experience.description %>
   			<% if !@user.nil? && @user.is_admin? %>
-  				<%= link_to 'Edit', edit_experience_path(experience)%>
+  				<%= link_to 'Edit', edit_experience_path(experience)%> | <%= link_to 'Delete', experience, confirm: 'Are you sure?', method: :delete %>
   			<%end%>
   		</div>
   	<%end%>
