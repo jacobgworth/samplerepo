@@ -70,6 +70,7 @@
 			</div>
 		</div>
 		<div id="contentLeft560">
+			<%if @projects.count > 0%>
 			<div class="updatesWrapper">
 				<!--Projects-->
 				<h3><span class="eyebrow"><%= @community.communityname%></span>
@@ -125,7 +126,8 @@
 				</div>
 				<% end %>
 			</div>
-
+			<%end%>
+			<%if @updates.count > 0%>
 			<div class="updatesWrapper">
 				<!--Updates-->
 				<h3><span class="eyebrow"><%= @community.communityname%></span>
@@ -178,7 +180,8 @@
 				</div>
 				<%end%>
 			</div>
-
+			<%end%>
+			<% if @posts.count > 0%>
 			<div class="updatesWrapper">
 				<!--Posts-->
 				<h3><span class="eyebrow"><%= @community.communityname%></span>
@@ -231,7 +234,7 @@
 				</div>
 				<%end%>
 			</div>
-
+			<%end%>
 		</div>
 		<div id="contentRight300">
 			<div class="contentRightWrapper">
