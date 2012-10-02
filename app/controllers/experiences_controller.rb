@@ -58,7 +58,7 @@ layout "applicationWithMasonry"
 
     respond_to do |format|
       if @experience.save
-        format.html { redirect_to @experience, notice: 'Experience was successfully created.' }
+        format.html { redirect_to '/experiences', notice: 'Experience was successfully created.' }
         format.json { render json: @experience, status: :created, location: @experience }
       else
         format.html { render action: "new" }
