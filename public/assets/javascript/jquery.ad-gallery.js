@@ -15,7 +15,7 @@
                      thumb_opacity: 0.7,
                      animate_first_image: false,
                      animation_speed: 400,
-                     width: 300,
+                     width: false,
                      height: false,
                      display_next_and_prev: true,
                      display_back_and_forward: true,
@@ -101,7 +101,7 @@
   function ResizeAnimation(img_container, direction, desc) {
     var image_width = img_container.width();
     var image_height = img_container.height();
-    var current_left = parseInt(img_container.css('left'), 10);
+    var current_left = parseInt(img_container.css('left'), '15px');
     var current_top = parseInt(img_container.css('top'), 10);
     img_container.css({width: 0, height: 0, top: this.image_wrapper_height / 2, left: this.image_wrapper_width / 2});
     return {old_image: {width: 0,
@@ -491,7 +491,7 @@
      * it in the middle anyway
      */
     _centerImage: function(img_container, image_width, image_height) {
-      img_container.css('top', '0px');
+      img_container.css('top', '10px');
       if(image_height < this.image_wrapper_height) {
         var dif = this.image_wrapper_height - image_height;
         img_container.css('top', (dif / 2) +'px');

@@ -23,9 +23,6 @@
 						<img style="border:1px solid #C2B092" src="<%=project.assets.first.asset.url(:thumb)%>" />
 					<%end%></div>
 				<div class="gridText">
-					<%unless project.assets.first.nil?%>
-						<p><img src="<%=project.assets.first.asset.url(:thumb)%>" /></p>
-					<%end%>
 					<h2><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h2>
 					<p><%=project.goal%></p>
 					<h3 class="projectDetailButton">Village Served <span class="darkGreen"><%=project.communities.first.communityname unless project.communities.first.nil?%></span></h3>
