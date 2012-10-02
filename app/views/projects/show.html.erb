@@ -1,10 +1,10 @@
 <div id="bgHero">
-	<%if !@category.nil? && !@category.categoryhero.nil? && @category.categoryhero != '' %>
-		<div id="advancementHeroImg" style="background: url(/assets/<%=@category.categoryhero%>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;">
+	<%if !@project.nil? && !@project.heroimage.nil? && @project.heroimage != '' %>
+		<div id="advancementHeroImg" style="background: url(/assets/<%=@project.heroimage%>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;">
 		<!--x-->
 		</div>
 	<%else%>
-		<div id="advancementHeroImg">
+		<div id="heroCommunitiesImg">
 		<!--x-->
 		</div>
 	<%end%>
@@ -65,7 +65,7 @@
 			</div>
 		</div>
 			<div id="contentLeft560">
-
+			<% if @updates.count > 0 %>
 			<div class="updatesWrapper">
 				<h3><span class="eyebrow"><%= @project.projectname %></span>
 				<br />
@@ -101,7 +101,7 @@
 					<div class="updatePost560">
 						<h4><a href=""><%= m.title%></a></h4>
 						<p>
-							<%= truncate(m.body,:length=>100,:separator=>' ')%> <a href="/updates/<%= m.id%>">READ MORE</a>
+							<%= truncate(m.body,:length=>100,:separator=>' ').html_safe%> <a href="/updates/<%= m.id%>">READ MORE</a>
 						</p>
 						<p class="meta">
 							Projects: <%= @project.projectname %> | Posted by: <%= creator%>
@@ -116,7 +116,9 @@
 				</div>
 				<% end %>
 			</div>
+			<%end%>
 			<!--start posts-->
+			<% if @posts.count > 0 %>
 			<div class="updatesWrapper">
 				<h3><span class="eyebrow"><%= @project.projectname %></span>
 				<br />
@@ -167,6 +169,7 @@
 				</div>
 				<%end%>
 			</div>
+			<%end%>
 		</div>
 		<div id="contentRight300">
 
