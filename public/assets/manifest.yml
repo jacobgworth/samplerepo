@@ -28,6 +28,7 @@ gr-icon-student-sponsorship-med.png: gr-icon-student-sponsorship-med-2e0b279c530
 greenBG.png: greenBG-1a107c68d79165d24c9ae0cdf1de42bb.png
 haitiBG.png: haitiBG-34e4e0ac68a63c52eea4d6840dea5eb8.png
 healthcareInfographic.png: healthcareInfographic-e5b08673ab8d1abced347821f67e3b89.png
+hero-project-leveque-church.jpg: hero-project-leveque-church-97c16d08ab4ae1dfa6595b308f30800a.jpg
 hero3Cords.jpg: hero3Cords-08f0d567c27e6ec36fb2b4845f6ab3ea.jpg
 heroAbout.jpg: heroAbout-4ed8166344116f5f8843f9e0d9edeadf.jpg
 heroAdvancement.jpg: heroAdvancement-706c8cced8896d40668d90d867e5d87f.jpg
@@ -252,7 +253,7 @@ gmaps4rails/gmaps4rails.openlayers.js: gmaps4rails/gmaps4rails.openlayers-bbf2bb
 jquery-ui.min.js: jquery-ui.min-bcb2f78c9ed3fa2aba736ba6e6b462e1.js
 jquery.min.js: jquery.min-223bff6ea42ed0d5e2b560fdceee811b.js
 application.js: application-05ec02857f4c9bd22d3279a4a4a83238.js
-application.css: application-db947e409186c79651f8a5fdcd018302.css
+application.css: application-02c4a010269bd50c73dc8c064e4932d8.css
 advancement.js: advancement-c2b0db25c3a77754b130af70a4041844.js
 categories.js: categories-c2b0db25c3a77754b130af70a4041844.js
 category.js: category-c2b0db25c3a77754b130af70a4041844.js
@@ -295,7 +296,7 @@ projects.css: projects-7c92aed0d9ced75baa9ca7d4c44adb74.css
 scaffolds.css: scaffolds-59d873133cf4fb486c4074c62dde5320.css
 sessions.css: sessions-7c92aed0d9ced75baa9ca7d4c44adb74.css
 sponsorship.css: sponsorship-7c92aed0d9ced75baa9ca7d4c44adb74.css
-style.css: style-7d0d1eabd3d0a0a8745d37b2535fb5cb.css
+style.css: style-ae8a59b733f632890d375192915f6e3b.css
 tags.css: tags-7c92aed0d9ced75baa9ca7d4c44adb74.css
 take_action.css: take_action-7c92aed0d9ced75baa9ca7d4c44adb74.css
 updates.css: updates-7c92aed0d9ced75baa9ca7d4c44adb74.css
