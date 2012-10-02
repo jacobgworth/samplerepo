@@ -8,6 +8,7 @@ class PostsController < ApplicationController
       @posts = Post.order('postdate desc')
     else
       @posts = Post.joins(:categories).where("category_id=" + @cid).order('postdate desc')
+      @category = Category.find(@cid)
     end
     @categories = Category.order("categoryname asc")
     respond_to do |format|
