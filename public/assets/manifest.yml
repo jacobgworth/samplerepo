@@ -117,6 +117,8 @@ icon-student-sponsorship.png: icon-student-sponsorship-37372189e32403a9effb10fe2
 icon-twitter.png: icon-twitter-09f92b3e1cfd3942deb154bfcd1b0c61.png
 icon-villages-mini.png: icon-villages-mini-7201a077e834d5dabb00515795037745.png
 icon-vimeo.png: icon-vimeo-594369ff2a4089b234b59e71d5a39915.png
+icon-volunteer-med-hover.png: icon-volunteer-med-hover-0f691b17fb7e7b417e2432be6d715686.png
+icon-volunteer-med.png: icon-volunteer-med-0e33b5463d893494fc61bc49f3e2b585.png
 icon-water.png: icon-water-88ab448853ee5c910c51d95680ce9f4c.png
 iconQuestions.png: iconQuestions-01bd3bb52cf2bc304dbedad310f53d70.png
 iconShop.png: iconShop-60c15264d97809742120f0c2fc5dcad3.png
@@ -256,7 +258,7 @@ gmaps4rails/gmaps4rails.openlayers.js: gmaps4rails/gmaps4rails.openlayers-bbf2bb
 jquery-ui.min.js: jquery-ui.min-bcb2f78c9ed3fa2aba736ba6e6b462e1.js
 jquery.min.js: jquery.min-223bff6ea42ed0d5e2b560fdceee811b.js
 application.js: application-bb7a410ddcc741f05f5b6ca91ed402d2.js
-application.css: application-d8ce7cad386bdf8b7cf52d70fd532234.css
+application.css: application-680fb11ed0a24fede4292467c94f46ad.css
 advancement.js: advancement-c2b0db25c3a77754b130af70a4041844.js
 categories.js: categories-c2b0db25c3a77754b130af70a4041844.js
 category.js: category-c2b0db25c3a77754b130af70a4041844.js
@@ -299,7 +301,7 @@ projects.css: projects-7c92aed0d9ced75baa9ca7d4c44adb74.css
 scaffolds.css: scaffolds-59d873133cf4fb486c4074c62dde5320.css
 sessions.css: sessions-7c92aed0d9ced75baa9ca7d4c44adb74.css
 sponsorship.css: sponsorship-7c92aed0d9ced75baa9ca7d4c44adb74.css
-style.css: style-06ee2ea213729566453687f863c94090.css
+style.css: style-96c5baaf163d6cdd3c324e9e23338be1.css
 tags.css: tags-7c92aed0d9ced75baa9ca7d4c44adb74.css
 take_action.css: take_action-7c92aed0d9ced75baa9ca7d4c44adb74.css
 updates.css: updates-7c92aed0d9ced75baa9ca7d4c44adb74.css
