@@ -22,6 +22,8 @@ class PostsController < ApplicationController
   def show
     @isadmin = is_admin_user?
     @post = Post.find(params[:id])
+    @title = @post.metatitle
+    @meta = @post.metadescription
     @assets = @post.assets.all
     @categories = Category.order("categoryname asc")
 
