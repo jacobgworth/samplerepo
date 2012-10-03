@@ -214,7 +214,7 @@
 					<div class="updatePost560">
 						<h4><a href="/posts/<%=m.id%>"><%= m.title%></a></h4>
 						<p>
-							<%= truncate(m.body,:length=>100,:separator=>' ').html_safe %> <a href="/posts/<%=m.id%>">READ MORE</a>
+							<%= truncate(m.metadescription,:length=>100,:separator=>' ') %> <a href="/posts/<%=m.id%>">READ MORE</a>
 						</p>
 						<p class="meta">
 							Projects: Project Name | Posted by: <%= creator%>
