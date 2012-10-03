@@ -29,6 +29,8 @@ greenBG.png: greenBG-1a107c68d79165d24c9ae0cdf1de42bb.png
 haitiBG.png: haitiBG-34e4e0ac68a63c52eea4d6840dea5eb8.png
 healthcareInfographic.png: healthcareInfographic-e5b08673ab8d1abced347821f67e3b89.png
 hero-project-leveque-church.jpg: hero-project-leveque-church-97c16d08ab4ae1dfa6595b308f30800a.jpg
+hero-project-leveque-moh500.jpg: hero-project-leveque-moh500-4b618edd7a410ac668db2e58f28d0815.jpg
+hero-project-leveque-water.jpg: hero-project-leveque-water-a394776606500f35f7ae009c45efa6d9.jpg
 hero3Cords.jpg: hero3Cords-08f0d567c27e6ec36fb2b4845f6ab3ea.jpg
 heroAbout.jpg: heroAbout-4ed8166344116f5f8843f9e0d9edeadf.jpg
 heroAdvancement.jpg: heroAdvancement-706c8cced8896d40668d90d867e5d87f.jpg
@@ -119,6 +121,7 @@ icon-water.png: icon-water-88ab448853ee5c910c51d95680ce9f4c.png
 iconQuestions.png: iconQuestions-01bd3bb52cf2bc304dbedad310f53d70.png
 iconShop.png: iconShop-60c15264d97809742120f0c2fc5dcad3.png
 iconWrite.png: iconWrite-3094c1c8de0ff5a16284554988f98475.png
+inset-vision-trip.jpg: inset-vision-trip-006923ce33d1b1323fbe29e4ca3b1ae9.jpg
 learnSponsorButton.png: learnSponsorButton-d9cdd1b1fecadf3cd3bb2c177c035eea.png
 logo.png: logo-0304a78e2e21375c7c4d3719be9c901c.png
 logoFooter.png: logoFooter-d1a530510f5913615490efce65fb87d7.png
@@ -253,7 +256,7 @@ gmaps4rails/gmaps4rails.openlayers.js: gmaps4rails/gmaps4rails.openlayers-bbf2bb
 jquery-ui.min.js: jquery-ui.min-bcb2f78c9ed3fa2aba736ba6e6b462e1.js
 jquery.min.js: jquery.min-223bff6ea42ed0d5e2b560fdceee811b.js
 application.js: application-bb7a410ddcc741f05f5b6ca91ed402d2.js
-application.css: application-02c4a010269bd50c73dc8c064e4932d8.css
+application.css: application-d8ce7cad386bdf8b7cf52d70fd532234.css
 advancement.js: advancement-c2b0db25c3a77754b130af70a4041844.js
 categories.js: categories-c2b0db25c3a77754b130af70a4041844.js
 category.js: category-c2b0db25c3a77754b130af70a4041844.js
@@ -296,7 +299,7 @@ projects.css: projects-7c92aed0d9ced75baa9ca7d4c44adb74.css
 scaffolds.css: scaffolds-59d873133cf4fb486c4074c62dde5320.css
 sessions.css: sessions-7c92aed0d9ced75baa9ca7d4c44adb74.css
 sponsorship.css: sponsorship-7c92aed0d9ced75baa9ca7d4c44adb74.css
-style.css: style-ae8a59b733f632890d375192915f6e3b.css
+style.css: style-06ee2ea213729566453687f863c94090.css
 tags.css: tags-7c92aed0d9ced75baa9ca7d4c44adb74.css
 take_action.css: take_action-7c92aed0d9ced75baa9ca7d4c44adb74.css
 updates.css: updates-7c92aed0d9ced75baa9ca7d4c44adb74.css
