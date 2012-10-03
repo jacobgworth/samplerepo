@@ -15,7 +15,7 @@
 				<%@topupdate.each do |m|%>
 					<p class="news">
 						<a href="/updates/">
-						<%=truncate(m.body,:length=>40,:separator=>' ')%></a></p> 
+						<%=truncate(m.body,:length=>40,:separator=>' ').html_safe %></a></p> 
 				<%end%>
 			<%end%>
 		</div>
@@ -81,7 +81,7 @@
 			</div>
 			<div class="updatePost">
 				<h4><%=m.title%></h4>
-				<p><%=truncate(m.body,:length=>100,:separator=>' ')%> <a href="">READ MORE</a></p>
+				<p><%=truncate(m.body,:length=>100,:separator=>' ').html_safe %> <a href="/updates">Read More</a></p>
 				<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
 			</div>
 			<div class="clearfix"><!--x--></div>
