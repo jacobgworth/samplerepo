@@ -118,7 +118,7 @@
 			</div>
 			<%end%>
 			<!--start posts-->
-			<% if @posts.count > 0 %>
+			
 			<div class="updatesWrapper">
 				<h3><span class="eyebrow"><%= @project.projectname %></span>
 				<br />
@@ -130,12 +130,10 @@
 						posts
 					</p>
 				</div>
-				<% if @posts.count == 0 %>
-					<div class="update560">No posts for <%= @project.projectname %></div>
-				<%else%>
 				<%@posts.each do |m|%>
-				<div class="update560">
-					<div class="updateDate">
+				<!--problem start-->
+					<div class="update560">
+						<div class="updateDate">
 						<%
 						 created = m.postdate
 						              creator = "-"
@@ -145,31 +143,32 @@
 						                creator = m.user.first
 						              end
 						%>
-						<span class="month"><%= created.strftime("%b") unless created.nil? %></span>
-						<br />
-						<span class="date"><%= created.strftime("%d") unless created.nil? %></span>
-						<br />
-						<span class="year"><%= created.strftime("%Y") unless created.nil? %></span>
+							<span class="month"><%= created.strftime("%b") unless created.nil? %></span>
+							<br />
+							<span class="date"><%= created.strftime("%d") unless created.nil? %></span>
+							<br />
+							<span class="year"><%= created.strftime("%Y") unless created.nil? %></span>
+						</div>
+						<div class="updatePost560">
+							<h4><a href="/posts/<%= m.id%>"><%= m.title%></a></h4>
+							<p>
+								<%= truncate(m.metadescription,:length=>100,:separator=>' ')%> <a href="/posts/<%= m.id%>">READ MORE</a>
+							</p>
+							<p class="meta">
+								Posted by: <%= m.author%>
+							</p>
+						</div>
+						<div class="clearfix"></div>
 					</div>
-					<div class="updatePost560">
-						<h4><a href="/posts/<%= m.id%>"><%= m.title%></a></h4>
-						<p>
-							<%= truncate(m.body,:length=>100,:separator=>' ').html_safe%> <a href="/posts/<%= m.id%>">READ MORE</a>
-						</p>
-						<p class="meta">
-							Posted by: <%= m.author%>
-						</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
+				<!--problemend-->
 				<%end%>
 				
 				<div class="updateNavRight">
 					<a href="/posts/">View All Posts &raquo;</a>
 				</div>
-				<%end%>
+				
 			</div>
-			<%end%>
+			
 		</div>
 		<div id="contentRight300">
 
