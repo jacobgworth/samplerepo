@@ -9,7 +9,9 @@
 <p>
   <%= @update.body %>
 </p>
-<h3 style="width:295px;" class="projectDetailButton"><strong>Project Type:</strong><a href="/projects/?cid=<%=@update.categories.first.id%>"> <%=@update.categories.first.categoryname%></a></h3>
+<% unless @update.categories.count == 0%>
+<h3 style="width:295px;" class="projectDetailButton"><strong>Category:</strong><a> <%=@update.categories.first.categoryname%></a></h3>
+<% end %>
 <p>
   <%= @update.media %>
 </p>
