@@ -968,7 +968,7 @@ html[xmlns] #nav {
 }
 
 .superColumn h2 {
-	margin-top: 250px;
+	margin-top: 10px;
 	font-size: 1.35em;
 	color: #0f483b;
 	text-transform: uppercase;
@@ -985,17 +985,43 @@ h3.CTA {
 	text-transform: uppercase;
 }
 
-.churchAdvancement {
+.churchAdvancement a {
 	background: url(/assets/icon-church-advancement.png) top center no-repeat;
+	display:block;
+	height:236px;
+	width:236px;
+	margin:auto;
 }
 
-.studentSponsorship {
+.churchAdvancement a:hover {
+	background: url(/assets/icon-church-advancement-hover.png) top center no-repeat;
+}
+
+
+.studentSponsorship a {
 	background: url(/assets/icon-student-sponsorship.png) top center no-repeat;
+	display:block;
+	height:236px;
+	width:236px;
+	margin:auto;
 }
 
-.missionTrips {
-	background: url(/assets/icon-mission-trips.png) top center no-repeat;
+.studentSponsorship a:hover {
+	background: url(/assets/icon-student-sponsorship-hover.png) top center no-repeat;
 }
+
+.missionTrips a {
+	background: url(/assets/icon-mission-trips.png) top center no-repeat;
+	display:block;
+	height:236px;
+	width:236px;
+	margin:auto;
+}
+
+.missionTrips a:hover {
+	background: url(/assets/icon-mission-trips-hover.png) top center no-repeat;
+}
+
 #contentHaitiOne {
 	margin-top: 520px;
 	width: 560px;
@@ -2680,6 +2706,10 @@ span.year {
 }
 .aboutUsNav a:hover {
 	color: #182e2c;
+}
+
+li.activeSidebar {
+	font-weight:bold;
 }
 #content .aboutUsNav li {
 	padding: 7px 0 0 0;

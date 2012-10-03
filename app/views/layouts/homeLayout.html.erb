@@ -66,7 +66,14 @@
 			<li><a href="/church_advancement">Churches &raquo;</a></li>
 		</ul>
 	</div>
-	<p>&copy;<%= Date.today.year %> Mission of Hope Haiti // <a href="http://threetwelvecreative.com" target="_blank" ">Website design & development by ThreeTwelve Creative</a></p>
+	<p>&copy;<%= Date.today.year %> Mission of Hope Haiti // <% if current_user && current_user.is_admin? %>
+    			<a href="/console">Admin</a> // <%= link_to "Logout", log_out_path %>
+			<% elsif current_user %>
+    			<%= link_to "Logout", log_out_path %>
+    			
+  			<% else %>
+  					<%= link_to "Site Login", log_in_path %>
+   			<% end %> // <a href="http://threetwelvecreative.com" target="_blank">Website design & development by ThreeTwelve Creative</a></p>
 </div>
 </div>
 <div id="footer">
@@ -74,3 +81,5 @@
 </div>
 </body>
 </html>
+
+
