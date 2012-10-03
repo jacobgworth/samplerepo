@@ -63,9 +63,10 @@
 			<div class="rightBoxGreen">
 				<h2>See Posts From...</h2>
 				<% @months.uniq.each do |post|%>
+					<% @datetime = DateTime.strptime(post,'%B %Y')%>
 				<ul class="aboutUsNav">
 					<li>
-						<a><%= post%></a>
+						<a href="/posts/?mid=<%=@datetime.strftime('%m-%Y')%>"><%= post%></a> 
 					</li>
 				</ul>
 				<%end%>

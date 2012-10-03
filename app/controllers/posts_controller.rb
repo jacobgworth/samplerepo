@@ -3,9 +3,13 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @cid = params[:cid]
+    @mid = params[:mid]
     @user = current_user
-    if @cid.nil?
+    if @cid.nil? && @mid.nil?
       @posts = Post.order('postdate desc')
+    elsif !@mid.nil?
+      @month = DateTime.strptime(@mid,'%m-%Y')
+      @posts = Post.order("postdate desc").where("postdate >= ? and postdate <= ?",@month.beginning_of_month,@month.end_of_month)
     else
       @posts = Post.joins(:categories).where("category_id=" + @cid).order('postdate desc')
       @category = Category.find(@cid)

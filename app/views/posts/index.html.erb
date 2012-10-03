@@ -3,7 +3,11 @@
 <div id="content" style="padding-top: 30px;">
 	<div id="contentLeft560">
 	<h1><span class="eyebrow">Mission of Hope Haiti</span><br />
-		<%unless @category.nil?%><%=@category.categoryname%><br /><%end%>Blog Posts</h1>
+		<%if !@category.nil?%>
+			<%=@category.categoryname%><br />
+		<%elsif !@month.nil?%>
+			<%=@month.strftime('%B %Y')%><br />
+		<%end%>Blog Posts</h1>
 <% if !@user.nil? && @user.is_admin == 1%>
 <h3><%= link_to 'Write a New Post', new_post_path %></h3>
 <%end%>
