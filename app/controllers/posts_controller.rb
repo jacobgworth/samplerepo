@@ -10,7 +10,7 @@ class PostsController < ApplicationController
       @posts = Post.joins(:categories).where("category_id=" + @cid).order('postdate desc')
       @category = Category.find(@cid)
     end
-    @categories = Category.order("categoryname asc")
+    @categories = Category.joins(:posts).order("categoryname asc").uniq
     respond_to do |format|
        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       format.json { render json: @posts }
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     @title = @post.metatitle
     @meta = @post.metadescription
     @assets = @post.assets.all
-    @categories = Category.order("categoryname asc")
+    @categories = Category.joins(:posts).order("categoryname asc").uniq
 
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
