@@ -2553,7 +2553,7 @@ span.year {
 .postsPage img {
 	width: 490px;
 	border: 5px solid #C2B092;
-	margin-top: -20px;
+	margin-top: 0px;
 }
 
 .blogPost {
