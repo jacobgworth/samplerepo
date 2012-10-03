@@ -26,6 +26,11 @@ class PostsController < ApplicationController
     @meta = @post.metadescription
     @assets = @post.assets.all
     @categories = Category.joins(:posts).order("categoryname asc").uniq
+    @posts = Post.order("postdate desc").where("postdate > ?",Time.now.beginning_of_month.months_ago(11))
+    @months = Array.new
+    @posts.each do |post|
+      @months << post.postdate.strftime("%B %Y")
+    end
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       format.json { render json: @post }

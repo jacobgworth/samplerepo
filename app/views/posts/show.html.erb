@@ -60,9 +60,19 @@
 			</div>
 		</div><!-- End content Left	 -->
 		<div id="contentRight300">
+			<div class="rightBoxGreen">
+				<h2>See Posts From...</h2>
+				<% @months.uniq.each do |post|%>
+				<ul class="aboutUsNav">
+					<li>
+						<a><%= post%></a>
+					</li>
+				</ul>
+				<%end%>
+			</div>
 			<% unless @categories.nil? %>
 			<div class="rightBoxGreen">
-				<h2>See More...</h2>
+				<h2>Or See More...</h2>
 				<%@categories.each do |cat|%>
 				<ul class="aboutUsNav">
 					<li>
