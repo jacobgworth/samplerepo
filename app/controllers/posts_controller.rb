@@ -5,14 +5,19 @@ class PostsController < ApplicationController
     @cid = params[:cid]
     @mid = params[:mid]
     @user = current_user
+    @postsyear = @posts = Post.order("postdate desc").where("postdate > ?",Time.now.beginning_of_month.months_ago(11))
     if @cid.nil? && @mid.nil?
-      @posts = Post.order('postdate desc')
+      @posts = @postsyear.take(7)
     elsif !@mid.nil?
       @month = DateTime.strptime(@mid,'%m-%Y')
       @posts = Post.order("postdate desc").where("postdate >= ? and postdate <= ?",@month.beginning_of_month,@month.end_of_month)
     else
       @posts = Post.joins(:categories).where("category_id=" + @cid).order('postdate desc')
       @category = Category.find(@cid)
+    end
+    @months = Array.new
+    @postsyear.each do |post|
+      @months << post.postdate.strftime("%B %Y")
     end
     @categories = Category.joins(:posts).order("categoryname asc").uniq    
     respond_to do |format|

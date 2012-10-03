@@ -60,29 +60,7 @@
 			</div>
 		</div><!-- End content Left	 -->
 		<div id="contentRight300">
-			<div class="rightBoxGreen">
-				<h2>See Posts From...</h2>
-				<% @months.uniq.each do |post|%>
-					<% @datetime = DateTime.strptime(post,'%B %Y')%>
-				<ul class="aboutUsNav">
-					<li>
-						<a href="/posts/?mid=<%=@datetime.strftime('%m-%Y')%>"><%= post%></a> 
-					</li>
-				</ul>
-				<%end%>
-			</div>
-			<% unless @categories.nil? %>
-			<div class="rightBoxGreen">
-				<h2>Or See More...</h2>
-				<%@categories.each do |cat|%>
-				<ul class="aboutUsNav">
-					<li>
-						<a href="/posts/?cid=<%= cat.id%>"><%= cat.categoryname%> Posts</a>
-					</li>
-				</ul>
-				<%end%>
-			</div>
-			<%end%>
+			<%= render('/layouts/archives')%>
 		</div><!-- End Content Right -->
 		<div class="clearfix" style="height:40px;"></div>
 	</div><!-- End content -->
