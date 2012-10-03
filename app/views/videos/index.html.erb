@@ -6,7 +6,7 @@
 <% @videos.each do |video| %>
     <h2><a href="/videos/<%= video.id %>"><%= video.title %></a></h2>
     <p><%= video.description %></p>
-    <p><a href="<%= video.link %>">Watch the video!</a></p>
+    <p><%= video.link.html_safe %></p>
     <% if !@user.nil? && @user.is_admin?%>
 		<p class="editPostsLink">
 		<%= link_to 'Edit', edit_video_path(video) %> |
