@@ -17,13 +17,13 @@
     <h3 style="padding-bottom:30px;"><a href="/posts/<%=post.id%>"><%= post.title %></a></h3>
     <h4 style="clear:both;"><%= post.user_id %></h4>
     <div style="margin-left:60px; margin-top:-20px; border-bottom:1px dotted #0F483B;">
-    	<%if !post.author.nil? && post.author != ''%>
-    				<p>By <%= post.author %></p>
+    	<p class="meta" style="margin-top: -45px;"><%if !post.author.nil? && post.author != ''%>
+    			By <%= post.author %> |
     				<%end%>
     	<%if post.categories.count > 0%>
     		Categories: 
     		<%post.categories.each do |cat|%>
-    		<a href="/posts/?cid=<%=cat.id%>"><%=cat.categoryname%></a>
+    		<a href="/posts/?cid=<%=cat.id%>"><%=cat.categoryname%></a></p>
     		<%end%>
     	<%end%>
     <p><%= truncate(post.body,:length=>500,:separator=>' ').html_safe %> <%= link_to 'Read More »', post %></p>
