@@ -52,7 +52,7 @@
 		<h2>See More...</h2>
 		<%@categories.each do |cat|%>
 		<ul class="aboutUsNav">
-			<li><a href="/posts/<%=cat.id%>"><%=cat.categoryname%> Posts</a></li>
+			<li><a href="/posts/?cid=<%=cat.id%>"><%=cat.categoryname%> Posts</a></li>
 		</ul>
 		<%end%>
 	</div>
