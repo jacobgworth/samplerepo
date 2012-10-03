@@ -39,6 +39,15 @@ tinyMCE.init({
   <div class="field">
     Posted on: <br><%= date_select :post, :postdate %>
   </div>
+  <div class="field">
+    Metatitle: <br><%= f.text_field :metatitle%> 
+  </div>
+  <div class="field">
+    Metadescription: <br><%= f.text_field :metadescription%> 
+  </div>
+  <div class="field">
+    Author: <br><%= f.text_field :author, :required => true %> (Required)
+  </div>
     <div class="field">
     <div>Add image(s). Upload your image and then click on it. Copy the URL and use it when adding the image to your post.
   <%= f.fields_for :assets do |asset_fields| %>

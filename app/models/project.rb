@@ -16,7 +16,7 @@ class Project < ActiveRecord::Base
   
   has_and_belongs_to_many :updates
   
-  attr_accessible :projectname,:latitude,:longitude,:completion,:description,:assets_attributes,:stage,:fundsneeded,:fundsraised,:goal,:category_ids,:percentcomplete,:community_ids
+  attr_accessible :projectname,:latitude,:longitude,:completion,:description,:assets_attributes,:stage,:fundsneeded,:fundsraised,:goal,:category_ids,:percentcomplete,:community_ids,:heroimage
   
   accepts_nested_attributes_for :assets, :allow_destroy => true
   
