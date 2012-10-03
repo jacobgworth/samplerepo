@@ -1,41 +1,79 @@
 <div id="wrapper">
-	<%=render 'layouts/navBar'%>
-<div id="content" style="padding-top: 30px;">
-	<div id="contentLeft560">
-		<p id="notice"><%= notice %></p>
-	<div class="updateDate" style="margin-top:30px;">
-	<span class="month"><%= @post.postdate.strftime("%b")%></span><br />
-			<span class="date"><%= @post.postdate.strftime("%d")%></span><br />
-			<span class="year"><%= @post.postdate.strftime("%Y")%></span>	
-	</div>
-			<h2><span class="eyebrow">Mission of Hope Haiti Blog Post</span><br /><%= @post.title %></h2>
-		
-		<h4><%= @post.user_id %></h4>
-		<div class="blogPost">
+	<%= render 'layouts/navBar'%>
+	<div id="content" style="padding-top: 30px;">
+		<div id="contentLeft560">
+			<p id="notice">
+				<%= notice %>
+			</p>
+			<div class="updateDate" style="margin-top:30px;">
+				<span class="month"><%= @post.postdate.strftime("%b")%></span>
+				<br />
+				<span class="date"><%= @post.postdate.strftime("%d")%></span>
+				<br />
+				<span class="year"><%= @post.postdate.strftime("%Y")%></span>
+			</div>
+			<h2><span class="eyebrow">Mission of Hope Haiti Blog Post</span>
+			<br />
+			<%= @post.title %></h2>
 			
-		<p style="clear:both;"><%= @post.body.html_safe %></p>
-		
-		<p><%= @post.imagelink %></p>
-		
-		<% if @isadmin %>
-		<%= link_to 'Edit', edit_post_path(@post) %> |
-		<% end %>
-		<%= link_to 'Back', posts_path %>
-		</div>
-	</div><!-- End content Left	 -->
-	<div id="contentRight300">
-		<% unless @categories.nil? %>
-		<div class="rightBoxGreen">
-		<h2>See More...</h2>
-		<%@categories.each do |cat|%>
-		<ul class="aboutUsNav">
-			<li><a href="/posts/<%=cat.id%>"><%=cat.categoryname%> Posts</a></li>
-		</ul>
-		<%end%>
-	</div>
-		<%end%>
-	</div><!-- End Content Right -->
+			<!-- AddThis Button BEGIN -->
+					<div class="addthis_toolbox addthis_default_style ">
+						<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+						<a class="addthis_button_tweet"></a>
+						<a class="addthis_counter addthis_pill_style"></a>
+					</div>
+					<script type="text/javascript">
+						var addthis_config = {
+							"data_track_addressbar" : true
+						};
+					</script>
+					<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-506b79724d720237"></script>
+					<!-- AddThis Button END -->
+			<!--<h4><%= @post.user_id %></h4>-->
+			<div class="blogPost">
+
+				<p style="clear:both;">
+					<%= @post.body.html_safe %>
+				</p>
+
+				<p>
+					<%= @post.imagelink %>
+				</p>
+
+				<% if @isadmin %>
+				<%= link_to 'Edit', edit_post_path(@post) %> |
+				<% end %>
+				<%= link_to 'Back', posts_path %>
+			<!-- AddThis Button BEGIN -->
+					<div class="addthis_toolbox addthis_default_style ">
+						<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+						<a class="addthis_button_tweet"></a>
+						<a class="addthis_counter addthis_pill_style"></a>
+					</div>
+					<script type="text/javascript">
+						var addthis_config = {
+							"data_track_addressbar" : true
+						};
+					</script>
+					<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-506b79724d720237"></script>
+					<!-- AddThis Button END -->
+			</div>
+		</div><!-- End content Left	 -->
+		<div id="contentRight300">
+			<% unless @categories.nil? %>
+			<div class="rightBoxGreen">
+				<h2>See More...</h2>
+				<%@categories.each do |cat|%>
+				<ul class="aboutUsNav">
+					<li>
+						<a href="/posts/<%= cat.id%>"><%= cat.categoryname%> Posts</a>
+					</li>
+				</ul>
+				<%end%>
+			</div>
+			<%end%>
+		</div><!-- End Content Right -->
+		<div class="clearfix" style="height:40px;"></div>
+	</div><!-- End content -->
 	<div class="clearfix" style="height:40px;"></div>
-</div><!-- End content -->
-<div class="clearfix" style="height:40px;"></div>
 </div><!-- End wrapper -->

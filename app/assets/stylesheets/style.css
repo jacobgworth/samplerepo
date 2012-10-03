@@ -2020,6 +2020,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	margin-bottom: 30px;
 }
 
+
 .update {
 	width: 410px;
 	margin-top: 20px;
@@ -2028,6 +2029,12 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 
 .update560 {
 	width: 560px;
+	margin-top: 20px;
+	border-bottom: 1px dotted #0f483b;
+}
+
+.update300 {
+	width: 300px;
 	margin-top: 20px;
 	border-bottom: 1px dotted #0f483b;
 }
@@ -2085,6 +2092,13 @@ span.year {
 	margin-top: -8px;
 }
 
+#contentRight300 .updatePost300 h3 {
+	color: #0f483b;
+	font-size:1.25em;
+	text-transform: uppercase;
+	margin-top: -8px;
+}
+
 .updateProjects560Left {
 	float: left;
 	width: 225px;
@@ -2100,7 +2114,7 @@ span.year {
 	line-height: 1.2em;
 }
 
-p.meta {
+.meta {
 	font-size: .75em;
 	color: #988f80;
 }
@@ -2110,6 +2124,14 @@ p.meta {
 	padding: 10px 0 10px 0;
 	text-align: center;
 }
+
+.blogNav {
+	border-bottom: 1px dotted #0f483b;
+	border-top: 1px dotted #0f483b;
+	padding: 10px 0 10px 0;
+	text-align: center;
+}
+
 
 .updateNavRight {
 	border-bottom: 1px dotted #0f483b;
@@ -2499,7 +2521,7 @@ p.meta {
 .editPostsLink {
 	font-size: 12px;
 	float: right;
-	margin-top: -28px;
+	
 }
 .postsPage h2 {
 	float: left;
@@ -2523,6 +2545,16 @@ p.meta {
 	border: 5px solid #C2B092;
 	margin: 10px 20px 10px 0;
 }
+
+/*Addthis**/
+
+.addthis_toolbox {
+	border-top: 1px solid #c2b092;	
+	border-bottom: 1px solid #c2b092;	
+	padding:15px 0 5px 0;
+	margin:15px auto;
+}
+
 .threeCordsBttomText {
 	font-size: 2.88em;
 }

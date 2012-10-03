@@ -1,9 +1,10 @@
 <div id="wrapper">
 	<%=render 'layouts/navBar'%>
-<div id="content" style="padding-top: 50px;">
+<div id="content" style="padding-top: 0px;">
 	<h1><span class="eyebrow">Mission of Hope</span><br />Stay Connected</h1>
-	<div id="contentLeft560">
+	<div id="contentLeft560" style="position:relative;">
 		<h2>Recent Blog Posts</h2>
+		<div class="speechBubble" style="position: absolute; top:15px; right: 0;"><p>latest posts</p></div>
 		<% @posts.each do |post| %>
 			<div class="postsPage">
   				<div class="updateDate" style="margin-top:20px;">
@@ -14,15 +15,14 @@
     			<h3 style="padding-bottom:0;">
     				<a href="/posts/<%= post.id %>"> <%= post.title %></a>
     			</h3>
-    			<h4 style="clear:both;"></h4>
-    			<div style="margin-left:60px; margin-top:-20px; border-bottom:1px dotted #0F483B;">
+    			<div style="margin-left:60px; border-bottom:1px dotted #0F483B;">
     				<%if !post.author.nil? && post.author != ''%>
-    				<p>By <%= post.author %></p>
+    				<p class="meta">By <%= post.author %> | 
     				<%end%>
     				<%if post.categories.count > 0%>
     		Categories: 
     		<%post.categories.each do |cat|%>
-    		<a href="/posts/?cid=<%=cat.id%>"><%=cat.categoryname%></a>
+    		<a href="/posts/?cid=<%=cat.id%>"><%=cat.categoryname%></a></p>
     		<%end%>
     	<%end%>
     			<p><%= truncate(post.body,:length=>170,:separator=>' ').html_safe %> <%= link_to 'Read More', post %></p>
@@ -37,16 +37,38 @@
     			<% end %>
     		</div>
 		<% end %>
+		<div class="blogNav"><a href="/posts">Read all blog posts from Mission of Hope &raquo;</a></div>
 	</div>
 	<div id="contentRight300">
-		<h2>Recent Updates</h2>
-		<div class="rightBoxGreen">
-			<% @updates.each do |update| %>
-				<h2><a href="/updates/<%=update.id%>" style="color:#dbcaa8;"><%=update.title%></h2></a>
-					<p><br /><%=update.body%></p>
+			<div class="updatesWrapper" style="margin-top:20px;">
+		<h3>MOH in Action</h3>
+		<div class="speechBubble" style="position: absolute; top:0; right: 0;"><p>latest updates</p></div>
+		<%@updates.each do |update|%>
+			<div class="update300">
+			<p class="meta">	<% 
+					created = update.created_at 
+					creator = "-"
+					if update.user.blank?
+						creator = '-'
+					else
+						creator = update.user.first
+					end
+				%>
+				<%= created.strftime("%b")%> <%=created.strftime("%d")%>, <%=created.strftime("%Y")%>
+			</p>
+			<div class="updatePost300">
+				<h3><a href="/updates/<%=update.id%>"><%=update.title%></a></h3>
+				<p><%=truncate(update.body,:length=>100,:separator=>' ')%> <a href="<a href="/updates/">READ MORE</a></p>
+				<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
+				
+			</div>
+			<div class="clearfix"><!--x--></div>
+			</div>
+		<%end%>
+		<div class="updateNav"><a href="/updates">Read all updates from Mission of Hope &raquo;</a></div>
+	</div>
+		
 
-			<% end %>
-		</div>
 		<div class="contentDiv"></div>
 		<div class="contentRightWrapper">	
 			<h3>Featured Videos</h3>
