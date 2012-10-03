@@ -1245,7 +1245,7 @@ h3.CTA {
 	padding: 20px 0 0 0;
 }
 
-#contentLeft560 h3 {
+#contentLeft560 h3, #content h3 {
 	font-size: 1.5em;
 	padding: 20px 0 0 0;
 	color: #079367;
@@ -1749,6 +1749,21 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 .snapBackMed a:hover {
 	background: url(/assets/icon-snapback-med-hover.png) no-repeat;
+	text-indent: -9999px;
+	width: 125px;
+	height: 125px;
+	display: block;
+}
+
+.volunteerMed a:link {
+	background: url(/assets/icon-volunteer-med.png) no-repeat;
+	text-indent: -9999px;
+	width: 125px;
+	height: 125px;
+	display: block;
+}
+.volunteerMed a:hover {
+	background: url(/assets/icon-volunteer-med-hover.png) no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
