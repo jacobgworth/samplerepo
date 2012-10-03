@@ -1591,6 +1591,11 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 #content .gridText h2 {
 	padding-top: 0;
 }
+
+#content .gridText h3 {
+	padding-top: 0;
+	font-size:1em;
+}
 .projectsMed a:link {
 	background: url(/assets/icon-projects-med.png) no-repeat;
 	text-indent: -9999px;
