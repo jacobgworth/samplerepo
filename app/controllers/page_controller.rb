@@ -388,8 +388,26 @@ class PageController < ApplicationController
   end
   
   def volunteer
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    @txtname = params[:txtname]
+    @txtmessage = params[:txtmessage]
+    @txtemail = params[:txtemail]
+    @txtphonenumber = params[:txtphonenumber]
+    if !@txtname.nil? && @txtname != "" && !@txtmessage.nil? && @txtmessage != "" && !@txtemail.nil? && @txtemail != ""
+      @isvalid = true
+      @data = {
+        :txtname => @txtname, 
+        :txtemail => @txtemail, 
+        :txtmessage => @txtmessage,
+        :txtphonenumber => @txtphonenumber
+      }
+      respond_to do |format|
+        ContactUsMailer.volunteer(@data).deliver
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+      end
+    else
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+      end
     end
   end
   

@@ -55,7 +55,21 @@ class ContactUsMailer < ActionMailer::Base
     @comments = @data[:comments],
     
     
-    mail(:to => "david.dewhirst@threetwelvecreative.com", :subject => "Take a Mission Trip", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "missiontrips@mohhaiti.org", :subject => "Take a Mission Trip", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
   
+  def volunteer(data)
+    #change this to info@mohhaiti.org after testing
+    
+    @data = data
+    
+    @txtname = @data[:txtname], 
+    @txtphonenumber = @data[:txtphonenumber],
+    @txtemail = @data[:txtemail], 
+    @txtmessage = @data[:txtmessage],
+    
+    @frizzle = @data[:txtname]
+    
+    mail(:to => "info@mohhaiti.org", :subject => "MOH Volunteer", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
+  end
 end
