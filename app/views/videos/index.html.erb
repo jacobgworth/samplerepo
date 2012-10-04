@@ -1,29 +1,36 @@
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 	<div id="content" style="padding-top: 50px;">
-		<h1><span class="eyebrow">Mission of Hope Haiti </span><br />Videos</h1>
+		<h1><span class="eyebrow">Mission of Hope Haiti </span>
+		<br />
+		Videos</h1>
+		<div class="videoPostsWrapper">
+			<% @videos.each do |video| %>
+			<div class="video">
+				<h4><a href="/videos/<%= video.id %>"><%= video.title %></a></h4>
+				<div class="videoPost">
+					<%= video.link.html_safe %>
+				</div>
+				<p>
+					<%= video.description %>
+				</p>
+				<% if !@user.nil? && @user.is_admin?%>
+				<p class="editPostsLink">
+					<%= link_to 'Edit', edit_video_path(video) %> |
+					<%= link_to 'Back', videos_path %>
+				</p>
+				<% end %>
+			</div>
+			<% end %>
 
-<% @videos.each do |video| %>
-<div class="video">
-	<h2><a href="/videos/<%= video.id %>"><%= video.title %></a></h2>
-    <p style="display:none;"><%= video.description %></p>
-    <div class="videoPost"><%= video.link.html_safe %></div>
-    <% if !@user.nil? && @user.is_admin?%>
-		<p class="editPostsLink">
-		<%= link_to 'Edit', edit_video_path(video) %> |
-		<%= link_to 'Back', videos_path %>
-		</p>
-	<% end %>
-</div>
-	<% end %>
+			<div class="clearfix">
+				&nbsp;
+			</div>
+		</div>
 
-<div class="clear">&nbsp;</div>
-
-<br />
- <% if !@user.nil? && @user.is_admin?%>
-<h4><%= link_to 'New Video', new_video_path %></h4>
-<% end %>
-<div class="clear">&nbsp;</div>
+		<% if !@user.nil? && @user.is_admin?%>
+		<h4><%= link_to 'New Video', new_video_path %></h4>
+		<% end %>
+	
+	</div>
 </div>
-</div>
-<div class="clear">&nbsp;</div>
