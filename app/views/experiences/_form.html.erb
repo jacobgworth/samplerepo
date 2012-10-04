@@ -12,15 +12,18 @@
   <% end %>
 
   <div class="field">
-    A Few Sentences About Your Experience<br />
-    <%= f.text_area :description %>
+    <h4>Write a sentence or two about your experience:</h4><br />
+    <div class="experienceTextArea"><%= f.text_area :description %></div>
+    
   </div>
   <div>
-  	<%= f.label :photo %><br />
+  	<div class="field">
+  	<h4>Add your photo:</h4><br />
   	<%= f.file_field :photo %>
+  	</div>
   </div>
   <div class="field">
-    Your First Name<br />
+    <h4>Your first name:</h4><br />
     <%= f.text_field :author %>
   </div>
   <% unless @user.nil?%>

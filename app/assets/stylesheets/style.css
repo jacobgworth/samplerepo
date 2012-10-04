@@ -1864,6 +1864,17 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	text-transform: uppercase;
 }
 
+.field h4 {
+	font-size:1.25em;
+	color:#078E60;
+	margin-bottom:0;
+	padding-bottom:0;
+}
+
+.experienceTextArea textarea {
+	height:100px;
+}
+
 .actions input {
 	font-family: 'Montserrat', sans-serif;
 	text-align: center;
