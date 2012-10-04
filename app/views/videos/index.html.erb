@@ -2,23 +2,28 @@
 	<%= render 'layouts/navBar'%>
 	<div id="content" style="padding-top: 50px;">
 		<h1><span class="eyebrow">Mission of Hope Haiti </span><br />Videos</h1>
-<div class="video">
+
 <% @videos.each do |video| %>
-    <h2><a href="/videos/<%= video.id %>"><%= video.title %></a></h2>
-    <p><%= video.description %></p>
-    <p><%= video.link.html_safe %></p>
+<div class="video">
+	<h2><a href="/videos/<%= video.id %>"><%= video.title %></a></h2>
+    <p style="display:none;"><%= video.description %></p>
+    <div class="videoPost"><%= video.link.html_safe %></div>
     <% if !@user.nil? && @user.is_admin?%>
 		<p class="editPostsLink">
 		<%= link_to 'Edit', edit_video_path(video) %> |
 		<%= link_to 'Back', videos_path %>
 		</p>
 	<% end %>
-	<% end %>
 </div>
+	<% end %>
+
+<div class="clear">&nbsp;</div>
 
 <br />
  <% if !@user.nil? && @user.is_admin?%>
 <h4><%= link_to 'New Video', new_video_path %></h4>
 <% end %>
+<div class="clear">&nbsp;</div>
 </div>
 </div>
+<div class="clear">&nbsp;</div>
