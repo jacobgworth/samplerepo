@@ -1,5 +1,5 @@
 <div class="rightBoxGreen">
-				<h2>See Posts From...</h2>
+				<h2>Monthly Archives</h2>
 				<% @months.uniq.each do |post|%>
 					<% @datetime = DateTime.strptime(post,'%B %Y')%>
 				<ul class="aboutUsNav">
@@ -11,7 +11,7 @@
 </div>
 <% unless @categories.nil? %>
 			<div class="rightBoxGreen">
-				<h2>Or See More...</h2>
+				<h2>Categories</h2>
 				<%@categories.each do |cat|%>
 				<ul class="aboutUsNav">
 					<li>
