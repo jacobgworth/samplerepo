@@ -21,3 +21,15 @@
 				<%end%>
 			</div>
 <%end%>
+<% unless @updates.nil? %>
+			<div class="rightBoxGreen">
+				<h2>Recent Updates</h2>
+				<%@updates.each do |update|%>
+				<ul class="aboutUsNav">
+					<li>
+						<a href="/updates/<%= update.id%>"><%= update.title%></a>
+					</li>
+				</ul>
+				<%end%>
+			</div>
+<%end%>

@@ -5,6 +5,7 @@ class PostsController < ApplicationController
     @cid = params[:cid]
     @mid = params[:mid]
     @user = current_user
+    @updates = Update.last(3).reverse
     @postsyear = @posts = Post.order("postdate desc").where("postdate > ?",Time.now.beginning_of_month.months_ago(11))
     if @cid.nil? && @mid.nil?
       @posts = @postsyear.take(7)
@@ -30,6 +31,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @isadmin = is_admin_user?
+    @updates = Update.last(3).reverse
     @post = Post.find(params[:id])
     @title = @post.metatitle
     @meta = @post.metadescription
