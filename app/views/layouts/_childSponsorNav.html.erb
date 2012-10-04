@@ -1,29 +1,47 @@
 <div class="rightBox">
-				<h2>Success Story</h2>
-				<img class="featuredImage" style="margin-bottom:30px;" src="/assets/student-delmont.jpg" />
-				<h3 style="margin-top:-10px; color:#079367">Meet Delmont</h3>
-				<p>"My life has completely changed because of School of Hope and my sponsor. More than school, I have received education about God too." 
-					</p><p class="clearfix" style="font-size:.85em;">- Delmont, 2012 School of Hope Graduate</p>
-					<p><a href="#sponsorForm">Pre-sponsor a child today &raquo;</a></p>
-			</div>
-			<div class="rightBox">
-				<h2>Sponsorship FAQs</h2>
-				<img src="/assets/iconQuestions.png" class="alignLeft" />
-				<p>
-					Have questions? Learn all there is to know about sponsoring a child with Mission of Hope.<br /><a href="/sponsor_faq">Get answers &raquo;</a>
-				</p>
-			</div>
-			<div class="rightBox">
-				<h2>Gift Store</h2>
-				<img src="/assets/iconShop.png" class="alignRight" style="margin-top:-20px;" />
-				<p>
-					Buy a gift for the child you are sponsoring!<br /><a href="/gift_store">Shop now &raquo;</a>
-				</p>
-			</div>
-			<div class="rightBox">
-				<h2>Write Your Child</h2>
-				<img src="/assets/iconWrite.png" class="alignLeft" />
-				<p>
-					Brighten your sponsored student's day by sending them a letter online or by mail.<br /><a href="/write_my_child">Write your child &raquo;</a>
-				</p>
-			</div>
+	<h2>Success Story</h2>
+	<img class="featuredImage" style="margin-bottom:30px;" src="/assets/student-delmont.jpg" />
+	<h3 style="margin-top:-10px; color:#079367">Meet Delmont</h3>
+	<p>
+		"My life has completely changed because of School of Hope and my sponsor. More than school, I have received education about God too."
+	</p>
+	<p class="clearfix" style="font-size:.85em;">
+		- Delmont, 2012 School of Hope Graduate
+	</p>
+	<p>
+		<a href="#sponsorForm">Pre-sponsor a child today &raquo;</a>
+	</p>
+</div>
+<% unless request.fullpath == "/sponsor_faq"%>
+<div class="rightBox">
+	<h2>Sponsorship FAQs</h2>
+	<img src="/assets/iconQuestions.png" class="alignLeft" />
+	<p>
+		Have questions? Learn all there is to know about sponsoring a child with Mission of Hope.
+		<br />
+		<a href="/sponsor_faq">Get answers &raquo;</a>
+	</p>
+</div>
+<%end%>
+<% unless request.fullpath == "/gift_store"%>
+<div class="rightBox">
+	<h2>Gift Store</h2>
+	<img src="/assets/iconShop.png" class="alignRight" style="margin-top:-20px;" />
+	<p>
+		Buy a gift for the child you are sponsoring!
+		<br />
+		<a href="/gift_store">Shop now &raquo;</a>
+	</p>
+</div>
+<% end %>
+<% unless request.fullpath == "/write_my_child"%>
+<div class="rightBox">
+	<h2>Write Your Child</h2>
+	<img src="/assets/iconWrite.png" class="alignLeft" />
+	<p>
+		Brighten your sponsored student's day by sending them a letter online or by mail.
+		<br />
+		<a href="/write_my_child">Write your child &raquo;</a>
+	</p>
+</div>
+<%end%>
