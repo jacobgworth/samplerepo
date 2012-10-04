@@ -73,6 +73,7 @@
 		<div class="contentRightWrapper">	
 			<h3>Featured Videos</h3>
 			<% @videos.each do |video| %>
+				<p><%=video.thumblink.html_safe%></p>
 				<p><a href="/videos/<%=video.id%>"><b><%=video.title%></b></a></p>
 
 			<% end %>

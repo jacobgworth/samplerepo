@@ -20,8 +20,12 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :link %><br />
+    Embed code<br />
     <%= f.text_field :link %>
+  </div>
+  <div class="field">
+    Small embed code (size to 300 x 225)<br />
+    <%= f.text_field :thumblink %>
   </div>
   <div class="actions">
     <%= f.submit %>
