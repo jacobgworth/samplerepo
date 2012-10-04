@@ -2708,7 +2708,7 @@ span.year {
 	color: #182e2c;
 }
 
-li.activeSidebar {
+.activeSidebar {
 	font-weight:bold;
 }
 #content .aboutUsNav li {

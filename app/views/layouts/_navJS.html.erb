@@ -1,0 +1,12 @@
+<script type="text/javascript">
+	rbgreen = document.getElementById("rightBoxGreen");
+	rbgA = rbgreen.getElementsByTagName("a");
+	for (var i=0;i<rbgA.length;i++){ 
+		anch = rbgA[i];
+		if(anch.getAttribute("href") == "<%=request.fullpath%>")
+		{
+			anch.class = 'activeSidebar';
+			anch.setAttribute('class','activeSidebar');
+		}
+	} 
+</script>
