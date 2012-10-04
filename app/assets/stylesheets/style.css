@@ -22,6 +22,18 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	border: 1px solid #c2b092;
 }
 
+#content .item p {
+	font-family:'Montserrat', sans-serif;
+	font-size:1em;
+	line-height:1em;
+}
+
+span.experienceAuthor {
+	text-transform:uppercase;
+	color:#078E60;
+	font-size:.85em;
+}
+
 .item img {
 	padding-bottom: 10px;
 }
@@ -1850,6 +1862,17 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 #cms .field h2 {
 	margin: 20px 0 5px 0;
 	text-transform: uppercase;
+}
+
+.field h4 {
+	font-size:1.25em;
+	color:#078E60;
+	margin-bottom:0;
+	padding-bottom:0;
+}
+
+.experienceTextArea textarea {
+	height:100px;
 }
 
 .actions input {
