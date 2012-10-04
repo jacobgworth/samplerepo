@@ -79,6 +79,7 @@ icon-3Cords-med-hover1.png: icon-3Cords-med-hover1-a91b3b59789baed67ac3b544cff62
 icon-3Cords-med.png: icon-3Cords-med-230566d51ef8ab1a495e1dbc7b15362c.png
 icon-3Cords-med1.png: icon-3Cords-med1-43afbc778018de59b91cf5a81985c780.png
 icon-agriculture.png: icon-agriculture-875e8d825079c504e433a0cee4d4e82f.png
+icon-church-advancement-hover.png: icon-church-advancement-hover-2856f039fac9cbcb53e15558f180e554.png
 icon-church-advancement-med-hover.png: icon-church-advancement-med-hover-c3dc500a4f4bc0d68381011e5c49a08d.png
 icon-church-advancement-med.png: icon-church-advancement-med-9e60ac13223567043261e9f9dabb5895.png
 icon-church-advancement.png: icon-church-advancement-fec3b41cc7987b9a63d53eed81d58c39.png
@@ -95,6 +96,7 @@ icon-haitione-med-hvoer.png: icon-haitione-med-hvoer-f82ef3a0d6d01d0656c40ac93a3
 icon-haitione-med.png: icon-haitione-med-c1a30c374e825dd85b9bc682df065df1.png
 icon-health-care-med-hover.png: icon-health-care-med-hover-6bd23c1f4c790b370b6e570979a91c2b.png
 icon-health-care-med.png: icon-health-care-med-f8d3afcc53de7c4fdec51657e28c9d1f.png
+icon-mission-trips-hover.png: icon-mission-trips-hover-c354707f2557b9a09f3d6c5ae38607b6.png
 icon-mission-trips.png: icon-mission-trips-e11092faf23d3d1657f1776be6cf69f8.png
 icon-moh-500.png: icon-moh-500-b424deabd9088145c62c52c8f2f8f6c0.png
 icon-nutrition-med-hover.png: icon-nutrition-med-hover-cb15337d9261ffc72f74bb82ef8807b7.png
@@ -111,6 +113,7 @@ icon-projects-med.png: icon-projects-med-7be45b7391018b8cd3f4a3947b2cfb24.png
 icon-projects-mini.png: icon-projects-mini-84c351512c9e16eb790778020540fd15.png
 icon-snapback-med-hover.png: icon-snapback-med-hover-7abc3cb4ccecfbf1cd831356fc79adf5.png
 icon-snapback-med.png: icon-snapback-med-69c6eff5b83e6f14cb11e8aa7cba38c5.png
+icon-student-sponsorship-hover.png: icon-student-sponsorship-hover-eaff2d1af5083edf081880a894d79138.png
 icon-student-sponsorship-med-hover.png: icon-student-sponsorship-med-hover-4632c0bb7c139a0a970041635d2d14e1.png
 icon-student-sponsorship-med.png: icon-student-sponsorship-med-3a533daf12ac198d27dc8f8fbe943ba3.png
 icon-student-sponsorship.png: icon-student-sponsorship-37372189e32403a9effb10fe24e06428.png
@@ -258,7 +261,7 @@ gmaps4rails/gmaps4rails.openlayers.js: gmaps4rails/gmaps4rails.openlayers-bbf2bb
 jquery-ui.min.js: jquery-ui.min-bcb2f78c9ed3fa2aba736ba6e6b462e1.js
 jquery.min.js: jquery.min-223bff6ea42ed0d5e2b560fdceee811b.js
 application.js: application-bb7a410ddcc741f05f5b6ca91ed402d2.js
-application.css: application-680fb11ed0a24fede4292467c94f46ad.css
+application.css: application-dab26206a4bed2f15c765143ab89dd31.css
 advancement.js: advancement-c2b0db25c3a77754b130af70a4041844.js
 categories.js: categories-c2b0db25c3a77754b130af70a4041844.js
 category.js: category-c2b0db25c3a77754b130af70a4041844.js
@@ -301,7 +304,7 @@ projects.css: projects-7c92aed0d9ced75baa9ca7d4c44adb74.css
 scaffolds.css: scaffolds-59d873133cf4fb486c4074c62dde5320.css
 sessions.css: sessions-7c92aed0d9ced75baa9ca7d4c44adb74.css
 sponsorship.css: sponsorship-7c92aed0d9ced75baa9ca7d4c44adb74.css
-style.css: style-96c5baaf163d6cdd3c324e9e23338be1.css
+style.css: style-f2e8dc2371fc84fb0769e0318b580869.css
 tags.css: tags-7c92aed0d9ced75baa9ca7d4c44adb74.css
 take_action.css: take_action-7c92aed0d9ced75baa9ca7d4c44adb74.css
 updates.css: updates-7c92aed0d9ced75baa9ca7d4c44adb74.css
