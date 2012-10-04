@@ -1,7 +1,7 @@
 class ConnectedController < ApplicationController
   def index
     
-    @posts = Post.order("postdate desc").last(5)
+    @posts = Post.order("postdate desc").take(5)
     @updates = Update.last(3).reverse
     @videos = Video.last(3).reverse
     @user = current_user
