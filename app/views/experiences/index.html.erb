@@ -11,11 +11,12 @@
 	<% if experience.photo.exists? %>
 		<div class="item">
   			<%= image_tag experience.photo.url(:medium),:title=>experience.description,:alt=>experience.description  %>
-  			Posted by <%= experience.author%>:<br />
-  			<%= experience.description %>
+  			<p><span class="experienceAuthor">Posted by <%= experience.author%>:</span><br />
+  			<%= experience.description %></p>
   			<% if !@user.nil? && @user.is_admin? %>
-  				<%= link_to 'Edit', edit_experience_path(experience)%> | <%= link_to 'Delete', experience, confirm: 'Are you sure?', method: :delete %>
+  				<p><%= link_to 'Edit', edit_experience_path(experience)%> | <%= link_to 'Delete', experience, confirm: 'Are you sure?', method: :delete %></p>
   			<%end%>
+  			
   		</div>
   	<%end%>
 <% end %>
