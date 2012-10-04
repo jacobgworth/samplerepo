@@ -2178,16 +2178,57 @@ span.year {
 	text-align: center;
 }
 
+.videoPostsWrapper {
+	width:960px;
+	margin-top:20px;
+}
+
 .video {
 	float:left;
-	width:410px;
-	margin-right:20px;
+	width:480px;
+	margin-bottom:40px;
+	height:450px;
+}
+
+.videoSingle {
+	float:left;
+	width:440px;
+	margin-bottom:40px;
+	height:450px;
+}
+
+.video h4, .videoSingle h4 {
+	text-align:center;
+	padding-bottom:10px;
+}
+
+.video p {
+	width:400px;
+	margin:auto;
 }
 .videoPost {
 	border: 5px solid #C2B092;
+	width:400px;
+	height:300px;
+	margin:auto;
+	margin-bottom:10px;
+}
+
+.videoPostSingle {
+	float:left;
+	border: 5px solid #C2B092;
+	width:400px;
+	height:300px;
+	margin:auto;
+	margin-bottom:10px;
 }
 
 
+.videoDescription {
+	float:left;
+	width:440px;
+	margin-top:20px;
+}
 .updateNavRight {
 	border-bottom: 1px dotted #0f483b;
 	padding: 10px 0 10px 0;
@@ -2791,5 +2832,5 @@ tr {
 	padding-bottom: 40px;
 }
 .video {
-	border-bottom: 1px dotted black;
+	/*border-bottom: 1px dotted black;*/
 }
