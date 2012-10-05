@@ -15,7 +15,17 @@
 			<h2><span class="eyebrow">Mission of Hope Haiti Blog Post</span>
 			<br />
 			<%= @post.title %></h2>
-			
+			<p class="meta" >
+    		<%if !@post.author.nil? && @post.author != ''%>
+    			By <%= @post.author %> |
+    		<%end%>
+    		<%if @post.categories.count > 0%>
+    			Categories: 
+    			<%@post.categories.each do |cat|%>
+    				<a href="/posts/?cid=<%=cat.id%>"><%=cat.categoryname%></a>
+    			<%end%>
+    		<%end%>
+    	</p>
 			<!-- AddThis Button BEGIN -->
 					<div class="addthis_toolbox addthis_default_style ">
 						<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
