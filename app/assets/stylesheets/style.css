@@ -1073,6 +1073,12 @@ h3.CTA {
 	font-size: 1em;
 	padding-bottom: 0px;
 }
+
+#content .rightBoxGreen h3.tan {
+	color: #e4d4b9;
+	font-size: 1em;
+	padding-bottom: 0px;
+} 
 #content .rightBoxGreen p {
 	font-size: .9em;
 	color: #0f483b;

@@ -10,7 +10,7 @@
   <%= @update.body %>
 </p>
 <% unless @update.categories.count == 0%>
-<h3 style="width:295px;" class="projectDetailButton"><strong>Category:</strong><a> <%=@update.categories.first.categoryname%></a></h3>
+<h3 style="width:295px;" class="projectDetailButton"><strong>Related to:</strong><a> <%=@update.categories.first.categoryname%></a></h3>
 <% end %>
 <p>
   <%= @update.media %>
