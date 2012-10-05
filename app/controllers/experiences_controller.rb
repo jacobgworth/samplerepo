@@ -43,11 +43,17 @@ layout "applicationWithMasonry"
 
   # GET /experiences/1/edit
   def edit
-    @experience = Experience.find(params[:id])
-    @user = current_user
-    #@experience.assets.build
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    if is_admin_user?
+      @experience = Experience.find(params[:id])
+      @user = current_user
+      #@experience.assets.build
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to "/experiences" }
+      end
     end
   end
 
