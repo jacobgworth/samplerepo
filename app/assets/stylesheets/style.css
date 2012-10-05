@@ -1368,7 +1368,7 @@ h3.CTA {
 	padding-right: 10px;
 	position: relative;
 	margin-bottom: 40px;
-	min-height: 220px;
+	min-height: 240px;
 }
 
 .gift {
@@ -1386,6 +1386,7 @@ h3.CTA {
 
 .staffBio {
 	background-color: #C2B092;
+	color:#0D5341;
 	border-style: solid;
 	font-size: 12px;
 	text-transform: none;
@@ -1452,7 +1453,7 @@ h3.CTA {
 
 h3#missionStatement {
 	width: 100%;
-	margin: 20px auto;
+	/*margin: 20px auto;*/
 	text-align: center;
 	font-size: 1.05em;
 	color: #0f483b;
@@ -2862,4 +2863,17 @@ tr {
 }
 .video {
 	/*border-bottom: 1px dotted black;*/
+}
+.supportCTA{
+	background: #ea861b;
+	padding: 10px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 0.8em;
+	-moz-box-shadow: 3px 3px #c26603;
+	-webkit-box-shadow: 3px 3px #c26603;
+	box-shadow: 3px 3px #c26603;
+}
+.supportCTA a{
+	color: #E4D4B9;
 }
