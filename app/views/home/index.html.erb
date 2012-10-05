@@ -83,7 +83,7 @@
 				<span class="year"><%=created.strftime("%Y")%></span>
 			</div>
 			<div class="updatePost">
-				<h4><%=m.title%></h4>
+				<h4><a href="/updates/<%=m.id%>"><%=m.title%></a></h4>
 				<p><%=truncate(m.body,:length=>100,:separator=>' ').html_safe %> <a href="/updates">Read More</a></p>
 				<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
 			</div>
