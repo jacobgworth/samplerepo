@@ -171,7 +171,7 @@
 			
 		</div>
 		<div id="contentRight300">
-
+			<% unless @assets.count == 0 %>
 			<div class="contentRightWrapper">
 			<h3><span class="eyebrow"><%= @project.projectname %></span><br />Photo Album</h3>
 						<div id="divImgThumbs">
@@ -204,6 +204,7 @@
 				</div><!--gallery-->
 		</div><!--thumbs-->
 		</div><!--contentRightWrapper-->
+		<%end%>
 		</div><!--contentRight-->
 		<div class="clearfix"><!--x--></div>
 	<% if @user.nil? %>
