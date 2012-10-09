@@ -24,6 +24,12 @@ class PageController < ApplicationController
     end
   end
   
+   def partner_of_hope
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
   def console
     unless is_admin_user?
       respond_to do |format|

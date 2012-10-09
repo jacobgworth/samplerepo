@@ -23,20 +23,20 @@
 	<div class="superColumn">
 		<div class="churchAdvancement"><a href="/church_advancement">&nbsp;</a></div>
 		<h2><a href="/church_advancement">Church<br />Advancement</a></h2>
-		<p>See how Life Transformation is happening in villages all over Haiti and how your church can partner with us to serve the local church in Haiti.</p>
+		<p>Your church can join other North American churches partnering intentionally through Mission of Hope with the Church in Haiti.</p>
 		<h3 class="CTA"><a href="/church_advancement">Advance the Church</a> <img src="/assets/arrowRight.png" /></h3>
 	</div>
 	<div class="superColumn">
 		<div class="studentSponsorship"><a href="/child-sponsorship">&nbsp;</a></div>
 		<h2><a href="/child-sponsorship">Student<br />Sponsorship</a></h2>
-		<p>Help us give hope and a future to a child by becoming a student sponsor. Your sponsorship helps them receive a Christ-centered education, a hot meal and the opportunity to be part of changing Haiti!
+		<p>Give hope to a student in Haiti by sponsoring them to receive a Christ-centered quality education, a hot meal and an invitation to change Haiti!
 			</p>
 		<h3 class="CTA"><a href="/child-sponsorship">Sponsor a Student</a> <img src="/assets/arrowRight.png" /></h3>
 	</div>
 	<div class="superColumn">
 		<div class="missionTrips"><a href="/mission_trips">&nbsp;</a></div>
 		<h2><a href="/mission_trips">Mission<br />Trips</a></h2>
-		<p>Have a passion? Feel a drive? Hear a call? Be a part of seing Haiti transformed for Jesus Christ. Step alongside us on a short-term mission trip and work for Christ a He brings change to a nation!
+		<p>Always wanted to have a life-changing experience? Come work alongside and see first hand how the gospel is transforming lives in Haiti.
 			</p>
 		<h3 class="CTA"><a href="/mission_trips">Take a Mission Trip</a> <img src="/assets/arrowRight.png" /></h3>
 	</div>
@@ -83,8 +83,8 @@
 				<span class="year"><%=created.strftime("%Y")%></span>
 			</div>
 			<div class="updatePost">
-				<h4><%=m.title%></h4>
-				<p><%=truncate(m.body,:length=>100,:separator=>' ').html_safe %> <a href="/updates">Read More</a></p>
+				<h4><a href="/updates/<%=m.id%>"><%=m.title%></a></h4>
+				<p><%=truncate(m.body,:length=>100,:separator=>' ').html_safe %> <a href="/updates">Read More &raquo;</a></p>
 				<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
 			</div>
 			<div class="clearfix"><!--x--></div>

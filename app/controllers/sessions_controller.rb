@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  
+  layout "homeLayout"
+  
   def new
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}
@@ -10,7 +13,11 @@ class SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       cookies[:auth_token] = user.auth_token
-      redirect_to root_url, :notice => "Logged in!"
+      if !user.is_admin?
+        redirect_to root_url, :notice => "Logged in!"
+      else
+        redirect_to "/console"
+      end
     else
       flash.now.alert = "Invalid email or password"
       render "new"

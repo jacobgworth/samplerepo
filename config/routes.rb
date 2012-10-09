@@ -116,6 +116,9 @@ Mohhaiti::Application.routes.draw do
   get "page/join_our_team"
   match "/join_our_team" => "page#join_our_team"
   
+  get "page/partner_of_hope"
+  match "/partner_of_hope" => "page#partner_of_hope"
+  
   get "page/nutrition"
   match "/nutrition" => "page#nutrition"
   
