@@ -1675,21 +1675,6 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	height: 125px;
 }
 
-.gridImage .villages {
-	float: left;
-	width: 125px;
-	height: 125px;
-	padding-right: 20px;
-	height: 180px;
-	margin-bottom:40px;
-}
-
-.gridImage .villages img {
-	width: 125px;
-	height: 125px;
-	border:5px solid #E4D4B9;
-}
-
 .gridText {
 	float: left;
 	width: 295px;
