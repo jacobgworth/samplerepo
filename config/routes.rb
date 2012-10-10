@@ -51,6 +51,9 @@ Mohhaiti::Application.routes.draw do
   match "/about_moh/vision_and_resolution/" => redirect("/vision_mission_resolution")
   ########################################################################
   
+  get "page/newsletter_thank_you"
+  match "/newsletter_thank_you" => "page#newsletter_thank_you"
+  
   get "page/sitemap"
   match "/sitemap" => "page#sitemap"
   
