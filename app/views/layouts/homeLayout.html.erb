@@ -48,14 +48,41 @@
 		<p class="clearfix"><a href="/contact_us">Other ways to contact us &raquo;</a></p>
 		<a href=""><img src="/assets/button-newsletter.png" alt="Subscribe to our newsletter" /></a>
 		<div class="newsletterSignup">
-		<form action="http://mohh.convio.net/site/Survey" method="POST" >
-                <input name="cons_email" type="text" value="enter email address" class="newsletterinput" />
-                <input type="hidden" name="cons_info_component" id="cons_info_component" value="t" />
-                <input type="hidden" name="pagewrap" value="n"/>
-                <input type="hidden" name="SURVEY_ID" id="SURVEY_ID" value="1162" />
-                <span style="display:none"><input type="text" name="denySubmit" id="denySubmit" value="" alt="" />Please leave this field empty</span>
-                <input type="submit" value="GO" class="newsletterbutton" name="ACTION_SUBMIT_SURVEY_RESPONSE"/>                
+<form method="post" action="https://app.icontact.com/icp/signup.php" name="icpsignup" id="icpsignup1000" accept-charset="UTF-8" onsubmit="return verifyRequired1000();" >
+<input type="hidden" name="redirect" value="http://www.icontact.com/www/signup/thanks.html">
+<input type="hidden" name="errorredirect" value="http://www.icontact.com/www/signup/error.html">
+
+        <input type="text" name="fields_email" class="newsletterinput" value="enter email address">
+    <input type="hidden" name="listid" value="20080">
+    <input type="hidden" name="specialid:20080" value="9HZA">
+
+    <input type="hidden" name="clientid" value="791417">
+    <input type="hidden" name="formid" value="1000">
+    <input type="hidden" name="reallistid" value="1">
+    <input type="hidden" name="doubleopt" value="0">
+<input type="submit" class="newsletterbutton" name="Submit" value="GO">
 </form>
+<script type="text/javascript">
+
+var icpForm1000 = document.getElementById('icpsignup1000');
+
+if (document.location.protocol === "https:")
+
+	icpForm1000.action = "https://app.icontact.com/icp/signup.php";
+function verifyRequired1000() {
+  if (icpForm1000["fields_email"].value == "") {
+    icpForm1000["fields_email"].focus();
+    alert("The Email field is required.");
+    return false;
+  }
+
+
+return true;
+}
+</script>
+<span class="link"><a href="http://www.icontact.com">Email Marketing</a> You Can Trust</span>
+
+
 </div>
 	</div>
 	<div class="superFooterCol">

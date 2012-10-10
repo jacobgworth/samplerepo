@@ -1101,7 +1101,7 @@ h3.CTA {
 	width: 260px;
 	background-color: #079367;
 	padding: 20px;
-	margin-bottom: 10px;
+	margin:20px 0 10px 0;
 	position: relative;
 }
 #content .rightBoxGreen h2 {
