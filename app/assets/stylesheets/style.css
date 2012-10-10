@@ -2314,6 +2314,18 @@ span.year {
 	text-align: right;
 	text-transform: uppercase;
 }
+
+.sitemap li {
+	list-style-type:none;
+	padding-bottom:8px;
+}
+
+.sitemap li.sitemapHeader {
+	font-size:120%;
+	font-weight:bold;
+	margin:10px 0;
+	
+}
 #superFooter {
 	height: 600px;
 	color: #988f80;
