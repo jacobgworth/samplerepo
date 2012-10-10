@@ -26,7 +26,7 @@
 					<%= @community.overviewdesc.html_safe unless @community.overviewdesc.nil? %>
 				</p>
 
-				<h3>Population:</strong> <%= @community.population %></h3>
+				<!--<h3>Population:</strong> <%= @community.population %></h3>-->
 				<h2><%= @community.spiritualtitle %></h2>
 				<p>
 					<%= @community.spiritualdesc.html_safe unless @community.spiritualdesc.nil? %>
@@ -249,7 +249,6 @@
 		</div>
 
 		<% if @user.nil? %>
-		<%= link_to 'Back', communities_path %>
 		<% elsif @user.is_admin == 1%>
 		<%= link_to 'Edit', edit_community_path(@community) %> | <%= link_to 'Back', communities_path %>
 		<% else %>
