@@ -12,7 +12,7 @@
 					<%= video.link.html_safe %>
 				</div>
 				<p>
-					<%= truncate(video.description,:length=>200,:separator=>' ').html_safe %> <a href="/videos/<%= video.id %>">Read more &raquo;</a>
+					<%= truncate(video.description,:length=>200,:separator=>' ').html_safe %> <a href="/videos/<%= video.id %>">Read More &raquo;</a>
 				</p>
 				<% if !@user.nil? && @user.is_admin?%>
 				<p class="editPostsLink">

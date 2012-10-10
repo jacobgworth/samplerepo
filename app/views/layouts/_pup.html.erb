@@ -54,7 +54,7 @@
 		</div>
 		<div class="updatePost560">
 			<h4><a href="/updates/<%=m.id%>"><%=m.title%></a></h4>
-			<p><%=truncate(m.body,:length=>200,:separator=>' ').html_safe %> <a href="">READ MORE</a></p>
+			<p><%=truncate(m.body,:length=>200,:separator=>' ').html_safe %> <a href="">Read More &raquo;</a></p>
 			<p class="meta">Projects: <%=@updateprojectname.html_safe%> | Posted by: <%=creator%></p>
 		</div>
 		<div class="clearfix"><!--x--></div>
@@ -89,7 +89,7 @@
 			</div>
 			<div class="updatePost560">
 				<h4><a href="/posts/<%=m.id%>"><%=m.title%></a></h4>
-				<p><%=truncate(m.body,:length=>280,:separator=>' ').html_safe %> <a href="">READ MORE</a></p>
+				<p><%=truncate(m.body,:length=>280,:separator=>' ').html_safe %> <a href="">Read More &raquo;</a></p>
 				<%	@postproject = m.projects.last
 					if !@postproject.nil? %>
 						<p class="meta">Projects: <a href="/projects/<%=@postproject.id%>"><%=@postproject.projectname %></a> | Posted by: <%=creator%></p>
