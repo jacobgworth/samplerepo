@@ -2986,3 +2986,18 @@ tr {
 	font-family:Montserrat, Arial, sans-serif;
 	font-size:80%;
 }
+
+
+#flashalert {
+	background:red;
+	color:#fff;
+	position:absolute;
+	top:250px;
+	left:40%;
+	width:200px;
+	padding:10px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+}
