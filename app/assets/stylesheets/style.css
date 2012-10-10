@@ -2161,6 +2161,8 @@ span.year {
 	float: left;
 	width: 150px;
 	border: 2px solid #C2B092;
+	padding: 5px;
+	margin: 5px;
 }
 .updatePost h4 {
 	color: #0f483b;
