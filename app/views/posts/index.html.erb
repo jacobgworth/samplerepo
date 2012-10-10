@@ -32,7 +32,7 @@
     			<%end%>
     		<%end%>
     	</p>
-    <p><%= truncate(post.body,:length=>500,:separator=>' ').html_safe %> <%= link_to 'Read More &raquo;', post %></p>
+    <p><%= truncate(post.body,:length=>500,:separator=>' ').html_safe %> <%= link_to 'Read More »', post %></p>
     <p><%= post.imagelink %></p>
    </div>
     <% if !@user.nil? && @user.is_admin?%>
