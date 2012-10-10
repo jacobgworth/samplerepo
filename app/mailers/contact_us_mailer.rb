@@ -9,7 +9,7 @@ class ContactUsMailer < ActionMailer::Base
     @emailsubject = @data[:subject]
     @name = @data[:name]
     @phone = @data[:phone]
-    mail(:to => "lindsey@mohhaiti.org", :subject => @emailsubject, :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "info@mohhaiti.org", :subject => @emailsubject, :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
   
   def sponsorship_contact(data)
