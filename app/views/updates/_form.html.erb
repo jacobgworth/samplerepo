@@ -12,9 +12,12 @@
   <% end %>
 
   <div class="field">
-    Title<br />
-    <%= f.label :title %> (*Required)<br />
+    Title (*Required)<br />
     <%= f.text_field :title, :required=>true %>
+  </div>
+  <div class="field">
+    Author <br />
+    <%= f.text_field :author%>
   </div>
   <div class="field">
    Body<br />

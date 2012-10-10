@@ -6,6 +6,9 @@
 <h3>
   <%= @update.title %>
 </h3>
+<%unless @update.author.nil?%>
+<p>Update from <%=@update.author%></p>
+<%end%>
 <p>
   <%= @update.body %>
 </p>
