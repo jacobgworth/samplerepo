@@ -9,7 +9,7 @@
 			<% if !project.categories.first.categoryicon.nil? && !project.categories.first.categoryicon.blank? %>
 				<% @tinyicon = "sm-" + project.categories.first.categoryicon %>
 			<%else%>
-				<% @tinyicon = "sm-" + project.categories.first.categoryicon %>
+				<% @tinyicon = "sm-icon-project.png" %>
 			<% end %>
 			<% if @counter % 2 != 0 %>
 				<div class="updateProjects560Left">
