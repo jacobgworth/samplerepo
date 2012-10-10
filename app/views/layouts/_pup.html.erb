@@ -6,14 +6,19 @@
 	<div class="update560">
 		<% @counter = 1 %>
 		<% @projects.each do |project| %>
+			<% if !project.categories.first.categoryicon.nil? && !project.categories.first.categoryicon.blank? %>
+				<% @tinyicon = "sm-" + project.categories.first.categoryicon %>
+			<%else%>
+				<% @tinyicon = "sm-" + project.categories.first.categoryicon %>
+			<% end %>
 			<% if @counter % 2 != 0 %>
 				<div class="updateProjects560Left">
-					<div style="height:40px; background:url('/assets/icon-nutrition-sm.png') left 50% no-repeat;"><h4 style="padding-left:50px; padding-top:10px;" ><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h4></div>
+					<div style="height:40px; background:url('/assets/<%=@tinyicon%>') left 50% no-repeat;"><h4 style="padding-left:50px; padding-top:10px;" ><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h4></div>
 				</div>
 				<%@counter = @counter + 1%>
 			<% else%>
 				<div class="updateProjects560Right">
-					<div style="height:40px; background:url('/assets/icon-nutrition-sm.png') left 50% no-repeat;"><h4 style="padding-left:50px; padding-top:10px;" ><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h4></div>
+					<div style="height:40px; background:url('/assets/<%=@tinyicon%>') left 50% no-repeat;"><h4 style="padding-left:50px; padding-top:10px;" ><a href="/projects/<%=project.id%>"><%=project.projectname%></a></h4></div>
 				</div>
 				<%@counter = @counter + 1%>
 			<%end%>
