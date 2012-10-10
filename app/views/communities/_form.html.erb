@@ -12,68 +12,68 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :communityname %><br />
+    <strong>Community Name</strong><br />
     <%= f.text_field :communityname %>
   </div>
   <div class="field">
-    <%= f.label :latitude %><br />
+    <strong><%= f.label :latitude %></strong><br />
     <%= f.text_field :latitude %>
   </div>
   <div class="field">
-    <%= f.label :longitude %><br />
+    <strong><%= f.label :longitude %></strong><br />
     <%= f.text_field :longitude %>
   </div>
   <div class="field">
-    <%= f.label :population %><br />
+    <strong><%= f.label :population %></strong><br />
     <%= f.text_field :population %>
   </div>
   <div class="field">
-    Hero Image (filename only)<br />
+    <strong>Hero Image (file name only)</strong><br />
     <%= f.text_field :heroimage %>
   </div>
   <div class="field">
-    Overview Title:<br /> <%= f.text_field :overviewtitle %>
+    <strong>Overview Title:</strong><br /> <%= f.text_field :overviewtitle %>
   </div>
   <div class="field">
-    Overview Description: <%= f.text_area :overviewdesc %>
+    <strong>Overview Description:</strong> <%= f.text_area :overviewdesc %>
   </div>
   <div class="field">
-    Spiritual Climate Title:<br /> <%= f.text_field :spiritualtitle %>
+    <strong>Spiritual Climate Title:</strong><br /> <%= f.text_field :spiritualtitle %>
   </div>
   <div class="field">
-    Spiritual Climate Description: <%= f.text_area :spiritualdesc %>
+    <strong>Spiritual Climate Description:</strong> <%= f.text_area :spiritualdesc %>
   </div>
   <div class="field">
-    Economy Title:<br /> <%= f.text_field :econtitle %>
+    <strong>Economy Title:</strong><br /> <%= f.text_field :econtitle %>
   </div>
   <div class="field">
-    Economy Description: <%= f.text_area :econdesc %>
+    <strong>Economy Description:</strong> <%= f.text_area :econdesc %>
   </div>
   <div class="field">
-    Education Title:<br /> <%= f.text_field :edtitle %>
+    <strong>Education Title:</strong><br /> <%= f.text_field :edtitle %>
   </div>
   <div class="field">
-    Education Description: <%= f.text_area :eddesc %>
+    <strong>Education Description:</strong> <%= f.text_area :eddesc %>
   </div>
   <div class="field">
-    Health Title:<br /> <%= f.text_field :healthtitle %>
+    <strong>Health Title:</strong><br /> <%= f.text_field :healthtitle %>
   </div>
   <div class="field">
-    Health Description: <%= f.text_area :healthdesc %>
+    <strong>Health Description:</strong> <%= f.text_area :healthdesc %>
   </div>
   <div class="field">
-    Needs Title: <br> <%= f.text_field :needstitle %>
+    <strong>Needs Title:</strong> <br> <%= f.text_field :needstitle %>
   </div>
   <div class="field">
-    Needs Description: <%= f.text_area :needsdesc %>
+    <strong>Needs Description:</strong> <%= f.text_area :needsdesc %>
   </div>
   <div class="collectionSelector">
-  	Select Related Projects:<br /> <%= collection_select 'community', 'project_ids', Project.order("projectname asc"), :id, :projectname, { :include_blank => 'None'}, { :multiple => true, :projectname =>'community[project_ids][]',:selected => 0 } %>
+  	<strong>Select Related Projects:</strong><br /> <%= collection_select 'community', 'project_ids', Project.order("projectname asc"), :id, :projectname, { :include_blank => 'None'}, { :multiple => true, :projectname =>'community[project_ids][]',:selected => 0 } %>
   </div>
   <div class="collectionSelector">
-  	Select Partners:<br /> <%= collection_select 'community', 'partner_ids', Partner.order("partnername asc"), :id, :partnername, { :include_blank => 'None'}, { :multiple => true, :partnername =>'community[partner_ids][]',:selected => 0 } %>
+  	<strong>Select Partners:</strong><br /> <%= collection_select 'community', 'partner_ids', Partner.order("partnername asc"), :id, :partnername, { :include_blank => 'None'}, { :multiple => true, :partnername =>'community[partner_ids][]',:selected => 0 } %>
   </div>
-  <div>Add image(s):
+  <div style="margin-top:15px;"><strong>Add image(s):</strong>
   <%= f.fields_for :assets do |asset_fields| %>
   	<% if asset_fields.object.new_record? %>
   		<p>
