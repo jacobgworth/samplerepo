@@ -11,9 +11,9 @@ class UpdatesController < ApplicationController
     if @cid.nil?
       #@jason = Update.all.to_gmaps4rails
       @categories = Category.joins(:updates).order("categoryname asc").uniq
-      @updates = Update.all.reverse
+      @updates = Update.order("postdate desc")
     else
-      @updates = Update.joins(:categories).where("category_id=" + @cid).reverse
+      @updates = Update.joins(:categories).where("category_id=" + @cid).order("postdate desc")
       #@jason = @updates.to_gmaps4rails
       @category = Category.find(@cid)
     end

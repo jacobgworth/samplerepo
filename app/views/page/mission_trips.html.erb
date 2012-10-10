@@ -48,10 +48,10 @@ If you have a medical team that wants to lead a medical mission trip to Haiti, w
 	<% if experience.photo.exists? %>
 		<div class="item">
   			<%= image_tag experience.photo.url(:medium),:title=>experience.summary,:alt=>experience.summary  %>
-  			<%= experience.summary %>
-  			<%= link_to 'Edit', edit_experience_path(experience)%>
-  		</div>
-  	<%end%>
+-  			<%= experience.summary %>
+-  			<%= link_to 'Edit', edit_experience_path(experience)%>
+-  		</div>
+-  	<%end%>
 <% end %>
 </div>
 </div>

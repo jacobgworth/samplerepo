@@ -234,6 +234,12 @@ class PageController < ApplicationController
     end
   end
   
+  def newsletter_thank_you
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}
+    end
+  end
+  
   def nutrition
     @category = Category.find_by_categoryname("Nutrition")
     @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse

@@ -43,8 +43,16 @@ Mohhaiti::Application.routes.draw do
 
   get "home/index"
   
-  
+  #################301 Redirects from old site############################
   match "/get_involved/:any" => redirect("/mission_trips")
+  
+  match "/about_moh/staff/:any" => redirect("/meet_our_staff")
+  
+  match "/about_moh/vision_and_resolution/" => redirect("/vision_mission_resolution")
+  ########################################################################
+  
+  get "page/newsletter_thank_you"
+  match "/newsletter_thank_you" => "page#newsletter_thank_you"
   
   get "page/sitemap"
   match "/sitemap" => "page#sitemap"

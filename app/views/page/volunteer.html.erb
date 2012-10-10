@@ -9,8 +9,8 @@
 			Volunteer</h1>
 		<p>You don't have to fly to Haiti to help Mission of Hope!  If you live in Southwest Florida you can simply volunteer at our office. If you live somewhere else, we can still use your help! We are looking for volunteers with all sorts of skills to help us with anything from preparing mailings to marketing our campaigns. Fill out the short form below and we'll add you to our volunteer list.
 			</p>
-		<% if @isvalid.nil?%>
 			<div class="forms">
+				<% if @isvalid.nil?%>
 				<form>
 					<div class="field">Name: <input type="text" name="txtname"><br></div>
 					<div class="field">Email: <input type="text" name="txtemail"></div>
@@ -18,11 +18,11 @@
 					<div class="field" style="clear:both;"><b>Please let us know your skills, interests and times available:</b><br /><textarea name="txtmessage"></textarea></div>
 					<br />
 					<div class="actions" style="clear:both;"><input type="submit" value="Submit"></div>
-				</form>		
+				</form>
+				<%else%>
+			<div style="padding-bottom:20px;"><h3>Thank you for your interest in volunteering for MOH. We'll be in touch shortly! </h3></div>
+		<%end%>		
 			</div>
-		<%else%>
-			<div><h3>Thank you for your interest in volunteering for MOH. We'll be in touch shortly! </h3></div>
-		<%end%>
 		</div>
 
 		<div id="contentRight300">
