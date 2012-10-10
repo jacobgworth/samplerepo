@@ -2208,8 +2208,7 @@ span.year {
 	float: left;
 	width: 150px;
 	border: 2px solid #C2B092;
-	padding: 5px;
-	margin: 5px;
+	margin: 5px 20px 20px 0;
 }
 .updatePost h4 {
 	color: #0f483b;
@@ -2981,4 +2980,24 @@ tr {
 }
 .supportCTA a{
 	/*color: #E4D4B9;*/
+}
+
+.supportCTA {
+	font-family:Montserrat, Arial, sans-serif;
+	font-size:80%;
+}
+
+
+#flashalert {
+	background:red;
+	color:#fff;
+	position:absolute;
+	top:250px;
+	left:40%;
+	width:200px;
+	padding:10px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
 }

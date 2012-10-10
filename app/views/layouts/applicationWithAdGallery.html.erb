@@ -25,6 +25,19 @@ $(document).ready(function() {
 	});
 });
 </script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20469817-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </head>
 <body>
 
@@ -57,17 +70,44 @@ $(document).ready(function() {
 			<li class="vimeo"><a href="http://vimeo.com/mohhaiti">Vimeo</a></li>
 		</ul>
 		</div>
-		<p class="clearfix"><a href="/contact_us">Other ways to contact us &raquo;</a></p>
+		<p class="clearfix"></p>
 		<a href=""><img src="/assets/button-newsletter.png" alt="Subscribe to our newsletter" /></a>
 		<div class="newsletterSignup">
-		<form action="http://mohh.convio.net/site/Survey" method="POST" >
-                <input name="cons_email" type="text" value="enter email address" class="newsletterinput" />
-                <input type="hidden" name="cons_info_component" id="cons_info_component" value="t" />
-                <input type="hidden" name="pagewrap" value="n"/>
-                <input type="hidden" name="SURVEY_ID" id="SURVEY_ID" value="1162" />
-                <span style="display:none"><input type="text" name="denySubmit" id="denySubmit" value="" alt="" />Please leave this field empty</span>
-                <input type="submit" value="GO" class="newsletterbutton" name="ACTION_SUBMIT_SURVEY_RESPONSE"/>                
+<form method="post" action="https://app.icontact.com/icp/signup.php" name="icpsignup" id="icpsignup1000" accept-charset="UTF-8" onsubmit="return verifyRequired1000();" >
+<input type="hidden" name="redirect" value="http://localhost:3000/newsletter_thank_you">
+<input type="hidden" name="errorredirect" value="http://www.icontact.com/www/signup/error.html">
+
+        <input onfocus="this.value=''" type="text" name="fields_email" class="newsletterinput" value="enter email address">
+    <input type="hidden" name="listid" value="20080">
+    <input type="hidden" name="specialid:20080" value="9HZA">
+
+    <input type="hidden" name="clientid" value="791417">
+    <input type="hidden" name="formid" value="1000">
+    <input type="hidden" name="reallistid" value="1">
+    <input type="hidden" name="doubleopt" value="0">
+<input type="submit" class="newsletterbutton" name="Submit" value="GO">
 </form>
+<script type="text/javascript">
+
+var icpForm1000 = document.getElementById('icpsignup1000');
+
+if (document.location.protocol === "https:")
+
+	icpForm1000.action = "https://app.icontact.com/icp/signup.php";
+function verifyRequired1000() {
+  if (icpForm1000["fields_email"].value == "") {
+    icpForm1000["fields_email"].focus();
+    alert("The Email field is required.");
+    return false;
+  }
+
+
+return true;
+}
+</script>
+<span class="link"><a href="http://www.icontact.com">Email Marketing</a> You Can Trust</span>
+
+
 </div>
 	</div>
 	<div class="superFooterCol">
@@ -83,7 +123,7 @@ $(document).ready(function() {
 	<div class="superFooterColLast">
 		<h5>Get Involved</h5>
 		<ul>
-			<li><a href="https://www.denarionline.com/DonorServices/TemplatePage.Aspx?COMP_REF=_MOHHAITI%20&CONTENT=HOME&master=master:mohr&theme=mohr">Donate &raquo;</a></li>
+			<li><a href="https://www.denarionline.com/DonorServices/TEMPLATEPAGE.ASPX?COMP_REF=_MOHHAITI%20&CONTENT=GOSOLG&DS_GO_REF=F6DB76D974&master=master:mohr&theme=mohr">Donate &raquo;</a></li>
 			<li><a href="/child-sponsorship">Child Sponsorship &raquo;</a></li>
 			<li><a href="/mission_trips">Mission Trips &raquo;</a></li>
 			<li><a href="/church_advancement">Churches &raquo;</a></li>

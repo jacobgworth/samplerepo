@@ -12,7 +12,7 @@
 		<% @communityimage = community.assets.first%>
 		<% if @itemCount.modulo(2) == 0 %>
 			<div class="grid2x2Left" style="height:240px;">
-				<div class="gridImage villages" style="background-image: none;')">
+				<div class="gridImage  projectsMed" style="background-image: none;')">
 					<% if @communityimage.nil? %>
 						<a href="/communities/<%=community.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a>
 					<% else %>
