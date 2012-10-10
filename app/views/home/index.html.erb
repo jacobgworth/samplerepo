@@ -72,10 +72,12 @@
 				<% 
 					created = m.created_at 
 					creator = "-"
-					if m.user.blank?
+					if m.user.blank? && m.author.nil?
 						creator = '-'
-					else
+					elsif m.author.nil?
 						creator = m.user.first
+					else
+						creator = m.author
 					end
 				%>
 				<span class="month"><%= created.strftime("%b")%></span><br />
