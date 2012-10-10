@@ -1362,7 +1362,7 @@ h3.CTA {
 	font-size: 16px;
 }
 
-.staff, .gift {
+.staff {
 	float: left;
 	width: 176px;
 	padding-right: 10px;
@@ -1372,7 +1372,12 @@ h3.CTA {
 }
 
 .gift {
-	margin-bottom: 20px;
+	float: left;
+	width: 176px;
+	padding-right: 10px;
+	position: relative;
+	min-height: 180px;
+
 }
 
 .staff img, .gift img {
@@ -2266,7 +2271,7 @@ span.year {
 	text-transform: uppercase;
 }
 #superFooter {
-	height: 550px;
+	height: 600px;
 	color: #988f80;
 	width: 960px;
 	margin: auto;
@@ -2280,8 +2285,8 @@ span.year {
 
 .superFooterCol {
 	float: left;
-	width: 200px;
-	margin-right: 60px;
+	width: 305px;
+	
 }
 
 .superFooterColLast {
@@ -2346,6 +2351,40 @@ span.year {
 .superFooterCol p {
 	padding: 10px 0;
 }
+.newsletterSignup {
+	position:relative;
+}
+.newsletterinput {
+	padding:5px;
+	width:202px;
+	float:left;
+	position: absolute;
+	top:0;
+	left:0;
+	background:#F9F2E7;
+	border: 1px solid #C2B092;
+	height:25px;
+}
+
+.newsletterbutton {
+	position:absolute;
+	top:3px;
+	left:168px;
+	width:40px;
+	height:30px;
+	background: #ea861b;
+	color: #E4D4B9;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1em;
+	border:none;
+	-moz-box-shadow: 1px 1px #c26603;
+	-webkit-box-shadow: 1px 1px #c26603;
+	box-shadow: 1px 1px #c26603;
+	
+}
+
+
 #footer {
 	width: 100%;
 	height: 400px;

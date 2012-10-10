@@ -32,7 +32,7 @@
   <% end %></div>
 
 <div id="superFooter">
-	<div class="superFooterCol">
+	<div class="superFooterCol" style="width:200px;">
 		<a href="/"><img src="/assets/logoFooter.png" /></a>
 		
 	</div>
@@ -47,6 +47,16 @@
 		</div>
 		<p class="clearfix"><a href="/contact_us">Other ways to contact us &raquo;</a></p>
 		<a href=""><img src="/assets/button-newsletter.png" alt="Subscribe to our newsletter" /></a>
+		<div class="newsletterSignup">
+		<form action="http://mohh.convio.net/site/Survey" method="POST" >
+                <input name="cons_email" type="text" value="enter email address" class="newsletterinput" />
+                <input type="hidden" name="cons_info_component" id="cons_info_component" value="t" />
+                <input type="hidden" name="pagewrap" value="n"/>
+                <input type="hidden" name="SURVEY_ID" id="SURVEY_ID" value="1162" />
+                <span style="display:none"><input type="text" name="denySubmit" id="denySubmit" value="" alt="" />Please leave this field empty</span>
+                <input type="submit" value="GO" class="newsletterbutton" name="ACTION_SUBMIT_SURVEY_RESPONSE"/>                
+</form>
+</div>
 	</div>
 	<div class="superFooterCol">
 		<h5>Learn More About Us</h5>
@@ -66,7 +76,7 @@
 			<li><a href="/church_advancement">Churches &raquo;</a></li>
 		</ul>
 	</div>
-	<p>&copy;<%= Date.today.year %> Mission of Hope Haiti // <% if current_user && current_user.is_admin? %>
+	<p class="clearfix" style="padding-top:40px;">&copy;<%= Date.today.year %> Mission of Hope Haiti // <% if current_user && current_user.is_admin? %>
     			<a href="/console">Admin</a> // <%= link_to "Logout", log_out_path %>
 			<% elsif current_user %>
     			<%= link_to "Logout", log_out_path %>
