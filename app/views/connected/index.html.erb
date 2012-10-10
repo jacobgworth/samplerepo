@@ -52,7 +52,7 @@
 		<%@updates.each do |update|%>
 			<div class="update300">
 			<p class="meta">	<% 
-					created = update.created_at 
+					created = update.postdate 
 					creator = "-"
 					if update.user.blank?
 						creator = '-'

@@ -70,7 +70,7 @@
 			<div class="update">
 			<div class="updateDate">
 				<% 
-					created = m.created_at 
+					created = m.postdate 
 					creator = "-"
 					if m.user.blank? && m.author.nil?
 						creator = '-'
