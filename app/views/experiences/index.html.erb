@@ -16,7 +16,6 @@
   			<% if !@user.nil? && @user.is_admin? %>
   				<p><%= link_to 'Edit', edit_experience_path(experience)%> | <%= link_to 'Delete', experience, confirm: 'Are you sure?', method: :delete %></p>
   			<%end%>
-  			
   		</div>
   	<%end%>
 <% end %>

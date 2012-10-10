@@ -210,6 +210,7 @@ class PageController < ApplicationController
   end
   
   def mission_trips
+    @user = current_user
     @experiences = Experience.last(5)
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}
