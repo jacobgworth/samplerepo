@@ -43,6 +43,9 @@ Mohhaiti::Application.routes.draw do
 
   get "home/index"
   
+  
+  match "/get_involved/:any" => redirect("/mission_trips")
+  
   get "page/what_we_do"
   match "/what-we-do" => "page#what_we_do"
   
