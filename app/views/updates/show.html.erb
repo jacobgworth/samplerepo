@@ -10,7 +10,11 @@
   <%= @update.body %>
 </p>
 <% unless @update.categories.count == 0%>
-<h3 style="width:295px;" class="projectDetailButton"><strong>Related to:</strong><a> <%=@update.categories.first.categoryname%></a></h3>
+	<h3 style="width:295px;" class="projectDetailButton"><strong>Related to: </strong>
+		<% @cat=@update.categories.order("categoryname asc").limit(1) 
+			@cat2=@update.categories.order("categoryname asc").offset(1) %>
+		<a href="/updates/?cid=<%=@cat.first.id%>"><%= @cat.first.categoryname %></a><% unless @cat2.nil? %><% @cat2.each do |cat2|%>, <a href="/updates/?cid=<%=cat2.id%>"><%= cat2.categoryname%></a><% end%><%end%>
+	</h3>
 <% end %>
 <p>
   <%= @update.media %>
