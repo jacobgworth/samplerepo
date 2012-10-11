@@ -46,12 +46,6 @@
 		<div class="updateDate">
 			<% 
 				created = m.postdate 
-				creator = "-"
-				if m.user.blank?
-					creator = '-'
-				else
-					creator = m.user.first
-				end
 			%>
 			<span class="month"><%= created.strftime("%b")%></span><br />
 			<span class="date"><%=created.strftime("%d")%></span><br />
@@ -60,7 +54,9 @@
 		<div class="updatePost560">
 			<h4><a href="/updates/<%=m.id%>"><%=m.title%></a></h4>
 			<p><%=truncate(m.body,:length=>200,:separator=>' ').html_safe %> <a href="">Read More &raquo;</a></p>
-			<p class="meta">Projects: <%=@updateprojectname.html_safe%> | Posted by: <%=creator%></p>
+			<% @cat = m.categories.order("categoryname asc").limit(1)%>
+				<p class="meta">
+					<%unless @cat.count==0%>Related Category: <a href="/updates/?cid=<%=@cat.first.id%>"><%=@cat.first.categoryname%></a><%end%> <%if !m.author.nil? && !m.author.blank?%><%unless @cat.count==0%>| <%end%>Update from: <%=m.author%><%end%></p>
 		</div>
 		<div class="clearfix"><!--x--></div>
 	</div>
@@ -81,12 +77,6 @@
 			<div class="updateDate">
 				<% 
 					created = m.postdate 
-					creator = "-"
-					if m.user.blank?
-						creator = ''
-					else
-						creator = m.user.first
-					end
 				%>
 				<span class="month"><%= created.strftime("%b")%></span><br />
 				<span class="date"><%=created.strftime("%d")%></span><br />
@@ -95,12 +85,9 @@
 			<div class="updatePost560">
 				<h4><a href="/posts/<%=m.id%>"><%=m.title%></a></h4>
 				<p><%=truncate(m.body,:length=>280,:separator=>' ').html_safe %> <a href="">Read More &raquo;</a></p>
-				<%	@postproject = m.projects.last
-					if !@postproject.nil? %>
-						<p class="meta">Projects: <a href="/projects/<%=@postproject.id%>"><%=@postproject.projectname %></a> | Posted by: <%=creator%></p>
-					<%else%>
-						<p class="meta">Projects: No Current Projects | Posted by: <%=creator%></p>
-					<% end %>
+				<% @cat = m.categories.order("categoryname asc").limit(1)%>
+				<p class="meta">
+					<%unless @cat.count==0%>Related Category: <a href="/updates/?cid=<%=@cat.first.id%>"><%=@cat.first.categoryname%></a><%end%> <%if !m.author.nil? && !m.author.blank?%><%unless @cat.count==0%>| <%end%>Posted by: <%=m.author%><%end%></p>
 			</div>
 			<div class="clearfix"><!--x--></div>
 			</div>
