@@ -64,6 +64,8 @@
 			<div class="buttonSquareOrange clearfix" style="width:300px;"><a href="/learn_sponsor">Learn More About Sponsorships &raquo;</a></div>
 			<div class="contentDiv" style="padding-top:30px;"></div>
 			<div class="contentForm">
+			
+			<% unless @isvalid? %>
 			<div class="forms" style="margin-top: 20px;" id="form">
 				<h4>Sign up for Pre-Sponsorship!</h4>
 				<form>
@@ -85,6 +87,11 @@
 					 <div class="actions"><input type="submit" value="Submit Request"></div>
 				</form>
 			</div>
+			<%else%>
+				<div class="forms" style="margin-top: 20px;" id="form">Thank you for signing up for pre-sponsorship. We'll be in touch!</div>
+			<%end%>
+			
+			
 			</div>
 		</div>
 
