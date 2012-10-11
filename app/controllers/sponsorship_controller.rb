@@ -1,7 +1,14 @@
 class SponsorshipController < ApplicationController
   def index
     
-    if params[:fname].nil? || params[:fname] == ""
+    @txtname = params[:fname]
+    @txtemail = params[:email]
+    @txtstreet = params[:address]
+    @txtcity = params[:city]
+    @txtstate = params[:state]
+    @txtzip = params[:zip]
+    
+    if @txtname.nil? || @txtname == '' || @txtstreet.nil? || @txtstreet == '' || @txtcity.nil? || @txtcity == '' || @txtstate.nil? || @txtstate == '' || @txtzip.nil? || @txtzip == ''
       @isvalid = false
       @testrequest='first time'
     else
