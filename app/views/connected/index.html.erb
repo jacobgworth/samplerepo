@@ -53,12 +53,6 @@
 			<div class="update300">
 			<p class="meta">	<% 
 					created = update.postdate 
-					creator = "-"
-					if update.user.blank?
-						creator = '-'
-					else
-						creator = update.user.first
-					end
 				%>
 				<%= created.strftime("%b")%> <%=created.strftime("%d")%>, <%=created.strftime("%Y")%>
 			</p>
@@ -66,7 +60,9 @@
 				<h3><a href="/updates/<%=update.id%>"><%=update.title%></a></h3>
 
 				<p><%=truncate(update.body,:length=>100,:separator=>' ')%> <a href="/updates/<%=update.id%>">READ MORE</a></p>
-				<p class="meta">Projects: Project Name | Posted by: <%=creator%></p>
+				<% @cat = update.categories.order("categoryname asc").limit(1)%>
+				<p class="meta">
+					<%unless @cat.count==0%>Related Category: <a href="/updates/?cid=<%=@cat.first.id%>"><%=@cat.first.categoryname%></a><%end%> <%if !update.author.nil? && !update.author.blank?%><%unless @cat.count==0%>| <%end%>Update from: <%=update.author%><%end%></p>
 				
 			</div>
 			<div class="clearfix"><!--x--></div>
