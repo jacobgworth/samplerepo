@@ -428,7 +428,8 @@ class PageController < ApplicationController
         :txtcity => @txtcity,
         :txtstate => @txtstate,
         :txtzip => @txtzip,
-        :txtmessage => @txtmessage 
+        :txtmessage => @txtmessage,
+        :txtdatesinterested => @txtdatesinterested
       }
       respond_to do |format|
         ContactUsMailer.vision_trip(@data).deliver
