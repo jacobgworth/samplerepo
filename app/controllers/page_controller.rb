@@ -401,17 +401,28 @@ class PageController < ApplicationController
   end
   
   def vision_trip
-    @fname = params[:fname]
-    @comments = params[:letter]
-    @fromaddress = params[:email]
-    @phone = params[:phonenumber]
-    if !@fname.nil? && @fname != "" && !@comments.nil? && @comments != "" && !@fromaddress.nil? && @fromaddress != ""
+    @txtfirst = params[:txtfirst]
+    @txtlast = params[:txtlast]
+    @txtphone = params[:txtphone]
+    @txtemail = params[:txtemail]
+    @txtchurch = params[:txtchurch]
+    @txtcity = params[:txtcity]
+    @txtstate = params[:txtstate]
+    @txtzip = params[:txtzip]
+    @txtmessage = params[:txtmessage]
+
+    if !@txtfirst.nil? && @txtfirst != "" && !@txtphone.nil? && @txtphone != "" && !@txtemail.nil? && @txtemail != "" && !@txtmessage.nil? && @txtmessage != ""
       @isvalid = true
       @data = {
-        :fname => @fname, 
-        :fromaddress => @fromaddress, 
-        :comments => @comments,
-        :phone => @phone
+        :txtfirst => @txtfirst,
+        :txtlast => @txtlast,
+        :txtphone => @txtphone,
+        :txtemail => @txtemail,
+        :txtchurch => @txtchurch,
+        :txtcity => @txtcity,
+        :txtstate => @txtstate,
+        :txtzip => @txtzip,
+        :txtmessage => @txtmessage 
       }
       respond_to do |format|
         ContactUsMailer.vision_trip(@data).deliver

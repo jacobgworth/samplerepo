@@ -18,12 +18,12 @@ class ContactUsMailer < ActionMailer::Base
     @data = data
     
     @childpreferences = @data[:childpreferences]
-    @fname = @data[:fname], 
-    @phone = @data[:phone],
-    @fromaddress = @data[:fromaddress], 
-    @streetaddress = @data[:streetaddress],
-    @city = @data[:city],
-    @state = @data[:state],
+    @fname = @data[:fname]
+    @phone = @data[:phone]
+    @fromaddress = @data[:fromaddress]
+    @streetaddress = @data[:streetaddress]
+    @city = @data[:city]
+    @state = @data[:state]
     @zip = @data[:zip]  
     
     mail(:to => "sponsorship@mohhaiti.org", :subject => "Child Sponsorship Inquiry", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
@@ -34,11 +34,11 @@ class ContactUsMailer < ActionMailer::Base
     
     @data = data
     
-    @fname = @data[:fname], 
-    @phone = @data[:phone],
-    @fromaddress = @data[:fromaddress], 
-    @bodym = @data[:bodym],
-    @childname = @data[:childname],
+    @fname = @data[:fname]
+    @phone = @data[:phone]
+    @fromaddress = @data[:fromaddress]
+    @bodym = @data[:bodym]
+    @childname = @data[:childname]
     @childnumber = @data[:childnumber]
     
     mail(:to => "sponsorship@mohhaiti.org", :subject => "Write My Child", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
@@ -49,11 +49,11 @@ class ContactUsMailer < ActionMailer::Base
     
     @data = data
     
-    @fullname = @data[:fname], 
-    @phone = @data[:phone],
-    @fromaddress = @data[:fromaddress], 
-    @comments = @data[:comments],
-    
+    @fullname = @data[:fname]
+    @phone = @data[:phone]
+    @fromaddress = @data[:fromaddress]
+    @comments = @data[:comments]
+ 
     
     mail(:to => "missiontrips@mohhaiti.org", :subject => "Take a Mission Trip", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
@@ -63,10 +63,10 @@ class ContactUsMailer < ActionMailer::Base
     
     @data = data
     
-    @txtname = @data[:txtname], 
-    @txtphonenumber = @data[:txtphonenumber],
-    @txtemail = @data[:txtemail], 
-    @txtmessage = @data[:txtmessage],
+    @txtname = @data[:txtname]
+    @txtphonenumber = @data[:txtphonenumber]
+    @txtemail = @data[:txtemail]
+    @txtmessage = @data[:txtmessage]
     
     @frizzle = @data[:txtname]
     
@@ -78,14 +78,17 @@ class ContactUsMailer < ActionMailer::Base
     
     @data = data
     
-    @txtname = @data[:txtname], 
-    @txtphonenumber = @data[:txtphonenumber],
-    @txtemail = @data[:txtemail], 
-    @txtmessage = @data[:txtmessage],
+    @txtfirst = @data[:txtfirst]
+    @txtlast = @data[:txtlast]
+    @txtphone = @data[:txtphone]
+    @txtemail = @data[:txtemail]
+    @txtchurch = @data[:txtchurch]
+    @txtcity = @data[:txtcity]
+    @txtstate = @data[:txtstate]
+    @txtzip = @data[:txtzip]
+    @txtmessage = @data[:txtmessage]
     
-    @frizzle = @data[:txtname]
-    
-    mail(:to => "info@mohhaiti.org", :subject => "MOH Volunteer", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "david.dewhirst@threetwelvecreative.com", :subject => "Vision Trip Information", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
   
 end
