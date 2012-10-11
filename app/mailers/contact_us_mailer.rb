@@ -88,7 +88,7 @@ class ContactUsMailer < ActionMailer::Base
     @txtzip = @data[:txtzip]
     @txtmessage = @data[:txtmessage]
     
-    mail(:to => "david.dewhirst@threetwelvecreative.com", :subject => "Vision Trip Information", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "info@mohhaiti.org", :subject => "Vision Trip Information", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
   
 end
