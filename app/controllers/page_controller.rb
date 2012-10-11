@@ -11,24 +11,13 @@ class PageController < ApplicationController
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
   end
-  
-  def our_story
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-    end
-  end
+
   
   def be_a_partner
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
-  end
-  
-   def partner_of_hope
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-    end
-  end
+  end 
   
   def console
     unless is_admin_user?
@@ -266,7 +255,19 @@ class PageController < ApplicationController
       format.html {render :layout=>"homeLayout"}# orphan_care.html.erb
     end
   end
-   
+  
+  def our_story
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+
+  def partner_of_hope
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
   def preparing_for_mission_trips
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
@@ -414,6 +415,7 @@ class PageController < ApplicationController
     @txtstate = params[:txtstate]
     @txtzip = params[:txtzip]
     @txtmessage = params[:txtmessage]
+    @txtdatesinterested = params[:txtdatesinterested]
 
     if !@txtfirst.nil? && @txtfirst != "" && !@txtphone.nil? && @txtphone != "" && !@txtemail.nil? && @txtemail != "" && !@txtmessage.nil? && @txtmessage != ""
       @isvalid = true

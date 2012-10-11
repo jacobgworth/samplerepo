@@ -1,5 +1,16 @@
 class ContactUsMailer < ActionMailer::Base
   
+  def church_partner(data)
+    
+    @data = data
+    
+    @fromaddress = @data[:fromaddress]
+    @emailsubject = @data[:subject]
+    @name = @data[:name]
+    @phone = @data[:phone]
+    mail(:to => "info@mohhaiti.org", :subject => @emailsubject, :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
+  end
+  
   def contact_us_mail(data,msgbody)
     
     @data = data
@@ -13,8 +24,7 @@ class ContactUsMailer < ActionMailer::Base
   end
   
   def sponsorship_contact(data)
-    
-    
+     
     @data = data
     
     @childpreferences = @data[:childpreferences]
@@ -74,7 +84,7 @@ class ContactUsMailer < ActionMailer::Base
   end
   
   def vision_trip(data)
-    #change this to info@mohhaiti.org after testing
+    #change this to churchpartnerships@mohhaiti.org after testing
     
     @data = data
     
@@ -87,8 +97,9 @@ class ContactUsMailer < ActionMailer::Base
     @txtstate = @data[:txtstate]
     @txtzip = @data[:txtzip]
     @txtmessage = @data[:txtmessage]
+    @txtdatesinterested = @data[:txtdatesinterested]
     
-    mail(:to => "info@mohhaiti.org", :subject => "Vision Trip Information", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "churchpartnerships@mohhaiti.org", :subject => "Vision Trip Information", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
   
 end
