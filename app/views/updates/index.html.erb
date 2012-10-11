@@ -27,6 +27,9 @@
 		</h3>
 	<% end %>
 	</p>
+	<% if !@user.nil? && @user.is_admin?%>
+  	<%= link_to 'Edit', edit_update_path(update) %> | <%= link_to 'Delete', update, confirm: 'Are you sure?', method: :delete %>
+  <% end %>
   </div>
 <% end %>
 
