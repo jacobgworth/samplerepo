@@ -6,7 +6,7 @@ class SponsorshipController < ApplicationController
       @testrequest='first time'
     else
       @isvalid = true
-      @prefs = params[:name]
+      @prefs = " "
       if !params[:prefgirl].nil?
         @prefs = "Girl,"
       end

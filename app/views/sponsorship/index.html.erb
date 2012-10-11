@@ -33,6 +33,7 @@
 			Child Sponsorship</h1>
 			<a name="sponsorForm">&nbsp;</a>
 			<h4>Pre-Sponsor a Student Today!</h4>
+			
 			<p>
 				Pre-Sponsor a Student Today!
 				Help us open our doors to 500 more children who would like to attend the School of Hope this year!  You can change the life of one of these children, by committing to a pre-sponsorship now so they can attend school in the fall.
@@ -64,8 +65,11 @@
 			<div class="buttonSquareOrange clearfix" style="width:300px;"><a href="/learn_sponsor">Learn More About Sponsorships &raquo;</a></div>
 			<div class="contentDiv" style="padding-top:30px;"></div>
 			<div class="contentForm">
+			
+			<% if @isvalid == false %>
 			<div class="forms" style="margin-top: 20px;" id="form">
 				<h4>Sign up for Pre-Sponsorship!</h4>
+				<p>All fields required.</p>
 				<form>
 					<p style="padding-top:30px;">Thank you for wanting to help change the life of one student through sponsorship. Fill out the short form below to submit your commitment to a sponsorship beginning this fall. Upon submission our child sponsorship team will be in touch with you! 
 						</p>
@@ -85,6 +89,11 @@
 					 <div class="actions"><input type="submit" value="Submit Request"></div>
 				</form>
 			</div>
+			<%else%>
+				<div class="forms" style="margin-top: 20px; padding-bottom:20px;" id="form"><h2>Thank you for signing up for pre-sponsorship. We'll be in touch!</h2></div>
+			<%end%>
+			
+			
 			</div>
 		</div>
 

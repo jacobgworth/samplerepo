@@ -11,24 +11,13 @@ class PageController < ApplicationController
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
   end
-  
-  def our_story
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-    end
-  end
+
   
   def be_a_partner
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
-  end
-  
-   def partner_of_hope
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-    end
-  end
+  end 
   
   def console
     unless is_admin_user?
@@ -43,6 +32,10 @@ class PageController < ApplicationController
   end
   
   def church_partner
+    @txtname = params[:txtname]
+    if !@txtname.nil? && @txtname != ''
+      @isvalid = true
+    end
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# three_cords.html.erb
     end
@@ -262,7 +255,19 @@ class PageController < ApplicationController
       format.html {render :layout=>"homeLayout"}# orphan_care.html.erb
     end
   end
-   
+  
+  def our_story
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+
+  def partner_of_hope
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
   def preparing_for_mission_trips
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
@@ -401,9 +406,40 @@ class PageController < ApplicationController
   end
   
   def vision_trip
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# three_cords.html.erb
-    end
+    @txtfirst = params[:txtfirst]
+    @txtlast = params[:txtlast]
+    @txtphone = params[:txtphone]
+    @txtemail = params[:txtemail]
+    @txtchurch = params[:txtchurch]
+    @txtcity = params[:txtcity]
+    @txtstate = params[:txtstate]
+    @txtzip = params[:txtzip]
+    @txtmessage = params[:txtmessage]
+    @txtdatesinterested = params[:txtdatesinterested]
+
+    if !@txtfirst.nil? && @txtfirst != "" && !@txtphone.nil? && @txtphone != "" && !@txtemail.nil? && @txtemail != "" && !@txtmessage.nil? && @txtmessage != ""
+      @isvalid = true
+      @data = {
+        :txtfirst => @txtfirst,
+        :txtlast => @txtlast,
+        :txtphone => @txtphone,
+        :txtemail => @txtemail,
+        :txtchurch => @txtchurch,
+        :txtcity => @txtcity,
+        :txtstate => @txtstate,
+        :txtzip => @txtzip,
+        :txtmessage => @txtmessage,
+        :txtdatesinterested => @txtdatesinterested
+      }
+      respond_to do |format|
+        ContactUsMailer.vision_trip(@data).deliver
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+      end 
+     else
+       respond_to do |format|
+         format.html {render :layout=>"homeLayout"}# three_cords.html.erb
+       end
+     end
   end
   
   def volunteer
