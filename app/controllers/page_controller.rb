@@ -293,6 +293,30 @@ class PageController < ApplicationController
     end
   end
    
+  def request_info
+    @fname = params[:fname]
+    @comments = params[:letter]
+    @fromaddress = params[:email]
+    @phone = params[:phonenumber]
+    if !@fname.nil? && @fname != "" && !@comments.nil? && @comments != "" && !@fromaddress.nil? && @fromaddress != ""
+      @isvalid = true
+      @data = {
+        :fname => @fname, 
+        :fromaddress => @fromaddress, 
+        :comments => @comments,
+        :phone => @phone
+      }
+      respond_to do |format|
+        ContactUsMailer.take_a_trip(@data).deliver
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+      end 
+    else
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+      end
+    end
+  end
+  
   def school_of_hope
     @category = Category.find_by_categoryname("Education")
     @projects = Project.joins(:categories).where("category_id=" + @category.id.to_s).last(4).reverse
@@ -333,30 +357,6 @@ class PageController < ApplicationController
     end
   end
   
-  def request_info
-    @fname = params[:fname]
-    @comments = params[:letter]
-    @fromaddress = params[:email]
-    @phone = params[:phonenumber]
-    if !@fname.nil? && @fname != "" && !@comments.nil? && @comments != "" && !@fromaddress.nil? && @fromaddress != ""
-      @isvalid = true
-      @data = {
-        :fname => @fname, 
-        :fromaddress => @fromaddress, 
-        :comments => @comments,
-        :phone => @phone
-      }
-      respond_to do |format|
-        ContactUsMailer.take_a_trip(@data).deliver
-        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-      end 
-    else
-      @isvalid = false
-      respond_to do |format|
-        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
-      end
-    end
-  end
   
   def three_cords
     @category = Category.find_by_categoryname("3 Cords")
