@@ -401,9 +401,27 @@ class PageController < ApplicationController
   end
   
   def vision_trip
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# three_cords.html.erb
-    end
+    @fname = params[:fname]
+    @comments = params[:letter]
+    @fromaddress = params[:email]
+    @phone = params[:phonenumber]
+    if !@fname.nil? && @fname != "" && !@comments.nil? && @comments != "" && !@fromaddress.nil? && @fromaddress != ""
+      @isvalid = true
+      @data = {
+        :fname => @fname, 
+        :fromaddress => @fromaddress, 
+        :comments => @comments,
+        :phone => @phone
+      }
+      respond_to do |format|
+        ContactUsMailer.vision_trip(@data).deliver
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+      end 
+     else
+       respond_to do |format|
+         format.html {render :layout=>"homeLayout"}# three_cords.html.erb
+       end
+     end
   end
   
   def volunteer

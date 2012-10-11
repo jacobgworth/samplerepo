@@ -72,4 +72,20 @@ class ContactUsMailer < ActionMailer::Base
     
     mail(:to => "info@mohhaiti.org", :subject => "MOH Volunteer", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
+  
+  def vision_trip(data)
+    #change this to info@mohhaiti.org after testing
+    
+    @data = data
+    
+    @txtname = @data[:txtname], 
+    @txtphonenumber = @data[:txtphonenumber],
+    @txtemail = @data[:txtemail], 
+    @txtmessage = @data[:txtmessage],
+    
+    @frizzle = @data[:txtname]
+    
+    mail(:to => "info@mohhaiti.org", :subject => "MOH Volunteer", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
+  end
+  
 end
