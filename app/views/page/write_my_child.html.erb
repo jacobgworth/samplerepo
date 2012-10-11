@@ -9,6 +9,7 @@
 		</p>
 			<div class="forms" style="margin-top: 20px;">
 				<h2>Submit your letter online:</h2>
+				<% if @isvalid.nil?%>
 				<form>
 					<div class="field">Your Name: <input type="text" name="name"><br></div>
 					<div class="field">Your Email: <input type="text" name="email"></div>
@@ -18,7 +19,9 @@
 					<div class="field">Your letter: <textarea type="textarea" name="letter"></textarea></div>
 					 <div class="actions"><input type="submit" value="Submit"></div>
 				</form>		
-				
+				<%else%>
+				<div style="padding-bottom:20px;"><h3>Thank you! Your message has been sent. We will be in touch with your shortly. </h3></div>
+			<%end%>	
 			</div>
 
 </div>
