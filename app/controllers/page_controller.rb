@@ -43,6 +43,10 @@ class PageController < ApplicationController
   end
   
   def church_partner
+    @txtname = params[:txtname]
+    if !@txtname.nil? && @txtname != ''
+      @isvalid = true
+    end
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# three_cords.html.erb
     end

@@ -109,12 +109,13 @@
 					</li>
 				</ul>
 				<img src="/assets/contentDiv-560.png">
+				<% if @isvalid.nil? %>
 				<div class="forms" id="form" style="margin-top: 10px;">
 					<h3>Request more information about becoming a partner:</h3>
 					<form>
 						<div class="field">
 							Name:
-							<input type="text" name="name">
+							<input type="text" name="txtname">
 							<br>
 						</div>
 						<div class="field">
@@ -223,6 +224,9 @@
 						</div>
 					</form>
 				</div>
+				<%else%>
+					<div class="forms" id="form" style="margin-top: 10px;">Thanks for getting ahold of us! We'll be in touch soon!</div>
+				<%end%>
 			</div>
 		</div>
 		<div id="contentRight300">
