@@ -2,6 +2,9 @@
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 	<div id="content" style="padding-top:0px;">
+		<% unless @isvalid.nil?%>
+			<div class="forms" id="form" style="margin-top: 20px; padding-bottom: 20px;"><h2>Thanks for submitting your request. We will be in touch with you soon!</h2></div>
+		<%end%>
 		<div id="contentLeft560">
 			<h1><span class="eyebrow">Become a North American</span>
 			<br />
@@ -113,7 +116,7 @@
 				<div class="forms" id="divform" name="divform" style="margin-top: 10px;">
 					<h3>Request more information about becoming a partner:</h3>
 					<p>*All Fields Required</p>
-					<%= form_tag("/church_partner#divform")%>
+					<form>
 						<div class="field">
 							Name:
 							<input type="text" name="txtname">
@@ -226,8 +229,6 @@
 						</div>
 					</form>
 				</div>
-				<%else%>
-					<div class="forms" id="form" style=""margin-top: 20px; padding-bottom: 20px;"><h2>Thanks for submitting your request. We will be in touch with you soon!</h2></div>
 				<%end%>
 			</div>
 		</div>
