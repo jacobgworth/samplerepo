@@ -125,8 +125,6 @@ class PageController < ApplicationController
     end
   end
   
-  
-  
   def contact_us
     @name = params[:name]
     @body = params[:letter]

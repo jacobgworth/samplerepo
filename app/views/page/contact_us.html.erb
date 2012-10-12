@@ -6,6 +6,9 @@
 				
 			</div>
 		</div>
+		<%unless @isvalid.nil?%>
+			<div style="padding-bottom:20px;"><h3>Thank you! Your message has been sent. We will be in touch with you shortly. </h3></div>
+		<%end%>
 		<div id="contentLeft560">
 			<h1><span class="eyebrow">Mission of Hope</span><br />Contact Us</h1>
 <p>If you would like to contact us by mail, phone, or fax, please use the information below to get in touch with us.</p> 
@@ -50,9 +53,7 @@
 					<div class="field">Question or Comment: <textarea type="textarea" name="letter"></textarea></div>
 					 <div class="actions"><input type="submit" value="Submit"></div>
 				</form>	
-			<%else%>
-				<div style="padding-bottom:20px;"><h3>Thank you! Your message has been sent. We will be in touch with you shortly. </h3></div>
-			<%end%>	
+			<%end%>
 			</div>
 		</div>
 
