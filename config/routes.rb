@@ -44,9 +44,11 @@ Mohhaiti::Application.routes.draw do
   get "home/index"
   
   #################301 Redirects from old site############################
-  match "/blog" => redirect("/posts")
+  
 
-  match "/about_moh" => redirect("/about_us")  
+  match "/about_moh" => redirect("/about_us")
+  match "/about_moh/history" => redirect("/")
+  match "/about_moh/in_the_news/" => redirect("/press")  
   match "/about_moh/staff/:any" => redirect("/meet_our_staff")
   match "/about_moh/staff/" => redirect("/meet_our_staff")
   match "/about_moh/vision_and_resolution/" => redirect("/vision_mission_resolution")
@@ -54,31 +56,50 @@ Mohhaiti::Application.routes.draw do
   match "/about_moh/haiti_info/" => redirect("/about_haiti")
   match "/about_moh/contact_us/" => redirect("/contact_us")
   match "/about_moh/privacy_policy/" => redirect("/privacy")
+  match "/about_moh/videos/" => redirect("/videos")
+  match "/about_moh/what_we_believe" => redirect("/")
+  
+  match "/blog" => redirect("/posts")
   
   match "/contact-us" => redirect("/contact_us")
   
   match "/get_involved/" => redirect("/take-action")
   match "/get_involved/donations" => redirect("/take-action")
   match "/get_involved/partners_of_hope" => redirect("/partner_of_hope")
-  
-  match "/get_involved/mission_trips/" => redirect("/mission_trips")
+  match "/get_involved/child_sponsorships/faq/" => redirect("/sponsor_faq")
+  match "/get_involved/child_sponsorships/cs_store/" => redirect("/gift_store")
   match "/get_involved/child_sponsorships/" => redirect("/child-sponsorship")
-  match "/get_involved/child_sponsorships/:student_sponsorship" => redirect("/child-sponsorship")
+  match "/get_involved/child_sponsorships/orphan_sponsorship" => redirect("/child-sponsorship")
+  match "/get_involved/child_sponsorships/student_sponsorship" => redirect("/child-sponsorship")
+  match "/get_involved/church_partnerships" => redirect("/church_partner")
+  match "/get_involved/church_partnerships/vision_trip_dates" => redirect("/vision_trip")
+  match "/get_involved/employment_opportunities/" => redirect("/about_us")
+  match "/get_involved/events/" => redirect("/events")
+  match "/get_involved/internships/" => redirect("/internships")
+  match "/get_involved/mission_trips/" => redirect("/mission_trips")
+  match "/get_involved/mission_trips/faq1" => redirect("/trip_faqs")
+  match "/get_involved/mission_trips/preparing_for_your_trip/" => redirect("/preparing_for_mission_trips")
+  match "/get_involved/mission_trips/trip_costs" => redirect("/trip_costs")
+  match "/get_involved/mission_trips/trip_dates" => redirect("/trip_dates")
+  match "/get_involved/prayer_needs/" => redirect("/take-action")
   
+  match "/news" => redirect("/press")
   match "/take-the-plunge" => redirect("/mission_trips")
   
   match "/what_we_do/3cords/" => redirect("/three_cords")
   match "/what_we_do/church_advancement/" => redirect("/church_advancement")
   match "/what_we_do/education1/" => redirect("/education")
+  match "/what_we_do/education1/christian_curriculum/" => redirect("/mwen_kapab")
+  match "/what_we_do/future_plans/" => redirect("/projects")
+  match "/what_we_do/future_plans/:any" => redirect("/projects")
   match "/what_we_do/haiti_one/" => redirect("/haiti_one")
   match "/what_we_do/medical_care/" => redirect("/health_care")
+  match "/what_we_do/medical_care/prosthetics_lab" => redirect("/prosthetics")
+  match "/what_we_do/medical_care/community_health_program" => redirect("/community_health")
+ 
   match "/what_we_do/moh_500/" => redirect("/projects/5")
-  
   match "/what_we_do/nutrition/" => redirect("/nutrition")
   match "/what_we_do/orphan_care/" => redirect("/orphan_care")
-  
-  
-  
   match "/what_we_do/" => redirect("/what-we-do")
   
   
