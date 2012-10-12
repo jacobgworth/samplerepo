@@ -55,6 +55,8 @@ Mohhaiti::Application.routes.draw do
   match "/about_moh/contact_us/" => redirect("/contact_us")
   match "/about_moh/privacy_policy/" => redirect("/privacy")
   
+  match "/contact-us" => redirect("/contact_us")
+  
   match "/get_involved/" => redirect("/take-action")
   match "/get_involved/donations" => redirect("/take-action")
   match "/get_involved/partners_of_hope" => redirect("/partner_of_hope")
@@ -62,6 +64,8 @@ Mohhaiti::Application.routes.draw do
   match "/get_involved/mission_trips/" => redirect("/mission_trips")
   match "/get_involved/child_sponsorships/" => redirect("/child-sponsorship")
   match "/get_involved/child_sponsorships/:student_sponsorship" => redirect("/child-sponsorship")
+  
+  match "/take-the-plunge" => redirect("/mission_trips")
   
   match "/what_we_do/3cords/" => redirect("/three_cords")
   match "/what_we_do/church_advancement/" => redirect("/church_advancement")
