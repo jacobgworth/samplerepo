@@ -24,7 +24,7 @@ class ContactUsMailer < ActionMailer::Base
     @txtcomments = @data[:txtcomments]
     @txtprefs = @data[:txtprefs]
     
-    mail(:to => "david.dewhirst@threetwelvecreative.com", :subject => "Church Partnership Inquiry", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "info@mohhaiti.com", :subject => "Church Partnership Inquiry", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
   
   def contact_us_mail(data,msgbody)
