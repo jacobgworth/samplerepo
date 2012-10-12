@@ -45,10 +45,20 @@ Mohhaiti::Application.routes.draw do
   
   #################301 Redirects from old site############################
   match "/get_involved/:any" => redirect("/mission_trips")
-  
+
+  match "/about_moh" => redirect("/about_us")  
   match "/about_moh/staff/:any" => redirect("/meet_our_staff")
-  
+  match "/about_moh/staff/" => redirect("/meet_our_staff")
   match "/about_moh/vision_and_resolution/" => redirect("/vision_mission_resolution")
+  match "/about_moh/our_progress_in_haiti/" => redirect("/what-we-do")
+  match "/about_moh/haiti_info/" => redirect("/about_haiti")
+  match "/about_moh/contact_us/" => redirect("/contact_us")
+  match "/about_moh/privacy_policy/" => redirect("/privacy")
+  
+  match "/what_we_do/3cords/" => redirect("/three_cords")
+  
+  
+  
   ########################################################################
   
   get "page/newsletter_thank_you"
