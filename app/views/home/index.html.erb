@@ -67,6 +67,7 @@
 		<h3><span class="mediumText">Mission of Hope</span><br />in Action</h3>
 		<div class="speechBubble"><p>action updates</p></div>
 		<%@updates.each do |m|%>
+			<%@photo = m.assets.last%>
 			<div class="update">
 			<div class="updateDate">
 				<% 
@@ -75,6 +76,9 @@
 				<span class="month"><%= created.strftime("%b")%></span><br />
 				<span class="date"><%=created.strftime("%d")%></span><br />
 				<span class="year"><%=created.strftime("%Y")%></span>
+				<%unless @photo.nil?%>
+					<a href="/updates/<%=m.id%>"><img src="/assets/icon-photo-39x39.png" style="margin-top:15px;width:30px;" /></a>
+				<%end%>
 			</div>
 			<div class="updatePost">
 				<h4><a href="/updates/<%=m.id%>"><%=m.title%></a></h4>
