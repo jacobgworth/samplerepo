@@ -140,31 +140,27 @@
 				</div>
 				<%if @updates.count > 0%>
 				<%@updates.each do |m|%>
+					<%@photo = m.assets.last %>
 				<div class="update560">
 					<div class="updateDate">
-						<%
- created = m.created_at
-              creator = "-"
-              if m.user.blank?
-                creator = '-'
-              else
-                creator = m.user.first
-              end
-%>
+						<% created = m.created_at %>
 						<span class="month"><%= created.strftime("%b")%></span>
 						<br />
 						<span class="date"><%= created.strftime("%d")%></span>
 						<br />
 						<span class="year"><%= created.strftime("%Y")%></span>
+						<%unless @photo.nil?%>
+							<a href="/updates/<%=m.id%>"><img src="/assets/icon-photo-39x39.png" style="margin-top:15px;width:30px;" /></a>
+						<%end%>
 					</div>
 					<div class="updatePost560">
 						<h4><a href="/updates/<%=m.id%>"><%= m.title%></a></h4>
 						<p>
 							<%= truncate(m.body,:length=>250,:separator=>' ').html_safe %> <a href="/updates/<%=m.id%>">Read More &raquo;</a>
 						</p>
+						<% @cat = m.categories.order("categoryname asc").limit(1)%>
 						<p class="meta">
-							Projects: Project Name | Posted by: <%= creator%>
-						</p>
+							<%unless @cat.count==0%>Related Category: <a href="/updates/?cid=<%=@cat.first.id%>"><%=@cat.first.categoryname%></a><%end%> <%if !m.author.nil? && !m.author.blank?%><%unless @cat.count==0%>| <%end%>Update from: <%=m.author%><%end%></p>
 					</div>
 					<div class="clearfix">
 						<!--x-->

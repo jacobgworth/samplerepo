@@ -2,6 +2,9 @@
 	<%= render 'layouts/navBar'%>
 
 	<div id="content" style="padding-top: 50px;">
+		<%unless @isvalid.nil?%>
+			<div style="padding-bottom:20px;"><h3>Thank you for your interest in MOH. We'll be in touch shortly! </h3></div>
+		<%end%>
 		<div id="contentLeft560">
 			<h1 style="font-size: 2em;"><span class="eyebrow">Mission of Hope Haiti</span>
 			<br />
@@ -20,9 +23,8 @@
 					<div class="field" style="clear: both;">Comments: <textarea type="textarea" name="letter"></textarea></div>
 					 <div class="actions"><input type="submit" value="Submit My Request"></div>
 				</form>		
-				<%else%>
-					<div style="padding-bottom:20px;"><h3>Thank you for your interest in MOH. We'll be in touch shortly! </h3></div>
 				<%end%>
+				
 			</div>
 		</div><!-- End Content Left -->
 

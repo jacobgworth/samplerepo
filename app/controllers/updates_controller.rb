@@ -28,6 +28,7 @@ class UpdatesController < ApplicationController
   # GET /updates/1.json
   def show
     @update = Update.find(params[:id])
+    @photo = @update.assets.last
     @isadmin = is_admin_user?
 
     respond_to do |format|
@@ -41,6 +42,7 @@ class UpdatesController < ApplicationController
   def new
     if is_admin_user?
       @update = Update.new
+      @update.assets.build
 
       respond_to do |format|
         format.html {render :layout=>"homeLayout"} # new.html.erb
@@ -57,6 +59,7 @@ class UpdatesController < ApplicationController
   def edit
     if is_admin_user?
       @update = Update.find(params[:id])
+      @update.assets.build
       respond_to do |format|
          format.html {render :layout=>"homeLayout"}
       end

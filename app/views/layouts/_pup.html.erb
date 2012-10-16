@@ -38,6 +38,7 @@
 <%if @updates.count > 0%>
 	<%@updates.each do |m|%>
 	<%
+		@photo = m.assets.last
 		@updateproject = m.projects.last(1).reverse
 		@updateprojectname = ' - ' 
 		@updateprojectname = '<a href="/projects/' + @updateproject[0].id.to_s + '">' + @updateproject[0].projectname + '</a>' unless @updateproject.count == 0
@@ -50,6 +51,9 @@
 			<span class="month"><%= created.strftime("%b")%></span><br />
 			<span class="date"><%=created.strftime("%d")%></span><br />
 			<span class="year"><%=created.strftime("%Y")%></span>
+			<%unless @photo.nil?%>
+				<a href="/updates/<%=m.id%>"><img src="/assets/icon-photo-39x39.png" style="margin-top:15px;width:30px;" /></a>
+			<%end%>
 		</div>
 		<div class="updatePost560">
 			<h4><a href="/updates/<%=m.id%>"><%=m.title%></a></h4>

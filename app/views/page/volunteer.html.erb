@@ -3,6 +3,9 @@
 	<%= render 'layouts/navBar'%>
 
 	<div id="content" style="padding-top:0px;">
+		<%unless @isvalid.nil?%>
+			<div style="padding-bottom:20px;"><h3>Thank you for your interest in volunteering for MOH. We'll be in touch shortly! </h3></div>
+		<%end%>
 		<div id="contentLeft560">
 			<h1><span class="eyebrow">Mission Of Hope Haiti</span>
 			<br />
@@ -19,9 +22,7 @@
 					<br />
 					<div class="actions" style="clear:both;"><input type="submit" value="Submit"></div>
 				</form>
-				<%else%>
-			<div style="padding-bottom:20px;"><h3>Thank you for your interest in volunteering for MOH. We'll be in touch shortly! </h3></div>
-		<%end%>		
+				<%end%>
 			</div>
 		</div>
 

@@ -9,6 +9,9 @@
 <%unless @update.author.nil?%>
 <p>Update from <%=@update.author%></p>
 <%end%>
+<%unless @photo.nil?%>
+<p><img src="<%=@photo.asset.url(:thumb)%>" /></p>
+<%end%>
 <p>
   <%= @update.body %>
 </p>

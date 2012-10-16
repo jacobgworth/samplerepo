@@ -33,11 +33,64 @@ class PageController < ApplicationController
   
   def church_partner
     @txtname = params[:txtname]
-    if !@txtname.nil? && @txtname != ''
-      @isvalid = true
+    @txtphone = params[:txtphonenumber]
+    @txtemail = params[:txtemail]
+    @txtaddress = params[:txtaddress]
+    @txtcity = params[:txtcity]
+    @txtstate = params[:txtstate]
+    @txtzip = params[:txtzip]
+    @txtchurchname = params[:txtchurchname]
+    @txtchurchaddress = params[:txtchurchaddress]
+    @txtchurchcity = params[:txtchurchcity]
+    @txtchurchstate = params[:txtchurchstate]
+    @txtchurchzip = params[:txtchurchzip]
+    @txtchurchwebsite = params[:txtchurchwebsite]
+    @txtpastorname = params[:txtpastorname]
+    @txtpastorphone = params[:txtpastorphone]
+    @txtmissionname = params[:txtmissionname]
+    @txtmissionphone = params[:txtmissionphone]
+    @txtcomments = params[:txtcomments]
+    @prefs = " "
+    if !params[:chkadvocate].nil?
+      @prefs = @prefs + "Advocate,"
     end
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# three_cords.html.erb
+    if !params[:chkambassador].nil?
+      @prefs = @prefs + "Ambassador,"
+    end
+    if !params[:chkanchor].nil?
+      @prefs = @prefs + "Anchor"
+    end
+    if !@txtname.nil? && @txtname != '' 
+      @isvalid = true
+      @data = {
+        :txtname => @txtname,
+        :txtphone => @txtphone,
+        :txtemail => @txtemail,
+        :txtaddress => @txtaddress,
+        :txtcity => @txtcity,
+        :txtstate => @txtstate,
+        :txtzip => @txtzip,
+        :txtchurchname => @txtchurchname,
+        :txtchurchaddress => @txtchurchaddress,
+        :txtchurchcity => @txtchurchcity,
+        :txtchurchstate => @txtchurchstate,
+        :txtchurchzip => @txtchurchzip,
+        :txtpastorname => @txtpastorname,
+        :txtpastorphone => @txtpastorphone,
+        :txtmissionname => @txtmissionname,
+        :txtmissionphone => @txtmissionphone,
+        :txtchurchwebsite => @txtchurchwebsite,
+        :txtprefs => @prefs,
+        :txtcomments => @txtcomments
+      }
+      respond_to do |format|
+        ContactUsMailer.church_partner(@data).deliver
+        format.html {render :layout=>"homeLayout"}# three_cords.html.erb
+      end
+    else
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}# three_cords.html.erb
+      end
     end
   end
   
@@ -71,8 +124,6 @@ class PageController < ApplicationController
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
   end
-  
-  
   
   def contact_us
     @name = params[:name]

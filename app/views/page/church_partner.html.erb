@@ -2,6 +2,9 @@
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 	<div id="content" style="padding-top:0px;">
+		<% unless @isvalid.nil?%>
+			<div class="forms" id="form" style="margin-top: 20px; padding-bottom: 20px;"><h3>Thanks for submitting your request. We will be in touch with you soon!</h3></div>
+		<%end%>
 		<div id="contentLeft560">
 			<h1><span class="eyebrow">Become a North American</span>
 			<br />
@@ -110,8 +113,9 @@
 				</ul>
 				<img src="/assets/contentDiv-560.png">
 				<% if @isvalid.nil? %>
-				<div class="forms" id="form" style="margin-top: 10px;">
+				<div class="forms" id="divform" name="divform" style="margin-top: 10px;">
 					<h3>Request more information about becoming a partner:</h3>
+					<p>*All Fields Required</p>
 					<form>
 						<div class="field">
 							Name:
@@ -120,112 +124,111 @@
 						</div>
 						<div class="field">
 							Phone number:
-							<input type="text" name="phonenumber">
+							<input type="text" name="txtphonenumber">
 							<br>
 						</div>
 						<div class="field">
 							Email:
-							<input type="text" name="email">
+							<input type="text" name="txtemail">
 						</div>
 						<div class="field">
 							Address:
-							<input type="text" name="childname">
+							<input type="text" name="txtaddress">
 						</div>
 						<div class="field city">
 							City:
 							<br />
-							<input type="text" name="childnumber">
+							<input type="text" name="txtcity">
 							<br>
 						</div>
 						<div class="field state">
 							State:
 							<br />
-							<input type="text" name="childnumber">
+							<input type="text" name="txtstate">
 							<br>
 						</div>
 						<div class="field zip">
 							Zip:
 							<br />
-							<input type="text" name="childnumber">
+							<input type="text" name="txtzip">
 							<br>
 						</div>
 						<h3 style="clear: both;">About your Church</h3>
 						<div class="field">
 							Church name:
-							<input type="text" name="childnumber">
+							<input type="text" name="txtchurchname">
 							<br>
 						</div>
 						<div class="field">
 							Church Address:
-							<input type="text" name="childnumber">
+							<input type="text" name="txtchurchaddress">
 							<br>
 						</div>
 						<div class="field city">
 							City:
 							<br />
-							<input type="text" name="childnumber">
+							<input type="text" name="txtchurchcity">
 							<br>
 						</div>
 						<div class="field state">
 							State:
 							<br />
-							<input type="text" name="childnumber">
+							<input type="text" name="txtchurchstate">
 							<br>
 						</div>
 						<div class="field zip">
 							Zip:
 							<br />
-							<input type="text" name="childnumber">
+							<input type="text" name="txtchurchzip">
 							<br>
 						</div>
 						<div class="field" style="clear:both;">
 							Pastor’s Name:
-							<input type="text" name="childnumber">
+							<input type="text" name="txtpastorname">
 							<br>
 						</div>
 						<div class="field">
 							Pastor’s Phone:
-							<input type="text" name="childnumber">
+							<input type="text" name="txtpastorphone">
 							<br>
 						</div>
 						<div class="field">
 							Missions Contact Name:
-							<input type="text" name="childnumber">
+							<input type="text" name="txtmissionname">
 							<br>
 						</div>
 						<div class="field">
 							Missions Contact Phone Number:
-							<input type="text" name="childnumber">
+							<input type="text" name="txtmissionphone">
 							<br>
 						</div>
 						<div class="field">
 							Church Website:
-							<input type="text" name="childnumber">
+							<input type="text" name="txtchurchwebsite">
 							<br>
 						</div>
 						<h4>Your Partnership Interests With Mission of Hope</h4>
 						<div class="field checkbox">
-							<input type="checkbox" name="childnumber" style="width:12px;">
+							<input type="checkbox" name="chkadvocate" style="width:12px;">
 							Advocate
 						</div>
 						<div class="field checkbox">
-							<input type="checkbox" name="childnumber" style="width:12px;">
+							<input type="checkbox" name="chkambassador" style="width:12px;">
 							Ambassador
 						</div>
 						<div class="field checkbox">
-							<input type="checkbox" name="childnumber" style="width:12px;">
+							<input type="checkbox" name="chkanchor" style="width:12px;">
 							Anchor
 						</div>
 						<h3 style="clear:both;">Additional Comments</h3>
 						<div class="field">
-							<textarea type="textarea" name="letter"></textarea>
-</div>						<div class="actions">
+							<textarea type="textarea" name="txtcomments"></textarea>
+						</div>
+						<div class="actions">
 							<input type="submit" value="Submit Request">
 						</div>
 					</form>
 				</div>
-				<%else%>
-					<div class="forms" id="form" style=""margin-top: 20px; padding-bottom: 20px;"><h2>Thanks for submitting your request. We will be in touch with you soon!</h2></div>
 				<%end%>
 			</div>
 		</div>

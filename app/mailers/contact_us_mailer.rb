@@ -4,11 +4,27 @@ class ContactUsMailer < ActionMailer::Base
     
     @data = data
     
-    @fromaddress = @data[:fromaddress]
-    @emailsubject = @data[:subject]
-    @name = @data[:name]
-    @phone = @data[:phone]
-    mail(:to => "info@mohhaiti.org", :subject => @emailsubject, :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    @txtname = @data[:txtname]
+    @txtphone = @data[:txtphone]
+    @txtemail = @data[:txtemail]
+    @txtaddress = @data[:txtaddress]
+    @txtcity = @data[:txtcity]
+    @txtstate = @data[:txtstate]
+    @txtzip = @data[:txtzip]
+    @txtchurchname = @data[:txtchurchname]
+    @txtchurchaddress = @data[:txtchurchaddress]
+    @txtchurchcity = @data[:txtchurchcity]
+    @txtchurchstate = @data[:txtchurchstate]
+    @txtchurchzip = @data[:txtchurchzip]
+    @txtchurchwebsite = @data[:txtchurchwebsite]
+    @txtpastorname = @data[:txtpastorname]
+    @txtpastorphone = @data[:txtpastorphone]
+    @txtmissionname = @data[:txtmissionname]
+    @txtmissionphone = @data[:txtmissionphone]
+    @txtcomments = @data[:txtcomments]
+    @txtprefs = @data[:txtprefs]
+    
+    mail(:to => "info@mohhaiti.org", :subject => "Church Partnership Inquiry", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
   
   def contact_us_mail(data,msgbody)

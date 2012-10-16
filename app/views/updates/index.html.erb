@@ -13,6 +13,10 @@
     <% if !update.author.blank? && !update.author.nil?%>
     	<p>Update from: <%=update.author%></p>
     <%end%>
+    <% @photo = update.assets.last%>
+    <%unless @photo.nil?%>
+		<p><img src="<%=@photo.asset.url(:thumb)%>" /></p>
+	<%end%>
     <p><%= update.body %></p>
     <p><%= update.media %></p>
     <!--<td><%= link_to 'Show', update %></td>
