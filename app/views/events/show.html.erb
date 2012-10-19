@@ -15,7 +15,7 @@
 	<%end%>
 </p>
 <p>
-	<strong>Details:</strong> <%= @event.description %>
+	<strong>Details:</strong> <%= @event.description.html_safe %>
 </p>
 <p>
 	<strong>Location:</strong> <%= @event.location %>
