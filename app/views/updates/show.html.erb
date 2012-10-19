@@ -6,11 +6,11 @@
 <h3>
   <%= @update.title %>
 </h3>
-<%unless @update.author.nil?%>
+<%unless @update.author.nil? || @update.author.blank?%>
 <p>Update from <%=@update.author%></p>
 <%end%>
 <%unless @photo.nil?%>
-<p><img src="<%=@photo.asset.url(:thumb)%>" /></p>
+<p><img src="<%=@photo.asset.url(:medium)%>" /></p>
 <%end%>
 <p>
   <%= @update.body %>
