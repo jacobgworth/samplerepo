@@ -18,7 +18,7 @@
 			<span class="year"><%= event.eventdate.strftime("%Y")%></span>	
 			</div><!-- End DateUpdate -->
     <h3><a href="/events/<%=event.id%>"><%= event.eventname %></a></h3>
-    <p><%= event.description %></p>
+    <p><%= event.description.html_safe %></p>
     <p><%= link_to 'View details...', event %></p>
     <% if @isadmin %>
     	<p class="eventsAdminShow"><%= link_to 'Edit', edit_event_path(event) %> | <%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></p>
