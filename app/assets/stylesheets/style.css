@@ -1689,28 +1689,28 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	font-size:1em;
 }
 .projectsMed a:link {
-	background: url(/assets/icon-projects-med.png) no-repeat;
+	background: url(/assets/icon-projects-med.png) bottom center no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
 	display: block;
 }
 .projectsMed a:hover {
-	background: url(/assets/icon-projects-med-hover.png) no-repeat;
+	background: url(/assets/icon-projects-med.png) top center no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
 	display: block;
 }
 .churchAdvancementMed a:link {
-	background: url(/assets/icon-church-advancement-med.png) no-repeat;
+	background: url(/assets/icon-church-advancement-med.png) bottom center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
 	display: block;
 }
 .churchAdvancementMed a:hover {
-	background: url(/assets/icon-church-advancement-med-hover.png) no-repeat;
+	background: url(/assets/icon-church-advancement-med.png) top center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
@@ -1718,14 +1718,14 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 
 .orphanCareMed a:link {
-	background: url(/assets/icon-orphan-care-med.png) no-repeat;
+	background: url(/assets/icon-orphan-care-med.png) bottom center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
 	display: block;
 }
 .orphanCareMed a:hover {
-	background: url(/assets/icon-orphan-care-med-hover.png) no-repeat;
+	background: url(/assets/icon-orphan-care-med.png) top center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
@@ -1733,14 +1733,14 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 
 .educationMed a:link {
-	background: url(/assets/icon-student-sponsorship-med.png) no-repeat;
+	background: url(/assets/icon-student-sponsorship-med.png) bottom center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
 	display: block;
 }
 .educationMed a:hover {
-	background: url(/assets/icon-student-sponsorship-med-hover.png) no-repeat;
+	background: url(/assets/icon-student-sponsorship-med.png) top center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
@@ -1748,14 +1748,14 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 
 .healthMed a:link {
-	background: url(/assets/icon-health-care-med.png) no-repeat;
+	background: url(/assets/icon-health-care-med.png) bottom center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
 	display: block;
 }
 .healthMed a:hover {
-	background: url(/assets/icon-health-care-med-hover.png) no-repeat;
+	background: url(/assets/icon-health-care-med.png) top center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
@@ -1763,14 +1763,14 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 
 .haitiOneMed a:link {
-	background: url(/assets/icon-haitione-med.png) no-repeat;
+	background: url(/assets/icon-haitione-med.png) bottom center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
 	display: block;
 }
 .haitiOneMed a:hover {
-	background: url(/assets/icon-haitione-med-hvoer.png) no-repeat;
+	background: url(/assets/icon-haitione-med.png) top center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
@@ -1778,14 +1778,14 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 
 .nutritionMed a:link {
-	background: url(/assets/icon-nutrition-med.png) no-repeat;
+	background: url(/assets/icon-nutrition-med.png) bottom center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
 	display: block;
 }
 .nutritionMed a:hover {
-	background: url(/assets/icon-nutrition-med-hover.png) no-repeat;
+	background: url(/assets/icon-nutrition-med.png) top center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
@@ -1793,14 +1793,14 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 
 .threeCordsMed a:link {
-	background: url(/assets/icon-3Cords-med.png) no-repeat;
+	background: url(/assets/icon-3Cords-med.png) bottom center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
 	display: block;
 }
 .threeCordsMed a:hover {
-	background: url(/assets/icon-3Cords-med-hover.png) no-repeat;
+	background: url(/assets/icon-3Cords-med.png) top center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
@@ -1808,14 +1808,14 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 
 .donateMed a:link {
-	background: url(/assets/icon-donate-med.png) no-repeat;
+	background: url(/assets/icon-donate-med.png) bottom center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
 	display: block;
 }
 .donateMed a:hover {
-	background: url(/assets/icon-donate-med-hover.png) no-repeat;
+	background: url(/assets/icon-donate-med.png) top center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
@@ -1823,14 +1823,14 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 
 .churchPartnerHopeMed a:link {
-	background: url(/assets/icon-partner-hope-med.png) no-repeat;
+	background: url(/assets/icon-partner-hope-med.png) bottom center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
 	display: block;
 }
 .churchPartnerHopeMed a:hover {
-	background: url(/assets/icon-partner-hope-med-hover.png) no-repeat;
+	background: url(/assets/icon-partner-hope-med.png) top center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
@@ -1838,14 +1838,14 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 
 .snapBackMed a:link {
-	background: url(/assets/icon-snapback-med.png) no-repeat;
+	background: url(/assets/icon-snapback-med.png) bottom center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
 	display: block;
 }
 .snapBackMed a:hover {
-	background: url(/assets/icon-snapback-med-hover.png) no-repeat;
+	background: url(/assets/icon-snapback-med.png) top center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
@@ -1853,14 +1853,14 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 
 .volunteerMed a:link {
-	background: url(/assets/icon-volunteer-med.png) no-repeat;
+	background: url(/assets/icon-volunteer-med.png) bottom center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
 	display: block;
 }
 .volunteerMed a:hover {
-	background: url(/assets/icon-volunteer-med-hover.png) no-repeat;
+	background: url(/assets/icon-volunteer-med.png) top center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
@@ -1868,14 +1868,14 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 
 .eventsMed a:link {
-	background: url(/assets/icon-events-med.png) no-repeat;
+	background: url(/assets/icon-events-med.png) bottom center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
 	display: block;
 }
 .eventsMed a:hover {
-	background: url(/assets/icon-events-med-hover.png) no-repeat;
+	background: url(/assets/icon-events-med.png) top center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
