@@ -1040,7 +1040,7 @@ h3.CTA {
 }
 
 .churchAdvancement a {
-	background: url(/assets/icon-church-advancement.png) top center no-repeat;
+	background: url(/assets/icon-church-advancement.png) bottom center no-repeat;
 	display:block;
 	height:236px;
 	width:236px;
@@ -1048,12 +1048,12 @@ h3.CTA {
 }
 
 .churchAdvancement a:hover {
-	background: url(/assets/icon-church-advancement-hover.png) top center no-repeat;
+	background: url(/assets/icon-church-advancement.png) top center no-repeat;
 }
 
 
 .studentSponsorship a {
-	background: url(/assets/icon-student-sponsorship.png) top center no-repeat;
+	background: url(/assets/icon-student-sponsorship.png) bottom center no-repeat;
 	display:block;
 	height:236px;
 	width:236px;
@@ -1061,11 +1061,11 @@ h3.CTA {
 }
 
 .studentSponsorship a:hover {
-	background: url(/assets/icon-student-sponsorship-hover.png) top center no-repeat;
+	background: url(/assets/icon-student-sponsorship.png) top center no-repeat;
 }
 
 .missionTrips a {
-	background: url(/assets/icon-mission-trips.png) top center no-repeat;
+	background: url(/assets/icon-mission-trips.png) bottom center no-repeat;
 	display:block;
 	height:236px;
 	width:236px;
@@ -1073,7 +1073,7 @@ h3.CTA {
 }
 
 .missionTrips a:hover {
-	background: url(/assets/icon-mission-trips-hover.png) top center no-repeat;
+	background: url(/assets/icon-mission-trips.png) top center no-repeat;
 }
 
 #contentHaitiOne {
