@@ -1,4 +1,6 @@
-
+<% content_for(:head) do %>
+	<%= javascript_include_tag :validate_volunteer %>
+<% end %>
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 
@@ -12,12 +14,9 @@
 			Volunteer</h1>
 		<p>You don't have to fly to Haiti to help Mission of Hope!  If you live in Southwest Florida you can simply volunteer at our office. If you live somewhere else, we can still use your help! We are looking for volunteers with all sorts of skills to help us with anything from preparing mailings to marketing our campaigns. Fill out the short form below and we'll add you to our volunteer list.
 			</p>
-			<% unless @errors.nil? %>
-				<p class="errors"><%=@errors%></p>
-			<% end %>
 			<div class="forms">
 				<% if @isvalid.nil?%>
-				<form>
+				<form name="volform">
 					<div class="field">Name: <input type="text" name="txtname"><br></div>
 					<div class="field">Email: <input type="text" name="txtemail"></div>
 					<div class="field">Phone number: <input type="text" name="txtphonenumber"><br></div>
@@ -25,6 +24,21 @@
 					<br />
 					<div class="actions" style="clear:both;"><input type="submit" value="Submit"></div>
 				</form>
+				<script language="JavaScript" type="text/javascript" xml:space="preserve">//<![CDATA[
+					//You should create the validator only after the definition of the HTML form
+					  var frmvalidator  = new Validator("volform");
+					  frmvalidator.addValidation("txtname","req","Please enter your name.");
+					  
+					  frmvalidator.addValidation("txtemail","req", "Please enter your email address.");
+					  frmvalidator.addValidation("txtemail","email", "Please enter a valid email address.");
+					  
+					  frmvalidator.addValidation("txtphonenumber","req", "Please enter a phone number.");
+					  
+					  frmvalidator.addValidation("txtmessage","req", "Please enter a message");
+					  
+					//]]>
+				</script>
+
 				<%end%>
 			</div>
 		</div>
