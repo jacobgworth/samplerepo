@@ -367,6 +367,7 @@ class PageController < ApplicationController
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       end 
     else
+      @formerrors = "There was an error with your submission. All fields are required."
       respond_to do |format|
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       end
