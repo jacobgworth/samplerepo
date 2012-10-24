@@ -1,3 +1,6 @@
+<% content_for(:head) do %>
+	<%= javascript_include_tag :validate_visiontrip %>
+<% end %>
 <div id="bgHero">
 	<div id="heroVisionTripsImg">
 		<!--x-->
@@ -42,18 +45,18 @@ The schedule usually is as follows:</p>
 	<p>All fields required.</p>
 	<% if @isvalid.nil?%>
 				<form>
-						<div class="field">First Name: <input type="text" name="txtfirst"><br></div>
-						<div class="field">Last Name: <input type="text" name="txtlast"><br></div>
-						<div class="field">Phone number: <input type="text" name="txtphone"><br></div>
-						<div class="field">Email: <input type="text" name="txtemail"></div>
-						<div class="field">Church Address: <input type="text" name="txtchurch"></div>
-						<div class="field city">City:<br /> <input type="text" name="txtcity"><br></div>
-						<div class="field state">State:<br /> <input type="text" name="txtstate"><br></div>
-						<div class="field zip">Zip:<br /> <input type="text" name="txtzip"><br></div>
-						<div class="field">Dates Interested In: <input type="text" name="txtdatesinterested"></div>
+						<div class="field">First Name: 			<input type="text" id="txtfirst" name="txtfirst"><br></div>
+						<div class="field">Last Name: 			<input type="text" id="txtlast" name="txtlast"><br></div>
+						<div class="field">Phone number: 		<input type="text" id="txtphone" name="txtphone"><br></div>
+						<div class="field">Email: 				<input type="text" id="txtemail" name="txtemail"></div>
+						<div class="field">Church Address: 		<input type="text" id="txtchurch" name="txtchurch"></div>
+						<div class="field city">City:<br /> 	<input type="text" id="txtcity" name="txtcity"><br></div>
+						<div class="field state">State:<br /> 	<input type="text" id="txtstate" name="txtstate"><br></div>
+						<div class="field zip">Zip:<br /> 		<input type="text" id="txtzip" name="txtzip"><br></div>
+						<div class="field">Dates Interested In: <input type="text" id="txtdatesinterested" name="txtdatesinterested"></div>
 					<h3 style="clear:both;">Additional Comments</h3>
-						<div class="field"><textarea type="textarea" name="txtmessage"></textarea></div>
-					 <div class="actions"><input type="submit" value="Sign Up"></div>
+						<div class="field"><textarea type="textarea" id="txtmessage" name="txtmessage"></textarea></div>
+					 <div class="actions"><input type="submit" value="Sign Up" onclick="return validate();"></div>
 				</form>
 				<%else%>
 				<div style="padding-bottom:20px;"><h3>Thank you for your interest in taking a vision trip! We'll be in touch shortly! </h3></div>
