@@ -1,5 +1,5 @@
 class ContactUsMailer < ActionMailer::Base
-  
+  #"info@mohhaiti.org"
   def church_partner(data)
     
     @data = data
