@@ -1,3 +1,6 @@
+<% content_for(:head) do %>
+	<%= javascript_include_tag :validate_sponsorship %>
+<% end %>
 <div id="bgHero">
 	<div id="sponHero">
 		<!--x-->
@@ -79,14 +82,14 @@
 					<div class="field checkbox"><input type="checkbox" name="prefkinder" style="width:12px;">Kindergarden</div>
 					<div class="field checkbox"><input type="checkbox" name="prefgrade" style="width:12px;">Grade School</div>
 					<div class="field checkbox"><input type="checkbox" name="prefhigh" style="width:12px;">High School</div>
-					<div class="field" style="clear:both;">Name: <input type="text" name="fname"><br></div>
-					<div class="field">Phone number: <input type="text" name="phonenumber"><br></div>
-					<div class="field">Email: <input type="text" name="email"></div>
-					<div class="field">Address: <input type="text" name="address"></div>
-					<div class="field city">City:<br /> <input type="text" name="city"><br></div>
-					<div class="field state">State:<br /> <input type="text" name="state"><br></div>
-					<div class="field zip">Zip:<br /> <input type="text" name="zip"><br></div>
-					 <div class="actions"><input type="submit" value="Submit Request"></div>
+					<div class="field" style="clear:both;">Name: <input id="txtname" type="text" name="fname"><br></div>
+					<div class="field">Phone number: <input id="txtphone" type="text" name="phonenumber"><br></div>
+					<div class="field">Email: <input id="txtemail" type="text" name="email"></div>
+					<div class="field">Address: <input id="txtaddress" type="text" name="address"></div>
+					<div class="field city">City:<br /> <input id="txtcity" type="text" name="city"><br></div>
+					<div class="field state">State:<br /> <input id="txtstate" type="text" name="state"><br></div>
+					<div class="field zip">Zip:<br /> <input id="txtzip" type="text" name="zip"><br></div>
+					 <div class="actions"><input type="submit" value="Submit Request" onclick="return validate();"></div>
 				</form>
 			</div>
 			<%else%>
