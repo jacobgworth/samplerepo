@@ -77,12 +77,12 @@ function validate() {
 		
 	if (document.getElementById('txtmissionname').value == "")
 	{
-		missing += "\nPlease enter the phone number of your pastor.";
+		missing += "\nPlease enter the name of the contact for your mission.";
 	}
 		
 	if (document.getElementById('txtmissionphone').value == "")
 	{
-		missing += "\nPlease enter the phone number of your pastor.";
+		missing += "\nPlease enter the phone number of your mission contact.";
 	}
 		
 	if (document.getElementById('txtchurchwebsite').value == "")
