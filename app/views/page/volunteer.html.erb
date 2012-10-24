@@ -17,27 +17,14 @@
 			<div class="forms">
 				<% if @isvalid.nil?%>
 				<form name="volform">
-					<div class="field">Name: <input type="text" name="txtname"><br></div>
-					<div class="field">Email: <input type="text" name="txtemail"></div>
-					<div class="field">Phone number: <input type="text" name="txtphonenumber"><br></div>
-					<div class="field" style="clear:both;"><b>Please let us know your skills, interests and times available:</b><br /><textarea name="txtmessage"></textarea></div>
+					<div class="field">Name: <input id="txtname" type="text" name="txtname"><br></div>
+					<div class="field">Email: <input id="txtemail" type="text" name="txtemail"></div>
+					<div class="field">Phone number: <input id="txtphone" type="text" name="txtphonenumber"><br></div>
+					<div class="field" style="clear:both;"><b>Please let us know your skills, interests and times available:</b><br /><textarea id="txtmessage" name="txtmessage"></textarea></div>
 					<br />
-					<div class="actions" style="clear:both;"><input type="submit" value="Submit"></div>
+					<div class="actions" style="clear:both;"><input type="submit" value="Submit" onclick="return validate();"></div>
 				</form>
-				<script language="JavaScript" type="text/javascript" xml:space="preserve">//<![CDATA[
-					//You should create the validator only after the definition of the HTML form
-					  var frmvalidator  = new Validator("volform");
-					  frmvalidator.addValidation("txtname","req","Please enter your name.");
-					  
-					  frmvalidator.addValidation("txtemail","req", "Please enter your email address.");
-					  frmvalidator.addValidation("txtemail","email", "Please enter a valid email address.");
-					  
-					  frmvalidator.addValidation("txtphonenumber","req", "Please enter a phone number.");
-					  
-					  frmvalidator.addValidation("txtmessage","req", "Please enter a message");
-					  
-					//]]>
-				</script>
+
 
 				<%end%>
 			</div>
