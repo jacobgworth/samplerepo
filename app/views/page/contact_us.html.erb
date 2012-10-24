@@ -1,3 +1,6 @@
+<% content_for(:head) do %>
+	<%= javascript_include_tag :validate_volunteer %>
+<% end %>
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 	<div id="content" style="padding-top: 50px;">
@@ -35,9 +38,9 @@
 			<% if @isvalid.nil?%>
 		<strong>*All fields required</strong>
 				<form>
-					<div class="field">Your Name: <input type="text" name="name"><br></div>
-					<div class="field">Your Email: <input type="text" name="email"></div>
-					<div class="field">Your Phone number: <input type="text" name="phonenumber"><br></div>
+					<div class="field">Your Name: 			<input type="text" id="txtname" name="name"><br></div>
+					<div class="field">Your Email: 			<input type="text" id="txtemail" name="email"></div>
+					<div class="field">Your Phone number: 	<input type="text" id="txtphone" name="phonenumber"><br></div>
 					<div class="field">Topic: 
 						<select name="topics">
 							<option value="website">Website</option>
@@ -50,8 +53,8 @@
 							<option value="other">Other</option>
 						</select>
 					</div>
-					<div class="field">Question or Comment: <textarea type="textarea" name="letter"></textarea></div>
-					 <div class="actions"><input type="submit" value="Submit"></div>
+					<div class="field">Question or Comment: <textarea type="textarea" id="txtmessage" name="letter"></textarea></div>
+					 <div class="actions"><input type="submit" value="Submit" onclick="return validate();"></div>
 				</form>	
 			<%end%>
 			</div>
