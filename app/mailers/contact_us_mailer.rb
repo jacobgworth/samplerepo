@@ -1,7 +1,7 @@
 class ContactUsMailer < ActionMailer::Base
   #"info@mohhaiti.org"
   def church_partner(data)
-    
+    #change this to churchpartnerships@mohhaiti.org after testing
     @data = data
     
     @txtname = @data[:txtname]
@@ -24,7 +24,7 @@ class ContactUsMailer < ActionMailer::Base
     @txtcomments = @data[:txtcomments]
     @txtprefs = @data[:txtprefs]
     
-    mail(:to => "info@mohhaiti.org", :subject => "Church Partnership Inquiry", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "churchpartnerships@mohhaiti.org", :subject => "Church Partnership Inquiry", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
   
   def contact_us_mail(data,msgbody)
