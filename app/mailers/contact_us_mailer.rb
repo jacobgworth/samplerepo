@@ -115,7 +115,7 @@ class ContactUsMailer < ActionMailer::Base
     @txtmessage = @data[:txtmessage]
     @txtdatesinterested = @data[:txtdatesinterested]
     
-    mail(:to => "churchpartnerships@mohhaiti.org", :subject => "Vision Trip Information", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "jesse+test@threetwelvecreative.com", :subject => "Vision Trip Information", :from => @txtemail, :bcc=>"")
   end
   
 end
