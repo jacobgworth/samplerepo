@@ -14,13 +14,13 @@
 			<div class="grid2x2Left" style="height:240px;">
 				<div class="gridImage  projectsMed" style="background-image: none;')">
 					<% if @communityimage.nil? %>
-						<a href="/communities/<%=community.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a>
+						<a href="/villages/<%=community.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a>
 					<% else %>
-						<a href="/communities/<%=community.id%>" style="background-color:#C2B092; border-top: 2px solid #C2B092;border-left: 2px solid #C2B092;padding:0; background-image: url('<%=@communityimage.asset.url(:thumb)%>')"></a>
+						<a href="/villages/<%=community.id%>" style="background-color:#C2B092; border-top: 2px solid #C2B092;border-left: 2px solid #C2B092;padding:0; background-image: url('<%=@communityimage.asset.url(:thumb)%>')"></a>
 					<% end %>
 				</div>
 				<div class="gridText">
-					<h2><a href="/communities/<%=community.id%>"><%=community.communityname%></a></h2>
+					<h2><a href="/villages/<%=community.id%>"><%=community.communityname%></a></h2>
 					<p><%=truncate(community.overviewdesc,:length=>100,:separator=>' ') %> </p>
 					<h3 class="projectDetailButton">
 						People Reached:
@@ -31,7 +31,7 @@
 						<span class="darkGreen"><%= community.projects.count%></span>
 					</h3>
 					<h3 class="projectDetailButton">
-						<a href="/communities/<%=community.id%>">View Village Profile &raquo;</a>
+						<a href="/villages/<%=community.id%>">View Village Profile &raquo;</a>
 					</h3>
 				</div>
 			</div>
@@ -39,13 +39,13 @@
 			<div class="grid2x2Right">
 				<div class="gridImage projectsMed" style="background-image: none;')">
 					<% if @communityimage.nil? %>
-						<a href="/communities/<%=community.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a>
+						<a href="/villages/<%=community.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a>
 					<% else %>
-						<a href="/communities/<%=community.id%>" style="background-color:#C2B092; border-top: 2px solid #C2B092;border-left: 2px solid #C2B092;padding:0; background-image: url('<%=@communityimage.asset.url(:thumb)%>')"></a>
+						<a href="/villages/<%=community.id%>" style="background-color:#C2B092; border-top: 2px solid #C2B092;border-left: 2px solid #C2B092;padding:0; background-image: url('<%=@communityimage.asset.url(:thumb)%>')"></a>
 					<% end %>
 				</div>
 				<div class="gridText">
-					<h2><a href="/communities/<%=community.id%>"><%=community.communityname%></a></h2>
+					<h2><a href="/villages/<%=community.id%>"><%=community.communityname%></a></h2>
 										<p><%=truncate(community.overviewdesc,:length=>100,:separator=>' ') %></p>
 					<h3 class="projectDetailButton">
 						People Reached:

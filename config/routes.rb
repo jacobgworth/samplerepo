@@ -40,7 +40,9 @@ Mohhaiti::Application.routes.draw do
   resources :communities
   
   resources :sessions
-
+  
+  resources :villages, :controller => "communities"
+  
   get "home/index"
   
   #################301 Redirects from old site############################
