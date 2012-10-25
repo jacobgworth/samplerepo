@@ -30,8 +30,24 @@
 	<h3 style="width:295px;" class="projectDetailButton"><strong>Similar updates: </strong>
 	<% @related_result.each do |related|%>
 			<%if related.id != @update.id %>
-				<a href="updates/<%=related.id%>"><%=related.title%></a><br>
+				<a href="/updates/<%=related.id%>"><%=related.title%></a><br>
 			<%end%>
+	<% end%>
+	</h3>
+<% end %>
+
+<% if @related_posts.length > 0 %>
+	<h3 style="width:295px;" class="projectDetailButton"><strong>Related Blog Posts: </strong>
+	<% @related_posts.each do |related|%>
+		<a href="/posts/<%=related.id%>"><%=related.title%></a><br>
+	<% end%>
+	</h3>
+<% end %>
+
+<% if @related_projects.length > 0 %>
+	<h3 style="width:295px;" class="projectDetailButton"><strong>Related Projects: </strong>
+	<% @related_projects.each do |related|%>
+		<a href="/projects/<%=related.id%>"><%=related.projectname%></a><br>
 	<% end%>
 	</h3>
 <% end %>

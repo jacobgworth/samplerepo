@@ -40,6 +40,18 @@ class UpdatesController < ApplicationController
         @related_result = @related_result.uniq{|x| x.title}
       end
       
+      @related_posts = []
+      @cats.each do |cat|
+        @related_posts += Post.joins(:categories).where("category_id=" + cat.id.to_s).reverse
+        @related_posts = @related_posts.uniq{|x| x.title}
+      end
+      
+      @related_projects = []
+      @cats.each do |cat|
+        @related_projects += Project.joins(:categories).where("category_id=" + cat.id.to_s).reverse
+        @related_projects = @related_projects.uniq{|x| x.title}
+      end
+      
     end
     @isadmin = is_admin_user?
 
