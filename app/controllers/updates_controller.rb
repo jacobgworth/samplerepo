@@ -32,6 +32,14 @@ class UpdatesController < ApplicationController
     unless @update.categories.count == 0
       @cat=@update.categories.order("categoryname asc").limit(1)
       @cat2=@update.categories.order("categoryname asc").offset(1)
+      @cats = @update.categories
+      
+      @related_result = []
+      @cats.each do |cat|
+        @related_result += Update.joins(:categories).where("category_id=" + cat.id.to_s).reverse
+        @related_result = @related_result.uniq{|x| x.title}
+      end
+      
     end
     @isadmin = is_admin_user?
 

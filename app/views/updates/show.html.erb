@@ -25,6 +25,17 @@
 		<%end%>
 	</h3>
 <% end %>
+
+<% if @related_result.length > 1 %>
+	<h3 style="width:295px;" class="projectDetailButton"><strong>Similar updates: </strong>
+	<% @related_result.each do |related|%>
+			<%if related.id != @update.id %>
+				<a href="updates/<%=related.id%>"><%=related.title%></a><br>
+			<%end%>
+	<% end%>
+	</h3>
+<% end %>
+
 <p>
   <%= @update.media %>
 </p>
