@@ -9,7 +9,7 @@
 			<%=@month.strftime('%B %Y')%><br />
 		<%end%>Blog Posts</h1>
 <% if !@user.nil? && @user.is_admin == 1%>
-<h3><%= link_to 'Write a New Post', new_post_path %></h3>
+<h3><%= link_to 'Write a New Post', new_blog_path %></h3>
 <%end%>
 <% @posts.each do |post| %>
   <div class="postsPage">
@@ -18,7 +18,7 @@
 			<span class="date"><%= post.postdate.strftime("%d")%></span><br />
 			<span class="year"><%= post.postdate.strftime("%Y")%></span>	
 	</div>
-    <h3 style="padding-bottom:30px;"><a href="/posts/<%=post.id%>"><%= post.title %></a></h3>
+    <h3 style="padding-bottom:30px;"><a href="/blog/<%=post.id%>"><%= post.title %></a></h3>
     <h4 style="clear:both;"><%= post.user_id %></h4>
     <div style="margin-left:60px; margin-top:-20px; border-bottom:1px dotted #0F483B;">
     	<p class="meta" style="margin-top: -45px;">
@@ -28,11 +28,11 @@
     		<%if post.categories.count > 0%>
     			Categories: 
     			<%post.categories.each do |cat|%>
-    				<a href="/posts/?cid=<%=cat.id%>"><%=cat.categoryname%></a>
+    				<a href="/blog/?cid=<%=cat.id%>"><%=cat.categoryname%></a>
     			<%end%>
     		<%end%>
     	</p>
-    <p><%= truncate(post.body,:length=>500,:separator=>' ').html_safe %> <%= link_to 'Read More »', post %></p>
+    <p><%= truncate(post.body,:length=>500,:separator=>' ').html_safe %> <a href="/blog/<%=post.id%>">Read More </a></p>
     <p><%= post.imagelink %></p>
    </div>
     <% if !@user.nil? && @user.is_admin?%>
@@ -47,7 +47,7 @@
 
 <br />
 <% if !@user.nil? && @user.is_admin == 1%>
-<h3><%= link_to 'Write a New Post', new_post_path %></h3>
+<h3><%= link_to 'Write a New Post', new_blog_path %></h3>
 <%end%>
 
 

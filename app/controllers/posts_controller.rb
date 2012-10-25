@@ -61,7 +61,7 @@ class PostsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { redirect_to "/posts" }
+        format.html { redirect_to "/blog" }
       end
     end
   end
@@ -76,7 +76,7 @@ class PostsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { redirect_to "/posts" }
+        format.html { redirect_to "/blog" }
       end
     end
   end

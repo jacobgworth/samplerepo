@@ -42,7 +42,7 @@
 <% if @related_posts.length > 0 %>
 	<h3 style="width:295px;" class="projectDetailButton"><strong>Related Blog Posts: </strong>
 	<% @related_posts.each do |related|%>
-		<a href="/posts/<%=related.id%>"><%=related.title%></a><br>
+		<a href="/blog/<%=related.id%>"><%=related.title%></a><br>
 	<% end%>
 	</h3>
 <% end %>

@@ -41,6 +41,8 @@ Mohhaiti::Application.routes.draw do
   
   resources :sessions
   
+  resources :blog, :controller => "posts"
+  
   resources :villages, :controller => "communities"
   
   get "home/index"
