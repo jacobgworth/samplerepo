@@ -29,6 +29,8 @@ class UpdatesController < ApplicationController
   def show
     @update = Update.find(params[:id])
     @photo = @update.assets.last
+    @cat=@update.categories.order("categoryname asc").limit(1)
+    @cat2=@update.categories.order("categoryname asc").offset(1)
     @isadmin = is_admin_user?
 
     respond_to do |format|
