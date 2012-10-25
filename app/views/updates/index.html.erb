@@ -7,6 +7,41 @@
 	<h1><%=@category.categoryname %> Updates</h1>
 <% end %>
 
+<div style="width:990px; height:100%;">
+	<div id="container" class="transitions-enabled clearfix" style="clear:both;">
+		<% @updates.each do |update| %>
+			<% @photo = update.assets.last%>
+				<div class="item">
+					<h3><%= update.postdate.strftime("%b %e, %Y") %> - <a href="/updates/<%=update.id%>"><%= update.title %></a></h3>
+					<% unless @photo.nil? %>
+			  			<%= image_tag @photo.asset.url(:thumb),:title=>update.body,:alt=>update.body  %>
+			  		<%end%>
+			  		
+			  		<% unless update.author.blank? or update.author.nil? %>
+			  			<p><span class="update">Update from <%= update.author%>:</span></p>
+			  		<% end %>
+		  			<p><%= update.body %></p>
+		  		</div>
+		<% end %>
+	</div>
+</div>
+<script src="/assets/javascript/jquery.masonry.min.js"></script>
+<script>
+	var $container = $('#container');
+	$container.imagesLoaded(function(){
+  		$container.masonry({
+  			itemSelector: '.item',
+  			//columnWidth: 1,
+  			isAnimated: true,
+  			animationOptions: {
+    			duration: 500,
+    			easing: 'linear',
+    			queue: false
+  			}
+  		});
+	});
+</script>
+<!--
 <% @updates.each do |update| %>
   <div style="padding-top:20px; border-bottom:1px dotted #0F483B;">
   <h3><%= update.postdate.strftime("%b %e, %Y") %> - <a href="/updates/<%=update.id%>"><%= update.title %></a></h3>
@@ -22,6 +57,9 @@
     <!--<td><%= link_to 'Show', update %></td>
     <td><%= link_to 'Edit', edit_update_path(update) %></td>
     <td><%= link_to 'Destroy', update, confirm: 'Are you sure?', method: :delete %></td>-->
+    
+    
+ <!--
     <p>
     <% unless update.categories.count == 0%>
 		<h3 style="width:295px;" class="projectDetailButton"><strong>Related to: </strong>
@@ -37,8 +75,9 @@
   </div>
 <% end %>
 
-<br />
+-->
 
+<br />
 <%if @isadmin%>
 <%= link_to 'New Update', new_update_path %>
 <%end%>
