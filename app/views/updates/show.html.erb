@@ -26,16 +26,19 @@
 	</h3>
 <% end %>
 
-<% if @related_result.length > 1 %>
-	<h3 style="width:295px;" class="projectDetailButton"><strong>Similar updates: </strong>
-	<% @related_result.each do |related|%>
-			<%if related.id != @update.id %>
-				<a href="/updates/<%=related.id%>"><%=related.title%></a><br>
-			<%end%>
-	<% end%>
-	</h3>
-<% end %>
+<% if @related_result %>
+	<% if @related_result.length > 1 %>
+		<h3 style="width:295px;" class="projectDetailButton"><strong>Similar updates: </strong>
+		<% @related_result.each do |related|%>
+				<%if related.id != @update.id %>
+					<a href="/updates/<%=related.id%>"><%=related.title%></a><br>
+				<%end%>
+		<% end%>
+		</h3>
+	<% end %>
+<%end%>
 
+<% if @related_posts %>
 <% if @related_posts.length > 0 %>
 	<h3 style="width:295px;" class="projectDetailButton"><strong>Related Blog Posts: </strong>
 	<% @related_posts.each do |related|%>
@@ -43,7 +46,9 @@
 	<% end%>
 	</h3>
 <% end %>
+<% end%>
 
+<% if @related_projects %>
 <% if @related_projects.length > 0 %>
 	<h3 style="width:295px;" class="projectDetailButton"><strong>Related Projects: </strong>
 	<% @related_projects.each do |related|%>
@@ -51,6 +56,7 @@
 	<% end%>
 	</h3>
 <% end %>
+<% end%>
 
 <p>
   <%= @update.media %>
