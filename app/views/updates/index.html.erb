@@ -12,10 +12,11 @@
 		<% @updates.each do |update| %>
 			<% @photo = update.assets.last%>
 				<div class="item">
-					<h4><%= update.postdate.strftime("%b %e, %Y") %> - <a href="/updates/<%=update.id%>"><%= update.title %></a></h4>
 					<% unless @photo.nil? %>
-			  			<%= image_tag @photo.asset.url(:thumb),:title=>update.body,:alt=>update.body  %>
+			  			<%= image_tag @photo.asset.url(:medium),:title=>update.body,:alt=>update.body  %>
 			  		<%end%>
+					<h4><a href="/updates/<%=update.id%>"><%= update.title %></a></h4>
+					<p><%= update.postdate.strftime("%b %e, %Y") %></p>
 			  		
 			  		<% unless update.author.blank? or update.author.nil? %>
 			  			<p><span class="update">Update from <%= update.author%>:</span></p>
