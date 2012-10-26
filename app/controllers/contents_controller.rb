@@ -1,6 +1,9 @@
 class ContentsController < ApplicationController
   # GET /contents
   # GET /contents.json
+  
+  layout 'homeLayout'
+  
   def index
     @contents = Content.all
 
@@ -44,7 +47,7 @@ class ContentsController < ApplicationController
   def edit
     #@content = Content.find(params[:id])
     @content = Content.find_by_id(params[:id])
-    respond do |format|
+    respond_to do |format|
       format.html {render :layout=>"homeLayout"}# index.html.erb
     end
     #@content = Content.find_by_url(params[:id])

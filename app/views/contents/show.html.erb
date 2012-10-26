@@ -1,7 +1,19 @@
+<div id="bgHero" >
+	<%if !@content.nil? && !@content.heroimage.nil? && @content.heroimage != '' %>
+		<div id="heroCommunitiesImg" style="background: url(/assets/<%=@content.heroimage%>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;">
+		<!--x-->
+		</div>
+	<%else%>
+		<div id="heroCommunitiesImg">
+		<!--x-->
+		</div>
+	<%end%>
+</div>
 <div id="wrapper">
 	<%=render 'layouts/navBar'%>
-<div id="content" style="padding-top:0px;">
+<div id="content" style="padding-top:500px;">
 <p id="notice"><%= notice %></p>
+
 
 <%=@content.content.html_safe%>
 
