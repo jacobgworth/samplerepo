@@ -3002,3 +3002,8 @@ tr {
 	-o-border-radius: 5px;
 	border-radius: 5px;
 }
+.updatesBorder{
+	width: 490px;
+	border: 5px solid #C2B092;
+	margin-top: 0px;
+}
