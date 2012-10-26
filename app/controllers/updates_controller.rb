@@ -29,6 +29,7 @@ class UpdatesController < ApplicationController
   def show
     @update = Update.find(params[:id])
     @photo = @update.assets.last
+    @blogs = Post.last(3)
     unless @update.categories.count == 0
       @cat=@update.categories.order("categoryname asc").limit(1)
       @cat2=@update.categories.order("categoryname asc").offset(1)
@@ -49,7 +50,7 @@ class UpdatesController < ApplicationController
       @related_projects = []
       @cats.each do |cat|
         @related_projects += Project.joins(:categories).where("category_id=" + cat.id.to_s).reverse
-        @related_projects = @related_projects.uniq{|x| x.title}
+        @related_projects = @related_projects.uniq{|x| x.projectname}
       end
       
     end

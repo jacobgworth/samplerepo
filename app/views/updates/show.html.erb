@@ -45,27 +45,25 @@
 <%end%>
 <%= link_to 'Back', updates_path %>
 </div>
-<div id="contentRight300">
-
-<!-- ================ Could you make this work? I'm assuming you have to call in @posts.whatever to make it work correctly, but I don't know exactly. ============	 
+<div id="contentRight300"> 
 	
 	<div class="updatesWrapper" style="margin-top:20px;">
 		<h3>MOH in Action</h3>
-		<div class="speechBubble" style="position: absolute; top: -71px; right: 39px;"><p>latest updates</p></div>
-		<%@updates.each do |update|%>
+		<div class="speechBubble" style="position: absolute; top: -71px; right: 39px;"><p>latest blogs</p></div>
+		<%@blogs.each do |blog|%>
 			<div class="update300">
 			<p class="meta">	<% 
-					created = update.postdate 
+					created = blog.postdate 
 				%>
 				<%= created.strftime("%b")%> <%=created.strftime("%d")%>, <%=created.strftime("%Y")%>
 			</p>
 			<div class="updatePost300">
-				<h3><a href="/updates/<%=update.id%>"><%=update.title%></a></h3>
+				<h3><a href="/blog/<%=blog.id%>"><%=blog.title%></a></h3>
 
-				<p><%=truncate(update.body,:length=>100,:separator=>' ')%> <a href="/updates/<%=update.id%>">Read More &raquo;</a></p>
-				<% @cat = update.categories.order("categoryname asc").limit(1)%>
+				<p><%=truncate(strip_tags(blog.body),:length=>110,:separator=>' ').html_safe %> <a href="/blog/<%=blog.id%>">Read Story &raquo;</a></p>
+				<% @cat = blog.categories.order("categoryname asc").limit(1)%>
 				<p class="meta">
-					<%unless @cat.count==0%>Related Category: <a href="/updates/?cid=<%=@cat.first.id%>"><%=@cat.first.categoryname%></a><%end%> <%if !update.author.nil? && !update.author.blank?%><%unless @cat.count==0%>| <%end%>Update from: <%=update.author%><%end%></p>
+					<%unless @cat.count==0%>Related Category: <a href="/blog/?cid=<%=@cat.first.id%>"><%=@cat.first.categoryname%></a><%end%> <%if !blog.author.nil? && !blog.author.blank?%><%unless @cat.count==0%>| <%end%>Update from: <%=blog.author%><%end%></p>
 				
 			</div>
 			<div class="clearfix"></div>
@@ -73,9 +71,7 @@
 		<%end%>
 		<div class="updateNav"><a href="/updates">Read all updates from Mission of Hope &raquo;</a></div>
 	</div>
-	
-	
-	-->
+
 	
 	
 <% if @related_posts %>
