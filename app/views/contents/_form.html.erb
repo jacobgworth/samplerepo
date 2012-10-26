@@ -19,12 +19,16 @@ tinyMCE.init({
 
 <%= form_for(@content, :url=>'/contents/' + @content.id.to_s()) do |f| %>
 
+    <% @navoptions={ "About Us" => "aboutNav", "Child Sponsor" => "childSponsorNav","Church" => "churchNav", "Health Care" => "healthCareNav"} %>
+    <% @navoptions.merge!("Mission Trip" => "missionTripNav", "Take Action" => "takeActionNav") %>
 
   <div class="field">
     <h2><%= f.label :url %></h2>
     <%= f.text_field :url %><br />
     <h2>Hero Image Filename</h2>
     <%= f.text_field :heroimage %><br />
+    <h2>Right Menu Navigation</h2>
+    <%= select( "content", "navbar", @navoptions) %>
     <h2><%= f.label :content %></h2>
     <%= f.text_area :content %><br />
     <h2><%= f.label :headline %></h2>

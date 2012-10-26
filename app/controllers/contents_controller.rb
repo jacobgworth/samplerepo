@@ -19,10 +19,14 @@ class ContentsController < ApplicationController
     #@content = Content.find(params[:id])
     #@content = Content.find(1)
     #@thisParam = request.fullpath #params[:id]
-    if params[:path].nil?
-      @content = Content.find_by_url(params[:url])
+    if !params[:id].nil?
+      @content = Content.find(params[:id])
     else
-      @content = Content.find_by_url(params[:path] + '/' + params[:url])
+      if params[:path].nil?
+        @content = Content.find_by_url(params[:url])
+      else
+        @content = Content.find_by_url(params[:path] + '/' + params[:url])
+      end
     end
 
 
@@ -80,7 +84,7 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       if @content.update_attributes(params[:content])
-        format.html { redirect_to '/' + params[:content][:url], notice: 'Content was successfully updated.' }
+        format.html { redirect_to '/' + params[:content][:url], notice: "Content successfully updated" }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

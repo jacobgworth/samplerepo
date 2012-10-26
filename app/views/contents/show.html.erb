@@ -11,12 +11,23 @@
 </div>
 <div id="wrapper">
 	<%=render 'layouts/navBar'%>
-<div id="content" style="padding-top:500px;">
-<p id="notice"><%= notice %></p>
+	<div id="content" style="padding-top:500px;">
+		<p id="notice"><%= notice %></p>
+
+		<div id="contentLeft560">
+			<%=@content.content.html_safe%>
+			<div class="smallLink"><%= link_to 'Back', contents_path %> | <a href="/contents/<%=@content.id%>/edit">Edit</a></div>
+		</div>
 
 
-<%=@content.content.html_safe%>
+		<div id="contentRight300" style="padding-top: 38px;">
+			<%if !@content.navbar.nil? %>
+				<%= render ("layouts/" + @content.navbar) %>
+			<% else %>
+				<%= render "layouts/aboutNav" %>
+			<% end%>
+		</div>
 
-<div class="smallLink"><%= link_to 'Back', contents_path %></div>
-</div>
+	
+	</div>
 </div>
