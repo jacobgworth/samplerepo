@@ -66,6 +66,10 @@ class ContactUsMailer < ActionMailer::Base
     @bodym = @data[:bodym]
     @childname = @data[:childname]
     @childnumber = @data[:childnumber]
+    @attachment = @data[:attachment]
+    if !@attachment.nil?
+      attachments[@attachment.original_filename] = @attachment.read
+    end
     
     mail(:to => "sponsorship@mohhaiti.org", :subject => "Write My Child", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end

@@ -532,6 +532,7 @@ class PageController < ApplicationController
     @childname = params[:childname]
     @childnumber = params[:childnumber]
     if !@name.nil? && @name != "" && !@letterbody.nil? && @letterbody != "" && !@childnumber.nil? && @childnumber != ""
+      @attachment = params[:datafile]
       @isvalid = true
       @data = {
         :fname => @name, 
@@ -539,7 +540,8 @@ class PageController < ApplicationController
         :bodym => @letterbody,
         :phone => @phone,
         :childname => @childname,
-        :childnumber => @childnumber
+        :childnumber => @childnumber,
+        :attachment => @attachment
       }
       respond_to do |format|
         ContactUsMailer.write_child(@data).deliver
