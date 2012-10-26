@@ -4,11 +4,25 @@ class PostsController < ApplicationController
   def index
     @cid = params[:cid]
     @mid = params[:mid]
+    @page = params[:page].to_i #for pagination
+    @posts_per_page = 7
     @user = current_user
     @updates = Update.last(3).reverse
     @postsyear = @posts = Post.order("postdate desc").where("postdate > ?",Time.now.beginning_of_month.months_ago(11))
-    if @cid.nil? && @mid.nil?
-      @posts = @postsyear.take(7)
+    if @cid.nil? && @mid.nil? #no date params
+      
+      #do some math for pagination links
+      @count = Post.count
+      @total_pages = @count / @posts_per_page
+      if (@count % @posts_per_page) #add page for remainder that aren't a full block
+        @total_pages += 1
+      end
+      if !@page.nil? #showing a different set than most recent group (pagination link)
+        @offset = @page.to_i * @posts_per_page
+        @posts = Post.order("postdate desc").offset(@offset).limit(@posts_per_page)
+      else
+        @posts = @postsyear.take(@posts_per_page)
+      end
     elsif !@mid.nil?
       @month = DateTime.strptime(@mid,'%m-%Y')
       @posts = Post.order("postdate desc").where("postdate >= ? and postdate <= ?",@month.beginning_of_month,@month.end_of_month)

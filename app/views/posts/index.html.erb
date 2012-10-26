@@ -44,6 +44,20 @@
     </div>
 <% end %>
 
+<% if @page %>
+	<a href="/blog/?page=<%=(@page + 1).to_s%>">Older Posts</a>
+	<% if @page > 1 %>
+		&nbsp;|&nbsp;
+		<a href="/blog/?page=<%=(@page - 1).to_s%>">Newer Posts</a>
+	<% end %>
+	<% if @page == 1 %>
+		&nbsp;|&nbsp;
+		<a href="/blog">Newer Posts</a>
+	<%end %>
+<% else %>
+	<a href="/blog/?page=1">Older Posts</a>
+<% end %>
+
 
 <br />
 <% if !@user.nil? && @user.is_admin == 1%>
