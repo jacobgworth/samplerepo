@@ -195,8 +195,8 @@ Mohhaiti::Application.routes.draw do
   get "page/nutrition"
   match "/nutrition" => "page#nutrition"
   
-  #get "page/medical_mission_trips"
-  #match "/medical_mission_trips" => "page#medical_mission_trips"
+  get "page/medical_mission_trips"
+  match "/medical_mission_trips" => "page#medical_mission_trips"
      
   get "page/mission_trip_experinces"
   match "/mission_trip_experinces" => "page#mission_trip_experiences"
