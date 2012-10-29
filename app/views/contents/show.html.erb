@@ -1,17 +1,24 @@
-<div id="bgHero" >
-	<%if !@content.nil? && !@content.heroimage.nil? && @content.heroimage != '' %>
-		<div id="heroCommunitiesImg" style="background: url(/assets/<%=@content.heroimage%>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;">
-		<!--x-->
-		</div>
-	<%else%>
-		<div id="heroCommunitiesImg">
-		<!--x-->
-		</div>
-	<%end%>
-</div>
+<% if !@content.heroimage.nil? || !(@content.heroimage == "none") %>
+	<div id="bgHero" >
+		<%if !@content.nil? && !@content.heroimage.nil? && @content.heroimage != '' %>
+			<div id="heroCommunitiesImg" style="background: url(/assets/<%=@content.heroimage%>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;">
+				<!--x-->
+			</div>
+		<%else%>
+			<div id="heroCommunitiesImg">
+			<!--x-->
+			</div>
+		<%end%>
+	</div>
+<% end %>
 <div id="wrapper">
 	<%=render 'layouts/navBar'%>
 	<div id="content" style="padding-top:500px;">
+		<% if !@content.herotext.nil? && !(@content.herotext == "") %>
+			<div id="heroContent">
+				<h1 style="top:-158px;"><span class="greenTransBG"><span style="font-size: 2.5em;"><%=@content.herotext%></span></span></h1>
+			</div>
+		<% end %>
 		<p id="notice"><%= notice %></p>
 
 		<div id="contentLeft560">
@@ -26,6 +33,9 @@
 			<% else %>
 				<%= render "layouts/aboutNav" %>
 			<% end%>
+		</div>
+		<div class="clearfix">
+			<!--x-->
 		</div>
 
 	
