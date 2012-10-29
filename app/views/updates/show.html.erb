@@ -46,44 +46,35 @@
 <%= link_to 'Back', updates_path %>
 </div>
 <div id="contentRight300"> 
+	<% if @blogs.count != 0 %>
+		<div class="updatesWrapper" style="margin-top:20px;">
+			<h3>MOH in Action</h3>
+			<div class="speechBubble" style="position: absolute; top: -71px; right: 39px;"><p>latest blogs</p></div>
+			<%@blogs.each do |blog|%>
+				<div class="update300">
+				<p class="meta">	<% 
+						created = blog.postdate 
+					%>
+					<%= created.strftime("%b")%> <%=created.strftime("%d")%>, <%=created.strftime("%Y")%>
+				</p>
+				<div class="updatePost300">
+					<h3><a href="/blog/<%=blog.id%>"><%=blog.title%></a></h3>
 	
-	<div class="updatesWrapper" style="margin-top:20px;">
-		<h3>MOH in Action</h3>
-		<div class="speechBubble" style="position: absolute; top: -71px; right: 39px;"><p>latest blogs</p></div>
-		<%@blogs.each do |blog|%>
-			<div class="update300">
-			<p class="meta">	<% 
-					created = blog.postdate 
-				%>
-				<%= created.strftime("%b")%> <%=created.strftime("%d")%>, <%=created.strftime("%Y")%>
-			</p>
-			<div class="updatePost300">
-				<h3><a href="/blog/<%=blog.id%>"><%=blog.title%></a></h3>
-
-				<p><%=truncate(strip_tags(blog.body),:length=>110,:separator=>' ').html_safe %> <a href="/blog/<%=blog.id%>">Read Story &raquo;</a></p>
-				<% @cat = blog.categories.order("categoryname asc").limit(1)%>
-				<p class="meta">
-					<%unless @cat.count==0%>Related Category: <a href="/blog/?cid=<%=@cat.first.id%>"><%=@cat.first.categoryname%></a><%end%> <%if !blog.author.nil? && !blog.author.blank?%><%unless @cat.count==0%>| <%end%>Update from: <%=blog.author%><%end%></p>
-				
-			</div>
-			<div class="clearfix"></div>
-			</div>
-		<%end%>
-		<div class="updateNav"><a href="/updates">Read all updates from Mission of Hope &raquo;</a></div>
-	</div>
+					<p><%=truncate(strip_tags(blog.body),:length=>110,:separator=>' ').html_safe %> <a href="/blog/<%=blog.id%>">Read Story &raquo;</a></p>
+					<% @cat = blog.categories.order("categoryname asc").limit(1)%>
+					<p class="meta">
+						<%unless @cat.count==0%>Related Category: <a href="/blog/?cid=<%=@cat.first.id%>"><%=@cat.first.categoryname%></a><%end%> <%if !blog.author.nil? && !blog.author.blank?%><%unless @cat.count==0%>| <%end%>Update from: <%=blog.author%><%end%></p>
+					
+				</div>
+				<div class="clearfix"></div>
+				</div>
+			<%end%>
+			<div class="updateNav"><a href="/updates">Read all updates from Mission of Hope &raquo;</a></div>
+		</div>
+	<% end %>
 
 	
 	
-<% if @related_posts %>
-<% if @related_posts.length > 0 %>
-	<h3 style="width:295px;" class="projectDetailButton"><strong>Related Blog Posts: </strong>
-	<% @related_posts.each do |related|%>
-		<a href="/blog/<%=related.id%>"><%=related.title%></a><br>
-	<% end%>
-	</h3>
-<% end %>
-<% end%>
-
 
 <% if @related_projects %>
 <% if @related_projects.length > 0 %>

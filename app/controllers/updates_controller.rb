@@ -41,10 +41,10 @@ class UpdatesController < ApplicationController
         @related_result = @related_result.uniq{|x| x.title}
       end
       
-      @related_posts = []
+      @blogs = []
       @cats.each do |cat|
-        @related_posts += Post.joins(:categories).where("category_id=" + cat.id.to_s).reverse
-        @related_posts = @related_posts.uniq{|x| x.title}
+        @blogs += Post.joins(:categories).where("category_id=" + cat.id.to_s)
+        @blogs = @blogs.uniq{|x| x.title}
       end
       
       @related_projects = []
