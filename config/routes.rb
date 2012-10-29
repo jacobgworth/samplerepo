@@ -1,5 +1,21 @@
 Mohhaiti::Application.routes.draw do
 
+=begin
+  match "/meet_our_staff" => "contents#show", :id => 10
+  match "/faq" => "contents#show", :id => 10
+  match "/sponsor_faq" => "contents#show", :id => 10
+  match "/medical_mission_trips" => "contents#show", :id => 10
+  match "/trip_faqs" => "contents#show", :id => 10
+  match "/trip_dates" => "contents#show", :id => 10
+  match "/trip_costs" => "contents#show", :id => 10
+  match "/gift_store" => "contents#show", :id => 10
+  match "/preparing_for_mission_trips" => "contents#show", :id => 10
+  match "/financial_info" => "contents#show", :id => 10
+  match "/internships" => "contents#show", :id => 10
+  match "/vision_mission_resolutions" => "contents#show", :id => 10
+  match "/our_story" => "contents#show", :id => 10
+=end
+  
   resources :news
 
   resources :videos
