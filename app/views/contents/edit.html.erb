@@ -1,9 +1,11 @@
-<%=render 'layouts/navBar'%>
-<div id="content">
-<h1>Edit content</h1>
-<div id="cms">
-<%= render 'form' %>
+<div id="wrapper">
+	<%=render 'layouts/navBar'%>
+	<div id="content" style="padding-top: 0px;">
+		<h1>Edit content</h1>
+		<div id="cms">
+			<%= render 'form' %>
 
-<div class="smallLink"><a href="/<%=@content.url%>">View this Page</a> | <%= link_to 'Back', contents_path %></div>
-</div>
+			<div class="smallLink"><a href="/<%=@content.url%>">View this Page</a> | <%= link_to 'Back', contents_path %></div>
+		</div>
+	</div>
 </div>
