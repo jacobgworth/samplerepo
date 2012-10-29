@@ -53,7 +53,7 @@
 			<% @related_result.each do |related|%>
 				<%if related.id != @update.id %>
 					<div class="update560" style="line-height: 1.3em; height=120px;">
-						<h4><a href="/updates/<%=related.id%>"><%=related.title%></a><br/></h4>
+						<h4 style="padding-bottom: 5px;"><a href="/updates/<%=related.id%>"><%=related.title%></a><br/></h4>
 						<% unless related.assets.last.nil? %>
 							<img src="<%=related.assets.last.asset.url(:thumb)%>" style="float:left; padding-right: 15px; padding-bottom: 5px;" />
 						<%end %>
