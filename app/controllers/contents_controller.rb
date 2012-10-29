@@ -28,8 +28,7 @@ class ContentsController < ApplicationController
         @content = Content.find_by_url(params[:path] + '/' + params[:url])
       end
     end
-
-
+    
     respond_to do |format|
     format.html {render :layout=>"homeLayout"}# index.html.erb
       format.json { render json: @content }

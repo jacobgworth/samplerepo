@@ -1,4 +1,4 @@
-<% if !@content.heroimage.nil? || !(@content.heroimage == "none") %>
+<%if !@content.nil? && !@content.heroimage.nil? && @content.heroimage != '' %>
 	<div id="bgHero" >
 		<%if !@content.nil? && !@content.heroimage.nil? && @content.heroimage != '' %>
 			<div id="heroCommunitiesImg" style="background: url(/assets/<%=@content.heroimage%>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;">
@@ -13,8 +13,12 @@
 <% end %>
 <div id="wrapper">
 	<%=render 'layouts/navBar'%>
-	<div id="content" style="padding-top:500px;">
-		<% if !@content.herotext.nil? && !(@content.herotext == "") %>
+	<%if !@content.nil? && !@content.heroimage.nil? && @content.heroimage != '' %>
+		<div id="content" style="padding-top:500px;">
+	<% else %>
+		<div id="content" style="padding-top:0px;">
+	<% end %>
+		<% if !@content.heroimage.nil? && @content.heroimage != '' && !@content.herotext.nil? && !(@content.herotext == "") %>
 			<div id="heroContent">
 				<h1 style="top:-158px;"><span class="greenTransBG"><span style="font-size: 2.5em;"><%=@content.herotext%></span></span></h1>
 			</div>
