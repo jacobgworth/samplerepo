@@ -25,8 +25,10 @@ tinyMCE.init({
   <div class="field">
     <h2><%= f.label :url %></h2>
     <%= f.text_field :url %><br />
-    <h2>Hero Image Filename</h2>
+    <h2>Hero Image Filename (can be blank)</h2>
     <%= f.text_field :heroimage %><br />
+    <h2>Hero Image Text (can be blank)</h2>
+    <%= f.text_field :herotext %><br />  
     <h2>Right Menu Navigation</h2>
     <%= select( "content", "navbar", @navoptions) %>
     <h2><%= f.label :content %></h2>
