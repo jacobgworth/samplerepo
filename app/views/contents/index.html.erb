@@ -9,7 +9,7 @@
   <div class="contentList">
     <p><strong>URL:</strong> <%= content.url %></p>
 	<p><strong>Headline:</strong> <%= content.headline %></p>
-	<p><strong>Page HTML:</strong> <%= truncate(content.content,:length=>100,:separator=>' ').html_safe%></p>
+	<p><strong>Page HTML:</strong> <%= truncate(strip_tags(content.content),:length=>100,:separator=>' ').html_safe%></p>
     <p class="smallLink"><a href="/<%=content.url%>">View this Page</a></td>&nbsp;| <a href="/contents/<%=content.id%>/edit">Edit this Page</a> | <a href="/contents/<%=content.id%>" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Delete this Page</a></p>
   </div>
 <% end %>
