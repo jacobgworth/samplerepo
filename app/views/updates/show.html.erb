@@ -44,7 +44,27 @@
 <%= link_to 'Edit', edit_update_path(@update) %> |
 <%end%>
 <%= link_to 'Back', updates_path %>
+
+<div class="update560"></div>
+<% if @related_result %>
+	<% if @related_result.length > 1 %>
+		<h3>Other <%= @cat.first.categoryname %><%if !@cat2.nil? %><% @cat2.each do |cat2| %>, <%= cat2.categoryname %><%end%><%end%> updates: </h3>
+		<!--<h3 class="update560" style="font-size: 1em;">-->
+			<% @related_result.each do |related|%>
+				<%if related.id != @update.id %>
+					<div class="update560">
+						<a href="/updates/<%=related.id%>"><%=related.title%></a><br/>
+						<%= related.body %>
+					</div>
+				<%end%>
+			<% end%>
+		<!--</h3>-->
+	<% end %>
+<%end%>
+
 </div>
+
+
 <div id="contentRight300"> 
 	<% if @blogs.count != 0 %>
 		<div class="updatesWrapper" style="margin-top:20px;">
@@ -85,17 +105,7 @@
 	</h3>
 <% end %>
 <% end%>
-<% if @related_result %>
-	<% if @related_result.length > 1 %>
-		<h3 style="width:295px;" class="projectDetailButton"><strong>Similar updates: </strong>
-		<% @related_result.each do |related|%>
-				<%if related.id != @update.id %>
-					<a href="/updates/<%=related.id%>"><%=related.title%></a><br>
-				<%end%>
-		<% end%>
-		</h3>
-	<% end %>
-<%end%>
+
 <div class="clearfix"></div>
 </div>
 <p>
