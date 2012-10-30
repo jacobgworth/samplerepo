@@ -27,7 +27,7 @@
 
 		<div id="contentLeft560">
 			<%=@content.content.html_safe%>
-			<div class="smallLink"><%= link_to 'Back', contents_path %> | <a href="/contents/<%=@content.id%>/edit">Edit</a></div>
+			<% if !@user.nil? && @user.is_admin == 1 %><div class="smallLink"><%= link_to 'Back', contents_path %> | <a href="/contents/<%=@content.id%>/edit">Edit</a></div><% end %>
 		</div>
 
 
