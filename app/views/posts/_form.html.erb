@@ -40,10 +40,10 @@ tinyMCE.init({
     Posted on: <br><%= date_select :post, :postdate %>
   </div>
   <div class="field">
-    Metatitle: <br><%= f.text_field :metatitle%> 
+    Metatitle: <br><%= f.text_field :metatitle, :maxlength => 200  %> 
   </div>
   <div class="field">
-    Metadescription: <br><%= f.text_field :metadescription%> 
+    Metadescription: <br><%= f.text_field :metadescription, :maxlength => 200 %> 
   </div>
   <div class="field">
     Author: <br><%= f.text_field :author, :required => true %> (Required)
