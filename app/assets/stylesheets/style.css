@@ -985,6 +985,18 @@ html[xmlns] #nav {
 	height: 1%;
 }
 
+#pullmeinfo {
+	height: 100px;
+	width: 140px;
+	float: left;
+	position: absolute;
+	top: 118px;
+	left: 60px;	
+	background-color: #056346;
+	color: black;
+	display: none;
+}
+
 #pull a:link, #pull a:visited {
 	background: url(/assets/pullTag.png) no-repeat;
 	color: #E4D4B9;
