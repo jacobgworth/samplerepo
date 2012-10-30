@@ -5,22 +5,68 @@
 		<br />
 		Videos</h1>
 		<div class="videoPostsWrapper">
+			
+			<!-- we are displaying some static videos here (the first four) -->
+					<div class="video">
+						<h4><a href="/videos/4">Mission of Hope Vision &amp; Mission</a></h4>
+						<div class="videoPost">
+							<iframe src="http://player.vimeo.com/video/30163926" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
+						</div>
+						<p>
+							As an organization following Jesus Christ, Mission of Hope exists to bring life transformation to every man, woman, and child in Haiti. Hear our vision behind everything we do at Mission of Hope. <a href="/videos/4">Read More &raquo;</a>
+						</p>
+					</div>	
+					
+					<div class="video">
+						<h4><a href="/videos/2">Advancing The Church in Haiti</a></h4>
+						<div class="videoPost">
+							<iframe src="http://player.vimeo.com/video/48615727" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						</div>
+						<p>
+							Church advancement is the Church of North America partnering with Mission of Hope, Haiti to serve the Church in Haiti. Singularly, or along with other churches. Your church will have the... <a href="/videos/2">Read More &raquo;</a>
+						</p>
+					</div>
+					<div class="video">
+						<h4><a href="/videos/1">Mission of Hope Ministry Overview</a></h4>
+						<div class="videoPost">
+							<iframe src="http://player.vimeo.com/video/31550572" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						</div>
+						<p>
+							As an organization grounded in the gospel of Jesus Christ, we seek to daily serve the people of Haiti and bring hope to the hopeless. We are there to meet the physical and spiritual needs of the... <a href="/videos/1">Read More &raquo;</a>
+						</p>
+					</div>
+					<div class="video">
+						<h4><a href="/videos/3">Mwen Kapab</a></h4>
+						<div class="videoPost">
+							<iframe src="http://player.vimeo.com/video/45280018" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
+						</div>
+						<p>
+							Mwen Kapab. Translation: “I can.”
+							This is the message MOH is empowering the students of Haiti with as we continue the development of our educational curriculum.
+							Meet the visionary behind our... <a href="/videos/3">Read More &raquo;</a>
+						</p>
+					</div>
+					
+			<!-- end static -->
+			
 			<% @videos.each do |video| %>
-			<div class="video">
-				<h4><a href="/videos/<%= video.id %>"><%= video.title %></a></h4>
-				<div class="videoPost">
-					<%= video.link.html_safe %>
-				</div>
-				<p>
-					<%= truncate(video.description,:length=>200,:separator=>' ').html_safe %> <a href="/videos/<%= video.id %>">Read More &raquo;</a>
-				</p>
-				<% if !@user.nil? && @user.is_admin?%>
-				<p class="editPostsLink">
-					<%= link_to 'Edit', edit_video_path(video) %> |
-					<%= link_to 'Back', videos_path %>
-				</p>
+				<% if video.id > 4 %>
+					<div class="video">
+						<h4><a href="/videos/<%= video.id %>"><%= video.title %></a></h4>
+						<div class="videoPost">
+							<%= video.link.html_safe %>
+						</div>
+						<p>
+							<%= truncate(video.description,:length=>200,:separator=>' ').html_safe %> <a href="/videos/<%= video.id %>">Read More &raquo;</a>
+						</p>
+						<% if !@user.nil? && @user.is_admin?%>
+						<p class="editPostsLink">
+							<%= link_to 'Edit', edit_video_path(video) %> |
+							<%= link_to 'Back', videos_path %>
+						</p>
+						<% end %>
+					</div>
 				<% end %>
-			</div>
 			<% end %>
 
 			<div class="clearfix">
