@@ -1,3 +1,4 @@
+
 <div id="navBar">
 	<div id="logo"><a href="/"><img src="/assets/logo.png"></a></div>
 	<div id="utilityBar">
@@ -59,8 +60,7 @@
 					<li><a href="/partner_of_hope">Be a Partner of Hope</a></li>
 					<li><a href="/volunteer">Volunteer</a></li>
 					<li><a href="/share_photos">Share Your Photos</a></li>
-					<li><a href="/events">Events</a></li>
-					<!-- <li><a href="/downloads">Downloads</a></li> -->
+					<li><a href="/events">Events</a></li> <!-- <li><a href="/downloads">Downloads</a></li> -->
 				</ul>
 			</li>
 			<li class="last"><a href="/stay-connected">Stay<br />Connected</a>
@@ -71,6 +71,28 @@
 				</ul>
 			</li>
 		</ul>
-	</div>
-	<!-- <div id="pull"><a href="">pull me</a></div> -->
+	</div> 
+	<!--
+	<div id="pullmeinfo">I have all the pullme info!</div>
+	<div id="pull" class=""><a href="#" class="pullme">pull me</a></div>
+	-->
 </div>
+
+<!-- script to animate pullme tab -->
+<script>
+	window.onOff = 0;
+	$(".pullme").click(function() {               
+		//alert("pulled");
+		//$(".pullme").hide();
+		if (window.onOff == 0) {
+			$(".pullme").animate({top: "+=100px",}, 1000 );
+			$("#pullmeinfo").slideDown(1000);
+			window.onOff = 1;
+		} else {
+			$(".pullme").animate({top: "-=100px",}, 1000 );
+			$("#pullmeinfo").slideUp(1000);
+			window.onOff = 0;			
+		}
+	});
+</script>
+<!-- end pullme script -->
