@@ -1149,6 +1149,7 @@ h3.CTA {
 	font-size: .9em;
 	color: #0f483b;
 	font-family: 'Montserrat', sans-serif;
+	padding-bottom:0;
 }
 
 #content .rightBox {
