@@ -992,20 +992,20 @@ html[xmlns] #nav {
 	position: absolute;
 	top: 118px;
 	left: 7px;	
-	background-color: #056346;
+	background-color: #05714d;
 	color: black;
 	display: none;
-	z-index: 9999;
-	border-radius: 0px 0px 10px 10px; 
-	-moz-border-radius: 0px 0px 10px 10px; 
-	-webkit-border-radius: 0px 0px 10px 10px; 
+	z-index: 900;
+	border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px; 
+	-webkit-border-radius: 0px 0px 5px 5px; 
 }
 #pullmeinfo h1{
 	text-align:center;
-	padding-top:10px;
+	padding:20px 10px 10px 10px;
 	color:#08C086;
-	padding-left: 2%;
-	padding-right: 2%;
+	/*padding-left: 2%;
+	padding-right: 2%;*/
 }
 
 #pull a:link, #pull a:visited {
