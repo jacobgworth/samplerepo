@@ -8,3 +8,4 @@ db/schema.rb
 db/development.sqlite3.old
 locallive10252012.db
 latest.db
+db/development.sqlite3.almostrecent
