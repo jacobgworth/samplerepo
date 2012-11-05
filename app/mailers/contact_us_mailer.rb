@@ -24,7 +24,7 @@ class ContactUsMailer < ActionMailer::Base
     @txtcomments = @data[:txtcomments]
     @txtprefs = @data[:txtprefs]
     
-    mail(:to => "churchpartnerships@mohhaiti.org", :subject => "Church Partnership Inquiry", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "churchpartnerships@mohhaiti.org", :subject => "Church Partnership Inquiry", :from => @txtemail)
   end
   
   def contact_us_mail(data,msgbody)
@@ -36,7 +36,7 @@ class ContactUsMailer < ActionMailer::Base
     @emailsubject = @data[:subject]
     @name = @data[:name]
     @phone = @data[:phone]
-    mail(:to => "info@mohhaiti.org", :subject => @emailsubject, :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "info@mohhaiti.org", :subject => @emailsubject, :from => @fromaddress)
   end
   
   def sponsorship_contact(data)
@@ -52,7 +52,7 @@ class ContactUsMailer < ActionMailer::Base
     @state = @data[:state]
     @zip = @data[:zip]  
     
-    mail(:to => "sponsorship@mohhaiti.org", :subject => "Child Sponsorship Inquiry", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "sponsorship@mohhaiti.org", :subject => "Child Sponsorship Inquiry", :from => @fromaddress)
   end
   
   def write_child(data)
@@ -71,7 +71,7 @@ class ContactUsMailer < ActionMailer::Base
       attachments[@attachment.original_filename] = @attachment.read
     end
     
-    mail(:to => "sponsorship@mohhaiti.org", :subject => "Write My Child", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "sponsorship@mohhaiti.org", :subject => "Write My Child", :from => @fromaddress)
   end
   
   def take_a_trip(data)
@@ -85,7 +85,7 @@ class ContactUsMailer < ActionMailer::Base
     @comments = @data[:comments]
  
     
-    mail(:to => "missiontrips@mohhaiti.org", :subject => "Take a Mission Trip", :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "missiontrips@mohhaiti.org", :subject => "Take a Mission Trip", :from => @fromaddress)
   end
   
   def volunteer(data)
@@ -100,7 +100,7 @@ class ContactUsMailer < ActionMailer::Base
     
     @frizzle = @data[:txtname]
     
-    mail(:to => "info@mohhaiti.org", :subject => "MOH Volunteer", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "info@mohhaiti.org", :subject => "MOH Volunteer", :from => @txtemail)
   end
   
   def vision_trip(data)
@@ -119,7 +119,7 @@ class ContactUsMailer < ActionMailer::Base
     @txtmessage = @data[:txtmessage]
     @txtdatesinterested = @data[:txtdatesinterested]
     
-    mail(:to => "churchpartnerships@mohhaiti.org", :subject => "Vision Trip Information", :from => @txtemail, :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "churchpartnerships@mohhaiti.org", :subject => "Vision Trip Information", :from => @txtemail)
   end
   
 end

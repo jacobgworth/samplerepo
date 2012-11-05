@@ -992,20 +992,20 @@ html[xmlns] #nav {
 	position: absolute;
 	top: 118px;
 	left: 7px;	
-	background-color: #056346;
+	background-color: #05714d;
 	color: black;
 	display: none;
-	z-index: 9999;
-	border-radius: 0px 0px 10px 10px; 
-	-moz-border-radius: 0px 0px 10px 10px; 
-	-webkit-border-radius: 0px 0px 10px 10px; 
+	z-index: 900;
+	border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px; 
+	-webkit-border-radius: 0px 0px 5px 5px; 
 }
 #pullmeinfo h1{
 	text-align:center;
-	padding-top:10px;
+	padding:20px 10px 10px 10px;
 	color:#08C086;
-	padding-left: 2%;
-	padding-right: 2%;
+	/*padding-left: 2%;
+	padding-right: 2%;*/
 }
 
 #pull a:link, #pull a:visited {
@@ -1786,7 +1786,6 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	height: 125px;
 	display: block;
 }
-
 .haitiOneMed a:link {
 	background: url(/assets/icon-haitione-med.png) bottom center  no-repeat;
 	text-indent: -9999px;
@@ -1906,7 +1905,20 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	height: 125px;
 	display: block;
 }
-
+.internshipMed a:link{
+	background: url(/assets/icon-intern-med.png) top center  no-repeat;
+	text-indent: -9999px;
+	width: 125px;
+	height: 125px;
+	display: block;
+}
+.internshipMed a:hover{
+	background: url(/assets/icon-intern-med-hover.png) top center  no-repeat;
+	text-indent: -9999px;
+	width: 125px;
+	height: 125px;
+	display: block;
+}
 .grid2x2Right {
 	width: 440px;
 	float: left;
