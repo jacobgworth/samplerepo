@@ -41,10 +41,16 @@
 <p>
   <%= @update.body %>
 </p>
+
+<% if !@update.media.nil? %>
+<p>
+  <%= @update.media.html_safe %>
+</p>
+<% end %>
+
 <%if @isadmin%>
 <%= link_to 'Edit', edit_update_path(@update) %> | <%= link_to 'Back', updates_path %>
 <%end%>
-
 
 
 <% if @related_result %>
@@ -114,9 +120,7 @@
 
 <div class="clearfix"></div>
 </div>
-<p>
-  <%= @update.media %>
-</p>
+
 <div class="clearfix" style="height:40px;"><!--x--></div>
 
 </div></div>
