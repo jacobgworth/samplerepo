@@ -548,8 +548,9 @@
         //document.getElementById("item__item_image_name").value = image.image;
         var img_container = $(document.createElement('div')).addClass('ad-image');
         var img = $(new Image()).attr('src', image.image);
+        image.link = image.image;
         if(image.link) {
-          var link = $('<a href="'+ image.link +'" target="_blank"></a>');
+          var link = $('<a id="imghref" class="lightbox_trigger" href="'+ image.image +'"></a>');
           link.append(img);
           img_container.append(link);
         } else {

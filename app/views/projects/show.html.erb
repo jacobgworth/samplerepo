@@ -166,11 +166,51 @@
 		</div>
 		<div id="contentRight300">
 			<% unless @assets.count == 0 %>
+<script>
+jQuery(document).ready(function($) {
+    $('.lightbox_trigger').click(function(e) {
+        //prevent default action (hyperlink)
+        e.preventDefault();
+        //Get clicked link href
+        var image_href = $('#imghref').attr("href");
+        image_href = image_href.replace("medium", "large");
+        //var image_href = $(this).attr("href");
+        /*
+        If the lightbox window HTML already exists in document,
+        change the img src to to match the href of whatever link was clicked
+        If the lightbox window HTML doesn't exists, create it and insert it.
+        (This will only happen the first time around)
+        */
+        if ($('#lightbox').length > 0) { // #lightbox exists
+            //place href as img src value
+            $('#lightboxcontent').html('<img src="' + image_href + '" />');
+            //show lightbox window - you could use .show('fast') for a transition
+            $('#lightbox').show('fast');
+        }
+        else { //#lightbox does not exist - create and insert (runs 1st time only)
+            //create HTML markup for lightbox window
+            var lightbox =
+            '<div id="lightbox">' +
+                '<p>Click to close</p>' +
+                '<div id="lightboxcontent">' + //insert clicked link's href into img src
+                    '<img src="' + image_href +'" />' +
+                '</div>' +
+            '</div>';
+            //insert lightbox HTML into page
+            $('body').append(lightbox);
+        }
+    });
+    //Click anywhere on the page to get rid of lightbox window
+    $('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
+        $('#lightbox').hide('fast');
+    });
+});
+</script>
 			<div class="contentRightWrapper">
 			<h3><span class="eyebrow"><%= @project.projectname %></span><br />Photo Album</h3>
 						<div id="divImgThumbs">
 				<div id="gallery" class="ad-gallery">
-					<div class="ad-image-wrapper">
+					<div class="ad-image-wrapper lightbox_trigger">
 						<div class="ad-image shadow"></div>
 					</div><!--wrapper-->
 					<div class="ad-controls"></div><!--controls-->
