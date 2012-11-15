@@ -3053,6 +3053,7 @@ tr {
     height:100%;
     min-height:100%;
     text-align:center;
+    background: url(/assets/lightboxoverlay.png) repeat;
     z-index:900;
     padding: 0px;
     margin: 0px;
