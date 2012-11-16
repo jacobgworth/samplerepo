@@ -1153,9 +1153,8 @@ h3.CTA {
 }
 
 #content .rightBox {
-	width: 260px;
+	width: 300px;
 	background: url(/assets/contentDiv.png) no-repeat bottom center;
-	margin-bottom: 10px;
 	padding-bottom: 20px;
 	margin-bottom: 20px;
 }
@@ -1516,7 +1515,7 @@ h3.CTA {
 	font-size: 1.5em;
 }
 
-#contentRight300 h4 {
+#contentRight300 h4, .addthis_32x32_style h4 {
 	color: #0f483b;
 	text-transform: uppercase;
 	font-size: 0.8em;
@@ -1906,7 +1905,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	display: block;
 }
 .internshipMed a:link{
-	background: url(/assets/icon-intern-med.png) top center  no-repeat;
+	background: url(/assets/icon-intern-med.png) bottom center  no-repeat;
 	text-indent: -9999px;
 	width: 125px;
 	height: 125px;
@@ -1919,6 +1918,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 	height: 125px;
 	display: block;
 }
+
 .grid2x2Right {
 	width: 440px;
 	float: left;

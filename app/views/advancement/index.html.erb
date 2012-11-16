@@ -5,6 +5,7 @@
 <div id="wrapper">
 	<%=render 'layouts/navBar'%>
 <div id="content">
+
 	<div id="heroContent">
 		<h1>
 			<span class="advancementTopText">Church</span><br /><span class="advancementBottomText">Advancement</span>
@@ -15,6 +16,7 @@
 		<iframe src="http://player.vimeo.com/video/48615727" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 		</div>
 	</div>
+	
 	<h1><span class="eyebrow">Mission of Hope</span><br />What is church advancement?</h1>
 <p>Church advancement is the Church of North America partnering with Mission of Hope, Haiti to serve the Church in Haiti. Singularly, or along with other churches. Your church will have the opportunity to partner with an individual village to focus your efforts of Church Advancement. Through this progress, the goal is to see the church in Haiti strengthened, villages changed, the Gospel proclaimed and lives transformed. Church advancement focuses specifically on four areas: Ministry, Education, Haiti 1, and Health Care.</p>
 	<p style="text-align:center;"><img style="padding:20px 0;" src="/assets/advanceInfographic.png" /></p>
@@ -28,6 +30,20 @@
 	<div id="contentRight300">
 		<%= render 'layouts/churchNav'%>
 		<div class="contentRightWrapper">
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<h4 style="float:left;">Share This: </h4>
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-506b79724d720237"></script>
+<!-- AddThis Button END -->
+
+
 			<h3><span class="eyebrow">Learn More About</span><br />Our Reach in Haiti</h3>
 			
 				<h4 class="projectDetailButton iconDetailVillages">Total No. of Villages Served <span class="darkGreen"><%=@villages.count%></span></h4>

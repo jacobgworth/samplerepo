@@ -1,5 +1,6 @@
 ---
 3cords-artist-gernise.jpg: 3cords-artist-gernise-9f8cfab0f2a68e2544431f75b122b69d.jpg
+ECFA_Member-Seal3.png: ECFA_Member-Seal3-430a6c1e3e91101b51579a75fb6cbf9e.png
 ad-image-bg.png: ad-image-bg-1ccc2d34167808e486c70d66716072ce.png
 advanceInfographic.png: advanceInfographic-84828190ed60fd569cfc2c58b702ddd2.png
 arrowRight.png: arrowRight-f9a2897684ea9ad5d2dd0e0d08d3a235.png
@@ -144,6 +145,7 @@ iconWrite.png: iconWrite-3094c1c8de0ff5a16284554988f98475.png
 imgnotavail.png: imgnotavail-155a4ae9d94cbf25e97b258df11365df.png
 inset-vision-trip.jpg: inset-vision-trip-006923ce33d1b1323fbe29e4ca3b1ae9.jpg
 learnSponsorButton.png: learnSponsorButton-d9cdd1b1fecadf3cd3bb2c177c035eea.png
+lightboxoverlay.png: lightboxoverlay-447d101b0153f6d4430ad5808f7556fb.png
 logo.png: logo-0304a78e2e21375c7c4d3719be9c901c.png
 logoFooter.png: logoFooter-d1a530510f5913615490efce65fb87d7.png
 navArrow.png: navArrow-c3a9c54667dfd97dd00adcb978a8579a.png
@@ -291,7 +293,7 @@ gmaps4rails/gmaps4rails.openlayers.js: gmaps4rails/gmaps4rails.openlayers-bbf2bb
 jquery-ui.min.js: jquery-ui.min-bcb2f78c9ed3fa2aba736ba6e6b462e1.js
 jquery.min.js: jquery.min-223bff6ea42ed0d5e2b560fdceee811b.js
 application.js: application-77c3c2ada315ee90f5ecc70802d0827d.js
-application.css: application-9ae22b35243a81d47b5fc1ae5a98b58f.css
+application.css: application-228afbf9214052b326c86aec6a274619.css
 advancement.js: advancement-c2b0db25c3a77754b130af70a4041844.js
 categories.js: categories-c2b0db25c3a77754b130af70a4041844.js
 category.js: category-c2b0db25c3a77754b130af70a4041844.js
@@ -334,7 +336,7 @@ projects.css: projects-7c92aed0d9ced75baa9ca7d4c44adb74.css
 scaffolds.css: scaffolds-59d873133cf4fb486c4074c62dde5320.css
 sessions.css: sessions-7c92aed0d9ced75baa9ca7d4c44adb74.css
 sponsorship.css: sponsorship-7c92aed0d9ced75baa9ca7d4c44adb74.css
-style.css: style-96410e91292504a361ddf1de48429c02.css
+style.css: style-159edd4facd31e93427d8b5bbcf1335d.css
 tags.css: tags-7c92aed0d9ced75baa9ca7d4c44adb74.css
 take_action.css: take_action-7c92aed0d9ced75baa9ca7d4c44adb74.css
 updates.css: updates-7c92aed0d9ced75baa9ca7d4c44adb74.css
