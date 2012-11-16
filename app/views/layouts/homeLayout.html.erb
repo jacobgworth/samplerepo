@@ -114,15 +114,18 @@ return true;
 			<li><a href="/mission_trips">Mission Trips &raquo;</a></li>
 			<li><a href="/church_advancement">Churches &raquo;</a></li>
 		</ul>
+		
 	</div>
-	<p class="clearfix" style="padding-top:40px;">&copy;<%= Date.today.year %> Mission of Hope Haiti // <% if current_user && current_user.is_admin? %>
+	<p class="clearfix" style="padding-top:40px; width:70%;">&copy;<%= Date.today.year %> Mission of Hope Haiti // <% if current_user && current_user.is_admin? %>
     			<a href="/console">Admin</a> // <%= link_to "Logout", log_out_path %>
 			<% elsif current_user %>
     			<%= link_to "Logout", log_out_path %>
     			
   			<% else %>
   					<%= link_to "Site Login", log_in_path %>
-   			<% end %> // <a href="http://threetwelvecreative.com" target="_blank">Website design & development by ThreeTwelve Creative</a></p>
+   			<% end %> // <a href="http://threetwelvecreative.com" target="_blank">Website design & development by ThreeTwelve Creative</a><br /><br />
+   			Mission of Hope, Haiti is a 501c3.</p>
+   			<img class="alignRight" style="margin-top:-60px;" src="/assets/ECFA_Member-Seal3.png" />
 </div>
 </div>
 <div id="footer">

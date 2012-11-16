@@ -59,11 +59,24 @@
 				in this village 
 				<br />
 				<span class="darkGreenLarge"><%= @community.population %></span></h3>
-				<h3 class="projectDetailButton" style="padding-top:20px; background-image: url('/assets/icon-projects-inset.png'); background-repeat:no-repeat; background-position:95% 50%; height:60px;">No. of Projects underway
+				<h3 class="projectDetailButton" style="padding-top:20px; background-image: url('/assets/icon-projects-inset.png'); background-repeat:no-repeat; background-position:95% 50%; height:60px;">
+					No. of Projects
 				<br />
-				in this village
+				underway in this village
 				<br />
-				<span class="darkGreenLarge"><%= @projectscount %></span><br /><br /><a href="">View all projects &raquo;</a></h3>
+				<span class="darkGreenLarge"><%= @projectscount %></span><br /><a href="/projects/?commid=<%= @community.id%>">View all projects &raquo;</a></h3>
+			<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<h4 style="float:left;">Share This: </h4>
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-506b79724d720237"></script>
+<!-- AddThis Button END -->
 			</div>
 			<div class="clearfix">
 				<!--x-->
