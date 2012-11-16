@@ -60,9 +60,38 @@
   </div>
   <p><br /></p>
   <div>Add image(s):<br />Images must be resized to 300px x 200px for optimal display.
+  <div id="imagestatus" style="color: red"></div>
+  <p><input id="fileupload" type="file" name="files[]" data-url="/page/image_submit.json"></p>
+  <script src="/assets/javascript/jquery.ui.widget.js"></script>
+  <script src="/assets/javascript/jquery.iframe-transport.js"></script>
+  <script src="/assets/javascript/jquery.fileupload.js"></script>
+  <script>
+	$(function () {
+	    $('#fileupload').fileupload({
+	        dataType: 'json',
+	        add: function (e, data) {
+            	data.context = $('#imagestatus').html('Uploading...<br />');
+            	data.submit();
+        	},
+	        done: function (e, data) {
+	        	//$('#imagestatus').append('<img src="http://s3.amazonaws.com/MOH/assets/116/thumb/' + data.files[0].name + '"/><br/>');
+	        	console.log(data.result.url);
+	            $('#imglist').append('<p><img src="' + data.result.url.replace("original", "thumb") + '"/></p>');
+	            $('#imagestatus').html('');
+	        	/*
+	            $.each(data.result, function (index, file) {
+	                $('#imagestatus').append('<img src="' + file.asset + '"/><br/>');
+	            });
+	            */
+	        }
+	    });
+	});
+  </script>  	
+  	
+  <div id="imglist">
   <%= f.fields_for :assets do |asset_fields| %>
   	<% if asset_fields.object.new_record? %>
-  		<p>
+  		<p style="display:none;">
   			<%= asset_fields.file_field :asset%>
   		</p>
   	<% end%>
@@ -75,6 +104,7 @@
   		</p>
   	<% end %>
   <% end %>
+  </div>
   </div>
   
   <div class="actions">

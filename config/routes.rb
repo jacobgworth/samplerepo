@@ -205,6 +205,9 @@ Mohhaiti::Application.routes.draw do
   get "page/mission_trip_experiences"
   match "/mission_trip_experiences" => "page#mission_trip_experiences"
   #end possible deprecation
+  
+  get "page/image_submit"
+  match "/page/image_submit" => "page#image_submit"
    
   #get "page/preparing_for_mission_trips"
   #match "/preparing_for_mission_trips" => "page#preparing_for_mission_trips"

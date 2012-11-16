@@ -217,6 +217,18 @@ class PageController < ApplicationController
     end
   end
   
+  def image_submit
+    @image = params[:files][0]
+    @project = Project.find_by_projectname(params[:project][:projectname])
+    @tessa = Asset.create(:asset=>@image, :project=>@project)
+    @tessa.save()
+    logger.info(@tessa.asset)
+    @url = @tessa.asset.to_s
+    respond_to do |format|
+      format.json { render json: {:url=>@tessa.asset.to_s}.to_json }
+    end
+  end
+  
   def internships
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
