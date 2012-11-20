@@ -104,8 +104,12 @@
 				<div class="updatePost300">
 					<h3><a href="/blog/<%=blog.id%>"><%=blog.title%></a></h3>
 	
-					<p><%=truncate(strip_tags(blog.body),:length=>110,:separator=>' ').html_safe %> <a href="/blog/<%=blog.id%>">Read Story &raquo;</a></p>
+					<p>
+						<img src="<%=blog.assets.first.asset.url(:thumb)%>" style="float:left; padding-right: 15px; padding-bottom: 5px;" />
+						<%=truncate(strip_tags(blog.body),:length=>110,:separator=>' ').html_safe %> <a href="/blog/<%=blog.id%>">Read Story &raquo;</a>
+					</p>
 					<% @cat = blog.categories.order("categoryname asc").limit(1)%>
+					<div class="clearfix"><!--x---></div>
 					<p class="meta">
 						<%unless @cat.count==0%>Related Category: <a href="/blog/?cid=<%=@cat.first.id%>"><%=@cat.first.categoryname%></a><%end%> <%if !blog.author.nil? && !blog.author.blank?%><%unless @cat.count==0%>| <%end%>Update from: <%=blog.author%><%end%></p>
 					
