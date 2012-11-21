@@ -103,9 +103,16 @@
 				</p>
 				<div class="updatePost300">
 					<h3><a href="/blog/<%=blog.id%>"><%=blog.title%></a></h3>
-	
+					<% if !blog.thumb_id.nil? %>
+						<% @thumbimg = Asset.find(blog.thumb_id) %>
+						<% if @thumbimg.nil? %>
+						  <% @thumbimg = blog.assets.first %>
+						<% end %>
+					<% else %>
+					  <% @thumbimg = blog.assets.first %>
+					<% end %>
 					<p>
-						<img src="<%=blog.assets.first.asset.url(:thumb)%>" style="float:left; padding-right: 15px; padding-bottom: 5px;" />
+						<img src="<%=@thumbimg.asset.url(:thumb)%>" style="float:left; padding-right: 15px; padding-bottom: 5px;" />
 						<%=truncate(strip_tags(blog.body),:length=>110,:separator=>' ').html_safe %> <a href="/blog/<%=blog.id%>">Read Story &raquo;</a>
 					</p>
 					<div class="clearfix"><!--x---></div>
