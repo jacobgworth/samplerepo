@@ -25,17 +25,17 @@ Do so by joining our flickr group and uploading your photos!</p>
 <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-506b79724d720237"></script>
 <!-- AddThis Button END -->
 			<div style="width:975px; height:100%;">
-			<div id="container" class="transitions-enabled clearfix" style="clear:both;">
-			<% @photos.each do |photo|
-				photo_info = flickr.photos.getInfo(:photo_id => photo.id)
-          		photo_url_m = FlickRaw.url_m(photo_info)
-          		photo_url_z = FlickRaw.url_z(photo_info) %>
-          		<div class="item">
-					<%= image_tag photo_url_m,:title=>photo.title,:alt=>photo.title %>
-  					<p><%= photo.title %></p>
+				<div id="container" class="transitions-enabled clearfix" style="clear:both;">
+					<% @photos.each do |photo|
+						photo_info = flickr.photos.getInfo(:photo_id => photo.id)
+		          		photo_url_m = FlickRaw.url_m(photo_info)
+		          		#photo_url_z = FlickRaw.url_z(photo_info) %>
+		          		<div class="item">
+							<%= image_tag photo_url_m,:title=>photo.title,:alt=>photo.title %>
+		  					<p><%= photo.title %></p>
+						</div>
+					<%end%>
 				</div>
-			<%end%>
-			</div>
 			</div>
 	
 		
