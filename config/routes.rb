@@ -1,5 +1,6 @@
 Mohhaiti::Application.routes.draw do
   
+  match "/blog/feed.xml" => "posts#rss", :action => 'rss'
   resources :news
 
   resources :videos

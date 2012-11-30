@@ -38,6 +38,7 @@ class PostsController < ApplicationController
     respond_to do |format|
        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       format.json { render json: @posts }
+       format.rss { render :layout => false } #index.rss.builder
     end
   end
 
