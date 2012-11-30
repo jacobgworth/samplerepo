@@ -83,9 +83,13 @@ class ContactUsMailer < ActionMailer::Base
     @phone = @data[:phone]
     @fromaddress = @data[:fromaddress]
     @comments = @data[:comments]
- 
+    @medical = @data[:medical]
+    @toemail = "missiontrips@mohhaiti.org"
+    if (@data[:medical] == "on")
+       @toemail = "medicalmissiontrips@mohhaiti.org" 
+    end
     
-    mail(:to => "missiontrips@mohhaiti.org", :subject => "Take a Mission Trip", :from => @fromaddress)
+    mail(:to => @toemail, :subject => "Take a Mission Trip", :from => @fromaddress)
   end
   
   def volunteer(data)

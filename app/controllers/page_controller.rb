@@ -222,7 +222,6 @@ class PageController < ApplicationController
     @project = Project.find_by_projectname(params[:project][:projectname])
     @tessa = Asset.create(:asset=>@image, :project=>@project)
     @tessa.save()
-    logger.info(@tessa.asset)
     @url = @tessa.asset.to_s
     respond_to do |format|
       format.json { render json: {:url=>@tessa.asset.to_s}.to_json }
@@ -366,13 +365,15 @@ class PageController < ApplicationController
     @comments = params[:letter]
     @fromaddress = params[:email]
     @phone = params[:phonenumber]
+    @medical = params[:childnumber]
     if !@fname.nil? && @fname != "" && !@comments.nil? && @comments != "" && !@fromaddress.nil? && @fromaddress != ""
       @isvalid = true
       @data = {
         :fname => @fname, 
         :fromaddress => @fromaddress, 
         :comments => @comments,
-        :phone => @phone
+        :phone => @phone,
+        :medical => @medical
       }
       respond_to do |format|
         ContactUsMailer.take_a_trip(@data).deliver
