@@ -94,14 +94,13 @@
 				<h4><a href="/posts/<%=m.id%>"><%=m.title%></a></h4>
 				<p style="margin-top: 10px;">
 					<% if !m.thumb_id.nil? %>
-						<% @thumbimg = Asset.find(m.thumb_id) %>
-						<% if @thumbimg.nil? %>
-						  <% @thumbimg = m.assets.first %>
-						<% end %>
+						<% @thumbimg = Asset.find_by_id(m.thumb_id) || m.assets.first %>
 					<% else %>
 					  <% @thumbimg = m.assets.first %>
 					<% end %>
-					<img style="float:left; margin-right: 15px; margin-bottom: 5px;" src="<%=@thumbimg.asset.url(:thumb)%>" />
+					<% if !@thumbimg.nil? %>
+						<img style="float:left; margin-right: 15px; margin-bottom: 5px;" src="<%=@thumbimg.asset.url(:thumb)%>" />
+					<% end %>
 					<%=truncate(strip_tags(m.body),:length=>320,:separator=>' ').html_safe %> <a href="">Read More &raquo;</a>
 				</p>
 				<% @cat = m.categories.order("categoryname asc").limit(1)%>
