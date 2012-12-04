@@ -1,4 +1,5 @@
 class PageController < ApplicationController
+  #include Databasedotcom::Rails::Controller
   
   def about_haiti
     respond_to do |format|
@@ -416,6 +417,7 @@ class PageController < ApplicationController
   end
   
   def sponsor_child
+    #@children = Child__c.query("Number_of_Photos__c > 0 LIMIT 3")
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
