@@ -273,6 +273,8 @@ Mohhaiti::Application.routes.draw do
   get "page/console"
   match "/console" => "page#console"
   
+  get "mymoh/account"
+  
   get "advancement/index"
   match "/church_advancement" => "Advancement#index"
   match "/church-advancement" => "Advancement#index"
