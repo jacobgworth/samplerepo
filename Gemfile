@@ -7,7 +7,7 @@ gem 'rails', '3.1.0'
 
 #Salesforce?
 gem "databasedotcom"
-
+gem "databasedotcom-rails"
 
 gem "mail", ">=2.1.3"
 
