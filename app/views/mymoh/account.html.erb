@@ -1,1 +1,36 @@
-<h2>My MOH Account</h2>
+
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+
+	<div id="content" style="padding-top:50px;">
+		<%unless @isvalid.nil?%>
+			<div style="padding-bottom:20px;"><h3>Thank you for your interest in volunteering for MOH. We'll be in touch shortly! </h3></div>
+		<%end%>
+		<div id="contentLeft560">
+			<h1><span class="eyebrow">MyMOH</span>
+			<br />
+			Account</h1>
+			
+			<ul>
+				<li>Name: <%= @account.Name %></li>
+				<li>Address: <%= @account.MailingStreet %></li>
+				<li>Phone: <%= @account.HomePhone %></li>
+				<li>Email: <%= @account.Email %></li>
+				<li>Lifetime Donation Amount: $<%= @account.cv__Lifetime_Combined_Credit_Amount__c %></li>
+			</ul>	
+			<%= @account.attributes %>
+		</div>
+
+		<div id="contentRight300">
+			<%= render '/layouts/takeActionNav' %>
+		</div>
+		<!--<h1>Ministry of Hope Haiti Redesign Project</h1>
+
+		<div><h2>Click to see a map of our <a href="/communities/">Mission of Hope communities in Haiti</a></h2></div>
+		<div><h2>Click to see a map of our <a href="/projects/">ongoing Mission of Hope Projects in Haiti</a></h2></div>
+		-->
+		
+			<div class="clearfix" style="height:40px;">
+				<!--x-->
+			</div>
+			</div>
