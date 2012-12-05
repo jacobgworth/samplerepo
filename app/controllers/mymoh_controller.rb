@@ -8,15 +8,4 @@ class MymohController < ApplicationController
     end
   end
   
-  def new
-    if request.method == "POST"
-       
-    else
-       @user = User.new 
-       
-       respond_to do |format|
-         format.html #new.html.erb
-       end
-    end
-  end
 end
