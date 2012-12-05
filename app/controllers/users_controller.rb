@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  include Databasedotcom::Rails::Controller
+  
   # GET /users
   # GET /users.json
   def index
@@ -38,6 +41,7 @@ class UsersController < ApplicationController
   def new
     if is_admin_user?
       @user = User.new
+      @contact = Contact.new
 
       respond_to do |format|
         format.html # new.html.erb
@@ -54,6 +58,10 @@ class UsersController < ApplicationController
   def edit
     if is_admin_user?
       @user = User.find(params[:id])
+      @contact = Contact.find(@user.convio_id)
+      if (@contact == nil)
+        @contact = Contact.new
+      end
     else
       respond_to do |format|
         format.html { redirect_to "/" }
@@ -68,6 +76,20 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        @sfcontact = Contact.find_by_Email(@user.email)
+        if (@sfcontact == nil)
+            @sfcontact = Contact.create(
+              :LastName => @user.last,
+              :FirstName => @user.first,
+              :Email => @user.email,
+              :MailingStreet => @user.street1,
+              :MailingCity => @user.city,
+              :MailingState => @user.state,
+              :MailingPostalCode => @user.zip
+            )
+        end
+        @user.convio_id = @sfcontact.Id
+        @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
@@ -84,6 +106,15 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
+        @sfcontact = Contact.find(@user.convio_id)
+        @sfcontact.LastName = @user.last
+        @sfcontact.FirstName = @user.first
+        @sfcontact.Email = @user.email
+        @sfcontact.MailingStreet = @user.street1
+        @sfcontact.MailingCity = @user.city
+        @sfcontact.MailingState = @user.state
+        @sfcontact.MailingPostalCode = @user.zip
+        @sfcontact.save
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :ok }
       else
