@@ -9,14 +9,13 @@ class MymohController < ApplicationController
   end
   
   def giving
-    #@contact = Contact.find_by_Id(current_user.convio_id)
-    @account = Contact.find_by_Name("Joseph Leake")
+    @account = Contact.find_by_Id(current_user.convio_id)
+    #@account = Contact.find_by_Name("Lindsey Rubino")
+    dbdc_client.materialize("cv__Recurring_Gift__c")
+    @recurring = Cv__Recurring_Gift__c.find_by_cv__Contact__c(@account.Id)
     respond_to do | format |
       format.html { render :layout => "homeLayout" }
     end
-    @cl = dbdc_client
-    rg = @cl.materialize("cv__Recurring_Gift__c")
-    @recurring = rg.last
   end
   
 end

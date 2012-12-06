@@ -3,35 +3,37 @@
 	<%= render 'layouts/navBar'%>
 
 	<div id="content" style="padding-top:50px;">
-		<%unless @isvalid.nil?%>
-			<div style="padding-bottom:20px;"><h3>Thank you for your interest in volunteering for MOH. We'll be in touch shortly! </h3></div>
-		<%end%>
 		<div id="contentLeft560">
 			<h1><span class="eyebrow">MyMOH</span>
 			<br />
 			Giving</h1>
 			
 			<ul>
-				<li>Lifetime Donation Amount: $<%= @account.cv__summary_lifetime_gift_amount__c %></li>
-				<li>Lifetime Number of Gifts: <%= @account.cv__summary_lifetime_gift_count__c %></li>
-				<li>This Year Donation Amount: $<%= @account.cv__summary_ytd_gift_amount__c %></li>
-				<li>This Year Number of Gifts: <%= @account.cv__summary_ytd_gift_count__c %></li>
-				<li>Last Year's Donation Amount: $<%= @account.cv__summary_last_year_gift_amount__c %></li>
-				<li>Last Year's Number of Gifts: <%= @account.cv__summary_last_year_gift_count__c %></li>
-				<li>Most Recent Donation Amount: $<%= @account.cv__Last_Gift_Amount__c %></li>
-				<li>Largest Donation Amount: $<%= @account.cv__Largest_Gift_Amount__c %></li>
+				<li>Lifetime Donation Amount: $<%= @account.cv__summary_lifetime_gift_amount__c || 0 %></li>
+				<li>Lifetime Number of Gifts: <%= @account.cv__summary_lifetime_gift_count__c || 0 %></li>
+				<li>This Year Donation Amount: $<%= @account.cv__summary_ytd_gift_amount__c || 0 %></li>
+				<li>This Year Number of Gifts: <%= @account.cv__summary_ytd_gift_count__c || 0 %></li>
+				<li>Last Year's Donation Amount: $<%= @account.cv__summary_last_year_gift_amount__c || 0 %></li>
+				<li>Last Year's Number of Gifts: <%= @account.cv__summary_last_year_gift_count__c || 0 %></li>
+				<li>Most Recent Donation Amount: $<%= @account.cv__Last_Gift_Amount__c || 0 %></li>
+				<li>Largest Donation Amount: $<%= @account.cv__Largest_Gift_Amount__c || 0 %></li>
 			</ul>	
+			
+			<% unless @recurring == nil %>
+			<h3>Recurring Gift</h3>
+			<ul>
+				<li>Amount: <%= @recurring.cv__Recurring_Amount__c %></li>
+				<li>Start Date: <%= @recurring.cv__Start_Date__c %></li>
+				<li>Card Number: <%= @recurring.cv__Card_Number__c %></li>
+				<li>Card Type: <%= @recurring.cv__Credit_Card_Type__c %></li>
+			</ul>
+			<% end %>
 		</div>
 
 		<div id="contentRight300">
 			<%= render '/layouts/takeActionNav' %>
 		</div>
-		<!--<h1>Ministry of Hope Haiti Redesign Project</h1>
 
-		<div><h2>Click to see a map of our <a href="/communities/">Mission of Hope communities in Haiti</a></h2></div>
-		<div><h2>Click to see a map of our <a href="/projects/">ongoing Mission of Hope Projects in Haiti</a></h2></div>
-		-->
-		
 			<div class="clearfix" style="height:40px;">
 				<!--x-->
 			</div>
