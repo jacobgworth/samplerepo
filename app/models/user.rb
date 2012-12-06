@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :password
-  before_save :encrypt_password
+  before_save :encrypt_password, :convio_save
   
   has_many :updates
   has_many :experiences
@@ -40,6 +40,37 @@ class User < ActiveRecord::Base
     else
       nil
     end
+  end
+  
+  def convio_save
+    unless self.convio_id == nil
+      @sfcontact = Contact.find_by_Id(self.convio_id)
+    else
+      @sfcontact = Contact.find_by_Email(self.email)
+    end
+    if (@sfcontact == nil)
+        #convio contact doesn't exist so create one, it's a new signup
+        @sfcontact = Contact.create(
+          :LastName => self.last,
+          :FirstName => self.first,
+          :Email => self.email,
+          :MailingStreet => self.street1,
+          :MailingCity => self.city,
+          :MailingState => self.state,
+          :MailingPostalCode => self.zip
+        )
+    else
+        #Convio contact exists, so update it with new values
+        @sfcontact.LastName = self.last
+        @sfcontact.FirstName = self.first
+        @sfcontact.Email = self.email
+        @sfcontact.MailingStreet = self.street1
+        @sfcontact.MailingCity = self.city
+        @sfcontact.MailingState = self.state
+        @sfcontact.MailingPostalCode = self.zip
+    end
+    self.convio_id = @sfcontact.Id
+    @sfcontact.save    
   end
   
 end
