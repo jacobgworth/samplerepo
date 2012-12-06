@@ -1,6 +1,7 @@
 Mohhaiti::Application.routes.draw do
   
   match "/blog/feed.xml" => "posts#rss", :action => 'rss'
+  
   resources :news
 
   resources :videos
@@ -274,6 +275,7 @@ Mohhaiti::Application.routes.draw do
   match "/console" => "page#console"
   
   get "mymoh/account"
+  get "mymoh/giving"
   
   get "advancement/index"
   match "/church_advancement" => "Advancement#index"
