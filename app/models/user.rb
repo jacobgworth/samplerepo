@@ -60,14 +60,16 @@ class User < ActiveRecord::Base
           :MailingPostalCode => self.zip
         )
     else
-        #Convio contact exists, so update it with new values
-        @sfcontact.LastName = self.last
-        @sfcontact.FirstName = self.first
-        @sfcontact.Email = self.email
-        @sfcontact.MailingStreet = self.street1
-        @sfcontact.MailingCity = self.city
-        @sfcontact.MailingState = self.state
-        @sfcontact.MailingPostalCode = self.zip
+        unless self.convio_id == nil
+          #Convio contact exists, so update it with new values
+          @sfcontact.LastName = self.last
+          @sfcontact.FirstName = self.first
+          @sfcontact.Email = self.email
+          @sfcontact.MailingStreet = self.street1
+          @sfcontact.MailingCity = self.city
+          @sfcontact.MailingState = self.state
+          @sfcontact.MailingPostalCode = self.zip
+        end
     end
     self.convio_id = @sfcontact.Id
     @sfcontact.save    
