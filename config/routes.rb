@@ -276,6 +276,7 @@ Mohhaiti::Application.routes.draw do
   
   get "mymoh/account"
   get "mymoh/giving"
+  get "mymoh/sponsorships"
   
   get "advancement/index"
   match "/church_advancement" => "Advancement#index"

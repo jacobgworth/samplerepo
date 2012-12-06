@@ -1,0 +1,29 @@
+
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+
+	<div id="content" style="padding-top:50px;">
+		<div id="contentLeft560">
+			<h1><span class="eyebrow">MyMOH</span>
+			<br />
+			Sponsorships</h1>
+			
+			<% unless @sponsorships == nil %>
+				<h3>Children</h3>
+				<ul>
+					<li>Child: <%= @child.Name__c %><%= @photo.html_safe %></li>
+				</ul>
+			<% else %>
+				<!--No Sponsorships-->	
+				<p>We didn't find any sponsorships associated with your account.</p>
+			<% end %>
+		</div>
+
+		<div id="contentRight300">
+			<%= render '/layouts/takeActionNav' %>
+		</div>
+
+			<div class="clearfix" style="height:40px;">
+				<!--x-->
+			</div>
+			</div>
