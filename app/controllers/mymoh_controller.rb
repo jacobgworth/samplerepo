@@ -14,6 +14,9 @@ class MymohController < ApplicationController
     respond_to do | format |
       format.html { render :layout => "homeLayout" }
     end
+    @cl = dbdc_client
+    rg = @cl.materialize("cv__Recurring_Gift__c")
+    @recurring = rg.last
   end
   
 end
