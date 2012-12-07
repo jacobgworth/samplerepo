@@ -14,7 +14,7 @@
 				<li>Phone: <%= @account.HomePhone %></li>
 				<li>Email: <%= @account.Email %></li>
 			</ul>	
-			<%= @account.attributes %>
+			<a href="/users/<%=current_user.id%>/edit">Edit your information</a>
 		</div>
 
 		<div id="contentRight300">
