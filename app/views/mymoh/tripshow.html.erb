@@ -7,15 +7,23 @@
 			<h1><span class="eyebrow">MyMOH</span>
 			<br />
 			Trip</h1>
+			
+			<h4><%=@trip.Name%></h4>
 			<% if @trip.Start_Date__c > Date.today %>	
 				<!-- This Trip hasn't started yet-->
+				<p>Leaving <%=@trip.Start_Date__c%></p>
 				<p>Link to personal fundraising portal</p>
 				<% unless @sponsorship.nil? %>
 					<p>Tell <a href="mailto:<%=@trip.Main_Contact_Email__c%>"><%=@trip.Main_Contact_Email__c%></a> that you sponsor <%= @child.Name__c%> so you can meet them on your trip!</p>
 				<% end %>
 			<% else %>
 				<!-- This Trip started already-->
-				Started already
+				<p>Started <%= @trip.Start_Date__c %></p>
+				<p>Thank you message</p>
+				<p>Sponsor a child link</p>
+				<p>Survey link</p>
+				<p>Share your experience link</p>
+				<p>Turn your Mission Trip fundraising page into a MOH fundraising page link</p>
 		    <% end %>
 			
 		</div>
