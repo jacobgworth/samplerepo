@@ -1,5 +1,5 @@
 class PageController < ApplicationController
-  #include Databasedotcom::Rails::Controller
+  include Databasedotcom::Rails::Controller
   
   def about_haiti
     respond_to do |format|
@@ -564,6 +564,17 @@ class PageController < ApplicationController
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       end 
     else
+      @data = {}
+      unless current_user == nil
+        @sponsorship = Child_Sponsorship__c.find_by_Sponsor__c(current_user.convio_id)
+        @contact = Contact.find_by_Id(current_user.convio_id)
+        @child = Child__c.find_by_Id(@sponsorship.Child__c)
+        @data[:childname] = @child.Name__c
+        @data[:childid] = @child.Student_Code__c.to_int
+        @data[:sponsorname] = current_user.first + " " + current_user.last
+        @data[:sponsoremail] = current_user.email
+        @data[:sponsorphone] = @contact.HomePhone
+      end
       respond_to do |format|
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       end  

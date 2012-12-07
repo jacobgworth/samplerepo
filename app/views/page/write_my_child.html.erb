@@ -15,11 +15,11 @@
 				<% if @isvalid.nil?%>
 				
 				<form enctype="multipart/form-data" action="?multipart=true" method="POST">
-					<div class="field">Your Name: <input id="txtname" type="text" name="name"><br></div>
-					<div class="field">Your Email: <input id="txtemail" type="text" name="email"></div>
-					<div class="field">Your Phone number: <input id="txtphone" type="text" name="phonenumber"><br></div>
-					<div class="field">Your Sponsored Child's name: <input id="txtchildname" type="text" name="childname"></div>
-					<div class="field">Your Sponsored Child's number: <input id="txtchildnumber" type="text" name="childnumber"><br></div>
+					<div class="field">Your Name: <input id="txtname" type="text" name="name" value="<%=@data[:sponsorname]%>"><br></div>
+					<div class="field">Your Email: <input id="txtemail" type="text" name="email" value="<%=@data[:sponsoremail]%>"></div>
+					<div class="field">Your Phone number: <input id="txtphone" type="text" name="phonenumber" value="<%=@data[:sponsorphone]%>"><br></div>
+					<div class="field">Your Sponsored Child's name: <input id="txtchildname" type="text" name="childname" value="<%=@data[:childname]%>"></div>
+					<div class="field">Your Sponsored Child's number: <input id="txtchildnumber" type="text" name="childnumber" value="<%=@data[:childid]%>"><br></div>
 					<div class="field">Image attachment (optional): <input id="datafile" type="file" name="datafile"><br></div>
 					<div class="field">Your letter: <textarea id="txtmessage" type="textarea" name="letter"></textarea></div>
 					 <div class="actions"><input type="submit" value="Submit" onclick="return validate();"></div>
