@@ -12,6 +12,13 @@
 			<% if @trip.Start_Date__c > Date.today %>	
 				<!-- This Trip hasn't started yet-->
 				<p>Leaving <%=@trip.Start_Date__c%></p>
+				<p>Informative videos</p>
+				<p>Trip packets</p>
+				<p>Bible Study Plans</p>
+				<p>Checklist for trip prep</p>
+				<p>Tips on raising support</p>
+				<p>Learn about MOH "feature"</p>
+				<p>Survey link to share skills</p>
 				<p>Link to personal fundraising portal</p>
 				<% unless @sponsorship.nil? %>
 					<p>Tell <a href="mailto:<%=@trip.Main_Contact_Email__c%>"><%=@trip.Main_Contact_Email__c%></a> that you sponsor <%= @child.Name__c%> so you can meet them on your trip!</p>
