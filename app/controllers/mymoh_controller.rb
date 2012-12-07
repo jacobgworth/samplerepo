@@ -123,6 +123,12 @@ class MymohController < ApplicationController
   
   def tripshow
     @trip = Trip__c.find_by_Id(params[:tripid])
+    
+    #Find sponsorships--only finding the first one here
+    @sponsorship = Child_Sponsorship__c.find_by_Sponsor__c(current_user.convio_id)
+    unless @sponsorship.nil?
+      @child = Child__c.find_by_Id(@sponsorship.Child__c)
+    end
     respond_to do |format|
       format.html { render :layout => "homeLayout" }
     end
