@@ -68,13 +68,20 @@ class MymohController < ApplicationController
   
   def mytrips
     @contact = Contact.find_by_Id(current_user.convio_id)
-    @trip_participations = Trip_Participation__c.query("Contact__c = '" + @contact.Id + "'")
+    @trip_participations = Trip_Participation__c.query("Contact__c = '" + @contact.Id + "' ORDER BY CreatedDate DESC")
     @trips = []
     unless @trip_participations == nil
       @trip_participations.each do | tripp |
         @trips << Trip__c.find_by_Id(tripp.Trip__c)
       end
     end
+    respond_to do |format|
+      format.html { render :layout => "homeLayout" }
+    end
+  end
+  
+  def tripshow
+    @trip = Trip__c.find_by_Id(params[:tripid])
     respond_to do |format|
       format.html { render :layout => "homeLayout" }
     end

@@ -6,15 +6,15 @@
 		<div id="contentLeft560">
 			<h1><span class="eyebrow">MyMOH</span>
 			<br />
-			My Trips</h1>
-			
-			<% unless @trips.empty? %>
-				<ul>
-				<% @trips.each do |trip|%>
-					<li><a href="/mymoh/mytrips/<%=trip.Id%>"><%=trip.Name%></a></li>
-				<% end %>
-				</ul>
-			<% end %>
+			Trip</h1>
+			<% if @trip.Start_Date__c > Date.today %>	
+				<!-- This Trip hasn't started yet-->
+				<p>Link to personal fundraising portal</p>
+				<p>Reminder to let trip leader know if you sponsor a child</p>
+			<% else %>
+				<!-- This Trip started already-->
+				Started already
+		    <% end %>
 			
 		</div>
 
