@@ -54,12 +54,20 @@ class MymohController < ApplicationController
   def sponsorships
     @account = Contact.find_by_Id(current_user.convio_id)
     #@account = Contact.find_by_Name("Lindsey Rubino")
-    @sponsorships = Child_Sponsorship__c.find_by_Sponsor__c(@account.Id)
+    @sponsorships = Child_Sponsorship__c.query("Sponsor__c = '" + @account.Id + "'")
     unless @sponsorships == nil
-      @child = Child__c.find_by_Id(@sponsorships.Child__c)
-    end
-    unless @child == nil
-      @photo = Picture__c.find_by_Child__c(@child.Id).Photo__c
+      #if we find sponsorships
+      @children = []
+      @sponsorships.each do | spons |
+        #find the child associated with each sponsorship
+        @child = Child__c.find_by_Id(spons.Child__c)
+        #find child's photo
+        @photo = Picture__c.find_by_Child__c(@child.Id).Photo__c
+        #set an unused variable to carry the photo url
+        @child.LastModifiedById = @photo
+        #add child to array of children
+        @children << @child
+      end
     end
     respond_to do |format|
       format.html {render :layout=>"homeLayout"} 
