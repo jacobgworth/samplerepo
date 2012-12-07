@@ -9,11 +9,15 @@
 			My Trips</h1>
 			
 			<% unless @trips.empty? %>
+				<!--This person has mission trips to display -->
 				<ul>
 				<% @trips.each do |trip|%>
 					<li><a href="/mymoh/mytrips/<%=trip.Id%>"><%=trip.Name%></a></li>
 				<% end %>
 				</ul>
+			<% else %>
+				<!-- Person not involved with any trips -->
+				<h4>We couldn't find any mission trips you're involved in</h4>
 			<% end %>
 			
 		</div>

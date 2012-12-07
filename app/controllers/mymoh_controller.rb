@@ -67,8 +67,14 @@ class MymohController < ApplicationController
   end 
   
   def mytrips
+    #Display mission trips a person is involved with.
+    #Contact is linked via Trip_Participation__c to a Trip__c, potentially many relationships
+    
     @contact = Contact.find_by_Id(current_user.convio_id)
     @trip_participations = Trip_Participation__c.query("Contact__c = '" + @contact.Id + "' ORDER BY CreatedDate DESC")
+    
+    #cannot traverse relationships with ActiveRecord here, so need to loop through participations
+    #to find each trip & add to @trips array
     @trips = []
     unless @trip_participations == nil
       @trip_participations.each do | tripp |
