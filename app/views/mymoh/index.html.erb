@@ -1,0 +1,28 @@
+
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+
+	<div id="content" style="padding-top:50px;">
+		<div id="contentLeft560">
+			<h1><span class="eyebrow">MyMOH</span>
+			<br />
+			<%=@account.Name%></h1>
+			
+			<h4>Menu</h4>	
+			<ul>
+				<li><a href="/mymoh/account">Account</a></li>
+				<li><a href="/mymoh/giving">Giving</a></li>
+				<li><a href="/mymoh/sponsorships">Child Sponsorships</a></li>
+				<li><a href="/mymoh/mytrips">Mission Trips</a></li>
+			</ul>
+			
+		</div>
+
+		<div id="contentRight300">
+			<%= render '/layouts/takeActionNav' %>
+		</div>
+		
+			<div class="clearfix" style="height:40px;">
+				<!--x-->
+			</div>
+			</div>

@@ -22,8 +22,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if is_admin_user?
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
+    if is_admin_user? || @user == current_user
 
       respond_to do |format|
         format.html # show.html.erb
@@ -56,8 +56,8 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    if is_admin_user?
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
+    if is_admin_user? || @user == current_user
       @contact = Contact.find(@user.convio_id)
       if (@contact == nil)
         @contact = Contact.new
@@ -89,15 +89,17 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-    @contact = Contact.find_by_Id(@user.convio_id)
-
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+    if is_admin_user? || @user == current_user
+      @contact = Contact.find_by_Id(@user.convio_id)
+  
+      respond_to do |format|
+        if @user.update_attributes(params[:user])
+          format.html { redirect_to @user, notice: 'User was successfully updated.' }
+          format.json { head :ok }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

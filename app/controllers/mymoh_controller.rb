@@ -1,10 +1,43 @@
 class MymohController < ApplicationController
   include Databasedotcom::Rails::Controller
+  before_filter :require_login
+  
+  def require_login
+    if current_user == nil
+      redirect_to "/log_in"
+    end
+  end
+  
+  def index
+      @account = Contact.find_by_Id(current_user.convio_id)
+      respond_to do | format |
+        format.html { render :layout=>"homeLayout"}
+      end
+  end
   
   def account
     @account = Contact.find_by_Id(current_user.convio_id)
     respond_to do |format|
       format.html {render :layout=>"homeLayout"} 
+    end
+  end
+  
+  def edit
+    #for editing mymoh account details--syncs to convio
+    @contact = Contact.find_by_Id(current_user.convio_id)
+    @user = current_user
+    if request.method == "POST"
+      #handle new variables, save changes
+      if @user.update_attributes(params[:user])
+        format.html {redirect_to "/mymoh", notice: "Account changes saved."}
+      else
+        format.html { redirect_to "/mymoh/account/edit" }
+      end
+    else
+      #display form to edit account details
+      respond_to do |format|
+        format.html { render :layout=>"homeLayout" }
+      end
     end
   end
   
@@ -32,5 +65,19 @@ class MymohController < ApplicationController
       format.html {render :layout=>"homeLayout"} 
     end
   end 
+  
+  def mytrips
+    @contact = Contact.find_by_Id(current_user.convio_id)
+    @trip_participations = Trip_Participation__c.query("Contact__c = '" + @contact.Id + "'")
+    @trips = []
+    unless @trip_participations == nil
+      @trip_participations.each do | tripp |
+        @trips << Trip__c.find_by_Id(tripp.Trip__c)
+      end
+    end
+    respond_to do |format|
+      format.html { render :layout => "homeLayout" }
+    end
+  end
   
 end
