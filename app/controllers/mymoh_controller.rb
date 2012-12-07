@@ -69,6 +69,33 @@ class MymohController < ApplicationController
         @children << @child
       end
     end
+    
+    #get blogs & updates from "school of hope" and "village of hope"
+    #right now using categories 4=church of hope, and 7=education
+    @related_result = []
+    @cats = [4, 7]
+    @cat = []
+    @cat << Category.find(4)
+    @cats.each do |cat|
+      @related_result += Update.joins(:categories).where("category_id=" + cat.to_s).reverse
+      @related_result = @related_result.uniq{|x| x.title}
+    end
+    
+    @blogs = []
+    @cats.each do |cat|
+      @blogs += Post.joins(:categories).where("category_id=" + cat.to_s)
+      @blogs = @blogs.uniq{|x| x.title}
+    end
+    
+    @related_projects = []
+    @cats.each do |cat|
+      @related_projects += Project.joins(:categories).where("category_id=" + cat.to_s).reverse
+      @related_projects = @related_projects.uniq{|x| x.projectname}
+    end
+    
+    #pull in other children for "sponsor these too" 
+    @otherchildren = Child__c.query("Number_of_Photos__c > 0 LIMIT 3")
+    
     respond_to do |format|
       format.html {render :layout=>"homeLayout"} 
     end

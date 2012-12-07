@@ -1,4 +1,3 @@
-
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 
@@ -27,13 +26,82 @@
 				<!--No Sponsorships-->	
 				<p>We didn't find any sponsorships associated with your account.</p>
 			<% end %>
+			
+			<h3>Sponsor These Guys!</h3>
+			<ul>
+				<% @otherchildren.each do |child|%>
+						<li>
+							Child: <%= child.Name__c %><br>
+							ID: <%= child.Student_Code__c.to_int %><br>
+							<%=@photo = Picture__c.find_by_Child__c(child.Id).Photo__c.html_safe %><br>
+						</li>
+				<% end %>
+			</ul>
+			
+			<% unless @related_result.nil? %>
+				<% if !@related_result.empty? %>
+					<div class="update560"></div>
+					<!--<h3 class="update560" style="font-size: 1em;">-->
+						<% @related_result.each do |related|%>
+								<div class="update560" style="line-height: 1.3em; height=120px;">
+									<h4 style="padding-bottom: 5px;"><a href="/updates/<%=related.id%>"><%=related.title%></a><br/></h4>
+									<% unless related.assets.last.nil? %>
+										<img src="<%=related.assets.last.asset.url(:thumb)%>" style="float:left; padding-right: 15px; padding-bottom: 5px;" />
+									<%end %>
+									<%= related.body %>
+								<div class="clearfix"><!--x--></div>
+								</div>
+						<% end%>
+					<!--</h3>-->
+				<% end %>
+			<%end%>
 		</div>
 
 		<div id="contentRight300">
 			<%= render '/layouts/takeActionNav' %>
-		</div>
+			
+			<% if @blogs.count != 0 %>
+				<div class="updatesWrapper" style="margin-top:20px;">
+					<h3>MOH in Action</h3>
+					<div class="speechBubble" style="position: absolute; top: -71px; right: 39px;"><p>latest blogs</p></div>
+					<%@blogs.each do |blog|%>
+						<div class="update300">
+						<p class="meta">	<% 
+								created = blog.postdate 
+							%>
+							<%= created.strftime("%b")%> <%=created.strftime("%d")%>, <%=created.strftime("%Y")%>
+						</p>
+						<div class="updatePost300">
+							<h3><a href="/blog/<%=blog.id%>"><%=blog.title%></a></h3>
+							<% if !blog.thumb_id.nil? %>
+								<% @thumbimg = Asset.find(blog.thumb_id) %>
+								<% if @thumbimg.nil? %>
+								  <% @thumbimg = blog.assets.first %>
+								<% end %>
+							<% else %>
+							  <% @thumbimg = blog.assets.first %>
+							<% end %>
+							<p>
+								<img src="<%=@thumbimg.asset.url(:thumb)%>" style="float:left; padding-right: 15px; padding-bottom: 5px;" />
+								<%=truncate(strip_tags(blog.body),:length=>110,:separator=>' ').html_safe %> <a href="/blog/<%=blog.id%>">Read Story &raquo;</a>
+							</p>
+							<div class="clearfix"><!--x---></div>
+							<% @cat = blog.categories.order("categoryname asc").limit(1)%>
+							<p class="meta">
+								<%unless @cat.count==0%>Related Category: <a href="/blog/?cid=<%=@cat.first.id%>"><%=@cat.first.categoryname%></a><%end%> <%if !blog.author.nil? && !blog.author.blank?%><%unless @cat.count==0%>| <%end%>Update from: <%=blog.author%><%end%>
+							</p>
+							
+						</div>
+						<div class="clearfix"></div>
+						</div>
+					<%end%>
+					<div class="updateNav"><a href="/updates">Read all updates from Mission of Hope &raquo;</a></div>
+				</div>
+			<% end %>
+			
+		</div> <!-- end content right -->
 
 			<div class="clearfix" style="height:40px;">
 				<!--x-->
-			</div>
-			</div>
+			</div><!--end clearfix-->
+	</div>
