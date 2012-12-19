@@ -6,7 +6,12 @@
 		<div id="contentLeft560">
 			<h1><span class="eyebrow">MyMOH</span>
 			<br />
-			<%=@account.Name%></h1>
+			<% unless @account.Name == "First Last" %>
+				<%=@account.Name%>
+			<% else %>
+				<%=@account.Email %>
+			<% end %>
+			</h1>
 			
 			<h4>Menu</h4>	
 			<ul>

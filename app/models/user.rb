@@ -51,8 +51,8 @@ class User < ActiveRecord::Base
     if (@sfcontact == nil)
         #convio contact doesn't exist so create one, it's a new signup
         @sfcontact = Contact.create(
-          :LastName => self.last,
-          :FirstName => self.first,
+          :LastName => self.last || "Last",
+          :FirstName => self.first || "First",
           :Email => self.email,
           :MailingStreet => self.street1,
           :MailingCity => self.city,
