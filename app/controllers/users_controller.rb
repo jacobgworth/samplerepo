@@ -67,10 +67,11 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    session[:user_id] = @user.id
 
     respond_to do |format|
       if @user.save
+        session[:user_id] = @user.id
+        cookies[:auth_token] = @user.auth_token
         format.html { redirect_to "/mymoh", notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
