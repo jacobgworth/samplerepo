@@ -25,34 +25,52 @@ class NewsController < ApplicationController
   # GET /news/new
   # GET /news/new.json
   def new
-    @news = News.new
-
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}# new.html.erb
-      format.json { render json: @news }
+    if is_admin_user?
+      @news = News.new
+  
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}# new.html.erb
+        format.json { render json: @news }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to "/news/" }
+      end
     end
   end
 
   # GET /news/1/edit
   def edit
-    @news = News.find(params[:id])
-    respond_to do |format|
-       format.html {render :layout=>"homeLayout"}# index.html.erb
+    if is_admin_user?
+      @news = News.find(params[:id])
+      respond_to do |format|
+         format.html {render :layout=>"homeLayout"}# index.html.erb
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to "/news/" }
+      end
     end
   end
 
   # POST /news
   # POST /news.json
   def create
-    @news = News.new(params[:news])
-
-    respond_to do |format|
-      if @news.save
-        format.html { redirect_to @news, notice: 'News was successfully created.' }
-        format.json { render json: @news, status: :created, location: @news }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @news.errors, status: :unprocessable_entity }
+    if is_admin_user?
+      @news = News.new(params[:news])
+  
+      respond_to do |format|
+        if @news.save
+          format.html { redirect_to @news, notice: 'News was successfully created.' }
+          format.json { render json: @news, status: :created, location: @news }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @news.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to "/news/" }
       end
     end
   end
@@ -60,15 +78,21 @@ class NewsController < ApplicationController
   # PUT /news/1
   # PUT /news/1.json
   def update
-    @news = News.find(params[:id])
-
-    respond_to do |format|
-      if @news.update_attributes(params[:news])
-        format.html { redirect_to @news, notice: 'News was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @news.errors, status: :unprocessable_entity }
+    if is_admin_user?
+      @news = News.find(params[:id])
+  
+      respond_to do |format|
+        if @news.update_attributes(params[:news])
+          format.html { redirect_to @news, notice: 'News was successfully updated.' }
+          format.json { head :ok }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @news.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to "/news/" }
       end
     end
   end
@@ -76,12 +100,18 @@ class NewsController < ApplicationController
   # DELETE /news/1
   # DELETE /news/1.json
   def destroy
-    @news = News.find(params[:id])
-    @news.destroy
-
-    respond_to do |format|
-      format.html { redirect_to news_index_url }
-      format.json { head :ok }
+    if is_admin_user?
+      @news = News.find(params[:id])
+      @news.destroy
+  
+      respond_to do |format|
+        format.html { redirect_to news_index_url }
+        format.json { head :ok }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to "/updates/" }
+      end
     end
   end
 end

@@ -11,3 +11,4 @@ latest.db
 db/development.sqlite3.almostrecent
 db/development.sqlite3.penult
 db/development.sqlite3.penult
+vendor/
