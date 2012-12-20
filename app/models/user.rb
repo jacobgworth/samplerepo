@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :password
-  before_save :encrypt_password, :convio_save
+  before_save :encrypt_password, :convio_sync
   
   has_many :updates
   has_many :experiences
@@ -42,37 +42,34 @@ class User < ActiveRecord::Base
     end
   end
   
-  def convio_save
+  
+  def convio_sync
+    #send new data to convio if there is an account linked
     unless self.convio_id == nil
       @sfcontact = Contact.find_by_Id(self.convio_id)
-    else
-      @sfcontact = Contact.find_by_Email(self.email)
+      
+      #Convio contact exists, so update it with new values
+      @sfcontact.LastName = self.last
+      @sfcontact.FirstName = self.first
+      @sfcontact.Email = self.email
+      @sfcontact.MailingStreet = self.street1
+      @sfcontact.MailingCity = self.city
+      @sfcontact.MailingState = self.state
+      @sfcontact.MailingPostalCode = self.zip
+      @sfcontact.save    
     end
-    if (@sfcontact == nil)
-        #convio contact doesn't exist so create one, it's a new signup
-        @sfcontact = Contact.create(
-          :LastName => self.last || "Last",
-          :FirstName => self.first || "First",
-          :Email => self.email,
-          :MailingStreet => self.street1,
-          :MailingCity => self.city,
-          :MailingState => self.state,
-          :MailingPostalCode => self.zip
-        )
-    else
-        unless self.convio_id == nil
-          #Convio contact exists, so update it with new values
-          @sfcontact.LastName = self.last
-          @sfcontact.FirstName = self.first
-          @sfcontact.Email = self.email
-          @sfcontact.MailingStreet = self.street1
-          @sfcontact.MailingCity = self.city
-          @sfcontact.MailingState = self.state
-          @sfcontact.MailingPostalCode = self.zip
-        end
+  end
+  
+  #need a way to save on step2 if no convio_id
+  def convio_link
+    #link a user account to a convio account
+    @contact = Contact.find_by_Email(self.email)
+    
+    unless @contact == nil
+      self.convio_id = @contact.Id
     end
-    self.convio_id = @sfcontact.Id
-    @sfcontact.save    
+    
+    #if no convio account found, we need to create one
   end
   
 end
