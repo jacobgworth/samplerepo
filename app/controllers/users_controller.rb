@@ -86,7 +86,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if is_admin_user? || @user == current_user
-      @contact = Contact.find_by_Id(@user.convio_id)
+      #@contact = Contact.find_by_Id(@user.convio_id)
   
       respond_to do |format|
         if @user.update_attributes(params[:user])
