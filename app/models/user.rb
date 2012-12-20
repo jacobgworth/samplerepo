@@ -124,13 +124,14 @@ class User < ActiveRecord::Base
     state = self.state || ""
     street = self.street1 || ""
     
-    #NEED A REQUIREMENT: email = blank so that we don't allow new users to usurp based on names/etc
-    query = "FirstName = '" + first + "' AND LastName = '" + last + "' AND MailingState = '" + state + "' AND MailingStreet = '" + street + "'"
+    query = "FirstName = '" + first + "' AND LastName = '" + last + "' AND MailingState = '" + state + "' AND MailingStreet = '" + street + "' AND Email = ''"
     @contact = Contact.query(query).first #.first to avoid collection because nil/empty comparisons are different
     
     #this may not be good, think about it some?
-    @contact.Email = self.email
-    @contact.save
+    if @contact
+      @contact.Email = self.email
+      @contact.save
+    end
     #end possible bad
     
     return @contact
