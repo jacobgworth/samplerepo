@@ -9,9 +9,14 @@ class MymohController < ApplicationController
   end
   
   def index
-      @account = Contact.find_by_Id(current_user.convio_id)
-      respond_to do | format |
-        format.html { render :layout=>"homeLayout"}
+      convio_id = current_user.convio_id || ""
+      @account = Contact.find_by_Id(convio_id)
+      unless @account == nil
+        respond_to do | format |
+          format.html { render :layout=>"homeLayout"}
+        end
+      else
+        redirect_to "/users/" + current_user.id.to_s + "/edit"
       end
   end
   
