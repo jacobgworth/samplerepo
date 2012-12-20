@@ -42,10 +42,44 @@ class User < ActiveRecord::Base
     end
   end
   
-  
   def convio_sync
+    #most cases have a convio_id. if so, send the new data
+    unless self.convio_id == "" || self.convio_id == nil  
+      convio_update #send the data from local to convio
+    else
+      #no convio_id
+      @contact = convio_match #try to find a match for this person
+      unless @contact == nil
+        self.convio_id = @contact.Id
+        local_sync #update our data with that of convio
+      else
+        #we can't find anyone, make a new convio account unless this person was JUST created
+        #if they're just created, they'll have a password in params?
+        unless self.last == "" || self.last == nil
+          @contact = convio_new
+          self.convio_id = @contact.Id
+        end
+      end
+    end
+  end
+  
+  def convio_new
+    @sfcontact = Contact.create(
+      :LastName => self.last,
+      :FirstName => self.first,
+      :Email => self.email,
+      :MailingStreet => self.street1,
+      :MailingCity => self.city,
+      :MailingState => self.state,
+      :MailingPostalCode => self.zip
+    )
+    @sfcontact.save
+    return @sfcontact
+  end
+  
+  def convio_update
     #send new data to convio if there is an account linked
-    unless self.convio_id == nil
+    #opposite is local_sync
       @sfcontact = Contact.find_by_Id(self.convio_id)
       
       #Convio contact exists, so update it with new values
@@ -57,19 +91,49 @@ class User < ActiveRecord::Base
       @sfcontact.MailingState = self.state
       @sfcontact.MailingPostalCode = self.zip
       @sfcontact.save    
+  end
+  
+  def convio_match
+    @contact = convio_match_by_email || convio_match_by_detail
+  end
+  
+  def local_sync #sync local data to match what convio has
+    #opposite is convio_update
+    @contact = Contact.find_by_Id(self.convio_id)
+    unless @contact == nil
+      #update local data from matched account
+      self.first = @contact.FirstName
+      self.last = @contact.LastName
+      self.state = @contact.MailingState
+      self.city = @contact.MailingCity
+      self.street1 = @contact.MailingStreet
+      self.zip = @contact.MailingPostalCode
+      self.convio_id = @contact.Id
     end
   end
   
-  #need a way to save on step2 if no convio_id
-  def convio_link
-    #link a user account to a convio account
+  def convio_match_by_email
+    #match a user account to a convio account with email address
     @contact = Contact.find_by_Email(self.email)
+    return @contact
+  end
+  
+  def convio_match_by_detail
+    first = self.first || ""
+    last = self.last || ""
+    state = self.state || ""
+    street = self.street1 || ""
     
-    unless @contact == nil
-      self.convio_id = @contact.Id
-    end
+    #NEED A REQUIREMENT: email = blank so that we don't allow new users to usurp based on names/etc
+    query = "FirstName = '" + first + "' AND LastName = '" + last + "' AND MailingState = '" + state + "' AND MailingStreet = '" + street + "'"
+    @contact = Contact.query(query).first #.first to avoid collection because nil/empty comparisons are different
     
-    #if no convio account found, we need to create one
+    #this may not be good, think about it some?
+    @contact.Email = self.email
+    @contact.save
+    #end possible bad
+    
+    return @contact
   end
   
 end
