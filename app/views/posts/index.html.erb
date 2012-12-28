@@ -44,19 +44,19 @@
     </div>
 <% end %>
 
-<% if @page %>
-	<a href="/blog/?page=<%=(@page + 1).to_s%>">Older Posts</a>
-	<% if @page > 1 %>
-		&nbsp;|&nbsp;
-		<a href="/blog/?page=<%=(@page - 1).to_s%>">Newer Posts</a>
-	<% end %>
-	<% if @page == 1 %>
-		&nbsp;|&nbsp;
-		<a href="/blog">Newer Posts</a>
-	<%end %>
-<% else %>
-	<a href="/blog/?page=1">Older Posts</a>
+<% @older_path = "" %>
+<% if !@page %>
+	<% @page = 0%>
 <% end %>
+
+<% @older_path = "?page=" + (@page + 1).to_s %>
+<% @newer_path = "?page=" + (@page - 1).to_s %>
+<% if !@cid.nil? %>
+	<% @older_path += "&cid=" + @cid.to_s %>
+	<% @newer_path += "&cid=" + @cid.to_s %>
+<% end %>
+<a href="/blog/<%=@older_path %>">Older Posts</a>
+<% if @page > 0 %> | <a href="/blog/<%=@newer_path %>">Newer Posts</a><% end %>
 
 
 <br />
