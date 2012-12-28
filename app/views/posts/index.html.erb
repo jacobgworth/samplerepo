@@ -32,7 +32,7 @@
     			<%end%>
     		<%end%>
     	</p>
-    <p><%= truncate(post.body,:length=>500,:separator=>' ').html_safe %> <a href="/blog/<%=post.id%>">Read More </a></p>
+    <p><%= sanitize truncate(post.body,:length=>500,:separator=>' '), :tags => %w(img) %> <a href="/blog/<%=post.id%>">Read More </a></p>
     <p><%= post.imagelink %></p>
    </div>
     <% if !@user.nil? && @user.is_admin?%>
