@@ -3,7 +3,7 @@ ActionMailer::Base.smtp_settings = {
   :port                 => 587,
   :domain               => "mohhaiti.org",
   :user_name            => "noreply@mohhaiti.org",
-  :password             => "&37K%y9b",
+  :password             => "M0HnoreplyBOT",
   :authentication       => "plain",
   :enable_starttls_auto => true
 }
