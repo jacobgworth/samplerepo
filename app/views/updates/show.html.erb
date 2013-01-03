@@ -113,7 +113,7 @@
 					<% end %>
 					<p>
 						<img src="<%=@thumbimg.asset.url(:thumb)%>" style="float:left; padding-right: 15px; padding-bottom: 5px;" />
-						<%=truncate(strip_tags(blog.body),:length=>110,:separator=>' ').html_safe %> <a href="/blog/<%=blog.id%>">Read Story &raquo;</a>
+						<%=truncate(strip_tags(blog.body),:length=>110,:separator=>' ') %> <a href="/blog/<%=blog.id%>">Read Story &raquo;</a>
 					</p>
 					<div class="clearfix"><!--x---></div>
 					<% @cat = blog.categories.order("categoryname asc").limit(1)%>

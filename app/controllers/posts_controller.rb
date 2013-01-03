@@ -26,8 +26,13 @@ class PostsController < ApplicationController
     elsif !@mid.nil?
       @month = DateTime.strptime(@mid,'%m-%Y')
       @posts = Post.order("postdate desc").where("postdate >= ? and postdate <= ?",@month.beginning_of_month,@month.end_of_month)
-    else
-      @posts = Post.joins(:categories).where("category_id=" + @cid).order('postdate desc')
+    elsif !@cid.nil? #has a cid (category)
+      if !@page.nil?
+        @offset = @page * @posts_per_page
+      else
+        @offset = 0
+      end
+      @posts = Post.joins(:categories).where("category_id=" + @cid).order('postdate desc').offset(@offset).limit(@posts_per_page)
       @category = Category.find(@cid)
     end
     @months = Array.new

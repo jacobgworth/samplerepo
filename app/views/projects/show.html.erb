@@ -110,7 +110,7 @@
 					<div class="updatePost560">
 						<h4><a href="/updates/<%= m.id%>"><%= m.title%></a></h4>
 						<p>
-							<%= truncate(m.body,:length=>100,:separator=>' ').html_safe%> <a href="/updates/<%= m.id%>">Read More &raquo;</a>
+							<%= truncate(m.body,:length=>100,:separator=>' ')%> <a href="/updates/<%= m.id%>">Read More &raquo;</a>
 						</p>
 						<% @cat = m.categories.order("categoryname asc").limit(1)%>
 						<p class="meta">

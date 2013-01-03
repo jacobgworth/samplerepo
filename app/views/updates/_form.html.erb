@@ -12,30 +12,33 @@
   <% end %>
 
   <div class="field">
-    Title (*Required)<br />
+    Title (Required)<br />
     <%= f.text_field :title, :required=>true %>
   </div>
-  <div class="field">
+  <div class="field author">
     Author <br />
     <%= f.text_field :author%>
   </div>
-  <div class="field">
+  <div class="field postdate">
     Post Date <br />
     <%= date_select :update, :postdate %>
   </div>
+  <div class="clearfix"></div>
   <div class="field">
    Body<br />
     <%= f.text_field :body %>
   </div>
-  <div>
+  <div class="collectionSelector thirdcat">
   	Select Category: <br /><%= collection_select 'update', 'category_ids', Category.order("categoryname asc"), :id, :categoryname, { :include_blank => 'None'}, { :multiple => true, :categoryname =>'update[category_ids][]',:selected => 0 } %>
   </div>
-  <div>
+  <div class="collectionSelector thirdcat">
   	Select Related Projects: <br /><%= collection_select 'update', 'project_ids', Project.order("projectname asc"), :id, :projectname, { :include_blank => 'None'}, { :multiple => true, :projectname =>'update[project_ids][]',:selected => 0 } %>
   </div>
-  <div>
+  
+  <div class="collectionSelector thirdcat">
   	Select Related Villages: <br /><%= collection_select 'update', 'community_ids', Community.order("communityname asc"), :id, :communityname, { :include_blank => 'None'}, { :multiple => true, :communityname =>'update[community_ids][]',:selected => 0 } %>
   </div>
+  <div class="clearfix"></div>
   <div class="field">
     Media<br />
     <%= f.text_field :media %>

@@ -58,7 +58,7 @@
 		<div class="updatePost560">
 			<h4><a href="/updates/<%=m.id%>"><%=m.title%></a></h4>
 			<p>
-				<%=truncate(m.body,:length=>200,:separator=>' ').html_safe %> <a href="/updates/<%=m.id%>">Read More &raquo;</a>
+				<%= sanitize truncate(m.body,:length=>200,:separator=>' '), :tags => %w(img)  %> <a href="/updates/<%=m.id%>">Read More &raquo;</a>
 			</p>
 			<div class="clearfix"><!--x--></div>
 			<% @cat = m.categories.order("categoryname asc").limit(1)%>
@@ -91,17 +91,13 @@
 				<span class="year"><%=created.strftime("%Y")%></span>
 			</div>
 			<div class="updatePost560">
-				<h4><a href="/posts/<%=m.id%>"><%=m.title%></a></h4>
+				<h4><a href="/blog/<%=m.id%>"><%=m.title%></a></h4>
 				<p style="margin-top: 10px;">
-					<% if !m.thumb_id.nil? %>
 						<% @thumbimg = Asset.find_by_id(m.thumb_id) || m.assets.first %>
-					<% else %>
-					  <% @thumbimg = m.assets.first %>
-					<% end %>
 					<% if !@thumbimg.nil? %>
 						<img style="float:left; margin-right: 15px; margin-bottom: 5px;" src="<%=@thumbimg.asset.url(:thumb)%>" />
 					<% end %>
-					<%=truncate(strip_tags(m.body),:length=>320,:separator=>' ').html_safe %> <a href="">Read More &raquo;</a>
+					<%= truncate(strip_tags(m.body),:length=>320,:separator=>' ') %> <a href="">Read More &raquo;</a>
 				</p>
 				<% @cat = m.categories.order("categoryname asc").limit(1)%>
 				<div class="clearfix"><!--x--></div>
