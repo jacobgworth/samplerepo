@@ -44,18 +44,21 @@
     </div>
 <% end %>
 
-<% @older_path = "" %>
-<% if !@page %>
-	<% @page = 0%>
+	<% @older_path = "" %>
+	<% if !@page %>
+		<% @page = 0%>
+	<% end %>
+	
+	<% @older_path = "?page=" + (@page + 1).to_s %>
+	<% @newer_path = "?page=" + (@page - 1).to_s %>
+	<% if !@cid.nil? %>
+		<% @older_path += "&cid=" + @cid.to_s %>
+		<% @newer_path += "&cid=" + @cid.to_s %>
+	<% end %>
+	
+<% if @postcount > @posts_per_page * (@page + 1) %>
+	<a href="/blog/<%=@older_path %>">Older Posts</a>
 <% end %>
-
-<% @older_path = "?page=" + (@page + 1).to_s %>
-<% @newer_path = "?page=" + (@page - 1).to_s %>
-<% if !@cid.nil? %>
-	<% @older_path += "&cid=" + @cid.to_s %>
-	<% @newer_path += "&cid=" + @cid.to_s %>
-<% end %>
-<a href="/blog/<%=@older_path %>">Older Posts</a>
 <% if @page > 0 %> | <a href="/blog/<%=@newer_path %>">Newer Posts</a><% end %>
 
 

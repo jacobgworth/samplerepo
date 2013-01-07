@@ -9,10 +9,13 @@ class PostsController < ApplicationController
     @user = current_user
     @updates = Update.last(3).reverse
     @postsyear = @posts = Post.order("postdate desc").where("postdate > ?",Time.now.beginning_of_month.months_ago(11))
+    @postcount = 0
+    
     if @cid.nil? && @mid.nil? #no date params
       
       #do some math for pagination links
       @count = Post.count
+      @postcount = @count
       @total_pages = @count / @posts_per_page
       if (@count % @posts_per_page) #add page for remainder that aren't a full block
         @total_pages += 1
@@ -33,6 +36,7 @@ class PostsController < ApplicationController
         @offset = 0
       end
       @posts = Post.joins(:categories).where("category_id=" + @cid).order('postdate desc').offset(@offset).limit(@posts_per_page)
+      @postcount = Post.joins(:categories).where("category_id=" + @cid).count()
       @category = Category.find(@cid)
     end
     @months = Array.new
