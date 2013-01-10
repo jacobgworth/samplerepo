@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+  	<% unless @title.nil? %><%=@title%><%else%>Mission of Hope Haiti<%end%>
+  </title>
+  <% if @meta.nil?%>
+  	<meta name="description" content="Welcome to Mission of Hope (MOH) Haiti, helping to bring hope to every man, woman and child in Haiti."/>
+  <%else%>
+  	<meta name="description" content="<%=@meta%>" />
+  <%end%>
+ <link rel="stylesheet" type="text/css" media="screen" href="/assets/style.css">
+  <%= stylesheet_link_tag "gmaps4rails" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= yield :head %>
+<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="/assets/javascript/jquery.ad-gallery.js" type="text/javascript" ></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$(function() {
+		var galleries = $('.ad-gallery').adGallery();
+	});
+});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20469817-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+</head>
+<body>
+<%= yield %>
+
+<div><%= yield :scripts %></div>
+<div id="user_nav" style="position:absolute;top:-100px;">
+  <% if current_user %>
+    Logged in as <%= current_user.email %>
+    <%= link_to "Log out", log_out_path %>
+  <% else %>
+    <%= link_to "Log in", log_in_path %>
+  <% end %>
+</div>
+<div><% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash#{name}" %>
+  <% end %></div>
+
+<div id="superFooter">
+	<div class="superFooterCol" style="width:200px;">
+		<a href="/"><img src="/assets/logoFooter.png" /></a>
+		
+	</div>
+	<div class="superFooterCol">
+		<div class="social">
+		<h5>We're Also On:</h5>
+		<ul>
+			<li class="facebook"><a href="http://www.facebook.com/mohhaiti">Facebook</a></li>
+			<li class="twitter"><a href="http://twitter.com/mohhaiti">Twitter</a></li>
+			<li class="vimeo"><a href="http://vimeo.com/mohhaiti">Vimeo</a></li>
+		</ul>
+		</div>
+		<p class="clearfix"></p>
+		<img src="/assets/button-newsletter.png" alt="Subscribe to our newsletter" />
+		<div class="newsletterSignup">
+<form method="post" action="https://app.icontact.com/icp/signup.php" name="icpsignup" id="icpsignup1000" accept-charset="UTF-8" onsubmit="return verifyRequired1000();" >
+<input type="hidden" name="redirect" value="http://mohhaiti.org/newsletter_thank_you">
+<input type="hidden" name="errorredirect" value="http://www.icontact.com/www/signup/error.html">
+
+        <input onfocus="this.value=''" type="text" name="fields_email" class="newsletterinput" value="enter email address">
+    <input type="hidden" name="listid" value="20080">
+    <input type="hidden" name="specialid:20080" value="9HZA">
+
+    <input type="hidden" name="clientid" value="791417">
+    <input type="hidden" name="formid" value="1000">
+    <input type="hidden" name="reallistid" value="1">
+    <input type="hidden" name="doubleopt" value="0">
+<input type="submit" class="newsletterbutton" name="Submit" value="GO">
+</form>
+<script type="text/javascript">
+
+var icpForm1000 = document.getElementById('icpsignup1000');
+
+if (document.location.protocol === "https:")
+
+	icpForm1000.action = "https://app.icontact.com/icp/signup.php";
+function verifyRequired1000() {
+  if (icpForm1000["fields_email"].value == "") {
+    icpForm1000["fields_email"].focus();
+    alert("The Email field is required.");
+    return false;
+  }
+
+
+return true;
+}
+</script>
+</div>
+	</div>
+	<div class="superFooterCol">
+		<h5>Learn More About Us</h5>
+		<ul>
+			<li><a href="/vision_mission_resolution">Vision, Mission & Resolutions &raquo;</a></li>
+			<li><a href="/faq">FAQs &raquo;</a></li>
+			<li><a href="/privacy">Privacy Policy &raquo;</a></li>
+			<li><a href="/press">Media Inquiries &raquo;</a></li>
+			<li><a href="/sitemap">Sitemap &raquo;</a></li>
+		</ul>
+	</div>
+	<div class="superFooterColLast">
+		<h5>Get Involved</h5>
+		<ul>
+			<li><a href="https://www.denarionline.com/DonorServices/TEMPLATEPAGE.ASPX?COMP_REF=_MOHHAITI%20&CONTENT=GOSOLG&DS_GO_REF=F6DB76D974">Donate &raquo;</a></li>
+			<li><a href="/child-sponsorship">Child Sponsorship &raquo;</a></li>
+			<li><a href="/mission_trips">Mission Trips &raquo;</a></li>
+			<li><a href="/church_advancement">Churches &raquo;</a></li>
+		</ul>
+	</div>
+	<p class="clearfix" style="padding-top:40px;">&copy;<%= Date.today.year %> Mission of Hope Haiti // <% if current_user && current_user.is_admin? %>
+    			<a href="/console">Admin</a> // <%= link_to "Logout", log_out_path %>
+			<% elsif current_user %>
+    			<%= link_to "Logout", log_out_path %>
+    			
+  			<% else %>
+  					<%= link_to "Site Login", log_in_path %>
+   			<% end %> // <a href="http://threetwelvecreative.com" target="_blank">Website design & development by ThreeTwelve Creative</a><br /><br />
+   			Mission of Hope, Haiti is a 501c3.</p>
+   			<img class="alignRight" style="margin-top:-60px;" src="/assets/ECFA_Member-Seal3.png" />
+</div>
+</div>	  
+<div id="footer">
+	<div id="footerImg"><!--x--></div>
+</div>
+</body>
+</html>
