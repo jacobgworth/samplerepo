@@ -1,40 +1,28 @@
 <div id="bgHero">
-	<%if !@project.nil? && !@project.heroimage.nil? && @project.heroimage != '' %>
-		<div id="advancementHeroImg" style="background: url(/assets/<%=@project.heroimage%>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;">
+		<div id="advancementHeroImg" style="background: url(/assets/her-b2b.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;">
 		<!--x-->
 		</div>
-	<%else%>
-		<div id="heroCommunitiesImg">
-		<!--x-->
-		</div>
-	<%end%>
 </div>
 
 <div id="wrapper">
 	<%=render 'layouts/navBar'%>
 	<div id="content">
-		<div id="heroContent">
-			<div id="heroLeft">
-				<h1 style="padding-top:40px; width:500px"><span class="largeText4 greenTransBG" style="margin-bottom:15px;"><%= @project.projectname %>
-					<br />
-				</span><span class="largeText6 greenTransBG lowercase"><%= @project.goal%></span></h1>
-				
-				<div class="buttonSquareOrange" style="position:absolute; top:-250px; left:200px; width:280px">
-					<a href="https://www.denarionline.com/DonorServices/TEMPLATEPAGE.ASPX?COMP_REF=_MOHHAITI&CONTENT=LOGIN">Support this project &raquo;</a>
-				</div>
+		<div id="heroContent">		
+			<img src="/assets/b2b-logo.png" alt="Blue To Block campaign Logo" class="b2blogohero"/>
+			<div class="videoWrapper">
+				<iframe src="http://player.vimeo.com/video/48615727" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 			</div>
-			<!--<div class="percentComplete">
-				<h2>Percent Complete
-				<br/>
-				<span class="largeText1" style="line-height: 1em;"><%= number_to_percentage(@project.percentcomplete,:precision=>2)%></span></h2>
-			</div>-->
-		</div>
+		</div><!-- End Hero Content -->
 
 <div class="contentHeader">
 			<div class="contentHeaderLeft">
-				<h1><span class="eyebrow">Mission of Hope Haiti Project</span>
-				<br />
-				<%= @project.projectname %></h1>
+				<h1><span class="eyebrow">Mission of Hope Haiti Project</span></h1>
+				<img src="/assets/b2b-logo.png" alt="Blue To Block campaign Logo" class="b2blogoContent"/>
+			<div class="clear"></div>
+				<span class="b2bboldheader">3 years after the earthquake, <br /> many families are still living in tent homes!</span> 
+				<div class="clear"></div>
+				<span class="b2bgreenheader">Our goal is to provide 650 of these families with long-term houses. <br /> Each home costs about $6,000 to build. <br /><br /> Please consider giving a gift of any 
+amount today to help us reach our goal!</span>
 				<p>
 					<%= simple_format(@project.description) %>
 				</p>
