@@ -66,7 +66,11 @@ class ProjectsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html {render :layout=>"applicationWithAdGallery"}# show.html.erb
+      if (@project.id == 5)
+        format.html {render :layout=>"b2b_layout"}# show.html.erb
+      else
+        format.html {render :layout=>"applicationWithAdGallery"}# show.html.erb
+      end
       format.json { render json: @project }
     end
   end
