@@ -30,6 +30,7 @@ amount today to help us reach our goal!</span>
 			<div class="contentHeaderRight">
 				<h3 class="projectDetailButton" style="padding-top:20px; background-image: url('/assets/gr-<%=@category.categoryicon%>'); background-repeat:no-repeat; background-position:95% 50%; height:60px;">Project Type
 				<br />
+
 				<span class="darkGreenLarge"><a href=""><%= @category.categoryname%></span></a></h3>
 				<h3 class="projectDetailButtonLeft">Population<br />Served
 				<br />
@@ -38,15 +39,14 @@ amount today to help us reach our goal!</span>
 				<br />
 				<span class="darkGreenMedium"><%= @project.stage%></span></h3>
 				<div class="clear"></div>
-				<%unless @project.fundsneeded.nil? || @project.fundsneeded == ''%>
+				
 				<div class="fundsRaised">
-					<h3 class="darkGreen">Funds Raised of <%= number_to_currency(@project.fundsneeded, :unit => "$") %> Needed</h3>	
+					<h3 class="darkGreen">Funds Raised of <%= number_to_currency(100000, :unit => "$") %> Needed</h3>	
 					<a href=""><img src="/assets/<%=@fundPercentImage%>"></a>
 					<div class="dollarBubble">
-						<span class="darkGreen"><%= number_to_currency(@project.fundsraised, :unit => "$") %><br />RAISED </span>
+						<span class="darkGreen"><%= number_to_currency(76000, :unit => "$") %><br />RAISED </span>
 					</div>
 				</div>
-				<%end%>
 				<div class="clearfix">
 				<!--x-->
 			</div>

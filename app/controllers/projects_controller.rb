@@ -12,9 +12,10 @@ class ProjectsController < ApplicationController
     @category = @project.categories.first
     @updates = @project.updates.last(3).reverse #Update.last(3).reverse
     @posts = @project.posts.order(:postdate).reverse_order.last(3)
-    @fundpercent = 0
+    @fundpercent = 76
     if !@project.fundsneeded.nil? && @project.fundsneeded > 0
-      @fundpercent = (@project.fundsraised/@project.fundsneeded) * 100.00
+      #@fundpercent = (@project.fundsraised/@project.fundsneeded) * 100.00
+      @fundpercent = 76
     end
     @fundPercentImage = 'percent0.png'
     if @fundpercent >= 10 && @fundpercent < 20
