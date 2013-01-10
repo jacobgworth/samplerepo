@@ -5,6 +5,7 @@
   /*border-top:#056346 solid 3px;
   border-bottom:#056346 solid 3px;*/
   z-index: -1;
+  min-width: 100%;
 }
 
 .gmaps4rails_map {
