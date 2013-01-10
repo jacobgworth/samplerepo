@@ -2,6 +2,49 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   
+  def bluetoblock
+    @project = Project.find(5)
+    @title = @project.projectname + " | MOH Haiti"
+    @meta = @project.projectname + " is a Mission of Hope Haiti project currently underway in Haiti."
+    @population = @project.communities.sum('population')#Community.joins(:projects).where("project_id=" + @category.id.to_s)
+    @assets = @project.assets.all
+    @user = current_user
+    @category = @project.categories.first
+    @updates = @project.updates.last(3).reverse #Update.last(3).reverse
+    @posts = @project.posts.order(:postdate).reverse_order.last(3)
+    @fundpercent = 0
+    if !@project.fundsneeded.nil? && @project.fundsneeded > 0
+      @fundpercent = (@project.fundsraised/@project.fundsneeded) * 100.00
+    end
+    @fundPercentImage = 'percent0.png'
+    if @fundpercent >= 10 && @fundpercent < 20
+      @fundPercentImage = 'percent10.png'
+    elsif @fundpercent >= 20 && @fundpercent < 30
+      @fundPercentImage = 'percent20.png'
+    elsif @fundpercent >= 30 && @fundpercent < 40
+      @fundPercentImage = 'percent30.png'
+    elsif @fundpercent >= 40 && @fundpercent < 50
+      @fundPercentImage = 'percent40.png'
+    elsif @fundpercent >= 50 && @fundpercent < 60
+      @fundPercentImage = 'percent50.png'
+    elsif @fundpercent >= 60 && @fundpercent < 70
+      @fundPercentImage = 'percent60.png'
+    elsif @fundpercent >= 70 && @fundpercent < 80
+      @fundPercentImage = 'percent70.png'
+    elsif @fundpercent >= 80 && @fundpercent < 90
+      @fundPercentImage = 'percent80.png'
+    elsif @fundpercent >= 90 && @fundpercent < 97
+      @fundPercentImage = 'percent90.png'
+    elsif @fundpercent >= 97
+      @fundPercentImage = 'percent100.png'
+    end
+
+    respond_to do |format|
+      format.html {render :layout=>"b2b_layout"}# show.html.erb
+      format.json { render json: @project }
+    end    
+  end
+  
   def index
     @cid = params[:cid]
     @user = current_user
@@ -66,11 +109,7 @@ class ProjectsController < ApplicationController
     end
 
     respond_to do |format|
-      if (@project.id == 5)
-        format.html {render :layout=>"b2b_layout"}# show.html.erb
-      else
-        format.html {render :layout=>"applicationWithAdGallery"}# show.html.erb
-      end
+      format.html {render :layout=>"applicationWithAdGallery"}# show.html.erb
       format.json { render json: @project }
     end
   end
