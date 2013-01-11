@@ -174,10 +174,9 @@ class ProjectsController < ApplicationController
     if params[:project][:percentcomplete].nil? || params[:project][:percentcomplete] == ''
        params[:project][:percentcomplete] = 0
     end
-
     respond_to do |format|
       if @project.update_attributes(params[:project])
-        format.html { redirect_to :action => 'edit' }
+        format.html { redirect_to @project, notice: 'Post was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
