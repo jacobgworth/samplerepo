@@ -109,10 +109,14 @@
 						  <% @thumbimg = blog.assets.first %>
 						<% end %>
 					<% else %>
-					  <% @thumbimg = blog.assets.first %>
+					  <% if !blog.assets.nil? %>
+						  <% @thumbimg = blog.assets.first %>
+					  <% end %>
 					<% end %>
 					<p>
-						<img src="<%=@thumbimg.asset.url(:thumb)%>" style="float:left; padding-right: 15px; padding-bottom: 5px;" />
+						<% if !@thumbimg.nil? %>
+							<img src="<%=@thumbimg.asset.url(:thumb)%>" style="float:left; padding-right: 15px; padding-bottom: 5px;" />
+						<% end %>
 						<%=truncate(strip_tags(blog.body),:length=>110,:separator=>' ') %> <a href="/blog/<%=blog.id%>">Read Story &raquo;</a>
 					</p>
 					<div class="clearfix"><!--x---></div>
