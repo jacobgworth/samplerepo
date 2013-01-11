@@ -41,7 +41,7 @@ amount today to help us reach our goal!</span>
 				<div class="clear"></div>
 				
 				<div class="fundsRaised">
-					<h3 class="darkGreen" id="b2bh3">414 of 650 homes funded!</h3>	
+					<h3 class="darkGreen" id="b2bh3"><%=@project.fundsraised.to_int%> of <%=@project.fundsneeded.to_int%> homes funded!</h3>	
 					<a href=""><img src="/assets/<%=@fundPercentImage%>"></a>
 				</div>
 				<a href="https://www.denarionline.com/DonorServices/TEMPLATEPAGE.ASPX?COMP_REF=_MOHHAITI%20&CONTENT=GOSOLG&DS_GO_REF=765645E2ED"><div class="buttonSquareOrange" style="margin-top: 10px; text-transform: uppercase; font-size: 22px;">Donate Now</div></a>
