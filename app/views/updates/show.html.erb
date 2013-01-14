@@ -32,9 +32,6 @@
 <% end %>
     	</p>
     	<div class="clearfix"></div>
-<%unless @update.author.nil? || @update.author.blank?%>
-<p>Update from <%=@update.author%></p>
-<%end%>
 <%unless @photo.nil?%>
 <p><img src="<%=@photo.asset.url(:large)%>" class="updatesBorder" /></p>
 <%end%>
