@@ -5,20 +5,21 @@
 			
 
 			<h1><span class="eyebrow">Mission of Hope Haiti </span><br />Press</h1>
-				<% @press.each do |news|%>
-				<h2> <a href="/news/<%=news.id%>"><%=news.headline%> </a> </h2>
-				
-				<p><%=news.bodycontent.html_safe %></p>
-				
-
-			 <% if !@user.nil? && @user.is_admin?%>
+<% @press.each do |news| %>
+<div class="updateDate" style="margin-top:20px;">
+	<span class="month"><%= news.postdate.strftime("%b")%></span><br />
+			<span class="date"><%= news.postdate.strftime("%d")%></span><br />
+			<span class="year"><%= news.postdate.strftime("%Y")%></span>	
+	</div>
+    <h2><a href="/news/<%=news.id%>"><%= news.headline %></a></h2>
+    <p style="clear:both;"><%= news.bodycontent.html_safe %></p>
+    <% if !@user.nil? && @user.is_admin?%>
     	<p class="editPostsLink">
     		<%= link_to 'Edit', edit_news_path(news) %> |
     		<%= link_to 'Destroy', news, confirm: 'Are you sure?', method: :delete %>
     	</p>
-    	<h4 style="clear:both;"><%= link_to 'New News', new_news_path %></h4>
     <% end %>
-    <% end %>
+<% end %>
 		</div>
 
 		<div id="contentRight300">

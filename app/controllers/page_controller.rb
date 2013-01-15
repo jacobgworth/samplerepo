@@ -389,7 +389,7 @@ class PageController < ApplicationController
   def press
     @title = "Press Releases & News about Mission of Hope, Haiti"
     @meta = "See the latest press releases and news stories from Mission of Hope, Haiti."
-    @press = News.all.reverse
+    @press = News.find(:all, :order => "postdate desc")
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
