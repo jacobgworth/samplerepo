@@ -1,26 +1,25 @@
 <div id="wrapper">
-	<%= render 'layouts/navBar'%>
-	<div id="content" style="padding-top:50px;">
-		<div id="contentLeft560">
-			
-
-			<h1><span class="eyebrow">Mission of Hope Haiti </span><br />Press</h1>
-<% @press.each do |news| %>
-<div class="updateDate" style="margin-top:20px;">
-	<span class="month"><%= news.postdate.strftime("%b")%></span><br />
-			<span class="date"><%= news.postdate.strftime("%d")%></span><br />
-			<span class="year"><%= news.postdate.strftime("%Y")%></span>	
+	<%=render 'layouts/navBar'%>
+<div id="content" style="padding-top: 30px;background-image:none;">
+	<div id="contentLeft560">
+	<h1><span class="eyebrow">Mission of Hope Haiti</span><br />
+		Press</h1>
+<% @press.each do |post| %>
+  <div class="postsPage">
+  	<div class="updateDate" style="margin-top:20px;">
+	<span class="month"><%= post.postdate.strftime("%b")%></span><br />
+			<span class="date"><%= post.postdate.strftime("%d")%></span><br />
+			<span class="year"><%= post.postdate.strftime("%Y")%></span>	
 	</div>
-    <h2><a href="/news/<%=news.id%>"><%= news.headline %></a></h2>
-    <p style="clear:both;"><%= news.bodycontent.html_safe %></p>
-    <% if !@user.nil? && @user.is_admin?%>
-    	<p class="editPostsLink">
-    		<%= link_to 'Edit', edit_news_path(news) %> |
-    		<%= link_to 'Destroy', news, confirm: 'Are you sure?', method: :delete %>
-    	</p>
-    <% end %>
+    <h3 style="padding-bottom:30px;"><a href="/news/<%=post.id%>"><%= truncate(post.headline, :length=>75, :separator=>" ") %></a></h3>
+    <div style="margin-left:60px; margin-top:-20px; border-bottom:1px dotted #0F483B;">
+    	<p class="meta" style="margin-top: -45px;"></p>
+    <p style="margin-top: 20px;"><%= sanitize truncate(post.bodycontent,:length=>500,:separator=>' '), :tags => %w(img) %> <a href="/news/<%=post.id%>">Read More </a></p>
+   </div>
+    </div>
 <% end %>
-		</div>
+
+</div><!-- End Content left -->
 
 		<div id="contentRight300">
 			<div class="rightBoxGreen">
@@ -33,12 +32,8 @@
 			</div>
 			<%= render 'layouts/aboutNav'%>
 			</div>
-			<div class="clearfix" style="height:40px;">
-				<!--x-->
-			</div>
+</div><!-- End Content Right -->
 
-		</div>
-			<div class="clearfix" style="height:40px;">
-				<!--x-->
-			</div>
-			</div>
+
+<div class="clearfix" style="height:40px;"></div>
+</div>
