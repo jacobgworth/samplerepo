@@ -3,7 +3,8 @@ class UpdatesController < ApplicationController
   # GET /updates.json
   def index
     #@updates = Update.all.reverse
-    
+    @title = "Haiti Updates | Updates on What's Happening at Mission of Hope, Haiti"
+    @meta ="Get updates on what's happening in Haiti from Mission of Hope, Haiti (MOH)."
     @cid = params[:cid]
     @user = current_user
     @isadmin = is_admin_user?
