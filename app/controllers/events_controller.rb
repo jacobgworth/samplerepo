@@ -2,6 +2,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+    @title = "Haiti Fundraising Events | Mission of Hope Haiti (MOH)"
+    @meta = "Mission of Hope Haiti always has fundraising for Haiti events happening. Find a local event near you or start one of your own to raise support and donations for Haiti!"
     @events = Event.all
     @isadmin = is_admin_user?
 

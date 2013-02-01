@@ -2,8 +2,8 @@ class CommunitiesController < ApplicationController
   # GET /communities
   # GET /communities.json
   def index
-    @title = "Villages | MOH Haiti"
-    @meta = "Villages in Haiti served by Mission of Hope Haiti"
+    @title = "Mission of Hope, Haiti: Villages & Communities we Serve in Haiti"
+    @meta = "Learn about the villages and communities Mission of Hope, Haiti and churches partner with to provide homes, water solutions, health services, education and share the gospel."
     @communities = Community.all
     @jason = Community.all.to_gmaps4rails
     @user = current_user

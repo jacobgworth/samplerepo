@@ -46,6 +46,8 @@ class ProjectsController < ApplicationController
   end
   
   def index
+    @title = "Haiti Village Projects from Mission of Hope, Haiti (MOH)"
+    @meta = "MOH Haiti projects allow us to serve the Haitian population by finding education, water, housing, construction, nutrition and orphan care solutions."
     @cid = params[:cid]
     @user = current_user
     @itemCount = 0
