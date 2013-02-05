@@ -2,7 +2,7 @@ class NewsController < ApplicationController
   # GET /news
   # GET /news.json
   def index
-    @news = News.all
+    @news = News.find(:all, :order => "postdate desc")
     @user = current_user
 
     respond_to do |format|

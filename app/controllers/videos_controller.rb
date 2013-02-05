@@ -2,6 +2,8 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
+    @title = "Haiti Videos | Videos from Mission of Hope, Haiti"
+    @meta = "Videos that provide a different view to MOH Haiti's earthquake relief, orphan care, education opportunities, and church advancement opportunities."
     @videos = Video.all
       respond_to do |format|
       format.html {render :layout=>"homeLayout"} # index.html.erb

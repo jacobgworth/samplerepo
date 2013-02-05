@@ -21,7 +21,7 @@
 					<div class="field">Your Sponsored Child's name: <input id="txtchildname" type="text" name="childname" value="<%=@data[:childname]%>"></div>
 					<div class="field">Your Sponsored Child's number: <input id="txtchildnumber" type="text" name="childnumber" value="<%=@data[:childid]%>"><br></div>
 					<div class="field">Image attachment (optional): <input id="datafile" type="file" name="datafile"><br></div>
-					<div class="field">Your letter: <textarea id="txtmessage" type="textarea" name="letter"></textarea></div>
+					<div class="field">Your letter: <textarea id="txtmessage" type="textarea" name="letter" maxlength=1000></textarea></div>
 					 <div class="actions"><input type="submit" value="Submit" onclick="return validate();"></div>
 				</form>		
 				<%else%>

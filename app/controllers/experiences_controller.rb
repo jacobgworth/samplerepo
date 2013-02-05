@@ -6,7 +6,9 @@ layout "applicationWithMasonry"
   # GET /experiences
   # GET /experiences.json
   def index
-    @experiences = Experience.all
+    @title = "MOH Mission Trip Stories & Experiences: Stories from Mission Trips to Haiti"
+    @meta = "Read real stories and experiences from people who have gone on a Mission trip to Haiti with Mission of Hope, Haiti. Plus share your own mission trip story!"
+    @experiences = Experience.find(:all, :order => 'created_at desc')
     @user = current_user
 
     respond_to do |format|

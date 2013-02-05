@@ -1,0 +1,252 @@
+<div id="bgHero">
+		<div id="advancementHeroImg" style="background: url(/assets/her-b2b.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;">
+		<!--x-->
+		</div>
+</div>
+
+<div id="wrapper">
+	<%=render 'layouts/navBar'%>
+	<div id="content">
+		<div id="heroContent">		
+			<img src="/assets/b2b-logo.png" alt="Blue To Block campaign Logo" class="b2blogohero"/>
+			<div class="videoWrapper">
+				<iframe src="http://player.vimeo.com/video/56717883" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			</div>
+		</div><!-- End Hero Content -->
+
+<div class="contentHeader">
+			<div class="contentHeaderLeft">
+				<h1><span class="eyebrow">Mission of Hope Haiti Project</span></h1>
+				<img src="/assets/b2b-logo.png" alt="Blue To Block campaign Logo" class="b2blogoContent"/>
+			<div class="clear"></div>
+				<span class="b2bboldheader">3 years after the earthquake, <br /> many families are still living in tent homes!</span> 
+				<div class="clear"></div>
+				<span class="b2bgreenheader">Our goal is to provide 650 of these families with long-term houses. <br /> Each home costs about $6,000 to build. <br /><br /> Please consider giving a gift of any 
+amount today to help us reach our goal!</span>
+				<p>
+					<%= simple_format(@project.description) %>
+				</p>
+			</div>
+			<div class="contentHeaderRight">
+				<h3 class="projectDetailButton" style="padding-top:20px; background-image: url('/assets/gr-<%=@category.categoryicon%>'); background-repeat:no-repeat; background-position:95% 50%; height:60px;">Project Type
+				<br />
+
+				<span class="darkGreenLarge"><a href=""><%= @category.categoryname%></span></a></h3>
+				<h3 class="projectDetailButtonLeft">Population<br />Served
+				<br />
+				<span class="darkGreenMedium"><%=@population%></span></h3>
+				<h3 class="projectDetailButtonRight">Project<br />Stage
+				<br />
+				<span class="darkGreenMedium"><%= @project.stage%></span></h3>
+				<div class="clear"></div>
+				
+				<div class="fundsRaised">
+					<h3 class="darkGreen" id="b2bh3"><%=@project.fundsraised.to_int%> of <%=@project.fundsneeded.to_int%> homes funded!</h3>	
+					<a href=""><img src="/assets/<%=@fundPercentImage%>"></a>
+				</div>
+				<a href="https://www.denarionline.com/DonorServices/TEMPLATEPAGE.ASPX?COMP_REF=_MOHHAITI%20&CONTENT=GOSOLG&DS_GO_REF=765645E2ED"><div class="buttonSquareOrange" style="margin-top: 10px; text-transform: uppercase; font-size: 22px;">Donate Now</div></a>
+				<div class="clearfix">
+				<!--x-->
+			</div>
+				<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<h4 style="float:left;">Share This: </h4>
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-506b79724d720237"></script>
+<!-- AddThis Button END -->
+			</div>
+			<div class="clearfix">
+				<!--x-->
+			</div>
+		</div>
+			<div id="contentLeft560">
+			<% if @updates.count > 0 %>
+			<div class="updatesWrapper">
+				<h3><span class="eyebrow"><%= @project.projectname %></span>
+				<br />
+				Updates</h3>
+				<div class="speechBubble">
+					<p>
+						latest
+						<br />
+						updates
+					</p>
+				</div>
+				<% if @updates.count == 0 %>
+					<div class="update560">No updates for <%= @project.projectname %></div>
+				<% else %>
+				<%@updates.each do |m|%>
+				<div class="update560">
+					<div class="updateDate">
+						<%
+						 created = m.postdate
+						%>
+						<span class="month"><%= created.strftime("%b")%></span>
+						<br />
+						<span class="date"><%= created.strftime("%d")%></span>
+						<br />
+						<span class="year"><%= created.strftime("%Y")%></span>
+					</div>
+					<div class="updatePost560">
+						<h4><a href="/updates/<%= m.id%>"><%= m.title%></a></h4>
+						<p>
+							<%= truncate(m.body,:length=>100,:separator=>' ')%> <a href="/updates/<%= m.id%>">Read More &raquo;</a>
+						</p>
+						<% @cat = m.categories.order("categoryname asc").limit(1)%>
+						<p class="meta">
+							<%unless @cat.count==0%>Related Category: <a href="/updates/?cid=<%=@cat.first.id%>"><%=@cat.first.categoryname%></a><%end%> <%if !m.author.nil? && !m.author.blank?%><%unless @cat.count==0%>| <%end%>Update from: <%=m.author%><%end%></p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<%end%>
+				
+				<div class="updateNavRight">
+					<a href="/updates/">View All Updates &raquo;</a>
+				</div>
+				<% end %>
+			</div>
+			<%end%>
+			<!--start posts-->
+			
+			<div class="updatesWrapper">
+				<h3><span class="eyebrow"><%= @project.projectname %></span>
+				<br />
+				Blog Posts</h3>
+				<div class="speechBubble">
+					<p>
+						latest
+						<br />
+						posts
+					</p>
+				</div>
+				<%@posts.each do |m|%>
+				<!--problem start-->
+					<div class="update560">
+						<div class="updateDate">
+						<%
+						 created = m.postdate
+						              creator = "-"
+						              if m.user.blank?
+						                creator = '-'
+						              else
+						                creator = m.user.first
+						              end
+						%>
+							<span class="month"><%= created.strftime("%b") unless created.nil? %></span>
+							<br />
+							<span class="date"><%= created.strftime("%d") unless created.nil? %></span>
+							<br />
+							<span class="year"><%= created.strftime("%Y") unless created.nil? %></span>
+						</div>
+						<div class="updatePost560">
+							<h4><a href="/posts/<%= m.id%>"><%= m.title%></a></h4>
+							<p>
+								<%= truncate(m.metadescription,:length=>100,:separator=>' ')%> <a href="/posts/<%= m.id%>">Read More &raquo;</a>
+							</p>
+							<p class="meta">
+								Posted by: <%= m.author%>
+							</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				<!--problemend-->
+				<%end%>
+				
+				<div class="updateNavRight">
+					<a href="/posts/">View All Posts &raquo;</a>
+				</div>
+				
+			</div>
+			
+		</div>
+		<div id="contentRight300">
+			<% unless @assets.count == 0 %>
+<script>
+jQuery(document).ready(function($) {
+    $('.lightbox_trigger').click(function(e) {
+        //prevent default action (hyperlink)
+        e.preventDefault();
+        //Get clicked link href
+        var image_href = $('#imghref').attr("href");
+        image_href = image_href.replace("medium", "large");
+        //var image_href = $(this).attr("href");
+        /*
+        If the lightbox window HTML already exists in document,
+        change the img src to to match the href of whatever link was clicked
+        If the lightbox window HTML doesn't exists, create it and insert it.
+        (This will only happen the first time around)
+        */
+        if ($('#lightbox').length > 0) { // #lightbox exists
+            //place href as img src value
+            $('#lightboxcontent').html('<img src="' + image_href + '" />');
+            //show lightbox window - you could use .show('fast') for a transition
+            $('#lightbox').show('fast');
+        }
+        else { //#lightbox does not exist - create and insert (runs 1st time only)
+            //create HTML markup for lightbox window
+            var lightbox =
+            '<div id="lightbox">' +
+                '<p>Click to close</p>' +
+                '<div id="lightboxcontent">' + //insert clicked link's href into img src
+                    '<img src="' + image_href +'" />' +
+                '</div>' +
+            '</div>';
+            //insert lightbox HTML into page
+            $('body').append(lightbox);
+        }
+    });
+    //Click anywhere on the page to get rid of lightbox window
+    $('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
+        $('#lightbox').hide('fast');
+    });
+});
+</script>
+			<div class="contentRightWrapper">
+			<h3><span class="eyebrow"><%= @project.projectname %></span><br />Photo Album</h3>
+						<div id="divImgThumbs">
+				<div id="gallery" class="ad-gallery">
+					<div class="ad-image-wrapper lightbox_trigger">
+						<div class="ad-image shadow"></div>
+					</div><!--wrapper-->
+					<div style="font-size: 8px; text-align: center; width: 100%; margin-top: -10px; margin-bottom: 10px;"><em>Click to enlarge</em></div>
+					<div class="ad-controls"></div><!--controls-->
+					<div class="ad-nav">
+						<div class="ad-back"></div>
+						<div class="ad-thumbs">
+							&nbsp;
+							<ul class="ad-thumb-list">
+								<% if @assets.count > 0
+								@counter = 0
+								@assets.each do |photo|
+								@classname = "image" + @counter.to_s
+								%>
+								<!--<p><%= image_tag photo.asset.url(:medium) %></p>-->
+								<li >
+									<a href="<%= photo.asset.url(:medium)%>"><img src="<%= photo.asset.url(:thumb) %>" alt="" title="" longdesc="" class="<%= @classname%>" style="width:65px;" /></a>
+								</li>
+								<% @counter = @counter + 1%>
+								<% end %>
+								<% end %>
+							</ul>
+						</div>
+						<div class="ad-forward"></div>
+					</div><!--adnav-->
+				</div><!--gallery-->
+		</div><!--thumbs-->
+		</div><!--contentRightWrapper-->
+		<%end%>
+		</div><!--contentRight-->
+		<div class="clearfix"><!--x--></div>
+	<% if !@user.nil? && @user.is_admin == 1 %>
+		<%= link_to 'Edit', edit_project_path(@project) %> |
+		<%= link_to 'Back', projects_path %>
+	<%end%>
+	</div><!--content-->
+</div>
+

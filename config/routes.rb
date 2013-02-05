@@ -2,6 +2,10 @@ Mohhaiti::Application.routes.draw do
   
   match "/blog/feed.xml" => "posts#rss", :action => 'rss'
   
+  match "/bluetoblock" => "projects#bluetoblock"
+  put "/projects/5" => "projects#update", :id => 5
+  match "/projects/5" => "projects#bluetoblock"
+  
   resources :news
 
   resources :videos
