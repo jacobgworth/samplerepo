@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  
+  include Databasedotcom::Rails::Controller
   attr_accessor :password
   before_save :encrypt_password, :convio_sync
   
@@ -64,6 +66,7 @@ class User < ActiveRecord::Base
   end
   
   def convio_new
+    #@user = User.find_by_Email("312@mohhaiti.org")
     @sfcontact = Contact.create(
       :LastName => self.last,
       :FirstName => self.first,
@@ -71,10 +74,20 @@ class User < ActiveRecord::Base
       :MailingStreet => self.street1,
       :MailingCity => self.city,
       :MailingState => self.state,
-      :MailingPostalCode => self.zip
+      :MailingPostalCode => self.zip,
+      :HasOptedOutOfEmail => false,
+      :HasOptedOutOfFax => false,
+      :DoNotCall => false,
+      :cv__Create_Household__c => true,
+      :cv__Deceased__c => false,
+      :cv__Head_of_Household__c => false,
+      :cv__Postal_Mail_Opt_Out__c => false,
+      :cv__Active__c => false,
+      :OwnerId => "005U0000000gMKq"
     )
     @sfcontact.save
-    return @sfcontact
+    puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + @sfcontact.Id
+    @sfcontact
   end
   
   def convio_update
@@ -95,6 +108,9 @@ class User < ActiveRecord::Base
   
   def convio_match
     @contact = convio_match_by_email || convio_match_by_detail
+    if @contact
+      puts "MATCHED CONVIO USER: " + @contact.FirstName
+    end
   end
   
   def local_sync #sync local data to match what convio has
@@ -115,7 +131,6 @@ class User < ActiveRecord::Base
   def convio_match_by_email
     #match a user account to a convio account with email address
     @contact = Contact.find_by_Email(self.email)
-    return @contact
   end
   
   def convio_match_by_detail
