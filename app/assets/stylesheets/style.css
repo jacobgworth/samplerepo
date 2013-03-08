@@ -1439,6 +1439,11 @@ h3.CTA {
     min-height: 240px;
 }
 
+.staff img {
+	width: 160px;
+	height: 124px;
+}
+
 .gift {
     float: left;
     width: 176px;
