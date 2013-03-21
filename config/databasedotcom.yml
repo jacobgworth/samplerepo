@@ -1,8 +1,8 @@
 # databasedotcom.yml
 ---
-client_secret: "6124701994660720688"
-client_id: "3MVG9QDx8IX8nP5SfDXgDDfBwGBG1ExFGGeZcZi7fdhrj47p6jtKr38QDPSe6R0MFwBLUoqUVJZujDIj4H0sm"
+client_secret: "3428008958368173267"
+client_id: "3MVG9QDx8IX8nP5SfDXgDDfBwGP2pLCj4mPtFEDpQocagk1J7TPDfQ_nx1vO.J4fKx9MLgmfSDWRBzCjkc3c_"
 host: login.salesforce.com
 username: 312@mohhaiti.org
-password: T00ShortT4KoI12uZgsYTyImD2O4SW5Q
+password: threetwelve275BMjS8GNe9TLoNMWxLW2g4P8
 verify_mode: OpenSSL::SSL::VERIFY_NONE
