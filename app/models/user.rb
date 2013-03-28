@@ -150,6 +150,7 @@ class User < ActiveRecord::Base
     if @contact
       puts "MATCHED CONVIO USER: " + @contact.FirstName
     end
+    return @contact
   end
   
   def local_sync #sync local data to match what convio has
