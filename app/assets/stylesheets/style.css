@@ -1436,7 +1436,12 @@ h3.CTA {
     padding-right: 10px;
     position: relative;
     margin-bottom: 40px;
-    min-height: 240px;
+    min-height: 246px;
+}
+
+.staff img {
+	width: 160px;
+	height: 124px;
 }
 
 .gift {

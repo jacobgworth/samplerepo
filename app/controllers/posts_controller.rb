@@ -60,6 +60,9 @@ class PostsController < ApplicationController
     @updates = Update.last(3).reverse
     @post = Post.find(params[:id])
     @title = @post.metatitle
+    if @title.empty?
+      @title = @post.title
+    end
     @meta = @post.metadescription
     @assets = @post.assets.all
     @categories = Category.joins(:posts).order("categoryname asc").uniq
