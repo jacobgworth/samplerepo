@@ -121,10 +121,10 @@ class User < ActiveRecord::Base
       :Computer_Networking__c => false,
       :Medical_Face_Sheet__c => false,
       :Copy_of_Diploma__c => false,
-      :Sync_to_CLO__c => false,
+      :Sync_to_CLO__c => true,
       :OwnerId => "005U0000000gMKq"
     )
-    @sfcontact.save
+    #@sfcontact.save
     puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + @sfcontact.Id
     @sfcontact
   end
