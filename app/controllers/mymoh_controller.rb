@@ -10,7 +10,8 @@ class MymohController < ApplicationController
   
   def index
       convio_id = current_user.convio_id || ""
-      @account = Contact.find_by_Id(convio_id)
+      puts "CONVIO ID: " + convio_id.to_s
+      @account = Contact.find_by_Id("#{convio_id}")
       unless @account == nil
         respond_to do | format |
           format.html { render :layout=>"homeLayout"}
