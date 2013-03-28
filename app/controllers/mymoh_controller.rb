@@ -116,10 +116,11 @@ class MymohController < ApplicationController
     
     #cannot traverse relationships with ActiveRecord here, so need to loop through participations
     #to find each trip & add to @trips array
-    @trips = []
+    #@trips = []
+    @trips = @trip_participations
     unless @trip_participations == nil
       @trip_participations.each do | tripp |
-        @trips << Trip__c.find_by_Id(tripp.Trip__c)
+        #@trips << Trip__c.find_by_Id(tripp.Trip__c)
       end
     end
     respond_to do |format|
@@ -128,7 +129,8 @@ class MymohController < ApplicationController
   end
   
   def tripshow
-    @trip = Trip__c.find_by_Id(params[:tripid])
+    #@trip = Trip__c.find_by_Id(params[:tripid])
+    @trip = Trip_Participation__c.find_by_Id(params[:tripid])
     
     #Find sponsorships--only finding the first one here
     @sponsorship = Child_Sponsorship__c.find_by_Sponsor__c(current_user.convio_id)
