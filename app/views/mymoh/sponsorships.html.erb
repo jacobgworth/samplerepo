@@ -12,7 +12,7 @@
 				<% @children.each do | child |%>
 					<ul>
 						<li>Child: <%= child.Name__c %><br>
-							ID: <%=child.Student_Code__c.to_int %><br>
+							ID: <%=child.Student_Code__c %><br>
 							<%= child.LastModifiedById.html_safe %><br>
 							Favorite Activity: <%= child.Favorite_Activity__c%><br>
 							Favorite Class: <%= child.Favorite_Class__c%><br>
@@ -32,7 +32,7 @@
 				<% @otherchildren.each do |child|%>
 						<li>
 							Child: <%= child.Name__c %><br>
-							ID: <%= child.Student_Code__c.to_int %><br>
+							ID: <%= child.Student_Code__c %><br>
 							<%=@photo = Picture__c.find_by_Child__c(child.Id).Photo__c.html_safe %><br>
 						</li>
 				<% end %>
