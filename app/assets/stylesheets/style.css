@@ -3133,3 +3133,49 @@ tr {
     padding: 20px 0 7px 0 !important;
     color: #0f5046 !important;
 }
+
+
+/****MY MOH STYLES****/
+
+.tabbar{margin-bottom: 20px;}
+.tabbar li{
+	display: inline-block;
+	background-color: #079367;
+	padding: 9px;
+	margin-right: 2px;
+	-webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -moz-border-radius-topleft: 8px;
+    -moz-border-radius-topright: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.tabbar li a{
+	color: #e4d4b9 !important;
+}
+.tabbar ul{
+	list-style: none;
+	margin-left: 0 !important;
+}
+.tab_border{
+	border: 4px solid #079367;
+}
+
+.loginWrapper {
+	background:url(/images/mymoh-signin-bg.jpg) top center no-repeat;
+	height:418px;
+}
+
+.loginLeft {
+	background:url(/images/mymoh-parchment.jpg) top center no-repeat;
+	float:left;
+	margin-left:30px;
+	width:439px;
+	height:3232px;
+}
+
+.loginRight {
+	float:right;
+	margin-right:30px;
+}
+}
