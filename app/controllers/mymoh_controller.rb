@@ -28,6 +28,12 @@ class MymohController < ApplicationController
     end
   end
   
+  def login
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"} 
+    end
+  end
+  
   def edit
     #for editing mymoh account details--syncs to convio
     @contact = Contact.find_by_Id(current_user.convio_id)
