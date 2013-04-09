@@ -437,7 +437,7 @@ class PageController < ApplicationController
       #Save contact to convio
       @sfcontact = create_convio_contact(@data[:lname], @data[:fname], @data[:email])
       @sfcontact = Contact.find_by_Id(@sfcontact.Id)
-      @sfcontact.MT_Prospect_Status__c = true
+      @sfcontact.MT_Prospect_Status__c = "Prospect"
       if (@data[:medical] == "on")
         @sfcontact.Medical_Trip_Prospect__c = true
       end
@@ -663,11 +663,11 @@ class PageController < ApplicationController
         @sponsorship = Child_Sponsorship__c.find_by_Sponsor__c(current_user.convio_id)
         @contact = Contact.find_by_Id(current_user.convio_id)
         @child = Child__c.find_by_Id(@sponsorship.Child__c)
-        @data[:childname] = @child.Name__c
-        @data[:childid] = @child.Student_Code__c.to_int
-        @data[:sponsorname] = current_user.first + " " + current_user.last
-        @data[:sponsoremail] = current_user.email
-        @data[:sponsorphone] = @contact.HomePhone
+        @data[:childname] = @child.Name__c || ""
+        @data[:childid] = @child.Student_Code__c || ""
+        @data[:sponsorname] = (current_user.first || "") + " " + (current_user.last || "")
+        @data[:sponsoremail] = current_user.email || ""
+        @data[:sponsorphone] = @contact.HomePhone || ""
       end
       respond_to do |format|
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
