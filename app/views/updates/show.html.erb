@@ -46,7 +46,7 @@
 <% end %>
 
 <%if @isadmin%>
-<%= link_to 'Edit', edit_update_path(@update) %> | <%= link_to 'Back', updates_path %>
+<%= link_to 'Edit', edit_update_path(@update) %> | <%= link_to 'Destroy', @update, confirm: 'Are you sure?', method: :delete %> | <%= link_to 'Back', updates_path %>
 <%end%>
 
 
