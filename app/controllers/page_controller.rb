@@ -426,14 +426,24 @@ class PageController < ApplicationController
     if !@fname.nil? && @fname != "" && !@comments.nil? && @comments != "" && !@fromaddress.nil? && @fromaddress != ""
       @isvalid = true
       @data = {
-        :fname => @fname, 
+        :fname => @fname,
+        :lname => "TESTING", 
         :fromaddress => @fromaddress, 
         :comments => @comments,
         :phone => @phone,
         :medical => @medical
       }
+      
+      #Save contact to convio
+      @sfcontact = create_convio_contact(@data[:lname], @data[:fname], @data[:email])
+      @sfcontact = Contact.find_by_Id(@sfcontact.Id)
+      @sfcontact.MT_Prospect_Status__c = true
+      if (@data[:medical] == "on")
+        @sfcontact.Medical_Trip_Prospect__c = true
+      end
+      @sfcontact.save
+      ContactUsMailer.take_a_trip(@data).deliver
       respond_to do |format|
-        ContactUsMailer.take_a_trip(@data).deliver
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       end 
     else
