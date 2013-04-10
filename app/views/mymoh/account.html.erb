@@ -1,27 +1,34 @@
-
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 
 	<div id="content" style="padding-top:50px;">
-		<div id="contentLeft560">
-			<h1><span class="eyebrow">MyMOH</span>
-			<br />
-			Account</h1>
-			
-			<ul>
-				<li>Name: <%= @account.Name %></li>
-				<li>Address: <%= @account.MailingStreet %></li>
-				<li>Phone: <%= @account.HomePhone %></li>
-				<li>Email: <%= @account.Email %></li>
-			</ul>	
-			<a href="/users/<%=current_user.id%>/edit">Edit your information</a>
-		</div>
-
-		<div id="contentRight300">
-			<%= render '/layouts/takeActionNav' %>
-		</div>
+		<h1>My MOH</h1>
+		<%= render 'layouts/mymohNav'%>
+		<h2><span class="eyebrow">Mission of Hope</span>
+		<br />
+		My Account</h2>
+		<p>Manage your personal information, name, address, spouse, login info and communication preferences.</p>
+		<div class="tanWrapper">
+		<h3 style="width:600px;">Your Information:</h3>
+		<p style="margin-top:-20px; margin-right:40px;" class="buttonSquareGreen alignRight"><a href="/users/<%= current_user.id%>/edit">Edit</a></p>
+		<div class="clearfix"></div>
+			<p><span class="alignLeft mymohLabel"><strong>Name: </strong></span> <span class="alignLeft"><%= @account.Name %></span></p>
+				<div class="clearfix"></div>
+			<p><span class="alignLeft mymohLabel"><strong>Address:</strong></span> <span class="alignLeft"><%= @account.MailingStreet %><br />City, State, Zip</span></p>
+				<div class="clearfix"></div>
+			<p><span class="alignLeft mymohLabel"><strong>Phone:</strong></span> <span class="alignLeft"><%= @account.HomePhone %></span></p>
+				<div class="clearfix"></div>
+			<p><span class="alignLeft mymohLabel"><strong>Email:</strong></span> <span class="alignLeft"><%= @account.Email %></span></p>
+		<div class="clearfix"></div>
 		
-			<div class="clearfix" style="height:40px;">
-				<!--x-->
-			</div>
-			</div>
+		<h3>Spouse:</h3>	
+				
+		<h3>Login:</h3>
+		<h3>Communication:</h3>
+		</div>
+	</div>
+
+	<div class="clearfix" style="height:40px;">
+		<!--x-->
+	</div>
+</div>
