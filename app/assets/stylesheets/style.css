@@ -3138,6 +3138,10 @@ tr {
 /****MY MOH STYLES****/
 
 .tabbar{margin-bottom: 20px;}
+.tabbar ul {
+	width:100%;
+	border-bottom:5px solid #079367;
+}
 .tabbar li{
     font-family: 'Montserrat', sans-serif;
 	display: inline-block;
@@ -3212,7 +3216,7 @@ tr {
 	margin-bottom:15px;
 	}
 	
-.loginRight .buttonSquareGreen a {
+.buttonSquareGreen a {
     background:#079367;
     padding: 8px;
     width:125px;
@@ -3224,4 +3228,19 @@ tr {
     -webkit-box-shadow: 3px 3px #0f483b;
     box-shadow: 3px 3px #0f483b;
     margin-top:10px;
+}
+
+.tanWrapper {
+	background-color:#C2B092;
+	padding:20px;
+	width:100%;
+}
+
+.tanWrapper h3 {
+	color:#0f483b !important;
+	padding-bottom:0;
+}
+
+.mymohLabel {
+	width:100px;
 }
