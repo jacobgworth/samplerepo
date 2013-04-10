@@ -8,6 +8,7 @@ gem 'rails', '3.2.11'
 #Salesforce?
 gem "databasedotcom"
 
+gem "newrelic_rpm"
 
 gem "mail", ">=2.1.3"
 
