@@ -65,6 +65,16 @@
 		<p class="clearfix"></p>
 		<img src="/assets/button-newsletter.png" alt="Subscribe to our newsletter" />
 		<div class="newsletterSignup">
+			
+		<form action="http://mohh.convio.net/site/Survey" method="POST" >
+			<input name="cons_email" class="newsletterinput" type="text"/>
+			<input type="hidden" name="cons_info_component" id="cons_info_component" value="t" />
+			<input type="hidden" name="pagewrap" value="n"/>
+			<input type="hidden" name="SURVEY_ID" id="SURVEY_ID" value="1162" />
+			<span style="display:none"><input type="text" name="denySubmit" id="denySubmit" value="" alt="" />Please leave this field empty</span>
+			<input type="submit" class="newsletterbutton" value="GO" name="ACTION_SUBMIT_SURVEY_RESPONSE"/>                
+		</form>
+<!--
 <form method="post" action="https://app.icontact.com/icp/signup.php" name="icpsignup" id="icpsignup1000" accept-charset="UTF-8" onsubmit="return verifyRequired1000();" >
 <input type="hidden" name="redirect" value="http://mohhaiti.org/newsletter_thank_you">
 <input type="hidden" name="errorredirect" value="http://www.icontact.com/www/signup/error.html">
@@ -79,6 +89,7 @@
     <input type="hidden" name="doubleopt" value="0">
 <input type="submit" class="newsletterbutton" name="Submit" value="GO">
 </form>
+-->
 <script type="text/javascript">
 
 var icpForm1000 = document.getElementById('icpsignup1000');
