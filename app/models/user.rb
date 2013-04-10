@@ -122,6 +122,7 @@ class User < ActiveRecord::Base
       :Medical_Face_Sheet__c => false,
       :Copy_of_Diploma__c => false,
       :Sync_to_CLO__c => true,
+      :MyMOH_Signup_Date__c => Date.today,
       :OwnerId => "005U0000000gMKq"
     )
     #@sfcontact.save
