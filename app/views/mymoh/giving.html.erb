@@ -8,15 +8,21 @@
 			<br />
 			Giving</h1>
 			
+			<h2>Your Account Summary</h2>
 			<ul>
-				<li>Lifetime Donation Amount: $<%= @account.cv__summary_lifetime_gift_amount__c.to_int || 0 %></li>
-				<li>Lifetime Number of Gifts: <%= @account.cv__summary_lifetime_gift_count__c.to_int || 0 %></li>
-				<li>This Year Donation Amount: $<%= @account.cv__summary_ytd_gift_amount__c.to_int || 0 %></li>
-				<li>This Year Number of Gifts: <%= @account.cv__summary_ytd_gift_count__c.to_int || 0 %></li>
-				<li>Last Year's Donation Amount: $<%= @account.cv__summary_last_year_gift_amount__c.to_int || 0 %></li>
-				<li>Last Year's Number of Gifts: <%= @account.cv__summary_last_year_gift_count__c.to_int || 0 %></li>
+				<li>Account: <%=@account.Account__c %></li>
+				<li>Lifetime Donations: $<%= @account.cv__summary_lifetime_gift_amount__c.to_int || 0 %></li>
+				<li>Address: <%= @account.MailingStreet %></li>
+				<li>Name: <%=@account.Name %></li>
+				<li>City, State: <%= @account.MailingCity %>, <%=@account.MailingState%></li>
+				<li>Phone: <%=@account.Phone %></li>
+				<li>Email: <%=@account.Email %></li>
+				<li>Lifetime Gifts: <%= @account.cv__summary_lifetime_gift_count__c.to_int || 0 %></li>
+				<li>YTD Donations: $<%= @account.cv__summary_ytd_gift_amount__c.to_int || 0 %></li>
+				<li>YTD Gifts: <%= @account.cv__summary_ytd_gift_count__c.to_int || 0 %></li>
+				<li>Last Year Donations: $<%= @account.cv__summary_last_year_gift_amount__c.to_int || 0 %></li>
+				<li>Last Year Gifts: <%= @account.cv__summary_last_year_gift_count__c.to_int || 0 %></li>
 				<li>Most Recent Donation Amount: $<%= @account.cv__Last_Gift_Amount__c.to_int || 0 %></li>
-				<li>Largest Donation Amount: $<%= @account.cv__Largest_Gift_Amount__c.to_int || 0 %></li>
 			</ul>	
 			
 			<% unless @recurring == nil %>
