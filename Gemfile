@@ -9,6 +9,8 @@ gem 'rails', '3.2.11'
 gem "databasedotcom"
 gem "databasedotcom-rails"
 
+gem "newrelic_rpm"
+
 gem "mail", ">=2.1.3"
 
 gem 'gmaps4rails'
