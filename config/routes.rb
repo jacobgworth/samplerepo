@@ -1,5 +1,8 @@
 Mohhaiti::Application.routes.draw do
   
+  resources :subscriptions
+
+
   match "/blog/feed.xml" => "posts#rss", :action => 'rss'
   
   match "/bluetoblock" => "projects#bluetoblock"
