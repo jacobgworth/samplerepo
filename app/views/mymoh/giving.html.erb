@@ -28,10 +28,13 @@
 			<% unless @recurring == nil %>
 			<h3>Recurring Gift</h3>
 			<ul>
+				<li>Description: <%= @recurring.Pledge_Description__c %></li>
 				<li>Amount: $<%= @recurring.cv__Recurring_Amount__c.to_int %></li>
 				<li>Start Date: <%= @recurring.cv__Start_Date__c %></li>
 				<li>Card Number: <%= @recurring.cv__Card_Number__c %></li>
 				<li>Card Type: <%= @recurring.cv__Credit_Card_Type__c %></li>
+				<li>Payment Type: <%= @recurring.cv__Payment_Type__c%></li>
+				<li>Next Payment Date: <%= @recurring.cv__Next_Payment_Date__c%></li>
 			</ul>
 			<% end %>
 		</div>
