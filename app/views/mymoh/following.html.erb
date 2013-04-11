@@ -1,0 +1,25 @@
+
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+
+	<div id="content" style="padding-top:50px;">
+		<div id="contentLeft560">
+			<h1><span class="eyebrow">MyMOH</span>
+			<br />
+			Following</h1>
+			
+			<% unless @villages.empty? %>	
+				<% @villages.each do |vil| %>
+					<%=vil.communityname %>
+				<% end %>
+			<% end %>
+		</div>
+
+		<div id="contentRight300">
+			<%= render '/layouts/takeActionNav' %>
+		</div>
+
+			<div class="clearfix" style="height:40px;">
+				<!--x-->
+			</div>
+			</div>

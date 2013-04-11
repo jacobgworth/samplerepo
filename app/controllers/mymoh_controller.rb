@@ -53,6 +53,14 @@ class MymohController < ApplicationController
     end
   end
   
+  def following
+    @villages = Subscription.where(:datatype => 'village', :user_id => current_user.id)
+    
+    respond_to do |format|
+      format.html { render :layout=>"homeLayout" }
+    end
+  end
+  
   def giving
     @account = Contact.find_by_Id(current_user.convio_id)
     #@account = Contact.find_by_Name("Lindsey Rubino")
