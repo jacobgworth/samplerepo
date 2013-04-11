@@ -40,8 +40,11 @@ class SubscriptionsController < ApplicationController
   # POST /subscriptions
   # POST /subscriptions.json
   def create
-    @subscription = Subscription.new(params[:subscription])
-
+    @subscription = Subscription.new()
+    @subscription[:datatype] = params["datatype"]
+    @subscription[:user_id] = params["user_id"]
+    @subscription[:sub_id] = params["sub_id"]
+    puts params[:subscription]
     respond_to do |format|
       if @subscription.save
         format.json { render json: @subscription, status: :created, location: @subscription }

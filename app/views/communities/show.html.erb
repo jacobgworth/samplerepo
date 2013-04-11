@@ -30,11 +30,13 @@
 							$.ajax({
 							  type: "POST",
 							  url: "/subscriptions.json",
-							  data: { type: "village", value: "<%=@community.id%>", user_id: "<%=@current_user.id%>" }
-							}).done(function( msg ) {
-								  console.log( "Data Saved: " + msg );
+							  data: { datatype: "village", sub_id: "<%=@community.id%>", user_id: "<%=@current_user.id%>" }
+							}).success(function( msg ) {
+								  console.log( "Successful save");
 								  $('.subscribe').text("Subscribed!");
 								  $('.subscribe').addClass("subscribed");
+							}).fail(function( msg ){
+								alert("There was an error processing your request.");
 							});
 						});
 					});
