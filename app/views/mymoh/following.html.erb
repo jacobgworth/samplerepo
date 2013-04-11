@@ -1,0 +1,30 @@
+
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+
+	<div id="content" style="padding-top:50px;">
+		<div id="contentLeft560">
+			<h1><span class="eyebrow">MyMOH</span>
+			<br />
+			Following</h1>
+			
+			<% unless @posts.empty? %>	
+				<% @posts.each do |post| %>
+					<%=post.title %><br/>
+				<% end %>
+			<% end %>
+			<% unless @updates.empty? %>	
+				<% @updates.each do |update| %>
+					<%=update.title %><br/>
+				<% end %>
+			<% end %>
+		</div>
+
+		<div id="contentRight300">
+			<%= render '/layouts/takeActionNav' %>
+		</div>
+
+			<div class="clearfix" style="height:40px;">
+				<!--x-->
+			</div>
+			</div>
