@@ -3146,7 +3146,7 @@ tr {
     font-family: 'Montserrat', sans-serif;
 	display: inline-block;
 	background-color: #079367;
-	color:#fff;
+	color:#E4D4B9;
 	padding: 9px;
 	margin-right: 1px !important;
 	-webkit-border-top-left-radius: 8px;
@@ -3157,7 +3157,7 @@ tr {
     border-top-right-radius: 8px;
 }
 .tabbar li a{
-	color: #fff !important;
+	color: #E4D4B9 !important;
 }
 .tabbar ul{
 	list-style: none;
@@ -3220,7 +3220,7 @@ tr {
     background:#079367;
     padding: 8px;
     width:125px;
-    color: #FFFFFF;
+    color:#E4D4B9;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
@@ -3243,4 +3243,64 @@ tr {
 
 .mymohLabel {
 	width:100px;
+}
+
+table.mygiving {
+	margin-bottom:40px;
+}
+
+table.mygiving tr {
+	padding:10px !important;
+}
+
+table.mygiving th {
+	background:#078E60;
+	text-align:center;
+	border:1px solid #078E60;
+	border-bottom:2px solid #E4D4B9;
+}
+
+table.mygiving th h2, table.mygiving th h3 {
+	color:#E4D4B9 !important;
+}
+
+table.mygiving th h3 {
+	text-align:left;
+	font-size:14px !important;
+	padding-bottom:15px !important;
+	padding-left:10px !important;
+	text-transform:none !important;
+}
+
+table.mygiving td.label {
+	width:30%;
+	text-align:left;
+	font-weight:bold;
+}
+table.mygiving span.label {
+	width:50%;
+	float:left;
+	text-align:left;
+	font-weight:bold;
+	display: block;
+}
+
+table.mygiving span.data {
+	display:block;
+	width:50%;
+	float:left;
+}
+
+table.mygiving td {
+	text-align:right;
+}
+
+
+table.mygiving td {
+    padding: 10px;
+    border: 2px solid #078E60;
+}
+
+table.mygiving tr {
+    /*border: 2px solid #078E60;*/
 }

@@ -1,49 +1,130 @@
-
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 
 	<div id="content" style="padding-top:50px;">
-		<div id="contentLeft560">
-			<h1><span class="eyebrow">MyMOH</span>
-			<br />
-			Giving</h1>
-			
-			<h2>Your Account Summary</h2>
-			<ul>
-				<li>Account: <%=@account.Account__c %></li>
-				<li>Lifetime Donations: $<%= @account.cv__summary_lifetime_gift_amount__c.to_int || 0 %></li>
-				<li>Address: <%= @account.MailingStreet %></li>
-				<li>Name: <%=@account.Name %></li>
-				<li>City, State: <%= @account.MailingCity %>, <%=@account.MailingState%></li>
-				<li>Phone: <%=@account.Phone %></li>
-				<li>Email: <%=@account.Email %></li>
-				<li>Lifetime Gifts: <%= @account.cv__summary_lifetime_gift_count__c.to_int || 0 %></li>
-				<li>YTD Donations: $<%= @account.cv__summary_ytd_gift_amount__c.to_int || 0 %></li>
-				<li>YTD Gifts: <%= @account.cv__summary_ytd_gift_count__c.to_int || 0 %></li>
-				<li>Last Year Donations: $<%= @account.cv__summary_last_year_gift_amount__c.to_int || 0 %></li>
-				<li>Last Year Gifts: <%= @account.cv__summary_last_year_gift_count__c.to_int || 0 %></li>
-				<li>Most Recent Donation Amount: $<%= @account.cv__Last_Gift_Amount__c.to_int || 0 %></li>
-			</ul>	
-			
-			<% unless @recurring == nil %>
-			<h3>Recurring Gift</h3>
-			<ul>
-				<li>Description: <%= @recurring.Pledge_Description__c %></li>
-				<li>Amount: $<%= @recurring.cv__Recurring_Amount__c.to_int %></li>
-				<li>Start Date: <%= @recurring.cv__Start_Date__c %></li>
-				<li>Card Number: <%= @recurring.cv__Card_Number__c %></li>
-				<li>Card Type: <%= @recurring.cv__Credit_Card_Type__c %></li>
-				<li>Payment Type: <%= @recurring.cv__Payment_Type__c%></li>
-				<li>Next Payment Date: <%= @recurring.cv__Next_Payment_Date__c%></li>
-			</ul>
-			<% end %>
-		</div>
 
-		<div id="contentRight300">
-			<%= render '/layouts/takeActionNav' %>
-		</div>
+		<h1>My MOH</h1>
+		<%= render 'layouts/mymohNav'%>
+		<h2><span class="eyebrow">Mission of Hope</span>
+		<br />
+		My Giving</h2>
 
-			<div class="clearfix" style="height:40px;">
-				<!--x-->
+		<p>
+			View your giving history, recurring gifts and scheduled givings.
+		</p>
+		<table class="mygiving" width="100%" border="0">
+			<tr>
+				<th colspan="3" class="label"><h2>Your Account Summary</h2></th>
+			</tr>
+			<tr>
+				<th colspan="3" class="label"><h3>Account Details</h3></th>
+			</tr>
+			<tr>
+				<td><span class="label">Account</span><span class="data"><%= @account.Account__c %></span></td>
+				<td><span class="label">Lifetime Donations</span>$<%= @account.cv__summary_lifetime_gift_amount__c.to_int || 0 %></span></td>
+				<td><span class="label">Address</span><span class="data"><%= @account.MailingStreet %></span></td>
+			</tr>
+			<tr>
+				<td><span class="label">Name</span><span class="data"><%= @account.Name %></span></td>
+				<td><span class="label">Lifetime Gifts</span><span class="data"><%= @account.cv__summary_lifetime_gift_count__c.to_int || 0 %></span></td>
+				<td><span class="label">Address 2</span><span class="data">?</span></td>
+			</tr>
+			<tr>
+				<td><span class="label">Most Recent Donation</span><span class="data">$<%= @account.cv__Last_Gift_Amount__c.to_int || 0 %></span></td>
+				<td><span class="label">Last Year's Donations</span><span class="data">$<%= @account.cv__summary_last_year_gift_amount__c.to_int || 0 %></span></td>
+				<td><span class="label">City, State, Zip</span><span class="data"><%= @account.MailingCity %>, <%= @account.MailingState%></span></td>
+			</tr>
+			<tr>
+				<td><span class="label">This Year's Donations</span><span class="data">$<%= @account.cv__summary_ytd_gift_amount__c.to_int || 0 %></span></td>
+				<td><span class="label">Last Year's Number of Gifts</span><span class="data"><%= @account.cv__summary_last_year_gift_count__c.to_int || 0 %></span></td>
+				<td><span class="label">Phone</span><span class="data"><%= @account.HomePhone %></span></td>
+			</tr>
+			<tr>
+				<td><span class="label">This Year's Number of Gifts</span><span class="data"><%= @account.cv__summary_ytd_gift_count__c.to_int || 0 %></span></td>
+				<td><span class="label">&nbsp;</span></td>
+				<td><span class="label">Email</span><span class="data"><%= @account.Email %></span></td>
+			</tr>
+		</table>
+
+		<% unless @recurring == nil %>
+		<table class="mygiving" width="100%" border="0">
+			<tr>
+				<th colspan="7"><h2>Your Recurring Gifts</h2></th>
+			</tr>
+			<tr>
+				<th><h3>Description</h3></th>
+				<th><h3>Recurring Amount</h3></th>
+				<th><h3>Last Gift Amount</h3></th>
+				<th><h3>Last Gift Date</h3></th>
+				<th><h3>Ahead/Behind</h3></th>
+				<th><h3>Next Gift Date</h3></th>
+				<th><h3>Gift Amount Needed</h3></th>
+			</tr>
+			<tr>
+				<td><%= @recurring.Pledge_Description__c %></td>
+				<td>$<%= @recurring.cv__Recurring_Amount__c.to_int %></td>
+				<td>?</td>
+				<td>?</td>
+				<td>?</td>
+				<td><%= @recurring.cv__Next_Payment_Date__c%></td>
+				<td>?</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		<div class="buttonWrapper" style="width:660px; margin:auto;">
+			<div class="buttonSquareOrange" style="width:280px; float:left; margin-right:50px;">
+				<a href="/">Gift Now</a>
 			</div>
+			<div class="buttonSquareOrange" style="width:280px; float:left;">
+				<a href="/">Schedule Giving</a>
 			</div>
+			<div class="clearfix" style="height:80px;"></div>
+		</div>
+		<% end %>
+		<table class="mygiving" width="100%" border="0">
+			<tr>
+				<th colspan="5"><h2>Your Giving History</h2></th>
+			</tr>
+			<tr>
+				<th valign="top"><h3>Date</h3></th>
+				<th valign="top"><h3>Type</h3></th>
+				<th valign="top"><h3>Designation</h3></th>
+				<th valign="top"><h3>Description</h3></th>
+				<th valign="top"><h3>Amount</h3></th>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		<div class="clearfix" style="height:40px;">
+			<!--x-->
+		</div>
+	</div>
