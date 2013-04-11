@@ -22,6 +22,25 @@
 				<br />
 				<%= @community.communityname %></h1>
 				<!--<p><b><%= @community.overviewtitle %></b></p>-->
+				<input type="hidden" class="subscribeData" name="village" value="<%=@community.id%>" />
+				<div class="subscribe">Follow</div>
+				<script>
+					$(document).ready(function() {
+						$('.subscribe').click(function() {
+							$.ajax({
+							  type: "POST",
+							  url: "/subscriptions.json",
+							  data: { datatype: "village", sub_id: "<%=@community.id%>", user_id: "<%=@current_user.id%>" }
+							}).success(function( msg ) {
+								  console.log( "Successful save");
+								  $('.subscribe').text("Subscribed!");
+								  $('.subscribe').addClass("subscribed");
+							}).fail(function( msg ){
+								alert("There was an error processing your request.");
+							});
+						});
+					});
+				</script>
 				<p>
 					<%= @community.overviewdesc.html_safe unless @community.overviewdesc.nil? %>
 				</p>
