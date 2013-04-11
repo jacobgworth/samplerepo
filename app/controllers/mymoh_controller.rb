@@ -54,8 +54,11 @@ class MymohController < ApplicationController
   end
   
   def following
-    @villages = Subscription.where(:datatype => 'village', :user_id => current_user.id)
-    
+    @village_subs = Subscription.where(:datatype => 'village', :user_id => current_user.id).map(&:sub_id)
+    puts "AAAAAAAAAAAAAA Village subs: " + @village_subs.to_s
+    #@posts = Post.joins(:communities).where("community_id=3").limit(3)
+    @posts = Post.joins(:communities).where(:communities => {:id => @village_subs}).limit(3).reverse
+    @updates = Update.joins(:communities).where(:communities => {:id => @village_subs}).limit(3).reverse
     respond_to do |format|
       format.html { render :layout=>"homeLayout" }
     end
