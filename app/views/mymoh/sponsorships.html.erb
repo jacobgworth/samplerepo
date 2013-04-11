@@ -2,106 +2,88 @@
 	<%= render 'layouts/navBar'%>
 
 	<div id="content" style="padding-top:50px;">
-		<div id="contentLeft560">
-			<h1><span class="eyebrow">MyMOH</span>
-			<br />
-			Sponsorships</h1>
-			
-			<h3>Children</h3>
-			<% unless @children.empty? %>
-				<% @children.each do | child |%>
-					<ul>
-						<li>Child: <%= child.Name__c %><br>
-							ID: <%=child.Student_Code__c %><br>
-							<%= child.LastModifiedById.html_safe %><br>
-							Favorite Activity: <%= child.Favorite_Activity__c%><br>
-							Favorite Class: <%= child.Favorite_Class__c%><br>
-							Wants to Be: <%= child.Future_Occupation__c%><br>
-							<a href="/write_my_child">Write to <%= child.First_Name__c %></a><br>
-							<a href="/gift_store">Give <%= child.First_Name__c %> a gift</a><br>
-						</li>
-					</ul>
-				<% end %>
-			<% else %>
-				<!--No Sponsorships-->	
-				<p>We didn't find any sponsorships associated with your account.</p>
-			<% end %>
-			
-			<h3>Sponsor These Guys!</h3>
-			<ul>
-				<% @otherchildren.each do |child|%>
-						<li>
-							Child: <%= child.Name__c %><br>
-							ID: <%= child.Student_Code__c %><br>
-							<%=@photo = Picture__c.find_by_Child__c(child.Id).Photo__c.html_safe %><br>
-						</li>
-				<% end %>
-			</ul>
-			
-			<% unless @related_result.nil? %>
-				<% if !@related_result.empty? %>
-					<div class="update560"></div>
-					<!--<h3 class="update560" style="font-size: 1em;">-->
-						<% @related_result.each do |related|%>
-								<div class="update560" style="line-height: 1.3em; height=120px;">
-									<h4 style="padding-bottom: 5px;"><a href="/updates/<%=related.id%>"><%=related.title%></a><br/></h4>
-									<% unless related.assets.last.nil? %>
-										<img src="<%=related.assets.last.asset.url(:thumb)%>" style="float:left; padding-right: 15px; padding-bottom: 5px;" />
-									<%end %>
-									<%= related.body %>
-								<div class="clearfix"><!--x--></div>
-								</div>
-						<% end%>
-					<!--</h3>-->
-				<% end %>
-			<%end%>
-		</div>
-
-		<div id="contentRight300">
-			<%= render '/layouts/takeActionNav' %>
-			
-			<% if @blogs.count != 0 %>
-				<div class="updatesWrapper" style="margin-top:20px;">
-					<h3>MOH in Action</h3>
-					<div class="speechBubble" style="position: absolute; top: -71px; right: 39px;"><p>latest blogs</p></div>
-					<%@blogs.each do |blog|%>
-						<div class="update300">
-						<p class="meta">	<% 
-								created = blog.postdate 
-							%>
-							<%= created.strftime("%b")%> <%=created.strftime("%d")%>, <%=created.strftime("%Y")%>
-						</p>
-						<div class="updatePost300">
-							<h3><a href="/blog/<%=blog.id%>"><%=blog.title%></a></h3>
-							<% if !blog.thumb_id.nil? %>
-								<% @thumbimg = Asset.find(blog.thumb_id) %>
-								<% if @thumbimg.nil? %>
-								  <% @thumbimg = blog.assets.first %>
-								<% end %>
-							<% else %>
-							  <% @thumbimg = blog.assets.first %>
-							<% end %>
-							<p>
-								<img src="<%=@thumbimg.asset.url(:thumb)%>" style="float:left; padding-right: 15px; padding-bottom: 5px;" />
-								<%=truncate(strip_tags(blog.body),:length=>110,:separator=>' ').html_safe %> <a href="/blog/<%=blog.id%>">Read Story &raquo;</a>
-							</p>
-							<div class="clearfix"><!--x---></div>
-							<% @cat = blog.categories.order("categoryname asc").limit(1)%>
-							<p class="meta">
-								<%unless @cat.count==0%>Related Category: <a href="/blog/?cid=<%=@cat.first.id%>"><%=@cat.first.categoryname%></a><%end%> <%if !blog.author.nil? && !blog.author.blank?%><%unless @cat.count==0%>| <%end%>Update from: <%=blog.author%><%end%>
-							</p>
-							
-						</div>
-						<div class="clearfix"></div>
-						</div>
-					<%end%>
-					<div class="updateNav"><a href="/updates">Read all updates from Mission of Hope &raquo;</a></div>
+		<h1>My MOH</h1>
+		<%= render 'layouts/mymohNav'%>
+		<h2><span class="eyebrow">Mission of Hope</span>
+		<br />
+		My Sponsorships</h2>
+		<p>
+			View your sponsored children. Send them gifts, write them a letter, and see what they’ve been up to!
+		</p>
+		<% unless @children.empty? %>
+		<% @children.each do | child |%>
+		<div class="sponsoredWrap">
+			<div class="sponsoredPhoto">
+				<%= child.LastModifiedById.html_safe %>
+			</div>
+			<div class="sponsoredProfile">
+				<h3><%= child.Name__c %></h3>
+				<p>
+					<strong>ID:</strong> <%= child.Student_Code__c %>
+				<p>
+					<strong>Favorite Activity:</strong> <%= child.Favorite_Activity__c%>
+					<br>
+					<strong>Favorite Class:</strong> <%= child.Favorite_Class__c%>
+					<br>
+					<strong>Wants to Be:</strong> <%= child.Future_Occupation__c%>
+				</p>
+				<div class="buttonSquareOrange" style="width: 200px; float:left; margin-right:20px;">
+					<a href="/write_my_child"><img src="/assets/icon-pencil.png" /> Write to <%= child.First_Name__c %></a>
 				</div>
-			<% end %>
-			
-		</div> <!-- end content right -->
+				<div class="buttonSquareOrange" style="width: 200px; float:left;">
+					<a href="/gift_store"><img src="/assets/icon-gift.png" /> Give <%= child.First_Name__c %> a gift</a>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+		<% end %>
+		<% else %>
+		<!--No Sponsorships-->
+		<p>
+			We didn't find any sponsorships associated with your account.
+		</p>
+		<% end %>
 
-			<div class="clearfix" style="height:40px;">
+		<div class="tanWrapper">
+			<div class="buttonSquareGreen alignRight">
+				<h3><a href="">Sponsor Another Child</a></h3>
+			</div>
+			<div class="sponsorChild">
+				<% @otherchildren.each do |child|%>
+				<div class="child">
+					<a href=""><%= @photo = Picture__c.find_by_Child__c(child.Id).Photo__c.html_safe %></a>
+				</div>
+				<% end %>
+			</div>
+			<div class="clearfix"></div>
+
+		</div>
+		<% unless @related_result.nil? %>
+		<% if !@related_result.empty? %>
+		<h2>What We've Been Up To Lately</h2>
+		<% @related_result.each do |related|%>
+		<div class="update960" style="line-height: 1.3em; height=120px;">
+We need dates on these, too.
+			<h4><a href="/updates/<%= related.id%>"><%= related.title%></a>
+			<br/>
+			</h4>
+			<% unless related.assets.last.nil? %>
+			<img src="<%= related.assets.last.asset.url(:thumb)%>" />
+			<%end %>
+			<%= related.body %>
+			<div class="clearfix">
 				<!--x-->
-			</div><!--end clearfix-->
+			</div>
+		</div>
+		<% end%>
+		<!--</h3>-->
+		<% end %>
+		<%end%>
 	</div>
+
+
+	<div class="clearfix" style="height:40px;">
+		<!--x-->
+	</div><!--end clearfix-->
+</div>

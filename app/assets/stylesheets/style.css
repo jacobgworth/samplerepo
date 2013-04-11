@@ -3304,3 +3304,62 @@ table.mygiving td {
 table.mygiving tr {
     /*border: 2px solid #078E60;*/
 }
+
+.sponsoredWrap {
+	width:960px;
+	margin-bottom:40px;
+}
+
+.sponsoredPhoto img {
+	float:left;
+	width:150px;
+	height:auto;
+	margin-right:40px;
+	border: 5px solid #F9F2E7;
+    -webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+    box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+}
+
+.sponsoredProfile {
+	float:left;
+}
+
+.sponsorChild {
+	float:left;
+}
+
+.child {
+	float:left;
+}
+
+.child img {
+	width: auto;
+	height: 125px;
+	margin:0 10px 10px 0;
+	border: 5px solid #F9F2E7;
+    -webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+    box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+}
+
+.update960 {
+	width:960px;
+	padding-bottom:20px;
+	border-bottom:1px dotted #0F483B;
+}
+
+.update960 h4 {
+	color: #079367;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    margin-top: 20px;
+    padding-bottom:10px;
+}
+
+.update960 img {
+	border: 2px solid #C2B092;
+	float:left;
+	margin:0 20px 20px 0;
+}
+}
