@@ -55,8 +55,11 @@ class MymohController < ApplicationController
   
   def following
     @village_subs = Subscription.where(:datatype => 'village', :user_id => current_user.id).map(&:sub_id)
-    puts "AAAAAAAAAAAAAA Village subs: " + @village_subs.to_s
+    @project_subs = Subscription.where(:datatype => 'project', :user_id => current_user.id).map(&:sub_id)
     #@posts = Post.joins(:communities).where("community_id=3").limit(3)
+    @villages = Village.where(:id => @village_subs)
+    @projects = Project.where(:id => @project_subs)
+    
     @posts = Post.joins(:communities).where(:communities => {:id => @village_subs}).limit(3).reverse
     @updates = Update.joins(:communities).where(:communities => {:id => @village_subs}).limit(3).reverse
     respond_to do |format|

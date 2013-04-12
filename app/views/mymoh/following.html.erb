@@ -12,32 +12,79 @@
 			View the latest news and updates from the projects and villages you are following.
 		</p>
 		<div id="contentLeft560">
-			<h3>Village or Project Name Goes Here</h3>
-			<div class="update560">
-					<div class="updateDate">
-						<span class="month">Jan</span>
-						<br />
-						<span class="date">14</span>
-						<br />
-						<span class="year">2013</span>
+			<h3>Blog Posts</h3>
+			<% unless @posts.empty? %>	
+				<% @posts.each do |post| %>
+					<div class="update560">
+						<div class="updateDate">
+							<span class="month"><%=post.postdate.strftime('%b')%></span>
+							<br />
+							<span class="date"><%=post.postdate.strftime('%m')%></span>
+							<br />
+							<span class="year"><%=post.postdate.strftime('%Y')%></span>
+						</div>
+						<div class="updatePost560">
+							<h4><a href="/blog/<%=post.id%>"><%=post.title%></a></h4>
+							<p>
+								 <a href="/blog/<%=post.id%>">Read More &raquo;</a>
+							</p>
+							<p class="meta">
+								 Update from: <%=post.author%></p>
+						</div>
+						<div class="clearfix"></div>
 					</div>
-					<div class="updatePost560">
-						<h4><a href="/updates/67">Bill Clinton Foundation Partners With MOH!</a></h4>
-						<p>
-							Saturday President Clinton visited the Leveque community in Haiti, a village just outside of Port... <a href="/updates/67">Read More &raquo;</a>
-						</p>
-						<p class="meta">
-							 Update from: Lindsey Rubino</p>
+				<% end %>
+			<% else %>
+				Couldn't find any relevant blog posts.
+			<% end %>
+			<h3>Updates</h3>
+			<% unless @updates.empty? %>	
+				<% @updates.each do |post|%>
+					<div class="update560">
+						<div class="updateDate">
+							<span class="month"><%=post.postdate.strftime('%b')%></span>
+							<br />
+							<span class="date"><%=post.postdate.strftime('%m')%></span>
+							<br />
+							<span class="year"><%=post.postdate.strftime('%Y')%></span>
+						</div>
+						<div class="updatePost560">
+							<h4><a href="/blog/<%=post.id%>"><%=post.title%></a></h4>
+							<p>
+								 <a href="/blog/<%=post.id%>">Read More &raquo;</a>
+							</p>
+							<p class="meta">
+								 Update from: <%=post.author%></p>
+						</div>
+						<div class="clearfix"></div>
 					</div>
-					<div class="clearfix"></div>
-				</div>
+				<% end %>
+			<% else %>
+				We couldn't find any relevant updates.
+			<% end %>
+				
 		</div>
 
 		<div id="contentRight300">
 			<h2>Projects You Are Following</h2>
 			<ul class="aboutUsNav">
-				<li><a href="">Project name &raquo;</a></li>
-				
+				<% unless @projects.empty? %>
+					<% @projects.each do |proj| %>
+						<li><a href="/projects?cid=<%=proj.id%>"><%=proj.communityname%> &raquo;</a></li>
+					<% end %>
+				<% else %>
+					<li>Didn't find any projects</li>
+				<% end %>
+			</ul>
+			<h2>Villages You Are Following</h2>
+			<ul class="aboutUsNav">
+				<% unless @villages.empty? %>
+					<% @villages.each do |vil| %>
+						<li><a href="/villages/<%=vil.id%>"><%=vil.communityname%> &raquo;</a></li>
+					<% end %>
+				<% else %>
+					<li>Didn't find any villages</li>
+				<% end %>
 			</ul>
 		</div>
 
