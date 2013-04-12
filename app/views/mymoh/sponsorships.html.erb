@@ -52,7 +52,7 @@
 			<div class="sponsorChild">
 				<% @otherchildren.each do |child|%>
 				<div class="child">
-					<a href=""><%= @photo = Picture__c.find_by_Child__c(child.Id).Photo__c.html_safe %></a>
+					<a href="http://mohhaiti.force.com/sponsorship/<%=child.Id%>"><%= @photo = Picture__c.find_by_Child__c(child.Id).Photo__c.html_safe %></a>
 				</div>
 				<% end %>
 			</div>
