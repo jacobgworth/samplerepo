@@ -3,12 +3,17 @@
 	<%= render 'layouts/navBar'%>
 
 	<div id="content" style="padding-top:50px;">
-		<div id="contentLeft560">
-			<h1><span class="eyebrow">MyMOH</span>
-			<br />
-			Trip</h1>
+		<h1>My MOH</h1>
+		<%= render 'layouts/mymohNav'%>
+		<h2><span class="eyebrow">Mission of Hope</span>
+		<br />
+		My Mission Trips</h2>
+		<p>
+			View mission trips you've taken and mission trips coming up!
+		</p>
+
 			
-			<h4><%=@trip.Trip_Name__c%></h4>
+			<h3><%=@trip.Trip_Name__c%> Trip Name isn't working</h3>
 			<% #if @trip.Start_Date__c > Date.today %>	
 			<% if Date.tomorrow > Date.today %>	
 				<!-- This Trip hasn't started yet-->
@@ -34,12 +39,8 @@
 				<p>Turn your Mission Trip fundraising page into a MOH fundraising page link</p>
 		    <% end %>
 			
-		</div>
 
-		<div id="contentRight300">
-			<%= render '/layouts/takeActionNav' %>
-		</div>
-
+		
 			<div class="clearfix" style="height:40px;">
 				<!--x-->
 			</div>
