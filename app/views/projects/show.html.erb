@@ -33,17 +33,17 @@
 <div class="contentHeader">
 			<div class="contentHeaderLeft">
 				<h1><span class="eyebrow">Mission of Hope Haiti Project</span>
-				<br />
+				<br/>
 				<%= @project.projectname %></h1>
 				<input type="hidden" class="subscribeData" name="project" value="<%=@project.id%>" />
 					<% if !@subscribed || @subscribed.empty? %>
 						<div class="subscribe buttonSquareOrange alignRight" style="margin-top:40px;">
 						<a href="#">Follow this project</a>
 					<% else %>
-					<div class="unsubscribe buttonSquareOrange alignRight" style="margin-top:40px;">
+						<div class="unsubscribe buttonSquareOrange alignRight" style="margin-top:40px;">
 						<a href="#">Unfollow this project</a>
 					<% end %>
-				</div>
+					</div>
 				<script>
 					$(document).ready(function() {
 						$('.subscribe').click(function() {
