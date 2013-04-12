@@ -3,25 +3,42 @@
 	<%= render 'layouts/navBar'%>
 
 	<div id="content" style="padding-top:50px;">
+		<h1>My MOH</h1>
+		<%= render 'layouts/mymohNav'%>
+		<h2><span class="eyebrow">Mission of Hope</span>
+		<br />
+		What's Going On With Us</h2>
+		<p>
+			View the latest news and updates from the projects and villages you are following.
+		</p>
 		<div id="contentLeft560">
-			<h1><span class="eyebrow">MyMOH</span>
-			<br />
-			Following</h1>
-			
-			<% unless @posts.empty? %>	
-				<% @posts.each do |post| %>
-					<%=post.title %><br/>
-				<% end %>
-			<% end %>
-			<% unless @updates.empty? %>	
-				<% @updates.each do |update| %>
-					<%=update.title %><br/>
-				<% end %>
-			<% end %>
+			<h3>Village or Project Name Goes Here</h3>
+			<div class="update560">
+					<div class="updateDate">
+						<span class="month">Jan</span>
+						<br />
+						<span class="date">14</span>
+						<br />
+						<span class="year">2013</span>
+					</div>
+					<div class="updatePost560">
+						<h4><a href="/updates/67">Bill Clinton Foundation Partners With MOH!</a></h4>
+						<p>
+							Saturday President Clinton visited the Leveque community in Haiti, a village just outside of Port... <a href="/updates/67">Read More &raquo;</a>
+						</p>
+						<p class="meta">
+							 Update from: Lindsey Rubino</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
 		</div>
 
 		<div id="contentRight300">
-			<%= render '/layouts/takeActionNav' %>
+			<h2>Projects You Are Following</h2>
+			<ul class="aboutUsNav">
+				<li><a href="">Project name &raquo;</a></li>
+				
+			</ul>
 		</div>
 
 			<div class="clearfix" style="height:40px;">
