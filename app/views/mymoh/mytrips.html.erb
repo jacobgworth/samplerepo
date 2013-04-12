@@ -7,20 +7,19 @@
 		<h2><span class="eyebrow">Mission of Hope</span>
 		<br />
 		My Mission Trips</h2>
-		<p>
-			View mission trips you've taken and mission trips coming up!
-		</p>
-
+		
 		<% unless @trips.empty? %>
 		<!--This person has mission trips to display -->
-		<div class="missionTripList">
-		<ul>
-			<% @trips.each do |trip|%>
-			<li>
-				<a href="/mymoh/mytrips/<%= trip.Id%>"><%= trip.Name%></a>
-			</li>
-			<% end %>
-		</ul>
+		<div class="tanWrapper">
+			<div class="missionTripList">
+				
+					<% @trips.each do |trip|%>
+				
+						<h4><a href="/mymoh/mytrips/<%= trip.Id%>"><%= trip.Name%></a></h4>
+				
+					<% end %>
+				</ul>
+			</div>
 		</div>
 		<% else %>
 		<!-- Person not involved with any trips -->

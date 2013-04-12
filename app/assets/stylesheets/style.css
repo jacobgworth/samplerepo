@@ -3232,13 +3232,20 @@ tr {
 
 .tanWrapper {
 	background-color:#C2B092;
-	padding:20px;
-	width:100%;
+	padding:20px 40px;
+	width:880px;
+	margin-bottom:20px;
 }
 
 .tanWrapper h3 {
 	color:#0f483b !important;
 	padding-bottom:0;
+}
+
+.tanWrapper h4 {
+	color:#0f483b !important;
+	font-size:1.2em;
+	padding:10px 0;
 }
 
 .mymohLabel {
@@ -3371,4 +3378,58 @@ table.mygiving tr {
 	list-style:none;
 	padding:10px 0;
 	border-bottom:1px solid #C2B092;
+}
+
+ul.checklist {
+	list-style:none;
+	margin:20px 0;
+	padding:20px 0;
+}
+
+ul.checklist li {
+	list-style:none;
+	background:url(/assets/list-arrow.png) left top no-repeat;
+	padding:0px 0 20px 30px !important;
+	/*font-family: 'Montserrat', sans-serif;*/
+    font-size: 1.1em;
+    line-height:1.2em;
+    
+}
+
+h3.myMOHRight  {
+	border-bottom:3px solid #078E60;
+	padding-bottom:5px;
+	color:#078E60 !important;
+	margin-bottom:15px;
+	font-size:1.2em !important;
+}
+
+.bookWrapper {
+	margin:20px 0;
+	padding:20px 0;
+	border-bottom:1px dotted #0F483B;
+}
+
+.bookWrapper.last {
+	border-bottom:none;
+}
+
+.bookPhoto {
+	float:left;
+	
+}
+
+.bookPhoto img {
+	width: 125px;
+	height: auto;
+	margin:0 20px 20px 0;
+	border: 5px solid #F9F2E7;
+    -webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+    box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+}
+
+.content .bookData {
+	float:right;
+
 }
