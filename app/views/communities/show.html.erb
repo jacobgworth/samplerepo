@@ -18,12 +18,12 @@
 		</div>
 		<div class="contentHeader">
 			<div class="contentHeaderLeft">
-				<h1><span class="eyebrow">Village Profile</span>
+				<h1 class="alignLeft"><span class="eyebrow">Village Profile</span>
 				<br />
 				<%= @community.communityname %></h1>
 				<!--<p><b><%= @community.overviewtitle %></b></p>-->
 				<input type="hidden" class="subscribeData" name="village" value="<%=@community.id%>" />
-				<div class="subscribe">Follow</div>
+				<div class="subscribe buttonSquareOrange alignRight" style="margin-top:40px;"><a href="#">Follow this village</a></div>
 				<script>
 					$(document).ready(function() {
 						$('.subscribe').click(function() {
@@ -41,6 +41,7 @@
 						});
 					});
 				</script>
+				<div class="clearfix";"></div>
 				<p>
 					<%= @community.overviewdesc.html_safe unless @community.overviewdesc.nil? %>
 				</p>
