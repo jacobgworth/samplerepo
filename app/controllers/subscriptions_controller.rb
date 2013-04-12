@@ -73,8 +73,9 @@ class SubscriptionsController < ApplicationController
   # DELETE /subscriptions/1
   # DELETE /subscriptions/1.json
   def destroy
-    @subscription = Subscription.find(params[:id])
-    @subscription.destroy
+    @subscription = Subscription.destroy_all(:sub_id => params[:sub_id], :user_id => params[:user_id], :datatype => params[:datatype])
+    #@subscription.destroy
+    
 
     respond_to do |format|
       format.html { redirect_to subscriptions_url }

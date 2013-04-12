@@ -61,12 +61,12 @@
 				<th><h3>Gift Amount Needed</h3></th>
 			</tr>
 			<tr>
-				<td><%= @recurring.Pledge_Description__c %></td>
+				<td><%= @recurring.cv__Recurrence_Description__c || "N/A"%></td>
 				<td>$<%= @recurring.cv__Recurring_Amount__c.to_int %></td>
-				<td>?</td>
-				<td>?</td>
-				<td>?</td>
-				<td><%= @recurring.cv__Next_Payment_Date__c%></td>
+				<td>$<%= @recurring.cv__Last_Payment_Amount__c.to_int%></td>
+				<td><%= @recurring.cv__Last_Payment_Date__c%></td>
+				<td><%= @recurring.No_of_Months_Paid_Ahead__c%></td>
+				<td><%= @recurring.cv__Next_Payment_Date__c || "N/A"%></td>
 				<td>?</td>
 			</tr>
 			<tr>

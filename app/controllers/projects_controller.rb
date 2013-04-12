@@ -83,6 +83,7 @@ class ProjectsController < ApplicationController
     @category = @project.categories.first
     @updates = @project.updates.last(3).reverse #Update.last(3).reverse
     @posts = @project.posts.order(:postdate).reverse_order.last(3)
+    @subscribed = Subscription.where(:sub_id => @project.id, :user_id => current_user.id, :datatype => 'project')
     @fundpercent = 0
     if !@project.fundsneeded.nil? && @project.fundsneeded > 0
       @fundpercent = (@project.fundsraised/@project.fundsneeded) * 100.00
