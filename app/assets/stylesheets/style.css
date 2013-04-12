@@ -3246,6 +3246,7 @@ tr {
 	color:#0f483b !important;
 	font-size:1.2em;
 	padding:10px 0;
+	
 }
 
 .mymohLabel {
@@ -3432,4 +3433,10 @@ h3.myMOHRight  {
 .content .bookData {
 	float:right;
 
+}
+.greenWrapper {
+	background-color:#078E60;
+	padding:20px 40px;
+	width:480px;
+	margin:20px 0;
 }

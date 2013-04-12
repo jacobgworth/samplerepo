@@ -7,11 +7,12 @@
 		<h2><span class="eyebrow">Mission of Hope</span>
 		<br />
 		My Mission Trips</h2>
+		<% #if @trip.Start_Date__c > Date.today %>
+		<% if Date.today > Date.tomorrow %>
+		<!-- This Trip hasn't started yet-->
+
 		<div class="tanWrapper">
-			<h3><!--<%= @trip.Trip_Name__c%>--><%=@trip.Name%></h3>
-			<% #if @trip.Start_Date__c > Date.today %>
-			<% if Date.today > Date.tomorrow %>
-			<!-- This Trip hasn't started yet-->
+			<h3><!--<%= @trip.Trip_Name__c%>--><%= @trip.Name%></h3>
 			<div class="alignLeft">
 				<h4>Trip Starts: <%= Date.tomorrow%></h4>
 				<h4>Trip Ends: <%= Date.tomorrow%></h4>
@@ -306,34 +307,9 @@
 			<!--<p>
 			Tell <a href="mailto:mail@contact.email">main@contact.email</a> that you sponsor <%= @child.Name %> so you can meet them on your trip!
 			</p>-->
-			<% end %>
-			<% else %>
-			<!-- This Trip started already-->
-			<p>
-				Started <%= Date.today %>
-			</p>
-			<div class="tanWrapper">
-				<p>
-					Thank you message
-				</p>
-			</div>
-			<p>
-				We are so thankful you were able to join us in Haiti and partner with us to bring life
-				transformation to the people of Haiti. Now that you’ve returned home, our hope is
-				that God has moved your heart and that you’ll continue to work with us to see the
-				Gospel brought to every man, woman & child in Haiti!
-			</p>
-			<p>
-				Survey link
-			</p>
-			<p>
-				Share your experience link
-			</p>
-			<p>
-				Turn your Mission Trip fundraising page into a MOH fundraising page link
-			</p>
-			<% end %>
+
 		</div>
+
 		<div id="contentRight300">
 			<h3 class="myMOHRight">Important Downloads</h3>
 			<div class="rightBox">
@@ -387,6 +363,100 @@
 				<div class="clearfix"></div>
 			</div>
 		</div>
+		<% end %>
+		<% else %>
+
+		<!-- This Trip started already-->
+		<div class="tanWrapper">
+			<h3 style="display:none;"><!--<%= @trip.Trip_Name__c%>--><%= @trip.Name%></h3>
+			<p style="display: none;">
+				<strong>Trip Date:</strong> <%= Date.today %>
+			</p>
+			<h4 style="line-height: 1.5em;"> We are so thankful you were able to join us in Haiti and partner with us to bring life
+			transformation to the people of Haiti. Now that you’ve returned home, our hope is
+			that God has moved your heart and that you’ll continue to work with us to see the
+			Gospel brought to every man, woman & child in Haiti! </h4>
+		</div>
+		<div id="contentLeft560">
+			<h3 style="padding-bottom:20px;">HOW YOU CAN PARTNER WITH MOH</h3>
+
+			<img class="alignLeft" src="/assets/icon-fundraising.png" />
+			<h4>Start a Fundraising Page</h4>
+			<div class="clearfix"></div>
+
+			<p>
+				God probably spoke to your heart in many different ways while you were in Haiti.
+				You may have been touched by playing with the children at the Village of Hope
+				orphanage or inspired by seeing the ladies at 3 Cords find new hope through having
+				meaningful employment. By starting a fundraising page, you can help us continue
+				to bring new hope to the people of Haiti. Choose a ministry or project that you’re
+				passionate about and get started today!
+			</p>
+			<div class="buttonSquareOrange" style="width:300px;">
+				<a href="http://mohh.convio.net/site/TR?fr_id=1060&pg=entry">Start your fundraising page now!</a>
+			</div>
+			<img src="/assets/contentDiv.png" width="560px"/>
+
+			<h4>Sponsor a Child</h4>
+
+			<p>For just $35/month, you can help provide a child with Nutrition, Education & Hope
+			for a Future!</p>
+			<div class="buttonSquareOrange" style="width:300px;">
+				<a href="http://www.mohhaiti.org/child-
+				sponsorship">Sponsor a child now!</a>
+			</div>
+			<img src="/assets/contentDiv.png" width="560px"/>
+
+			<h4>Become a Partner of Hope</h4>
+
+			USE POH BRANDING LOGO
+			<p>Partners of Hope are individuals who commit to donating to Mission of Hope's
+			general fund on a recurring basis. Donations to this fund are used where and when
+			the money is most needed. Essential to our daily operations, Partners of Hope also
+			enable MOH to be responsive and efficient in our efforts when unexpected needs
+			arise in our community.</p>
+			<div class="buttonSquareOrange" style="width:300px;">
+				<a href="">Partner with Us</a>
+			</div>
+			<img src="/assets/contentDiv.png" width="560px"/>
+			
+		</div>
+
+		<div id="contentRight300">
+			<h3 class="myMOHRight">AFTER YOUR TRIP ACTION ITEMS</h3>
+
+			<div class="rightBox">
+				<h4>Tell Us How Your Trip Was</h4>
+			<p>We want to know what you thought about your mission trip with Mission of Hope,
+			Haiti. This helps us continue to develop and improve our Mission Trips Program.</p>
+			Take the survey now > BUTTON link to survey to be provided
+			</div>
+
+			<div class="rightBox">
+				<h4>Share Your Experience With Others</h4>
+
+			<p>While you were in Haiti, we know that you experienced some pretty astounding
+			“God-Moments”. We want to hear about them and so do others! Take time to share
+			them right now while the memories are fresh!</p>
+			Share your experience now > BUTTON link to http://www.mohhaiti.org/
+			experiences
+			</div>
+
+			<div class="rightBox">
+				<h4>Share Your Photos</h4>
+
+			<p>Mission of Hope is always developing new materials to help our supporters see
+			the Life Transformation happening in Haiti. If you are a professional or amateur
+			photographer, and you captured the beauty of Haiti’s people while staying with
+			us, please consider sharing your photos with MOH for use in our web and print
+			materials. You can share your photos by joining our Flickr group and uploading your
+			photos!</p>
+			Upload your photos > Button link to: http://www.flickr.com/groups/
+			mohsnapback/
+			</div>
+
+		</div>
+		<% end %>
 		<div class="clearfix" style="height:40px;">
 			<!--x-->
 		</div>
