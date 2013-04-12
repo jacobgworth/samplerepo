@@ -64,8 +64,14 @@
 		<h2>What We've Been Up To Lately</h2>
 		<% @related_result.each do |related|%>
 		<!--time: it's month, day, year -->
-		<%=related.postdate.strftime("%b")%> <%=related.postdate.strftime("%d")%>, <%=related.postdate.strftime('%Y')%>
+		<!--<%=related.postdate.strftime("%b")%> <%=related.postdate.strftime("%d")%>, <%=related.postdate.strftime('%Y')%>-->
 		<div class="update960" style="line-height: 1.3em; height=120px;">
+			<div class="updateDate">
+			<span class="month"><%=related.postdate.strftime("%b")%></span><br />
+			<span class="date"><%=related.postdate.strftime("%d")%></span><br />
+			<span class="year"><%=related.postdate.strftime('%Y')%></span>
+			</div>
+			<div class="updatePost960">
 			<h4><a href="/updates/<%= related.id%>"><%= related.title%></a> 
 			<br/>
 			</h4>
@@ -73,6 +79,7 @@
 			<img src="<%= related.assets.last.asset.url(:thumb)%>" />
 			<%end %>
 			<%= related.body %>
+			</div>
 			<div class="clearfix">
 				<!--x-->
 			</div>
