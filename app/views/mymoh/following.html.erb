@@ -70,7 +70,7 @@
 			<ul class="aboutUsNav">
 				<% unless @projects.empty? %>
 					<% @projects.each do |proj| %>
-						<li><a href="/projects?cid=<%=proj.id%>"><%=proj.communityname%> &raquo;</a></li>
+						<li><a href="/projects?cid=<%=proj.id%>"><%=proj.projectname%> &raquo;</a></li>
 					<% end %>
 				<% else %>
 					<li>Didn't find any projects</li>

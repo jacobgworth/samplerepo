@@ -35,6 +35,50 @@
 				<h1><span class="eyebrow">Mission of Hope Haiti Project</span>
 				<br />
 				<%= @project.projectname %></h1>
+				<input type="hidden" class="subscribeData" name="project" value="<%=@project.id%>" />
+					<% if !@subscribed || @subscribed.empty? %>
+						<div class="subscribe buttonSquareOrange alignRight" style="margin-top:40px;">
+						<a href="#">Follow this project</a>
+					<% else %>
+					<div class="unsubscribe buttonSquareOrange alignRight" style="margin-top:40px;">
+						<a href="#">Unfollow this project</a>
+					<% end %>
+				</div>
+				<script>
+					$(document).ready(function() {
+						$('.subscribe').click(function() {
+							url = "/subscriptions.json";
+							method = "POST";
+							submitSubscription(url, method);
+						});
+						$('.unsubscribe').click(function() {
+							url = "/subscriptions/<%=@project.id%>.json";
+							method = "DELETE";
+							submitSubscription(url, method);
+						});
+							
+						function submitSubscription(url, method) {
+							$.ajax({
+							  type: 'POST',
+							  url: url,
+							  data: { datatype: "project", sub_id: "<%=@project.id%>", user_id: "<%=@current_user.id%>", _method: method }
+							}).success(function( msg ) {
+								  console.log( "Successful: " + url);
+								  if($(".subscribe").length > 0) {
+									  $('.subscribe').text("Unfollow this project");
+									  $('.subscribe').addClass("unsubscribe");
+									  $('.subscribe').removeClass("subscribe");
+								  } else if ($('.unsubscribe').length > 0) {
+									  $('.unsubscribe').text("Follow this project");
+									  $('.unsubscribe').addClass("subscribe");
+									  $('.unsubscribe').removeClass("unsubscribe");
+								  }
+							}).fail(function( msg ){
+								alert("There was an error processing your request.");
+							});
+						}
+					});
+				</script>
 				<p>
 					<%= simple_format(@project.description) %>
 				</p>
