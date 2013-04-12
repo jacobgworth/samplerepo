@@ -43,7 +43,7 @@ class UsersController < ApplicationController
       #@contact = Contact.new
 
       respond_to do |format|
-        format.html # new.html.erb
+        format.html { render :layout => "homeLayout"}# new.html.erb
         format.json { render json: @user }
       end
   end
@@ -55,6 +55,10 @@ class UsersController < ApplicationController
       @contact = Contact.find(@user.convio_id)
       if (@contact == nil)
         @contact = Contact.new
+      end
+      respond_to do |format|
+        puts "GOT HERE HER HE REHERHEHERHEHREHHERHEHHERHEHRHERE"
+        format.html { render :layout => "homeLayout" }
       end
     else
       respond_to do |format|
