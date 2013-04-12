@@ -63,9 +63,10 @@
 		<% if !@related_result.empty? %>
 		<h2>What We've Been Up To Lately</h2>
 		<% @related_result.each do |related|%>
+		<!--time: it's month, day, year -->
+		<%=related.postdate.strftime("%b")%> <%=related.postdate.strftime("%d")%>, <%=related.postdate.strftime('%Y')%>
 		<div class="update960" style="line-height: 1.3em; height=120px;">
-We need dates on these, too.
-			<h4><a href="/updates/<%= related.id%>"><%= related.title%></a>
+			<h4><a href="/updates/<%= related.id%>"><%= related.title%></a> 
 			<br/>
 			</h4>
 			<% unless related.assets.last.nil? %>
