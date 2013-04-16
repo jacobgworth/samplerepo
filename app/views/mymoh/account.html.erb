@@ -14,7 +14,7 @@
 		<div class="clearfix"></div>
 			<p><span class="alignLeft mymohLabel"><strong>Name: </strong></span> <span class="alignLeft"><%= @account.Name %></span></p>
 				<div class="clearfix"></div>
-			<p><span class="alignLeft mymohLabel"><strong>Address:</strong></span> <span class="alignLeft"><%= @account.MailingStreet %><br />City, State, Zip</span></p>
+			<p><span class="alignLeft mymohLabel"><strong>Address:</strong></span> <span class="alignLeft"><%= @account.MailingStreet %><br /><%=@account.MailingCity %>, <%=@account.MailingState %>, <%=@account.MailingPostalCode %></span></p>
 				<div class="clearfix"></div>
 			<p><span class="alignLeft mymohLabel"><strong>Phone:</strong></span> <span class="alignLeft"><%= @account.HomePhone %></span></p>
 				<div class="clearfix"></div>
