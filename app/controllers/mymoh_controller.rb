@@ -72,7 +72,8 @@ class MymohController < ApplicationController
     @account = Contact.find_by_Id(current_user.convio_id)
     #@account = Contact.find_by_Name("Lindsey Rubino")
     dbdc_client.materialize("cv__Recurring_Gift__c")
-    @recurring = Cv__Recurring_Gift__c.find_by_cv__Contact__c(@account.Id)
+    @recurring = Cv__Recurring_Gift__c.find_all_by_cv__Contact__c(@account.Id)
+    @donations = Opportunity.find_all_by_cv__Contact__c(@account.Id)
     respond_to do | format |
       format.html { render :layout => "homeLayout" }
     end

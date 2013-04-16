@@ -60,34 +60,17 @@
 				<th><h3>Next Gift Date</h3></th>
 				<th><h3>Gift Amount Needed</h3></th>
 			</tr>
+			<% @recurring.each do |rec| %>
 			<tr>
-				<td><%= @recurring.cv__Recurrence_Description__c || "N/A"%></td>
-				<td>$<%= @recurring.cv__Recurring_Amount__c.to_int %></td>
-				<td>$<%= @recurring.cv__Last_Payment_Amount__c.to_int%></td>
-				<td><%= @recurring.cv__Last_Payment_Date__c%></td>
-				<td><%= @recurring.No_of_Months_Paid_Ahead__c%></td>
-				<td><%= @recurring.cv__Next_Payment_Date__c || "N/A"%></td>
+				<td><%= rec.cv__Recurrence_Description__c || "N/A"%></td>
+				<td>$<%= rec.cv__Recurring_Amount__c %></td>
+				<td>$<%= rec.cv__Last_Payment_Amount__c%></td>
+				<td><%= rec.cv__Last_Payment_Date__c%></td>
+				<td><%= rec.No_of_Months_Paid_Ahead__c%></td>
+				<td><%= rec.cv__Next_Payment_Date__c || "N/A"%></td>
 				<td>?</td>
 			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-			</tr>
-		</table>
+			<% end %>
 		<div class="buttonWrapper" style="width:660px; margin:auto;">
 			<div class="buttonSquareOrange" style="width:280px; float:left; margin-right:50px;">
 				<a href="/">Gift Now</a>
@@ -109,20 +92,15 @@
 				<th valign="top"><h3>Description</h3></th>
 				<th valign="top"><h3>Amount</h3></th>
 			</tr>
+			<% @donations.each do |don| %>
 			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
+				<td><%=don.CloseDate%></td>
+				<td><%=don.Type%></td>
+				<td><%=don.cv__Honor_Memorial_Type__c%></td>
+				<td><%=don.Description%></td>
+				<td>$<%=don.Amount.to_int || "N/A" %></td>
 			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-			</tr>
+			<% end %>
 		</table>
 		<div class="clearfix" style="height:40px;">
 			<!--x-->
