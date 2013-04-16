@@ -33,7 +33,7 @@
 								 <a href="/blog/<%=post.id%>">Read More &raquo;</a>
 							</p>
 							<p class="meta">
-								 Update from: <%=post.author%></p>
+								<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -61,7 +61,7 @@
 								<%= sanitize truncate(post.body,:length=>500,:separator=>' '), :tags => %w(b) %>
 								 <a href="/blog/<%=post.id%>">Read More &raquo;</a>
 							</p>
-							<% if post.author %><p class="meta">Update from: <%=post.author%></p><% end %>
+							<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
 						</div>
 						<div class="clearfix"></div>
 					</div>
