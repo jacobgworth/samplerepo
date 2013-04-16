@@ -93,10 +93,12 @@
 				<th valign="top"><h3>Amount</h3></th>
 			</tr>
 			<% @donations.each do |don| %>
+			<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
+			<% @designation = Cv__Designation__c.find_by_Id(Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id).cv__Designation__c)%>
 			<tr>
 				<td><%=don.CloseDate%></td>
 				<td><%=don.Type%></td>
-				<td><%=don.cv__Honor_Memorial_Type__c%></td>
+				<td><%=@designation.Name %></td>
 				<td><%=don.Description%></td>
 				<td>$<%=don.Amount.to_int || "N/A" %></td>
 			</tr>
