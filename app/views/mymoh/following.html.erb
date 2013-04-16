@@ -78,7 +78,7 @@
 			<ul>
 				<% unless @projects.empty? %>
 					<% @projects.each do |proj| %>
-						<li><a href="/projects?cid=<%=proj.id%>"><%=proj.projectname%> &raquo;</a></li>
+						<li><a href="/projects/<%=proj.id%>"><%=proj.projectname%> &raquo;</a></li>
 					<% end %>
 				<% else %>
 					<li>You aren't following any projects.</li>
