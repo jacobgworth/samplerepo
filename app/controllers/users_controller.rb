@@ -93,6 +93,14 @@ class UsersController < ApplicationController
   
       respond_to do |format|
         if @user.update_attributes(params[:user])
+          @cont = Contact.find_by_ID(@user.convio_id)
+          if (@cont)
+            @cont.Newsletter__c = (params[:comm_newsletter] ? true : false)
+            @cont.Important_Announcements__c = (params[:comm_important] ? true : false)
+            @cont.Monthly_Gift_Statements__c = (params[:comm_monthlygifts] ? true : false)
+            @cont.Campaign_Updates__c = (params[:comm_campaign] ? true : false)
+            @cont.save
+          end
           format.html { redirect_to "/mymoh", notice: 'User was successfully updated.' }
           format.json { head :ok }
         else
