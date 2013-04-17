@@ -1,10 +1,10 @@
 class MymohController < ApplicationController
   include Databasedotcom::Rails::Controller
-  before_filter :require_login
+  before_filter :require_login, :except => [:login]
   
   def require_login
     if current_user == nil
-      redirect_to "/log_in"
+      redirect_to "/mymoh/login"
     end
   end
   
