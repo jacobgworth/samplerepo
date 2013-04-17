@@ -28,27 +28,27 @@
   <% unless current_user == nil %>
 	  <div class="field">
 	    <%= f.label :first %><br />
-	    <%= f.text_field :first, :value => @contact.FirstName %>
+	    <%= f.text_field :first, :value => @contact ? @contact.FirstName : "" %>
 	  </div>
 	  <div class="field">
 	    <%= f.label :last %><br />
-	    <%= f.text_field :last, :value => @contact.LastName  %>
+	    <%= f.text_field :last, :value => @contact ? @contact.LastName : ""  %>
 	  </div>
 	  <div class="field">
 	    <%= f.label :street1 %><br />
-	    <%= f.text_field :street1, :value => @contact.MailingStreet %>
+	    <%= f.text_field :street1, :value => @contact ? @contact.MailingStreet : "" %>
 	  </div>
 	  <div class="field">
 	    <%= f.label :city %><br />
-	    <%= f.text_field :city, :value => @contact.MailingCity %>
+	    <%= f.text_field :city, :value => @contact ? @contact.MailingCity : "" %>
 	  </div>
 	  <div class="field">
 	    <%= f.label :state %><br />
-	    <%= f.text_field :state, :value => @contact.MailingState %>
+	    <%= f.text_field :state, :value => @contact ? @contact.MailingState : "" %>
 	  </div>
 	  <div class="field">
 	    <%= f.label :zip %><br />
-	    <%= f.text_field :zip, :value => @contact.MailingPostalCode %>
+	    <%= f.text_field :zip, :value => @contact ? @contact.MailingPostalCode : "" %>
 	  </div>
   <% end %>
   <div class="actions">

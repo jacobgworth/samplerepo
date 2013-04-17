@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     if is_admin_user? || @user == current_user
 
       respond_to do |format|
-        format.html # show.html.erb
+        format.html { render :layout => "homeLayout" }# show.html.erb
         format.json { render json: @user }
       end
      else
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   def new
       @user = User.new
       #@contact = Contact.new
-
+      puts "HEREHREHRHERHEHRHERHEHRHE"
       respond_to do |format|
         format.html { render :layout => "homeLayout"}# new.html.erb
         format.json { render json: @user }
@@ -57,7 +57,6 @@ class UsersController < ApplicationController
         @contact = Contact.new
       end
       respond_to do |format|
-        puts "GOT HERE HER HE REHERHEHERHEHREHHERHEHHERHEHRHERE"
         format.html { render :layout => "homeLayout" }
       end
     else
