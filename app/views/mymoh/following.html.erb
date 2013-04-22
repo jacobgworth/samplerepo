@@ -5,12 +5,7 @@
 	<div id="content" style="padding-top:50px;">
 		<h1>My MOH</h1>
 		<%= render 'layouts/mymohNav'%>
-		<h2><span class="eyebrow">Mission of Hope</span>
-		<br />
-		What's Going On With Us</h2>
-		<p>
-			View the latest news and updates from the projects and villages you are following.
-		</p>
+		<h2>What's Going at Mission of Hope</h2>
 		<div id="contentLeft560">
 			<h3>Blog Posts</h3>
 			<% unless @posts.empty? %>	
@@ -73,6 +68,7 @@
 		</div>
 
 		<div id="contentRight300">
+			<!--
 			<div class="rightBox">
 				<h3 style="color: #079367;">Projects You're Following</h3>
 			<ul>
@@ -88,17 +84,18 @@
 			</div>
 			<div class="rightBox">
 				<h3 style="color: #079367;">Villages You're Following</h3>
-			<ul>
-				<% unless @villages.empty? %>
-					<% @villages.each do |vil| %>
-						<li><a href="/villages/<%=vil.id%>"><%=vil.communityname%> &raquo;</a></li>
+				<ul>
+					<% unless @villages.empty? %>
+						<% @villages.each do |vil| %>
+							<li><a href="/villages/<%=vil.id%>"><%=vil.communityname%> &raquo;</a></li>
+						<% end %>
+					<% else %>
+						<li>You aren't following any villages.</li>
+						<li><a href="/villages">Follow a village &raquo;</a></li>
 					<% end %>
-				<% else %>
-					<li>You aren't following any villages.</li>
-					<li><a href="/villages">Follow a village &raquo;</a></li>
-				<% end %>
-			</ul>
-		</div>
+				</ul>
+			</div>
+			-->
 		</div>
 
 			<div class="clearfix" style="height:40px;">
