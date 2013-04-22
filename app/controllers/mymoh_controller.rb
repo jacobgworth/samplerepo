@@ -105,7 +105,7 @@ class MymohController < ApplicationController
     #get blogs & updates from "school of hope" and "village of hope"
     #right now using categories 4=church of hope, and 7=education
     @related_result = []
-    @cats = [4, 7]
+    @cats = [4, 7, 13]
     @cat = []
     @cat << Category.find(4)
     @cats.each do |cat|
