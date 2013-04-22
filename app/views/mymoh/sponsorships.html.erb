@@ -8,7 +8,7 @@
 		<br />
 		My Sponsorships</h2>
 		<p>
-			View your sponsored children. Send them gifts, write them a letter, and see what they’ve been up to!
+			View your sponsored children, send them gifts or write them a letter!
 		</p>
 		<% unless @children.empty? %>
 		<% @children.each do | child |%>
@@ -19,7 +19,7 @@
 			<div class="sponsoredProfile">
 				<h3><%= child.Name__c %></h3>
 				<p>
-					<strong>ID:</strong> <%= child.Student_Code__c %>
+					<strong>Child Code:</strong> <%= child.Student_Code__c %>
 				<p>
 					<strong>Favorite Activity:</strong> <%= child.Favorite_Activity__c%>
 					<br>
