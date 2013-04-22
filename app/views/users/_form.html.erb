@@ -51,10 +51,18 @@
 	    <%= f.text_field :zip, :value => @contact ? @contact.MailingPostalCode : "" %>
 	  </div>
 	  <% if @contact %>
+	  	<h3>Your Communication Preferences</h3>
+	  	<br/>
+	  	<h4>Postal Mail Preferences</h4>
 	  	Newsletter: <input name="comm_newsletter" type="checkbox" <%=@contact.Newsletter__c ? "checked" : "" %>/><br/>
 	  	Important Announcements: <input name="comm_important" type="checkbox" <%=@contact.Important_Announcements__c ? "checked" : "" %>/><br/>
 	  	Monthly Gift Receipts: <input name="comm_monthlygifts" type="checkbox" <%=@contact.Monthly_Gift_Statements__c ? "checked" : "" %>/><br/>
 	  	Campaign Updates: <input name="comm_campaign" type="checkbox" <%=@contact.Campaign_Updates__c ? "checked" : "" %>/><br/>
+	  	<br/>
+	  	<h4>Email Preferences</h4>
+		eNewsletter<br/>
+		Important Announcements & Prayer Requests<br/>
+		Campaigns<br/>
 	  <% end %>
   <% end %>
   <div class="actions">
