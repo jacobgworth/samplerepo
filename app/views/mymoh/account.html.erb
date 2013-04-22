@@ -9,26 +9,34 @@
 		My Account</h2>
 		<p>Manage your personal information, name, address, spouse, login info and communication preferences.</p>
 		<div class="tanWrapper">
-		<h3 style="width:600px;">Your Information:</h3>
-		<p style="margin-top:-20px; margin-right:40px;" class="buttonSquareGreen alignRight"><a href="/users/<%= current_user.id%>/edit">Edit</a></p>
-		<div class="clearfix"></div>
-			<p><span class="alignLeft mymohLabel"><strong>Name: </strong></span> <span class="alignLeft"><%= @account.Name %></span></p>
-				<div class="clearfix"></div>
-			<p><span class="alignLeft mymohLabel"><strong>Address:</strong></span> <span class="alignLeft"><%= @account.MailingStreet %><br /><%=@account.MailingCity %>, <%=@account.MailingState %>, <%=@account.MailingPostalCode %></span></p>
-				<div class="clearfix"></div>
-			<p><span class="alignLeft mymohLabel"><strong>Phone:</strong></span> <span class="alignLeft"><%= @account.HomePhone %></span></p>
-				<div class="clearfix"></div>
-			<p><span class="alignLeft mymohLabel"><strong>Email:</strong></span> <span class="alignLeft"><%= @account.Email %></span></p>
-		<div class="clearfix"></div>
-		
-		<h3>Spouse: <%=@spouse.Name%></h3>	
-		<h3>Communication</h3>
-		<ul>
-			<li>Newsletter: <%=@account.Newsletter__c ? "Yes" : "No"%></li>
-			<li>Important Announcements: <%=@account.Important_Announcements__c ? "Yes" : "No"%></li>
-			<li>Monthly Gift Statements: <%=@account.Monthly_Gift_Statements__c ? "Yes" : "No"%></li>
-			<li>Campaign Updates: <%=@account.Campaign_Updates__c ? "Yes" : "No"%></li>
-		</ul>
+			<h3 style="width:600px;">Your Information</h3>
+			<p style="margin-top:-20px; margin-right:40px;" class="buttonSquareGreen alignRight"><a href="/users/<%= current_user.id%>/edit">Edit</a></p>
+			<div class="clearfix"></div>
+				<p><span class="alignLeft mymohLabel"><strong>Name: </strong></span> <span class="alignLeft"><%= @account.Name %></span></p>
+					<div class="clearfix"></div>
+				<p><span class="alignLeft mymohLabel"><strong>Address:</strong></span> <span class="alignLeft"><%= @account.MailingStreet %><br /><%=@account.MailingCity %>, <%=@account.MailingState %>, <%=@account.MailingPostalCode %></span></p>
+					<div class="clearfix"></div>
+				<p><span class="alignLeft mymohLabel"><strong>Phone:</strong></span> <span class="alignLeft"><%= @account.HomePhone %></span></p>
+					<div class="clearfix"></div>
+				<p><span class="alignLeft mymohLabel"><strong>Email:</strong></span> <span class="alignLeft"><%= @account.Email %></span></p>
+					<div class="clearfix"></div>
+				<p><span class="alignLeft mymohLabel"><strong>Spouse:</strong></span> <span class="alignLeft"><%=@spouse.Name%></span></p>
+			<div class="clearfix"></div>
+			
+			<h3>Your Communication Preferences</h3>
+			<h4>Postal Mail Preferences</h4>
+			<ul>
+				<li>Newsletter: <%=@account.Newsletter__c ? "Yes" : "No"%></li>
+				<li>Important Announcements: <%=@account.Important_Announcements__c ? "Yes" : "No"%></li>
+				<li>Monthly Gift Statements: <%=@account.Monthly_Gift_Statements__c ? "Yes" : "No"%></li>
+				<li>Campaign Updates: <%=@account.Campaign_Updates__c ? "Yes" : "No"%></li>
+			</ul>
+			<h4>Email Preferences</h4>
+			<ul>
+				<li>eNewsletter</li>
+				<li>Important Announcements & Prayer Requests</li>
+				<li>Campaigns</li>
+			</ul>
 		</div>
 	</div>
 
