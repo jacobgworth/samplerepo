@@ -101,7 +101,7 @@ class UsersController < ApplicationController
             @cont.Campaign_Updates__c = (params[:comm_campaign] ? true : false)
             @cont.save
           end
-          format.html { redirect_to "/mymoh", notice: 'User was successfully updated.' }
+          format.html { redirect_to "/mymoh/account", notice: 'User was successfully updated.' }
           format.json { head :ok }
         else
           format.html { render action: "edit" }
