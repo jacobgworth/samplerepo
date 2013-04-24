@@ -78,7 +78,7 @@
 		<% end %>
 		<table class="mygiving" width="100%" border="0">
 			<tr>
-				<th colspan="5"><h2>My Giving History</h2></th>
+				<th colspan="5"><h2>My Giving History - <%=Date.today.month%></h2></th>
 			</tr>
 			<tr>
 				<th valign="top"><h3>Date</h3></th>
@@ -89,16 +89,18 @@
 			</tr>
 			<% @totalgifted = 0 %>
 			<% @donations.each do |don| %>
-				<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
-				<% @designation = Cv__Designation__c.find_by_Id(Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id).cv__Designation__c)%>
-				<tr>
-					<td><%=don.CloseDate%></td>
-					<td><%=don.Type%></td>
-					<td><%=@designation.Name %></td>
-					<td><%=don.Description%></td>
-					<td>$<%=don.Amount.to_int || "N/A" %></td>
-				</tr>
-				<% @totalgifted += don.Amount.to_int %>
+				<% if (Date.today - don.CloseDate) < 30 %>
+					<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
+					<% @designation = Cv__Designation__c.find_by_Id(Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id).cv__Designation__c)%>
+					<tr>
+						<td><%=don.CloseDate%></td>
+						<td><%=don.Type%></td>
+						<td><%=@designation.Name %></td>
+						<td><%=don.Description%></td>
+						<td>$<%=don.Amount.to_int || "N/A" %></td>
+					</tr>
+					<% @totalgifted += don.Amount.to_int %>
+				<% end %>
 			<% end %>
 			<tr>
 				<td colspan=4>Total Amount Gifted</td>
