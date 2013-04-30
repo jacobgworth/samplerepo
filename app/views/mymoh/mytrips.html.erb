@@ -15,7 +15,7 @@
 				
 					<% @trips.each do |trip|%>
 				
-						<h4><a href="/mymoh/mytrips/<%= trip.Id%>"><%= trip.Name%></a></h4>
+						<h4><% if trip.Haiti_Arrival_Date__c%><%=trip.Haiti_Arrival_Date__c%> - <%=trip.Haiti_Departure_Date__c%>: <%end%><a href="/mymoh/mytrips/<%= trip.Id%>"><%= trip.Name || "Trip"%></a></h4>
 				
 					<% end %>
 				</ul>
