@@ -156,7 +156,7 @@ class User < ActiveRecord::Base
   
   def local_sync #sync local data to match what convio has
     #opposite is convio_update
-    @contact = Contact.find_by_Id(self.convio_id)
+    @contact = Contact.find_by_Id(self.convio_id.to_s)
     unless @contact == nil
       #update local data from matched account
       self.first = @contact.FirstName
