@@ -7,20 +7,23 @@
 		<h2><span class="eyebrow">Mission of Hope</span>
 		<br />
 		My Mission Trips</h2>
-		<% #if @trip.Start_Date__c > Date.today %>
-		<% if Date.today > Date.tomorrow %>
+		<% if ((@trip.Haiti_Arrival_Date__c && @trip.Haiti_Arrival_Date__c > Date.today) || true) %>
+		<% #if Date.today > Date.tomorrow %>
 		<!-- This Trip hasn't started yet-->
 
 		<div class="tanWrapper">
 			<h3><!--<%= @trip.Trip_Name__c%>--><%= @trip.Name%></h3>
 			<div class="alignLeft">
-				<h4>Trip Starts: <%= Date.tomorrow%></h4>
-				<h4>Trip Ends: <%= Date.tomorrow%></h4>
+				<h4>Trip Starts: <%= @trip.Haiti_Arrival_Date__c || "Unknown" %></h4>
+				<h4>Trip Ends: <%= @trip.Haiti_Departure_Date__c || "Unknown" %></h4>
 			</div>
 			<div class="alignRight" style="color:#E4D4B9; background-color:#078E60; padding:15px; margin-right:20px; margin-top:-20px;">
 				<h4 class="center"><strong>Days Till Trip: </strong>
 				<br />
-				Need this value</h4>
+				<%if @trip.Haiti_Arrival_Date__c%>
+					<%=@trip.Haiti_Arrival_Date__c - Date.today%> days
+				<%else%>Unknown
+				<%end%></h4>
 			</div>
 			<div class="clearfix"></div>
 		</div>
