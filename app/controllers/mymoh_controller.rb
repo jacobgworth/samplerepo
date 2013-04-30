@@ -115,7 +115,7 @@ class MymohController < ApplicationController
     
     @blogs = []
     @cats.each do |cat|
-      @blogs += Post.joins(:categories).where("category_id=" + cat.to_s)
+      @blogs += Post.joins(:categories).where("category_id=" + cat.to_s).reverse
       @blogs = @blogs.uniq{|x| x.title}
     end
     

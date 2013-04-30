@@ -62,7 +62,7 @@
 		<% unless @related_result.nil? %>
 		<% if !@related_result.empty? %>
 		<h2>What We've Been Up To Lately</h2>
-		<% @related_result.each do |related|%>
+		<% @related_result[1..15].each do |related|%>
 		<!--time: it's month, day, year -->
 		<!--<%=related.postdate.strftime("%b")%> <%=related.postdate.strftime("%d")%>, <%=related.postdate.strftime('%Y')%>-->
 		<div class="update960" style="line-height: 1.3em; height=120px;">
@@ -79,6 +79,7 @@
 			<img src="<%= related.assets.last.asset.url(:thumb)%>" />
 			<%end %>
 			<%= related.body %>
+			<br/><a href="/updates/<%=related.id%>">Read More</a>
 			</div>
 			<div class="clearfix">
 				<!--x-->
