@@ -40,12 +40,11 @@
 					<%= password_field_tag :password %>
 				</p>
 				<p>
-					<a href="">Forget your login info?</a>
+					<%= submit_tag("Sign In", :class => "buttonSquareOrange") %> <a href="" style="margin-left: 5px;">Forget your login info?</a>
 				</p>
-
 				<p>
-					<%= submit_tag("Sign In", :class => "buttonSquareOrange") %>
 				</p>
+				<div class="clearfix"></div>
 				<% end %>
 				<p class="buttonSquareGreen">
 					<a href="/users/new">Create Account</a>

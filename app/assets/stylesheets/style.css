@@ -3214,6 +3214,7 @@ tr {
 	color:#fff;
 	background-image:url(/assets/mymoh-button-arrow.png) center right no-repeat;
 	margin-bottom:15px;
+	cursor: pointer;
 	}
 	
 .buttonSquareGreen a {
@@ -3251,6 +3252,10 @@ tr {
 
 .mymohLabel {
 	width:100px;
+}
+.label h2{
+    font-size: 23px;
+    padding: 14px 0;
 }
 
 table.mygiving {
