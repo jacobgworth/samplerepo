@@ -291,6 +291,8 @@ Mohhaiti::Application.routes.draw do
   get "mymoh" => "mymoh#index"
   match "/mymoh/account/edit" => "mymoh#edit"
   
+  get "/embed/success_returned" => redirect("/")
+  
   get "advancement/index"
   match "/church_advancement" => "Advancement#index"
   match "/church-advancement" => "Advancement#index"
