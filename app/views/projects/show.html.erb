@@ -46,12 +46,14 @@
 					</div>
 				<script>
 					$(document).ready(function() {
-						$('.subscribe').click(function() {
+						$('.subscribe').live("click", function() {
 							url = "/subscriptions.json";
 							method = "POST";
+							console.log("subscribe");
 							submitSubscription(url, method);
 						});
-						$('.unsubscribe').click(function() {
+						$('.unsubscribe').live("click", function() {
+							console.log("unsubscribe");
 							url = "/subscriptions/<%=@project.id%>.json";
 							method = "DELETE";
 							submitSubscription(url, method);

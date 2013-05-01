@@ -33,12 +33,12 @@
 				</div>
 				<script>
 					$(document).ready(function() {
-						$('.subscribe').click(function() {
+						$('.subscribe').live("click", function() {
 							url = "/subscriptions.json";
 							method = "POST";
 							submitSubscription(url, method);
 						});
-						$('.unsubscribe').click(function() {
+						$('.unsubscribe').live("click", function() {
 							url = "/subscriptions/<%=@community.id%>.json";
 							method = "DELETE";
 							submitSubscription(url, method);
