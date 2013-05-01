@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  LocalUser = User
+  include Databasedotcom::Rails::Controller
+  User = LocalUser
   protect_from_forgery
   
   helper_method :current_user
