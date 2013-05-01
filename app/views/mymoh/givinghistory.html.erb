@@ -25,7 +25,7 @@
 				<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
 				<% @designation = Cv__Designation__c.find_by_Id(Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id).cv__Designation__c)%>
 				<tr>
-					<td><%=don.CloseDate%></td>
+					<td><%=don.CloseDate.strftime("%b %-d, %Y")%></td>
 					<td><%=don.Type%></td>
 					<td><%=@designation.Name %></td>
 					<td><%=don.Description%></td>

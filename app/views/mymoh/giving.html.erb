@@ -60,9 +60,9 @@
 				<td><%= rec.cv__Recurrence_Description__c || "N/A"%></td>
 				<td>$<%= rec.cv__Recurring_Amount__c %></td>
 				<td>$<%= rec.cv__Last_Payment_Amount__c || 0%></td>
-				<td><%= rec.cv__Last_Payment_Date__c%></td>
+				<td><%= rec.cv__Last_Payment_Date__c ? rec.cv__Last_Payment_Date__c.strftime("%b %-d, %Y") : "N/A"%></td>
 				<td><%= rec.No_of_Months_Paid_Ahead__c%></td>
-				<td><%= rec.cv__Next_Payment_Date__c || "N/A"%></td>
+				<td><%= rec.cv__Next_Payment_Date__c ? rec.cv__Next_Payment_Date__c.strftime("%b %-d, %Y") : "N/A"%></td>
 				<td><%= rec.cv__Next_Payment_Amount__c || "N/A"%></td>
 			</tr>
 			<% end %>
@@ -93,7 +93,7 @@
 					<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
 					<% @designation = Cv__Designation__c.find_by_Id(Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id).cv__Designation__c)%>
 					<tr>
-						<td><%=don.CloseDate%></td>
+						<td><%=don.CloseDate.strftime("%b %-d, %Y")%></td>
 						<td><%=don.Type%></td>
 						<td><%=@designation.Name %></td>
 						<td><%=don.Description%></td>
