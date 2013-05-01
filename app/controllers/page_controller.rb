@@ -421,8 +421,15 @@ class PageController < ApplicationController
     @fname = params[:fname]
     @comments = params[:letter]
     @fromaddress = params[:email]
-    @phone = params[:phonenumber]
+    @phone = "0000000000"
     @medical = params[:childnumber]
+    @street = params[:street]
+    @city = params[:city]
+    @state = params[:state]
+    @zip = params[:zip]
+    @church = params[:church]
+    @organization = params[:organization]
+    @participants = params[:participants]
     if !@fname.nil? && @fname != "" && !@comments.nil? && @comments != "" && !@fromaddress.nil? && @fromaddress != ""
       @isvalid = true
       @data = {
@@ -438,6 +445,13 @@ class PageController < ApplicationController
       @sfcontact = create_convio_contact(@data[:lname], @data[:fname], @data[:email])
       @sfcontact = Contact.find_by_Id(@sfcontact.Id)
       @sfcontact.MT_Prospect_Status__c = "Prospect"
+      @sfcontact.MailingStreet = @street
+      @sfcontact.MailingCity = @city
+      @sfcontact.MailingState = @state
+      @sfcontact.MailingPostalCode = @zip
+      @sfcontact.MyMOH_Church__c = @church
+      @sfcontact.Organization__c = @organization
+      @sfcontact.Number_of_Trip_Participants__c = @participants
       if (@data[:medical] == "on")
         @sfcontact.Medical_Trip_Prospect__c = true
       end
