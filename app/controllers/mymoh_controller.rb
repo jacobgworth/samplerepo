@@ -83,6 +83,19 @@ class MymohController < ApplicationController
     end
   end
   
+  def givinghistory
+    @account = Contact.find_by_Id(current_user.convio_id)
+    #dbdc_client.materialize("cv__Recurring_Gift__c")
+    dbdc_client.materialize("cv__Donation_Designation_Relationship__c")
+    dbdc_client.materialize("cv__Designation__c")
+    #@recurring = Cv__Recurring_Gift__c.find_all_by_cv__Contact__c(@account.Id)
+    @donations = Opportunity.find_all_by_cv__Contact__c(@account.Id)
+    @donations = @donations.sort_by(&:CloseDate).reverse
+    respond_to do | format |
+      format.html { render :layout => "homeLayout" }
+    end
+  end
+  
   def sponsorships
     @account = Contact.find_by_Id(current_user.convio_id)
     #@account = Contact.find_by_Name("Lindsey Rubino")

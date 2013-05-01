@@ -283,6 +283,7 @@ Mohhaiti::Application.routes.draw do
   
   get "mymoh/account"
   get "mymoh/giving"
+  get "mymoh/giving/history" => "mymoh#givinghistory"
   get "mymoh/sponsorships"
   get "mymoh/mytrips"
   get "mymoh/login"

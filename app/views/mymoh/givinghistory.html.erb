@@ -1,0 +1,44 @@
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+
+	<div id="content" style="padding-top:50px;">
+
+		<h1>My MOH</h1>
+		<%= render 'layouts/mymohNav'%>
+		<h2><span class="eyebrow">Mission of Hope</span>
+		<br />
+		Full Giving History</h2>
+
+		<table class="mygiving" width="100%" border="0">
+			<tr>
+				<th colspan="5"><h2>History</h2></th>
+			</tr>
+			<tr>
+				<th valign="top"><h3>Date</h3></th>
+				<th valign="top"><h3>Type</h3></th>
+				<th valign="top"><h3>Designation</h3></th>
+				<th valign="top"><h3>Description</h3></th>
+				<th valign="top"><h3>Amount</h3></th>
+			</tr>
+			<% @totalgifted = 0 %>
+			<% @donations.each do |don| %>
+				<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
+				<% @designation = Cv__Designation__c.find_by_Id(Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id).cv__Designation__c)%>
+				<tr>
+					<td><%=don.CloseDate%></td>
+					<td><%=don.Type%></td>
+					<td><%=@designation.Name %></td>
+					<td><%=don.Description%></td>
+					<td>$<%=don.Amount.to_int || "N/A" %></td>
+				</tr>
+				<% @totalgifted += don.Amount.to_int %>
+			<% end %>
+			<tr>
+				<td colspan=4>Total Amount Gifted</td>
+				<td>$<%=@totalgifted%></td>
+			</tr>
+		</table>
+		<div class="clearfix" style="height:40px;">
+			<!--x-->
+		</div>
+	</div>
