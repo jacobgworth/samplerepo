@@ -1,0 +1,31 @@
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+
+	<div id="content" style="padding-top:50px;">
+
+		<h1>My MOH</h1>
+		<%= render 'layouts/mymohNav'%>
+		<h2><span class="eyebrow">Mission of Hope</span>
+		<br />
+		My Giving</h2>
+
+		<% unless (@recurring == nil) || @recurring.empty? %>
+			<% @recurring.each do |rec| %>
+			<form action="" method="POST" style="border: 1px solid green;">
+				<input type="hidden" name="gift_id" value="<%= rec.Id %>" />
+				Description: <%= rec.cv__Recurrence_Description__c || "N/A"%><br/>
+				Amount: $<input type="text" name="gift_amount" value="<%= rec.cv__Recurring_Amount__c %>" /><br/>
+				Last Payment: <%= rec.cv__Last_Payment_Date__c ? rec.cv__Last_Payment_Date__c : "N/A"%><br/>
+				Next Payment: <input type="text" name="gift_next_date" value="<%= rec.cv__Next_Payment_Date__c%>" /><br/>
+				<input type="Submit" value="Submit" />
+			</form>
+			<br/>
+			<% end %>
+		<% else %>
+			We can't find any recurring donations to edit!
+		<% end %>
+		
+		<div class="clearfix" style="height:40px;">
+			<!--x-->
+		</div>
+	</div>

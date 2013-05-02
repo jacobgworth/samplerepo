@@ -83,12 +83,33 @@ class MymohController < ApplicationController
     end
   end
   
+  def givingedit
+    @account = Contact.find_by_Id(current_user.convio_id)
+    dbdc_client.materialize("cv__Recurring_Gift__c")
+    @recurring = Cv__Recurring_Gift__c.find_all_by_cv__Contact__c(@account.Id)
+    respond_to do | format |
+      format.html { render :layout => "homeLayout" }
+    end
+    #need to handle amount AND next_payment_amount
+  end
+  
+  def givingedit_post
+    @account = Contact.find_by_Id(current_user.convio_id)
+    dbdc_client.materialize("cv__Recurring_Gift__c")
+    @recurring = Cv__Recurring_Gift__c.find_by_Id(params[:gift_id])
+    @recurring.cv__Recurring_Amount__c = params[:gift_amount]
+    @recurring.cv__Next_Payment_Amount__c = params[:gift_amount]
+    @recurring.cv__Next_Payment_Date__c = params[:gift_next_date]
+    @recurring.cv__Recurring_Gift_Status__c = "Active"
+    @recurring.save
+    #need to handle amount AND next_payment_amount
+    redirect_to("/mymoh/giving/edit")
+  end
+  
   def givinghistory
     @account = Contact.find_by_Id(current_user.convio_id)
-    #dbdc_client.materialize("cv__Recurring_Gift__c")
     dbdc_client.materialize("cv__Donation_Designation_Relationship__c")
     dbdc_client.materialize("cv__Designation__c")
-    #@recurring = Cv__Recurring_Gift__c.find_all_by_cv__Contact__c(@account.Id)
     @donations = Opportunity.find_all_by_cv__Contact__c(@account.Id)
     @donations = @donations.sort_by(&:CloseDate).reverse
     respond_to do | format |
