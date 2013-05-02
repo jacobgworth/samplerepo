@@ -36,7 +36,7 @@
 	  </div>
 	  <div class="field">
 	    <%= f.label :street1 %><br />
-	    <%= f.text_field :street1, :value => @contact ? @contact.MailingStreet : "" %>
+	    <%= f.text_area :street1, :value => @contact ? @contact.MailingStreet : "", :size => "20x3" %>
 	  </div>
 	  <div class="field">
 	    <%= f.label :city %><br />
