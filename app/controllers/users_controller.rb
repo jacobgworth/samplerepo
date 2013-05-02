@@ -99,6 +99,7 @@ class UsersController < ApplicationController
             @cont.Important_Announcements__c = (params[:comm_important] ? true : false)
             @cont.Monthly_Gift_Statements__c = (params[:comm_monthlygifts] ? true : false)
             @cont.Campaign_Updates__c = (params[:comm_campaign] ? true : false)
+            @cont.MailingCountry = (params[:user_country] || "")
             @cont.save
           end
           format.html { redirect_to "/mymoh/account", notice: 'User was successfully updated.' }
