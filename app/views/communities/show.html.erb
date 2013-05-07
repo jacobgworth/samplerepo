@@ -14,7 +14,15 @@
 	<div id="content">
 		<div id="heroContent">
 			<h1 style="padding-top:40px;"><span class="largeText1 greenTransBG"><%= @community.communityname %></span></h1>
-
+				<% if !@subscribed || @subscribed.empty? %>
+						<div class="subscribe buttonSquareOrange" style="margin-top:-446px; left: 0;">
+							Follow this village
+						</div>
+					<% else %>
+					<div class="unsubscribe buttonSquareOrange" style="margin-top: -446px; left: 0;">
+						Unfollow this village
+					</div>
+					<% end %>
 		</div>
 		<div class="contentHeader">
 			<div class="contentHeaderLeft">
@@ -23,14 +31,6 @@
 				<%= @community.communityname %></h1>
 				<!--<p><b><%= @community.overviewtitle %></b></p>-->
 				<input type="hidden" class="subscribeData" name="village" value="<%=@community.id%>" />
-					<% if !@subscribed || @subscribed.empty? %>
-						<div class="subscribe buttonSquareOrange alignRight" style="margin-top:40px;">
-						Follow this village
-					<% else %>
-					<div class="unsubscribe buttonSquareOrange alignRight" style="margin-top:40px;">
-						Unfollow this village
-					<% end %>
-				</div>
 				<script>
 					$(document).ready(function() {
 						$('.subscribe').live("click", function() {
