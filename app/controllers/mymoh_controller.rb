@@ -107,9 +107,14 @@ class MymohController < ApplicationController
   end
   
   def givinghistory
+    @start_date = params[:start_date] || Date.today.ago(1.month).strftime("%Y-%m-%d")
+    @end_date = params[:end_date] || Date.today.strftime("%Y-%m-%d")
     dbdc_client.materialize("cv__Donation_Designation_Relationship__c")
     dbdc_client.materialize("cv__Designation__c")
-    @donations = Opportunity.find_all_by_cv__Contact__c(current_user.convio_id)
+    #@donations = Opportunity.find_all_by_cv__Contact__c(current_user.convio_id)
+    query = "cv__Contact__c = '" + current_user.convio_id + "' AND CloseDate > " + @start_date + " AND CloseDate < " + @end_date 
+    puts query
+    @donations = Opportunity.query(query)
     puts "LENGTH of History: " + @donations.length.to_s
     @donations = @donations.sort_by(&:CloseDate).reverse
     respond_to do | format |

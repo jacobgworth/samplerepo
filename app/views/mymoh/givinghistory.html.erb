@@ -21,24 +21,44 @@
 				<th valign="top"><h3>Amount</h3></th>
 			</tr>
 			<% @totalgifted = 0 %>
-			<% @donations.each do |don| %>
-				<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
-				<% @designation = Cv__Designation__c.find_by_Id(@ddr.cv__Designation__c)%>
+			<% if @donations %>
+				<% @donations.each do |don| %>
+					<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
+					<% @designation = Cv__Designation__c.find_by_Id(@ddr.cv__Designation__c)%>
+					<tr>
+						<td><%=don.CloseDate.strftime("%b %-d, %Y")%></td>
+						<td><%=don.Type%></td>
+						<td><%=@designation.Name %></td>
+						<td><%=don.Description%></td>
+						<td>$<%=don.Amount.to_int || "N/A" %></td>
+					</tr>
+					<% @totalgifted += don.Amount.to_int %>
+				<% end %>
 				<tr>
-					<td><%=don.CloseDate.strftime("%b %-d, %Y")%></td>
-					<td><%=don.Type%></td>
-					<td><%=@designation.Name %></td>
-					<td><%=don.Description%></td>
-					<td>$<%=don.Amount.to_int || "N/A" %></td>
+					<td colspan=4>Total Amount Gifted</td>
+					<td>$<%=@totalgifted%></td>
 				</tr>
-				<% @totalgifted += don.Amount.to_int %>
+			<% else %>
+				<tr>
+					<td colspan=5>No gifts found to display for select time period.</td>
+				</tr>
 			<% end %>
-			<tr>
-				<td colspan=4>Total Amount Gifted</td>
-				<td>$<%=@totalgifted%></td>
-			</tr>
 		</table>
 		<div class="clearfix" style="height:40px;">
+		Filter By Date:
+		<form method="POST" action="/mymoh/giving/history">
+			Start: <input class="datepicker1" type="text" name="start_date" />
+			<br/>
+			End: <input class="datepicker2" type="text" name="end_date" />
+			<br/>
+			<input type="submit" />
+		</form>
+		<div class="clearfix"><!--x--></div>
 			<!--x-->
 		</div>
 	</div>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script>
+$(".datepicker1").datepicker({dateFormat: "yy-mm-dd"}).datepicker("setDate", "<%=@start_date%>");
+$(".datepicker2").datepicker({dateFormat: "yy-mm-dd"}).datepicker("setDate", "<%=@end_date%>");
+</script>
