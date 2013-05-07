@@ -356,16 +356,49 @@
 			</div>
 			<div class="rightBoxGreen">
 				<h2>Did You Know?</h2>
-				<p>
+				<p id="dyk">
 					Did you know that you can view every project MOH is currently working on in
 					Haiti?
 				</p>
 				<div class="buttonSquareOrange alignRight" style="width:50px; margin-top:10px;">
-					<a href="/projects">Go</a>
+					<a id="dyklink" href="/projects">Go</a>
 				</div>
 				<div class="clearfix"></div>
 			</div>
 		</div>
+		
+<script>
+	var svalues = [
+	["Did you know that you can view every project MOH is currently working on in Haiti?", "/projects"],
+	["Did you know that MOH is partnering churches from North America with churches in Haiti?", "/church_advancement"],
+	["Did you know that there are over 400,000 children in Haiti without parents?", "/orphan_care"],
+	["Did you know that only 5% of the children in Haiti graduate from high school?", "/education"],
+	["Did you know that 96% of Haitians lack basic health care?", "/health_care"],
+	["Did you know that MOH feeds 54,000 children in Haiti everyday?", "/nutrition"],
+	["Do you know how MOH is providing jobs to physically-challenged women in need?", "/three_cords"],
+	["Do you know which villages MOH serves in Haiti?", "/villages"],
+	["Did you know that YOU can provide food and education to a child in Haiti for only $35 a month?", "/learn_sponsor"],
+	["Did you know that MOH offers internships in Haiti throughout the year?", "/internships"],
+	["Do you know how to stay up-to-date with all of MOH’s latest activities in Haiti?", "/updates"],
+	["Do you know the story of Mission of Hope?", "/our_story"],
+	["Did you know Mission of Hope was officially founded in 1998?", "/our_story"],
+	["Do you know the vision and mission of MOH for the country of Haiti?", "/vision_mission_resolution"],
+	["Did you know that MOH delivered 19,092,961 meals in 2012 with the help of our partner, Convoy of Hope?", "/nutrition"],
+	["Did you know that MOH served 150 prosthetic patients in 2012?", "/prosthetics"],
+	["Did you know that the Village of Hope Orphanage at Mission of Hope, Haiti is home to more than 65 children?", "/orphan_care"],
+	["Did you know that MOH trained over 300 pastors, teachers and principals through our Community Health Program in 2012?", "/community_health"],
+	["Did you know that MOH has provided over 300 families with a permanent concrete block home in Leveque?", "/projects/5"],
+	["Did you know that School of Hope provides education to over 3,000 children across three campuses in the villages of Titanyen, Bercy & Leveque?", "/education"],
+];
+
+setInterval(function() {
+  var min = 0;
+  var max = svalues.length;
+  var rand = Math.floor(Math.random() * (max - min + 1)) + min;
+  $("#dyk").text(svalues[rand][0]);
+  $("#dyklink").attr("href", svalues[rand][1]);
+}, 5000);
+</script>
 		<% end %>
 		<% else %>
 
