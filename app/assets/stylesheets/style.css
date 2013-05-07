@@ -1977,6 +1977,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     color: #E4D4B9;
+    height: 30px;
     text-decoration: none;
     padding: 5px;
     margin-top: 20px;
@@ -3440,5 +3441,17 @@ h3.myMOHRight  {
 
 }
 .rightBox ul {
-	margin-left:0px !important;
+	margin-left: 0px !important;
+}
+.editform{
+	margin-bottom: 50px;
+}
+.editform p{
+	font-size: 17px;
+}
+.editform input{
+    border: none;
+    padding: 7px;
+    width: 300px;
+    margin-left: 10px;
 }
