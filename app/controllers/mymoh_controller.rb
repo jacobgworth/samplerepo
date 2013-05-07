@@ -122,6 +122,18 @@ class MymohController < ApplicationController
     end
   end
   
+  def givingreceipt
+    dbdc_client.materialize("cv__Donation_Designation_Relationship__c")
+    dbdc_client.materialize("cv__Designation__c")
+    aquery = "cv__Contact__c = '" + current_user.convio_id + "' AND Id = '" + params[:gift_id] + "'"
+    puts aquery
+    @donation = Opportunity.query(aquery)
+    puts @donation
+    respond_to do |format|
+      format.html { render :layout => "receiptLayout" }
+    end
+  end
+  
   def sponsorships
     @account = Contact.find_by_Id(current_user.convio_id)
     #@account = Contact.find_by_Name("Lindsey Rubino")
