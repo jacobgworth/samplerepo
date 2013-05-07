@@ -26,7 +26,7 @@
 					<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
 					<% @designation = Cv__Designation__c.find_by_Id(@ddr.cv__Designation__c)%>
 					<tr>
-						<td><%=don.CloseDate.strftime("%b %-d, %Y")%></td>
+						<td><a href="/mymoh/giving/receipt/<%=don.Id%>"><%=don.CloseDate.strftime("%b %-d, %Y")%></a></td>
 						<td><%=don.Type%></td>
 						<td><%=@designation.Name %></td>
 						<td><%=don.Description%></td>
