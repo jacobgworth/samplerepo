@@ -49,13 +49,17 @@
 			<div class="buttonSquareGreen alignRight">
 				<h3><a href="https://mohhaiti.secure.force.com/sponsorship">Sponsor Another Child</a></h3>
 			</div>
-			<div class="sponsorChild">
-				<% @otherchildren.each do |child|%>
-				<div class="child">
-					<a href="http://mohhaiti.force.com/sponsorship/<%=child.Id%>"><%= @photo = Picture__c.find_by_Child__c(child.Id).Photo__c.html_safe %></a>
+			<% if @otherchildren && (@otherchildren.length > 0)%>
+				<div class="sponsorChild">
+					<% @otherchildren.each do |child|%>
+					<div class="child">
+						<a href="http://mohhaiti.force.com/sponsorship/<%=child.Id%>"><%= @photo = Picture__c.find_by_Child__c(child.Id).Photo__c.html_safe %></a>
+					</div>
+					<% end %>
 				</div>
-				<% end %>
-			</div>
+			<% else %>
+				<!-- display something here for when there's no kids -->
+			<% end %>
 			<div class="clearfix"></div>
 
 		</div>

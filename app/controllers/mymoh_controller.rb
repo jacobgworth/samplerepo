@@ -107,13 +107,30 @@ class MymohController < ApplicationController
   end
   
   def givinghistory
-    @account = Contact.find_by_Id(current_user.convio_id)
+    @start_date = params[:start_date] || Date.today.ago(1.month).strftime("%Y-%m-%d")
+    @end_date = params[:end_date] || Date.today.strftime("%Y-%m-%d")
     dbdc_client.materialize("cv__Donation_Designation_Relationship__c")
     dbdc_client.materialize("cv__Designation__c")
-    @donations = Opportunity.find_all_by_cv__Contact__c(@account.Id)
+    #@donations = Opportunity.find_all_by_cv__Contact__c(current_user.convio_id)
+    query = "cv__Contact__c = '" + current_user.convio_id + "' AND CloseDate > " + @start_date + " AND CloseDate < " + @end_date 
+    puts query
+    @donations = Opportunity.query(query)
+    puts "LENGTH of History: " + @donations.length.to_s
     @donations = @donations.sort_by(&:CloseDate).reverse
     respond_to do | format |
       format.html { render :layout => "homeLayout" }
+    end
+  end
+  
+  def givingreceipt
+    dbdc_client.materialize("cv__Donation_Designation_Relationship__c")
+    dbdc_client.materialize("cv__Designation__c")
+    aquery = "cv__Contact__c = '" + current_user.convio_id + "' AND Id = '" + params[:gift_id] + "'"
+    puts aquery
+    @donation = Opportunity.query(aquery)
+    puts @donation
+    respond_to do |format|
+      format.html { render :layout => "receiptLayout" }
     end
   end
   

@@ -286,6 +286,8 @@ Mohhaiti::Application.routes.draw do
   get "mymoh/giving/edit" => "mymoh#givingedit"
   post "mymoh/giving/edit" => "mymoh#givingedit_post"
   get "mymoh/giving/history" => "mymoh#givinghistory"
+  get "mymoh/giving/receipt/:gift_id" => "mymoh#givingreceipt"
+  post "mymoh/giving/history" => "mymoh#givinghistory"
   get "mymoh/sponsorships"
   get "mymoh/mytrips"
   get "mymoh/login"
