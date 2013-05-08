@@ -57,7 +57,7 @@
 			</tr>
 			<% @recurring.each do |rec| %>
 			<tr>
-				<td><%= rec.cv__Recurrence_Description__c || "N/A"%></td>
+				<td style="width: 375px;"><%= rec.cv__Recurrence_Description__c || "N/A"%></td>
 				<td>$<%= rec.cv__Recurring_Amount__c %></td>
 				<td>$<%= rec.cv__Last_Payment_Amount__c || 0%></td>
 				<td><%= rec.cv__Last_Payment_Date__c ? rec.cv__Last_Payment_Date__c.strftime("%b %-d, %Y") : "N/A"%></td>
