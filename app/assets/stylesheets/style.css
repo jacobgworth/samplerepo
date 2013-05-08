@@ -3291,6 +3291,7 @@ table.mygiving td.label {
 	width:30%;
 	text-align:left;
 	font-weight:bold;
+	vertical-align: bottom;
 }
 table.mygiving span.label {
 	width:50%;
