@@ -20,6 +20,26 @@ class User < ActiveRecord::Base
   
   before_create { generate_token(:auth_token) }
   
+  def convio_api_session
+    require "ConstituentManagementSession"
+    ConvioSession.secure_domain="https://secure3.convio.net/mohh"
+    ConvioSession.response_format="json"
+    ConvioSession.api_key="mohhapi"
+    ConstituentManagementSession.login_name="threetwelve"
+    ConstituentManagementSession.login_password="hope_is_our_mission"
+    ConstituentManagementSession.new()
+  end
+  
+  def get_interests()
+    c = convio_api_session
+    interest_hash = c.getUserInterests(Contact.find_by_Id(self.convio_id).cv__Convio_ID__c.to_i)
+    @interests = []
+    interest_hash["getConsInterestsResponse"]["interest"].each do |item|
+      @interests << item["id"]
+    end
+    @interests
+  end
+  
   
   def generate_token(column)
     begin

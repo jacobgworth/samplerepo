@@ -53,6 +53,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if is_admin_user? || @user == current_user
       @contact = Contact.find(@user.convio_id)
+      @interests = @user.get_interests
       if (@contact == nil)
         @contact = Contact.new
       end
