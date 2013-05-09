@@ -11,6 +11,16 @@ class ApplicationController < ActionController::Base
   #  @current_user ||= User.find(session[:user_id]) if session[:user_id]
   #end
   
+  def convio_api_session()
+    require "ConstituentManagementSession"
+    ConvioSession.secure_domain="https://secure3.convio.net/mohh"
+    ConvioSession.response_format="json"
+    ConvioSession.api_key="mohhapi"
+    ConstituentManagementSession.login_name="threetwelve"
+    ConstituentManagementSession.login_password="hope_is_our_mission"
+    ConstituentManagementSession.new()
+  end
+  
   def current_user
     if cookies[:auth_token] != nil
       session[:user_id] = User.find_by_auth_token!(cookies[:auth_token]).id
