@@ -13,6 +13,8 @@ gem "newrelic_rpm"
 
 gem "mail", ">=2.1.3"
 
+gem "thin"
+
 gem 'gmaps4rails'
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
