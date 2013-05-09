@@ -34,9 +34,9 @@
 			</ul>
 			<h4>Email Preferences</h4>
 			<ul>
-				<li>eNewsletter</li>
-				<li>Important Announcements & Prayer Requests</li>
-				<li>Campaigns</li>
+				<li>eNewsletter: <%= (@interests.include? "1021") ? "Yes" : "No" %></li>
+				<li>Important Announcements & Prayer Requests: <%= (@interests.include? "1041") ? "Yes" : "No" %></li>
+				<li>Campaigns: <%= (@interests.include? "1042") ? "Yes" : "No" %></li>
 			</ul>
 		</div>
 	</div>
