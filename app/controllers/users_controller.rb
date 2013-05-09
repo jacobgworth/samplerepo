@@ -41,7 +41,6 @@ class UsersController < ApplicationController
   def new
       @user = User.new
       #@contact = Contact.new
-      puts "HEREHREHRHERHEHRHERHEHRHE"
       respond_to do |format|
         format.html { render :layout => "homeLayout"}# new.html.erb
         format.json { render json: @user }
@@ -102,6 +101,20 @@ class UsersController < ApplicationController
             @cont.Campaign_Updates__c = (params[:comm_campaign] ? true : false)
             @cont.MailingCountry = (params[:user_country] || "")
             @cont.save
+            
+            c = convio_api_session
+            add_ids=""
+            remove_ids=""
+            
+            add_ids += params[:ecomm_newsletter] ? "1021," : ""
+            add_ids += params[:ecomm_important] ? "1041," : ""
+            add_ids += params[:ecomm_campaign] ? "1042," : ""
+            remove_ids += params[:ecomm_newsletter] ? "" : "1021,"
+            remove_ids += params[:ecomm_important] ? "" : "1041,"
+            remove_ids += params[:ecomm_campaign] ? "" : "1042,"
+            puts "Add ids: " + add_ids
+            puts "Remove ids: " + remove_ids
+            c.update(@cont.cv__Convio_ID__c.to_i, add_group_ids=add_ids, remove_group_ids=remove_ids)
           end
           format.html { redirect_to "/mymoh/account", notice: 'User was successfully updated.' }
           format.json { head :ok }

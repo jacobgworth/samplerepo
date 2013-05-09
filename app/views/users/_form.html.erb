@@ -392,7 +392,7 @@
 	  	<br/>
 	  	<h4>Email Preferences</h4>
 		eNewsletter <input name="ecomm_newsletter" type="checkbox" <%=(@interests.include? "1021") ? "checked" : ""%> /><br/>
-		Important Announcements & Prayer Requests <input name="ecomm_announcements" type="checkbox" <%=(@interests.include? "1041") ? "checked" : ""%> /><br/>
+		Important Announcements & Prayer Requests <input name="ecomm_important" type="checkbox" <%=(@interests.include? "1041") ? "checked" : ""%> /><br/>
 		Campaigns <input name="ecomm_campaign" type="checkbox" <%=(@interests.include? "1042") ? "checked" : ""%> /><br/>
 	  <% end %>
   <% end %>
