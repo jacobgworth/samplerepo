@@ -23,7 +23,7 @@ gem "paperclip", "~> 2.7"
 
 gem "flickraw"
 
-gem "convio-open", :git => 'git@github.com:consumersunion/convio-open.git'
+gem "convio-open", :git => 'git://github.com/consumersunion/convio-open.git'
 
 #Gem to connect to Amazon S3
 gem "aws-s3"
