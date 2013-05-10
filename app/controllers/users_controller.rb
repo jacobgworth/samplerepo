@@ -52,7 +52,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if is_admin_user? || @user == current_user
       @contact = Contact.find(@user.convio_id)
-      @interests = @user.get_interests
+      #@interests = @user.get_interests
+      @interests = ["1021", "1042"]
       if (@contact == nil)
         @contact = Contact.new
       end
@@ -102,7 +103,7 @@ class UsersController < ApplicationController
             @cont.MailingCountry = (params[:user_country] || "")
             @cont.save
             
-            c = convio_api_session
+            #c = convio_api_session
             add_ids=""
             remove_ids=""
             
@@ -115,7 +116,7 @@ class UsersController < ApplicationController
             add_ids = "justatestforErrorResponse"
             puts "Add ids: " + add_ids
             puts "Remove ids: " + remove_ids
-            c.update(@cont.cv__Convio_ID__c.to_i, add_interest_ids=add_ids, remove_interest_ids=remove_ids)
+            #c.update(@cont.cv__Convio_ID__c.to_i, add_interest_ids=add_ids, remove_interest_ids=remove_ids)
           end
           format.html { redirect_to "/mymoh/account", notice: 'User was successfully updated.' }
           format.json { head :ok }
