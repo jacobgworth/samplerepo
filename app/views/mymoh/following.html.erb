@@ -10,8 +10,11 @@
 			
 			<% unless @villages.empty? %>
 				<% @villages.each do |village| %>
-					<h3>Recent Activity for <%=village.communityname%></h2>
+					<h3>Recent Activity for <%=village.communityname%></h3>
 					<p><a href="/villages/<%=village.id%>">Visit this village page</a></p>
+					<div class="unsubscribe buttonSquareOrange" style="">
+						<a href="/subscriptions/<%=village.id%>.json" class="village" id="<%=village.id%>"></a>Unfollow this village
+					</div>
 					<% v_posts = @posts.select{ |post| post.communities.include? village }.first(3) %>	
 					<% v_updates = @updates.select{ |update| update.communities.include? village }.first(3) %>	
 					<h4>Blog Posts</h4>
@@ -78,8 +81,11 @@
 			
 			<% unless @projects.empty? %>
 				<% @projects.each do |project| %>
-					<h3>Recent Activity for <%=project.projectname%></h2>
+					<h3>Recent Activity for <%=project.projectname%></h3>
 					<p><a href="/projects/<%=project.id%>">Visit this project page</a></p>
+					<div class="unsubscribe buttonSquareOrange" style="">
+						<a href="/subscriptions/<%=project.id%>.json" class="project" id="<%=project.id%>"></a>Unfollow this village
+					</div>
 					<% p_posts = @posts.select { |post| post.communities.include? project } %>	
 					<% p_updates = @updates.select { |update| update.communities.include? project } %>	
 					<h4>Blog Posts</h4>
@@ -142,6 +148,48 @@
 					<% end %>
 				<% end %>
 			<% end %>
+			
+			<script>
+				$(document).ready(function() {
+					$('.subscribe').live("click", function() {
+						url = "/subscriptions.json";
+						anchor = $(this).find("a");
+						datatype = anchor.attr("class");
+						sub_id = anchor.attr("id");
+						method = "POST";
+						submitSubscription(url, method, datatype, sub_id);
+					});
+					$('.unsubscribe').live("click", function() {
+						anchor = $(this).find("a");
+						url = anchor.attr("href");
+						datatype = anchor.attr("class");
+						sub_id = anchor.attr("id");
+						method = "DELETE";
+						submitSubscription(url, method, datatype, sub_id);
+					});
+						
+					function submitSubscription(url, method, datatype, sub_id) {
+						$.ajax({
+						  type: 'POST',
+						  url: url,
+						  data: { datatype: datatype, sub_id: sub_id, user_id: "<%=@current_user.id%>", _method: method }
+						}).success(function( msg ) {
+							  console.log( "Successful: " + url);
+							  if($(".subscribe").length > 0) {
+								  $('.subscribe').text("Unfollow this village");
+								  $('.subscribe').addClass("unsubscribe");
+								  $('.subscribe').removeClass("subscribe");
+							  } else if ($('.unsubscribe').length > 0) {
+								  $('.unsubscribe').text("Follow this village");
+								  $('.unsubscribe').addClass("subscribe");
+								  $('.unsubscribe').removeClass("unsubscribe");
+							  }
+						}).fail(function( msg ){
+							alert("There was an error processing your request.");
+						});
+					}
+				});
+			</script>
 		</div>
 
 		<div id="contentRight300">
