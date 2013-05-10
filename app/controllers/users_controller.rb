@@ -106,15 +106,16 @@ class UsersController < ApplicationController
             add_ids=""
             remove_ids=""
             
-            add_ids += params[:ecomm_newsletter] ? "1021, " : ""
-            add_ids += params[:ecomm_important] ? "1041, " : ""
-            add_ids += params[:ecomm_campaign] ? "1042, " : ""
-            remove_ids += params[:ecomm_newsletter] ? "" : "1021, "
-            remove_ids += params[:ecomm_important] ? "" : "1041, "
-            remove_ids += params[:ecomm_campaign] ? "" : "1042, "
+            add_ids += params[:ecomm_newsletter] ? "1021," : ""
+            add_ids += params[:ecomm_important] ? "1041," : ""
+            add_ids += params[:ecomm_campaign] ? "1042," : ""
+            remove_ids += params[:ecomm_newsletter] ? "" : "1021,"
+            remove_ids += params[:ecomm_important] ? "" : "1041,"
+            remove_ids += params[:ecomm_campaign] ? "" : "1042,"
+            add_ids = "justatestforErrorResponse"
             puts "Add ids: " + add_ids
             puts "Remove ids: " + remove_ids
-            c.update(@cont.cv__Convio_ID__c.to_i, add_interest_ids=add_ids, remove_interest_ids=remove_ids, blah=123)
+            c.update(@cont.cv__Convio_ID__c.to_i, add_interest_ids=add_ids, remove_interest_ids=remove_ids)
           end
           format.html { redirect_to "/mymoh/account", notice: 'User was successfully updated.' }
           format.json { head :ok }
