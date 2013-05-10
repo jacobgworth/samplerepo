@@ -71,8 +71,8 @@ class MymohController < ApplicationController
     @villages = Village.where(:id => @village_subs)
     @projects = Project.where(:id => @project_subs)
     
-    @posts = Post.joins(:communities).where(:communities => {:id => @village_subs}).limit(3).reverse
-    @updates = Update.joins(:communities).where(:communities => {:id => @village_subs}).limit(3).reverse
+    @posts = Post.joins(:communities).where(:communities => {:id => @village_subs}).limit(125).reverse
+    @updates = Update.joins(:communities).where(:communities => {:id => @village_subs}).limit(125).reverse
     respond_to do |format|
       format.html { render :layout=>"homeLayout" }
     end
