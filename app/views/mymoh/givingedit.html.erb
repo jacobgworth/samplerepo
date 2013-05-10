@@ -9,30 +9,30 @@
 
 		<% unless (@recurring == nil) || @recurring.empty? %>
 			<% @recurring.each do |rec| %>
-			<h2>Recurring information</h2>
-			<form action="" method="POST">
-				<input type="hidden" name="gift_id" value="<%= rec.Id %>" />
-				<div class="field">
-					<label>Description:</label><br>
-					<%= rec.cv__Recurrence_Description__c || "N/A"%>
-				</div>
-				<div class="field">
-					<label>Amount:</label><br>
-					<input type="text" name="gift_amount" value="<%= rec.cv__Recurring_Amount__c %>" />
-				</div>
-				<div class="field">
-					<label>Last Payment:</label><br>
-					<%= rec.cv__Last_Payment_Date__c ? rec.cv__Last_Payment_Date__c : "N/A"%>
-				</div>
-				<div class="field">
-					<label>Next Payment:</label><br>
-					<input type="text" name="gift_next_date" value="<%= rec.cv__Next_Payment_Date__c%>" />
-				</div>
-				<div class="actions">
-					<input type="Submit" value="Submit" />
-				</div>
-			</form>
-			<br/>
+				<h2>Recurring Payment</h2>
+				<form action="" method="POST">
+					<input type="hidden" name="gift_id" value="<%= rec.Id %>" />
+					<div class="field">
+						<label>Description:</label><br>
+						<%= rec.cv__Recurrence_Description__c || "N/A"%>
+					</div>
+					<div class="field">
+						<label>Amount:</label><br>
+						<input type="text" name="gift_amount" value="<%= rec.cv__Recurring_Amount__c %>" />
+					</div>
+					<div class="field">
+						<label>Last Payment:</label><br>
+						<%= rec.cv__Last_Payment_Date__c ? rec.cv__Last_Payment_Date__c : "N/A"%>
+					</div>
+					<div class="field">
+						<label>Next Payment:</label><br>
+						<input type="text" name="gift_next_date" value="<%= rec.cv__Next_Payment_Date__c%>" />
+					</div>
+					<div class="actions">
+						<input type="Submit" value="Submit" />
+					</div>
+				</form>
+				<br/>
 			<% end %>
 		<% else %>
 			<p>We can't find any recurring donations to edit!</p>
