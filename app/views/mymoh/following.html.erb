@@ -193,6 +193,28 @@
 		</div>
 
 		<div id="contentRight300">
+			<% @villages.each do |village| %>
+				<h4><%= village.communityname %></h4>
+				<% @communityimage = village.assets.first %>
+				<% if @communityimage.nil? %>
+					<a href="/villages/<%=village.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a>
+				<% else %>
+					<a href="/villages/<%=village.id%>" style="background-color:#C2B092; border: 2px solid #C2B092;border-bottom: 3px solid #C2B092;padding:0; background-image: url('<%=@communityimage.asset.url(:thumb)%>')"><img src="<%=@communityimage.asset.url(:thumb)%>" /></a>
+				<% end %>
+				<div class="clearfix"></div>
+			<% end %>
+			<h4><a href="/villages">View all villages we work with</a></h4>
+			<% @projects.each do |village| %>
+				<h4><%= village.projectname %></h4>
+				<% @communityimage = village.assets.first %>
+				<% if @communityimage.nil? %>
+					<a href="/projects/<%=village.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a>
+				<% else %>
+					<a href="/projects/<%=village.id%>" style="background-color:#C2B092; border: 2px solid #C2B092;border-bottom: 3px solid #C2B092;padding:0; background-image: url('<%=@communityimage.asset.url(:thumb)%>')"><img src="<%=@communityimage.asset.url(:thumb)%>"/></a>
+				<% end %>
+				<div class="clearfix"></div>
+				<h4><a href="/projects">View all projects we're working on</a></h4>
+			<% end %>
 			<!--
 			<div class="rightBox">
 				<h3 style="color: #079367;">Projects You're Following</h3>
