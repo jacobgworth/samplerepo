@@ -27,18 +27,10 @@ class MymohController < ApplicationController
     @spouse_id = (Account.find_by_cv__Head_of_Household__c(@account.Id).cv__Secondary_Contact__c || Account.find_by_cv__Secondary_Contact__c(@account.Id).cv__Head_of_Household__c) 
     @spouse = Contact.find_by_Id(@spouse_id)
     
-    puts "CONVIO ID: " + @account.cv__Convio_ID__c.to_s
     c = convio_api_session
     conv_id = @account.cv__Convio_ID__c.to_i
-    interest_hash = c.getUserInterests(conv_id)
-    @interests = []
-    if (interest_hash["getConsInterestsResponse"]["interest"][0] == nil)
-      @interests << interest_hash["getConsInterestsResponse"]["interest"]["id"]
-    else
-      interest_hash["getConsInterestsResponse"]["interest"].each do |item|
-        @interests << item["id"]
-      end
-    end
+    @interests = current_user.get_interests
+    puts "INTERESTS: " + @interests.to_s
     respond_to do |format|
       format.html {render :layout=>"homeLayout"} 
     end

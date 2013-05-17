@@ -34,8 +34,12 @@ class User < ActiveRecord::Base
     c = convio_api_session
     interest_hash = c.getUserInterests(Contact.find_by_Id(self.convio_id).cv__Convio_ID__c.to_i)
     @interests = []
-    interest_hash["getConsInterestsResponse"]["interest"].each do |item|
-      @interests << item["id"]
+    if (interest_hash["getConsInterestsResponse"]["interest"][0] == nil)
+      @interests << interest_hash["getConsInterestsResponse"]["interest"]["id"]
+    else
+      interest_hash["getConsInterestsResponse"]["interest"].each do |item|
+        @interests << item["id"]
+      end
     end
     @interests
   end
