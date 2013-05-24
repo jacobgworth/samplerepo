@@ -1,6 +1,6 @@
 GIT
-  remote: git@github.com:consumersunion/convio-open.git
-  revision: a7ed37da36ef0b65acff4cb7eb28617a6a784c2b
+  remote: git://github.com/jesseb312/convio-open.git
+  revision: 7e8112bde8439277940d3ea058b6ef8e60df504d
   specs:
     convio-open (0.1)
       json (>= 1.1.3)

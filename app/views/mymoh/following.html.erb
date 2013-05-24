@@ -7,67 +7,214 @@
 		<%= render 'layouts/mymohNav'%>
 		<h2>What's Going at Mission of Hope</h2>
 		<div id="contentLeft560">
-			<h3>Blog Posts</h3>
-			<% unless @posts.empty? %>	
-				<% @posts.each do |post| %>
-					<div class="update560">
-						<div class="updateDate">
-							<span class="month"><%=post.postdate.strftime('%b')%></span>
-							<br />
-							<span class="date"><%=post.postdate.strftime('%m')%></span>
-							<br />
-							<span class="year"><%=post.postdate.strftime('%Y')%></span>
-						</div>
-						<div class="updatePost560">
-							<h4><a href="/blog/<%=post.id%>"><%=post.title%></a></h4>
-							<p>
-								<% unless post.assets.last.nil? %>
-									<img src="<%= post.assets.last.asset.url(:thumb)%>" />
-								<% end %>
-								<%= sanitize truncate(post.body,:length=>500,:separator=>' '), :tags => %w(b) %>
-								 <a href="/blog/<%=post.id%>">Read More &raquo;</a>
-							</p>
-							<p class="meta">
-								<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
-						</div>
-						<div class="clearfix"></div>
+			
+			<% unless @villages.empty? %>
+				<% @villages.each do |village| %>
+					<h3>Recent Activity for <%=village.communityname%></h3>
+					<p><a href="/villages/<%=village.id%>">Visit this village page</a></p>
+					<div class="unsubscribe buttonSquareOrange" style="">
+						<a href="/subscriptions/<%=village.id%>.json" class="village" id="<%=village.id%>"></a>Unfollow this village
 					</div>
+					<% v_posts = @posts.select{ |post| post.communities.include? village }.first(3) %>	
+					<% v_updates = @updates.select{ |update| update.communities.include? village }.first(3) %>	
+					<h4>Blog Posts</h4>
+					<% unless v_posts.empty? %>
+						<% v_posts.each do |post| %>
+							<div class="update560">
+								<div class="updateDate">
+									<span class="month"><%=post.postdate.strftime('%b')%></span>
+									<br />
+									<span class="date"><%=post.postdate.strftime('%m')%></span>
+									<br />
+									<span class="year"><%=post.postdate.strftime('%Y')%></span>
+								</div>
+								<div class="updatePost560">
+									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a></h4>
+									<p>
+										<% unless post.assets.last.nil? %>
+											<img src="<%= post.assets.last.asset.url(:thumb)%>" />
+										<% end %>
+										<%= sanitize truncate(post.body,:length=>500,:separator=>' '), :tags => %w(b) %>
+										 <a href="/blog/<%=post.id%>">Read More &raquo;</a>
+									</p>
+									<p class="meta">
+										<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						<% end %>
+					<% else %>
+						No blog posts found.
+					<% end %>
+					
+					<h4>Updates</h4>
+					<% unless v_updates.empty? %>
+						<% v_updates.each do |post| %>
+							<div class="update560">
+								<div class="updateDate">
+									<span class="month"><%=post.postdate.strftime('%b')%></span>
+									<br />
+									<span class="date"><%=post.postdate.strftime('%m')%></span>
+									<br />
+									<span class="year"><%=post.postdate.strftime('%Y')%></span>
+								</div>
+								<div class="updatePost560">
+									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a></h4>
+									<p>
+										<% unless post.assets.last.nil? %>
+											<img src="<%= post.assets.last.asset.url(:thumb)%>" />
+										<% end %>
+										<%= sanitize truncate(post.body,:length=>500,:separator=>' '), :tags => %w(b) %>
+										 <a href="/blog/<%=post.id%>">Read More &raquo;</a>
+									</p>
+									<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						<% end %>
+					<% else %>
+						No updates found.
+					<% end %>
 				<% end %>
-			<% else %>
-				Couldn't find any relevant blog posts.
 			<% end %>
-			<h3>Updates</h3>
-			<% unless @updates.empty? %>	
-				<% @updates.each do |post|%>
-					<div class="update560">
-						<div class="updateDate">
-							<span class="month"><%=post.postdate.strftime('%b')%></span>
-							<br />
-							<span class="date"><%=post.postdate.strftime('%m')%></span>
-							<br />
-							<span class="year"><%=post.postdate.strftime('%Y')%></span>
-						</div>
-						<div class="updatePost560">
-							<h4><a href="/blog/<%=post.id%>"><%=post.title%></a></h4>
-							<p>
-								<% unless post.assets.last.nil? %>
-									<img src="<%= post.assets.last.asset.url(:thumb)%>" />
-								<% end %>
-								<%= sanitize truncate(post.body,:length=>500,:separator=>' '), :tags => %w(b) %>
-								 <a href="/blog/<%=post.id%>">Read More &raquo;</a>
-							</p>
-							<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
-						</div>
-						<div class="clearfix"></div>
+			
+			
+			<% unless @projects.empty? %>
+				<% @projects.each do |project| %>
+					<h3>Recent Activity for <%=project.projectname%></h3>
+					<p><a href="/projects/<%=project.id%>">Visit this project page</a></p>
+					<div class="unsubscribe buttonSquareOrange" style="">
+						<a href="/subscriptions/<%=project.id%>.json" class="project" id="<%=project.id%>"></a>Unfollow this village
 					</div>
+					<% p_posts = @posts.select { |post| post.communities.include? project } %>	
+					<% p_updates = @updates.select { |update| update.communities.include? project } %>	
+					<h4>Blog Posts</h4>
+					<% unless p_posts.empty? %>
+						<% p_posts.each do |post| %>
+							<div class="update560">
+								<div class="updateDate">
+									<span class="month"><%=post.postdate.strftime('%b')%></span>
+									<br />
+									<span class="date"><%=post.postdate.strftime('%m')%></span>
+									<br />
+									<span class="year"><%=post.postdate.strftime('%Y')%></span>
+								</div>
+								<div class="updatePost560">
+									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a></h4>
+									<p>
+										<% unless post.assets.last.nil? %>
+											<img src="<%= post.assets.last.asset.url(:thumb)%>" />
+										<% end %>
+										<%= sanitize truncate(post.body,:length=>500,:separator=>' '), :tags => %w(b) %>
+										 <a href="/blog/<%=post.id%>">Read More &raquo;</a>
+									</p>
+									<p class="meta">
+										<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						<% end %>
+					<% else %>
+						No blog posts found.
+					<% end %>
+					
+					<h4>Updates</h4>
+					<% unless p_updates.empty? %>
+						<% p_updates.each do |post| %>
+							<div class="update560">
+								<div class="updateDate">
+									<span class="month"><%=post.postdate.strftime('%b')%></span>
+									<br />
+									<span class="date"><%=post.postdate.strftime('%m')%></span>
+									<br />
+									<span class="year"><%=post.postdate.strftime('%Y')%></span>
+								</div>
+								<div class="updatePost560">
+									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a></h4>
+									<p>
+										<% unless post.assets.last.nil? %>
+											<img src="<%= post.assets.last.asset.url(:thumb)%>" />
+										<% end %>
+										<%= sanitize truncate(post.body,:length=>500,:separator=>' '), :tags => %w(b) %>
+										 <a href="/blog/<%=post.id%>">Read More &raquo;</a>
+									</p>
+									<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						<% end %>
+					<% else %>
+						No updates found.
+					<% end %>
 				<% end %>
-			<% else %>
-				We couldn't find any relevant updates.
 			<% end %>
-				
+			
+			<script>
+				$(document).ready(function() {
+					$('.subscribe').live("click", function() {
+						url = "/subscriptions.json";
+						anchor = $(this).find("a");
+						datatype = anchor.attr("class");
+						sub_id = anchor.attr("id");
+						method = "POST";
+						submitSubscription(url, method, datatype, sub_id);
+					});
+					$('.unsubscribe').live("click", function() {
+						anchor = $(this).find("a");
+						url = anchor.attr("href");
+						datatype = anchor.attr("class");
+						sub_id = anchor.attr("id");
+						method = "DELETE";
+						submitSubscription(url, method, datatype, sub_id);
+					});
+						
+					function submitSubscription(url, method, datatype, sub_id) {
+						$.ajax({
+						  type: 'POST',
+						  url: url,
+						  data: { datatype: datatype, sub_id: sub_id, user_id: "<%=@current_user.id%>", _method: method }
+						}).success(function( msg ) {
+							  console.log( "Successful: " + url);
+							  if($(".subscribe").length > 0) {
+								  $('.subscribe').text("Unfollow this village");
+								  $('.subscribe').addClass("unsubscribe");
+								  $('.subscribe').removeClass("subscribe");
+							  } else if ($('.unsubscribe').length > 0) {
+								  $('.unsubscribe').text("Follow this village");
+								  $('.unsubscribe').addClass("subscribe");
+								  $('.unsubscribe').removeClass("unsubscribe");
+							  }
+						}).fail(function( msg ){
+							alert("There was an error processing your request.");
+						});
+					}
+				});
+			</script>
 		</div>
 
 		<div id="contentRight300">
+			<% @villages.each do |village| %>
+				<h4><%= village.communityname %></h4>
+				<% @communityimage = village.assets.first %>
+				<% if @communityimage.nil? %>
+					<a href="/villages/<%=village.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a>
+				<% else %>
+					<a href="/villages/<%=village.id%>" style="background-color:#C2B092; border: 2px solid #C2B092;border-bottom: 3px solid #C2B092;padding:0; background-image: url('<%=@communityimage.asset.url(:thumb)%>')"><img src="<%=@communityimage.asset.url(:thumb)%>" /></a>
+				<% end %>
+				<div class="clearfix"></div>
+			<% end %>
+			<h4><a href="/villages">View all villages we work with</a></h4>
+			<% @projects.each do |village| %>
+				<h4><%= village.projectname %></h4>
+				<% @communityimage = village.assets.first %>
+				<% if @communityimage.nil? %>
+					<a href="/projects/<%=village.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a>
+				<% else %>
+					<a href="/projects/<%=village.id%>" style="background-color:#C2B092; border: 2px solid #C2B092;border-bottom: 3px solid #C2B092;padding:0; background-image: url('<%=@communityimage.asset.url(:thumb)%>')"><img src="<%=@communityimage.asset.url(:thumb)%>"/></a>
+				<% end %>
+				<div class="clearfix"></div>
+				<h4><a href="/projects">View all projects we're working on</a></h4>
+			<% end %>
 			<!--
 			<div class="rightBox">
 				<h3 style="color: #079367;">Projects You're Following</h3>

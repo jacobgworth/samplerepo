@@ -26,13 +26,11 @@ class MymohController < ApplicationController
     @account = Contact.find_by_Id(current_user.convio_id)
     @spouse_id = (Account.find_by_cv__Head_of_Household__c(@account.Id).cv__Secondary_Contact__c || Account.find_by_cv__Secondary_Contact__c(@account.Id).cv__Head_of_Household__c) 
     @spouse = Contact.find_by_Id(@spouse_id)
+    
     c = convio_api_session
-    interest_hash = c.getUserInterests(@account.cv__Convio_ID__c.to_i)
-    @interests = []
-    interest_hash["getConsInterestsResponse"]["interest"].each do |item|
-      @interests << item["id"]
-    end
-    puts @interests.to_s
+    conv_id = @account.cv__Convio_ID__c.to_i
+    @interests = current_user.get_interests
+    puts "INTERESTS: " + @interests.to_s
     respond_to do |format|
       format.html {render :layout=>"homeLayout"} 
     end
@@ -70,8 +68,8 @@ class MymohController < ApplicationController
     @villages = Village.where(:id => @village_subs)
     @projects = Project.where(:id => @project_subs)
     
-    @posts = Post.joins(:communities).where(:communities => {:id => @village_subs}).limit(3).reverse
-    @updates = Update.joins(:communities).where(:communities => {:id => @village_subs}).limit(3).reverse
+    @posts = Post.joins(:communities).where(:communities => {:id => @village_subs}).limit(125).reverse
+    @updates = Update.joins(:communities).where(:communities => {:id => @village_subs}).limit(125).reverse
     respond_to do |format|
       format.html { render :layout=>"homeLayout" }
     end
@@ -84,7 +82,9 @@ class MymohController < ApplicationController
     dbdc_client.materialize("cv__Donation_Designation_Relationship__c")
     dbdc_client.materialize("cv__Designation__c")
     @recurring = Cv__Recurring_Gift__c.find_all_by_cv__Contact__c(@account.Id)
-    @donations = Opportunity.find_all_by_cv__Contact__c(@account.Id)
+    #@donations = Opportunity.find_all_by_cv__Contact__c(@account.Id)
+    query = "cv__Contact__c = '" + current_user.convio_id + "' AND CloseDate > " + Date.today.year.to_s + "-" + Date.today.strftime("%m") + "-01"
+    @donations = Opportunity.query(query)
     respond_to do | format |
       format.html { render :layout => "homeLayout" }
     end
@@ -184,7 +184,7 @@ class MymohController < ApplicationController
     end
     
     #pull in other children for "sponsor these too" 
-    @otherchildren = Child__c.query("Number_of_Photos__c > 0 LIMIT 3")
+    @otherchildren = Child__c.query("Number_of_Photos__c > 0 AND Online_Status__c = 'Available' LIMIT 3")
     
     respond_to do |format|
       format.html {render :layout=>"homeLayout"} 

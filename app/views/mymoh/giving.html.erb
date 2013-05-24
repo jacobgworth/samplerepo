@@ -88,24 +88,33 @@
 				<th valign="top"><h3>Amount</h3></th>
 			</tr>
 			<% @totalgifted = 0 %>
-			<% @donations.each do |don| %>
-				<% if (Date.today - don.CloseDate) < 30 %>
-					<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
-					<% @designation = Cv__Designation__c.find_by_Id(@ddr.cv__Designation__c)%>
-					<tr>
-						<td><a href="/mymoh/giving/receipt/<%=don.Id%>"><%=don.CloseDate.strftime("%b %-d, %Y")%></a></td>
-						<td><%=don.Type%></td>
-						<td><%=@designation.Name %></td>
-						<td><%=don.Description%></td>
-						<td>$<%=don.Amount.to_int || "N/A" %></td>
-					</tr>
-					<% @totalgifted += don.Amount.to_int %>
+			<% if @donations.length > 0 %>
+				<% @donations.each do |don| %>
+					<% if (Date.today - don.CloseDate) < 30 %>
+						<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
+						<% @designation = Cv__Designation__c.find_by_Id(@ddr.cv__Designation__c)%>
+						<tr>
+							<td><a href="/mymoh/giving/receipt/<%=don.Id%>"><%=don.CloseDate.strftime("%b %-d, %Y")%></a></td>
+							<td><%=don.Type%></td>
+							<td><%=@designation.Name %></td>
+							<td><%=don.Description%></td>
+							<td>$<%=don.Amount.to_int || "N/A" %></td>
+						</tr>
+						<% @totalgifted += don.Amount.to_int %>
+					<% end %>
 				<% end %>
+				<tr>
+					<td colspan=4>Total Amount Gifted</td>
+					<td>$<%=@totalgifted%></td>
+				</tr>
+			<% else %>
+				<tr>
+					<td colspan=5>
+						We cannot find any donations given this month.
+					</td>
+				</tr>
 			<% end %>
-			<tr>
-				<td colspan=4>Total Amount Gifted</td>
-				<td>$<%=@totalgifted%></td>
-			</tr>
+			
 		</table>
 		<div class="buttonSquareOrange" style="width:280px; float:right;">
 				<a href="/mymoh/giving/history">See Complete History</a>
