@@ -1438,7 +1438,7 @@ h3.CTA {
     padding-right: 10px;
     position: relative;
     margin-bottom: 40px;
-    min-height: 246px;
+    min-height: 300px;
 }
 
 .staff img {
@@ -2428,7 +2428,7 @@ span.year {
 }
 .superFooterCol li.facebook a {
     background: url(/assets/icon-facebook.png) no-repeat;
-    text-indent: -99999px;
+    text-indent: -9999px;
     width: 16px;
     height: 16px;
     float: left;
@@ -2436,7 +2436,7 @@ span.year {
 }
 .superFooterCol li.twitter a {
     background: url(/assets/icon-twitter.png) no-repeat;
-    text-indent: -99999px;
+    text-indent: -9999px;
     width: 16px;
     height: 16px;
     float: left;
@@ -2444,7 +2444,7 @@ span.year {
 }
 .superFooterCol li.vimeo a {
     background: url(/assets/icon-vimeo.png) no-repeat;
-    text-indent: -99999px;
+    text-indent: -9999px;
     width: 16px;
     height: 16px;
     float: left;
