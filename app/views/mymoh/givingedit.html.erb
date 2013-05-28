@@ -28,6 +28,18 @@
 						<label>Next Payment:</label><br>
 						<input type="text" name="gift_next_date" value="<%= rec.cv__Next_Payment_Date__c%>" />
 					</div>
+					<div class="field">
+						<label>Payment Day of the Month:</label><br>
+						<input type="text" name="gift_day_of_month" value="<%= rec.cv__RecurrenceDayOfMonth__c.to_i %>" />
+					</div>
+					<div class="field">
+						<label>Gift Status:</label><br/>
+						<select name="gift_status">
+							<option value="Active" <%= rec.cv__Recurring_Gift_Status__c == "Active" ? "selected" : "" %>>Active</option>
+							<option value="Paused" <%= rec.cv__Recurring_Gift_Status__c == "Paused" ? "selected" : "" %>>Paused</option>
+							<option value="Written Off - Donor Canceled" <%= rec.cv__Recurring_Gift_Status__c == "Written Off - Donor Canceled" ? "selected" : "" %>>Canceled</option>
+						</select>
+					</div>
 					<div class="actions">
 						<input type="Submit" value="Submit" />
 					</div>
