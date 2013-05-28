@@ -97,7 +97,7 @@
 					<% if !@thumbimg.nil? %>
 						<img style="float:left; margin-right: 15px; margin-bottom: 5px;" src="<%=@thumbimg.asset.url(:thumb)%>" />
 					<% end %>
-					<%= truncate(strip_tags(m.body),:length=>320,:separator=>' ') %> <a href="">Read More &raquo;</a>
+					<%= truncate(strip_tags(m.body),:length=>320,:separator=>' ') %> <a href="/blog/<%=m.id%>">Read More &raquo;</a>
 				</p>
 				<% @cat = m.categories.order("categoryname asc").limit(1)%>
 				<div class="clearfix"><!--x--></div>
