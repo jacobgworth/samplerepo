@@ -10,6 +10,16 @@
 		<br />
 		Full Giving History</h2>
 
+		Filter By Date:
+		<form method="POST" action="/mymoh/giving/history">
+			Start: <input class="datepicker1" type="text" name="start_date" />
+			<br/>
+			End: <input class="datepicker2" type="text" name="end_date" />
+			<br/>
+			<input type="submit" value="View" />
+		</form>
+		<div class="clearfix"><!--x--></div>
+
 		<table class="mygiving" width="100%" border="0">
 			<tr>
 				<th colspan="5"><h2>History</h2></th>
@@ -46,16 +56,6 @@
 			<% end %>
 		</table>
 		<div class="clearfix" style="height:40px;">
-		Filter By Date:
-		<form method="POST" action="/mymoh/giving/history">
-			Start: <input class="datepicker1" type="text" name="start_date" />
-			<br/>
-			End: <input class="datepicker2" type="text" name="end_date" />
-			<br/>
-			<input type="submit" />
-		</form>
-		<div class="clearfix"><!--x--></div>
-			<!--x-->
 		</div>
 	</div>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>

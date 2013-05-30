@@ -40,11 +40,16 @@
 				<td><span class="label">&nbsp;</span></td>
 			</tr>
 		</table>
+		<div class="buttonWrapper" style="width:660px; margin:auto;">
+			<div class="buttonSquareOrange" style="width:280px; margin: auto; margin-bottom: 50px;">
+				<a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1">Give Now</a>
+			</div>
+		</div>
 
 		<% unless @recurring == nil %>
 		<table class="mygiving" width="100%" border="0">
 			<tr>
-				<th colspan="7"><h2>My Recurring Gifts - <a href="/mymoh/giving/edit">Edit</a></h2></th>
+				<th colspan="7"><h2>My Recurring Gifts</h2></th>
 			</tr>
 			<tr>
 				<th><h3>Description</h3></th>
@@ -66,16 +71,16 @@
 				<td><%= rec.cv__Next_Payment_Amount__c || "N/A"%></td>
 			</tr>
 			<% end %>
+		</table>
 		<div class="buttonWrapper" style="width:660px; margin:auto;">
-			<div class="buttonSquareOrange" style="width:280px; float:left; margin-right:50px;">
-				<a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1">Give Now</a>
-			</div>
-			<div class="buttonSquareOrange" style="width:280px; float:left;">
-				<a href="/mymoh/giving/edit">Schedule Giving</a>
+			<div class="buttonSquareOrange" style="width:280px; margin: auto; margin-bottom: 50px;">
+				<a href="/mymoh/giving/edit">Manage Recurring Gifts</a>
 			</div>
 			<div class="clearfix" style="height:80px;"></div>
 		</div>
 		<% end %>
+
+
 		<table class="mygiving" width="100%" border="0">
 			<tr>
 				<th colspan="5"><h2>My Giving History - <%=Date::MONTHNAMES[Date.today.month]%></h2></th>
@@ -116,7 +121,7 @@
 			<% end %>
 			
 		</table>
-		<div class="buttonSquareOrange" style="width:280px; float:right;">
+		<div class="buttonSquareOrange" style="width:280px; margin: auto; margin-bottom: 50px;">
 				<a href="/mymoh/giving/history">See Complete History</a>
 		</div>
 		<div class="clearfix" style="height:40px;">
