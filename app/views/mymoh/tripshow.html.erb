@@ -14,11 +14,11 @@
 		<div class="tanWrapper">
 			<h3><!--<%= @trip.Trip_Name__c%>--><%= @trip.Name%></h3>
 			<div class="alignLeft">
-				<h4>Trip Starts: <%= @trip.Haiti_Arrival_Date__c || "Unknown" %></h4>
-				<h4>Trip Ends: <%= @trip.Haiti_Departure_Date__c || "Unknown" %></h4>
+				<h4>Arrival: <%= @trip.Haiti_Arrival_Date__c || "Unknown" %></h4>
+				<h4>Departure: <%= @trip.Haiti_Departure_Date__c || "Unknown" %></h4>
 			</div>
 			<div class="alignRight" style="color:#E4D4B9; background-color:#078E60; padding:15px; margin-right:20px; margin-top:-20px;">
-				<h4 class="center"><strong>Days Till Trip: </strong>
+				<h4 class="center"><strong>Days Until Trip: </strong>
 				<br />
 				<%if @trip.Haiti_Arrival_Date__c%>
 					<%=@trip.Haiti_Arrival_Date__c - Date.today%> days
@@ -360,8 +360,8 @@
 					Did you know that you can view every project MOH is currently working on in
 					Haiti?
 				</p>
-				<div class="buttonSquareOrange alignRight" style="width:50px; margin-top:10px;">
-					<a id="dyklink" href="/projects">Go</a>
+				<div class="buttonSquareOrange alignRight" style="width:110px; margin-top:10px;">
+					<a id="dyklink" href="/projects">Learn More</a>
 				</div>
 				<div class="clearfix"></div>
 			</div>
