@@ -5,7 +5,7 @@
 		<h1>My MOH</h1>
 		<%= render 'layouts/mymohNav'%>
 		<h2><span class="eyebrow">Mission of Hope</span>
-		<br />My Giving</h2>
+		<br /><a href="/mymoh/giving">My Giving</a> &raquo; My Recurring Gifts</h2>
 
 		<% unless (@recurring == nil) || @recurring.empty? %>
 			<% @recurring.each do |rec| %>
