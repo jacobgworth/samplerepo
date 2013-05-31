@@ -99,16 +99,20 @@ class UpdatesController < ApplicationController
   # POST /updates
   # POST /updates.json
   def create
+    puts "Title: " + params[:update]["title"]
     @update = Update.new(params[:update])
+    
+    unless params[:update]["title"].empty? or params[:update]["body"].empty?
 
-    respond_to do |format|
-      if @update.save
-        format.html { redirect_to @update, notice: 'Update was successfully created.' }
-        format.json { render json: @update, status: :created, location: @update }
-        
-      else
-        format.html { render action: "new" }
-        format.json { render json: @update.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @update.save
+          format.html { redirect_to @update, notice: 'Update was successfully created.' }
+          format.json { render json: @update, status: :created, location: @update }
+          
+        else
+          format.html { render action: "new" }
+          format.json { render json: @update.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
