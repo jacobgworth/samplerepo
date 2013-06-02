@@ -3459,3 +3459,19 @@ h3.myMOHRight  {
 .logincontainer h2{
 	font-size: 1.4em !important;
 }
+
+.recurringGiftButton {
+	display: inline-block;
+	background-color: #ea861b;
+	color: #E4D4B9;
+	padding: 10px;
+	width: 90px;
+	margin-right: 20px;
+	cursor: hand; cursor: pointer;
+	text-align: center;
+}
+
+.recurringGift input[disabled] {
+	border: none;
+	background-color: transparent;
+}
