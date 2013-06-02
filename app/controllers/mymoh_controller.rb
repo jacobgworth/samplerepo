@@ -108,7 +108,7 @@ class MymohController < ApplicationController
     @account = Contact.find_by_Id(current_user.convio_id)
     dbdc_client.materialize("cv__Recurring_Gift__c")
     @recurring = Cv__Recurring_Gift__c.find_by_Id(params[:gift_id])
-    puts params[:gift_amount]
+    puts "RECURRING GIFT AMOUNT: " + params[:gift_amount]
     @recurring.cv__Recurring_Amount__c = params[:gift_amount]
     @recurring.cv__RecurrenceDayOfMonth__c = params[:gift_day_of_month]
     @recurring.cv__Recurring_Gift_Status__c = params[:gift_status]

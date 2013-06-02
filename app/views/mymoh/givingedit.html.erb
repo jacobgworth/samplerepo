@@ -25,36 +25,36 @@
 					</div>
 					<div class="field" style="display:none;">
 						<label>Gift Status:</label><br/>
-						<select id="giftStatus" name="gift_status">
+						<select class="giftStatus" name="gift_status">
 							<option value="Active" <%= rec.cv__Recurring_Gift_Status__c == "Active" ? "selected" : "" %>>Active</option>
 							<option value="Paused" <%= rec.cv__Recurring_Gift_Status__c == "Paused" ? "selected" : "" %>>Paused</option>
 							<option value="Written Off - Donor Canceled" <%= rec.cv__Recurring_Gift_Status__c == "Written Off - Donor Canceled" ? "selected" : "" %>>Canceled</option>
 						</select>
 					</div>
-					<div class="recurringGiftButton" id="editGift" style="">Edit Gift</div>
-					<div class="recurringGiftButton" id="cancelGift" style="">Cancel Gift</div>
-					<div class="recurringGiftButton" id="pauseGift" style="">Pause Gift</div>
-					<div class="recurringGiftButton" id="unpauseGift" style="">Un-Pause Gift</div>
+					<div class="recurringGiftButton editGift" style="">Edit Gift</div>
+					<div class="recurringGiftButton cancelGift" style="">Cancel Gift</div>
+					<div class="recurringGiftButton pauseGift" style="">Pause Gift</div>
+					<div class="recurringGiftButton unpauseGift" style="">Un-Pause Gift</div>
 					<div class="actions" style="display: inline-block;">
 						<input type="Submit" value="Save Changes" style="display: inline-block;"/>
 					</div>
 				</form>
 				<script>
-					$("#editGift").click(function() {
+					$(".editGift").click(function() {
 						$(this).parent().find("input[type=text]").removeAttr("disabled");	
 					});
-					$("#cancelGift").click(function() {
-						$("#giftStatus").val("Written Off - Donor Canceled");
-						$(this).parent().find("input[type=text]").removeAttr("disabled");	
-						$(this).parent().submit();
-					});
-					$("#pauseGift").click(function() {
-						$("#giftStatus").val("Paused");
+					$(".cancelGift").click(function() {
+						$(this).parent().find(".giftStatus").val("Written Off - Donor Canceled");
 						$(this).parent().find("input[type=text]").removeAttr("disabled");	
 						$(this).parent().submit();
 					});
-					$("#unpauseGift").click(function() {
-						$("#giftStatus").val("Active");
+					$(".pauseGift").click(function() {
+						$(this).parent().find(".giftStatus").val("Paused");
+						$(this).parent().find("input[type=text]").removeAttr("disabled");	
+						$(this).parent().submit();
+					});
+					$(".unpauseGift").click(function() {
+						$(this).parent().find(".giftStatus").val("Active");
 						$(this).parent().find("input[type=text]").removeAttr("disabled");	
 						$(this).parent().submit();
 					});
