@@ -66,6 +66,9 @@ class MymohController < ApplicationController
   def following
     @village_subs = Subscription.where(:datatype => 'village', :user_id => current_user.id).map(&:sub_id)
     @project_subs = Subscription.where(:datatype => 'project', :user_id => current_user.id).map(&:sub_id)
+    if @village_subs.empty?
+      @village_subs = [3]
+    end
     puts "Village subscriptions: " + @village_subs.length.to_s
     @posts = Post.joins(:communities).where("community_id=3").limit(3)
     @villages = Community.where(:id => @village_subs)
