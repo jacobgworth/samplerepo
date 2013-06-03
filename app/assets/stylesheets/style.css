@@ -3487,6 +3487,10 @@ h3.myMOHRight  {
 	padding: 0;
 }
 
+.subscribe.following {
+	display: none;
+}
+
 ul.following li {
 	margin-left: 20px;
 }
@@ -3499,4 +3503,8 @@ ul.following li {
 	border-bottom: 1px dotted #0f483b;
 	width: 100%;
 	margin-top: 25px;
+}
+
+.inline {
+	display: inline-block;
 }

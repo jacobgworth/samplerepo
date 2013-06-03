@@ -11,7 +11,7 @@
 			<% unless @villages.empty? %>
 				<% @villages.each do |village| %>
 					<h3>Recent Activity for <%=village.communityname%></h3>
-					<p><a href="/villages/<%=village.id%>">Visit this village page</a></p>
+					<p class="inline"><a href="/villages/<%=village.id%>">Visit this village page</a> | </p>
 					<div class="unsubscribe buttonSquareOrange following" style="">
 						<a href="/subscriptions/<%=village.id%>.json" class="village" id="<%=village.id%>"></a>Unfollow this village
 					</div>
@@ -82,7 +82,7 @@
 			<% unless @projects.empty? %>
 				<% @projects.each do |project| %>
 					<h3>Recent Activity for <%=project.projectname%></h3>
-					<p><a href="/projects/<%=project.id%>">Visit this project page</a></p>
+					<p class="inline"><a href="/projects/<%=project.id%>">Visit this project page</a> | </p>
 					<div class="unsubscribe buttonSquareOrange following" style="">
 						<a href="/subscriptions/<%=project.id%>.json" class="project" id="<%=project.id%>"></a>Unfollow this village
 					</div>
