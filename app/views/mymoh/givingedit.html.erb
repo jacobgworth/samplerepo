@@ -31,17 +31,19 @@
 							<option value="Written Off - Donor Canceled" <%= rec.cv__Recurring_Gift_Status__c == "Written Off - Donor Canceled" ? "selected" : "" %>>Canceled</option>
 						</select>
 					</div>
-					<div class="recurringGiftButton editGift" style="">Edit Gift</div>
+					<div class="recurringGiftButton editGift" style="display: inline-block;">Edit Gift</div>
 					<div class="recurringGiftButton cancelGift" style="">Cancel Gift</div>
 					<div class="recurringGiftButton pauseGift" style="">Pause Gift</div>
 					<div class="recurringGiftButton unpauseGift" style="">Un-Pause Gift</div>
-					<div class="actions" style="display: inline-block;">
+					<div class="actions" style="display: none;">
 						<input type="Submit" value="Save Changes" style="display: inline-block;"/>
 					</div>
 				</form>
 				<script>
 					$(".editGift").click(function() {
 						$(this).parent().find("input[type=text]").removeAttr("disabled");	
+						$(this).parent().find(".recurringGiftButton").css("display", "inline-block");
+						$(this).parent().find("input[type=submit]").parent().css("display", "inline-block");
 					});
 					$(".cancelGift").click(function() {
 						$(this).parent().find(".giftStatus").val("Written Off - Donor Canceled");

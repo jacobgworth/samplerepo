@@ -3461,7 +3461,7 @@ h3.myMOHRight  {
 }
 
 .recurringGiftButton {
-	display: inline-block;
+	display: none;
 	background-color: #ea861b;
 	color: #E4D4B9;
 	padding: 10px;
