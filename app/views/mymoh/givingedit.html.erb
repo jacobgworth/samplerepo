@@ -38,31 +38,33 @@
 						<input type="Submit" value="Save Changes" style="display: inline-block;"/>
 					</div>
 				</form>
-				<script>
-					$(".editGift").click(function() {
-						$(this).parent().find("input[type=text]").removeAttr("disabled");	
-						$(this).parent().find(".recurringGiftButton").css("display", "inline-block");
-						$(this).parent().find("input[type=submit]").parent().css("display", "inline-block");
-						$(this).hide();
-					});
-					$(".cancelGift").click(function() {
-						$(this).parent().find(".giftStatus").val("Written Off - Donor Canceled");
-						$(this).parent().find("input[type=text]").removeAttr("disabled");	
-						$(this).parent().submit();
-					});
-					$(".pauseGift").click(function() {
-						$(this).parent().find(".giftStatus").val("Paused");
-						$(this).parent().find("input[type=text]").removeAttr("disabled");	
-						$(this).parent().submit();
-					});
-					$(".unpauseGift").click(function() {
-						$(this).parent().find(".giftStatus").val("Active");
-						$(this).parent().find("input[type=text]").removeAttr("disabled");	
-						$(this).parent().submit();
-					});
-				</script>
+				
 				<br/>
+				<div class="hr-wrap"></div>
 			<% end %>
+			<script>
+				$(".editGift").click(function() {
+					$(this).parent().find("input[type=text]").removeAttr("disabled");	
+					$(this).parent().find(".recurringGiftButton").css("display", "inline-block");
+					$(this).parent().find("input[type=submit]").parent().css("display", "inline-block");
+					$(this).hide();
+				});
+				$(".cancelGift").click(function() {
+					$(this).parent().find(".giftStatus").val("Written Off - Donor Canceled");
+					$(this).parent().find("input[type=text]").removeAttr("disabled");	
+					$(this).parent().submit();
+				});
+				$(".pauseGift").click(function() {
+					$(this).parent().find(".giftStatus").val("Paused");
+					$(this).parent().find("input[type=text]").removeAttr("disabled");	
+					$(this).parent().submit();
+				});
+				$(".unpauseGift").click(function() {
+					$(this).parent().find(".giftStatus").val("Active");
+					$(this).parent().find("input[type=text]").removeAttr("disabled");	
+					$(this).parent().submit();
+				});
+			</script>
 		<% else %>
 			<p>We can't find any recurring donations to edit!</p>
 		<% end %>
