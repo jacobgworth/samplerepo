@@ -1,5 +1,7 @@
 class MymohController < ApplicationController
+  placeholder = Community
   include Databasedotcom::Rails::Controller
+  Community = placeholder
   before_filter :require_login, :except => [:login]
   
   def require_login
@@ -64,16 +66,18 @@ class MymohController < ApplicationController
   def following
     @village_subs = Subscription.where(:datatype => 'village', :user_id => current_user.id).map(&:sub_id)
     @project_subs = Subscription.where(:datatype => 'project', :user_id => current_user.id).map(&:sub_id)
+    puts "Village subscriptions: " + @village_subs.length.to_s
     @posts = Post.joins(:communities).where("community_id=3").limit(3)
     @villages = Community.where(:id => @village_subs)
+    puts "Villages found: " + @villages.length.to_s
     if @villages.empty?
-      puts "Villages were empty!"
+      puts "Villages were empty!!"
       @villages = Community.where(:id => 3)
     end
-    @villages = []
     @projects = Project.where(:id => @project_subs)
     
     @posts = Post.joins(:communities).where(:communities => {:id => @village_subs}).limit(125).reverse
+    puts "Posts found: " + @posts.length.to_s
     @updates = Update.joins(:communities).where(:communities => {:id => @village_subs}).limit(125).reverse
     respond_to do |format|
       format.html { render :layout=>"homeLayout" }

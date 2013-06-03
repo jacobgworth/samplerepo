@@ -1,5 +1,9 @@
 class PageController < ApplicationController
+  localComm = Community
+  localuser = User
   include Databasedotcom::Rails::Controller
+  Community = localComm
+  localuser = User
   
   def about_haiti
     @title = "Haiti Facts: Information About Haiti & Haiti Now"

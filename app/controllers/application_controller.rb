@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   LocalUser = User
+  LocalComm = Community
   include Databasedotcom::Rails::Controller
+  Community = LocalComm
   User = LocalUser
   protect_from_forgery
   
