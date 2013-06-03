@@ -3475,3 +3475,13 @@ h3.myMOHRight  {
 	border: none;
 	background-color: transparent;
 }
+
+.unsubscribe.following {
+	background-color: transparent;
+	color: #0F483B;
+	box-shadow: none !important;
+	font-size: 12px;
+	width: 150px;
+	text-align: left;
+	display: inline-block;
+}

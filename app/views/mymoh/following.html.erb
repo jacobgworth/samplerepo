@@ -12,7 +12,7 @@
 				<% @villages.each do |village| %>
 					<h3>Recent Activity for <%=village.communityname%></h3>
 					<p><a href="/villages/<%=village.id%>">Visit this village page</a></p>
-					<div class="unsubscribe buttonSquareOrange" style="">
+					<div class="unsubscribe buttonSquareOrange following" style="">
 						<a href="/subscriptions/<%=village.id%>.json" class="village" id="<%=village.id%>"></a>Unfollow this village
 					</div>
 					<% v_posts = @posts.select{ |post| post.communities.include? village }.first(3) %>	
@@ -83,7 +83,7 @@
 				<% @projects.each do |project| %>
 					<h3>Recent Activity for <%=project.projectname%></h3>
 					<p><a href="/projects/<%=project.id%>">Visit this project page</a></p>
-					<div class="unsubscribe buttonSquareOrange" style="">
+					<div class="unsubscribe buttonSquareOrange following" style="">
 						<a href="/subscriptions/<%=project.id%>.json" class="project" id="<%=project.id%>"></a>Unfollow this village
 					</div>
 					<% p_posts = @posts.select { |post| post.communities.include? project } %>	
@@ -193,25 +193,30 @@
 		</div>
 
 		<div id="contentRight300">
+			<h4 style="margin-bottom: 10px;">Villages</h4>
 			<% @villages.each do |village| %>
-				<h4><%= village.communityname %></h4>
-				<% @communityimage = village.assets.first %>
-				<% if @communityimage.nil? %>
-					<a href="/villages/<%=village.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a>
-				<% else %>
-					<a href="/villages/<%=village.id%>" style="background-color:#C2B092; border: 2px solid #C2B092;border-bottom: 3px solid #C2B092;padding:0; background-image: url('<%=@communityimage.asset.url(:thumb)%>')"><img src="<%=@communityimage.asset.url(:thumb)%>" /></a>
-				<% end %>
+				<a href="/villages/<%=village.id%>">
+					<img src="/assets/icon-housing-med-hover.png" style="height: 25px; width: 25px;"/>
+				</a>
+				<h4 style="display: inline-block">
+					<a href="/villages/<%=village.id%>">
+						<%= village.communityname %>
+					</a>
+				</h4>
 				<div class="clearfix"></div>
 			<% end %>
 			<h4><a href="/villages">View all villages we work with</a></h4>
+			
+			<h4 style="margin-top: 35px; margin-bottom: 10px;">Projects</h4>
 			<% @projects.each do |village| %>
-				<h4><%= village.projectname %></h4>
-				<% @communityimage = village.assets.first %>
-				<% if @communityimage.nil? %>
-					<a href="/projects/<%=village.id%>" style="background-image: url('/assets/icon-projects-med.png')"></a>
-				<% else %>
-					<a href="/projects/<%=village.id%>" style="background-color:#C2B092; border: 2px solid #C2B092;border-bottom: 3px solid #C2B092;padding:0; background-image: url('<%=@communityimage.asset.url(:thumb)%>')"><img src="<%=@communityimage.asset.url(:thumb)%>"/></a>
-				<% end %>
+				<a href="/villages/<%=village.id%>">
+					<img src="/assets/icon-projects-med-hover.png" style="height: 25px; width: 25px;"/>
+				</a>
+				<h4 style="display: inline-block">
+					<a href="/projeccts/<%=village.id%>">
+						<%= village.projectname %>
+					</a>
+				</h4>
 				<div class="clearfix"></div>
 				<h4><a href="/projects">View all projects we're working on</a></h4>
 			<% end %>
