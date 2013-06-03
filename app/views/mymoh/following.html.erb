@@ -193,33 +193,46 @@
 		</div>
 
 		<div id="contentRight300">
-			<h4 style="margin-bottom: 10px;">Villages</h4>
-			<% @villages.each do |village| %>
-				<a href="/villages/<%=village.id%>">
-					<img src="/assets/icon-housing-med-hover.png" style="height: 25px; width: 25px;"/>
-				</a>
-				<h4 style="display: inline-block">
-					<a href="/villages/<%=village.id%>">
-						<%= village.communityname %>
-					</a>
-				</h4>
-				<div class="clearfix"></div>
-			<% end %>
-			<h4><a href="/villages">View all villages we work with</a></h4>
+				<div style="position: relative;">
+					<img src="/assets/icon-housing-med-hover.png" style="width: 40px; height: 40px;"/>
+					<h2 style="margin-bottom: 10px; display: inline-block; margin-top: 0px; margin-left: 8px; position: absolute;">Villages</h2>
+				</div>
+				<div class="clear"></div>
+				<ul class="following">
+					<% @villages.each do |village| %>
+					<li>
+						<a href="/villages/<%=village.id%>">
+						</a>
+							<a href="/villages/<%=village.id%>">
+								<%= village.communityname %>
+							</a>
+						<div class="clearfix"></div>
+					</li>
+					<% end %>
+				</ul>
+				<h4 class="buttonSquareOrange following viewall"><a href="/villages">View all villages we work with</a></h4>
+				<div class="clear"></div>
+				<div class="hr-wrap"></div>
 			
-			<h4 style="margin-top: 35px; margin-bottom: 10px;">Projects</h4>
-			<% @projects.each do |village| %>
-				<a href="/villages/<%=village.id%>">
-					<img src="/assets/icon-projects-med-hover.png" style="height: 25px; width: 25px;"/>
-				</a>
-				<h4 style="display: inline-block">
-					<a href="/projeccts/<%=village.id%>">
-						<%= village.projectname %>
+			<div style="position: relative; margin-top: 40px;">
+				<img src="/assets/icon-projects-med-hover.png" style="width: 40px; height: 40px;"/>
+				<h2 style="margin-bottom: 10px; display: inline-block; margin-top: 0px; margin-left: 8px; position: absolute;">Projects</h2>
+			</div>
+			<div class="clear"></div>
+			<ul class="following">
+				<% @projects.each do |village| %>
+				<li>
+					<a href="/projects/<%=village.id%>">
 					</a>
-				</h4>
-				<div class="clearfix"></div>
-				<h4><a href="/projects">View all projects we're working on</a></h4>
-			<% end %>
+						<a href="/projects/<%=village.id%>">
+							<%= village.projectname %>
+						</a>
+					<div class="clearfix"></div>
+				</li>
+				<% end %>
+			</ul>
+			<h4 class="buttonSquareOrange following viewall"><a href="/projects">View all projects we're working on</a></h4>
+			
 			<!--
 			<div class="rightBox">
 				<h3 style="color: #079367;">Projects You're Following</h3>

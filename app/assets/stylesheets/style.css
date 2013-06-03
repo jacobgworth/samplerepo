@@ -3484,4 +3484,19 @@ h3.myMOHRight  {
 	width: 150px;
 	text-align: left;
 	display: inline-block;
+	padding: 0;
+}
+
+ul.following li {
+	margin-left: 20px;
+}
+
+.viewall {
+	margin-top: 20px;
+}
+
+.hr-wrap {
+	border-bottom: 1px dotted #0f483b;
+	width: 100%;
+	margin-top: 25px;
 }
