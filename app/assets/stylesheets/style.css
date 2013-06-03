@@ -3465,15 +3465,35 @@ h3.myMOHRight  {
 	background-color: #ea861b;
 	color: #E4D4B9;
 	padding: 10px;
-	width: 90px;
+	width: 120px;
 	margin-right: 20px;
 	cursor: hand; cursor: pointer;
 	text-align: center;
+	box-shadow: 3px 3px #c26603;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+}
+
+.recurringGift input[type=submit] {
+	display: none;
+	background: none;
+	background-color: #ea861b;
+	height: 34px;
+	color: #E4D4B9;
+	padding: 10px !important;
+	margin-right: 20px;
+	cursor: hand; cursor: pointer;
+	text-align: center;
+	box-shadow: 3px 3px #c26603;
+	margin-top: 0px;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	font-size: 14px;
 }
 
 .recurringGift input[disabled] {
+	background: transparent;
 	border: none;
-	background-color: transparent;
 }
 
 .unsubscribe.following {
