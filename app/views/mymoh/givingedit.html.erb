@@ -9,20 +9,14 @@
 
 		<% unless (@recurring == nil) || @recurring.empty? %>
 			<% @recurring.each do |rec| %>
-				<h1 style="padding-top: 50px;">Recurring Gift</h1>
+				<h3 style="padding-top: 50px;"><%= rec.Name %></h3>
 				<form class="recurringGift" action="" method="POST">
 					<input type="hidden" name="gift_id" value="<%= rec.Id %>" />
 					<div class="field">
-						<label>Description:</label><br>
-						<%= rec.cv__Recurrence_Description__c || "N/A"%>
+						<label>Amount:</label> <input type="text" name="gift_amount" value="<%= rec.cv__Recurring_Amount__c %>" style="width:30px;" disabled/>
 					</div>
 					<div class="field">
-						<label>Amount:</label><br>
-						<input type="text" name="gift_amount" value="<%= rec.cv__Recurring_Amount__c %>" style="width:30px;" disabled/>
-					</div>
-					<div class="field">
-						<label>Payment Day of the Month:</label><br>
-						<input type="text" name="gift_day_of_month" value="<%= rec.cv__RecurrenceDayOfMonth__c.to_i %>" disabled/>
+						<label>Payment Day of the Month:</label> <input type="text" name="gift_day_of_month" style="width: 30px;" value="<%= rec.cv__RecurrenceDayOfMonth__c.to_i %>" disabled/>
 					</div>
 					<div class="field" style="display:none;">
 						<label>Gift Status:</label><br/>
@@ -34,8 +28,12 @@
 					</div>
 					<div class="recurringGiftButton editGift" style="display: inline-block;">Edit Gift</div>
 					<div class="recurringGiftButton cancelGift" style="">Cancel Gift</div>
-					<div class="recurringGiftButton pauseGift" style="">Pause Gift</div>
-					<div class="recurringGiftButton unpauseGift" style="">Un-Pause Gift</div>
+					<% if rec.cv__Recurring_Gift_Status__c == "Active"%>
+						<div class="recurringGiftButton pauseGift" style="">Pause Gift</div>
+					<% end %>
+					<% if rec.cv__Recurring_Gift_Status__c == "Paused"%>
+						<div class="recurringGiftButton unpauseGift" style="">Un-Pause Gift</div>
+					<% end %>
 					<div class="actions" style="display: none;">
 						<input type="Submit" value="Save Changes" style="display: inline-block;"/>
 					</div>
@@ -45,6 +43,7 @@
 						$(this).parent().find("input[type=text]").removeAttr("disabled");	
 						$(this).parent().find(".recurringGiftButton").css("display", "inline-block");
 						$(this).parent().find("input[type=submit]").parent().css("display", "inline-block");
+						$(this).hide();
 					});
 					$(".cancelGift").click(function() {
 						$(this).parent().find(".giftStatus").val("Written Off - Donor Canceled");
