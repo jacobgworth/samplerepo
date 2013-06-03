@@ -9,6 +9,7 @@
 
 		<% unless (@recurring == nil) || @recurring.empty? %>
 			<% @recurring.each do |rec| %>
+				<h1 style="padding-top: 50px;">Recurring Gift</h1>
 				<form class="recurringGift" action="" method="POST">
 					<input type="hidden" name="gift_id" value="<%= rec.Id %>" />
 					<div class="field">
