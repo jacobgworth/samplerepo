@@ -1,3 +1,8 @@
+<% if @recurring.empty? and @donations.empty? %>
+<script>
+	window.location = "http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1";
+</script>
+<% end %>
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 
