@@ -25,9 +25,6 @@
 				<th colspan="3" class="label"><h2>My Account Summary</h2></th>
 			</tr>
 			<tr>
-				<th colspan="3" class="label"><h3>Account Details</h3></th>
-			</tr>
-			<tr>
 				<td><span class="label">Account</span><span class="data"><%= @account.Account__c %></span></td>
 				<td><span class="label">Lifetime Donations</span>$<%= @account.cv__summary_lifetime_gift_amount__c.to_int || 0 %></span></td>
 			</tr>
