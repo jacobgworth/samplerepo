@@ -15,7 +15,7 @@ class MymohController < ApplicationController
       puts "CONVIO ID: " + convio_id.to_s
       @account = Contact.find_by_Id("#{convio_id}")
       unless @account == nil
-        redirect_to "/mymoh/following"
+        redirect_to "/mymoh/home"
         #respond_to do | format |
           #format.html { render :layout=>"homeLayout"}
         #end
@@ -149,6 +149,14 @@ class MymohController < ApplicationController
     puts @donation
     respond_to do |format|
       format.html { render :layout => "receiptLayout" }
+    end
+  end
+  
+  def home
+    @posts = Post.order("postdate desc").take(5)
+    @updates = Update.order("postdate desc").take(8)
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# connected.html.erb
     end
   end
   
