@@ -71,34 +71,54 @@
 			<div class="clearfix"></div>
 
 		</div>
-		<% unless @related_result.nil? %>
-		<% if !@related_result.empty? %>
-		<h2>What We've Been Up To Lately</h2>
-		<% @related_result[1..15].each do |related|%>
-		<!--time: it's month, day, year -->
-		<!--<%=related.postdate.strftime("%b")%> <%=related.postdate.strftime("%d")%>, <%=related.postdate.strftime('%Y')%>-->
-		<div class="update960" style="line-height: 1.3em; height=120px;">
-			<div class="updateDate">
-			<span class="month"><%=related.postdate.strftime("%b")%></span><br />
-			<span class="date"><%=related.postdate.strftime("%d")%></span><br />
-			<span class="year"><%=related.postdate.strftime('%Y')%></span>
-			</div>
-			<div class="updatePost960">
-			<h4><a href="/updates/<%= related.id%>"><%= related.title%></a> 
-			<br/>
-			</h4>
-			<% unless related.assets.last.nil? %>
-			<img src="<%= related.assets.last.asset.url(:thumb)%>" />
-			<%end %>
-			<%= related.body %>
-			</div>
-			<div class="clearfix">
-				<!--x-->
-			</div>
-		</div>
-		<% end%>
-		<!--</h3>-->
-		<% end %>
+		<% unless @related_result.nil? or @related_result.empty? %>
+			<h2>What We've Been Up To Lately</h2>
+			<% @related_result[1..15].each do |related|%>
+				<div class="update960" style="line-height: 1.3em; height=120px;">
+					<div class="updateDate">
+					<span class="month"><%=related.postdate.strftime("%b")%></span><br />
+					<span class="date"><%=related.postdate.strftime("%d")%></span><br />
+					<span class="year"><%=related.postdate.strftime('%Y')%></span>
+					</div>
+					<div class="updatePost960">
+					<h4><a href="/updates/<%= related.id%>"><%= related.title%></a> 
+					<br/>
+					</h4>
+					<% unless related.assets.last.nil? %>
+					<img src="<%= related.assets.last.asset.url(:thumb)%>" />
+					<%end %>
+					<%= related.body %>
+					</div>
+					<div class="clearfix">
+						<!--x-->
+					</div>
+				</div>
+			<% end%>
+		<%end%>
+		<% unless @related_result_blog.nil? or @related_result_blog.empty? %>
+			<h2 style="margin-top: 60px;">Latest Blog Posts</h2>
+			<% @related_result_blog[1..15].each do |related|%>
+				<div class="update960" style="line-height: 1.3em; height=120px;">
+					<div class="updateDate">
+					<span class="month"><%=related.postdate.strftime("%b")%></span><br />
+					<span class="date"><%=related.postdate.strftime("%d")%></span><br />
+					<span class="year"><%=related.postdate.strftime('%Y')%></span>
+					</div>
+					<div class="updatePost960">
+					<h4><a href="/updates/<%= related.id%>"><%= related.title%></a> 
+					<br/>
+					</h4>
+					<% unless related.assets.last.nil? %>
+						<img src="<%= related.assets.last.asset.url(:thumb)%>" />
+					<%end %>
+					<%= sanitize truncate(related.body,:length=>700,:separator=>' '), :tags => %w(b) %>
+				    <a href="/blog/<%=related.id%>">Read More &raquo;</a>
+					</div>
+					<div class="clearfix">
+						<!--x-->
+					</div>
+				</div>
+			<% end%>
 		<%end%>
 	</div>
 

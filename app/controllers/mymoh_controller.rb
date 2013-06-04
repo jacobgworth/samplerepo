@@ -182,12 +182,15 @@ class MymohController < ApplicationController
     #get blogs & updates from "school of hope" and "village of hope"
     #right now using categories 4=church of hope, and 7=education
     @related_result = []
+    @related_result_blog = []
     @cats = [7, 13]
     @cat = []
     @cat << Category.find(4)
     @cats.each do |cat|
-      @related_result += Update.joins(:categories).where("category_id=" + cat.to_s).reverse
+      @related_result += Update.joins(:categories).where("category_id=" + cat.to_s).reverse.take(4)
+      @related_result_blog += Post.joins(:categories).where("category_id=" + cat.to_s).reverse.take(4)
       @related_result = @related_result.uniq{|x| x.title}
+      @related_result_blog = @related_result_blog.uniq{|x| x.title}
     end
     
     @blogs = []
