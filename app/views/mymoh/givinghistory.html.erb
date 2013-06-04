@@ -10,11 +10,9 @@
 		<br /><a href="/mymoh/giving">My Giving</a> &raquo; Full Giving History</h2>
 
 		Filter By Date:
-		<form method="POST" action="/mymoh/giving/history">
+		<form method="POST" action="/mymoh/giving/history" class="givingDateFilter">
 			Start: <input class="datepicker1" type="text" name="start_date" />
-			<br/>
 			End: <input class="datepicker2" type="text" name="end_date" />
-			<br/>
 			<input type="submit" value="View" />
 		</form>
 		<div class="clearfix"><!--x--></div>
@@ -55,6 +53,7 @@
 			<% end %>
 		</table>
 		<div class="clearfix" style="height:40px;">
+		<p>Mission of Hope Haiti, Inc. is a not for profit, 501(c)3 organization. Charitable gifts and payments may or may not be tax deductible. Please consult your tax advisor.</p>
 		</div>
 	</div>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>

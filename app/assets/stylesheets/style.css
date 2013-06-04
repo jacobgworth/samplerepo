@@ -3528,3 +3528,7 @@ ul.following li {
 .inline {
 	display: inline-block;
 }
+
+.givingDateFilter {
+	padding-bottom: 25px;
+}
