@@ -20,8 +20,8 @@
 			<div class="alignRight" style="color:#E4D4B9; background-color:#078E60; padding:15px; margin-right:20px; margin-top:-20px;">
 				<h4 class="center"><strong>Days Until Trip: </strong>
 				<br />
-				<%if @trip.Haiti_Arrival_Date__c%>
-					<%=@trip.Haiti_Arrival_Date__c - Date.today%> days
+				<%if @trip.Haiti_Arrival_Date__c %>
+					<%=(@trip.Haiti_Arrival_Date__c - Date.today).to_i %> days
 				<%else%>Unknown
 				<%end%></h4>
 			</div>
