@@ -8,10 +8,10 @@
 		<h2>What's Happening at Mission of Hope</h2>
 		<div id="contentLeft560" style="width: 100%;">
 			
-					<h4>Blog Posts</h4>
+					<h3 style="padding:20px 0;">Blog Posts</h3>
 					<% unless @posts.empty? %>
 						<% @posts.each do |post| %>
-							<div class="fullWidthUpdate">
+							<div class="update960" style="line-height: 1.3em; height=120px;">
 								<div class="updateDate">
 									<span class="month"><%=post.postdate.strftime('%b')%></span>
 									<br />
@@ -19,15 +19,15 @@
 									<br />
 									<span class="year"><%=post.postdate.strftime('%Y')%></span>
 								</div>
-								<div class="fullWidthUpdate">
-									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a></h4>
-									<p>
+								<div class="updatePost960">
+									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a><br/></h4>
+									
 										<% unless post.assets.last.nil? %>
 											<img src="<%= post.assets.last.asset.url(:thumb)%>" />
 										<% end %>
-										<%= sanitize truncate(post.body,:length=>500,:separator=>' '), :tags => %w(b) %>
-										 <a href="/blog/<%=post.id%>">Read More &raquo;</a>
-									</p>
+										<%= sanitize truncate(post.body,:length=>500,:separator=>''), :tags => %w(b) %>
+										<a href="/blog/<%=post.id%>">Read More &raquo;</a>
+									
 									<p class="meta">
 										<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
 								</div>
@@ -38,10 +38,10 @@
 						No blog posts found.
 					<% end %>
 					
-					<h4>Updates</h4>
+					<h3 style="padding:20px 0;">Updates</h3>
 					<% unless @updates.empty? %>
 						<% @updates.each do |post| %>
-							<div class="fullWidthUpdate">
+							<div class="update960" style="line-height: 1.3em; height=120px;">
 								<div class="updateDate">
 									<span class="month"><%=post.postdate.strftime('%b')%></span>
 									<br />
@@ -49,15 +49,15 @@
 									<br />
 									<span class="year"><%=post.postdate.strftime('%Y')%></span>
 								</div>
-								<div class="fullWidthUpdate">
-									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a></h4>
-									<p>
+								<div class="updatePost960">
+									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a><br/></h4>
+									
 										<% unless post.assets.last.nil? %>
 											<img src="<%= post.assets.last.asset.url(:thumb)%>" />
 										<% end %>
 										<%= sanitize truncate(post.body,:length=>500,:separator=>' '), :tags => %w(b) %>
 										 <a href="/blog/<%=post.id%>">Read More &raquo;</a>
-									</p>
+									
 									<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
 								</div>
 								<div class="clearfix"></div>
