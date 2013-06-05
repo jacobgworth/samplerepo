@@ -282,6 +282,7 @@ Mohhaiti::Application.routes.draw do
   match "/console" => "page#console"
   
   get "mymoh/account"
+  get "mymoh/status_check"
   get "mymoh/home"
   get "mymoh/giving"
   get "mymoh/giving/edit" => "mymoh#givingedit"
