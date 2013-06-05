@@ -39,13 +39,13 @@
 						<td><%=don.Type%></td>
 						<td><%=@designation.Name %></td>
 						<td><%=don.Description%></td>
-						<td>$<%=don.Amount.to_int || "N/A" %></td>
+						<td>$<%=currency_convert(don.Amount) || "N/A" %></td>
 					</tr>
-					<% @totalgifted += don.Amount.to_int %>
+					<% @totalgifted += don.Amount %>
 				<% end %>
 				<tr>
 					<td colspan=4>Total Amount Gifted</td>
-					<td>$<%=@totalgifted%></td>
+					<td>$<%= currency_convert(@totalgifted)%></td>
 				</tr>
 			<% else %>
 				<tr>
