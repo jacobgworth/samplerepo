@@ -13,11 +13,11 @@
 				<h3 style="padding-top: 50px;"><%= rec.Name %></h3>
 				<form class="recurringGift" action="" method="POST">
 					<input type="hidden" name="gift_id" value="<%= rec.Id %>" />
-					<div class="field">
-						<label>Amount:</label> <input type="text" name="gift_amount" value="<%= rec.cv__Recurring_Amount__c %>" style="width:30px;" disabled/>
+					<div class="field" style="display: inline-block">
+						<label><strong>Amount:</strong></label> <input type="text" name="gift_amount" value="<%= rec.cv__Recurring_Amount__c %>" style="width:30px;" disabled/>
 					</div>
-					<div class="field">
-						<label>Payment Day of the Month:</label> <input type="text" name="gift_day_of_month" style="width: 30px;" value="<%= rec.cv__RecurrenceDayOfMonth__c.to_i %>" disabled/>
+					<div class="field" style="display: inline-block">
+						<label><strong>Payment Day of the Month:</strong></label> <input type="text" name="gift_day_of_month" style="width: 30px;" value="<%= rec.cv__RecurrenceDayOfMonth__c.to_i %>" disabled/>
 					</div>
 					<div class="field" style="display:none;">
 						<label>Gift Status:</label><br/>
@@ -28,6 +28,7 @@
 						</select>
 					</div>
 					<div class="recurringGiftButton editGift" style="display: inline-block;">Edit Gift</div>
+					<br/>
 					<div class="recurringGiftButton cancelGift" style="">Cancel Gift</div>
 					<% if rec.cv__Recurring_Gift_Status__c == "Active"%>
 						<div class="recurringGiftButton pauseGift" style="">Pause Gift</div>
@@ -69,6 +70,12 @@
 		<% else %>
 			<p>We can't find any recurring donations to edit!</p>
 		<% end %>
+		
+		<div class="buttonWrapper" style="width:660px; margin:auto; margin-top: 50px;">
+			<div class="buttonSquareOrange" style="width:280px; margin: auto; margin-bottom: 50px;">
+				<a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1">New Recurring Gift</a>
+			</div>
+		</div>
 		
 		<div class="clearfix" style="height:40px;">
 			<!--x-->
