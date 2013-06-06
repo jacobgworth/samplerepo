@@ -67,13 +67,13 @@
 			</tr>
 			<% @recurring.each do |rec| %>
 			<tr>
-				<td style="width: 375px;"><%= rec.cv__Recurrence_Description__c || "N/A"%></td>
+				<td style="width: 375px;"><%= rec.Name || "N/A"%></td>
 				<td>$<%= currency_convert(rec.cv__Recurring_Amount__c) %></td>
 				<td>$<%= currency_convert(rec.cv__Last_Payment_Amount__c) || 0 %></td>
 				<td><%= rec.cv__Last_Payment_Date__c ? rec.cv__Last_Payment_Date__c.strftime("%b %-d, %Y") : "N/A"%></td>
 				<td><%= rec.No_of_Months_Paid_Ahead__c < 0 ? "(" + rec.No_of_Months_Paid_Ahead__c.abs.to_i.to_s + ")" : rec.No_of_Months_Paid_Ahead__c.to_i %></td>
 				<td><%= rec.cv__Next_Payment_Date__c ? rec.cv__Next_Payment_Date__c.strftime("%b %-d, %Y") : "N/A"%></td>
-				<td><%= currency_convert(rec.cv__Next_Payment_Amount__c) || "N/A"%></td>
+				<td>$<%= currency_convert(rec.cv__Next_Payment_Amount__c) || "N/A"%></td>
 			</tr>
 			<% end %>
 		</table>
