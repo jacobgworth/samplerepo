@@ -21,7 +21,7 @@
 								</div>
 								<div class="fullWidthUpdate">
 									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a></h4>
-									<p>
+									<p class="mymohpostbody">
 										<% unless post.assets.last.nil? %>
 											<img src="<%= post.assets.last.asset.url(:thumb)%>" />
 										<% end %>
@@ -51,12 +51,12 @@
 								</div>
 								<div class="fullWidthUpdate">
 									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a></h4>
-									<p>
+									<p class="mymohpostbody">
 										<% unless post.assets.last.nil? %>
 											<img src="<%= post.assets.last.asset.url(:thumb)%>" />
 										<% end %>
 										<%= sanitize truncate(post.body,:length=>500,:separator=>' '), :tags => %w(b) %>
-										 <a href="/blog/<%=post.id%>">Read More &raquo;</a>
+										 
 									</p>
 									<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
 								</div>

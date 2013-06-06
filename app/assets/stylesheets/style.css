@@ -3543,3 +3543,10 @@ ul.following li {
 	padding: 10px;
 	line-height: 1em;
 }
+
+.mymohpostbody img {
+	float: left;
+	margin-right: 10px;
+	margin-top: 4px;
+	margin-bottom: 25px;
+}
