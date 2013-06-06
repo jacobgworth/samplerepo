@@ -3199,6 +3199,7 @@ tr {
 .loginRight {
 	float:right;
 	margin:30px 60px 0 0px;
+	width: 245px;
 }
 
 .loginRight h2 {
@@ -3531,4 +3532,21 @@ ul.following li {
 
 .givingDateFilter {
 	padding-bottom: 25px;
+}
+
+.loginDisclaimer {
+	margin-top: 50px;
+	font-size: 12px;
+	overflow: hidden;
+	background-color: white;
+	opacity: 0.8;
+	padding: 10px;
+	line-height: 1em;
+}
+
+.mymohpostbody img {
+	float: left;
+	margin-right: 10px;
+	margin-top: 4px;
+	margin-bottom: 25px;
 }

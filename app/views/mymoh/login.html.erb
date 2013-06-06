@@ -3,9 +3,8 @@
 
 	<div id="content" style="padding-top:50px;">
 
-		<h1>My MOH</h1>
+		<h1 style="padding-bottom: 25px;">My MOH</h1>
 
-		<%= render 'layouts/mymohNav'%>
 		<div class="loginWrapper">
 			<div class="loginLeft">
 					<div class="logincontainer">
@@ -45,7 +44,7 @@
 					<%= password_field_tag :password %>
 				</p>
 				<p>
-					<%= submit_tag("Sign In", :class => "buttonSquareOrange") %> <a href="" style="margin-left: 5px;">Forget your login info?</a>
+					<%= submit_tag("Sign In", :class => "buttonSquareOrange") %> <a href="" style="margin-left: 5px; display: none;">Forget your login info?</a>
 				</p>
 				<p>
 				</p>
@@ -54,7 +53,11 @@
 				<p class="buttonSquareGreen">
 					<a href="/users/new">Create Account</a>
 				</p>
+				<p class="loginDisclaimer">
+					We are excited to announce that we have recently transitioned to a new online donor support system that will allow you to manage your giving in new and easy way! If you created an account online with us before 6/10/13, your login information is no longer valid and you will need to click the green button to create a new account. Once you have created a new online account, you will be able to access your giving history, give a gift, manage account information and more. If you have any questions about this, please contact our stateside office at 239-791-8125 or email <a href="mailto:info@mohhaiti.org">info@mohhaiti.org</a>. 
+				</p>
 			</div>
+			<div class="clearfix"></div>
 		</div>
 		<div class="clearfix" style="height:40px;">
 			<!--x-->

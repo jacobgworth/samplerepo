@@ -84,7 +84,7 @@
 					<h3>Recent Activity for <%=project.projectname%></h3>
 					<p class="inline"><a href="/projects/<%=project.id%>">Visit this project page</a> | </p>
 					<div class="unsubscribe buttonSquareOrange following" style="">
-						<a href="/subscriptions/<%=project.id%>.json" class="project" id="<%=project.id%>"></a>Unfollow this village
+						<a href="/subscriptions/<%=project.id%>.json" class="project" id="<%=project.id%>"></a>Unfollow this project
 					</div>
 					<% p_posts = @posts.select { |post| post.communities.include? project } %>	
 					<% p_updates = @updates.select { |update| update.communities.include? project } %>	

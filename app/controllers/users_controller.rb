@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  
+  placeholder = Community
   include Databasedotcom::Rails::Controller
+  Community = placeholder
   
   # GET /users
   # GET /users.json

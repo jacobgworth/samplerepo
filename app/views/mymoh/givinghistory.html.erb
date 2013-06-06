@@ -8,7 +8,7 @@
 		<%= render 'layouts/mymohNav'%>
 		<a href="/mymoh">MyMOH</a> &raquo; <a href="/mymoh/giving">My Giving</a> &raquo; Giving History
 		<h2><span class="eyebrow">Mission of Hope</span>
-		<br /><a href="/mymoh/giving">My Giving</a> &raquo; Full Giving History</h2>
+		<br />Full Giving History</h2>
 
 		Filter By Date:
 		<form method="POST" action="/mymoh/giving/history" class="givingDateFilter">
@@ -38,14 +38,14 @@
 						<td><a href="/mymoh/giving/receipt/<%=don.Id%>"><%=don.CloseDate.strftime("%b %-d, %Y")%></a></td>
 						<td><%=don.Type%></td>
 						<td><%=@designation.Name %></td>
-						<td><%=don.Description%></td>
-						<td>$<%=don.Amount.to_int || "N/A" %></td>
+						<td><%=don.Name%></td>
+						<td>$<%=currency_convert(don.Amount) || "N/A" %></td>
 					</tr>
-					<% @totalgifted += don.Amount.to_int %>
+					<% @totalgifted += don.Amount %>
 				<% end %>
 				<tr>
 					<td colspan=4>Total Amount Gifted</td>
-					<td>$<%=@totalgifted%></td>
+					<td>$<%= currency_convert(@totalgifted)%></td>
 				</tr>
 			<% else %>
 				<tr>

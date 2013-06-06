@@ -13,6 +13,15 @@ class ApplicationController < ActionController::Base
   #  @current_user ||= User.find(session[:user_id]) if session[:user_id]
   #end
   
+  def currency_convert(amt)
+    amt = amt.to_s
+    if amt.split(".")[1] and amt.split(".")[1].length < 2
+      amt = amt + "0"
+    end
+    return amt
+  end
+  helper_method :currency_convert
+  
   def convio_api_session()
     require "ConstituentManagementSession"
     ConvioSession.secure_domain="https://secure3.convio.net/mohh"

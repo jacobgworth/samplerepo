@@ -21,13 +21,13 @@
 								</div>
 								<div class="updatePost960">
 									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a><br/></h4>
-									
-										<% unless post.assets.last.nil? %>
+											<% unless post.assets.last.nil? %>
 											<img src="<%= post.assets.last.asset.url(:thumb)%>" />
-										<% end %>
-										<%= sanitize truncate(post.body,:length=>500,:separator=>''), :tags => %w(b) %>
+											<% end %>
+										<p class="mymohpostbody">
+											<%= sanitize truncate(post.body,:length=>500,:separator=>''), :tags => %w(b) %>
 										<a href="/blog/<%=post.id%>">Read More &raquo;</a>
-									
+									</p>
 									<p class="meta">
 										<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
 								</div>
@@ -51,13 +51,17 @@
 								</div>
 								<div class="updatePost960">
 									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a><br/></h4>
-									
-										<% unless post.assets.last.nil? %>
+									<% unless post.assets.last.nil? %>
 											<img src="<%= post.assets.last.asset.url(:thumb)%>" />
 										<% end %>
+
+									<p class="mymohpostbody">
+										
 										<%= sanitize truncate(post.body,:length=>500,:separator=>' '), :tags => %w(b) %>
 										 <a href="/blog/<%=post.id%>">Read More &raquo;</a>
 									
+										 
+									</p>
 									<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
 								</div>
 								<div class="clearfix"></div>
