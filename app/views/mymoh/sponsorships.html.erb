@@ -46,9 +46,14 @@
 		<div class="buttonSquareOrange" style="width: 35%; margin-bottom: 50px;"><a href="/child-sponsorship">Sponsor a Child Now</a></div>
 		<% end %>
 
-		<div class="tanWrapper">
-			<div class="buttonSquareGreen alignRight">
-				<h3><a href="https://mohhaiti.secure.force.com/sponsorship">Sponsor A Child</a></h3>
+		<div class="tanWrapper sponsorChildren">
+			<div class="alignRight sponsorWrap" style="width:35%;">
+				<div class="buttonSquareGreen">
+					<h3><a href="https://mohhaiti.secure.force.com/sponsorship">Sponsor A Child</a></h3>
+				</div>
+				<div style="margin-top: 35px;">
+					<p>This fall, new children will be coming into the School of Hope in Haiti without sponsors.  Sponsorship provides these children with an education, a nutritious daily meal and hope for a future. Please consider sponsoring one of these children today!</p>
+				</div>
 			</div>
 			<% if false %>
 			<% if @otherchildren && (@otherchildren.length > 0)%>
@@ -64,7 +69,7 @@
 				<!-- display something here for when there's no kids -->
 				<div class="sponsorChild">
 					<div class="child">
-						<a href="/child-sponsorship"><img src="/assets/mymoh-sponsor-another.jpg" style="width: 500px; height: 197px;"/></a>
+						<a href="/child-sponsorship"><img src="/assets/mymoh-sponsor-another.jpg" style="width: 500px; height: 223px;"/></a>
 					</div>
 				</div>
 			<% end %>
