@@ -30,11 +30,8 @@
 					<div class="recurringGiftButton editGift" style="display: inline-block;">Edit Gift</div>
 					<br/>
 					<div class="recurringGiftButton cancelGift" style="">Cancel Gift</div>
-					<% if rec.cv__Recurring_Gift_Status__c == "Active"%>
-						<div class="recurringGiftButton pauseGift" style="">Pause Gift</div>
-					<% end %>
-					<% if rec.cv__Recurring_Gift_Status__c == "Paused"%>
-						<div class="recurringGiftButton unpauseGift" style="">Un-Pause Gift</div>
+					<% if rec.cv__Recurring_Gift_Status__c != "Active"%>
+						<div class="recurringGiftButton unpauseGift" style="">Reactivate Gift</div>
 					<% end %>
 					<div class="actions" style="display: none;">
 						<input type="Submit" value="Save Changes" style="display: inline-block;"/>
