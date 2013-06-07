@@ -31,14 +31,16 @@ class User < ActiveRecord::Base
   end
   
   def get_interests()
-    c = convio_api_session
-    interest_hash = c.getUserInterests(Contact.find_by_Id(self.convio_id).cv__Convio_ID__c.to_i)
     @interests = []
-    if (interest_hash["getConsInterestsResponse"]["interest"][0] == nil)
-      @interests << interest_hash["getConsInterestsResponse"]["interest"]["id"]
-    else
-      interest_hash["getConsInterestsResponse"]["interest"].each do |item|
-        @interests << item["id"]
+    unless self.convio_id.nil?
+      c = convio_api_session
+      interest_hash = c.getUserInterests(Contact.find_by_Id(self.convio_id).cv__Convio_ID__c.to_i)
+      if (interest_hash["getConsInterestsResponse"]["interest"][0] == nil)
+        @interests << interest_hash["getConsInterestsResponse"]["interest"]["id"]
+      else
+        interest_hash["getConsInterestsResponse"]["interest"].each do |item|
+          @interests << item["id"]
+        end
       end
     end
     @interests
@@ -174,6 +176,8 @@ class User < ActiveRecord::Base
     @contact = convio_match_by_email || convio_match_by_detail
     if @contact
       puts "MATCHED CONVIO USER: " + @contact.FirstName
+      @contact.MyMOH_Signup_Date__c = Date.today
+      @contact.save
     end
     return @contact
   end

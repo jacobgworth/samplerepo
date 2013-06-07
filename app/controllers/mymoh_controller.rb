@@ -26,12 +26,17 @@ class MymohController < ApplicationController
   
   def account
     @account = Contact.find_by_Id(current_user.convio_id)
-    @spouse_id = (Account.find_by_cv__Head_of_Household__c(@account.Id).cv__Secondary_Contact__c || Account.find_by_cv__Secondary_Contact__c(@account.Id).cv__Head_of_Household__c) 
-    @spouse = Contact.find_by_Id(@spouse_id)
+    puts "CONVIO_ID: " + @account.Id
+    puts Account.last
+    @spouse_id = (Account.find_by_cv__Head_of_Household__c(@account.Id).cv__Secondary_Contact__c || (Account.find_by_cv__Secondary_Contact__c(@account.Id) ? Account.find_by_cv__Secondary_Contact__c(@account.Id).cv__Head_of_Household__c : nil)) 
+    if @spouse
+      @spouse = (Contact.find_by_Id(@spouse_id) || nil)
+    end
     
     c = convio_api_session
     conv_id = @account.cv__Convio_ID__c.to_i
-    @interests = current_user.get_interests
+    @interests = []
+    #@interests = current_user.get_interests
     puts "INTERESTS: " + @interests.to_s
     respond_to do |format|
       format.html {render :layout=>"homeLayout"} 

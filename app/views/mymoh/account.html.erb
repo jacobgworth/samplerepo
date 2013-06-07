@@ -21,7 +21,9 @@
 					<div class="clearfix"></div>
 				<p><span class="alignLeft mymohLabel"><strong>Email:</strong></span> <span class="alignLeft"><%= @account.Email %></span></p>
 					<div class="clearfix"></div>
-				<p><span class="alignLeft mymohLabel"><strong>Spouse:</strong></span> <span class="alignLeft"><%=@spouse.Name%></span></p>
+				<% if @spouse %>
+					<p><span class="alignLeft mymohLabel"><strong>Spouse:</strong></span> <span class="alignLeft"><%=@spouse.Name%></span></p>
+				<% end %>
 			<div class="clearfix"></div>
 			
 			<h3>Your Communication Preferences</h3>
