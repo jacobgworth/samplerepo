@@ -29,17 +29,19 @@
 			<h3>Your Communication Preferences</h3>
 			<h4>Postal Mail Preferences</h4>
 			<ul>
-				<li>Newsletter: <%=@account.Newsletter__c ? "Yes" : "No"%></li>
-				<li>Important Announcements: <%=@account.Important_Announcements__c ? "Yes" : "No"%></li>
-				<li>Monthly Gift Statements: <%=@account.Monthly_Gift_Statements__c ? "Yes" : "No"%></li>
-				<li>Campaign Updates: <%=@account.Campaign_Updates__c ? "Yes" : "No"%></li>
+				<li>Newsletter: <input type="checkbox" disabled <%=@account.Newsletter__c ? "checked" : ""%> /></li>
+				<li>Important Announcements: <input type="checkbox" disabled <%=@account.Important_Announcements__c ? "checked" : ""%> /></li>
+				<li>Monthly Gift Statements: <input type="checkbox" disabled <%=@account.Monthly_Gift_Statements__c ? "checked" : ""%> /></li>
+				<li>Campaign Updates: <input type="checkbox" disabled <%=@account.Campaign_Updates__c ? "checked" : ""%> /></li>
 			</ul>
-			<h4>Email Preferences</h4>
-			<ul>
-				<li>eNewsletter: <%= (@interests.include? "1021") ? "Yes" : "No" %></li>
-				<li>Important Announcements & Prayer Requests: <%= (@interests.include? "1041") ? "Yes" : "No" %></li>
-				<li>Campaigns: <%= (@interests.include? "1042") ? "Yes" : "No" %></li>
-			</ul>
+			<% if @interests %>
+				<h4>Email Preferences</h4>
+				<ul>
+					<li>eNewsletter: <input type="checkbox" disabled <%= (@interests.include? "1021") ? "checked" : "No" %> /></li>
+					<li>Important Announcements & Prayer Requests: <input type="checkbox" disabled <%= (@interests.include? "1041") ? "checked" : "" %> /></li>
+					<li>Campaigns: <input type="checkbox" disabled <%= (@interests.include? "1042") ? "checked" : "" %> /></li>
+				</ul>
+			<% end %>
 		</div>
 	</div>
 
