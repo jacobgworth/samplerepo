@@ -21,6 +21,9 @@
     <h3><a href="/events/<%=event.id%>"><%= event.eventname %></a></h3>
     <p><%= event.description.html_safe %></p>
     <p><%= link_to 'View details...', event %></p>
+    <% if event.conviourl %>
+	    <p style="margin-top: 20px;"><a class="buttonSquareOrange" href="<%=event.conviourl%>" style="color: #e4d4b9;">Register Now</a></p>
+	<% end %>
     <% if @isadmin %>
     	<p class="eventsAdminShow"><%= link_to 'Edit', edit_event_path(event) %> | <%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></p>
     <% else %>
