@@ -291,6 +291,9 @@ Mohhaiti::Application.routes.draw do
   get "connected/index"
   match "/stay-connected" => "Connected#index"
   
+  get "page/denari"
+  match "/denari" => "page#denari"
+  
   #For the custom Content model URLs
   match '*path/:url' => "Contents#show"
   match '*path/:url/delete' => "Contents#delete"

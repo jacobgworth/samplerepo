@@ -134,6 +134,16 @@ return true;
 <div id="footer">
 	<div id="footerImg"><!--x--></div>
 </div>
+<script>
+$(document).ready(function() {
+	$("a").click(function() { 
+		if($(this).attr("href").indexOf("denari") > -1) { 
+			window.location="/denari";
+			return false; 
+		}
+	});
+});
+</script>
 </body>
 </html>
 

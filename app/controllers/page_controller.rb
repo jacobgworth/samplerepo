@@ -167,6 +167,12 @@ class PageController < ApplicationController
     end
   end
   
+  def denari
+    respond_to do |format|
+      format.html { render :layout=>"homeLayout"}
+    end
+  end
+  
   def downloads
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
