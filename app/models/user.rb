@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
     unless self.convio_id.nil?
       c = convio_api_session
       interest_hash = c.getUserInterests(Contact.find_by_Id(self.convio_id).cv__Convio_ID__c.to_i)
+      puts "GETTING INTERESTS FOR USER: " + self.convio_id.to_s
       if (interest_hash["getConsInterestsResponse"]["interest"][0] == nil)
         @interests << interest_hash["getConsInterestsResponse"]["interest"]["id"]
       else
