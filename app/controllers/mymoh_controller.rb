@@ -36,7 +36,11 @@ class MymohController < ApplicationController
     c = convio_api_session
     conv_id = @account.cv__Convio_ID__c.to_i
     @interests = []
-    @interests = current_user.get_interests
+    begin
+      @interests = current_user.get_interests
+    rescue
+      
+    end
     puts "INTERESTS: " + @interests.to_s
     respond_to do |format|
       format.html {render :layout=>"homeLayout"} 

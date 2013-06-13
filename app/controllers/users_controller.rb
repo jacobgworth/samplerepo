@@ -54,7 +54,11 @@ class UsersController < ApplicationController
     if is_admin_user? || @user == current_user
       @contact = Contact.find(@user.convio_id)
       #@interests = @user.get_interests
-      @interests = current_user.get_interests
+      begin
+        @interests = current_user.get_interests
+      rescue
+        @interests = []
+      end
       if (@contact == nil)
         @contact = Contact.new
       end
@@ -115,7 +119,10 @@ class UsersController < ApplicationController
             remove_ids += params[:ecomm_important] ? "" : "1041,"
             remove_ids += params[:ecomm_campaign] ? "" : "1042,"
             puts "RESULT: "
-            puts c.update(@cont.cv__Convio_ID__c.to_i, nil, nil, nil, nil, nil, nil, nil, nil, {'remove_interest_ids' => remove_ids, 'add_interest_ids' => add_ids})
+            begin
+              puts c.update(@cont.cv__Convio_ID__c.to_i, nil, nil, nil, nil, nil, nil, nil, nil, {'remove_interest_ids' => remove_ids, 'add_interest_ids' => add_ids})
+            rescue
+            end
           end
           format.html { redirect_to "/mymoh/account", notice: 'User was successfully updated.' }
           format.json { head :ok }
