@@ -99,8 +99,14 @@ class UsersController < ApplicationController
   
       respond_to do |format|
         if @user.update_attributes(params[:user])
-          @cont = Contact.find_by_ID(@user.convio_id)
+          @cont = Contact.find_by_ID(@user.convio_id) unless @user.convio_id.nil?
           if (@cont)
+            if params[:all_preferences]
+              params[:comm_newsletter] = "checked"
+              params[:comm_important] = "checked"
+              params[:comm_monthlygifts] = "checked"
+              params[:comm_campaign] = "checked"
+            end
             @cont.Newsletter__c = (params[:comm_newsletter] ? true : false)
             @cont.Important_Announcements__c = (params[:comm_important] ? true : false)
             @cont.Monthly_Gift_Statements__c = (params[:comm_monthlygifts] ? true : false)
@@ -112,12 +118,19 @@ class UsersController < ApplicationController
             add_ids=""
             remove_ids=""
             
+            if params[:all_preferences]
+              params[:ecomm_campaign] = "1042"
+              params[:ecomm_important] = "1041"
+              params[:ecomm_newsletter] = "1021"
+            end
+            
             add_ids += params[:ecomm_newsletter] ? "1021," : ""
             add_ids += params[:ecomm_important] ? "1041," : ""
             add_ids += params[:ecomm_campaign] ? "1042," : ""
             remove_ids += params[:ecomm_newsletter] ? "" : "1021,"
             remove_ids += params[:ecomm_important] ? "" : "1041,"
             remove_ids += params[:ecomm_campaign] ? "" : "1042,"
+            
             puts "RESULT: "
             begin
               puts c.update(@cont.cv__Convio_ID__c.to_i, nil, nil, nil, nil, nil, nil, nil, nil, {'remove_interest_ids' => remove_ids, 'add_interest_ids' => add_ids})

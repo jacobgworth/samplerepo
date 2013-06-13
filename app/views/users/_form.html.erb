@@ -383,8 +383,9 @@
 		<option value="Zambia">Zambia</option>
 		<option value="Zimbabwe">Zimbabwe</option>
 	  </select>
-	  <% if @contact %>
-	  	<h3>Your Communication Preferences</h3>
+	  
+  	  <h3 style="margin-top: 30px;">Your Communication Preferences</h3>
+	  <% unless @contact.LastName.nil? %>
 	  	<br/>
 	  	<h4>Postal Mail Preferences</h4>
 	  	Newsletter: <input name="comm_newsletter" type="checkbox" <%=@contact.Newsletter__c ? "checked" : "" %>/><br/>
@@ -396,9 +397,11 @@
 		eNewsletter <input name="ecomm_newsletter" type="checkbox" <%=(@interests.include? "1021") ? "checked" : ""%> /><br/>
 		Important Announcements & Prayer Requests <input name="ecomm_important" type="checkbox" <%=(@interests.include? "1041") ? "checked" : ""%> /><br/>
 		Campaigns <input name="ecomm_campaign" type="checkbox" <%=(@interests.include? "1042") ? "checked" : ""%> /><br/>
+	  <% else %>
+	  	<input name="all_preferences" type="checkbox" checked="checked" /> Yes, I would like to receive updates from Mission of Hope, Haiti.
 	  <% end %>
   <% end %>
   <div class="actions" style="margin-bottom:10px;">
-    <%= f.submit "Create Account"%>
+    <%= f.submit "Save"%>
   </div>
 <% end %>
