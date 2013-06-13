@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %> *<br />
     <%= f.text_field :email %>
   </div>
   <% if (@user.email == nil) %>
 	  <div class="field">
-	    <%= f.label :password %><br />
+	    <%= f.label :password %> *<br />
 	    <%= f.password_field :password %>
 	  </div>
 	  <div class="field">
-	    <%= f.label :password_confirmation %><br />
+	    <%= f.label :password_confirmation %> *<br />
 	    <%= f.password_field :password_confirmation %>
 	  </div>
   <% end %>
   <% unless current_user == nil %>
 	  <div class="field">
-	    <%= f.label :first %><br />
+	    <%= f.label :first %> *<br />
 	    <%= f.text_field :first, :value => @contact ? @contact.FirstName : "" %>
 	  </div>
 	  <div class="field">
-	    <%= f.label :last %><br />
+	    <%= f.label :last %> *<br />
 	    <%= f.text_field :last, :value => @contact ? @contact.LastName : ""  %>
 	  </div>
 	  <div class="field">
@@ -130,7 +130,10 @@
 	  </div>
 	  Country<br/>
 	  <select id="user_country" name="user_country" size="1">
-		<option value="United States">United States</option>
+	  	<% unless @contact.nil? %>
+			<option value="<%=@contact.MailingCountry%>" selected><%=@contact.MailingState%></option>
+		<% end %>
+		<option value="United States" selected>United States</option>
 		<option value="Afghanistan">Afghanistan</option>
 		<option value="Aland Islands">Aland Islands</option>
 		<option value="Albania">Albania</option>
