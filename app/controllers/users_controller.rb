@@ -24,17 +24,17 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    if is_admin_user? || @user == current_user
+    if is_admin_user?
 
       respond_to do |format|
         format.html { render :layout => "homeLayout" }# show.html.erb
         format.json { render json: @user }
       end
-     else
+    else
        respond_to do |format|
-        format.html { redirect_to "/" }
-      end
-     end
+        format.html { redirect_to "/mymoh/account" }
+       end
+    end
   end
 
   # GET /users/new
