@@ -3550,3 +3550,21 @@ ul.following li {
 	margin-top: 4px;
 	margin-bottom: 25px;
 }
+
+.launchMessage {
+	position:absolute;
+	top:118px;
+	left:7px;
+	background:#ea861b;
+	color:#E4D4B9;
+	z-index:0;
+	padding:10px;
+	width:980px;
+}
+
+.launchMessage p {
+	margin-left:130px;
+	line-height:18px;
+	font-size:12px;
+}
+

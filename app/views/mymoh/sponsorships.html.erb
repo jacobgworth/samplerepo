@@ -7,11 +7,11 @@
 		<h2><span class="eyebrow">Mission of Hope</span>
 		<br />
 		My Sponsorships</h2>
+		<% unless @children.empty? %>
+		<% @children.each do | child |%>
 		<p>
 			View your sponsored children, send them gifts or write them a letter!
 		</p>
-		<% unless @children.empty? %>
-		<% @children.each do | child |%>
 		<div class="sponsoredWrap">
 			<div class="sponsoredPhoto">
 				<%= child.LastModifiedById.html_safe %>
@@ -49,7 +49,7 @@
 		<div class="tanWrapper sponsorChildren">
 			<div class="alignRight sponsorWrap" style="width:35%;">
 				<div class="buttonSquareGreen">
-					<h3><a href="https://mohhaiti.secure.force.com/sponsorship">Sponsor A Child</a></h3>
+					<h3><a href="/child-sponsorship">Sponsor A Child</a></h3>
 				</div>
 				<div style="margin-top: 35px;">
 					<p>This fall, new children will be coming into the School of Hope in Haiti without sponsors.  Sponsorship provides these children with an education, a nutritious daily meal and hope for a future. Please consider sponsoring one of these children today!</p>
