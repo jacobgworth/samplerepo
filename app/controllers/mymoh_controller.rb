@@ -71,17 +71,21 @@ class MymohController < ApplicationController
   def following
     @village_subs = Subscription.where(:datatype => 'village', :user_id => current_user.id).map(&:sub_id)
     @project_subs = Subscription.where(:datatype => 'project', :user_id => current_user.id).map(&:sub_id)
+=begin
     if @village_subs.empty?
       @village_subs = [3]
     end
+=end
     puts "Village subscriptions: " + @village_subs.length.to_s
     @posts = Post.joins(:communities).where("community_id=3").limit(3)
     @villages = Community.where(:id => @village_subs)
     puts "Villages found: " + @villages.length.to_s
+=begin
     if @villages.empty?
       puts "Villages were empty!!"
       @villages = Community.where(:id => 3)
     end
+=end
     @projects = Project.where(:id => @project_subs)
     
     @posts = Post.joins(:communities).where(:communities => {:id => @village_subs}).limit(125).reverse
