@@ -3232,7 +3232,7 @@ tr {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
-    -moz-box-shadow: 3px 3px #0f483b
+    -moz-box-shadow: 3px 3px #0f483b;
     -webkit-box-shadow: 3px 3px #0f483b;
     box-shadow: 3px 3px #0f483b;
     margin-top:10px;
