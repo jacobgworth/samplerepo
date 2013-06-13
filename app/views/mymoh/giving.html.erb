@@ -1,0 +1,135 @@
+<% if @recurring.empty? and @donations.empty? %>
+<script>
+	window.location = "http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1";
+</script>
+<% end %>
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+
+	<div id="content" style="padding-top:50px;">
+
+		<h1>My MOH</h1>
+		<%= render 'layouts/mymohNav'%>
+		<h2><span class="eyebrow">Mission of Hope</span>
+		<br />
+		My Giving</h2>
+
+		<p>
+			View your account summary, recurring gifts and gift history with Mission of Hope, Haiti.
+		</p>
+		<p>
+			Mission of Hope Haiti, Inc. is a not for profit, 501(c)3 organization. Charitable gifts and payments may or may not be tax deductible. Please consult your tax advisor.
+		</p>
+		<table class="mygiving" width="100%" border="0">
+			<tr>
+				<th colspan="3" class="label"><h2>My Account Summary</h2></th>
+			</tr>
+			<tr>
+				<td><span class="label">Account</span><span class="data"><%= @account.Account__c %></span></td>
+				<td><span class="label">Lifetime Donations</span>$<%= @account.cv__summary_lifetime_gift_amount__c.to_int || 0 %></span></td>
+			</tr>
+			<tr>
+				<td><span class="label">Name</span><span class="data"><%= @account.Name %></span></td>
+				<td><span class="label">Lifetime Gifts</span><span class="data"><%= @account.cv__summary_lifetime_gift_count__c.to_int || 0 %></span></td>
+			</tr>
+			<tr>
+				<td><span class="label">Most Recent Donation</span><span class="data">$<%= @account.cv__Last_Gift_Amount__c.to_int || 0 %></span></td>
+				<td><span class="label">Last Year's Donations</span><span class="data">$<%= @account.cv__summary_last_year_gift_amount__c.to_int || 0 %></span></td>
+			</tr>
+			<tr>
+				<td><span class="label">This Year's Donations</span><span class="data">$<%= @account.cv__summary_ytd_gift_amount__c.to_int || 0 %></span></td>
+				<td><span class="label">Last Year's Number of Gifts</span><span class="data"><%= @account.cv__summary_last_year_gift_count__c.to_int || 0 %></span></td>
+			</tr>
+			<tr>
+				<td><span class="label">This Year's Number of Gifts</span><span class="data"><%= @account.cv__summary_ytd_gift_count__c.to_int || 0 %></span></td>
+				<td><span class="label">&nbsp;</span></td>
+			</tr>
+		</table>
+		<div class="buttonWrapper" style="width:660px; margin:auto;">
+			<div class="buttonSquareOrange" style="width:280px; margin: auto; margin-bottom: 50px;">
+				<a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1">Give Now</a>
+			</div>
+		</div>
+
+		<% unless @recurring == nil %>
+		<table class="mygiving" width="100%" border="0">
+			<tr>
+				<th colspan="7"><h2>My Recurring Gifts</h2></th>
+			</tr>
+			<tr>
+				<th><h3>Description</h3></th>
+				<th><h3>Recurring Amount</h3></th>
+				<th><h3>Last Gift Amount</h3></th>
+				<th><h3>Last Gift Date</h3></th>
+				<th><h3>Months Ahead/Behind</h3></th>
+				<th><h3>Next Gift Date</h3></th>
+				<th><h3>Gift Amount Needed</h3></th>
+			</tr>
+			<% @recurring.each do |rec| %>
+			<tr>
+				<td style="width: 375px;"><%= rec.Name || "N/A"%></td>
+				<td>$<%= currency_convert(rec.cv__Recurring_Amount__c) %></td>
+				<td>$<%= currency_convert(rec.cv__Last_Payment_Amount__c) || 0 %></td>
+				<td><%= rec.cv__Last_Payment_Date__c ? rec.cv__Last_Payment_Date__c.strftime("%b %-d, %Y") : "N/A"%></td>
+				<td><%= rec.No_of_Months_Paid_Ahead__c < 0 ? "(" + rec.No_of_Months_Paid_Ahead__c.abs.to_i.to_s + ")" : rec.No_of_Months_Paid_Ahead__c.to_i %></td>
+				<td><%= rec.cv__Next_Payment_Date__c ? rec.cv__Next_Payment_Date__c.strftime("%b %-d, %Y") : "N/A"%></td>
+				<td>$<%= currency_convert(rec.cv__Next_Payment_Amount__c) || "N/A"%></td>
+			</tr>
+			<% end %>
+		</table>
+		<div class="buttonWrapper" style="width:660px; margin:auto;">
+			<div class="buttonSquareOrange" style="width:280px; margin: auto;">
+				<a href="/mymoh/giving/edit">Manage Recurring Gifts</a>
+			</div>
+			<div class="clearfix" style="height:80px;"></div>
+		</div>
+		<% end %>
+
+
+		<table class="mygiving" width="100%" border="0">
+			<tr>
+				<th colspan="5"><h2>My Giving History - <%=Date::MONTHNAMES[Date.today.month]%></h2></th>
+			</tr>
+			<tr>
+				<th valign="top"><h3>Date</h3></th>
+				<th valign="top"><h3>Type</h3></th>
+				<th valign="top"><h3>Designation</h3></th>
+				<th valign="top"><h3>Description</h3></th>
+				<th valign="top"><h3>Amount</h3></th>
+			</tr>
+			<% @totalgifted = 0 %>
+			<% if @donations.length > 0 %>
+				<% @donations.each do |don| %>
+					<% if (Date.today - don.CloseDate) < 30 %>
+						<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
+						<% @designation = Cv__Designation__c.find_by_Id(@ddr.cv__Designation__c)%>
+						<tr>
+							<td><a href="/mymoh/giving/receipt/<%=don.Id%>"><%=don.CloseDate.strftime("%b %-d, %Y")%></a></td>
+							<td><%=don.Type%></td>
+							<td><%=@designation.Name %></td>
+							<td><%=don.Description%></td>
+							<td>$<%=don.Amount.to_int || "N/A" %></td>
+						</tr>
+						<% @totalgifted += don.Amount.to_int %>
+					<% end %>
+				<% end %>
+				<tr>
+					<td colspan=4>Total Amount Gifted</td>
+					<td>$<%=@totalgifted%></td>
+				</tr>
+			<% else %>
+				<tr>
+					<td colspan=5>
+						We cannot find any donations given this month.
+					</td>
+				</tr>
+			<% end %>
+			
+		</table>
+		<div class="buttonSquareOrange" style="width:280px; margin: auto; margin-bottom: 50px;">
+				<a href="/mymoh/giving/history">See Complete History</a>
+		</div>
+		<div class="clearfix" style="height:40px;">
+			<!--x-->
+		</div>
+	</div>

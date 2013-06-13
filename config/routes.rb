@@ -1,9 +1,14 @@
 Mohhaiti::Application.routes.draw do
   
+  resources :subscriptions
+
+
   match "/blog/feed.xml" => "posts#rss", :action => 'rss'
+  
   match "/bluetoblock" => "projects#bluetoblock"
   put "/projects/5" => "projects#update", :id => 5
   match "/projects/5" => "projects#bluetoblock"
+  
   resources :news
 
   resources :videos
@@ -275,6 +280,25 @@ Mohhaiti::Application.routes.draw do
       
   get "page/console"
   match "/console" => "page#console"
+  
+  get "mymoh/account"
+  get "mymoh/status_check"
+  get "mymoh/home"
+  get "mymoh/giving"
+  get "mymoh/giving/edit" => "mymoh#givingedit"
+  post "mymoh/giving/edit" => "mymoh#givingedit_post"
+  get "mymoh/giving/history" => "mymoh#givinghistory"
+  get "mymoh/giving/receipt/:gift_id" => "mymoh#givingreceipt"
+  post "mymoh/giving/history" => "mymoh#givinghistory"
+  get "mymoh/sponsorships"
+  get "mymoh/mytrips"
+  get "mymoh/login"
+  get "mymoh/following"
+  get "mymoh/mytrips/:tripid" => "mymoh#tripshow"
+  get "mymoh" => "mymoh#index"
+  match "/mymoh/account/edit" => "mymoh#edit"
+  
+  get "/embed/success_returned" => redirect("/")
   
   get "advancement/index"
   match "/church_advancement" => "Advancement#index"

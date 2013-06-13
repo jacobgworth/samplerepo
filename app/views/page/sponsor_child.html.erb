@@ -52,6 +52,11 @@
 	</ul>
 <p>Once a sponsor is connected with their child they will receive a photo of and information about their sponsored child, as well as Village of Hope updates and crafts from their child throughout the year. If you are interested in sponsoring an orphan at our Village of Hope, please contact us at 239-791-8125 or email sponsorship@mohhaiti.org.
 </p>  
+
+<% @children.each do | child | %>
+	<h2>Name: <%= child.First_Name__c %></h2>
+    <%= Picture__c.find_by_Child__c(child.Id).Photo__c.html_safe %>
+<% end %>
 </div>
 <div id="contentRight300">
 	<%= render"/layouts/childSponsorNav"%>

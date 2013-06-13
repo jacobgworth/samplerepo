@@ -20,7 +20,7 @@
 				</span><span class="largeText6 greenTransBG lowercase"><%= @project.goal%></span></h1>
 				
 				<div class="buttonSquareOrange" style="position:absolute; top:-250px; left:200px; width:280px">
-					<a href="https://www.denarionline.com/DonorServices/TEMPLATEPAGE.ASPX?COMP_REF=_MOHHAITI&CONTENT=LOGIN">Support this project &raquo;</a>
+					<a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1">Support this project &raquo;</a>
 				</div>
 			</div>
 			<!--<div class="percentComplete">
@@ -33,8 +33,54 @@
 <div class="contentHeader">
 			<div class="contentHeaderLeft">
 				<h1><span class="eyebrow">Mission of Hope Haiti Project</span>
-				<br />
+				<br/>
 				<%= @project.projectname %></h1>
+				<input type="hidden" class="subscribeData" name="project" value="<%=@project.id%>" />
+					<% if !@subscribed || @subscribed.empty? %>
+						<div class="subscribe buttonSquareOrange alignRight" style="margin-top:40px;">
+						Follow this project
+					<% else %>
+						<div class="unsubscribe buttonSquareOrange alignRight" style="margin-top:40px;">
+						Unfollow this project
+					<% end %>
+					</div>
+				<script>
+					$(document).ready(function() {
+						$('.subscribe').live("click", function() {
+							url = "/subscriptions.json";
+							method = "POST";
+							console.log("subscribe");
+							submitSubscription(url, method);
+						});
+						$('.unsubscribe').live("click", function() {
+							console.log("unsubscribe");
+							url = "/subscriptions/<%=@project.id%>.json";
+							method = "DELETE";
+							submitSubscription(url, method);
+						});
+							
+						function submitSubscription(url, method) {
+							$.ajax({
+							  type: 'POST',
+							  url: url,
+							  data: { datatype: "project", sub_id: "<%=@project.id%>", user_id: "<%=@current_user.id%>", _method: method }
+							}).success(function( msg ) {
+								  console.log( "Successful: " + url);
+								  if($(".subscribe").length > 0) {
+									  $('.subscribe').text("Unfollow this project");
+									  $('.subscribe').addClass("unsubscribe");
+									  $('.subscribe').removeClass("subscribe");
+								  } else if ($('.unsubscribe').length > 0) {
+									  $('.unsubscribe').text("Follow this project");
+									  $('.unsubscribe').addClass("subscribe");
+									  $('.unsubscribe').removeClass("unsubscribe");
+								  }
+							}).fail(function( msg ){
+								alert("There was an error processing your request.");
+							});
+						}
+					});
+				</script>
 				<p>
 					<%= simple_format(@project.description) %>
 				</p>

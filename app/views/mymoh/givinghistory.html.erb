@@ -1,0 +1,64 @@
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+
+	<div id="content" style="padding-top:50px;">
+
+		<h1>My MOH</h1>
+		<%= render 'layouts/mymohNav'%>
+		<a href="/mymoh">MyMOH</a> &raquo; <a href="/mymoh/giving">My Giving</a> &raquo; Giving History
+		<h2><span class="eyebrow">Mission of Hope</span>
+		<br />Full Giving History</h2>
+
+		Filter By Date:
+		<form method="POST" action="/mymoh/giving/history" class="givingDateFilter">
+			Start: <input class="datepicker1" type="text" name="start_date" />
+			End: <input class="datepicker2" type="text" name="end_date" />
+			<input type="submit" value="View" />
+		</form>
+		<div class="clearfix"><!--x--></div>
+
+		<table class="mygiving" width="100%" border="0">
+			<tr>
+				<th colspan="5"><h2>History</h2></th>
+			</tr>
+			<tr>
+				<th valign="top"><h3>Date</h3></th>
+				<th valign="top"><h3>Type</h3></th>
+				<th valign="top"><h3>Designation</h3></th>
+				<th valign="top"><h3>Description</h3></th>
+				<th valign="top"><h3>Amount</h3></th>
+			</tr>
+			<% @totalgifted = 0 %>
+			<% if @donations %>
+				<% @donations.each do |don| %>
+					<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
+					<% @designation = Cv__Designation__c.find_by_Id(@ddr.cv__Designation__c)%>
+					<tr>
+						<td><a href="/mymoh/giving/receipt/<%=don.Id%>"><%=don.CloseDate.strftime("%b %-d, %Y")%></a></td>
+						<td><%=don.Type%></td>
+						<td><%=@designation.Name %></td>
+						<td><%=don.Name%></td>
+						<td>$<%=currency_convert(don.Amount) || "N/A" %></td>
+					</tr>
+					<% @totalgifted += don.Amount %>
+				<% end %>
+				<tr>
+					<td colspan=4>Total Amount Gifted</td>
+					<td>$<%= currency_convert(@totalgifted)%></td>
+				</tr>
+			<% else %>
+				<tr>
+					<td colspan=5>No gifts found to display for select time period.</td>
+				</tr>
+			<% end %>
+		</table>
+		<div class="clearfix" style="height:40px;">
+		<p>Mission of Hope Haiti, Inc. is a not for profit, 501(c)3 organization. Charitable gifts and payments may or may not be tax deductible. Please consult your tax advisor.</p>
+		</div>
+	</div>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script>
+$(".datepicker1").datepicker({dateFormat: "yy-mm-dd"}).datepicker("setDate", "<%=@start_date%>");
+$(".datepicker2").datepicker({dateFormat: "yy-mm-dd"}).datepicker("setDate", "<%=@end_date%>");
+</script>

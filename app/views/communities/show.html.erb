@@ -14,14 +14,59 @@
 	<div id="content">
 		<div id="heroContent">
 			<h1 style="padding-top:40px;"><span class="largeText1 greenTransBG"><%= @community.communityname %></span></h1>
-
+				<% if !@subscribed || @subscribed.empty? %>
+						<div class="subscribe buttonSquareOrange" style="margin-top:-446px; left: 0;">
+							Follow this village
+						</div>
+					<% else %>
+					<div class="unsubscribe buttonSquareOrange" style="margin-top: -446px; left: 0;">
+						Unfollow this village
+					</div>
+					<% end %>
 		</div>
 		<div class="contentHeader">
 			<div class="contentHeaderLeft">
-				<h1><span class="eyebrow">Village Profile</span>
+				<h1 class="alignLeft"><span class="eyebrow">Village Profile</span>
 				<br />
 				<%= @community.communityname %></h1>
 				<!--<p><b><%= @community.overviewtitle %></b></p>-->
+				<input type="hidden" class="subscribeData" name="village" value="<%=@community.id%>" />
+				<script>
+					$(document).ready(function() {
+						$('.subscribe').live("click", function() {
+							url = "/subscriptions.json";
+							method = "POST";
+							submitSubscription(url, method);
+						});
+						$('.unsubscribe').live("click", function() {
+							url = "/subscriptions/<%=@community.id%>.json";
+							method = "DELETE";
+							submitSubscription(url, method);
+						});
+							
+						function submitSubscription(url, method) {
+							$.ajax({
+							  type: 'POST',
+							  url: url,
+							  data: { datatype: "village", sub_id: "<%=@community.id%>", user_id: "<%=@current_user.id%>", _method: method }
+							}).success(function( msg ) {
+								  console.log( "Successful: " + url);
+								  if($(".subscribe").length > 0) {
+									  $('.subscribe').text("Unfollow this village");
+									  $('.subscribe').addClass("unsubscribe");
+									  $('.subscribe').removeClass("subscribe");
+								  } else if ($('.unsubscribe').length > 0) {
+									  $('.unsubscribe').text("Follow this village");
+									  $('.unsubscribe').addClass("subscribe");
+									  $('.unsubscribe').removeClass("unsubscribe");
+								  }
+							}).fail(function( msg ){
+								alert("There was an error processing your request.");
+							});
+						}
+					});
+				</script>
+				<div class="clearfix"></div>
 				<p>
 					<%= @community.overviewdesc.html_safe unless @community.overviewdesc.nil? %>
 				</p>

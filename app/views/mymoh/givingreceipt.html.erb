@@ -1,0 +1,26 @@
+<div id="wrapper">
+
+	<div id="content" style="padding-top:50px;">
+		<h2><span class="eyebrow">Mission of Hope</span>
+		<br />
+		Gift Receipt</h2>
+
+			<% @totalgifted = 0 %>
+			<% if @donation %>
+			<% @donation.each do |don| %>
+				<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
+				<% @designation = Cv__Designation__c.find_by_Id(@ddr.cv__Designation__c)%>
+				
+				<br/>Gift #<strong><%=don.Id%></strong>
+				<br/>Process Date: <%=don.CloseDate.strftime("%b %-d, %Y")%>
+				<h2><span class="eyebrow">Detail</span></h2 style="margin-bottom: 15px;">
+				<%=don.Type%> for <%=@designation.Name %>
+				<br/>Description: <%=don.Description%>
+				<h2><span class="eyebrow">Amount</span></h2 style="margin-bottom: 15px;">
+				$<%=don.Amount.to_int || "N/A" %>
+			<% end %>
+			<% else %>
+					We're sorry--we can't find that gift, or you're not authorized to view it.
+			<% end %>
+		</table>
+	</div>

@@ -7,10 +7,13 @@ gem 'rails', '3.2.11'
 
 #Salesforce?
 gem "databasedotcom"
+gem "databasedotcom-rails"
 
 gem "newrelic_rpm"
 
 gem "mail", ">=2.1.3"
+
+gem "thin"
 
 gem 'gmaps4rails'
 
@@ -19,6 +22,8 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem "paperclip", "~> 2.7"
 
 gem "flickraw"
+
+gem "convio-open", :git => 'git://github.com/jesseb312/convio-open.git'
 
 #Gem to connect to Amazon S3
 gem "aws-s3"

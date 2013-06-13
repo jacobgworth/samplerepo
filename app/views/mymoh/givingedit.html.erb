@@ -1,0 +1,80 @@
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+	<div id="content" style="padding-top:50px;">
+
+		<h1>My MOH</h1>
+		<%= render 'layouts/mymohNav'%>
+		<a href="/mymoh">MyMOH</a> &raquo; <a href="/mymoh/giving">My Giving</a> &raquo; Manage Gifts
+		<h2><span class="eyebrow">Mission of Hope</span>
+		<br />My Recurring Gifts</h2>
+
+		<% unless (@recurring == nil) || @recurring.empty? %>
+			<% @recurring.each do |rec| %>
+				<h3 style="padding-top: 50px;"><%= rec.Name %></h3>
+				<form class="recurringGift" action="" method="POST">
+					<input type="hidden" name="gift_id" value="<%= rec.Id %>" />
+					<div class="field" style="display: inline-block">
+						<label><strong>Amount: </strong></label> $<input type="text" name="gift_amount" value="<%= currency_convert(rec.cv__Recurring_Amount__c) %>" style="width:30px;" disabled/>
+					</div>
+					<div class="field" style="display: inline-block">
+						<label><strong>Payment Day of the Month:</strong></label> <input type="text" name="gift_day_of_month" style="width: 30px;" value="<%= rec.cv__RecurrenceDayOfMonth__c.to_i %>" disabled/>
+					</div>
+					<div class="field" style="display:none;">
+						<label>Gift Status:</label><br/>
+						<select class="giftStatus" name="gift_status">
+							<option value="Active" <%= rec.cv__Recurring_Gift_Status__c == "Active" ? "selected" : "" %>>Active</option>
+							<option value="Paused" <%= rec.cv__Recurring_Gift_Status__c == "Paused" ? "selected" : "" %>>Paused</option>
+							<option value="Written Off - Donor Canceled" <%= rec.cv__Recurring_Gift_Status__c == "Written Off - Donor Canceled" ? "selected" : "" %>>Canceled</option>
+						</select>
+					</div>
+					<div class="recurringGiftButton editGift" style="display: inline-block;">Edit Gift</div>
+					<br/>
+					<div class="recurringGiftButton cancelGift" style="">Cancel Gift</div>
+					<% if rec.cv__Recurring_Gift_Status__c != "Active"%>
+						<div class="recurringGiftButton unpauseGift" style="">Reactivate Gift</div>
+					<% end %>
+					<div class="actions" style="display: none;">
+						<input type="Submit" value="Save Changes" style="display: inline-block;"/>
+					</div>
+				</form>
+				
+				<br/>
+				<div class="hr-wrap"></div>
+			<% end %>
+			<script>
+				$(".editGift").click(function() {
+					$(this).parent().find("input[type=text]").removeAttr("disabled");	
+					$(this).parent().find(".recurringGiftButton").css("display", "inline-block");
+					$(this).parent().find("input[type=submit]").parent().css("display", "inline-block");
+					$(this).hide();
+				});
+				$(".cancelGift").click(function() {
+					$(this).parent().find(".giftStatus").val("Written Off - Donor Canceled");
+					$(this).parent().find("input[type=text]").removeAttr("disabled");	
+					$(this).parent().submit();
+				});
+				$(".pauseGift").click(function() {
+					$(this).parent().find(".giftStatus").val("Paused");
+					$(this).parent().find("input[type=text]").removeAttr("disabled");	
+					$(this).parent().submit();
+				});
+				$(".unpauseGift").click(function() {
+					$(this).parent().find(".giftStatus").val("Active");
+					$(this).parent().find("input[type=text]").removeAttr("disabled");	
+					$(this).parent().submit();
+				});
+			</script>
+		<% else %>
+			<p>We can't find any recurring donations to edit!</p>
+		<% end %>
+		
+		<div class="buttonWrapper" style="width:660px; margin:auto; margin-top: 50px;">
+			<div class="buttonSquareOrange" style="width:280px; margin: auto; margin-bottom: 50px;">
+				<a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1">New Recurring Gift</a>
+			</div>
+		</div>
+		
+		<div class="clearfix" style="height:40px;">
+			<!--x-->
+		</div>
+	</div>

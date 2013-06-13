@@ -1,0 +1,65 @@
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+
+	<div id="content" style="padding-top:50px;">
+
+		<h1 style="padding-bottom: 25px;">My MOH</h1>
+
+		<div class="loginWrapper">
+			<div class="loginLeft">
+					<div class="logincontainer">
+						<h2><a href="/mymoh/account">Update Your Account Information</a></h2>
+						<p>
+							Change your address, email, password, and personal information.
+						</p>
+		
+						<h2><a href="/mymoh/giving">Manage Your Giving</a></h2>
+						<p>
+							Give a gift, see your gift history and see your monthly statements.
+						</p>
+		
+						<h2><a href="/mymoh/sponsorships">See Your Child Sponsorships</a></h2>
+						<p>
+							See details for any children you sponsor, write to them online or give them a gift!
+						</p>
+						<h2><a href="/mymoh/mytrips">Prepare for a Mission Trip</a></h2>
+						<p>If you're taking a mission trip, you can get access to critical information that will help ensure you're well-prepared!</p>
+						<h2><a href="http://mohh.convio.net/site/TR/Events/General?pg=tgreeting&fr_id=1070">Set Up a Fundraising Champion Page</a></h2>
+						<p>Are you passionate about a specific program at Mission of Hope? Share that passion with others and help to recruit new partners by creating your own Fundraising Champion Page!</p>
+						<h2><a href="/mymoh/following">Subscribe to Project &amp; Village Updates</a></h2>
+						<p>Stay in the loop on what's happening with a specific project or village by subscribing to receive updates in your Update Feed.</p>
+				</div>
+			</div>
+			<div class="loginRight">
+				<h2>Sign In</h2>
+				<%= form_tag sessions_path do %>
+				<p>
+					<%= label_tag :email %>
+					<br />
+					<%= text_field_tag :email, params[:email] %>
+				</p>
+				<p>
+					<%= label_tag :password %>
+					<br />
+					<%= password_field_tag :password %>
+				</p>
+				<p>
+					<%= submit_tag("Sign In", :class => "buttonSquareOrange") %> <a href="" style="margin-left: 5px; display: none;">Forget your login info?</a>
+				</p>
+				<p>
+				</p>
+				<div class="clearfix"></div>
+				<% end %>
+				<p class="buttonSquareGreen">
+					<a href="/users/new">Create Account</a>
+				</p>
+				<p class="loginDisclaimer">
+					We are excited to announce that we have recently transitioned to a new online donor support system that will allow you to manage your giving in new and easy way! If you created an account online with us before 6/10/13, your login information is no longer valid and you will need to click the green button to create a new account. Once you have created a new online account, you will be able to access your giving history, give a gift, manage account information and more. If you have any questions about this, please contact our stateside office at 239-791-8125 or email <a href="mailto:info@mohhaiti.org">info@mohhaiti.org</a>. 
+				</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix" style="height:40px;">
+			<!--x-->
+		</div>
+	</div>

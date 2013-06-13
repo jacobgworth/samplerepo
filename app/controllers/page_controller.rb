@@ -1,4 +1,9 @@
 class PageController < ApplicationController
+  localComm = Community
+  localuser = User
+  include Databasedotcom::Rails::Controller
+  Community = localComm
+  localuser = User
   
   def about_haiti
     @title = "Haiti Facts: Information About Haiti & Haiti Now"
@@ -426,19 +431,43 @@ class PageController < ApplicationController
     @fname = params[:fname]
     @comments = params[:letter]
     @fromaddress = params[:email]
-    @phone = params[:phonenumber]
+    @phone = "0000000000"
     @medical = params[:childnumber]
+    @street = params[:street]
+    @city = params[:city]
+    @state = params[:state]
+    @zip = params[:zip]
+    @church = params[:church]
+    @organization = params[:organization]
+    @participants = params[:participants]
     if !@fname.nil? && @fname != "" && !@comments.nil? && @comments != "" && !@fromaddress.nil? && @fromaddress != ""
       @isvalid = true
       @data = {
-        :fname => @fname, 
+        :fname => @fname,
+        :lname => "TESTING", 
         :fromaddress => @fromaddress, 
         :comments => @comments,
         :phone => @phone,
         :medical => @medical
       }
+      
+      #Save contact to convio
+      @sfcontact = create_convio_contact(@data[:lname], @data[:fname], @data[:email])
+      @sfcontact = Contact.find_by_Id(@sfcontact.Id)
+      @sfcontact.MT_Prospect_Status__c = "Prospect"
+      @sfcontact.MailingStreet = @street
+      @sfcontact.MailingCity = @city
+      @sfcontact.MailingState = @state
+      @sfcontact.MailingPostalCode = @zip
+      @sfcontact.MyMOH_Church__c = @church
+      @sfcontact.Organization__c = @organization
+      @sfcontact.Number_of_Trip_Participants__c = @participants
+      if (@data[:medical] == "on")
+        @sfcontact.Medical_Trip_Prospect__c = true
+      end
+      @sfcontact.save
+      ContactUsMailer.take_a_trip(@data).deliver
       respond_to do |format|
-        ContactUsMailer.take_a_trip(@data).deliver
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       end 
     else
@@ -482,6 +511,7 @@ class PageController < ApplicationController
   end
   
   def sponsor_child
+    @children = Child__c.query("Number_of_Photos__c > 0 LIMIT 3")
     @title = "Child Sponsorship: Help Children in Haiti by Becoming a Sponsor"
     @meta = "Help a child in Haiti who is in need through sponsorship. Sponsorship provides children with food, care, clothing, shelter & education. Sponsor a child in Haiti today."
     respond_to do |format|
@@ -652,6 +682,17 @@ class PageController < ApplicationController
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       end 
     else
+      @data = {}
+      unless current_user == nil
+        @sponsorship = Child_Sponsorship__c.find_by_Sponsor__c(current_user.convio_id)
+        @contact = Contact.find_by_Id(current_user.convio_id)
+        @child = Child__c.find_by_Id(@sponsorship.Child__c)
+        @data[:childname] = @child.Name__c || ""
+        @data[:childid] = @child.Student_Code__c || ""
+        @data[:sponsorname] = (current_user.first || "") + " " + (current_user.last || "")
+        @data[:sponsoremail] = current_user.email || ""
+        @data[:sponsorphone] = @contact.HomePhone || ""
+      end
       respond_to do |format|
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       end  

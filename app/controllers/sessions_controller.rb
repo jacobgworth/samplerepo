@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       cookies[:auth_token] = user.auth_token
       if !user.is_admin?
-        redirect_to root_url, :notice => "Logged in!"
+        redirect_to "/mymoh", :notice => "Logged in!"
       else
         redirect_to "/console"
       end
