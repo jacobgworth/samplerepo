@@ -26,22 +26,22 @@
 			</tr>
 			<tr>
 				<td><span class="label">Account</span><span class="data"><%= @account.Account__c %></span></td>
-				<td><span class="label">Lifetime Donations</span>$<%= @account.cv__summary_lifetime_gift_amount__c.to_int || 0 %></span></td>
+				<td><span class="label">Lifetime Donations</span>$<%= @account.cv__summary_lifetime_gift_amount__c ? @account.cv__summary_lifetime_gift_amount__c.to_int : 0 %></span></td>
 			</tr>
 			<tr>
 				<td><span class="label">Name</span><span class="data"><%= @account.Name %></span></td>
-				<td><span class="label">Lifetime Gifts</span><span class="data"><%= @account.cv__summary_lifetime_gift_count__c.to_int || 0 %></span></td>
+				<td><span class="label">Lifetime Gifts</span><span class="data"><%= @account.cv__summary_lifetime_gift_count__c ? @account.cv__summary_lifetime_gift_count__c.to_int : 0 %></span></td>
 			</tr>
 			<tr>
-				<td><span class="label">Most Recent Donation</span><span class="data">$<%= @account.cv__Last_Gift_Amount__c.to_int || 0 %></span></td>
-				<td><span class="label">Last Year's Donations</span><span class="data">$<%= @account.cv__summary_last_year_gift_amount__c.to_int || 0 %></span></td>
+				<td><span class="label">Most Recent Donation</span><span class="data">$<%= @account.cv__Last_Gift_Amount__c ? @account.cv__Last_Gift_Amount__c.to_int : 0 %></span></td>
+				<td><span class="label">Last Year's Donations</span><span class="data">$<%= @account.cv__summary_last_year_gift_amount__c ? @account.cv__summary_last_year_gift_amount__c.to_int : 0 %></span></td>
 			</tr>
 			<tr>
-				<td><span class="label">This Year's Donations</span><span class="data">$<%= @account.cv__summary_ytd_gift_amount__c.to_int || 0 %></span></td>
-				<td><span class="label">Last Year's Number of Gifts</span><span class="data"><%= @account.cv__summary_last_year_gift_count__c.to_int || 0 %></span></td>
+				<td><span class="label">This Year's Donations</span><span class="data">$<%= @account.cv__summary_ytd_gift_amount__c ? @account.cv__summary_ytd_gift_amount__c.to_int : 0 %></span></td>
+				<td><span class="label">Last Year's Number of Gifts</span><span class="data"><%= @account.cv__summary_last_year_gift_count__c ? @account.cv__summary_last_year_gift_count__c.to_int : 0 %></span></td>
 			</tr>
 			<tr>
-				<td><span class="label">This Year's Number of Gifts</span><span class="data"><%= @account.cv__summary_ytd_gift_count__c.to_int || 0 %></span></td>
+				<td><span class="label">This Year's Number of Gifts</span><span class="data"><%= @account.cv__summary_ytd_gift_count__c ? @account.cv__summary_ytd_gift_count__c.to_int : 0 %></span></td>
 				<td><span class="label">&nbsp;</span></td>
 			</tr>
 		</table>
