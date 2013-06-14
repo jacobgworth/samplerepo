@@ -181,6 +181,7 @@ class MymohController < ApplicationController
       #if we find sponsorships
       @children = []
       @sponsorships.each do | spons |
+        @photo = nil
         #find the child associated with each sponsorship
         @child = Child__c.find_by_Id(spons.Child__c)
         #find child's photo
