@@ -28,7 +28,9 @@ class CommunitiesController < ApplicationController
     @posts = Post.joins(:communities).where("community_id=" + @community.id.to_s).order(:postdate).last(3).reverse
     @updates = Update.joins(:communities).where("community_id=" + @community.id.to_s).last(3).reverse
     @projectscount = Project.joins(:communities).where("community_id=" + @community.id.to_s).count
-    @subscribed = Subscription.where(:sub_id => @community.id, :user_id => current_user.id, :datatype => 'village')
+    if current_user
+      @subscribed = Subscription.where(:sub_id => @community.id, :user_id => current_user.id, :datatype => 'village')
+    end
 
     respond_to do |format|
       format.html {render :layout=>"homeLayout"} # show.html.erb
