@@ -13,9 +13,11 @@
 			View your sponsored children, send them gifts or write them a letter!
 		</p>
 		<div class="sponsoredWrap">
-			<div class="sponsoredPhoto">
-				<%= child.LastModifiedById.html_safe %>
-			</div>
+			<% if child.LastModifiedById %>
+				<div class="sponsoredPhoto">
+					<%= child.LastModifiedById.html_safe %>
+				</div>
+			<% end %>
 			<div class="sponsoredProfile">
 				<h3><%= child.Name__c %></h3>
 				<p>

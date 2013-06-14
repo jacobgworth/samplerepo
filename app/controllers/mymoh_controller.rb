@@ -184,7 +184,7 @@ class MymohController < ApplicationController
         #find the child associated with each sponsorship
         @child = Child__c.find_by_Id(spons.Child__c)
         #find child's photo
-        @photo = Picture__c.find_by_Child__c(@child.Id).Photo__c
+        @photo = Picture__c.find_by_Child__c(@child.Id).Photo__c unless Picture__c.find_by_Child__c(@child.Id).nil?
         #set an unused variable to carry the photo url
         @child.LastModifiedById = @photo
         #add child to array of children
