@@ -24,17 +24,17 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    if is_admin_user? || @user == current_user
+    if is_admin_user?
 
       respond_to do |format|
         format.html { render :layout => "homeLayout" }# show.html.erb
         format.json { render json: @user }
       end
-     else
+    else
        respond_to do |format|
-        format.html { redirect_to "/" }
-      end
-     end
+        format.html { redirect_to "/mymoh/account" }
+       end
+    end
   end
 
   # GET /users/new
@@ -54,7 +54,11 @@ class UsersController < ApplicationController
     if is_admin_user? || @user == current_user
       @contact = Contact.find(@user.convio_id)
       #@interests = @user.get_interests
-      @interests = current_user.get_interests
+      begin
+        @interests = current_user.get_interests
+      rescue
+        @interests = []
+      end
       if (@contact == nil)
         @contact = Contact.new
       end
@@ -95,8 +99,14 @@ class UsersController < ApplicationController
   
       respond_to do |format|
         if @user.update_attributes(params[:user])
-          @cont = Contact.find_by_ID(@user.convio_id)
+          @cont = Contact.find_by_ID(@user.convio_id) unless @user.convio_id.nil?
           if (@cont)
+            if params[:all_preferences]
+              params[:comm_newsletter] = "checked"
+              params[:comm_important] = "checked"
+              params[:comm_monthlygifts] = "checked"
+              params[:comm_campaign] = "checked"
+            end
             @cont.Newsletter__c = (params[:comm_newsletter] ? true : false)
             @cont.Important_Announcements__c = (params[:comm_important] ? true : false)
             @cont.Monthly_Gift_Statements__c = (params[:comm_monthlygifts] ? true : false)
@@ -108,14 +118,24 @@ class UsersController < ApplicationController
             add_ids=""
             remove_ids=""
             
+            if params[:all_preferences]
+              params[:ecomm_campaign] = "1042"
+              params[:ecomm_important] = "1041"
+              params[:ecomm_newsletter] = "1021"
+            end
+            
             add_ids += params[:ecomm_newsletter] ? "1021," : ""
             add_ids += params[:ecomm_important] ? "1041," : ""
             add_ids += params[:ecomm_campaign] ? "1042," : ""
             remove_ids += params[:ecomm_newsletter] ? "" : "1021,"
             remove_ids += params[:ecomm_important] ? "" : "1041,"
             remove_ids += params[:ecomm_campaign] ? "" : "1042,"
+            
             puts "RESULT: "
-            puts c.update(@cont.cv__Convio_ID__c.to_i, nil, nil, nil, nil, nil, nil, nil, nil, {'remove_interest_ids' => remove_ids, 'add_interest_ids' => add_ids})
+            begin
+              puts c.update(@cont.cv__Convio_ID__c.to_i, nil, nil, nil, nil, nil, nil, nil, nil, {'remove_interest_ids' => remove_ids, 'add_interest_ids' => add_ids})
+            rescue
+            end
           end
           format.html { redirect_to "/mymoh/account", notice: 'User was successfully updated.' }
           format.json { head :ok }

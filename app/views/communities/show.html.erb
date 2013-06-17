@@ -31,6 +31,7 @@
 				<%= @community.communityname %></h1>
 				<!--<p><b><%= @community.overviewtitle %></b></p>-->
 				<input type="hidden" class="subscribeData" name="village" value="<%=@community.id%>" />
+				<% if @subscribed %>
 				<script>
 					$(document).ready(function() {
 						$('.subscribe').live("click", function() {
@@ -66,6 +67,7 @@
 						}
 					});
 				</script>
+				<% end %>
 				<div class="clearfix"></div>
 				<p>
 					<%= @community.overviewdesc.html_safe unless @community.overviewdesc.nil? %>

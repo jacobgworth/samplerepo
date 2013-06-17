@@ -76,6 +76,14 @@
 						No updates found.
 					<% end %>
 				<% end %>
+		    <% else %>
+		    	<% if @projects.empty? %>
+			    	<p>You are currently not following any MOH Projects or Villages. Stay in the loop on what's happening with a specific project or village by subscribing to receive updates directly on your Projects & Villages page. </p>
+			    	<br/>
+			    	<p>To follow to a project: visit <a href="/projects">MOH Projects</a>, find a project you'd like to follow, and click "Follow this project" on the project's page.</p>
+			    	<br/>
+			    	<p>To follow a Village: visit <a href="/villages">MOH Villages</a>, find a village you'd like to follow, and click "Follow this village" on the village's page.</p>
+			    <% end %>
 			<% end %>
 			
 			

@@ -44,6 +44,7 @@
 						Unfollow this project
 					<% end %>
 					</div>
+				<% if @subscribed %>
 				<script>
 					$(document).ready(function() {
 						$('.subscribe').live("click", function() {
@@ -81,6 +82,7 @@
 						}
 					});
 				</script>
+				<% end %>
 				<p>
 					<%= simple_format(@project.description) %>
 				</p>

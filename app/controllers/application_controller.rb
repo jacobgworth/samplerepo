@@ -15,8 +15,12 @@ class ApplicationController < ActionController::Base
   
   def currency_convert(amt)
     amt = amt.to_s
-    if amt.split(".")[1] and amt.split(".")[1].length < 2
-      amt = amt + "0"
+    unless amt.empty?
+      if amt.split(".")[1] and amt.split(".")[1].length < 2
+        amt = amt + "0"
+      end
+    else
+      amt = "0.00"
     end
     return amt
   end

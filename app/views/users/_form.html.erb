@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %> *<br />
     <%= f.text_field :email %>
   </div>
   <% if (@user.email == nil) %>
 	  <div class="field">
-	    <%= f.label :password %><br />
+	    <%= f.label :password %> *<br />
 	    <%= f.password_field :password %>
 	  </div>
 	  <div class="field">
-	    <%= f.label :password_confirmation %><br />
+	    <%= f.label :password_confirmation %> *<br />
 	    <%= f.password_field :password_confirmation %>
 	  </div>
   <% end %>
   <% unless current_user == nil %>
 	  <div class="field">
-	    <%= f.label :first %><br />
+	    <%= f.label :first %> *<br />
 	    <%= f.text_field :first, :value => @contact ? @contact.FirstName : "" %>
 	  </div>
 	  <div class="field">
-	    <%= f.label :last %><br />
+	    <%= f.label :last %> *<br />
 	    <%= f.text_field :last, :value => @contact ? @contact.LastName : ""  %>
 	  </div>
 	  <div class="field">
@@ -130,7 +130,10 @@
 	  </div>
 	  Country<br/>
 	  <select id="user_country" name="user_country" size="1">
-		<option value="<%=@contact ? @contact.MailingCountry : "United States"%>"><%=@contact ? @contact.MailingCountry : "United States"%></option>
+	  	<% unless @contact.nil? %>
+			<option value="<%=@contact.MailingCountry%>" selected><%=@contact.MailingState%></option>
+		<% end %>
+		<option value="United States" selected>United States</option>
 		<option value="Afghanistan">Afghanistan</option>
 		<option value="Aland Islands">Aland Islands</option>
 		<option value="Albania">Albania</option>
@@ -367,7 +370,6 @@
 		<option value="United Arab Emirates">United Arab Emirates</option>
 		<option value="United Kingdom">United Kingdom</option>
 		<option value="United Republic of Tanzania">United Republic of Tanzania</option>
-		<option value="United States">United States</option>
 		<option value="Uruguay">Uruguay</option>
 		<option value="USA Minor Outlying Islands">USA Minor Outlying Islands</option>
 		<option value="Uzbekistan">Uzbekistan</option>
@@ -381,8 +383,9 @@
 		<option value="Zambia">Zambia</option>
 		<option value="Zimbabwe">Zimbabwe</option>
 	  </select>
-	  <% if @contact %>
-	  	<h3>Your Communication Preferences</h3>
+	  
+	  <% unless @contact.LastName.nil? %>
+	  	<h3 style="margin-top: 30px;">Your Communication Preferences</h3>
 	  	<br/>
 	  	<h4>Postal Mail Preferences</h4>
 	  	Newsletter: <input name="comm_newsletter" type="checkbox" <%=@contact.Newsletter__c ? "checked" : "" %>/><br/>
@@ -394,9 +397,11 @@
 		eNewsletter <input name="ecomm_newsletter" type="checkbox" <%=(@interests.include? "1021") ? "checked" : ""%> /><br/>
 		Important Announcements & Prayer Requests <input name="ecomm_important" type="checkbox" <%=(@interests.include? "1041") ? "checked" : ""%> /><br/>
 		Campaigns <input name="ecomm_campaign" type="checkbox" <%=(@interests.include? "1042") ? "checked" : ""%> /><br/>
+	  <% else %>
+	  	<input name="all_preferences" type="checkbox" checked="checked" /> Yes, I would like to receive updates from Mission of Hope, Haiti.
 	  <% end %>
   <% end %>
-  <div class="actions">
-    <%= f.submit "Save Changes"%>
+  <div class="actions" style="margin-bottom:10px;">
+    <%= f.submit "Save"%>
   </div>
 <% end %>
