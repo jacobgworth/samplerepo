@@ -1,41 +1,41 @@
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 	<div id="content" style="padding-top: 50px;">
-<p id="notice"><%= notice %></p>
-
-<p>
-	<div id="contentLeft560">
-<h1><span class="eyebrow">Mission of Hope Haiti Events</span><br /><%= @event.eventname %></h1>
-</p>
-<p>
-	<%if @event.enddate.nil?%>
-		<strong>Date:</strong> <%= @event.eventdate.strftime("%b")%> <%= @event.eventdate.strftime("%d")%>, <%= @event.eventdate.strftime("%Y")%>
-	<%else%>
-		<strong>Dates:</strong> <%= @event.eventdate.strftime("%b")%> <%= @event.eventdate.strftime("%d")%> - <%= @event.enddate.strftime("%b")%> <%= @event.enddate.strftime("%d")%>, <%= @event.enddate.strftime("%Y")%>
-	<%end%>
-</p>
-<p>
-	<strong>Details:</strong> <%= @event.description.html_safe %>
-</p>
-<p>
-	<strong>Location:</strong> <%= @event.location %>
-</p>
-<% if @event.conviourl %>
-	    <p style="margin-top: 20px;"><a class="buttonSquareOrange" href="<%=@event.conviourl%>" style="color: #e4d4b9;">Register Now</a></p>
-<% end %>
-
-<%if @isadmin%>
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%end%>
-<%= link_to 'Back', events_path %>
-</div>
-
-<div id="contentRight300" style="padding-top: 50px;">
+		<p id="notice"><%= notice %></p>
+		
+		<p>
+			<div id="contentLeft560">
+		<h1><span class="eyebrow">Mission of Hope Haiti Events</span><br /><%= @event.eventname %></h1>
+		</p>
+		<p>
+			<%if @event.enddate.nil?%>
+				<strong>Date:</strong> <%= @event.eventdate.strftime("%b")%> <%= @event.eventdate.strftime("%d")%>, <%= @event.eventdate.strftime("%Y")%>
+			<%else%>
+				<strong>Dates:</strong> <%= @event.eventdate.strftime("%b")%> <%= @event.eventdate.strftime("%d")%> - <%= @event.enddate.strftime("%b")%> <%= @event.enddate.strftime("%d")%>, <%= @event.enddate.strftime("%Y")%>
+			<%end%>
+		</p>
+		<p>
+			<strong>Details:</strong> <%= @event.description.html_safe %>
+		</p>
+		<p>
+			<strong>Location:</strong> <%= @event.location %>
+		</p>
+		<% if @event.conviourl %>
+			    <p style="margin-top: 20px;"><a class="buttonSquareOrange" href="<%=@event.conviourl%>" style="color: #e4d4b9;">Register Now</a></p>
+		<% end %>
+		
+		<%if @isadmin%>
+		<%= link_to 'Edit', edit_event_path(@event) %> |
+		<%end%>
+		<%= link_to 'Back', events_path %>
+		</div>
+		
+		<div id="contentRight300" style="padding-top: 50px;">
 			<div class="rightBoxGreen">
 			<h2>How You Can Take Action</h2>
 			<ul class="aboutUsNav">
-				<li><a href="https://www.denarionline.com/DonorServices/TEMPLATEPAGE.ASPX?COMP_REF=_MOHHAITI%20&CONTENT=GOSOLG&DS_GO_REF=F6DB76D974">Make a Donation &raquo;</a></li>
-				<li><a href="https://www.denarionline.com/DonorServices/TEMPLATEPAGE.ASPX?COMP_REF=_MOHHAITI%20&CONTENT=GOSOLG&DS_GO_REF=F6DB76D974">Become a Partner of Hope &raquo;</a></li>
+				<li><a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1">Make a Donation &raquo;</a></li>
+				<li><a href="/partner_of_hope">Become a Partner of Hope &raquo;</a></li>
 				<li><a href="/volunteer">Volunteer &raquo;</a></li>
 				<li><a href="/share_photos">Share Your Photos &raquo;</a></li>
 				<li><a href="/events">Events &raquo;</a></li>
@@ -44,11 +44,11 @@
 			</div><!-- End Green Box -->
 		</div><!-- End Content Right -->
 		<div id="clearfix" style="height: 40px;"></div>
+		
+					
+					
+		
+	</div><!-- /content -->
+	<div id="clearfix" style="height: 40px;"></div>
 
-			
-			
-
-</div>
-		<div id="clearfix" style="height: 40px;"></div>
-
-</div>
+</div><!-- /wrapper -->
