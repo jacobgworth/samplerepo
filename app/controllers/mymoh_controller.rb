@@ -184,8 +184,13 @@ class MymohController < ApplicationController
         @photo = nil
         #find the child associated with each sponsorship
         @child = Child__c.find_by_Id(spons.Child__c)
+        #@child = Child__c.find_by_Id("a18U0000000DkRi")
         #find child's photo
         @photo = Picture__c.find_by_Child__c(@child.Id).Photo__c unless Picture__c.find_by_Child__c(@child.Id).nil?
+        if @photo.nil?
+          @attachment = Attachment.find_by_ParentId(@child.Id)
+          @photo = "<img src='https://c.na12.content.force.com/servlet/servlet.FileDownload?file=" + @attachment.Id.to_s + "' />" unless @attachment.nil?
+        end
         #set an unused variable to carry the photo url
         @child.LastModifiedById = @photo
         #add child to array of children
