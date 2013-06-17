@@ -1,0 +1,134 @@
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+
+	<div id="content" style="padding-top:50px;">
+		<h1>My MOH</h1>
+		<%= render 'layouts/mymohNav'%>
+		<h2><span class="eyebrow">Mission of Hope</span>
+		<br />
+		My Sponsorships</h2>
+		<p>
+			View your sponsored children, send them gifts or write them a letter!
+		</p>
+		<% unless @children.empty? %>
+		<% @children.each do | child |%>
+		<div class="sponsoredWrap">
+			<div class="sponsoredPhoto">
+				<%= child.LastModifiedById.html_safe %>
+			</div>
+			<div class="sponsoredProfile">
+				<h3><%= child.Name__c %></h3>
+				<p>
+					<strong>Child Code:</strong> <%= child.Student_Code__c %>
+				<p>
+					<strong>Favorite Activity:</strong> <%= child.Favorite_Activity__c%>
+					<br>
+					<strong>Favorite Class:</strong> <%= child.Favorite_Class__c%>
+					<br>
+					<strong>Wants to Be:</strong> <%= child.Future_Occupation__c%>
+				</p>
+				<div class="buttonSquareOrange" style="width: 200px; float:left; margin-right:20px;">
+					<a href="/write_my_child"><img src="/assets/icon-pencil.png" /> Write to <%= child.First_Name__c %></a>
+				</div>
+				<div class="buttonSquareOrange" style="width: 200px; float:left;">
+					<a href="http://mohh.convio.net/site/Ecommerce?store_id=1221"><img src="/assets/icon-gift.png" /> Give <%= child.First_Name__c %> a gift</a>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+		<% end %>
+		<% else %>
+		<!--No Sponsorships-->
+		<p>
+			You currently are not sponsoring a child at with Mission of Hope.
+		</p>
+		<div class="buttonSquareOrange" style="width: 35%; margin-bottom: 50px;"><a href="/child-sponsorship">Sponsor a Child Now</a></div>
+		<% end %>
+
+		<div class="tanWrapper sponsorChildren">
+			<div class="alignRight sponsorWrap" style="width:35%;">
+				<div class="buttonSquareGreen">
+					<h3><a href="https://mohhaiti.secure.force.com/sponsorship">Sponsor A Child</a></h3>
+				</div>
+				<div style="margin-top: 35px;">
+					<p>This fall, new children will be coming into the School of Hope in Haiti without sponsors.  Sponsorship provides these children with an education, a nutritious daily meal and hope for a future. Please consider sponsoring one of these children today!</p>
+				</div>
+			</div>
+			<% if false %>
+			<% if @otherchildren && (@otherchildren.length > 0)%>
+			<% end %>
+				<div class="sponsorChild">
+					<% @otherchildren.each do |child|%>
+					<div class="child">
+						<a href="http://mohhaiti.force.com/sponsorship/ChildPortal_Search?id=<%=child.Id%>"><%= @photo = Picture__c.find_by_Child__c(child.Id).Photo__c.html_safe %></a>
+					</div>
+					<% end %>
+				</div>
+			<% else %>
+				<!-- display something here for when there's no kids -->
+				<div class="sponsorChild">
+					<div class="child">
+						<a href="/child-sponsorship"><img src="/assets/mymoh-sponsor-another.jpg" style="width: 500px; height: 223px;"/></a>
+					</div>
+				</div>
+			<% end %>
+			<div class="clearfix"></div>
+
+		</div>
+		<% unless @related_result.nil? or @related_result.empty? %>
+			<h2>What We've Been Up To Lately</h2>
+			<% @related_result[1..15].each do |related|%>
+				<div class="update960" style="line-height: 1.3em; height=120px;">
+					<div class="updateDate">
+					<span class="month"><%=related.postdate.strftime("%b")%></span><br />
+					<span class="date"><%=related.postdate.strftime("%d")%></span><br />
+					<span class="year"><%=related.postdate.strftime('%Y')%></span>
+					</div>
+					<div class="updatePost960">
+					<h4><a href="/updates/<%= related.id%>"><%= related.title%></a> 
+					<br/>
+					</h4>
+					<% unless related.assets.last.nil? %>
+					<img src="<%= related.assets.last.asset.url(:thumb)%>" />
+					<%end %>
+					<%= related.body %>
+					</div>
+					<div class="clearfix">
+						<!--x-->
+					</div>
+				</div>
+			<% end%>
+		<%end%>
+		<% unless @related_result_blog.nil? or @related_result_blog.empty? %>
+			<h2 style="margin-top: 60px;">Latest Blog Posts</h2>
+			<% @related_result_blog[1..15].each do |related|%>
+				<div class="update960" style="line-height: 1.3em; height=120px;">
+					<div class="updateDate">
+					<span class="month"><%=related.postdate.strftime("%b")%></span><br />
+					<span class="date"><%=related.postdate.strftime("%d")%></span><br />
+					<span class="year"><%=related.postdate.strftime('%Y')%></span>
+					</div>
+					<div class="updatePost960">
+					<h4><a href="/updates/<%= related.id%>"><%= related.title%></a> 
+					<br/>
+					</h4>
+					<% unless related.assets.last.nil? %>
+						<img src="<%= related.assets.last.asset.url(:thumb)%>" />
+					<%end %>
+					<%= sanitize truncate(related.body,:length=>700,:separator=>' '), :tags => %w(b) %>
+				    <a href="/blog/<%=related.id%>">Read More &raquo;</a>
+					</div>
+					<div class="clearfix">
+						<!--x-->
+					</div>
+				</div>
+			<% end%>
+		<%end%>
+	</div>
+
+
+	<div class="clearfix" style="height:40px;">
+		<!--x-->
+	</div><!--end clearfix-->
+</div>

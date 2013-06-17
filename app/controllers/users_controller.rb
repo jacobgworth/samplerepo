@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  placeholder = Community
+  include Databasedotcom::Rails::Controller
+  Community = placeholder
+  
   # GET /users
   # GET /users.json
   def index
@@ -19,11 +23,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if is_admin_user?
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
+    if is_admin_user? || @user == current_user
 
       respond_to do |format|
-        format.html # show.html.erb
+        format.html { render :layout => "homeLayout" }# show.html.erb
         format.json { render json: @user }
       end
      else
@@ -36,24 +40,27 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-    if is_admin_user?
       @user = User.new
-
+      #@contact = Contact.new
       respond_to do |format|
-        format.html # new.html.erb
+        format.html { render :layout => "homeLayout"}# new.html.erb
         format.json { render json: @user }
       end
-    else
-      respond_to do |format|
-        format.html { redirect_to "/" }
-      end
-    end
   end
 
   # GET /users/1/edit
   def edit
-    if is_admin_user?
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
+    if is_admin_user? || @user == current_user
+      @contact = Contact.find(@user.convio_id)
+      #@interests = @user.get_interests
+      @interests = current_user.get_interests
+      if (@contact == nil)
+        @contact = Contact.new
+      end
+      respond_to do |format|
+        format.html { render :layout => "homeLayout" }
+      end
     else
       respond_to do |format|
         format.html { redirect_to "/" }
@@ -68,7 +75,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        session[:user_id] = @user.id
+        cookies[:auth_token] = @user.auth_token
+        format.html { redirect_to "/mymoh", notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -81,14 +90,39 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+    if is_admin_user? || @user == current_user
+      #@contact = Contact.find_by_Id(@user.convio_id)
+  
+      respond_to do |format|
+        if @user.update_attributes(params[:user])
+          @cont = Contact.find_by_ID(@user.convio_id)
+          if (@cont)
+            @cont.Newsletter__c = (params[:comm_newsletter] ? true : false)
+            @cont.Important_Announcements__c = (params[:comm_important] ? true : false)
+            @cont.Monthly_Gift_Statements__c = (params[:comm_monthlygifts] ? true : false)
+            @cont.Campaign_Updates__c = (params[:comm_campaign] ? true : false)
+            @cont.MailingCountry = (params[:user_country] || "")
+            @cont.save
+            
+            c = convio_api_session
+            add_ids=""
+            remove_ids=""
+            
+            add_ids += params[:ecomm_newsletter] ? "1021," : ""
+            add_ids += params[:ecomm_important] ? "1041," : ""
+            add_ids += params[:ecomm_campaign] ? "1042," : ""
+            remove_ids += params[:ecomm_newsletter] ? "" : "1021,"
+            remove_ids += params[:ecomm_important] ? "" : "1041,"
+            remove_ids += params[:ecomm_campaign] ? "" : "1042,"
+            puts "RESULT: "
+            puts c.update(@cont.cv__Convio_ID__c.to_i, nil, nil, nil, nil, nil, nil, nil, nil, {'remove_interest_ids' => remove_ids, 'add_interest_ids' => add_ids})
+          end
+          format.html { redirect_to "/mymoh/account", notice: 'User was successfully updated.' }
+          format.json { head :ok }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

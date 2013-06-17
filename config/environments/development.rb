@@ -30,4 +30,10 @@ Mohhaiti::Application.configure do
   
   # Path to my ImageMagick
   Paperclip.options[:command_path] = "/c/ImageMagick-6.5.6-Q8/"
+  
+  #Databasedotcom options
+  #DATABASEDOTCOM_CLIENT_ID="3MVG9QDx8IX8nP5SfDXgDDfBwGBG1ExFGGeZcZi7fdhrj47p6jtKr38QDPSe6R0MFwBLUoqUVJZujDIj4H0sm"
+  #DATABASEDOTCOM_CLIENT_SECRET="6124701994660720688"
+  #Now set in config/databasedotcom.yml
+  
 end

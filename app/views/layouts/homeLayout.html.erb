@@ -65,6 +65,16 @@
 		<p class="clearfix"></p>
 		<img src="/assets/button-newsletter.png" alt="Subscribe to our newsletter" />
 		<div class="newsletterSignup">
+			
+		<form action="http://mohh.convio.net/site/Survey" method="POST" >
+			<input name="cons_email" class="newsletterinput" type="text"/>
+			<input type="hidden" name="cons_info_component" id="cons_info_component" value="t" />
+			<input type="hidden" name="pagewrap" value="n"/>
+			<input type="hidden" name="SURVEY_ID" id="SURVEY_ID" value="1162" />
+			<span style="display:none"><input type="text" name="denySubmit" id="denySubmit" value="" alt="" />Please leave this field empty</span>
+			<input type="submit" class="newsletterbutton" value="GO" name="ACTION_SUBMIT_SURVEY_RESPONSE"/>                
+		</form>
+<!--
 <form method="post" action="https://app.icontact.com/icp/signup.php" name="icpsignup" id="icpsignup1000" accept-charset="UTF-8" onsubmit="return verifyRequired1000();" >
 <input type="hidden" name="redirect" value="http://mohhaiti.org/newsletter_thank_you">
 <input type="hidden" name="errorredirect" value="http://www.icontact.com/www/signup/error.html">
@@ -79,6 +89,7 @@
     <input type="hidden" name="doubleopt" value="0">
 <input type="submit" class="newsletterbutton" name="Submit" value="GO">
 </form>
+-->
 <script type="text/javascript">
 
 var icpForm1000 = document.getElementById('icpsignup1000');
@@ -112,7 +123,7 @@ return true;
 	<div class="superFooterColLast">
 		<h5>Get Involved</h5>
 		<ul>
-			<li><a href="https://www.denarionline.com/DonorServices/TEMPLATEPAGE.ASPX?COMP_REF=_MOHHAITI%20&CONTENT=GOSOLG&DS_GO_REF=F6DB76D974">Donate &raquo;</a></li>
+			<li><a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1">Donate &raquo;</a></li>
 			<li><a href="/child-sponsorship">Child Sponsorship &raquo;</a></li>
 			<li><a href="/mission_trips">Mission Trips &raquo;</a></li>
 			<li><a href="/church_advancement">Churches &raquo;</a></li>
@@ -123,7 +134,6 @@ return true;
     			<a href="/console">Admin</a> // <%= link_to "Logout", log_out_path %>
 			<% elsif current_user %>
     			<%= link_to "Logout", log_out_path %>
-    			
   			<% else %>
   					<%= link_to "Site Login", log_in_path %>
    			<% end %> // <a href="http://threetwelvecreative.com" target="_blank">Website design & development by ThreeTwelve Creative</a><br /><br />

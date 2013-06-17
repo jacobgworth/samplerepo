@@ -18,12 +18,20 @@
 			<div class="forms">
 				<% if @isvalid.nil?%>
 				<form>
-					<div class="field">Name: <input id="txtname" type="text" name="fname"><br></div>
+					<div class="field">First Name: <input id="txtname" type="text" name="fname"><br></div>
+					<div class="field">Last Name: <input id="txtlname" type="text" name="lname"><br></div>
 					<div class="field">Email: <input id="txtemail" type="text" name="email"></div>
-					<div class="field">Phone number: <input id="txtphone" type="text" name="phonenumber"><br></div>
 					<div class="field checkbox" style="margin-top: -3px;padding-bottom: 15px;"><input type="checkbox" name="childnumber" id="childnumber" style="width:12px;"> I am interested in taking a Medical Mission Trip (<a href="/medical_mission_trips">learn more about medical mission trips).</a>
+					<div class="field">Street Address: <input id="txtstreet" type="text" name="street"><br></div>
+					<div class="field">City: <input id="txtcity" type="text" name="city"><br></div>
+					<div class="field">State: <input id="txtstate" type="text" name="state"><br></div>
+					<div class="field">Zip: <input id="txtzip" type="text" name="zip"><br></div>
+					<div class="field">Organization: <input id="txtorg" type="text" name="organization"><br></div>
+					<div class="field">Church: <input id="txtchurch" type="text" name="church"><br></div>
+					<div class="field">Number of Participants: <input id="txtpart" type="text" name="participants"><br></div>
+					
 						</div>
-					<div class="field" style="clear: both;">Comments: <textarea id="txtmessage" type="textarea" name="letter"></textarea></div>
+					<div class="field" style="clear: both; display:none;">Comments: <textarea id="txtmessage" type="textarea" name="letter"></textarea></div>
 					 <div class="actions"><input type="submit" value="Submit My Request" onclick="return validate();"></div>
 				</form>		
 				<%end%>

@@ -1,0 +1,34 @@
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+
+	<div id="content" style="padding-top:50px;">
+		<h1>My MOH</h1>
+		<%= render 'layouts/mymohNav'%>
+		<h2><span class="eyebrow">Mission of Hope</span>
+		<br />
+		My Mission Trips</h2>
+		
+		<% unless @trips.empty? %>
+		<!--This person has mission trips to display -->
+		<div class="tanWrapper">
+			<div class="missionTripList">
+				
+					<% @trips.each do |trip|%>
+				
+						<h4><% if trip.Haiti_Arrival_Date__c%><%=trip.Haiti_Arrival_Date__c.strftime("%m/%d/%Y")%> - <%=trip.Haiti_Departure_Date__c.strftime("%m/%d/%Y")%>: <%end%><a href="/mymoh/mytrips/<%= trip.Id%>"><%= trip.Name || "Trip"%></a></h4>
+				
+					<% end %>
+				</ul>
+			</div>
+		</div>
+		<% else %>
+		<!-- Person not involved with any trips -->
+		<h4>No trips? Plan one!</h4>
+		<p style="margin-top: 15px;">Every year, Mission of Hope houses hundreds of groups and individuals at its campus in the foothills of Titanyen, Haiti. These gracious volunteers visit for a week, answering a call to assist in bringing life transformation to the people of Haiti. Whether you’re an individual or someone looking to bring a group, short-term mission trips is a great way to experience the benefits of serving a community in need.</p>
+		<div class="buttonSquareOrange" style="width: 35%; margin-bottom: 50px; margin-top: 20px;"><a href="/mission_trips">Learn More About Mission Trips</a></div>
+		<% end %>
+
+		<div class="clearfix" style="height:40px;">
+			<!--x-->
+		</div>
+	</div>

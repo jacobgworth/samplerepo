@@ -60,7 +60,7 @@ class ContactUsMailer < ActionMailer::Base
     
     @data = data
     
-    @fname = @data[:fname]
+    @fname = @data[:fname] + @data[:lname]
     @phone = @data[:phone]
     @fromaddress = @data[:fromaddress]
     @bodym = @data[:bodym]
@@ -71,7 +71,7 @@ class ContactUsMailer < ActionMailer::Base
       attachments[@attachment.original_filename] = @attachment.read
     end
     
-    mail(:to => "sponsorship@mohhaiti.org", :subject => "Write My Child", :from => @fromaddress)
+    mail(:to => "jesse+test@threetwelvecreative.com", :subject => "Write My Child", :from => @fromaddress)
   end
   
   def take_a_trip(data)

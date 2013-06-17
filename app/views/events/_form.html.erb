@@ -50,6 +50,10 @@ tinyMCE.init({
     Event End Date:<br />
     <%= date_select :event, :enddate %>
   </div>
+  <div class="field">
+    Convio URL:<br />
+    <%= f.text_field :conviourl %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

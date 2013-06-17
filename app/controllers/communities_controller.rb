@@ -4,6 +4,7 @@ class CommunitiesController < ApplicationController
   def index
     @title = "Mission of Hope, Haiti: Villages & Communities we Serve in Haiti"
     @meta = "Learn about the villages and communities Mission of Hope, Haiti and churches partner with to provide homes, water solutions, health services, education and share the gospel."
+    puts "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOLine 7: " + Community.new.attributes.keys.sort.to_s
     @communities = Community.all
     @jason = Community.all.to_gmaps4rails
     @user = current_user
@@ -27,6 +28,7 @@ class CommunitiesController < ApplicationController
     @posts = Post.joins(:communities).where("community_id=" + @community.id.to_s).order(:postdate).last(3).reverse
     @updates = Update.joins(:communities).where("community_id=" + @community.id.to_s).last(3).reverse
     @projectscount = Project.joins(:communities).where("community_id=" + @community.id.to_s).count
+    @subscribed = Subscription.where(:sub_id => @community.id, :user_id => current_user.id, :datatype => 'village')
 
     respond_to do |format|
       format.html {render :layout=>"homeLayout"} # show.html.erb

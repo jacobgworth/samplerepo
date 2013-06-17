@@ -6,6 +6,8 @@
 
 
 
+
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
@@ -1340,7 +1342,7 @@ h3.CTA {
 
 #content h2 {
     font-size: 2em;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 #contentLeft560 ul {
@@ -1359,7 +1361,7 @@ h3.CTA {
 
 #contentLeft560 h3, #content h3 {
     font-size: 1.5em;
-    padding: 20px 0 0 0;
+    padding: 11px 0 0 0;
     color: #079367;
 }
 #contentLeft560 h4 {
@@ -1977,6 +1979,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     color: #E4D4B9;
+    height: 30px;
     text-decoration: none;
     padding: 5px;
     margin-top: 20px;
@@ -2132,6 +2135,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
     -moz-box-shadow: 3px 3px #c26603;
     -webkit-box-shadow: 3px 3px #c26603;
     box-shadow: 3px 3px #c26603;
+    cursor: pointer;
 }
 
 .buttonSquareOrange {
@@ -3132,4 +3136,417 @@ tr {
 	font-size: 1.4em !important;
     padding: 20px 0 7px 0 !important;
     color: #0f5046 !important;
+}
+
+
+/****MY MOH STYLES****/
+
+.tabbar{margin-bottom: 20px;}
+.tabbar ul {
+	width:100%;
+	border-bottom:5px solid #079367;
+}
+.tabbar li{
+    font-family: 'Montserrat', sans-serif;
+	display: inline-block;
+	background-color: #079367;
+	color:#E4D4B9;
+	padding: 9px;
+	margin-right: 1px !important;
+	-webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -moz-border-radius-topleft: 8px;
+    -moz-border-radius-topright: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.tabbar li a{
+	color: #E4D4B9 !important;
+}
+.tabbar ul{
+	list-style: none;
+	margin-left: 0 !important;
+}
+.tab_border{
+	border: 4px solid #079367;
+}
+
+.loginWrapper {
+	background:url(/assets/login-bg.jpg) top center no-repeat;
+	height:674px;
+	margin-top:-20px;
+	font-family:'Montserrat', sans-serif !important;
+}
+
+.loginLeft {
+	background:url(/assets/paper-div.png) top center no-repeat;
+	/*background-color: #e4d4b9;*/
+	float:left;
+	margin:30px 0 0 30px;
+	width:515px;
+	/*height:303px;*/
+	height: 539px;
+	padding:10px 30px;
+}
+
+.loginLeft h2 {
+	font-size:1.5em !important;
+	padding:15px 0 0 0 !important;
+	margin-bottom:0;
+	color:#078E60 !important;
+}
+
+.loginRight {
+	float:right;
+	margin:30px 60px 0 0px;
+	width: 245px;
+}
+
+.loginRight h2 {
+	color:#fff !important;
+	text-align:right;
+	font-size: 3em !important;
+	text-shadow: 0 .1em .1em #333;
+	text-transform:none !important;
+}
+
+.loginRight input {
+	padding:5px 10px;
+	width:200px;
+}
+
+.loginRight .buttonSquareOrange {
+	border:none;
+	width:auto;
+	color:#fff;
+	background-image:url(/assets/mymoh-button-arrow.png) center right no-repeat;
+	margin-bottom:15px;
+	cursor: pointer;
+	}
+	
+.buttonSquareGreen a {
+    background:#079367;
+    padding: 8px;
+    width:125px;
+    color:#E4D4B9;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    -moz-box-shadow: 3px 3px #0f483b
+    -webkit-box-shadow: 3px 3px #0f483b;
+    box-shadow: 3px 3px #0f483b;
+    margin-top:10px;
+}
+
+.tanWrapper {
+	background-color:#C2B092;
+	padding:20px 40px;
+	width:880px;
+	margin-bottom:20px;
+}
+
+.tanWrapper h3 {
+	color:#0f483b !important;
+	padding-bottom:0;
+}
+
+.tanWrapper h4 {
+	color:#0f483b !important;
+	font-size:1.2em;
+	padding:10px 0;
+	
+}
+
+.mymohLabel {
+	width:100px;
+}
+.label h2{
+    font-size: 23px;
+    padding: 14px 0;
+}
+
+table.mygiving {
+	margin-bottom:40px;
+}
+
+table.mygiving tr {
+	padding:10px !important;
+}
+
+table.mygiving th {
+	background:#078E60;
+	text-align:center;
+	border:1px solid #078E60;
+	border-bottom:2px solid #E4D4B9;
+}
+
+table.mygiving th h2, table.mygiving th h3 {
+	color:#E4D4B9 !important;
+}
+
+table.mygiving th h3 {
+	text-align:left;
+	font-size:14px !important;
+	padding-bottom:15px !important;
+	padding-left:10px !important;
+	text-transform:none !important;
+}
+
+table.mygiving td.label {
+	width:30%;
+	text-align:left;
+	font-weight:bold;
+	vertical-align: bottom;
+}
+table.mygiving span.label {
+	width:50%;
+	float:left;
+	text-align:left;
+	font-weight:bold;
+	display: block;
+}
+
+table.mygiving span.data {
+	display:block;
+	width:50%;
+	float:left;
+}
+
+table.mygiving td {
+	text-align:right;
+}
+
+
+table.mygiving td {
+    padding: 10px;
+    border: 1px solid #078E60;
+}
+
+table.mygiving tr {
+    /*border: 2px solid #078E60;*/
+}
+
+.sponsoredWrap {
+	width:960px;
+	margin-bottom:40px;
+}
+
+.sponsoredPhoto img {
+	float:left;
+	width:150px;
+	height:auto;
+	margin-right:40px;
+	border: 5px solid #F9F2E7;
+    -webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+    box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+}
+
+.sponsoredProfile {
+	float:left;
+}
+
+.sponsorChild {
+	float:left;
+}
+
+.child {
+	float:left;
+}
+
+.child img {
+	width: auto;
+	height: 125px;
+	margin:0 10px 10px 0;
+	border: 5px solid #F9F2E7;
+    -webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+    box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+}
+
+.update960 {
+	width:960px;
+	padding-bottom:20px;
+	border-bottom:1px dotted #0F483B;
+}
+
+.update960 h4 {
+	color: #079367;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    margin-top: 20px;
+    padding-bottom:10px;
+}
+
+.update960 img {
+	border: 2px solid #C2B092;
+	float:left;
+	margin:0 20px 20px 0;
+}
+
+.missionTripList ul {
+	padding-left:-30px;
+}
+
+.missionTripList li {
+	list-style:none;
+	padding:10px 0;
+	border-bottom:1px solid #C2B092;
+}
+
+ul.checklist {
+	list-style:none;
+	margin:20px 0;
+	padding:20px 0;
+}
+
+ul.checklist li {
+	list-style:none;
+	background:url(/assets/list-arrow.png) left top no-repeat;
+	padding:0px 0 20px 30px !important;
+	/*font-family: 'Montserrat', sans-serif;*/
+    font-size: 1.1em;
+    line-height:1.2em;
+    
+}
+
+h3.myMOHRight  {
+	border-bottom:3px solid #078E60;
+	padding-bottom:5px;
+	color:#078E60 !important;
+	margin-bottom:15px;
+	font-size:1.2em !important;
+}
+
+.bookWrapper {
+	margin:20px 0;
+	padding:20px 0;
+	border-bottom:1px dotted #0F483B;
+}
+
+.bookWrapper.last {
+	border-bottom:none;
+}
+
+.bookPhoto {
+	float:left;
+	
+}
+
+.bookPhoto img {
+	width: 125px;
+	height: auto;
+	margin:0 20px 20px 0;
+	border: 5px solid #F9F2E7;
+    -webkit-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+    box-shadow: 0px 1px 5px rgba(50, 50, 50, 0.5);
+}
+
+.content .bookData {
+	float:right;
+
+}
+.rightBox ul {
+	margin-left: 0px !important;
+}
+.herobutton{
+	top: -10px;
+}
+.logincontainer{
+    width: 490px;
+    margin: 12px auto;
+}
+.logincontainer h2{
+	font-size: 1.4em !important;
+}
+
+.recurringGiftButton {
+	display: none;
+	background-color: #ea861b;
+	color: #E4D4B9;
+	padding: 10px;
+	width: 120px;
+	margin-right: 20px;
+	cursor: hand; cursor: pointer;
+	text-align: center;
+	box-shadow: 3px 3px #c26603;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+}
+
+.recurringGift input[type=submit] {
+	display: none;
+	background: none;
+	background-color: #ea861b;
+	height: 34px;
+	color: #E4D4B9;
+	padding: 10px !important;
+	margin-right: 20px;
+	cursor: hand; cursor: pointer;
+	text-align: center;
+	box-shadow: 3px 3px #c26603;
+	margin-top: 0px;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+.recurringGift input[disabled] {
+	background: transparent;
+	border: none;
+}
+
+.unsubscribe.following {
+	background-color: transparent;
+	color: #0F483B;
+	box-shadow: none !important;
+	font-size: 12px;
+	width: 150px;
+	text-align: left;
+	display: inline-block;
+	padding: 0;
+}
+
+.subscribe.following {
+	display: none;
+}
+
+ul.following li {
+	margin-left: 20px;
+}
+
+.viewall {
+	margin-top: 20px;
+}
+
+.hr-wrap {
+	border-bottom: 1px dotted #0f483b;
+	width: 100%;
+	margin-top: 25px;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.givingDateFilter {
+	padding-bottom: 25px;
+}
+
+.loginDisclaimer {
+	margin-top: 50px;
+	font-size: 12px;
+	overflow: hidden;
+	background-color: white;
+	opacity: 0.8;
+	padding: 10px;
+	line-height: 1em;
+}
+
+.mymohpostbody img {
+	float: left;
+	margin-right: 10px;
+	margin-top: 4px;
+	margin-bottom: 25px;
 }
