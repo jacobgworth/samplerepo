@@ -34,6 +34,10 @@
 	    <%= f.label :last %> *<br />
 	    <%= f.text_field :last, :value => @contact ? @contact.LastName : ""  %>
 	  </div>
+  	  <div class="field">
+	    <%= f.label :phone %> *<br />
+	    <%= f.text_field :phone, :value => @contact ? @contact.Phone : ""  %>
+	  </div>
 	  <div class="field">
 	    <%= f.label :street1 %><br />
 	    <%= f.text_area :street1, :value => @contact ? @contact.MailingStreet : "", :size => "20x3" %>

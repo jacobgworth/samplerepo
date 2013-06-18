@@ -101,6 +101,9 @@ class UsersController < ApplicationController
         if @user.update_attributes(params[:user])
           @cont = Contact.find_by_ID(@user.convio_id) unless @user.convio_id.nil?
           if (@cont)
+            puts "Phone: " + params[:user][:phone]
+            @cont.Phone = params[:user][:phone]
+            @cont.save
             if params[:all_preferences]
               params[:comm_newsletter] = "checked"
               params[:comm_important] = "checked"
