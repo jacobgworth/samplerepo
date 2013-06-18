@@ -465,6 +465,7 @@ class PageController < ApplicationController
       @sfcontact.MyMOH_Church__c = @church
       @sfcontact.Organization__c = @organization
       @sfcontact.Number_of_Trip_Participants__c = @participants
+      @sfcontact.Ideal_Trip_Month__c = params[:trip_month]
       if (@data[:medical] == "on")
         @sfcontact.Medical_Trip_Prospect__c = true
       end
