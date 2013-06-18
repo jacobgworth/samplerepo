@@ -106,7 +106,7 @@ class MymohController < ApplicationController
     dbdc_client.materialize("cv__Recurring_Gift__c")
     dbdc_client.materialize("cv__Donation_Designation_Relationship__c")
     dbdc_client.materialize("cv__Designation__c")
-    @recurring = Cv__Recurring_Gift__c.find_all_by_cv__Contact__c(@account.Id)
+    @recurring = Cv__Recurring_Gift__c.query("cv__Contact__c = '" + @account.Id + "' AND cv__Recurring_Gift_Status__c = 'Active'")
     #@donations = Opportunity.find_all_by_cv__Contact__c(@account.Id)
     query = "cv__Contact__c = '" + current_user.convio_id + "' AND CloseDate > " + Date.today.year.to_s + "-" + Date.today.strftime("%m") + "-01"
     @donations = Opportunity.query(query)

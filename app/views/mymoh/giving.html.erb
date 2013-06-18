@@ -66,7 +66,7 @@
 				<th><h3>Gift Amount Needed</h3></th>
 			</tr>
 			<% @recurring.each do |rec| %>
-				<% if rec.cv__Recurring_Gift_Status__c != "Written Off - Donor Canceled" %>
+				<% if rec.cv__Recurring_Gift_Status__c == "Active" %>
 					<tr>
 						<td style="width: 375px;"><%= rec.Name || "N/A"%></td>
 						<td>$<%= currency_convert(rec.cv__Recurring_Amount__c) %></td>
