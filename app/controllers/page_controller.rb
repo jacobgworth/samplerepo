@@ -440,7 +440,7 @@ class PageController < ApplicationController
     @church = params[:church]
     @organization = params[:organization]
     @participants = params[:participants]
-    if !@fname.nil? && @fname != "" && !@comments.nil? && @comments != "" && !@fromaddress.nil? && @fromaddress != ""
+    if !@fname.nil? && @fname != "" && !@fromaddress.nil? && @fromaddress != ""
       @isvalid = true
       @data = {
         :fname => @fname,
@@ -452,13 +452,16 @@ class PageController < ApplicationController
       }
       
       #Save contact to convio
-      @sfcontact = create_convio_contact(@data[:lname], @data[:fname], @data[:email])
-      @sfcontact = Contact.find_by_Id(@sfcontact.Id)
+      @sfcontact = Contact.find_by_Email(params[:email])
+      if @sfcontact.nil?
+        @sfcontact = create_convio_contact(params[:lname], params[:fname], params[:email])
+        @sfcontact = Contact.find_by_Id(@sfcontact.Id)
+        @sfcontact.MailingStreet = @street
+        @sfcontact.MailingCity = @city
+        @sfcontact.MailingState = @state
+        @sfcontact.MailingPostalCode = @zip
+      end
       @sfcontact.MT_Prospect_Status__c = "Prospect"
-      @sfcontact.MailingStreet = @street
-      @sfcontact.MailingCity = @city
-      @sfcontact.MailingState = @state
-      @sfcontact.MailingPostalCode = @zip
       @sfcontact.MyMOH_Church__c = @church
       @sfcontact.Organization__c = @organization
       @sfcontact.Number_of_Trip_Participants__c = @participants
@@ -468,11 +471,11 @@ class PageController < ApplicationController
       @sfcontact.save
       ContactUsMailer.take_a_trip(@data).deliver
       respond_to do |format|
-        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+        format.html {render :layout=>"homeLayout"}
       end 
     else
       respond_to do |format|
-        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+        format.html {render :layout=>"homeLayout"}
       end
     end
   end
