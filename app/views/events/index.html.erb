@@ -18,7 +18,7 @@
 			<span class="date"><%= event.eventdate.strftime("%d")%></span><br />
 			<span class="year"><%= event.eventdate.strftime("%Y")%></span>	
 			</div><!-- End DateUpdate -->
-    <h3><a href="/events/<%=event.id%>"><%= event.eventname %></a></h3>
+    <h3><a href="<%=event.conviourl%>"><%= event.eventname %></a></h3>
     <!--<p><%= event.description.html_safe %></p>-->
     <!--<p><%= link_to 'View details...', event %></p>-->
     <% if event.conviourl %>
