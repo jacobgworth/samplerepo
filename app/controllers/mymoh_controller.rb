@@ -176,7 +176,7 @@ class MymohController < ApplicationController
   def sponsorships
     @account = Contact.find_by_Id(current_user.convio_id)
     #@account = Contact.find_by_Name("Lindsey Rubino")
-    @sponsorships = Child_Sponsorship__c.query("Sponsor__c = '" + @account.Id + "'")
+    @sponsorships = Child_Sponsorship__c.query("Sponsor__c = '" + @account.Id + "' AND Status__c = 'Open'")
     unless @sponsorships == nil
       #if we find sponsorships
       @children = []
