@@ -19,6 +19,34 @@ class UsersController < ApplicationController
       end
     end
   end
+  
+  def password_reset
+    if params[:email]
+      user = User.find_by_email(params[:email])
+      user.send_password_reset if user
+      @message = "We've recieved your request for a password reset. Please check your email."
+    end
+    respond_to do | format |
+      format.html { render :layout => "homeLayout" }
+    end
+  end
+  
+  def password_reset_edit
+    @user = User.find_by_password_reset_token!(params[:token])
+    if params[:user]
+      if @user.password_reset_sent_at < 2.hours.ago
+        redirect_to "/users/password_reset", notice: "Password reset has expired."
+      elsif @user.update_attributes(params[:user])
+        redirect_to "/", notice: "Password has been reset."
+      else
+        render :password_reset, :layout => "homeLayout", notice: "Passwords did not match"
+      end
+    else
+      respond_to do |format|
+        format.html { render :layout => "homeLayout" }
+      end
+    end
+  end
 
   # GET /users/1
   # GET /users/1.json

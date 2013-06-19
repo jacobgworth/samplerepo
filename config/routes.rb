@@ -42,6 +42,8 @@ Mohhaiti::Application.routes.draw do
   
   #get "sessions/new"
 
+  match "/users/password_reset" => "users#password_reset"
+  match "/users/password_reset/:token" => "users#password_reset_edit"
   resources :users
 
   resources :projects

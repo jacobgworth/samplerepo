@@ -2,6 +2,9 @@
 	<%= render 'layouts/navBar'%>
 
 	<div id="content" style="padding-top:50px;">
+		<p id="notice">
+				<%= notice %>
+		</p>
 
 		<h1 style="padding-bottom: 25px;">My MOH</h1>
 
@@ -47,6 +50,7 @@
 					<%= submit_tag("Sign In", :class => "buttonSquareOrange") %> <a href="" style="margin-left: 5px; display: none;">Forget your login info?</a>
 				</p>
 				<p>
+					<a href="/users/password_reset">Forgot your password?</a>
 				</p>
 				<div class="clearfix"></div>
 				<% end %>
