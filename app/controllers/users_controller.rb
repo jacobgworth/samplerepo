@@ -37,9 +37,9 @@ class UsersController < ApplicationController
       if @user.password_reset_sent_at < 2.hours.ago
         redirect_to "/users/password_reset", notice: "Password reset has expired."
       elsif @user.update_attributes(params[:user])
-        redirect_to "/", notice: "Password has been reset."
+        redirect_to "/mymoh/login", notice: "Password has been reset."
       else
-        render :password_reset, :layout => "homeLayout", notice: "Passwords did not match"
+        render :password_reset_edit, :layout => "homeLayout"
       end
     else
       respond_to do |format|
