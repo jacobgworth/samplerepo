@@ -2,10 +2,17 @@
 	<head><title>Take a Mission Trip Contact</title></head>
 	<body>
 		<h1>Take a Mission Trip Contact</h1>
-		<p>Name: <%=@fullname%></p>
-		<p>Phone: <%=@phone%></p>
+		<p>Name: <%=@data[:fname]%> <%=@data[:lname]%></p>
 		<p>Email: <%=@fromaddress%></p>
-		<p>Message: <%=@comments%></p>
+		
+		<p>Address: <%=@data[:address]%></p>
+		<p>City: <%=@data[:city]%></p>
+		<p>State: <%=@data[:state]%></p>
+		<p>Zip: <%=@data[:zip]%></p>
+		<p>Church: <%=@data[:church]%></p>
+		<p>Organization: <%=@data[:org]%></p>
+		<p>Participants: <%=@data[:participants]%></p>
+		<p>Month: <%=@data[:month]%></p>
 	</body>
 </html>
 

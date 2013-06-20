@@ -88,6 +88,7 @@ class ContactUsMailer < ActionMailer::Base
     if (@data[:medical] == "on")
        @toemail = "medical@mohhaiti.org" 
     end
+    #@toemail = "jesse@threetwelvecreative.com" #testing
     
     mail(:to => @toemail, :subject => "Take a Mission Trip", :from => @fromaddress)
   end

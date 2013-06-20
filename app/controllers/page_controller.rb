@@ -429,6 +429,7 @@ class PageController < ApplicationController
     @title = "Request Information About MOH Haiti Mission Trips"
     @meta = "Use our easy request information form to receive more information on taking a short-term mission trip with Mission of Hope, Haiti."
     @fname = params[:fname]
+    @lname = params[:lname]
     @comments = params[:letter]
     @fromaddress = params[:email]
     @phone = "0000000000"
@@ -444,11 +445,19 @@ class PageController < ApplicationController
       @isvalid = true
       @data = {
         :fname => @fname,
-        :lname => "TESTING", 
+        :lname => @lname, 
         :fromaddress => @fromaddress, 
         :comments => @comments,
         :phone => @phone,
-        :medical => @medical
+        :medical => @medical,
+        :address => @street,
+        :city => @city,
+        :state => @state,
+        :zip => @zip,
+        :church => @church,
+        :org => @organization,
+        :participants => @participants,
+        :month => params[:trip_month]
       }
       
       #Save contact to convio
