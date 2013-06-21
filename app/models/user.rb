@@ -113,7 +113,7 @@ class User < ActiveRecord::Base
       :cv__Deceased__c => false,
       :cv__Head_of_Household__c => false,
       :cv__Postal_Mail_Opt_Out__c => false,
-      :cv__Active__c => false,
+      :cv__Active__c => true,
       :cv__Active_Sustainer__c => false,
       :cv__Open_Major_Gift__c => false,
       :cv__Anonymous__c => false,
