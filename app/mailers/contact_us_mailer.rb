@@ -60,7 +60,7 @@ class ContactUsMailer < ActionMailer::Base
     
     @data = data
     
-    @fname = @data[:fname] + @data[:lname]
+    @fname = @data[:fname]
     @phone = @data[:phone]
     @fromaddress = @data[:fromaddress]
     @bodym = @data[:bodym]
@@ -70,8 +70,10 @@ class ContactUsMailer < ActionMailer::Base
     if !@attachment.nil?
       attachments[@attachment.original_filename] = @attachment.read
     end
+    @sendto = "sponsorship@mohhaiti.org"
+    #@sendto = "jesse@threetwelvecreative.com"
     
-    mail(:to => "jesse+test@threetwelvecreative.com", :subject => "Write My Child", :from => @fromaddress)
+    mail(:to => @sendto, :subject => "Write My Child", :from => @fromaddress)
   end
   
   def take_a_trip(data)
@@ -88,6 +90,7 @@ class ContactUsMailer < ActionMailer::Base
     if (@data[:medical] == "on")
        @toemail = "medical@mohhaiti.org" 
     end
+    #@toemail = "jesse@threetwelvecreative.com" #testing
     
     mail(:to => @toemail, :subject => "Take a Mission Trip", :from => @fromaddress)
   end

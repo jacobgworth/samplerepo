@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
         redirect_to "/console"
       end
     else
-      flash.now.alert = "Invalid email or password"
+      flash.now.alert = "Invalid email or password."
       render "new"
     end
   end

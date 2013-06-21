@@ -19,11 +19,13 @@
 			<span class="year"><%= event.eventdate.strftime("%Y")%></span>	
 			</div><!-- End DateUpdate -->
     <h3><a href="#"><%= event.eventname %></a></h3>
+	<p>Details coming soon!</p>
     <!--<p><%= event.description.html_safe %></p>-->
     <!--<p><%= link_to 'View details...', event %></p>-->
     <% if event.conviourl %>
 	    <!--<p style="margin-top: 20px; margin-bottom: 20px;"><a class="buttonSquareOrange" href="<%=event.conviourl%>" style="color: #e4d4b9;">View Details</a></p>-->
 	<% end %>
+	<div class="clearfix"></div>
     <% if @isadmin %>
     	<p class="eventsAdminShow"><%= link_to 'Edit', edit_event_path(event) %> | <%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></p>
     <% else %>
