@@ -1,4 +1,14 @@
 <div class="rightBox">
+	<h2>My Child Sponsorships</h2>
+	<img src="/assets/iconShop.png" class="alignRight" style="margin-top:-20px;" />
+	<p>
+		A new way to manage your sponsorships, send your sponsored child a special gift, or write them a letter
+		<br />
+		<br />
+		<a href="/mymoh">Log in or Sign up &raquo;</a>
+	</p>
+</div>
+<div class="rightBox">
 	<h2>Success Story</h2>
 	<img class="featuredImage" style="margin-bottom:30px;" src="/assets/student-delmont.jpg" />
 	<h3 style="margin-top:-10px; color:#079367">Meet Wedner Delmonte</h3>
@@ -23,27 +33,6 @@
 	</p>
 </div>
 <%end%>
-<% unless request.fullpath == "/gift_store"%>
-<div class="rightBox">
-	<h2>Gift Store</h2>
-	<img src="/assets/iconShop.png" class="alignRight" style="margin-top:-20px;" />
-	<p>
-		Buy a gift for the child you are sponsoring!
-		<br />
-		<a href="http://mohh.convio.net/site/Ecommerce?store_id=1221">Shop now &raquo;</a>
-	</p>
-</div>
-<% end %>
-<% unless request.fullpath == "/write_my_child"%>
-<div class="rightBox">
-	<h2>Write Your Child</h2>
-	<img src="/assets/iconWrite.png" class="alignLeft" />
-	<p>
-		Brighten your sponsored student's day by sending them a letter online or by mail.
-		<br />
-		<a href="/write_my_child">Write your child &raquo;</a>
-	</p>
-</div>
 <!-- AddThis Button BEGIN -->
 <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
 <h4 style="float:left;">Share This: </h4>
@@ -56,4 +45,3 @@
 <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
 <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-506b79724d720237"></script>
 <!-- AddThis Button END -->
-<%end%>
