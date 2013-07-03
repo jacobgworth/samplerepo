@@ -182,8 +182,8 @@ Mohhaiti::Application.routes.draw do
   get "page/privacy"
   match "/privacy" => "page#privacy"
   
-  #get "page/financial_info"
-  #match "/financial_info" => "page#financial_info"
+  get "page/financial_info"
+  match "/financial_info" => "page#financial_info"
   
   get "page/press"
   match "/press" => "page#press"

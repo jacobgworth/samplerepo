@@ -291,6 +291,16 @@ span.eyebrow {
     background-size: cover;
 }
 
+#heroFinancials {
+    width: 100%;
+    height: 100%;
+    background: url(/assets/heroFinancials.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 #heroAboutHaiti {
     width: 100%;
     height: 100%;
