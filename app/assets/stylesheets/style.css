@@ -3171,7 +3171,7 @@ tr {
 	color: #E4D4B9 !important;
 }
 
-.tabbar li a:hover {
+.tabbar li:hover {
 	background-color:#056346;
 }
 .tabbar ul{
@@ -3583,3 +3583,32 @@ form.edit_user .field textarea {
 	padding: 10px;
 	width: 600px;
 }
+
+.chart {
+	margin-top:20px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.chartLabelHeader, .chartLabel {
+	color: #079367;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    margin-top: 20px;
+    float:left;
+    width:400px;
+}
+
+.chartLabel {
+	text-transform:none;
+	padding-left:20px;
+	font-size:1em;
+}
+
+.chartData {
+	float:right;
+	color: #079367;
+    text-transform: uppercase;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
