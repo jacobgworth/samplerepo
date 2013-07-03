@@ -38,7 +38,8 @@
 								</div>							
 							<% end %>
 							<br/>
-							<div class="recurringGiftButton cancelGift" style="">Cancel Gift</div>
+							<div class="recurringGiftButton cancelChanges" style="">Cancel Changes</div>
+							<div class="recurringGiftButton cancelGift" style="">Cancel Recurring Gift</div>
 							<% if rec.cv__Recurring_Gift_Status__c != "Active"%>
 								<div class="recurringGiftButton unpauseGift" style="">Reactivate Gift</div>
 							<% end %>
@@ -57,6 +58,12 @@
 					$(this).parent().find(".recurringGiftButton").css("display", "inline-block");
 					$(this).parent().find("input[type=submit]").parent().css("display", "inline-block");
 					$(this).hide();
+				});
+				$(".cancelChanges").click(function() {
+					$(this).parent().find("input[type=text]").attr("disabled", "disabled");
+					$(this).parent().find(".recurringGiftButton").css("display", "none");
+					$(this).parent().find("input[type=submit]").parent().css("display", "none");
+					$(".editGift").show();
 				});
 				$(".cancelGift").click(function() {
 					$(this).parent().find(".giftStatus").val("Written Off - Donor Canceled");
