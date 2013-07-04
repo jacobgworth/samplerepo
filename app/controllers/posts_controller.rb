@@ -2,8 +2,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @title = "Haiti Blog: Mission of Hope Haiti (MOH) Blog"
-    @meta = "The MOH Haiti blog shares what is happening from the eyes of Haiti. Find out what is going on at the Mission of Hope Haiti base in Titanyen."
+    @title = "Haiti Blog: Mission of Hope, Haiti (MOH) Blog"
+    @meta = "The MOH Haiti blog shares what is happening from the eyes of Haiti. Find out what is going on at the Mission of Hope, Haiti base in Titanyen."
     @cid = params[:cid]
     @mid = params[:mid]
     @page = params[:page].to_i #for pagination
