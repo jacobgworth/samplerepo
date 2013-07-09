@@ -441,7 +441,7 @@ class PageController < ApplicationController
     @church = params[:church]
     @organization = params[:organization]
     @participants = params[:participants]
-    if !@fname.nil? && @fname != "" && !@fromaddress.nil? && @fromaddress != ""
+    if !@fname.nil? && @fname != "" && !@fromaddress.nil? && @fromaddress != "" && params[:formname].empty?
       @isvalid = true
       @data = {
         :fname => @fname,
