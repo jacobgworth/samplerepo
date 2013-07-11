@@ -20,3 +20,12 @@
 		</li>
 	</ul>
 </div>
+
+<script>
+$(".tabbar li a").each(function() {
+  if ($(this).attr("href") == window.location.pathname) {
+  	$(this).parent().css("background-color", "#056346");
+  } 
+  
+});
+</script>
