@@ -10,7 +10,7 @@
 
 		<% unless (@recurring == nil) || @recurring.empty? %>
 			<% @recurring.each do |rec| %>
-				<% if rec.cv__Recurring_Gift_Status__c != "Written Off - Donor Canceled" %>
+				<% if rec.cv__Recurring_Gift_Status__c != "Written Off - Donor Canceled" and rec.cv__Recurring_Gift_Status__c != "Written Off - Donor Cancelled" %>
 						<h3 style="padding-top: 50px;"><%= rec.Name %></h3>
 						<form class="recurringGift" action="" method="POST">
 							<input type="hidden" name="gift_id" value="<%= rec.Id %>" />
