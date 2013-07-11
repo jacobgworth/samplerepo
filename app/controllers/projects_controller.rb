@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   def bluetoblock
     @project = Project.find(5)
     @title = @project.projectname + " | MOH Haiti"
-    @meta = @project.projectname + " is a Mission of Hope Haiti project currently underway in Haiti."
+    @meta = @project.projectname + " is a Mission of Hope, Haiti project currently underway in Haiti."
     @population = @project.communities.sum('population')#Community.joins(:projects).where("project_id=" + @category.id.to_s)
     @assets = @project.assets.all
     @user = current_user
@@ -76,7 +76,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @title = @project.projectname + " | MOH Haiti"
-    @meta = @project.projectname + " is a Mission of Hope Haiti project currently underway in Haiti."
+    @meta = @project.projectname + " is a Mission of Hope, Haiti project currently underway in Haiti."
     @population = @project.communities.sum('population')#Community.joins(:projects).where("project_id=" + @category.id.to_s)
     @assets = @project.assets.all
     @user = current_user

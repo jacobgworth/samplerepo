@@ -23,8 +23,8 @@ class PageController < ApplicationController
 
   
   def be_a_partner
-    @title = "Become a Mission of Hope Haiti Partner of Hope"
-    @meta = "What does it mean to be a partner of hope? Find out how you can become a partner of hope with Mission of Hope Haiti."
+    @title = "Become a Mission of Hope, Haiti Partner of Hope"
+    @meta = "What does it mean to be a partner of hope? Find out how you can become a partner of hope with Mission of Hope, Haiti."
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
@@ -144,7 +144,7 @@ class PageController < ApplicationController
   
   def contact_us
      @title = "Contact Mission of Hope, Haiti"
-    @meta = "How to contact Mission of Hope Haiti by mail, phone or fax. Contact us at our U.S. Office or Haiti office."
+    @meta = "How to contact Mission of Hope, Haiti by mail, phone or fax. Contact us at our U.S. Office or Haiti office."
     @name = params[:name]
     @body = params[:letter]
     @subject = params[:topics]
@@ -199,8 +199,8 @@ class PageController < ApplicationController
   end
   
   def event
-     @title = "Haiti Fundraising Events | Mission of Hope Haiti (MOH)"
-    @meta = "Mission of Hope Haiti always has fundraising for Haiti events happening. Find a local event near you or start one of your own to raise support and donations for Haiti!"
+     @title = "Haiti Fundraising Events | Mission of Hope, Haiti (MOH)"
+    @meta = "Mission of Hope, Haiti always has fundraising for Haiti events happening. Find a local event near you or start one of your own to raise support and donations for Haiti!"
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
@@ -266,8 +266,8 @@ class PageController < ApplicationController
   end
   
   def internships
-    @title = "Haiti Ministry Internships | Internships at Mission of Hope Haiti (MOH)"
-    @meta = "Mission of Hope Haiti offers internships to students who have a heart for Haiti and for Christ. Learn more about being an intern MOH Haiti!"
+    @title = "Haiti Ministry Internships | Internships at Mission of Hope, Haiti (MOH)"
+    @meta = "Mission of Hope, Haiti offers internships to students who have a heart for Haiti and for Christ. Learn more about being an intern MOH Haiti!"
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
@@ -302,8 +302,8 @@ class PageController < ApplicationController
   end
   
   def meet_our_staff
-    @title = "Mission of Hope Haiti (MOH) Staff"
-    @meta = "Meet the staff of Mission of Hope Haiti and learn about their roles at MOH."
+    @title = "Mission of Hope, Haiti (MOH) Staff"
+    @meta = "Meet the staff of Mission of Hope, Haiti and learn about their roles at MOH."
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
@@ -375,15 +375,15 @@ class PageController < ApplicationController
   
   def our_story
     @title = "The History & Beliefs of Mission of Hope, Haiti"
-    @meta = "Learn about the history of Mission of Hope Haiti, founded in 1998 and what our belief system is. It all started in 1977 with Sharon Johnson's trip to Haiti to direct a choir."
+    @meta = "Learn about the history of Mission of Hope, Haiti, founded in 1998 and what our belief system is. It all started in 1977 with Sharon Johnson's trip to Haiti to direct a choir."
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
   end
 
   def partner_of_hope
-    @title = "Become a Mission of Hope Haiti Partner of Hope"
-    @meta = "What does it mean to be a partner of hope? Find out how you can become a partner of hope with Mission of Hope Haiti."
+    @title = "Become a Mission of Hope, Haiti Partner of Hope"
+    @meta = "What does it mean to be a partner of hope? Find out how you can become a partner of hope with Mission of Hope, Haiti."
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
@@ -441,7 +441,7 @@ class PageController < ApplicationController
     @church = params[:church]
     @organization = params[:organization]
     @participants = params[:participants]
-    if !@fname.nil? && @fname != "" && !@fromaddress.nil? && @fromaddress != ""
+    if !@fname.nil? && @fname != "" && !@fromaddress.nil? && @fromaddress != "" && params[:formname].empty?
       @isvalid = true
       @data = {
         :fname => @fname,
@@ -555,7 +555,7 @@ class PageController < ApplicationController
   
   def trip_costs
     @title = "MOH  Mission Trip Costs | How much does a mission trip to Haiti cost?"
-    @meta = "The cost of a mission trip to Haiti vary per length of trip. The costs with Mission of Hope Haiti covers lodging, food and transportation."
+    @meta = "The cost of a mission trip to Haiti vary per length of trip. The costs with Mission of Hope, Haiti covers lodging, food and transportation."
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
@@ -564,7 +564,7 @@ class PageController < ApplicationController
     
   def trip_dates
     @title = "MOH Mission Trip Dates | When can I go on a mission trip to Haiti?"
-    @meta = "When can you or your group go on a missions trip to Haiti? Find the available dates at Mission of Hope Haiti (MOH) for taking a missions trip."
+    @meta = "When can you or your group go on a missions trip to Haiti? Find the available dates at Mission of Hope, Haiti (MOH) for taking a missions trip."
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
