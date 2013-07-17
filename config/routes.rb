@@ -279,6 +279,8 @@ Mohhaiti::Application.routes.draw do
           
   get "page/write_my_child"
   match "/write_my_child" => "page#write_my_child"
+  
+  match "/write-my-child" => "page#write_my_child"
       
   get "page/console"
   match "/console" => "page#console"

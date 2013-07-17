@@ -668,7 +668,6 @@ class PageController < ApplicationController
     end
   end
   
-  
   def write_my_child
     @title = "Write Your Sponsored Child Online at Mission of Hope, Haiti"
     @meta = "Write your Mission of Hope, Haiti sponsored child online with this easy form that allows you to write your letter and send a photo!"
