@@ -1360,7 +1360,7 @@ h3.CTA {
     margin: 5px 20px;
 }
 
-#contentLeft560 li {
+#contentLeft560 li, .contentHeaderLeft li {
     padding: 8px 0;
     line-height: 21px;
 }
