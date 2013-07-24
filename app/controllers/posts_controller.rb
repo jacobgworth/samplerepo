@@ -60,7 +60,7 @@ class PostsController < ApplicationController
     @updates = Update.last(3).reverse
     @post = Post.find(params[:id])
     @title = @post.metatitle
-    if @title.empty?
+    if !@title or @title.empty?
       @title = @post.title
     end
     @meta = @post.metadescription
