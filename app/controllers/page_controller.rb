@@ -698,7 +698,11 @@ class PageController < ApplicationController
       unless current_user == nil
         @sponsorship = Child_Sponsorship__c.find_by_Sponsor__c(current_user.convio_id)
         @contact = Contact.find_by_Id(current_user.convio_id)
-        @child = Child__c.find_by_Id(@sponsorship.Child__c)
+        if params[:id]
+          @child = Child__c.find_by_Id(params[:id])
+        else
+          @child = Child__c.find_by_Id(@sponsorship.Child__c)
+        end
         @data[:childname] = @child.Name__c || ""
         @data[:childid] = @child.Student_Code__c || ""
         @data[:sponsorname] = (current_user.first || "") + " " + (current_user.last || "")
