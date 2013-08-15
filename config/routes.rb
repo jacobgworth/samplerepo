@@ -176,8 +176,8 @@ Mohhaiti::Application.routes.draw do
   get "page/prosthetics"
   match "/prosthetics" => "page#prosthetics"
      
-  #get "page/internships"
-  #match "/internships" => "page#internships"
+  get "page/internships"
+  match "/internships" => "page#internships"
   
   get "page/privacy"
   match "/privacy" => "page#privacy"
