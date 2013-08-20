@@ -80,7 +80,12 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     if is_admin_user? || @user == current_user
-      @contact = Contact.find(@user.convio_id)
+      begin
+        @contact = Contact.find(@user.convio_id)
+      rescue Exception => e
+        @user.update_convio_id_and_sync
+        @contact = Contact.find(@user.convio_id)
+      end  
       #@interests = @user.get_interests
       begin
         @interests = current_user.get_interests
