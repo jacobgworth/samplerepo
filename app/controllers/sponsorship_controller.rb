@@ -43,6 +43,7 @@ class SponsorshipController < ApplicationController
       
       @testrequest = @prefs
       ContactUsMailer.sponsorship_contact(@data).deliver
+      ContactUsMailer.sponsorship_thankyou(@data).deliver
     end
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb

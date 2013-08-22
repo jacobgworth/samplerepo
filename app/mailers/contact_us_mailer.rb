@@ -52,7 +52,14 @@ class ContactUsMailer < ActionMailer::Base
     @state = @data[:state]
     @zip = @data[:zip]  
     
+    #mail(:to => "jesse@threetwelvecreative.com", :subject => "Child Sponsorship Inquiry", :from => @fromaddress)
     mail(:to => "sponsorship@mohhaiti.org", :subject => "Child Sponsorship Inquiry", :from => @fromaddress)
+  end
+  
+  def sponsorship_thankyou(data)
+    @email = data[:fromaddress]
+    puts("hit here")
+    mail(:to => @email, :subject => "Child Sponsorship Inquiry", :from => "sponsorship@mohhaiti.org")
   end
   
   def write_child(data)
