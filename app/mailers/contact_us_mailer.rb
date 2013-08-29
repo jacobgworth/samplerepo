@@ -93,10 +93,10 @@ class ContactUsMailer < ActionMailer::Base
     @fromaddress = @data[:fromaddress]
     @comments = @data[:comments]
     @medical = @data[:medical]
-    @toemail = "missiontrips@mohhaiti.org"
     if (@data[:medical] == "on")
        @toemail = "medical@mohhaiti.org" 
     end
+    @toemail = "missiontrips@mohhaiti.org"
     #@toemail = "jesse@threetwelvecreative.com" #testing
     
     mail(:to => @toemail, :subject => "Take a Mission Trip", :from => @fromaddress)
