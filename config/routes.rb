@@ -1,6 +1,8 @@
 Mohhaiti::Application.routes.draw do
   
   resources :subscriptions
+  
+    
 
 
   match "/blog/feed.xml" => "posts#rss", :action => 'rss'
@@ -99,6 +101,8 @@ Mohhaiti::Application.routes.draw do
   match "/get_involved/prayer_needs/" => redirect("/take-action")
   
   match "/news" => redirect("/press")
+  
+  get "/sponsorship/say_yes" => "sponsorship#say_yes"
   match "/take-the-plunge" => redirect("/mission_trips")
   
   match "/what_we_do/3cords/" => redirect("/three_cords")

@@ -698,12 +698,13 @@ span.eyebrow {
 
 #sponsorPageIcons {
     position: absolute;
-    top: -360px;
-    left: 200px;
+	top: -340px;
+	left: 280px;
 }
 #sponsorPageIcons li {
     display: inline;
     padding-left: 13px;
+    border:1px solid red;
 }
 
 #sponIconsList {
