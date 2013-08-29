@@ -671,6 +671,7 @@ span.eyebrow {
 }
 .largeText5_5 {
     font-size: 1.75em;
+    margin-left: 60px;
 }
 .largeText5 {
     font-size: 1.35em;
@@ -1360,7 +1361,7 @@ h3.CTA {
     margin: 5px 20px;
 }
 
-#contentLeft560 li {
+#contentLeft560 li, .contentHeaderLeft li {
     padding: 8px 0;
     line-height: 21px;
 }

@@ -194,6 +194,16 @@ class User < ActiveRecord::Base
     return @contact
   end
   
+  def update_convio_id_and_sync
+    @contact = convio_match
+    if @contact
+      puts "Found a match" + @contact.Email  
+      self.convio_id = @contact.Id
+      self.local_sync
+      self.save
+    end
+  end
+  
   def local_sync #sync local data to match what convio has
     #opposite is convio_update
     @contact = Contact.find_by_Id(self.convio_id.to_s)
