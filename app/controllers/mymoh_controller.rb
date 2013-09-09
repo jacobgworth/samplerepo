@@ -180,10 +180,7 @@ class MymohController < ApplicationController
       @children = []
       @sponsorships.each do | spons |
         @photo = nil
-        #find the child associated with each sponsorship
         @child = Child__c.find_by_Id(spons.Child__c)
-        #@child = Child__c.find_by_Id("a18U0000000DkRi")
-        #find child's photo
         @photo = Picture__c.find_by_Child__c(@child.Id).Photo__c unless Picture__c.find_by_Child__c(@child.Id).nil?
         if @photo.nil?
           @attachment = Attachment.find_by_ParentId(@child.Id)
