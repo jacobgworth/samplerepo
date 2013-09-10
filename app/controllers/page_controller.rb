@@ -459,7 +459,7 @@ class PageController < ApplicationController
         :participants => @participants,
         :month => params[:trip_month]
       }
-      
+      ContactUsMailer.take_a_trip(@data).deliver
       #Save contact to convio
       @sfcontact = Contact.find_by_Email(params[:email])
       if @sfcontact.nil?
@@ -479,7 +479,6 @@ class PageController < ApplicationController
         @sfcontact.Medical_Trip_Prospect__c = true
       end
       @sfcontact.save
-      ContactUsMailer.take_a_trip(@data).deliver
       respond_to do |format|
         format.html {render :layout=>"homeLayout"}
       end 
