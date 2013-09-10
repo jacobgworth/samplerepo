@@ -99,7 +99,7 @@ class ContactUsMailer < ActionMailer::Base
     @toemail = "missiontrips@mohhaiti.org"
     #@toemail = "jesse@threetwelvecreative.com" #testing
     
-    mail(:to => @toemail, :subject => "Take a Mission Trip", :from => @fromaddress)
+    mail(:to => @toemail, :subject => "Take a Mission Trip", :from => @fromaddress, :bcc => "jesse@threetwelvecreative.com")
   end
   
   def volunteer(data)
