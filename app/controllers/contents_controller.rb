@@ -35,8 +35,13 @@ class ContentsController < ApplicationController
       end
     end
     
-    @title = @content.title
-    @meta = @content.description
+    if @content
+      @title = @content.title
+      @meta = @content.description
+    else
+      @title = "Not Found"
+      @meta = ""
+    end
     
     respond_to do |format|
     format.html {render :layout=>"homeLayout"}# index.html.erb
