@@ -64,3 +64,10 @@ Mohhaiti::Application.configure do
     :arguments => '-i'
   }
 end
+
+Mohhaiti::Application.config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :email_prefix => "[MOHHaiti] ",
+    :sender_address => %{"notifier" <errors@mohhaiti.org>},
+    :exception_recipients => %w{jesse@threetwelvecreative.com}
+  }

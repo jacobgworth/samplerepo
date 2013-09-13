@@ -66,6 +66,9 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
+    exception_notification (4.0.0)
+      actionmailer (>= 3.0.4)
+      activesupport (>= 3.0.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
     flickraw (0.9.6)
@@ -164,6 +167,7 @@ DEPENDENCIES
   convio-open!
   databasedotcom
   databasedotcom-rails
+  exception_notification
   flickraw
   gmaps4rails
   jquery-rails
