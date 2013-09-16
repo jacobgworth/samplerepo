@@ -39,7 +39,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'exception_notification'
+gem 'exception_notification', '4.0.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
