@@ -456,7 +456,7 @@ class PageController < ApplicationController
         :zip => @zip,
         :church => @church,
         :org => @organization,
-        :participants => @participants,
+        :participants => @participants.to_i,
         :month => params[:trip_month]
       }
       ContactUsMailer.take_a_trip(@data).deliver
