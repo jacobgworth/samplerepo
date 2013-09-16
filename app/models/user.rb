@@ -173,15 +173,17 @@ class User < ActiveRecord::Base
     #opposite is local_sync
       @sfcontact = Contact.find_by_Id(self.convio_id)
       
-      #Convio contact exists, so update it with new values
-      @sfcontact.LastName = self.last
-      @sfcontact.FirstName = self.first
-      @sfcontact.Email = self.email
-      @sfcontact.MailingStreet = self.street1
-      @sfcontact.MailingCity = self.city
-      @sfcontact.MailingState = self.state
-      @sfcontact.MailingPostalCode = self.zip
-      @sfcontact.save    
+      if @sfcontact
+        #Convio contact exists, so update it with new values
+        @sfcontact.LastName = self.last
+        @sfcontact.FirstName = self.first
+        @sfcontact.Email = self.email
+        @sfcontact.MailingStreet = self.street1
+        @sfcontact.MailingCity = self.city
+        @sfcontact.MailingState = self.state
+        @sfcontact.MailingPostalCode = self.zip
+        @sfcontact.save    
+      end
   end
   
   def convio_match
