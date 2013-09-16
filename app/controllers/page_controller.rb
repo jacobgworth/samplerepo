@@ -440,7 +440,7 @@ class PageController < ApplicationController
     @zip = params[:zip]
     @church = params[:church]
     @organization = params[:organization]
-    @participants = params[:participants]
+    @participants = params[:participants].to_i
     if !@fname.nil? && @fname != "" && !@fromaddress.nil? && @fromaddress != "" && (params[:formname].nil? || params[:formname].empty?)
       @isvalid = true
       @data = {
@@ -456,7 +456,7 @@ class PageController < ApplicationController
         :zip => @zip,
         :church => @church,
         :org => @organization,
-        :participants => @participants.to_i,
+        :participants => @participants,
         :month => params[:trip_month]
       }
       ContactUsMailer.take_a_trip(@data).deliver

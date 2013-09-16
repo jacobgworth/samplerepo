@@ -167,7 +167,7 @@ DEPENDENCIES
   convio-open!
   databasedotcom
   databasedotcom-rails
-  exception_notification
+  exception_notification (= 4.0.0)
   flickraw
   gmaps4rails
   jquery-rails
