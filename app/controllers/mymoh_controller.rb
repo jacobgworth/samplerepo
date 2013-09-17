@@ -29,9 +29,15 @@ class MymohController < ApplicationController
     puts "CONVIO_ID: " + @account.Id
     puts Account.last
     if @account
-      @spouse_id = (Account.find_by_cv__Head_of_Household__c(@account.Id).cv__Secondary_Contact__c || (Account.find_by_cv__Secondary_Contact__c(@account.Id) ? Account.find_by_cv__Secondary_Contact__c(@account.Id).cv__Head_of_Household__c : nil)) 
+      @household = Account.find_by_cv__Head_of_Household__c(@account.Id)
+      @attempt_two = Account.find_by_cv__Secondary_Contact__c(@account.Id)
+      if @household
+        @spouse_id = (@household.cv__Secondary_Contact__c || (@attempt_two ? @attempt_two.cv__Head_of_Household__c : nil)) 
+      else
+        @spouse_id = (@attempt_two ? @attempt_two.cv__Head_of_Household__c : nil)
+      end
     end
-    if @spouse
+    if @spouse_id
       @spouse = (Contact.find_by_Id(@spouse_id) || nil)
     end
     
