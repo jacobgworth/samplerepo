@@ -41,7 +41,10 @@ class User < ActiveRecord::Base
     @interests = []
     unless self.convio_id.nil?
       c = convio_api_session
-      cid = Contact.find_by_Id(self.convio_id).cv__Convio_ID__c
+      contact = Contact.find_by_Id(self.convio_id)
+      if contact
+        cid = contact.cv__Convio_ID__c
+      end
       if cid != nil
         cid = cid.to_i
       end
