@@ -192,7 +192,7 @@ class User < ActiveRecord::Base
   def convio_match
     @contact = convio_match_by_email || convio_match_by_detail
     if @contact
-      puts "MATCHED CONVIO USER: " + @contact.FirstName
+      #puts "MATCHED CONVIO USER: " + @contact.FirstName
       @contact.MyMOH_Signup_Date__c = Date.today
       @contact.save
     end

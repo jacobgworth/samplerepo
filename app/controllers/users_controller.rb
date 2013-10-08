@@ -84,7 +84,11 @@ class UsersController < ApplicationController
         @contact = Contact.find(@user.convio_id)
       rescue Exception => e
         @user.update_convio_id_and_sync
-        @contact = Contact.find(@user.convio_id)
+        begin
+          @contact = Contact.find(@user.convio_id)
+        rescue
+          @contact = Contact.new
+        end
       end  
       #@interests = @user.get_interests
       begin

@@ -26,8 +26,6 @@ class MymohController < ApplicationController
   
   def account
     @account = Contact.find_by_Id(current_user.convio_id)
-    puts "CONVIO_ID: " + @account.Id
-    puts Account.last
     if @account
       @household = Account.find_by_cv__Head_of_Household__c(@account.Id)
       @attempt_two = Account.find_by_cv__Secondary_Contact__c(@account.Id)
