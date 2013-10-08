@@ -55,7 +55,7 @@
 
 <% @children.each do | child | %>
 	<h2>Name: <%= child.First_Name__c %></h2>
-    <%= Picture__c.find_by_Child__c(child.Id).Photo__c.html_safe %>
+	<%=  @photos[child].html_safe %>
 <% end %>
 </div>
 <div id="contentRight300">

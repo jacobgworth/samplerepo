@@ -524,6 +524,11 @@ class PageController < ApplicationController
   
   def sponsor_child
     @children = Child__c.query("Number_of_Photos__c > 0 LIMIT 3")
+    @photos = Hash.new
+    @children.each do |child|
+      photo = Picture__c.find_by_Child__c(child.Id).Photo__c
+      @photos[child] = photo
+    end
     @title = "Child Sponsorship: Help Children in Haiti by Becoming a Sponsor"
     @meta = "Help a child in Haiti who is in need through sponsorship. Sponsorship provides children with food, care, clothing, shelter & education. Sponsor a child in Haiti today."
     respond_to do |format|
