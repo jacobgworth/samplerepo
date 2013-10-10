@@ -12,6 +12,7 @@ gem "databasedotcom-rails"
 gem "newrelic_rpm"
 
 gem "mail", ">=2.1.3"
+gem "httparty", "0.9.0"
 
 gem "thin"
 
