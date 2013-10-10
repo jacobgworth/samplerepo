@@ -12,9 +12,9 @@ class UpdatesController < ApplicationController
     if @cid.nil?
       #@jason = Update.all.to_gmaps4rails
       @categories = Category.joins(:updates).order("categoryname asc").uniq
-      @updates = Update.order("postdate desc")
+      @updates = Update.order("postdate desc").limit(40)
     else
-      @updates = Update.joins(:categories).where("category_id=" + @cid).order("postdate desc")
+      @updates = Update.joins(:categories).where("category_id=" + @cid).order("postdate desc").limit(40)
       #@jason = @updates.to_gmaps4rails
       @category = Category.find(@cid)
     end
