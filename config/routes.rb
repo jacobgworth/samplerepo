@@ -251,8 +251,8 @@ Mohhaiti::Application.routes.draw do
   get "page/downloads"
   match "/downloads" => "page#downloads"
   
-  #get "page/faq"
-  #match "/faq" => "page#faq"
+  get "page/faq"
+  match "/faq" => "page#faq"
     
   get "page/make_donation"
   match "/make_donation" => "page#make_donation"
