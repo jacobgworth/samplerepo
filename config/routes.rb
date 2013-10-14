@@ -275,8 +275,8 @@ Mohhaiti::Application.routes.draw do
   get "page/learn_sponsor"
   match "/learn_sponsor" => "page#learn_sponsor"
           
-  #get "page/sponsor_faq"
-  #match "/sponsor_faq" => "page#sponsor_faq"
+  get "page/sponsor_faq"
+  match "/sponsor_faq" => "page#sponsor_faq"
           
   get "page/gift_store"
   match "/gift_store" => "page#gift_store"
