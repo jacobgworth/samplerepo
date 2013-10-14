@@ -198,8 +198,8 @@ Mohhaiti::Application.routes.draw do
   get "page/mwen_kapab"
   match "/mwen_kapab" => "page#mwen_kapab"
   
-  #get "page/vision_mission_resolution"
-  #match "/vision_mission_resolution" => "page#vision_mission_resolution"
+  get "page/vision_mission_resolution"
+  match "/vision_mission_resolution" => "page#vision_mission_resolution"
   
   get "page/join_our_team"
   match "/join_our_team" => "page#join_our_team"
