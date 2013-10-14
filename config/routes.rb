@@ -224,8 +224,8 @@ Mohhaiti::Application.routes.draw do
   get "page/image_submit"
   match "/page/image_submit" => "page#image_submit"
    
-  #get "page/preparing_for_mission_trips"
-  #match "/preparing_for_mission_trips" => "page#preparing_for_mission_trips"
+  get "page/preparing_for_mission_trips"
+  match "/preparing_for_mission_trips" => "page#preparing_for_mission_trips"
      
   get "page/request_info"
   match "/request_info" => "page#request_info"
