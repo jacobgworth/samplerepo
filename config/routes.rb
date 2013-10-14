@@ -236,8 +236,8 @@ Mohhaiti::Application.routes.draw do
   get "page/trip_dates"
   match "/trip_dates" => "page#trip_dates"
      
-  #get "page/trip_faqs"
-  #match "/trip_faqs" => "page#trip_faqs"
+  get "page/trip_faqs"
+  match "/trip_faqs" => "page#trip_faqs"
         
   get "page/communities_impacted"
   match "/communities_impacted" => "page#communities_impacted"
