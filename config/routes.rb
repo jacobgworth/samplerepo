@@ -233,8 +233,8 @@ Mohhaiti::Application.routes.draw do
   #get "page/trip_costs"
   #match "/trip_costs" => "page#trip_costs"
      
-  #get "page/trip_dates"
-  #match "/trip_dates" => "page#trip_dates"
+  get "page/trip_dates"
+  match "/trip_dates" => "page#trip_dates"
      
   #get "page/trip_faqs"
   #match "/trip_faqs" => "page#trip_faqs"
