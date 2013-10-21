@@ -440,8 +440,8 @@ class PageController < ApplicationController
     @zip = params[:zip]
     @church = params[:church]
     @organization = params[:organization]
-    @participants = params[:participants]
-    if !@fname.nil? && @fname != "" && !@fromaddress.nil? && @fromaddress != "" && params[:formname].empty?
+    @participants = params[:participants].to_i
+    if !@fname.nil? && @fname != "" && !@fromaddress.nil? && @fromaddress != "" && (params[:formname].nil? || params[:formname].empty?)
       @isvalid = true
       @data = {
         :fname => @fname,
@@ -459,7 +459,7 @@ class PageController < ApplicationController
         :participants => @participants,
         :month => params[:trip_month]
       }
-      
+      ContactUsMailer.take_a_trip(@data).deliver
       #Save contact to convio
       @sfcontact = Contact.find_by_Email(params[:email])
       if @sfcontact.nil?
@@ -479,7 +479,6 @@ class PageController < ApplicationController
         @sfcontact.Medical_Trip_Prospect__c = true
       end
       @sfcontact.save
-      ContactUsMailer.take_a_trip(@data).deliver
       respond_to do |format|
         format.html {render :layout=>"homeLayout"}
       end 
@@ -525,6 +524,11 @@ class PageController < ApplicationController
   
   def sponsor_child
     @children = Child__c.query("Number_of_Photos__c > 0 LIMIT 3")
+    @photos = Hash.new
+    @children.each do |child|
+      photo = Picture__c.find_by_Child__c(child.Id).Photo__c
+      @photos[child] = photo
+    end
     @title = "Child Sponsorship: Help Children in Haiti by Becoming a Sponsor"
     @meta = "Help a child in Haiti who is in need through sponsorship. Sponsorship provides children with food, care, clothing, shelter & education. Sponsor a child in Haiti today."
     respond_to do |format|
@@ -697,17 +701,22 @@ class PageController < ApplicationController
       @data = {}
       unless current_user == nil
         @sponsorship = Child_Sponsorship__c.find_by_Sponsor__c(current_user.convio_id)
+        puts "Sponsorship"
         @contact = Contact.find_by_Id(current_user.convio_id)
         if params[:id]
           @child = Child__c.find_by_Id(params[:id])
         else
-          @child = Child__c.find_by_Id(@sponsorship.Child__c)
+          if @sponsorship
+            @child = Child__c.find_by_Id(@sponsorship.Child__c)
+          end
         end
-        @data[:childname] = @child.Name__c || ""
-        @data[:childid] = @child.Student_Code__c || ""
-        @data[:sponsorname] = (current_user.first || "") + " " + (current_user.last || "")
-        @data[:sponsoremail] = current_user.email || ""
-        @data[:sponsorphone] = @contact.HomePhone || ""
+        if @child
+          @data[:childname] = @child.Name__c || ""
+          @data[:childid] = @child.Student_Code__c || ""
+          @data[:sponsorname] = (current_user.first || "") + " " + (current_user.last || "")
+          @data[:sponsoremail] = current_user.email || ""
+          @data[:sponsorphone] = @contact.HomePhone || ""
+        end
       end
       respond_to do |format|
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb

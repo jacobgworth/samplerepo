@@ -35,12 +35,15 @@ class ContentsController < ApplicationController
       end
     end
     
-    @title = @content.title
-    @meta = @content.description
-    
-    respond_to do |format|
-    format.html {render :layout=>"homeLayout"}# index.html.erb
-      format.json { render json: @content }
+    if @content
+      @title = @content.title
+      @meta = @content.description
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout" }# index.html.erb
+        format.json { render json: @content }
+      end
+    else
+     raise ActionController::RoutingError.new('Not Found')
     end
   end
 

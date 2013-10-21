@@ -388,7 +388,7 @@
 		<option value="Zimbabwe">Zimbabwe</option>
 	  </select>
 	  
-	  <% unless @contact.LastName.nil? %>
+	  <% unless @contact.nil? || @contact.LastName.nil? %>
 	  	<h3 style="margin-top: 30px;">Your Communication Preferences</h3>
 	  	<br/>
 	  	<h4>Postal Mail Preferences</h4>

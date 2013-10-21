@@ -53,7 +53,7 @@ class ContactUsMailer < ActionMailer::Base
     @zip = @data[:zip]  
     
     #mail(:to => "jesse@threetwelvecreative.com", :subject => "Child Sponsorship Inquiry", :from => @fromaddress)
-    mail(:to => "sponsorship@mohhaiti.org", :subject => "Child Sponsorship Inquiry", :from => @fromaddress)
+    mail(:to => "sponsorship@mohhaiti.org, donna@mohhaiti.org", :subject => "Child Sponsorship Inquiry", :from => @fromaddress)
   end
   
   def sponsorship_thankyou(data)
@@ -99,7 +99,7 @@ class ContactUsMailer < ActionMailer::Base
     @toemail = "missiontrips@mohhaiti.org"
     #@toemail = "jesse@threetwelvecreative.com" #testing
     
-    mail(:to => @toemail, :subject => "Take a Mission Trip", :from => @fromaddress)
+    mail(:to => @toemail, :subject => "Take a Mission Trip", :from => @fromaddress, :bcc => "jesse@threetwelvecreative.com")
   end
   
   def volunteer(data)

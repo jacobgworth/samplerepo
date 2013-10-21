@@ -26,10 +26,16 @@ class MymohController < ApplicationController
   
   def account
     @account = Contact.find_by_Id(current_user.convio_id)
-    puts "CONVIO_ID: " + @account.Id
-    puts Account.last
-    @spouse_id = (Account.find_by_cv__Head_of_Household__c(@account.Id).cv__Secondary_Contact__c || (Account.find_by_cv__Secondary_Contact__c(@account.Id) ? Account.find_by_cv__Secondary_Contact__c(@account.Id).cv__Head_of_Household__c : nil)) 
-    if @spouse
+    if @account
+      @household = Account.find_by_cv__Head_of_Household__c(@account.Id)
+      @attempt_two = Account.find_by_cv__Secondary_Contact__c(@account.Id)
+      if @household
+        @spouse_id = (@household.cv__Secondary_Contact__c || (@attempt_two ? @attempt_two.cv__Head_of_Household__c : nil)) 
+      else
+        @spouse_id = (@attempt_two ? @attempt_two.cv__Head_of_Household__c : nil)
+      end
+    end
+    if @spouse_id
       @spouse = (Contact.find_by_Id(@spouse_id) || nil)
     end
     
@@ -173,17 +179,13 @@ class MymohController < ApplicationController
   
   def sponsorships
     @account = Contact.find_by_Id(current_user.convio_id)
-    #@account = Contact.find_by_Name("Lindsey Rubino")
-    @sponsorships = Child_Sponsorship__c.query("Sponsor__c = '" + @account.Id + "' AND Status__c = 'Open'")
+    @sponsorships = Child_Sponsorship__c.query("Sponsor__c = '" + current_user.convio_id + "' AND Status__c = 'Open'")
     unless @sponsorships == nil
       #if we find sponsorships
       @children = []
       @sponsorships.each do | spons |
         @photo = nil
-        #find the child associated with each sponsorship
         @child = Child__c.find_by_Id(spons.Child__c)
-        #@child = Child__c.find_by_Id("a18U0000000DkRi")
-        #find child's photo
         @photo = Picture__c.find_by_Child__c(@child.Id).Photo__c unless Picture__c.find_by_Child__c(@child.Id).nil?
         if @photo.nil?
           @attachment = Attachment.find_by_ParentId(@child.Id)

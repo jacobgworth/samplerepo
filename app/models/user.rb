@@ -41,7 +41,10 @@ class User < ActiveRecord::Base
     @interests = []
     unless self.convio_id.nil?
       c = convio_api_session
-      cid = Contact.find_by_Id(self.convio_id).cv__Convio_ID__c
+      contact = Contact.find_by_Id(self.convio_id)
+      if contact
+        cid = contact.cv__Convio_ID__c
+      end
       if cid != nil
         cid = cid.to_i
       end
@@ -173,21 +176,23 @@ class User < ActiveRecord::Base
     #opposite is local_sync
       @sfcontact = Contact.find_by_Id(self.convio_id)
       
-      #Convio contact exists, so update it with new values
-      @sfcontact.LastName = self.last
-      @sfcontact.FirstName = self.first
-      @sfcontact.Email = self.email
-      @sfcontact.MailingStreet = self.street1
-      @sfcontact.MailingCity = self.city
-      @sfcontact.MailingState = self.state
-      @sfcontact.MailingPostalCode = self.zip
-      @sfcontact.save    
+      if @sfcontact
+        #Convio contact exists, so update it with new values
+        @sfcontact.LastName = self.last
+        @sfcontact.FirstName = self.first
+        @sfcontact.Email = self.email
+        @sfcontact.MailingStreet = self.street1
+        @sfcontact.MailingCity = self.city
+        @sfcontact.MailingState = self.state
+        @sfcontact.MailingPostalCode = self.zip
+        @sfcontact.save    
+      end
   end
   
   def convio_match
     @contact = convio_match_by_email || convio_match_by_detail
     if @contact
-      puts "MATCHED CONVIO USER: " + @contact.FirstName
+      #puts "MATCHED CONVIO USER: " + @contact.FirstName
       @contact.MyMOH_Signup_Date__c = Date.today
       @contact.save
     end

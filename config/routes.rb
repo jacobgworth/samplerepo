@@ -171,8 +171,8 @@ Mohhaiti::Application.routes.draw do
   get "page/clinic"
   match "/clinic" => "page#clinic"
   
-  #get "page/our_story"
-  #match "/our_story" => "page#our_story"
+  get "page/our_story"
+  match "/our_story" => "page#our_story"
   
   get "page/community_health"
   match "/community_health" => "page#community_health"
@@ -198,8 +198,8 @@ Mohhaiti::Application.routes.draw do
   get "page/mwen_kapab"
   match "/mwen_kapab" => "page#mwen_kapab"
   
-  #get "page/vision_mission_resolution"
-  #match "/vision_mission_resolution" => "page#vision_mission_resolution"
+  get "page/vision_mission_resolution"
+  match "/vision_mission_resolution" => "page#vision_mission_resolution"
   
   get "page/join_our_team"
   match "/join_our_team" => "page#join_our_team"
@@ -210,8 +210,8 @@ Mohhaiti::Application.routes.draw do
   get "page/nutrition"
   match "/nutrition" => "page#nutrition"
   
-  #get "page/medical_mission_trips"
-  #match "/medical_mission_trips" => "page#medical_mission_trips"
+  get "page/medical_mission_trips"
+  match "/medical_mission_trips" => "page#medical_mission_trips"
      
   get "page/mission_trip_experinces"
   match "/mission_trip_experinces" => "page#mission_trip_experiences"
@@ -224,20 +224,20 @@ Mohhaiti::Application.routes.draw do
   get "page/image_submit"
   match "/page/image_submit" => "page#image_submit"
    
-  #get "page/preparing_for_mission_trips"
-  #match "/preparing_for_mission_trips" => "page#preparing_for_mission_trips"
+  get "page/preparing_for_mission_trips"
+  match "/preparing_for_mission_trips" => "page#preparing_for_mission_trips"
      
   get "page/request_info"
   match "/request_info" => "page#request_info"
      
-  #get "page/trip_costs"
-  #match "/trip_costs" => "page#trip_costs"
+  get "page/trip_costs"
+  match "/trip_costs" => "page#trip_costs"
      
-  #get "page/trip_dates"
-  #match "/trip_dates" => "page#trip_dates"
+  get "page/trip_dates"
+  match "/trip_dates" => "page#trip_dates"
      
-  #get "page/trip_faqs"
-  #match "/trip_faqs" => "page#trip_faqs"
+  get "page/trip_faqs"
+  match "/trip_faqs" => "page#trip_faqs"
         
   get "page/communities_impacted"
   match "/communities_impacted" => "page#communities_impacted"
@@ -251,8 +251,8 @@ Mohhaiti::Application.routes.draw do
   get "page/downloads"
   match "/downloads" => "page#downloads"
   
-  #get "page/faq"
-  #match "/faq" => "page#faq"
+  get "page/faq"
+  match "/faq" => "page#faq"
     
   get "page/make_donation"
   match "/make_donation" => "page#make_donation"
@@ -275,8 +275,8 @@ Mohhaiti::Application.routes.draw do
   get "page/learn_sponsor"
   match "/learn_sponsor" => "page#learn_sponsor"
           
-  #get "page/sponsor_faq"
-  #match "/sponsor_faq" => "page#sponsor_faq"
+  get "page/sponsor_faq"
+  match "/sponsor_faq" => "page#sponsor_faq"
           
   get "page/gift_store"
   match "/gift_store" => "page#gift_store"

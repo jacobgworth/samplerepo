@@ -19,7 +19,7 @@
 	<% else %>
 		<div id="content" style="padding-top:50px;">
 	<% end %>
-		<% if !@content.heroimage.nil? && @content.heroimage != '' && !@content.herotext.nil? && !(@content.herotext == "") %>
+		<% if @content && !@content.heroimage.nil? && @content.heroimage != '' && !@content.herotext.nil? && !(@content.herotext == "") %>
 			<div id="heroContent">
 				<h1 style="top:-158px;"><span class="greenTransBG"><span style="font-size: 2.5em;"><%=@content.herotext%></span></span></h1>
 			</div>
@@ -27,17 +27,23 @@
 		<p id="notice"><%= notice %></p>
 
 		<div id="contentLeft560">
-			<%=@content.content.html_safe%>
+			<% if @content %>
+				<%=@content.content.html_safe%>
+			<% else %>
+				<h1>Page Not Found</h1>
+			<% end %>
 			<% if !@user.nil? && @user.is_admin == 1 %><div class="smallLink"><%= link_to 'Back', contents_path %> | <a href="/contents/<%=@content.id%>/edit">Edit</a></div><% end %>
 		</div>
 
 
 		<div id="contentRight300" style="padding-top: 38px;">
-			<%if !@content.navbar.nil? %>
-				<%= render ("layouts/" + @content.navbar) %>
-			<% else %>
-				<%= render "layouts/aboutNav" %>
-			<% end%>
+			<% if @content %>
+				<%if !@content.navbar.nil? %>
+					<%= render ("layouts/" + @content.navbar) %>
+				<% else %>
+					<%= render "layouts/aboutNav" %>
+				<% end%>
+			<% end %>
 		</div>
 		<div class="clearfix">
 			<!--x-->
