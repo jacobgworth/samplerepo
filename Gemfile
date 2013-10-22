@@ -16,7 +16,7 @@ gem "httparty", "0.9.0"
 
 gem "thin"
 
-gem 'gmaps4rails'
+gem 'gmaps4rails', ">=1.5.6"
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
