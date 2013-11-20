@@ -1437,6 +1437,7 @@ h3.CTA {
 #contentLeft560 .staff h4 {
     margin-top: 0;
     padding-top: 10px;
+	font-size: 16px;
 }
 
 #contentLeft560 .gift h4 {
@@ -1447,7 +1448,7 @@ h3.CTA {
 
 .staff {
     float: left;
-    width: 176px;
+    width: 130px;
     padding-right: 10px;
     position: relative;
     margin-bottom: 40px;
@@ -1455,7 +1456,7 @@ h3.CTA {
 }
 
 .staff img {
-	width: 160px;
+	width: 100px;
 	height: 124px;
 }
 
