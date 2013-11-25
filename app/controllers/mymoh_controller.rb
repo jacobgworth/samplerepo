@@ -181,8 +181,8 @@ class MymohController < ApplicationController
     dbdc_client.materialize("cv__Recurring_Gift__c")
 	@gifts = Cv__Recurring_Gift__c.find_all_by_cv__Contact__c(current_user.convio_id)
     @account = Contact.find_by_Id(current_user.convio_id)
-    #@old_sponsorships = Child_Sponsorship__c.query("Sponsor__c = '" + current_user.convio_id + "' AND Status__c = 'Open'")
-	@sponsorships = @gifts
+    @old_sponsorships = Child_Sponsorship__c.query("Sponsor__c = '" + current_user.convio_id + "' AND Status__c = 'Open'")
+	@sponsorships = @gifts + @old_sponsorships
     unless @sponsorships == nil
       #if we find sponsorships
       @children = []
