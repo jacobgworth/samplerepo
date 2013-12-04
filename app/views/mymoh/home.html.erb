@@ -5,9 +5,26 @@
 	<div id="content" style="padding-top:50px;">
 		<h1>Welcome To My MOH!</h1>
 		<%= render 'layouts/mymohNav'%>
-		<h2>Vision</h2>
-		<p>As an organization following Jesus Christ, Mission of Hope exists to bring life transformation to every man, woman, and child in Haiti. We desire to serve the nation of Haiti, and see lives changed.</p>
-		<img src="/assets/mymoh-home.jpg" style="margin:auto;"/>
+		
+		<div class="tanWrapper sponsorChildren">
+			<div class="alignRight sponsorWrap" style="width:35%;">
+				<div class="buttonSquareGreen">
+					<h3>Vision</h3>
+				</div>
+				<div style="margin-top: 35px;">
+					<p>As an organization following Jesus Christ, Mission of Hope exists to bring life transformation to every man, woman, and child in Haiti. We desire to serve the nation of Haiti, and see lives changed.</p>
+				</div>
+			</div>
+				<!-- display something here for when there's no kids -->
+				<div class="sponsorChild">
+					<div class="child">
+						<a href="/child-sponsorship"><img src="/assets/mymoh-home.jpg" style="width: 500px; height: 230px;"></a>
+					</div>
+				</div>
+			<div class="clearfix"></div>
+
+		</div>
+
 		<h2 style="margin-top: 35px;">What's Happening at Mission of Hope</h2>
 		<div id="contentLeft560" style="width: 100%;">
 			
