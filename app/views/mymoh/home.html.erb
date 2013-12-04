@@ -3,40 +3,14 @@
 	<%= render 'layouts/navBar'%>
 
 	<div id="content" style="padding-top:50px;">
-		<h1>My MOH</h1>
+		<h1>Welcome To My MOH!</h1>
 		<%= render 'layouts/mymohNav'%>
-		<h2>What's Happening at Mission of Hope</h2>
+		<h2>Vision</h2>
+		<p>As an organization following Jesus Christ, Mission of Hope exists to bring life transformation to every man, woman, and child in Haiti. We desire to serve the nation of Haiti, and see lives changed.</p>
+		<img src="/assets/mymoh-home.jpg" style="margin:auto;"/>
+		<h2 style="margin-top: 35px;">What's Happening at Mission of Hope</h2>
 		<div id="contentLeft560" style="width: 100%;">
 			
-					<h3 style="padding:20px 0;">Blog Posts</h3>
-					<% unless @posts.empty? %>
-						<% @posts.each do |post| %>
-							<div class="update960" style="line-height: 1.3em; height=120px;">
-								<div class="updateDate">
-									<span class="month"><%=post.postdate.strftime('%b')%></span>
-									<br />
-									<span class="date"><%=post.postdate.strftime('%m')%></span>
-									<br />
-									<span class="year"><%=post.postdate.strftime('%Y')%></span>
-								</div>
-								<div class="updatePost960">
-									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a><br/></h4>
-											<% unless post.assets.last.nil? %>
-											<img src="<%= post.assets.last.asset.url(:thumb)%>" />
-											<% end %>
-										<p class="mymohpostbody">
-											<%= sanitize truncate(post.body,:length=>500,:separator=>''), :tags => %w(b) %>
-										<a href="/blog/<%=post.id%>">Read More &raquo;</a>
-									</p>
-									<p class="meta">
-										<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						<% end %>
-					<% else %>
-						No blog posts found.
-					<% end %>
 					
 					<h3 style="padding:20px 0;">Updates</h3>
 					<% unless @updates.empty? %>
@@ -70,6 +44,37 @@
 					<% else %>
 						No updates found.
 					<% end %>
+
+					<h3 style="padding:20px 0;">Blog Posts</h3>
+					<% unless @posts.empty? %>
+						<% @posts.each do |post| %>
+							<div class="update960" style="line-height: 1.3em; height=120px;">
+								<div class="updateDate">
+									<span class="month"><%=post.postdate.strftime('%b')%></span>
+									<br />
+									<span class="date"><%=post.postdate.strftime('%m')%></span>
+									<br />
+									<span class="year"><%=post.postdate.strftime('%Y')%></span>
+								</div>
+								<div class="updatePost960">
+									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a><br/></h4>
+											<% unless post.assets.last.nil? %>
+											<img src="<%= post.assets.last.asset.url(:thumb)%>" />
+											<% end %>
+										<p class="mymohpostbody">
+											<%= sanitize truncate(post.body,:length=>500,:separator=>''), :tags => %w(b) %>
+										<a href="/blog/<%=post.id%>">Read More &raquo;</a>
+									</p>
+									<p class="meta">
+										<% if post.author && !post.author.empty? %><p class="meta">Update from: <%=post.author%></p><% end %>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						<% end %>
+					<% else %>
+						No blog posts found.
+					<% end %>
+
 		</div>
 
 		<!--
