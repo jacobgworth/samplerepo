@@ -33,6 +33,8 @@ book-helping-hurts.jpg: book-helping-hurts-881666c49b776a513774aa2ff5a7c4c8.jpg
 book-helping-hurts/index.jpg: book-helping-hurts-881666c49b776a513774aa2ff5a7c4c8.jpg
 button-newsletter.png: button-newsletter-fdb1bb74d48be26dc63ffd0d7c33f268.png
 button-newsletter/index.png: button-newsletter-fdb1bb74d48be26dc63ffd0d7c33f268.png
+christmas-coffee.png: christmas-coffee-47ac66cd1fa763f4e95c74e9c2c497da.png
+christmas-coffee/index.png: christmas-coffee-47ac66cd1fa763f4e95c74e9c2c497da.png
 coffee-large.png: coffee-large-042af7e84c9d55b5325f24b3ec51adb6.png
 coffee-large/index.png: coffee-large-042af7e84c9d55b5325f24b3ec51adb6.png
 coffee-small.jpg: coffee-small-d2d80b495a3249fa2376850a71070b9b.jpg
@@ -445,8 +447,8 @@ staff-bob-johnson.jpg: staff-bob-johnson-b75553205742492cd5cd94645953dd2a.jpg
 staff-bob-johnson/index.jpg: staff-bob-johnson-b75553205742492cd5cd94645953dd2a.jpg
 staff-bob-king.jpg: staff-bob-king-aa64a11ea353d53d6a9dda6295f7554f.jpg
 staff-bob-king/index.jpg: staff-bob-king-aa64a11ea353d53d6a9dda6295f7554f.jpg
-staff-brad-johnson.JPG: staff-brad-johnson-2fb3df2c64a9a32eb3aabb1008c444e4.JPG
-staff-brad-johnson/index.JPG: staff-brad-johnson-2fb3df2c64a9a32eb3aabb1008c444e4.JPG
+staff-brad-johnson.JPG: staff-brad-johnson-acabb76525f2525c5c7961d66c30b239.JPG
+staff-brad-johnson/index.JPG: staff-brad-johnson-acabb76525f2525c5c7961d66c30b239.JPG
 staff-cammie-mcquilkin.jpg: staff-cammie-mcquilkin-9a49505c6d27354522c0d547858f12ab.jpg
 staff-cammie-mcquilkin/index.jpg: staff-cammie-mcquilkin-9a49505c6d27354522c0d547858f12ab.jpg
 staff-charles-dishinger.jpg: staff-charles-dishinger-328fb1ce8234ce79df984860481f417b.jpg
@@ -755,8 +757,8 @@ videos.js: videos-139877949a1ec6177dc206292d67d59c.js
 videos/index.js: videos-139877949a1ec6177dc206292d67d59c.js
 advancement.css: advancement-98b6cfc3ea616cce5ae0889da2c9940b.css
 advancement/index.css: advancement-98b6cfc3ea616cce5ae0889da2c9940b.css
-application.css: application-25fb21efe9fcb2e13069360d4cf628e4.css
-application/index.css: application-25fb21efe9fcb2e13069360d4cf628e4.css
+application.css: application-f5363fb5f01b2825043c8451e0a793c9.css
+application/index.css: application-f5363fb5f01b2825043c8451e0a793c9.css
 categories.css: categories-98b6cfc3ea616cce5ae0889da2c9940b.css
 categories/index.css: categories-98b6cfc3ea616cce5ae0889da2c9940b.css
 category.css: category-98b6cfc3ea616cce5ae0889da2c9940b.css
@@ -797,8 +799,8 @@ sessions.css: sessions-98b6cfc3ea616cce5ae0889da2c9940b.css
 sessions/index.css: sessions-98b6cfc3ea616cce5ae0889da2c9940b.css
 sponsorship.css: sponsorship-98b6cfc3ea616cce5ae0889da2c9940b.css
 sponsorship/index.css: sponsorship-98b6cfc3ea616cce5ae0889da2c9940b.css
-style.css: style-4008193b6401a6b5cf60db74d3d4ce69.css
-style/index.css: style-4008193b6401a6b5cf60db74d3d4ce69.css
+style.css: style-51ef0556e1a8efe751cf4f6053ea8eb5.css
+style/index.css: style-51ef0556e1a8efe751cf4f6053ea8eb5.css
 subscriptions.css: subscriptions-98b6cfc3ea616cce5ae0889da2c9940b.css
 subscriptions/index.css: subscriptions-98b6cfc3ea616cce5ae0889da2c9940b.css
 tags.css: tags-98b6cfc3ea616cce5ae0889da2c9940b.css
