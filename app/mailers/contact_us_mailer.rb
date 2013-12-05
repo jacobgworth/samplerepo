@@ -82,6 +82,27 @@ class ContactUsMailer < ActionMailer::Base
     
     mail(:to => @sendto, :subject => "Write My Child", :from => @fromaddress)
   end
+
+  def write_child_confirmation(data)
+    
+    @data = data
+    
+    @fname = @data[:fname]
+    @phone = @data[:phone]
+	@sendto = @data[:fromaddress]
+    @bodym = @data[:bodym]
+    @childname = @data[:childname]
+    @childnumber = @data[:childnumber]
+    @attachment = @data[:attachment]
+    if !@attachment.nil?
+      attachments[@attachment.original_filename] = @attachment.read
+    end
+    @fromaddress = "Brooke@mohhaiti.org"
+    #@sendto = "jesse@threetwelvecreative.com"
+    
+    mail(:to => @sendto, :subject => "Write My Child", :from => @fromaddress)
+  end
+
   
   def take_a_trip(data)
     #change this to missiontrips@mohhaiti.org after testing

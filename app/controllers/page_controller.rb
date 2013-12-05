@@ -695,6 +695,7 @@ class PageController < ApplicationController
       }
       respond_to do |format|
         ContactUsMailer.write_child(@data).deliver
+        ContactUsMailer.write_child_confirmation(@data).deliver
         format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
       end 
     else
