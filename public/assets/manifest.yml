@@ -347,6 +347,8 @@ logoFooter.png: logoFooter-ba1ddfed82bc553506d5dee78c7a4369.png
 logoFooter/index.png: logoFooter-ba1ddfed82bc553506d5dee78c7a4369.png
 mymoh-button-arrow.png: mymoh-button-arrow-3770c3a89ac4d6cfa09e569bd2799940.png
 mymoh-button-arrow/index.png: mymoh-button-arrow-3770c3a89ac4d6cfa09e569bd2799940.png
+mymoh-home.jpg: mymoh-home-7c68e4ce4c2760becb93333ff155de19.jpg
+mymoh-home/index.jpg: mymoh-home-7c68e4ce4c2760becb93333ff155de19.jpg
 mymoh-parchment.png: mymoh-parchment-91e7c9b196f9280d1730b0c4317e7388.png
 mymoh-parchment/index.png: mymoh-parchment-91e7c9b196f9280d1730b0c4317e7388.png
 mymoh-signin-bg.jpg: mymoh-signin-bg-6ad399c712d9f94e48acbf09c94253ba.jpg
@@ -757,8 +759,8 @@ videos.js: videos-139877949a1ec6177dc206292d67d59c.js
 videos/index.js: videos-139877949a1ec6177dc206292d67d59c.js
 advancement.css: advancement-98b6cfc3ea616cce5ae0889da2c9940b.css
 advancement/index.css: advancement-98b6cfc3ea616cce5ae0889da2c9940b.css
-application.css: application-f5363fb5f01b2825043c8451e0a793c9.css
-application/index.css: application-f5363fb5f01b2825043c8451e0a793c9.css
+application.css: application-c76f36a98be09669951b6df766bd93b0.css
+application/index.css: application-c76f36a98be09669951b6df766bd93b0.css
 categories.css: categories-98b6cfc3ea616cce5ae0889da2c9940b.css
 categories/index.css: categories-98b6cfc3ea616cce5ae0889da2c9940b.css
 category.css: category-98b6cfc3ea616cce5ae0889da2c9940b.css
@@ -799,8 +801,8 @@ sessions.css: sessions-98b6cfc3ea616cce5ae0889da2c9940b.css
 sessions/index.css: sessions-98b6cfc3ea616cce5ae0889da2c9940b.css
 sponsorship.css: sponsorship-98b6cfc3ea616cce5ae0889da2c9940b.css
 sponsorship/index.css: sponsorship-98b6cfc3ea616cce5ae0889da2c9940b.css
-style.css: style-51ef0556e1a8efe751cf4f6053ea8eb5.css
-style/index.css: style-51ef0556e1a8efe751cf4f6053ea8eb5.css
+style.css: style-7538a5a54c5e6bae6c9ba7182c02cff2.css
+style/index.css: style-7538a5a54c5e6bae6c9ba7182c02cff2.css
 subscriptions.css: subscriptions-98b6cfc3ea616cce5ae0889da2c9940b.css
 subscriptions/index.css: subscriptions-98b6cfc3ea616cce5ae0889da2c9940b.css
 tags.css: tags-98b6cfc3ea616cce5ae0889da2c9940b.css
