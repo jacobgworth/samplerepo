@@ -1,4 +1,4 @@
-<% if @recurring.empty? and @donations.empty? %>
+<% if @recurring.empty? and @donations.empty? and @account.cv__Lifetime_Combined_Credit_Amount__c < 1 %>
 	<script>
 		window.location = "http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1";
 	</script>
@@ -28,22 +28,22 @@ If you are a Canadian Donor and would like to receive a tax-deductible receipt, 
 			</tr>
 			<tr>
 				<td><span class="label">Account</span><span class="data"><%= @account.Account__c %></span></td>
-				<td><span class="label">Lifetime Donations</span>$<%= @account.cv__summary_lifetime_gift_amount__c ? currency_convert(@account.cv__summary_lifetime_gift_amount__c) : 0 %></span></td>
+				<td><span class="label">Lifetime Donations</span>$<%= @account.cv__Lifetime_Combined_Credit_Amount__c ? currency_convert(@account.cv__Lifetime_Combined_Credit_Amount__c) : 0 %></span></td>
 			</tr>
 			<tr>
 				<td><span class="label">Name</span><span class="data"><%= @account.Name %></span></td>
-				<td><span class="label">Lifetime Gifts</span><span class="data"><%= @account.cv__summary_lifetime_gift_count__c ? @account.cv__summary_lifetime_gift_count__c.to_int : 0 %></span></td>
+				<td><span class="label">Lifetime Gifts</span><span class="data"><%= @account.cv__Lifetime_Combined_Credit_Count__c ? @account.cv__Lifetime_Combined_Credit_Count__c.to_int : 0 %></span></td>
 			</tr>
 			<tr>
 				<td><span class="label">Most Recent Donation</span><span class="data">$<%= @account.cv__Last_Gift_Amount__c ? currency_convert(@account.cv__Last_Gift_Amount__c) : 0 %></span></td>
-				<td><span class="label">Last Year's Donations</span><span class="data">$<%= @account.cv__summary_last_year_gift_amount__c ? currency_convert(@account.cv__summary_last_year_gift_amount__c) : 0 %></span></td>
+				<td><span class="label">Last Year's Donations</span><span class="data">$<%= @account.cv__Last_Year_Combined_Credit_Amount__c ? currency_convert(@account.cv__Last_Year_Combined_Credit_Amount__c) : 0 %></span></td>
 			</tr>
 			<tr>
-				<td><span class="label">This Year's Donations</span><span class="data">$<%= @account.cv__summary_ytd_gift_amount__c ? currency_convert(@account.cv__summary_ytd_gift_amount__c) : 0 %></span></td>
-				<td><span class="label">Last Year's Number of Gifts</span><span class="data"><%= @account.cv__summary_last_year_gift_count__c ? currency_convert(@account.cv__summary_last_year_gift_count__c) : 0 %></span></td>
+				<td><span class="label">This Year's Donations</span><span class="data">$<%= @account.cv__YTD_Combined_Credit_Amount__c ? currency_convert(@account.cv__YTD_Combined_Credit_Amount__c) : 0 %></span></td>
+				<td><span class="label">Last Year's Number of Gifts</span><span class="data"><%= @account.cv__Last_Year_Combined_Credit_Count__c ? @account.cv__Last_Year_Combined_Credit_Count__c.to_i : 0 %></span></td>
 			</tr>
 			<tr>
-				<td><span class="label">This Year's Number of Gifts</span><span class="data"><%= @account.cv__summary_ytd_gift_count__c ? @account.cv__summary_ytd_gift_count__c.to_int : 0 %></span></td>
+				<td><span class="label">This Year's Number of Gifts</span><span class="data"><%= @account.cv__YTD_Combined_Credit_Count__c ? @account.cv__YTD_Combined_Credit_Count__c.to_int : 0 %></span></td>
 				<td><span class="label">&nbsp;</span></td>
 			</tr>
 		</table>
