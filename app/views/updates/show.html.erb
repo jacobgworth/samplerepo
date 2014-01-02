@@ -96,7 +96,9 @@
 				<p class="meta">	<% 
 						created = blog.postdate 
 					%>
-					<%= created.strftime("%b")%> <%=created.strftime("%d")%>, <%=created.strftime("%Y")%>
+					<% if created %>
+						<%= created.strftime("%b")%> <%=created.strftime("%d")%>, <%=created.strftime("%Y")%>
+					<% end %>
 				</p>
 				<div class="updatePost300">
 					<h3><a href="/blog/<%=blog.id%>"><%=blog.title%></a></h3>
