@@ -106,11 +106,13 @@ If you are a Canadian Donor and would like to receive a tax-deductible receipt, 
 				<% @donations.each do |don| %>
 					<% if (Date.today - don.CloseDate) < 30 %>
 						<% @ddr = Cv__Donation_Designation_Relationship__c.find_by_cv__Opportunity__c(don.Id) %>
+						<% if @ddr %>
 						<% @designation = Cv__Designation__c.find_by_Id(@ddr.cv__Designation__c)%>
+						<% end %>
 						<tr>
 							<td><a href="/mymoh/giving/receipt/<%=don.Id%>"><%=don.CloseDate.strftime("%b %-d, %Y")%></a></td>
 							<td><%=don.Type%></td>
-							<td><%=@designation.Name %></td>
+							<td><% if @designation %><%=@designation.Name %><% end %></td>
 							<td><%=don.Description%></td>
 							<td>$<%=don.Amount.to_int || "N/A" %></td>
 						</tr>
