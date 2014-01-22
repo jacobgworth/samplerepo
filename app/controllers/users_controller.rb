@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   
   def password_reset
     if params[:email]
-      user = User.find_by_email(params[:email])
+      user = User.find(:first, :conditions => ["lower(email) = ?", params[:email].downcase])
       user.send_password_reset if user
       @message = "We've recieved your request for a password reset. Please check your email."
     end
