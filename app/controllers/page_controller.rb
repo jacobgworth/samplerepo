@@ -713,7 +713,7 @@ class PageController < ApplicationController
         end
         if @child
           @data[:childname] = @child.Name__c || ""
-          @data[:childid] = @child.Student_Code__c || ""
+          @data[:childid] = @child.Child_Number__c || ""
           @data[:sponsorname] = (current_user.first || "") + " " + (current_user.last || "")
           @data[:sponsoremail] = current_user.email || ""
           @data[:sponsorphone] = @contact.HomePhone || ""
