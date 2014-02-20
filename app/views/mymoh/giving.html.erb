@@ -1,4 +1,4 @@
-<% if @recurring.empty? and @donations.empty? and @account.cv__Lifetime_Combined_Credit_Amount__c < 1 %>
+<% if @recurring.empty? and @donations.empty? and (@account.cv__Lifetime_Combined_Credit_Amount__c.nil? or @account.cv__Lifetime_Combined_Credit_Amount__c < 1) %>
 	<script>
 		window.location = "http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1";
 	</script>
