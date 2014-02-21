@@ -67,6 +67,7 @@ If you are a Canadian Donor and would like to receive a tax-deductible receipt, 
 				<th><h3>Next Gift Date</h3></th>
 				<th><h3>Gift Amount Needed</h3></th>
 			</tr>
+			
 			<% @recurring.each do |rec| %>
 				<% if rec.cv__Recurring_Gift_Status__c == "Active" %>
 					<tr>
