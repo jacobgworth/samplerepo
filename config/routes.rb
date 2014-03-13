@@ -326,6 +326,8 @@ Mohhaiti::Application.routes.draw do
   get "page/denari"
   match "/denari" => "page#denari"
   
+  get "/sponsorshipcatalog" => "page#sponsorshipcatalog"
+  
   #For the custom Content model URLs
   match '*path/:url' => "Contents#show"
   match '*path/:url/delete' => "Contents#delete"
