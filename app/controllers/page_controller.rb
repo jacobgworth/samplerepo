@@ -548,6 +548,10 @@ class PageController < ApplicationController
     redirect_to "http://mohhaiti.force.com/sponsorship" and return
   end
   
+  def stampinup
+    
+  end
+  
   
   def three_cords
     @title = "3 Cords at Mission of Hope, Haiti: Giving Amputee Women Hope"

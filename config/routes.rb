@@ -229,6 +229,7 @@ Mohhaiti::Application.routes.draw do
      
   get "page/request_info"
   match "/request_info" => "page#request_info"
+  
      
   get "page/trip_costs"
   match "/trip_costs" => "page#trip_costs"
@@ -327,6 +328,8 @@ Mohhaiti::Application.routes.draw do
   match "/denari" => "page#denari"
   
   get "/sponsorshipcatalog" => "page#sponsorshipcatalog"
+  
+  get "/stampinup" => "page#stampinup"
   
   #For the custom Content model URLs
   match '*path/:url' => "Contents#show"
