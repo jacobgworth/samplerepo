@@ -549,7 +549,11 @@ class PageController < ApplicationController
   end
   
   def stampinup
-    
+    @title = "Stampin' Up is Partnering with Mission of Hope, Haiti"
+    @meta = "Help Haitians in need get the housing and basic necessities they need. Donate today."
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
   end
   
   
