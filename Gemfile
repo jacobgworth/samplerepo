@@ -54,8 +54,8 @@ gem 'exception_notification', '4.0.0'
 
 
 group :development, :test do
-  gem 'sqlite3'
-  #gem 'pg'
+  #gem 'sqlite3'
+  gem 'pg'
 end
 group :production do
   # gems specifically for Heroku go here
