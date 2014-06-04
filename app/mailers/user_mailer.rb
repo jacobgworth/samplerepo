@@ -20,7 +20,7 @@ class UserMailer < ActionMailer::Base
   
   def welcome_new_user(user)
     @user = user
-    mail(:to => @user.email, :subject => "Welcome to Mission of Hope, Haiti", :from => "noreply@mohhaiti.org", :bcc => "david@threetwelvecreative.com")
+    mail(:to => @user.email, :subject => "Welcome to Mission of Hope, Haiti", :from => "noreply@mohhaiti.org", :bcc => "investorcare@mohhaiti.org, david@threetwelvecreative.com")
   end
   
 end
