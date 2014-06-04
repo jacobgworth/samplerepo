@@ -18,4 +18,9 @@ class UserMailer < ActionMailer::Base
     mail :to => user.email, :subject => "Password Reset"
   end
   
+  def welcome_new_user(user)
+    @user = user
+    mail(:to => @user.email, :subject => "Welcome to Mission of Hope, Haiti", :from => "noreply@mohhaiti.org", :bcc => "david@threetwelvecreative.com")
+  end
+  
 end

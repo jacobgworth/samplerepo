@@ -157,4 +157,6 @@ class ContactUsMailer < ActionMailer::Base
     mail(:to => "churchpartnerships@mohhaiti.org", :subject => "Vision Trip Information", :from => @txtemail)
   end
   
+  
+  
 end

@@ -118,6 +118,7 @@ class UsersController < ApplicationController
       if @user.save
         session[:user_id] = @user.id
         cookies[:auth_token] = @user.auth_token
+        UserMailer.welcome_new_user(@user).deliver
         format.html { redirect_to "/mymoh", notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
