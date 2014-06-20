@@ -16,6 +16,9 @@
 		<h1><span class="eyebrow">Mission of Hope Haiti </span>
 		<br />
 		Videos</h1>
+		<% if !@user.nil? && @isadmin %>
+		<h3 style="padding-bottom:25px;"><%= link_to 'Add a Video', new_video_path,:style=>"text-decoration:underline;" %></h3>
+		<% end %>
 		<div class="videoPostsWrapper">
 			
 			<!-- we are displaying some static videos here (the first four) -->
@@ -86,7 +89,7 @@
 			</div>
 		</div>
 
-		<% if !@user.nil? && @user.is_admin?%>
+		<% if !@user.nil? && @isadmin %>
 		<h4><%= link_to 'New Video', new_video_path %></h4>
 		<% end %>
 	
