@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     @page = params[:page].to_i #for pagination
     @posts_per_page = 7
     @user = current_user
+    @isadmin = is_admin_user?
     @updates = Update.last(3).reverse
     @postsyear = @posts = Post.order("postdate desc").where("postdate > ?",Time.now.beginning_of_month.months_ago(11))
     @postcount = 0

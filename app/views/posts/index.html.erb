@@ -8,8 +8,8 @@
 		<%elsif !@month.nil?%>
 			<%=@month.strftime('%B %Y')%><br />
 		<%end%>Blog Posts</h1>
-<% if !@user.nil? && @user.is_admin == 1%>
-<h3><%= link_to 'Write a New Post', new_blog_path %></h3>
+<% if !@user.nil? && @isadmin %>
+<h3 style="padding-bottom:25px;"><%= link_to 'Write a New Post', new_blog_path %></h3>
 <%end%>
 <% @posts.each do |post| %>
   <div class="postsPage">
