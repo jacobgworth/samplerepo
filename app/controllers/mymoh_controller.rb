@@ -25,6 +25,9 @@ class MymohController < ApplicationController
   end
   
   def account
+    if current_user.convio_id == nil
+      redirect_to "/" and return
+    end
     @account = Contact.find_by_Id(current_user.convio_id)
     if @account
       @household = Account.find_by_cv__Head_of_Household__c(@account.Id)
@@ -34,6 +37,13 @@ class MymohController < ApplicationController
       else
         @spouse_id = (@attempt_two ? @attempt_two.cv__Head_of_Household__c : nil)
       end
+    end
+     @gifts = Opportunity.query("cv__Contact__c = '" + @account.Id + "' order by CreatedDate")
+    @gift_status = @gifts.last.StageName
+    if @gifts and @gift_status == "Received"
+      @gift_status = "Received -- Thank you!"
+    elsif @gifts and @gift_status == "Declined Credit Card"
+      @gift_status = "Declined Credit Card -- Please contact us at 239-791-8125 (U.S.)"
     end
     if @spouse_id
       @spouse = (Contact.find_by_Id(@spouse_id) || nil)
@@ -107,6 +117,9 @@ class MymohController < ApplicationController
   end
   
   def giving
+    if current_user.convio_id == nil
+      redirect_to "/" and return
+    end
     @account = Contact.find_by_Id(current_user.convio_id)
     dbdc_client.materialize("cv__Recurring_Gift__c")
     dbdc_client.materialize("cv__Donation_Designation_Relationship__c")
@@ -114,6 +127,13 @@ class MymohController < ApplicationController
     @recurring = Cv__Recurring_Gift__c.query("cv__Contact__c = '" + @account.Id + "' AND cv__Recurring_Gift_Status__c = 'Active'")
     query = "cv__Contact__c = '" + current_user.convio_id + "'" 
     @donations = Opportunity.query(query)
+    @gifts = Opportunity.query("cv__Contact__c = '" + @account.Id + "' order by CreatedDate")
+    @gift_status = @gifts.last.StageName
+    if @gifts and @gift_status == "Received"
+      @gift_status = "Received -- Thank you!"
+    elsif @gifts and @gift_status == "Declined Credit Card"
+      @gift_status = "Declined Credit Card -- Please contact us at 239-791-8125 (U.S.)"
+    end
     respond_to do | format |
       format.html { render :layout => "homeLayout" }
     end
