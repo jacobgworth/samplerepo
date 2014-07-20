@@ -11,6 +11,8 @@ _notes/dwsync.xml: _notes/dwsync-d63fd89dd4a4d90c1d734ab99743e956.xml
 _notes/dwsync/index.xml: _notes/dwsync-d63fd89dd4a4d90c1d734ab99743e956.xml
 3cords-artist-gernise.jpg: 3cords-artist-gernise-26edf2feefeafa18565003cff690d747.jpg
 3cords-artist-gernise/index.jpg: 3cords-artist-gernise-26edf2feefeafa18565003cff690d747.jpg
+ECFA_Accredited_RGB_Small.png: ECFA_Accredited_RGB_Small-99798938c2c5ac5c9c0dcc2cdbf54a75.png
+ECFA_Accredited_RGB_Small/index.png: ECFA_Accredited_RGB_Small-99798938c2c5ac5c9c0dcc2cdbf54a75.png
 ECFA_Member-Seal3.png: ECFA_Member-Seal3-a4669fafdfc100d88bf0ae9ef7f2d820.png
 ECFA_Member-Seal3/index.png: ECFA_Member-Seal3-a4669fafdfc100d88bf0ae9ef7f2d820.png
 SayYes.png: SayYes-d416a8f61e5add3057a267d754e44b44.png
@@ -85,6 +87,8 @@ greenBG.png: greenBG-1e0a676cec5edb58015c1a7fa5dd4ea1.png
 greenBG/index.png: greenBG-1e0a676cec5edb58015c1a7fa5dd4ea1.png
 haitiBG.png: haitiBG-6f4107b543a0d25ac113a218c42f526a.png
 haitiBG/index.png: haitiBG-6f4107b543a0d25ac113a218c42f526a.png
+header.png: header-ce5b98a5672d2a9c3299f25c80ca8726.png
+header/index.png: header-ce5b98a5672d2a9c3299f25c80ca8726.png
 healthcareInfographic.png: healthcareInfographic-85b2bfb7a5a3287c98002ca9335680f9.png
 healthcareInfographic/index.png: healthcareInfographic-85b2bfb7a5a3287c98002ca9335680f9.png
 her-b2b.jpg: her-b2b-e9028e2c3b9d97c8eb61bf56fff66939.jpg
@@ -693,8 +697,8 @@ videoBG.png: videoBG-f3ef8e87552ee0499a45f1fc9e570deb.png
 videoBG/index.png: videoBG-f3ef8e87552ee0499a45f1fc9e570deb.png
 advancement.js: advancement-139877949a1ec6177dc206292d67d59c.js
 advancement/index.js: advancement-139877949a1ec6177dc206292d67d59c.js
-application.js: application-13ca0e488178054cc754796361575b3e.js
-application/index.js: application-13ca0e488178054cc754796361575b3e.js
+application.js: application-d3c52d56469eccbcb049ff75e0b9fac4.js
+application/index.js: application-d3c52d56469eccbcb049ff75e0b9fac4.js
 categories.js: categories-139877949a1ec6177dc206292d67d59c.js
 categories/index.js: categories-139877949a1ec6177dc206292d67d59c.js
 category.js: category-139877949a1ec6177dc206292d67d59c.js
@@ -817,10 +821,10 @@ users.css: users-98b6cfc3ea616cce5ae0889da2c9940b.css
 users/index.css: users-98b6cfc3ea616cce5ae0889da2c9940b.css
 videos.css: videos-98b6cfc3ea616cce5ae0889da2c9940b.css
 videos/index.css: videos-98b6cfc3ea616cce5ae0889da2c9940b.css
-jquery.js: jquery-f5a3fd9290cda4424d2c4d5a780d072e.js
-jquery/index.js: jquery-f5a3fd9290cda4424d2c4d5a780d072e.js
-jquery.min.js: jquery.min-96a78b3b01aad58ef4205afb7c71b230.js
-jquery/index.min.js: jquery.min-96a78b3b01aad58ef4205afb7c71b230.js
+jquery.js: jquery-fb1212c1940a11f54ea6f1ff0c9780ae.js
+jquery/index.js: jquery-fb1212c1940a11f54ea6f1ff0c9780ae.js
+jquery.min.js: jquery.min-cc5ea89daa4fd25c8253c1ee2153fda5.js
+jquery/index.min.js: jquery.min-cc5ea89daa4fd25c8253c1ee2153fda5.js
 jquery.min.map: jquery.min-31e21c8ee3a1bfad49213a3739a70853.map
 jquery/index.min.map: jquery.min-31e21c8ee3a1bfad49213a3739a70853.map
 jquery_ujs.js: jquery_ujs-71ef4796577cf62668f1d532aba412d0.js
