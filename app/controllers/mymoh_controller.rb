@@ -39,11 +39,17 @@ class MymohController < ApplicationController
       end
     end
      @gifts = Opportunity.query("cv__Contact__c = '" + @account.Id + "' order by CreatedDate")
-    @gift_status = @gifts.last.StageName
+    if @gifts && @gifts.count > 0
+      @gift_status = @gifts.last.StageName
+    end
     if @gifts and @gift_status == "Received"
       @gift_status = "Received -- Thank you!"
     elsif @gifts and @gift_status == "Declined Credit Card"
       @gift_status = "Declined Credit Card -- Please contact us at 239-791-8125 (U.S.)"
+    end
+    
+    if @gifts.count==0
+      @gift_status = "No recent donation history"
     end
     if @spouse_id
       @spouse = (Contact.find_by_Id(@spouse_id) || nil)
@@ -128,11 +134,15 @@ class MymohController < ApplicationController
     query = "cv__Contact__c = '" + current_user.convio_id + "'" 
     @donations = Opportunity.query(query)
     @gifts = Opportunity.query("cv__Contact__c = '" + @account.Id + "' order by CreatedDate")
-    @gift_status = @gifts.last.StageName
+    @gift_status = @gifts.last.StageName if @gifts && @gifts.count > 0
     if @gifts and @gift_status == "Received"
       @gift_status = "Received -- Thank you!"
     elsif @gifts and @gift_status == "Declined Credit Card"
       @gift_status = "Declined Credit Card -- Please contact us at 239-791-8125 (U.S.)"
+    end
+    
+    if @gifts.count == 0
+      @gift_status = "No recent donation history"
     end
     respond_to do | format |
       format.html { render :layout => "homeLayout" }
