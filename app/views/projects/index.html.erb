@@ -9,13 +9,12 @@
 <div id="content">
 	<div id="heroContent">
 		<h1>
-			<span style="font-size:2.5em;">Mission of Hope, Haiti</span><br>
 			<% if @cid.nil?%>
+			<span style="font-size:2.5em;">Mission of Hope, Haiti</span><br>
+			
 				<span style="font-size:4.5em;">Highlighted</span><br>
 				<span style="font-size:6em; display: block; padding-bottom: 10px;">Projects</span>
-			<%else%>
-				<span><%=@category.categoryname%></span>
-			<%end%>
+			
 		<br>
 			<span style="float:left; text-align:center; margin-right:25px;">
 				<a href="/projects/12"><img style="border:3px solid #f9f2e7;" src="/images/project-inset-azil-home.jpg" alt="Azil Home"></a>
@@ -33,7 +32,9 @@
 				<a href="/projects/8"><img style="border:3px solid #f9f2e7;" src="/images/project-inset-sports-complex.jpg" alt="Sports Complex" ></a>
 				<br><p><a href="/projects/8" style="color:#F9F2E7;">Sports Complex</a></p></span>
 		
-			
+			<%else%>
+				<span style="background-image: url(/assets/greenBG.png); margin-top:80px; width: 80%; font-size:4.5em; display:block;"><%=@category.categoryname%> Projects</span>
+			<%end%>
 		
 		</h1>
 		
