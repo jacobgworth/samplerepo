@@ -35,12 +35,17 @@
 				<h1><span class="eyebrow">Mission of Hope Haiti Project</span>
 				<br/>
 				<%= @project.projectname %></h1>
+				
+				<p>
+					<%= simple_format(@project.description) %>
+				</p>
+				
 				<input type="hidden" class="subscribeData" name="project" value="<%=@project.id%>" />
 					<% if !@subscribed || @subscribed.empty? %>
-						<div class="subscribe buttonSquareOrange alignRight" style="margin-top:40px;">
+						<div class="subscribe buttonSquareOrange alignRight" style="cursor: pointer">
 						Follow this project
 					<% else %>
-						<div class="unsubscribe buttonSquareOrange alignRight" style="margin-top:40px;">
+						<div class="unsubscribe buttonSquareOrange alignRight" style="cursor: pointer">
 						Unfollow this project
 					<% end %>
 					</div>
@@ -83,9 +88,7 @@
 					});
 				</script>
 				<% end %>
-				<p>
-					<%= simple_format(@project.description) %>
-				</p>
+				
 			</div>
 			<div class="contentHeaderRight">
 				<h3 class="projectDetailButton" style="padding-top:20px; background-image: url('/assets/gr-<%=@category.categoryicon%>'); background-repeat:no-repeat; background-position:95% 50%; height:60px;">Project Type
