@@ -41,6 +41,11 @@
 				</p>
 				
 				<input type="hidden" class="subscribeData" name="project" value="<%=@project.id%>" />
+					<% if [7,8,11,12,14].include?(@project.id)%>
+						<div class="buttonSquareOrange alignLeft" style="cursor: pointer">
+							<a href="/assets/project_summary_<%=@project.id%>.pdf" target="_blank">Download project summary</a>
+						</div>
+					<%end%>
 					<% if !@subscribed || @subscribed.empty? %>
 						<div class="subscribe buttonSquareOrange alignRight" style="cursor: pointer">
 						Follow this project
