@@ -51,6 +51,7 @@ class ProjectsController < ApplicationController
     @cid = params[:cid]
     @user = current_user
     @itemCount = 0
+    @bgimage = "hero-projects.jpg"
     if @cid.nil?
       @title = "Projects | MOH Haiti"
       @meta = "See all Mission of Hope projects currently underway in Haiti"
@@ -63,6 +64,24 @@ class ProjectsController < ApplicationController
       @category = Category.find(@cid)
       @title = @category.categoryname + " Projects | MOH Haiti"
       @meta = "See all " + @category.categoryname + " Mission of Hope projects currently underway in Haiti"
+      if @cid == "19"
+        #Church advancement
+        @bgimage = "hero-project-sports-complex.jpg";
+      elsif @cid == "18"
+        #Health Care
+        @bgimage = "hero-projects.jpg";
+      elsif @cid == "16"
+        #Water
+        @bgimage = "hero-projects.jpg";
+      elsif @cid == "7"
+        #Education
+        @bgimage = "hero-projects.jpg";
+      elsif @cid == "17"
+        #Housing
+        @bgimage = "hero-projects.jpg";
+      else
+        @bgimage = "hero-projects.jpg";
+      end
     end
 
     respond_to do |format|
