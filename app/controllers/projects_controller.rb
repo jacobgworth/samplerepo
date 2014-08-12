@@ -66,19 +66,19 @@ class ProjectsController < ApplicationController
       @meta = "See all " + @category.categoryname + " Mission of Hope projects currently underway in Haiti"
       if @cid == "19"
         #Church advancement
-        @bgimage = "hero-project-sports-complex.jpg";
+        @bgimage = "hero-project-church-advancement.jpg";
       elsif @cid == "18"
         #Health Care
-        @bgimage = "hero-projects.jpg";
+        @bgimage = "hero-project-health-care.jpg";
       elsif @cid == "16"
         #Water
-        @bgimage = "hero-projects.jpg";
+        @bgimage = "hero-project-water.jpg";
       elsif @cid == "7"
         #Education
-        @bgimage = "hero-projects.jpg";
+        @bgimage = "hero-project-education.jpg";
       elsif @cid == "17"
         #Housing
-        @bgimage = "hero-projects.jpg";
+        @bgimage = "hero-project-housing.jpg";
       else
         @bgimage = "hero-projects.jpg";
       end
