@@ -45,7 +45,7 @@ class MymohController < ApplicationController
     if @gifts and @gift_status == "Received"
       @gift_status = "Received -- Thank you!"
     elsif @gifts and @gift_status == "Declined Credit Card"
-      @gift_status = "Declined Credit Card -- Please contact us at 239-791-8125 (U.S.)"
+      @gift_status = "Declined Credit Card -- Please contact us at 512-256-0835 (U.S.)"
     end
     
     if @gifts.count==0
@@ -138,7 +138,7 @@ class MymohController < ApplicationController
     if @gifts and @gift_status == "Received"
       @gift_status = "Received -- Thank you!"
     elsif @gifts and @gift_status == "Declined Credit Card"
-      @gift_status = "Declined Credit Card -- Please contact us at 239-791-8125 (U.S.)"
+      @gift_status = "Declined Credit Card -- Please contact us at 512-256-0835 (U.S.)"
     end
     
     if @gifts.count == 0
