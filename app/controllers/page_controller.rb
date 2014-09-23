@@ -489,6 +489,70 @@ class PageController < ApplicationController
     end
   end
   
+  def request_info_medical
+    @title = "Request Information About MOH Haiti Medical Mission Trips"
+    @meta = "Use our easy request information form to receive more information on taking a short-term medical mission trip with Mission of Hope, Haiti."
+    @fname = params[:fname]
+    @lname = params[:lname]
+    @comments = params[:letter]
+    @fromaddress = params[:email]
+    @phone = "0000000000"
+    @medical = params[:childnumber]
+    @street = params[:street]
+    @city = params[:city]
+    @state = params[:state]
+    @zip = params[:zip]
+    @church = params[:church]
+    @organization = params[:organization]
+    @participants = params[:participants].to_i
+    if !@fname.nil? && @fname != "" && !@fromaddress.nil? && @fromaddress != "" && (params[:formname].nil? || params[:formname].empty?)
+      @isvalid = true
+      @data = {
+        :fname => @fname,
+        :lname => @lname, 
+        :fromaddress => @fromaddress, 
+        :comments => @comments,
+        :phone => @phone,
+        :medical => @medical,
+        :address => @street,
+        :city => @city,
+        :state => @state,
+        :zip => @zip,
+        :church => @church,
+        :org => @organization,
+        :participants => @participants,
+        :month => params[:trip_month]
+      }
+      ContactUsMailer.take_a_trip(@data).deliver
+      #Save contact to convio
+      @sfcontact = Contact.find_by_Email(params[:email])
+      if @sfcontact.nil?
+        @sfcontact = create_convio_contact(params[:lname], params[:fname], params[:email])
+        @sfcontact = Contact.find_by_Id(@sfcontact.Id)
+        @sfcontact.MailingStreet = @street
+        @sfcontact.MailingCity = @city
+        @sfcontact.MailingState = @state
+        @sfcontact.MailingPostalCode = @zip
+      end
+      @sfcontact.MT_Prospect_Status__c = "Prospect"
+      @sfcontact.MyMOH_Church__c = @church
+      @sfcontact.Organization__c = @organization
+      @sfcontact.Number_of_Trip_Participants__c = @participants
+      @sfcontact.Ideal_Trip_Month__c = params[:trip_month]
+      if (@data[:medical] == "on")
+        @sfcontact.Medical_Trip_Prospect__c = true
+      end
+      @sfcontact.save
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}
+      end 
+    else
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}
+      end
+    end
+  end
+  
   def school_of_hope
     @title = "School of Hope in Haiti | Mission of Hope, Haiti School Program"
     @meta = "The School of Hope provides quality education in Haiti for students from Kindergarten through High School. It is ranked one of the top schools in the Haiti school system."

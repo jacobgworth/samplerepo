@@ -11,20 +11,40 @@
 		<div id="contentLeft560">
 			<h1 style="font-size: 2em;"><span class="eyebrow">Mission of Hope Haiti</span>
 			<br />
-			Request information about SHORT-TERM MISSION TRIPS</h1>
+			Request information about Short-term Medical Mission Trips</h1>
 			<p>
-			If you would like to learn more about how you or a group can serve on a short-term mission trip with Mission of Hope, Haiti, please fill out and submit the form below. Once we have received your request, our Mission Trips Coordinator will be in touch with you.
+			If you would like to learn more about how you or a group can serve on a short-term mission trip with Mission of Hope, Haiti, please fill out and submit the form below. Once we have received your request, our Medical Mission Trips Coordinator will be in touch with you.
 			</p>
-			<p>To request more information on Medical Mission Trips, please click <a href="/request_info_medical">here.</a></p>
-			
 			<div class="forms">
 				<% if @isvalid.nil?%>
 				<form method="post">
 					<input type="text" name="formname" value="" style="display:none;"/>
 					<div class="field">* First Name: <input id="txtname" type="text" name="fname"><br></div>
 					<div class="field">* Last Name: <input id="txtlname" type="text" name="lname"><br></div>
+					<div class="field">Medical Professional License: 
+						<select name="trip_month">
+							<option value="MD">MD</option>
+							<option value="DO">DO</option>
+							<option value="PA">PA</option>
+							<option value="NP">NP</option>
+							<option value="RN">RN</option>
+							<option value="LPN">LPN</option>
+							<option value="LVN">LVN</option>
+							<option value="EMT">EMT</option>
+							<option value="Paramedic">Paramedic</option>
+							<option value="CAN">CAN</option>
+							<option value="RPh">RPh</option>
+							<option value="PharmD">PharmD</option>
+							<option value="Optometrist">Optometrist</option>
+							<option value="Dentist">Dentist</option>
+							<option value="PT">PT</option>
+							<option value="OT">OT</option>
+							<option value="Chiropractor">Chiropractor</option>
+							<option value="Non-medical Support Staff">Non-medical Support Staff</option>
+							<option value="Student">Student</option>
+						</select>
+					</div>
 					<div class="field">* Email: <input id="txtemail" type="text" name="email"></div>
-					<!--<div class="field checkbox" style="margin-top: -3px;padding-bottom: 15px;"><input type="checkbox" name="childnumber" id="childnumber" style="width:12px;"> I am interested in taking a Medical Mission Trip (<a href="/medical_mission_trips">learn more about medical mission trips</a>).</a></div>-->
 					<div class="field">Street Address: <input id="txtstreet" type="text" name="street"><br></div>
 					<div class="field">City: <input id="txtcity" type="text" name="city"><br></div>
 					<div class="field">State: <input id="txtstate" type="text" name="state"><br></div>
@@ -62,7 +82,7 @@
 			<div class="rightBoxGreen">
 				<h2>Contact Us</h2>
 				<p>
-					Email: missiontrips@mohhaiti.org <br />
+					Email: medical@mohhaiti.org <br />
 					Phone: 239-989-4487
 				</p>
 		</div>

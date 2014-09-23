@@ -230,6 +230,9 @@ Mohhaiti::Application.routes.draw do
   get "page/request_info"
   match "/request_info" => "page#request_info"
   
+  get "page/request_info_medical"
+  match "/request_info_medical" => "page#request_info_medical"
+  
      
   get "page/trip_costs"
   match "/trip_costs" => "page#trip_costs"
