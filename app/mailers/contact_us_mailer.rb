@@ -103,6 +103,21 @@ class ContactUsMailer < ActionMailer::Base
     mail(:to => @sendto, :subject => "Write My Child", :from => @fromaddress)
   end
 
+  def take_a_medical_trip(data)
+    #change this to medical@mohhaiti.org after testing
+    
+    @data = data
+    
+    @fullname = @data[:fname]
+    @phone = @data[:phone]
+    @fromaddress = @data[:fromaddress]
+    @comments = @data[:comments]
+    @license = @data[:license]
+    @toemail = "medical@mohhaiti.org"
+    #@toemail = "david@threetwelvecreative.com" #testing
+    
+    mail(:to => @toemail, :subject => "Take a Medical Mission Trip", :from => @fromaddress, :bcc => "david@threetwelvecreative.com")
+  end
   
   def take_a_trip(data)
     #change this to missiontrips@mohhaiti.org after testing
@@ -113,14 +128,11 @@ class ContactUsMailer < ActionMailer::Base
     @phone = @data[:phone]
     @fromaddress = @data[:fromaddress]
     @comments = @data[:comments]
-    @medical = @data[:medical]
-    if (@data[:medical] == "on")
-       @toemail = "medical@mohhaiti.org" 
-    end
+    #@medical = @data[:medical]
     @toemail = "missiontrips@mohhaiti.org"
-    #@toemail = "jesse@threetwelvecreative.com" #testing
+    #@toemail = "david@threetwelvecreative.com" #testing
     
-    mail(:to => @toemail, :subject => "Take a Mission Trip", :from => @fromaddress, :bcc => "jesse@threetwelvecreative.com")
+    mail(:to => @toemail, :subject => "Take a Mission Trip", :from => @fromaddress, :bcc => "david@threetwelvecreative.com")
   end
   
   def volunteer(data)

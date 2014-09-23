@@ -433,7 +433,7 @@ class PageController < ApplicationController
     @comments = params[:letter]
     @fromaddress = params[:email]
     @phone = "0000000000"
-    @medical = params[:childnumber]
+    #@medical = params[:childnumber]
     @street = params[:street]
     @city = params[:city]
     @state = params[:state]
@@ -449,7 +449,7 @@ class PageController < ApplicationController
         :fromaddress => @fromaddress, 
         :comments => @comments,
         :phone => @phone,
-        :medical => @medical,
+        #:medical => @medical,
         :address => @street,
         :city => @city,
         :state => @state,
@@ -475,9 +475,6 @@ class PageController < ApplicationController
       @sfcontact.Organization__c = @organization
       @sfcontact.Number_of_Trip_Participants__c = @participants
       @sfcontact.Ideal_Trip_Month__c = params[:trip_month]
-      if (@data[:medical] == "on")
-        @sfcontact.Medical_Trip_Prospect__c = true
-      end
       @sfcontact.save
       respond_to do |format|
         format.html {render :layout=>"homeLayout"}
@@ -505,6 +502,7 @@ class PageController < ApplicationController
     @church = params[:church]
     @organization = params[:organization]
     @participants = params[:participants].to_i
+    @license = params[:license]
     if !@fname.nil? && @fname != "" && !@fromaddress.nil? && @fromaddress != "" && (params[:formname].nil? || params[:formname].empty?)
       @isvalid = true
       @data = {
@@ -513,7 +511,7 @@ class PageController < ApplicationController
         :fromaddress => @fromaddress, 
         :comments => @comments,
         :phone => @phone,
-        :medical => @medical,
+        :license => @license,
         :address => @street,
         :city => @city,
         :state => @state,
@@ -523,7 +521,7 @@ class PageController < ApplicationController
         :participants => @participants,
         :month => params[:trip_month]
       }
-      ContactUsMailer.take_a_trip(@data).deliver
+      ContactUsMailer.take_a_medical_trip(@data).deliver
       #Save contact to convio
       @sfcontact = Contact.find_by_Email(params[:email])
       if @sfcontact.nil?
@@ -539,9 +537,7 @@ class PageController < ApplicationController
       @sfcontact.Organization__c = @organization
       @sfcontact.Number_of_Trip_Participants__c = @participants
       @sfcontact.Ideal_Trip_Month__c = params[:trip_month]
-      if (@data[:medical] == "on")
-        @sfcontact.Medical_Trip_Prospect__c = true
-      end
+      @sfcontact.Medical_Trip_Prospect__c = true
       @sfcontact.save
       respond_to do |format|
         format.html {render :layout=>"homeLayout"}
