@@ -137,6 +137,9 @@ Mohhaiti::Application.routes.draw do
   get "page/about_us"
   match "/about_us" => "page#about_us"
   
+  get "page/caprojects"
+  match "/caprojects" => "page#caprojects"
+  
   get "page/contact_us"
   match "/contact_us" => "page#contact_us"
   

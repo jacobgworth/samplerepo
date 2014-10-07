@@ -30,6 +30,14 @@ class PageController < ApplicationController
     end
   end 
   
+  def caprojects
+    @title = "Special Project for Missionaries"
+    @meta = "Choose a special project to work on while on your mission trip with Mission of Hope, Haiti."
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end 
+  
   def console
     unless is_admin_user?
       respond_to do |format|
