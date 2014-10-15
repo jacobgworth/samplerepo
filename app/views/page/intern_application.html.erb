@@ -1,0 +1,86 @@
+<% content_for(:head) do %>
+	<%= javascript_include_tag :validate_volunteer %>
+<% end %>
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+
+	<div id="content" style="padding-top: 50px;">
+		<%unless @isvalid.nil?%>
+			<div style="padding-bottom:20px;"><h3>Thank you for your interest in MOH. We'll be in touch shortly! </h3></div>
+		<%end%>
+			<h1 style="font-size: 2em;"><span class="eyebrow">Mission of Hope Haiti</span>
+			<br />
+			Internship Application</h1>
+			<p>
+			If you would like to learn more about how you or a group can serve on a short-term mission trip with Mission of Hope, Haiti, please fill out and submit the form below. Once we have received your request, our Mission Trips Coordinator will be in touch with you.
+			</p>
+			<p>To request more information on Medical Mission Trips, please click <a href="/request_info_medical">here.</a></p>
+			
+			<div class="forms">
+				<% if @isvalid.nil?%>
+				<form method="post">
+					<input type="text" name="formname" value="" style="display:none;"/>
+					<div class="field">* Application Date: <input id="txtname" type="text" name="fname"><br></div>
+					<div class="field">Term Desired for Internship: 
+						<select name="internship_term">
+							<option value="Spring">Spring</option>
+							<option value="Summer I">Summer I</option>
+							<option value="Summer II">Summer II</option>
+							<option value="Fall">Fall</option>
+						</select>
+					</div>
+					<div class="field">Type of Internship: 
+						<select name="internship_type">
+							<option value="3Cords">3Cords</option>
+							<option value="Business Development">Business Development</option>
+							<option value="Church Advancement">Church Advancement</option>
+							<option value="Medical">Medical</option>
+							<option value="Village of Hope">Village of Hope</option>
+						</select>
+					</div>
+					<div class="field">* First Name: <input id="txtname" type="text" name="fname"><br></div>
+					<div class="field">* Last Name: <input id="txtlname" type="text" name="lname"><br></div>
+					<div class="field">* Age: <input id="txtage" type="text" name="age"><br></div>
+					<div class="field">* Date of Birth: <input id="txtdob" type="text" name="dob" value="mm/dd/yyyy"></div>
+					<div class="field">* Gender: 
+						<input id="radiogender" type="radio" name="radiogender" value="male"> Male
+						<input id="radiogender" type="radio" name="radiogender" value="female"> Female
+					</div>
+					<!--<div class="field checkbox" style="margin-top: -3px;padding-bottom: 15px;"><input type="checkbox" name="childnumber" id="childnumber" style="width:12px;"> I am interested in taking a Medical Mission Trip (<a href="/medical_mission_trips">learn more about medical mission trips</a>).</a></div>-->
+					<div class="field">Street Address: <input id="txtstreet" type="text" name="street"><br></div>
+					<div class="field">City: <input id="txtcity" type="text" name="city"><br></div>
+					<div class="field">State: <input id="txtstate" type="text" name="state"><br></div>
+					<div class="field">Zip: <input id="txtzip" type="text" name="zip"><br></div>
+					<div class="field">Organization: <input id="txtorg" type="text" name="organization"><br></div>
+					<div class="field">Church: <input id="txtchurch" type="text" name="church"><br></div>
+					<div class="field">Number of Participants: <input id="txtpart" type="text" name="participants"><br></div>
+					<div class="field">Preferred Trip Month: 
+						<select name="trip_month">
+							<option value="January">January</option>
+							<option value="February">February</option>
+							<option value="March">March</option>
+							<option value="April">April</option>
+							<option value="May">May</option>
+							<option value="June">June</option>
+							<option value="July">July</option>
+							<option value="August">August</option>
+							<option value="September">September</option>
+							<option value="October">October</option>
+							<option value="November">November</option>
+							<option value="December">December</option>
+						</select>
+					</div>
+					<div class="field" style="clear: both; display:none;">Comments: <textarea id="txtmessage" type="textarea" name="letter"></textarea></div>
+					 <div class="actions"><input type="submit" value="Submit My Request" onclick="return validate();"></div>
+				<p>&nbsp;</p>
+				</form>		
+				<%end%>
+				
+			</div>
+
+		
+			<div class="clearfix" style="height:40px;">
+				<!--x-->
+			</div>
+			
+			</div>
