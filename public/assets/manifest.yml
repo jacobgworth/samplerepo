@@ -51,6 +51,8 @@ caprojects-inset-water.jpg: caprojects-inset-water-b06f6666d65f209af111580a95774
 caprojects-inset-water/index.jpg: caprojects-inset-water-b06f6666d65f209af111580a95774cc8.jpg
 captionthis.jpg: captionthis-1848f0d26fd560b2503c5cd90be119c1.jpg
 captionthis/index.jpg: captionthis-1848f0d26fd560b2503c5cd90be119c1.jpg
+child-sponsorship-success-story.jpg: child-sponsorship-success-story-d36a9fa8890960e291987776d4d2740a.jpg
+child-sponsorship-success-story/index.jpg: child-sponsorship-success-story-d36a9fa8890960e291987776d4d2740a.jpg
 christmas-coffee.png: christmas-coffee-47ac66cd1fa763f4e95c74e9c2c497da.png
 christmas-coffee/index.png: christmas-coffee-47ac66cd1fa763f4e95c74e9c2c497da.png
 coffee-large.png: coffee-large-042af7e84c9d55b5325f24b3ec51adb6.png
@@ -833,8 +835,8 @@ videos.js: videos-139877949a1ec6177dc206292d67d59c.js
 videos/index.js: videos-139877949a1ec6177dc206292d67d59c.js
 advancement.css: advancement-98b6cfc3ea616cce5ae0889da2c9940b.css
 advancement/index.css: advancement-98b6cfc3ea616cce5ae0889da2c9940b.css
-application.css: application-8784e7077c9657dc9b5f8557113d8e41.css
-application/index.css: application-8784e7077c9657dc9b5f8557113d8e41.css
+application.css: application-e4fead0fed97e6db61bbb3b8d27310f1.css
+application/index.css: application-e4fead0fed97e6db61bbb3b8d27310f1.css
 categories.css: categories-98b6cfc3ea616cce5ae0889da2c9940b.css
 categories/index.css: categories-98b6cfc3ea616cce5ae0889da2c9940b.css
 category.css: category-98b6cfc3ea616cce5ae0889da2c9940b.css
@@ -875,8 +877,8 @@ sessions.css: sessions-98b6cfc3ea616cce5ae0889da2c9940b.css
 sessions/index.css: sessions-98b6cfc3ea616cce5ae0889da2c9940b.css
 sponsorship.css: sponsorship-98b6cfc3ea616cce5ae0889da2c9940b.css
 sponsorship/index.css: sponsorship-98b6cfc3ea616cce5ae0889da2c9940b.css
-style.css: style-80ec14a4776dde591b4676f08606e9a9.css
-style/index.css: style-80ec14a4776dde591b4676f08606e9a9.css
+style.css: style-230b02cea49e7bd3bb1acdfede2b739a.css
+style/index.css: style-230b02cea49e7bd3bb1acdfede2b739a.css
 subscriptions.css: subscriptions-98b6cfc3ea616cce5ae0889da2c9940b.css
 subscriptions/index.css: subscriptions-98b6cfc3ea616cce5ae0889da2c9940b.css
 tags.css: tags-98b6cfc3ea616cce5ae0889da2c9940b.css
