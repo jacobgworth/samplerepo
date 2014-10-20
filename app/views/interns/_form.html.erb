@@ -396,8 +396,8 @@
     <%= f.text_area :drugs %>
   </div>
   <div class="field">
-    <%= f.label :emergency_1 %><br />
-    <%= f.text_field :emergency_1 %>
+    <%= f.label "Emergency Contact"%><br />
+    <%= f.text_field :emergency_1_name %>
   </div>
   <div class="field">
     <%= f.label :emergency_1_relationship %><br />
@@ -544,8 +544,8 @@
     <%= f.check_box :organized_trait %>
   </div>
   <div class="field">
-    <%= f.label :quiet %><br />
-    <%= f.text_field :quiet %>
+    <%= f.label "Quiet" %><br />
+    <%= f.check_box :quiet_trait %>
   </div>
   <div class="field">
     <%= f.label :moody_trait %><br />
@@ -561,7 +561,7 @@
   </div>
   <div class="field">
     <%= f.label :genuine_trait %><br />
-    <%= f.text_field :genuine_trait %>
+    <%= f.check_box :genuine_trait %>
   </div>
   <div class="field">
     <%= f.label :detail_oriented_trait %><br />
