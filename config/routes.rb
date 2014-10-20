@@ -1,5 +1,8 @@
 Mohhaiti::Application.routes.draw do
   
+  resources :interns
+
+
   resources :subscriptions
   
     

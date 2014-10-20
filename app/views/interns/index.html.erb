@@ -1,0 +1,349 @@
+<h1>Listing interns</h1>
+
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+    <th>Birthday</th>
+    <th>Gender</th>
+    <th>Termdesired</th>
+    <th>Internship type</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Marital status</th>
+    <th>How long married</th>
+    <th>Spouse name</th>
+    <th>Home phone</th>
+    <th>Cell phone</th>
+    <th>Can text</th>
+    <th>Best call time</th>
+    <th>Email</th>
+    <th>Tshirt size</th>
+    <th>Ever married</th>
+    <th>Ever children</th>
+    <th>Ever arrested</th>
+    <th>Ever criminal convicted</th>
+    <th>Ever explainers</th>
+    <th>Future plans</th>
+    <th>Accepted christ</th>
+    <th>Water baptized</th>
+    <th>Attend church</th>
+    <th>Church member</th>
+    <th>Home church</th>
+    <th>Denomination</th>
+    <th>Church city</th>
+    <th>Church state</th>
+    <th>Church phone</th>
+    <th>Senior pastor</th>
+    <th>Youth pastor</th>
+    <th>How long attended</th>
+    <th>Highest education level</th>
+    <th>Education other</th>
+    <th>Hs attended</th>
+    <th>Hs city</th>
+    <th>Hs state</th>
+    <th>Hs graduate</th>
+    <th>Hs class</th>
+    <th>College</th>
+    <th>Major</th>
+    <th>College city</th>
+    <th>College state</th>
+    <th>College graduated</th>
+    <th>College dates attended</th>
+    <th>Other schools</th>
+    <th>Mission experience</th>
+    <th>Mission city</th>
+    <th>Mission state</th>
+    <th>Currently employed</th>
+    <th>Current employer</th>
+    <th>Ce hired</th>
+    <th>Ce position</th>
+    <th>Ce city</th>
+    <th>Ce state</th>
+    <th>Ce phone</th>
+    <th>Past employer</th>
+    <th>Pe hired</th>
+    <th>Pe position</th>
+    <th>Pe city</th>
+    <th>Pe state</th>
+    <th>Pe phone</th>
+    <th>Father name</th>
+    <th>Father address</th>
+    <th>Father city</th>
+    <th>Father state</th>
+    <th>Father phone</th>
+    <th>Father work phone</th>
+    <th>Father occupation</th>
+    <th>Father denomination</th>
+    <th>Father accepted christ</th>
+    <th>Father consent</th>
+    <th>Mother name</th>
+    <th>Mother address</th>
+    <th>Mother city</th>
+    <th>Mother state</th>
+    <th>Mother phone</th>
+    <th>Mother work phone</th>
+    <th>Mother occupation</th>
+    <th>Mother denomination</th>
+    <th>Mother accepted christ</th>
+    <th>Mother consent</th>
+    <th>Siblings</th>
+    <th>Parent feelings</th>
+    <th>Health insurance</th>
+    <th>Insurance provider</th>
+    <th>Health description</th>
+    <th>Physical limitation</th>
+    <th>Medications</th>
+    <th>Drugs</th>
+    <th>Emergency 1</th>
+    <th>Emergency 1 relationship</th>
+    <th>Emergency 1 phone</th>
+    <th>Emergency 2 name</th>
+    <th>Emergency 2 relationship</th>
+    <th>Emergency 2 phone</th>
+    <th>Foreign language</th>
+    <th>What languages</th>
+    <th>Language proficiency</th>
+    <th>Cpr cert</th>
+    <th>Firstaid cert</th>
+    <th>Other cert</th>
+    <th>Certifications</th>
+    <th>Child experience</th>
+    <th>Ministry training</th>
+    <th>Tech training</th>
+    <th>Ref1 name</th>
+    <th>Ref1 rel</th>
+    <th>Ref2 name</th>
+    <th>Ref2 rel</th>
+    <th>Ref3 name</th>
+    <th>Ref3 rel</th>
+    <th>Ref4 name</th>
+    <th>Ref4 rel</th>
+    <th>Vbs experience</th>
+    <th>Camp experience</th>
+    <th>Other child experience</th>
+    <th>Homeless experience</th>
+    <th>Senior experience</th>
+    <th>Worship team experience</th>
+    <th>Lighting experience</th>
+    <th>Photography experience</th>
+    <th>Modest trait</th>
+    <th>Mature trait</th>
+    <th>Kind trait</th>
+    <th>Abrasive trait</th>
+    <th>Organized trait</th>
+    <th>Quiet</th>
+    <th>Moody trait</th>
+    <th>Teachable trait</th>
+    <th>Self motivated trait</th>
+    <th>Genuine trait</th>
+    <th>Detail oriented trait</th>
+    <th>Loving trait</th>
+    <th>Sarcastic trait</th>
+    <th>Selfish trait</th>
+    <th>Trustworthy trait</th>
+    <th>Tactful trait</th>
+    <th>Compassionate trait</th>
+    <th>Hard working trait</th>
+    <th>Adaptive trait</th>
+    <th>Lazy trait</th>
+    <th>Punctual trait</th>
+    <th>Sensitive trait</th>
+    <th>Socially awkward trait</th>
+    <th>Patient trait</th>
+    <th>Considerate trait</th>
+    <th>Motivated trait</th>
+    <th>Impulsive trait</th>
+    <th>Relaxed trait</th>
+    <th>Friendly trait</th>
+    <th>Determined trait</th>
+    <th>Leader trait</th>
+    <th>Describe the gospel</th>
+    <th>Christian experience</th>
+    <th>Influential experiences</th>
+    <th>Why intern</th>
+    <th>Why moh wants</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @interns.each do |intern| %>
+  <tr>
+    <td><%= intern.firstname %></td>
+    <td><%= intern.lastname %></td>
+    <td><%= intern.age %></td>
+    <td><%= intern.birthday %></td>
+    <td><%= intern.gender %></td>
+    <td><%= intern.termdesired %></td>
+    <td><%= intern.internship_type %></td>
+    <td><%= intern.address %></td>
+    <td><%= intern.city %></td>
+    <td><%= intern.state %></td>
+    <td><%= intern.zip %></td>
+    <td><%= intern.marital_status %></td>
+    <td><%= intern.how_long_married %></td>
+    <td><%= intern.spouse_name %></td>
+    <td><%= intern.home_phone %></td>
+    <td><%= intern.cell_phone %></td>
+    <td><%= intern.can_text %></td>
+    <td><%= intern.best_call_time %></td>
+    <td><%= intern.email %></td>
+    <td><%= intern.tshirt_size %></td>
+    <td><%= intern.ever_married %></td>
+    <td><%= intern.ever_children %></td>
+    <td><%= intern.ever_arrested %></td>
+    <td><%= intern.ever_criminal_convicted %></td>
+    <td><%= intern.ever_explainers %></td>
+    <td><%= intern.future_plans %></td>
+    <td><%= intern.accepted_Christ %></td>
+    <td><%= intern.water_baptized %></td>
+    <td><%= intern.attend_church %></td>
+    <td><%= intern.church_member %></td>
+    <td><%= intern.home_church %></td>
+    <td><%= intern.denomination %></td>
+    <td><%= intern.church_city %></td>
+    <td><%= intern.church_state %></td>
+    <td><%= intern.church_phone %></td>
+    <td><%= intern.senior_pastor %></td>
+    <td><%= intern.youth_pastor %></td>
+    <td><%= intern.how_long_attended %></td>
+    <td><%= intern.highest_education_level %></td>
+    <td><%= intern.education_other %></td>
+    <td><%= intern.hs_attended %></td>
+    <td><%= intern.hs_city %></td>
+    <td><%= intern.hs_state %></td>
+    <td><%= intern.hs_graduate %></td>
+    <td><%= intern.hs_class %></td>
+    <td><%= intern.college %></td>
+    <td><%= intern.major %></td>
+    <td><%= intern.college_city %></td>
+    <td><%= intern.college_state %></td>
+    <td><%= intern.college_graduated %></td>
+    <td><%= intern.college_dates_attended %></td>
+    <td><%= intern.other_schools %></td>
+    <td><%= intern.mission_experience %></td>
+    <td><%= intern.mission_city %></td>
+    <td><%= intern.mission_state %></td>
+    <td><%= intern.currently_employed %></td>
+    <td><%= intern.current_employer %></td>
+    <td><%= intern.ce_hired %></td>
+    <td><%= intern.ce_position %></td>
+    <td><%= intern.ce_city %></td>
+    <td><%= intern.ce_state %></td>
+    <td><%= intern.ce_phone %></td>
+    <td><%= intern.past_employer %></td>
+    <td><%= intern.pe_hired %></td>
+    <td><%= intern.pe_position %></td>
+    <td><%= intern.pe_city %></td>
+    <td><%= intern.pe_state %></td>
+    <td><%= intern.pe_phone %></td>
+    <td><%= intern.father_name %></td>
+    <td><%= intern.father_address %></td>
+    <td><%= intern.father_city %></td>
+    <td><%= intern.father_state %></td>
+    <td><%= intern.father_phone %></td>
+    <td><%= intern.father_work_phone %></td>
+    <td><%= intern.father_occupation %></td>
+    <td><%= intern.father_denomination %></td>
+    <td><%= intern.father_accepted_Christ %></td>
+    <td><%= intern.father_consent %></td>
+    <td><%= intern.mother_name %></td>
+    <td><%= intern.mother_address %></td>
+    <td><%= intern.mother_city %></td>
+    <td><%= intern.mother_state %></td>
+    <td><%= intern.mother_phone %></td>
+    <td><%= intern.mother_work_phone %></td>
+    <td><%= intern.mother_occupation %></td>
+    <td><%= intern.mother_denomination %></td>
+    <td><%= intern.mother_accepted_Christ %></td>
+    <td><%= intern.mother_consent %></td>
+    <td><%= intern.siblings %></td>
+    <td><%= intern.parent_feelings %></td>
+    <td><%= intern.health_insurance %></td>
+    <td><%= intern.insurance_provider %></td>
+    <td><%= intern.health_description %></td>
+    <td><%= intern.physical_limitation %></td>
+    <td><%= intern.medications %></td>
+    <td><%= intern.drugs %></td>
+    <td><%= intern.emergency_1 %></td>
+    <td><%= intern.emergency_1_relationship %></td>
+    <td><%= intern.emergency_1_phone %></td>
+    <td><%= intern.emergency_2_name %></td>
+    <td><%= intern.emergency_2_relationship %></td>
+    <td><%= intern.emergency_2_phone %></td>
+    <td><%= intern.foreign_language %></td>
+    <td><%= intern.what_languages %></td>
+    <td><%= intern.language_proficiency %></td>
+    <td><%= intern.cpr_cert %></td>
+    <td><%= intern.firstaid_cert %></td>
+    <td><%= intern.other_cert %></td>
+    <td><%= intern.certifications %></td>
+    <td><%= intern.child_experience %></td>
+    <td><%= intern.ministry_training %></td>
+    <td><%= intern.tech_training %></td>
+    <td><%= intern.ref1_name %></td>
+    <td><%= intern.ref1_rel %></td>
+    <td><%= intern.ref2_name %></td>
+    <td><%= intern.ref2_rel %></td>
+    <td><%= intern.ref3_name %></td>
+    <td><%= intern.ref3_rel %></td>
+    <td><%= intern.ref4_name %></td>
+    <td><%= intern.ref4_rel %></td>
+    <td><%= intern.vbs_experience %></td>
+    <td><%= intern.camp_experience %></td>
+    <td><%= intern.other_child_experience %></td>
+    <td><%= intern.homeless_experience %></td>
+    <td><%= intern.senior_experience %></td>
+    <td><%= intern.worship_team_experience %></td>
+    <td><%= intern.lighting_experience %></td>
+    <td><%= intern.photography_experience %></td>
+    <td><%= intern.modest_trait %></td>
+    <td><%= intern.mature_trait %></td>
+    <td><%= intern.kind_trait %></td>
+    <td><%= intern.abrasive_trait %></td>
+    <td><%= intern.organized_trait %></td>
+    <td><%= intern.quiet %></td>
+    <td><%= intern.moody_trait %></td>
+    <td><%= intern.teachable_trait %></td>
+    <td><%= intern.self_motivated_trait %></td>
+    <td><%= intern.genuine_trait %></td>
+    <td><%= intern.detail_oriented_trait %></td>
+    <td><%= intern.loving_trait %></td>
+    <td><%= intern.sarcastic_trait %></td>
+    <td><%= intern.selfish_trait %></td>
+    <td><%= intern.trustworthy_trait %></td>
+    <td><%= intern.tactful_trait %></td>
+    <td><%= intern.compassionate_trait %></td>
+    <td><%= intern.hard_working_trait %></td>
+    <td><%= intern.adaptive_trait %></td>
+    <td><%= intern.lazy_trait %></td>
+    <td><%= intern.punctual_trait %></td>
+    <td><%= intern.sensitive_trait %></td>
+    <td><%= intern.socially_awkward_trait %></td>
+    <td><%= intern.patient_trait %></td>
+    <td><%= intern.considerate_trait %></td>
+    <td><%= intern.motivated_trait %></td>
+    <td><%= intern.impulsive_trait %></td>
+    <td><%= intern.relaxed_trait %></td>
+    <td><%= intern.friendly_trait %></td>
+    <td><%= intern.determined_trait %></td>
+    <td><%= intern.leader_trait %></td>
+    <td><%= intern.describe_the_Gospel %></td>
+    <td><%= intern.Christian_experience %></td>
+    <td><%= intern.influential_experiences %></td>
+    <td><%= intern.why_intern %></td>
+    <td><%= intern.why_moh_wants %></td>
+    <td><%= link_to 'Show', intern %></td>
+    <td><%= link_to 'Edit', edit_intern_path(intern) %></td>
+    <td><%= link_to 'Destroy', intern, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Intern', new_intern_path %>
