@@ -1,6 +1,60 @@
 <% content_for(:head) do %>
 	<%= javascript_include_tag :validate_volunteer %>
 <% end %>
+<style>
+
+.formsLong {
+    background-color: #ccb99a;
+    border: 1px solid #c2b092;
+    padding-left: 20px;
+    padding-right: 47px;
+}
+
+.formsLong h3 {
+	margin-top:20px;
+}
+
+.formsLong label {
+	font-size:1.1em;
+}
+.formsLong input {
+	width:80%;
+	padding:5px;
+	margin-top:5px;
+}
+
+.formsLong input[type="radio"], .formsLong input[type="checkbox"], .formsLong input[type="submit"] {
+	width:auto;
+	margin-top:10px;
+} 
+
+.formsLong select {
+	width:80%;
+	margin-top:5px;
+} 
+
+.formsLong textarea {
+	margin-top:5px;
+}
+.formsLong .field {
+	margin:20px 0;
+}
+.fieldHalf {
+	float:left;
+	width:445px;
+	margin:20px 0;
+}
+.fieldThirds {
+	float:left;
+	width:297px;
+	margin:20px 0;
+}
+
+fieldset {
+	
+}
+
+</style>
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 
@@ -16,12 +70,13 @@
 			</p>
 			<p>To request more information on Medical Mission Trips, please click <a href="/request_info_medical">here.</a></p>
 			
-			<div class="forms">
+			<div class="formsLong">
 				<% if @isvalid.nil?%>
 				<form method="post">
-					<input type="text" name="formname" value="" style="display:none;"/>
-					<div class="field">* Application Date: <input id="txtname" type="text" name="fname"><br></div>
-					<div class="field">Term Desired for Internship: 
+				<fieldset>
+					<h3>General Information</h3>
+					<div class="fieldThirds"><label>Application Date:</label><br> <input id="txtname" type="text" name="fname"></div>
+					<div class="fieldThirds"><label>Term Desired: <br></label>
 						<select name="internship_term">
 							<option value="Spring">Spring</option>
 							<option value="Summer I">Summer I</option>
@@ -29,7 +84,7 @@
 							<option value="Fall">Fall</option>
 						</select>
 					</div>
-					<div class="field">Type of Internship: 
+					<div class="fieldThirds"><label>Internship Type:</label> <br>
 						<select name="internship_type">
 							<option value="3Cords">3Cords</option>
 							<option value="Business Development">Business Development</option>
@@ -38,39 +93,380 @@
 							<option value="Village of Hope">Village of Hope</option>
 						</select>
 					</div>
-					<div class="field">* First Name: <input id="txtname" type="text" name="fname"><br></div>
-					<div class="field">* Last Name: <input id="txtlname" type="text" name="lname"><br></div>
-					<div class="field">* Age: <input id="txtage" type="text" name="age"><br></div>
-					<div class="field">* Date of Birth: <input id="txtdob" type="text" name="dob" value="mm/dd/yyyy"></div>
-					<div class="field">* Gender: 
+					
+					<div class="fieldHalf clearfix"><label>First Name:</label><br> <input id="txtname" type="text" name="fname"></div>
+					<div class="fieldHalf"><label>Last Name:</label><br> <input id="txtlname" type="text" name="lname"></div>
+					
+					<div class="fieldThirds clearfix"><label>Age:</label><br> <input id="txtage" type="text" name="age"></div>
+					<div class="fieldThirds"><label>Date of Birth:</label><br> <input id="txtdob" type="text" name="dob" value="mm/dd/yyyy"></div>
+					<div class="fieldThirds"><label>Gender: </label><br>
 						<input id="radiogender" type="radio" name="radiogender" value="male"> Male
 						<input id="radiogender" type="radio" name="radiogender" value="female"> Female
 					</div>
-					<!--<div class="field checkbox" style="margin-top: -3px;padding-bottom: 15px;"><input type="checkbox" name="childnumber" id="childnumber" style="width:12px;"> I am interested in taking a Medical Mission Trip (<a href="/medical_mission_trips">learn more about medical mission trips</a>).</a></div>-->
-					<div class="field">Street Address: <input id="txtstreet" type="text" name="street"><br></div>
-					<div class="field">City: <input id="txtcity" type="text" name="city"><br></div>
-					<div class="field">State: <input id="txtstate" type="text" name="state"><br></div>
-					<div class="field">Zip: <input id="txtzip" type="text" name="zip"><br></div>
-					<div class="field">Organization: <input id="txtorg" type="text" name="organization"><br></div>
-					<div class="field">Church: <input id="txtchurch" type="text" name="church"><br></div>
-					<div class="field">Number of Participants: <input id="txtpart" type="text" name="participants"><br></div>
-					<div class="field">Preferred Trip Month: 
-						<select name="trip_month">
-							<option value="January">January</option>
-							<option value="February">February</option>
-							<option value="March">March</option>
-							<option value="April">April</option>
-							<option value="May">May</option>
-							<option value="June">June</option>
-							<option value="July">July</option>
-							<option value="August">August</option>
-							<option value="September">September</option>
-							<option value="October">October</option>
-							<option value="November">November</option>
-							<option value="December">December</option>
-						</select>
+					
+					<div class="field clearfix"><label>Street Address:</label><br> <input id="txtstreet" type="text" name="street"></div>
+					<div class="fieldThirds"><label>City:</label><br> <input id="txtcity" type="text" name="city"></div>
+					<div class="fieldThirds"><label>State:</label><br> <input id="txtstate" type="text" name="state"></div>
+					<div class="fieldThirds"><label>Zip:</label><br> <input id="txtzip" type="text" name="zip"></div>
+					
+					<div class="fieldThirds clearfix"><label>Marital Status: </label><br>
+						<input id="radiomarital" type="radio" name="radiomarital" value="single"> Single
+						<input id="radiomarital" type="radio" name="radiomarital" value="married"> Married
 					</div>
-					<div class="field" style="clear: both; display:none;">Comments: <textarea id="txtmessage" type="textarea" name="letter"></textarea></div>
+					<div class="fieldThirds"><label>If married, how long?</label> <input id="txtmarried" type="text" name="married"></div>
+					<div class="fieldThirds"><label>Spouse's Name:</label> <input id="txtspouse" type="text" name="spouse"></div>
+					
+					<div class="fieldHalf clearfix"><label>Home Phone Number:</label> <input id="txthomephone" type="text" name="homephone"></div>
+					<div class="fieldHalf"><label>Cell Phone Number:</label> <input id="txtcellphone" type="text" name="cellphone"></div>
+					
+					<div class="fieldHalf clearfix"><label>Can we text you?<br></label> 
+						<input id="radiotext" type="radio" name="radiotext" value="radioyes"> Yes
+						<input id="radiotext" type="radio" name="radiotext" value="radiono"> No
+					</div>
+					<div class="fieldHalf"><label>Best time to call: <input id="txtbesttime" type="text" name="besttime"></div>
+					
+					<div class="fieldHalf clearfix"><label>Email Address:</label> <input id="txtemail" type="text" name="email"></div>
+					<div class="fieldHalf"><label>T-shirt Size:</label> <input id="txttshirt" type="text" name="tshirt"></div>
+					
+					<div class="fieldHalf clearfix"><label>Have you ever been married? </label><br>
+						<input id="radiomarried" type="radio" name="radiomarried" value="yes"> Yes
+						<input id="radiomarried" type="radio" name="radiomarried" value="no"> No
+					</div>
+					<div class="fieldHalf"><label>Have you ever had children?</label><br>
+						<input id="radiochildren" type="radio" name="radiochildren" value="yes"> Yes
+						<input id="radiochildren" type="radio" name="radiochildren" value="no"> No
+					</div>
+					<div class="fieldHalf"><label>Have you ever been arrested? </label><br>
+						<input id="radioarrested" type="radio" name="radioarrested" value="yes"> Yes
+						<input id="radioarrested" type="radio" name="radioarrested" value="no"> No
+					</div>
+					<div class="fieldHalf"><label>Have you ever been convicted of a felony or misdemeanor?</label><br>
+						<input id="radioconvicted" type="radio" name="radioconvicted" value="yes"> Yes
+						<input id="radioconvicted" type="radio" name="radioconvicted" value="no"> No
+					</div>
+					
+					<div class="field clearfix"><label>If you answered "yes" to any of the above, please explain:</label>
+						<textarea rows="4" id="txtareayesexplain" name="explain1">Enter your reply here.</textarea>
+					</div>
+						
+					<div class="field clearfix"><label>What are your plans after this internship?</label>
+						<textarea rows="4" id="txtareaplans" name="plans">Enter your reply here.</textarea>
+					</div>
+					
+					</fieldset>
+					
+					<fieldset>
+						<h3>Spirituality</h3>
+						<div class="fieldHalf"><label>Have you accepted Jesus Christ as your personal Savior?</label><br>
+							<input id="radiosavior" type="radio" name="radiosavior" value="yes"> Yes
+							<input id="radiosavior" type="radio" name="radiosavior" value="no"> No
+						</div>
+						<div class="fieldHalf"><label>Have you been baptized in water?</label><br>
+							<input id="radiobaptized" type="radio" name="radiobaptized" value="yes"> Yes
+							<input id="radiobaptized" type="radio" name="radiobaptized" value="no"> No
+						</div>
+						
+						<div class="fieldHalf clearfix"><label>Do you attend church regularly?</label><br>
+							<input id="radiochurch" type="radio" name="radiochurch" value="yes"> Yes
+							<input id="radiochurch" type="radio" name="radiochurch" value="no"> No
+						</div>
+						<div class="fieldHalf"><label>Are you a member?</label><br>
+							<input id="radiomember" type="radio" name="radiomember" value="yes"> Yes
+							<input id="radiomember" type="radio" name="radiomember" value="no"> No
+						</div>
+						
+						<div class="fieldHalf clearfix"><label>Home Church:</label><br> <input id="txtchurch" type="text" name="church"></div>
+						<div class="fieldHalf"><label>Denomination:</label><br> <input id="txtdenomination" type="text" name="denomination"></div>
+						<div class="fieldThirds clearfix"><label>City:</label><br> <input id="txtchurchcity" type="text" name="churchcity"></div>
+						<div class="fieldThirds"><label>State:</label><br> <input id="txtchurchstate" type="text" name="churchstate"></div>
+						<div class="fieldThirds"><label>Phone Number: </label><br><input id="txtchurchphone" type="text" name="churchphone"></div>
+						<div class="fieldThirds clearfix"><label>Senior Pastor:</label><br> <input id="txtseniorpastor" type="text" name="seniorpastor"></div>
+						<div class="fieldThirds"><label>Youth Pastor:</label> <input id="txtyouthpastor" type="text" name="youthpastor"></div>
+						<div class="fieldThirds"><label>How long have you attended?</label> <input id="txtchurchlongattended" type="text" name="churchlongattended"></div>
+					</fieldset>
+					
+					<fieldset>
+						<h3>Education</h3>
+						<div class="fieldThirds">
+							<label>Highest Level of Education Completed:</label><br>
+						<select>
+						  <option value="GED">GED</option>
+						  <option value="High School">High School</option>
+						  <option value="Trade School">Trade School</option>
+						  <option value="Community College">Community College</option>
+						  <option value="4 Year University">4 Year University</option>
+						  <option value="Master's Degree">Master's Degree</option>
+						  <option value="Other">Other</option>
+						</select>
+						</div>
+						<div class="fieldThirds"><label>If other, please describe:</label><br> 
+							<input id="txthighestedother" type="text" name="highestedother"></div>
+						
+						<div class="fieldThirds clearfix"><label>High School Attended:</label><br> <input id="txths" type="text" name="highschool"></div>
+						<div class="fieldThirds"><label>City:</label><br> <input id="txthscity" type="text" name="highschoolcity"></div>
+						<div class="fieldThirds"><label>State:</label><br> <input id="txthsstate" type="text" name="highschoolstate"></div>
+						
+						<div class="fieldThirds clearfix"><label>Did you graduate?</label><br> <input id="txthsgrad" type="text" name="highschoolgrad"></div>
+						<div class="fieldThirds"><label>Year:</label><br> <input id="txthsyear" type="text" name="highschoolgradyear"></div>
+						
+						<div class="fieldThirds clearfix"><label>College Attended: </label><br><input id="txtcollege" type="text" name="college"></div>
+						<div class="fieldThirds"><label>Major of Study:</label><br> <input id="txtcollegemajor" type="text" name="collegemajor"></div>
+						
+						<div class="fieldThirds clearfix"><label>City:</label><br> <input id="txtcollegecity" type="text" name="collegecity"></div>
+						<div class="fieldThirds"><label>State:</label><br> <input id="txtcollegestate" type="text" name="collegestate"></div>
+						<div class="fieldThirds clearfix"><label>Did you graduate?</label><br> <input id="txtcollegegrad" type="text" name="collegegrad"></div>
+						<div class="fieldThirds"><label>Dates Attended:</label><br> <input id="txtcollegeyear" type="text" name="collegegradyear"></div>
+						<div class="field clearfix"><label>Other schools attended, please include pertinent certifications or degrees:</label><br> <input id="txtcollegecity" type="text" name="collegecity"></div>
+					</fieldset>
+					
+					<fieldset>
+						<h3>Experience</h3>
+						<div class="field"><label>Have you previously been on a mission trip? If yes, with what organization? </label><br>
+							<input id="txtmission" type="text" name="mission"></div>
+						<div class="fieldThirds clearfix"><label>City:</label><br> <input id="txtmissioncity" type="text" name="missioncity"></div>
+						<div class="fieldThirds"><label>State:</label><br> <input id="txtmissionstate" type="text" name="missionstate"></div>
+						
+						<div class="field clearfix"><label>Are you currently employed?</label><br> 
+						<input id="radioemployed" type="radio" name="radioemployed" value="yes"> Yes
+						<input id="radioemployed" type="radio" name="radioemployed" value="no"> No
+						</div>
+						
+						<div class="fieldThirds clearfix"><label>Current Employer:</label><br> <input id="txtemployer" type="text" name="employer"></div>
+						<div class="fieldThirds"><label>Date Hired:</label><br> <input id="txtcurrentemployerhired" type="text" name="currentemployerhired"></div>
+						<div class="fieldThirds"><label>Position:</label><br> <input id="txtcurrentemployerposition" type="text" name="currentemployerposition"></div>
+						
+						<div class="fieldThirds clearfix"><label>City:</label><br> <input id="txtcurrentemployercity" type="text" name="currentemployercity"></div>
+						<div class="fieldThirds"><label>State:</label><br> <input id="txtcurrentemployerstate" type="text" name="currentemployerstate"></div>
+						<div class="fieldThirds"><label>Phone:</label><br> <input id="txtcurrentemployerphone" type="text" name="currentemployerphone"></div>
+						
+						<div class="fieldThirds clearfix"><label>Past Employer:</label><br> <input id="txtemployer" type="text" name="pastemployer"></div>
+						<div class="fieldThirds"><label>Date Employed:</label><br> <input id="txtpastemployerhired" type="text" name="pastemployerhired"></div>
+						<div class="fieldThirds"><label>Position:</label><br> <input id="txtpastemployerposition" type="text" name="pastemployerposition"></div>
+						
+						<div class="fieldThirds clearfix"><label>City:</label><br> <input id="txtpastemployercity" type="text" name="pastemployercity"></div>
+						<div class="fieldThirds"><label>State:</label><br> <input id="txtpastemployerstate" type="text" name="pastemployerstate"></div>
+						<div class="fieldThirds"><label>Phone:</label><br> <input id="txtpastemployerphone" type="text" name="pastemployerphone"></div>
+					
+					</fieldset>
+					
+					<fieldset>
+						<h3>Family</h3>
+						<div class="fieldHalf"><label>Name of Father or Guardian: </label><br><input id="txtfather" type="text" name="father"></div>
+						<div class="fieldHalf"><label>Address: </label><br><input id="txtfatheraddress" type="text" name="fatheraddress"></div>
+						
+						<div class="fieldThirds clearfix"><label>City:</label><br> <input id="txtfathercity" type="text" name="fathercity"></div>
+						<div class="fieldThirds"><label>State:</label><br> <input id="txtfatherstate" type="text" name="fatherstate"></div>
+						<div class="fieldThirds"><label>Phone:</label><br> <input id="txtfatherphone" type="text" name="fatherphone"></div>
+						
+						<div class="fieldThirds clearfix"><label>Work Phone:</label><br> <input id="txtfatherworkphone" type="text" name="fatherworkphone"></div>
+						<div class="fieldThirds"><label>Occupation:</label><br> <input id="txtfatheroccupation" type="text" name="fatheroccupation"></div>
+						<div class="fieldThirds"><label>Denominational Preference:</label><br> <input id="txtfatherdenomination" type="text" name="fatherdenomination"></div>
+						
+						<div class="fieldThirds clearfix"><label>Has he accepted Christ?</label><br>
+						<input id="radiofatherchrist" type="radio" name="radiofatherchrist" value="yes"> Yes
+						<input id="radiofatherchrist" type="radio" name="radiofatherchrist" value="no"> No
+						</div>
+						
+						<div class="fieldHalf"><label>Are you applying to this internship with his consent?</label><br>
+						<input id="radiofatherconsent" type="radio" name="radiofatherconsent" value="yes"> Yes
+						<input id="radiofatherconsent" type="radio" name="radiofatherconsent" value="no"> No
+						</div>
+						
+						<div class="fieldHalf clearfix"><label>Name of Mother or Guardian:</label><br> <input id="txtmother" type="text" name="mother"></div>
+						<div class="fieldHalf"><label>Address:</label><br> <input id="txtmotheraddress" type="text" name="motheraddress"></div>
+						
+						<div class="fieldThirds clearfix"><label>City:</label><br> <input id="txtmothercity" type="text" name="mothercity"></div>
+						<div class="fieldThirds"><label>State:</label><br> <input id="txtmotherstate" type="text" name="motherstate"></div>
+						<div class="fieldThirds"><label>Phone: </label><br><input id="txtmotherphone" type="text" name="motherphone"></div>
+						<div class="fieldThirds clearfix"><label>Work Phone: </label><br><input id="txtmotherworkphone" type="text" name="motherworkphone"></div>
+						<div class="fieldThirds"><label>Occupation: </label><br><input id="txtmotheroccupation" type="text" name="motheroccupation"></div>
+						<div class="fieldThirds"><label>Denominational Preference:</label><br> <input id="txtmotherdenomination" type="text" name="motherdenomination"></div>
+						
+						<div class="fieldThirds clearfix"><label>Has she accepted Christ?</label><br>
+						<input id="radiomotherchrist" type="radio" name="radiomotherchrist" value="yes"> Yes
+						<input id="radiomotherchrist" type="radio" name="radiomotherchrist" value="no"> No
+						</div>
+						<div class="fieldHalf"><label>Are you applying to this internship with her consent?</label><br>
+						<input id="radiomotherconsent" type="radio" name="radiomotherconsent" value="yes"> Yes
+						<input id="radiomotherconsent" type="radio" name="radiomotherconsent" value="no"> No
+						</div>
+						
+						<div class="field clearfix">
+							<label>How many siblings do you have? Please list names and ages:</label><br> 
+							<textarea id="txtsiblings" type="textarea" name="siblings"></textarea>
+						</div>
+						
+						<div class="field">
+							<label>How do your parents feel about you coming into this internship program?</label><br>
+							<textarea id="txtparentsfeel" type="textarea" name="parentsfeel"></textarea>
+						</div>
+					
+					</fieldset>
+					
+					<fieldset>
+						<h3>Health</h3>
+						<div class="fieldThirds"><label>Do you have insurance?</label><br>
+						<input id="radioinsurance" type="radio" name="radioinsurance" value="yes"> Yes
+						<input id="radioinsurance" type="radio" name="radioinsurance" value="no"> No
+						</div>
+						<div class="fieldThirds"><label>Insurance Provider:</label><br> <input id="txtinsprovider" type="text" name="insprovider"></div>
+						<div class="fieldThirds"><label>How would you describe your health?</label><br> <input id="txthealth" type="text" name="health"></div>
+						<div class="field clearfix">
+							<label>List any physical limitations:</label><br>
+							<textarea id="txtphysicallimitations" type="textarea" name="physicallimitations"></textarea>
+						</div>
+						<div class="field clearfix">
+							<label>List any medications you are currently taking:</label><br>
+							<textarea id="txtmedications" type="textarea" name="medications"></textarea>
+						</div>
+						<div class="field clearfix">
+							<label>Have you ever taken drugs other than prescribed drugs? If yes, what drug and last date used?</label><br>
+							<textarea id="txtdrugs" type="textarea" name="drugs"></textarea>
+						</div>
+					</fieldset>
+					
+					<fieldset>
+						<h3>Emergency Information</h3>
+						<div class="fieldThirds"><label>Emergency Contact:</label><br> <input id="txtemergencycontact" type="text" name="emergencycontact"></div>
+						<div class="fieldThirds"><label>Relationship:</label><br> <input id="txtemergencycontactrelationship" type="text" name="emergencycontactrelationship"></div>
+						<div class="fieldThirds"><label>Phone Number:</label><br> <input id="txtemergencycontactphone" type="text" name="emergencycontactphone"></div>
+						
+						<div class="fieldThirds clearfix"><label>Emergency Contact (not parent):</label><br> <input id="txtemergencycontact2" type="text" name="emergencycontact2"></div>
+						<div class="fieldThirds"><label>Relationship:</label><br> <input id="txtemergencycontact2relationship" type="text" name="emergencycontact2relationship"></div>
+						<div class="fieldThirds"><label>Phone Number:</label><br> <input id="txtemergencycontact2phone" type="text" name="emergencycontact2phone"></div>
+					</fieldset>
+					
+					<fieldset>
+						<h3>Skills</h3>
+						<div class="fieldThirds"><label>Do you speak a foreign language?</label><br>
+						<input id="radiolanguage" type="radio" name="radiolanguage" value="yes"> Yes
+						<input id="radiolanguage" type="radio" name="radiolanguage" value="no"> No
+						</div>
+						<div class="fieldThirds"><label>If yes, which one(s)?</label><br> <input id="txtlanguage" type="text" name="language"></div>
+						<div class="fieldThirds"><label>Language Proficiency:</label><br> <input id="txtlangproficiency" type="text" name="langproficiency"></div>
+						<div class="fieldHalf clearfix">
+							<label>Do you have certification in the following?</label><br>
+							<input type="checkbox" name="certification" value="CPR">CPR<br>
+							<input type="checkbox" name="certification" value="First Aid">First Aid<br>
+							<input type="checkbox" name="certificaiton" value="Other">Other<br>
+						</div>
+						<div class="fieldHalf"><label>List other certifications:</label><br><input id="txtcertother" type="text" name="certother"></div>
+						<div class="field clearfix"><label>Do you have experience in dealing with abused, neglected, or abandoned children?</label><br>
+							<input id="radioabusedchildren" type="radio" name="radioabusedchildren" value="yes"> Yes
+							<input id="radioabusedchildren" type="radio" name="radioabusedchildren" value="no"> No
+						</div>
+						<div class="field">
+							<label>Do you have any vocational or ministry training? If yes, explain:</label><br>
+							<textarea id="txtvocationaltrainingexplain" type="textarea" name="vocationaltrainingexplain"></textarea>
+						</div>
+						<div class="field">
+							<label>Do you have any technical skills or training? If yes, explain.</label><br>
+							<textarea id="txttechskillsexplain" type="textarea" name="techskillsexplain"></textarea>
+						</div>
+					
+					</fieldset>
+					
+					<fieldset>
+						<h3>References</h3>
+						<p>You will need to secure 4 references to complete the application process.  They need to consist of 2 personal references (not former employers or relatives), 1 work or ministry reference, and 1 pastoral reference.  Please list the 4 people that you will be asking to send in references on your behalf.</p>
+						<div class="fieldHalf"><label>Name:</label><br><input id="txtreferencename1" type="text" name="referencename1"></div>
+						<div class="fieldHalf"><label>Relationship:</label><br><input id="referencerelationship1" type="text" name="referencerelationship1"></div>
+						<div class="fieldHalf"><label>Name:</label><br><input id="txtreferencename2" type="text" name="referencename2"></div>
+						<div class="fieldHalf"><label>Relationship:</label><br><input id="referencerelationship2" type="text" name="referencerelationship2"></div>
+						<div class="fieldHalf"><label>Name:</label><br><input id="txtreferencename3" type="text" name="referencename3"></div>
+						<div class="fieldHalf"><label>Relationship:</label><br><input id="referencerelationship3" type="text" name="referencerelationship3"></div>
+						<div class="fieldHalf"><label>Name:</label><br><input id="txtreferencename4" type="text" name="referencename4"></div>
+						<div class="fieldHalf"><label>Relationship:</label><br><input id="referencerelationship4" type="text" name="referencerelationship4"></div>
+					</fieldset>
+					
+					<fieldset>
+						<h3>Personal Profile</h3>
+						<div class="field">
+							<label>Do you have any previous experience in working with the following types of people or ministries?</label><br>
+							<div style="float:left; width:300px; padding:10px 0 20px 0;">
+								<input type="checkbox" id="personalprofileexperience" name="ppexperience" value="Children - VBS">Children - VBS<br>
+								<input type="checkbox" id="personalprofileexperience" name="ppexperience" value="Children - Overnight Camp">Children - Overnight Camp<br>
+								<input type="checkbox" id="personalprofileexperience" name="ppexperience" value="Children - Other">Children - Other<br>
+								<input type="checkbox" id="personalprofileexperience" name="ppexperience" value="Homeless">Homeless<br>
+							</div>
+							<div style="float:left; width:300px; padding:10px 0 20px 0;">
+								<input type="checkbox" id="personalprofileexperience" name="ppexperience" value="Senior Citizens">Senior Citizens<br>
+								<input type="checkbox" id="personalprofileexperience" name="ppexperience" value="Worship Team">Worship Team<br>
+								<input type="checkbox" id="personalprofileexperience" name="ppexperience" value="Photography">Photography<br>
+								<input type="checkbox" id="personalprofileexperience" name="ppexperience" value="Sound_Lights">Sound Lights<br>
+							</div>
+						</div>
+						<div class="field clearfix">
+							<label style="padding:20px 0;">Do you have any previous experience in working with the following types of people or ministries?</label><br>
+							<div style="float:left; width:300px; padding:10px 0 20px 0;">
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Modest">Modest<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Mature">Mature<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Kind">Kind<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Abrasive">Abrasive<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Organized">Organized<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Quiet">Quiet<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Moody">Moody<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Teachable">Teachable<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Self-Motivated">Self-Motivated<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Genuine">Genuine<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Detail Oriented">Detail Oriented<br>
+							</div>
+							<div style="float:left; width:300px; padding:10px 0 20px 0;">
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Loving">Loving<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Sarcastic">Sarcastic<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Selfish">Selfish<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Trustworthy">Trustworthy<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Tactful">Tactful<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Compassionate">Compassionate<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Hard Working">Hard Working<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Adaptive">Adaptive<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Lazy">Lazy<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Punctual">Punctual<br>
+							</div>
+							<div style="float:left; width:300px; padding:10px 0 20px 0;">
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Sensitive">Sensitive<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Socially Awkward">Socially Awkward<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Patient">Patient<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Considerate">Considerate<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Motivated">Motivated<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Impulsive">Impulsive<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Relaxed">Relaxed<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Friendly">Friendly<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Determined">Determined<br>
+								<input type="checkbox" id="personalprofildescribe" name="ppdescribe" value="Leader">Leader<br>
+							</div>
+						</div>
+						
+						<div class="field clearfix">
+							<label>In 75 words or less, how would you present the Gospel to an unbeliever?</label><br>
+							<textarea id="txtstrengths" type="textarea" name="strengths"></textarea>
+							
+							
+						</div>
+						
+					</fieldset>
+					
+					<fieldset>
+						<h3>Personal Sketch</h3>
+						 
+						<div class="field">
+							The Mission of Hope Internship Program desires to help its interns in every way possible. In order to do this, it is important for us to have some background information. 
+							<br><br>
+							<label>Provide a description of your Christian experience (past and present).</label><br>
+							<textarea id="txtstrengths" type="textarea" name="strengths"></textarea><br><br>
+							
+							<label>Describe experiences which have significantly influenced your life.</label><br>
+							<textarea id="txtweaknesses" type="textarea" name="weaknesses"></textarea><br><br>
+							
+							<label>Provide a statement on why you desire to attend the Internship Program.</label><br>
+							<textarea id="txtweaknesses" type="textarea" name="weaknesses"></textarea><br><br>
+							
+							<label>Explain why MOH Internship Program should accept you.</label><br>
+							<textarea id="txtweaknesses" type="textarea" name="weaknesses"></textarea>
+						</div>
+					</fieldset>					
+					
+					
 					 <div class="actions"><input type="submit" value="Submit My Request" onclick="return validate();"></div>
 				<p>&nbsp;</p>
 				</form>		

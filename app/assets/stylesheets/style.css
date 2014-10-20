@@ -3022,7 +3022,10 @@ span.year {
 .forms .field input {
     width: 100%;
 }
-.forms {
+.formsLong .field input {
+	width:auto;
+}
+.forms, .formsLong {
     background-color: #ccb99a;
     border: 1px solid #c2b092;
     padding-left: 20px;
