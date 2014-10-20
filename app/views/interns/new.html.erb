@@ -1,5 +1,74 @@
-<h1>New intern</h1>
+<% content_for(:head) do %>
+	<%= javascript_include_tag :validate_volunteer %>
+<% end %>
+<style>
 
-<%= render 'form' %>
+.formsLong {
+    background-color: #ccb99a;
+    border: 1px solid #c2b092;
+    padding-left: 20px;
+    padding-right: 47px;
+}
+
+.formsLong h3 {
+	margin-top:20px;
+}
+
+.formsLong label {
+	font-size:1.1em;
+}
+.formsLong input {
+	width:80%;
+	padding:5px;
+	margin-top:5px;
+}
+
+.formsLong input[type="radio"], .formsLong input[type="checkbox"], .formsLong input[type="submit"] {
+	width:auto;
+	margin-top:10px;
+} 
+
+.formsLong select {
+	width:80%;
+	margin-top:5px;
+} 
+
+.formsLong textarea {
+	margin-top:5px;
+}
+.formsLong .field {
+	margin:20px 0;
+}
+.fieldHalf {
+	float:left;
+	width:445px;
+	margin:20px 0;
+}
+.fieldThirds {
+	float:left;
+	width:297px;
+	margin:20px 0;
+}
+
+fieldset {
+	
+}
+
+</style>
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+	<div id="content" style="padding-top: 50px;">
+		<h1 style="font-size: 2em;"><span class="eyebrow">Mission of Hope Haiti</span>
+			<br />
+			Internship Application</h1>
+			<p>
+			If you would like to learn more about how you or a group can serve on a short-term mission trip with Mission of Hope, Haiti, please fill out and submit the form below. Once we have received your request, our Mission Trips Coordinator will be in touch with you.
+			</p>
+			<p>To request more information on Medical Mission Trips, please click <a href="/request_info_medical">here.</a></p>
+		<div class="formsLong">
+			<%= render 'form' %>
+		</div>
 
 <%= link_to 'Back', interns_path %>
+	</div>
+</div>

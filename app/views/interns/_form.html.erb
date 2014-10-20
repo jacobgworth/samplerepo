@@ -10,660 +10,673 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :firstname %><br />
-    <%= f.text_field :firstname %>
-  </div>
-  <div class="field">
-    <%= f.label :lastname %><br />
+  <fieldset>
+  	<h3>General Information</h3>
+  	<div class="fieldThirds"><label>Term Desired: <br></label>
+		<select id="intern_termdesired" name="intern[termdesired]">
+			<option value="Spring">Spring</option>
+			<option value="Summer I">Summer I</option>
+			<option value="Summer II">Summer II</option>
+			<option value="Fall">Fall</option>
+		</select>
+	</div>
+	<div class="fieldThirds"><label>Internship Type:</label> <br>
+		<select id="intern_internship_type" name="intern[internship_type]">
+			<option value="3Cords">3Cords</option>
+			<option value="Business Development">Business Development</option>
+			<option value="Church Advancement">Church Advancement</option>
+			<option value="Medical">Medical</option>
+			<option value="Village of Hope">Village of Hope</option>
+		</select>
+	</div>
+  	<div class="fieldThirds clearfix">
+    	<label>First Name:</label><br> 
+    	<%= f.text_field :firstname %>
+  	</div>
+  <div class="fieldThirds">
+    <label>Last Name:</label><br> 
     <%= f.text_field :lastname %>
   </div>
-  <div class="field">
-    <%= f.label :age %><br />
+  <div class="fieldThirds clearfix">
+    <label>Age:</label><br> 
     <%= f.text_field :age %>
   </div>
-  <div class="field">
-    <%= f.label :birthday %><br />
-    <%= f.datetime_select :birthday %>
+  <div class="fieldThirds">
+    <label>Birthday:</label><br>
+    <%= f.date_select :birthday %>
   </div>
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
+  <div class="fieldThirds">
+    <label>Gender:</label><br>
+    <input id="intern_gender_1" type="radio" name="intern[gender]" value="male"> Male
+	<input id="intern_gender_2" type="radio" name="intern[gender]" value="female"> Female
   </div>
-  <div class="field">
-    <%= f.label :termdesired %><br />
-    <%= f.text_field :termdesired %>
-  </div>
-  <div class="field">
-    <%= f.label :internship_type %><br />
-    <%= f.text_field :internship_type %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
+  <div class="field clearfix">
+    <label>Street Address:</label><br>
     <%= f.text_field :address %>
   </div>
-  <div class="field">
-    <%= f.label :city %><br />
+  <div class="fieldThirds">
+    <label>City:</label><br>
     <%= f.text_field :city %>
   </div>
-  <div class="field">
-    <%= f.label :state %><br />
+  <div class="fieldThirds">
+    <label>State:</label><br>
     <%= f.text_field :state %>
   </div>
-  <div class="field">
-    <%= f.label :zip %><br />
+  <div class="fieldThirds">
+    <label>Zip:</label><br>
     <%= f.text_field :zip %>
   </div>
-  <div class="field">
-    <%= f.label :marital_status %><br />
-    <%= f.text_field :marital_status %>
+  <div class="fieldThirds clearfix">
+    <label>Marital Status:</label><br>
+    <input id="intern_marital_status_1" type="radio" name="intern[marital_status]" value="single"> Single
+	<input id="intern_marital_status_2" type="radio" name="intern[marital_status]" value="married"> Married
   </div>
-  <div class="field">
-    <%= f.label :how_long_married %><br />
+  <div class="fieldThirds">
+    <label>If married, how long?</label><br>
     <%= f.text_field :how_long_married %>
   </div>
-  <div class="field">
-    <%= f.label :spouse_name %><br />
+  <div class="fieldThirds">
+    <label>Spouse's Name:</label><br>
     <%= f.text_field :spouse_name %>
   </div>
-  <div class="field">
-    <%= f.label :home_phone %><br />
+  <div class="fieldHalf clearfix">
+    <label>Home Phone Number:</label><br>
     <%= f.text_field :home_phone %>
   </div>
-  <div class="field">
-    <%= f.label :cell_phone %><br />
+  <div class="fieldHalf">
+    <label>Cell Phone Number:</label><br>
     <%= f.text_field :cell_phone %>
   </div>
-  <div class="field">
-    <%= f.label :can_text %><br />
-    <%= f.check_box :can_text %>
+  <div class="fieldHalf clearfix">
+    <label>Can we text you?</label><br>
+    <%= f.check_box :can_text %> Yes, text me when needed
   </div>
-  <div class="field">
-    <%= f.label :best_call_time %><br />
+  <div class="fieldHalf">
+    <label>Best time to call:</label><br>
     <%= f.text_field :best_call_time %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br />
+  <div class="fieldHalf clearfix">
+    <label>Email Address:</label>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :tshirt_size %><br />
+  <div class="fieldThirds">
+    <label>T-shirt Size:</label>
     <%= f.text_field :tshirt_size %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ever_married %><br />
     <%= f.check_box :ever_married %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ever_children %><br />
     <%= f.check_box :ever_children %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ever_arrested %><br />
     <%= f.check_box :ever_arrested %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ever_criminal_convicted %><br />
     <%= f.check_box :ever_criminal_convicted %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ever_explainers %><br />
     <%= f.text_area :ever_explainers %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :future_plans %><br />
     <%= f.text_area :future_plans %>
   </div>
-  <div class="field">
+  </fieldset>
+  <div class="fieldThirds">
     <%= f.label :accepted_Christ %><br />
     <%= f.check_box :accepted_Christ %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :water_baptized %><br />
     <%= f.check_box :water_baptized %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :attend_church %><br />
     <%= f.check_box :attend_church %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :church_member %><br />
     <%= f.check_box :church_member %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :home_church %><br />
     <%= f.text_field :home_church %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :denomination %><br />
     <%= f.text_field :denomination %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :church_city %><br />
     <%= f.text_field :church_city %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :church_state %><br />
     <%= f.text_field :church_state %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :church_phone %><br />
     <%= f.text_field :church_phone %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :senior_pastor %><br />
     <%= f.text_field :senior_pastor %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :youth_pastor %><br />
     <%= f.text_field :youth_pastor %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :how_long_attended %><br />
     <%= f.text_field :how_long_attended %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :highest_education_level %><br />
     <%= f.text_field :highest_education_level %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :education_other %><br />
     <%= f.text_field :education_other %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :hs_attended %><br />
     <%= f.text_field :hs_attended %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :hs_city %><br />
     <%= f.text_field :hs_city %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :hs_state %><br />
     <%= f.text_field :hs_state %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :hs_graduate %><br />
     <%= f.check_box :hs_graduate %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :hs_class %><br />
     <%= f.text_field :hs_class %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :college %><br />
     <%= f.text_field :college %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :major %><br />
     <%= f.text_field :major %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :college_city %><br />
     <%= f.text_field :college_city %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :college_state %><br />
     <%= f.text_field :college_state %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :college_graduated %><br />
     <%= f.check_box :college_graduated %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :college_dates_attended %><br />
     <%= f.text_field :college_dates_attended %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :other_schools %><br />
     <%= f.text_field :other_schools %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :mission_experience %><br />
     <%= f.text_field :mission_experience %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :mission_city %><br />
     <%= f.text_field :mission_city %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :mission_state %><br />
     <%= f.text_field :mission_state %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :currently_employed %><br />
     <%= f.check_box :currently_employed %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :current_employer %><br />
     <%= f.text_field :current_employer %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ce_hired %><br />
     <%= f.datetime_select :ce_hired %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ce_position %><br />
     <%= f.text_field :ce_position %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ce_city %><br />
     <%= f.text_field :ce_city %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ce_state %><br />
     <%= f.text_field :ce_state %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ce_phone %><br />
     <%= f.text_field :ce_phone %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :past_employer %><br />
     <%= f.text_field :past_employer %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :pe_hired %><br />
     <%= f.text_field :pe_hired %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :pe_position %><br />
     <%= f.text_field :pe_position %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :pe_city %><br />
     <%= f.text_field :pe_city %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :pe_state %><br />
     <%= f.text_field :pe_state %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :pe_phone %><br />
     <%= f.text_field :pe_phone %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :father_name %><br />
     <%= f.text_field :father_name %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :father_address %><br />
     <%= f.text_field :father_address %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :father_city %><br />
     <%= f.text_field :father_city %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :father_state %><br />
     <%= f.text_field :father_state %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :father_phone %><br />
     <%= f.text_field :father_phone %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :father_work_phone %><br />
     <%= f.text_field :father_work_phone %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :father_occupation %><br />
     <%= f.text_field :father_occupation %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :father_denomination %><br />
     <%= f.text_field :father_denomination %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :father_accepted_Christ %><br />
     <%= f.check_box :father_accepted_Christ %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :father_consent %><br />
     <%= f.check_box :father_consent %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :mother_name %><br />
     <%= f.text_field :mother_name %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :mother_address %><br />
     <%= f.text_field :mother_address %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :mother_city %><br />
     <%= f.text_field :mother_city %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :mother_state %><br />
     <%= f.text_field :mother_state %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :mother_phone %><br />
     <%= f.text_field :mother_phone %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :mother_work_phone %><br />
     <%= f.text_field :mother_work_phone %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :mother_occupation %><br />
     <%= f.text_field :mother_occupation %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :mother_denomination %><br />
     <%= f.text_field :mother_denomination %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :mother_accepted_Christ %><br />
     <%= f.check_box :mother_accepted_Christ %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :mother_consent %><br />
     <%= f.check_box :mother_consent %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :siblings %><br />
     <%= f.text_area :siblings %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :parent_feelings %><br />
     <%= f.text_area :parent_feelings %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :health_insurance %><br />
     <%= f.check_box :health_insurance %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :insurance_provider %><br />
     <%= f.text_field :insurance_provider %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :health_description %><br />
     <%= f.text_field :health_description %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :physical_limitation %><br />
     <%= f.text_area :physical_limitation %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :medications %><br />
     <%= f.text_area :medications %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :drugs %><br />
     <%= f.text_area :drugs %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label "Emergency Contact"%><br />
     <%= f.text_field :emergency_1_name %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :emergency_1_relationship %><br />
     <%= f.text_field :emergency_1_relationship %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :emergency_1_phone %><br />
     <%= f.text_field :emergency_1_phone %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :emergency_2_name %><br />
     <%= f.text_field :emergency_2_name %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :emergency_2_relationship %><br />
     <%= f.text_field :emergency_2_relationship %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :emergency_2_phone %><br />
     <%= f.text_field :emergency_2_phone %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :foreign_language %><br />
     <%= f.check_box :foreign_language %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :what_languages %><br />
     <%= f.text_field :what_languages %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :language_proficiency %><br />
     <%= f.text_field :language_proficiency %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :cpr_cert %><br />
     <%= f.check_box :cpr_cert %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :firstaid_cert %><br />
     <%= f.check_box :firstaid_cert %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :other_cert %><br />
     <%= f.check_box :other_cert %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :certifications %><br />
     <%= f.text_field :certifications %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :child_experience %><br />
     <%= f.check_box :child_experience %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ministry_training %><br />
     <%= f.text_area :ministry_training %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :tech_training %><br />
     <%= f.text_area :tech_training %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ref1_name %><br />
     <%= f.text_field :ref1_name %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ref1_rel %><br />
     <%= f.text_field :ref1_rel %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ref2_name %><br />
     <%= f.text_field :ref2_name %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ref2_rel %><br />
     <%= f.text_field :ref2_rel %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ref3_name %><br />
     <%= f.text_field :ref3_name %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ref3_rel %><br />
     <%= f.text_field :ref3_rel %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ref4_name %><br />
     <%= f.text_field :ref4_name %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :ref4_rel %><br />
     <%= f.text_field :ref4_rel %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :vbs_experience %><br />
     <%= f.check_box :vbs_experience %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :camp_experience %><br />
     <%= f.check_box :camp_experience %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :other_child_experience %><br />
     <%= f.check_box :other_child_experience %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :homeless_experience %><br />
     <%= f.check_box :homeless_experience %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :senior_experience %><br />
     <%= f.check_box :senior_experience %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :worship_team_experience %><br />
     <%= f.check_box :worship_team_experience %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :lighting_experience %><br />
     <%= f.check_box :lighting_experience %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :photography_experience %><br />
     <%= f.check_box :photography_experience %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :modest_trait %><br />
     <%= f.check_box :modest_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :mature_trait %><br />
     <%= f.check_box :mature_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :kind_trait %><br />
     <%= f.check_box :kind_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :abrasive_trait %><br />
     <%= f.check_box :abrasive_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :organized_trait %><br />
     <%= f.check_box :organized_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label "Quiet" %><br />
     <%= f.check_box :quiet_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :moody_trait %><br />
     <%= f.check_box :moody_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :teachable_trait %><br />
     <%= f.check_box :teachable_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :self_motivated_trait %><br />
     <%= f.check_box :self_motivated_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :genuine_trait %><br />
     <%= f.check_box :genuine_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :detail_oriented_trait %><br />
     <%= f.check_box :detail_oriented_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :loving_trait %><br />
     <%= f.check_box :loving_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :sarcastic_trait %><br />
     <%= f.check_box :sarcastic_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :selfish_trait %><br />
     <%= f.check_box :selfish_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :trustworthy_trait %><br />
     <%= f.check_box :trustworthy_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :tactful_trait %><br />
     <%= f.check_box :tactful_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :compassionate_trait %><br />
     <%= f.check_box :compassionate_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :hard_working_trait %><br />
     <%= f.check_box :hard_working_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :adaptive_trait %><br />
     <%= f.check_box :adaptive_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :lazy_trait %><br />
     <%= f.check_box :lazy_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :punctual_trait %><br />
     <%= f.check_box :punctual_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :sensitive_trait %><br />
     <%= f.check_box :sensitive_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :socially_awkward_trait %><br />
     <%= f.check_box :socially_awkward_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :patient_trait %><br />
     <%= f.check_box :patient_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :considerate_trait %><br />
     <%= f.check_box :considerate_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :motivated_trait %><br />
     <%= f.check_box :motivated_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :impulsive_trait %><br />
     <%= f.check_box :impulsive_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :relaxed_trait %><br />
     <%= f.check_box :relaxed_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :friendly_trait %><br />
     <%= f.check_box :friendly_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :determined_trait %><br />
     <%= f.check_box :determined_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :leader_trait %><br />
     <%= f.check_box :leader_trait %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :describe_the_Gospel %><br />
     <%= f.text_area :describe_the_Gospel %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :Christian_experience %><br />
     <%= f.text_area :Christian_experience %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :influential_experiences %><br />
     <%= f.text_area :influential_experiences %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :why_intern %><br />
     <%= f.text_area :why_intern %>
   </div>
-  <div class="field">
+  <div class="fieldThirds">
     <%= f.label :why_moh_wants %><br />
     <%= f.text_area :why_moh_wants %>
   </div>

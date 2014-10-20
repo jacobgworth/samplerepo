@@ -1,4 +1,7 @@
 class InternsController < ApplicationController
+  layout "homeLayout"
+  
+  
   # GET /interns
   # GET /interns.json
   def index
