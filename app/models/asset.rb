@@ -3,6 +3,7 @@ class Asset < ActiveRecord::Base
   belongs_to :project
   belongs_to :post
   belongs_to :community
+  belongs_to :intern
   
   #Paperclip method for Experience images
   has_attached_file :asset, 
