@@ -103,584 +103,524 @@
     <label>T-shirt Size:</label>
     <%= f.text_field :tshirt_size %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ever_married %><br />
-    <%= f.check_box :ever_married %>
+  <div class="fieldHalf clearfix">
+    <label>Have you ever been married?</label><br />
+    <%= f.check_box :ever_married %> (Check if yes)
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ever_children %><br />
-    <%= f.check_box :ever_children %>
+  <div class="fieldHalf">
+     <label>Have you ever had children?</label><br />
+    <%= f.check_box :ever_children %> (Check if yes)
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ever_arrested %><br />
-    <%= f.check_box :ever_arrested %>
+  <div class="fieldHalf">
+    <label>Have you ever been arrested? </label><br>
+    <%= f.check_box :ever_arrested %> (Check if yes)
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ever_criminal_convicted %><br />
-    <%= f.check_box :ever_criminal_convicted %>
+  <div class="fieldHalf">
+    <label>Have you ever been convicted of a felony or misdemeanor?</label><br>
+    <%= f.check_box :ever_criminal_convicted %> (Check if yes)
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ever_explainers %><br />
-    <%= f.text_area :ever_explainers %>
+  <div class="field clearfix">
+    <label>If you answered "yes" to any of the above, please explain:</label>
+    <%= f.text_area :ever_explainers, size:"24x6", placeholder:"Enter your reply here." %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :future_plans %><br />
-    <%= f.text_area :future_plans %>
+  <div class="field clearfix">
+    <label>What are your plans after this internship?</label>
+    <%= f.text_area :future_plans, size:"24x6", placeholder:"Enter your reply here." %>
   </div>
   </fieldset>
-  <div class="fieldThirds">
-    <%= f.label :accepted_Christ %><br />
-    <%= f.check_box :accepted_Christ %>
+  <fieldset>
+  	<h3>Spirituality</h3>
+  <div class="fieldHalf">
+    <label>Have you accepted Jesus Christ as your personal Savior?</label><br>
+    <%= f.check_box :accepted_Christ %> (Check if yes)
+  </div>
+  <div class="fieldHalf">
+    <label>Have you been baptized in water?</label><br>
+    <%= f.check_box :water_baptized %> (Check if yes)
+  </div>
+  <div class="fieldHalf clearfix">
+    <label>Do you attend church regularly?</label><br>
+    <%= f.check_box :attend_church %> (Check if yes)
   </div>
   <div class="fieldThirds">
-    <%= f.label :water_baptized %><br />
-    <%= f.check_box :water_baptized %>
+    <label>Are you a member?</label><br>
+    <%= f.check_box :church_member %> (Check if yes)
   </div>
-  <div class="fieldThirds">
-    <%= f.label :attend_church %><br />
-    <%= f.check_box :attend_church %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :church_member %><br />
-    <%= f.check_box :church_member %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :home_church %><br />
+  <div class="fieldHalf clearfix">
+    <label>Home Church:</label><br>
     <%= f.text_field :home_church %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :denomination %><br />
+  <div class="fieldHalf">
+    <label>Denomination:</label><br>
     <%= f.text_field :denomination %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :church_city %><br />
+  <div class="fieldThirds clearfix">
+    <label>City:</label><br>
     <%= f.text_field :church_city %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :church_state %><br />
+    <label>State:</label><br>
     <%= f.text_field :church_state %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :church_phone %><br />
+    <label>Phone Number:</label><br>
     <%= f.text_field :church_phone %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :senior_pastor %><br />
+  <div class="fieldThirds clearfix">
+    <label>Senior Pastor:</label><br>
     <%= f.text_field :senior_pastor %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :youth_pastor %><br />
+    <label>Youth Pastor:</label><br>
     <%= f.text_field :youth_pastor %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :how_long_attended %><br />
+    <label>How long have you attended?</label><br>
     <%= f.text_field :how_long_attended %>
   </div>
+  </fieldset>
+  <fieldset>
+  	<h3>Education</h3>
   <div class="fieldThirds">
-    <%= f.label :highest_education_level %><br />
-    <%= f.text_field :highest_education_level %>
+    <label>Highest Level of Education Completed:</label><br>
+    <select id="intern_highest_education_level" name="intern[highest_education_level]">
+    	<option value="GED">GED</option>
+		<option value="High School">High School</option>
+		<option value="Trade School">Trade School</option>
+		<option value="Community College">Community College</option>
+		<option value="4 Year University">4 Year University</option>
+		<option value="Master's Degree">Master's Degree</option>
+		<option value="Other">Other</option>
+	</select>
   </div>
   <div class="fieldThirds">
-    <%= f.label :education_other %><br />
+    <label>If "Other," please describe:</label><br>
     <%= f.text_field :education_other %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :hs_attended %><br />
+  <div class="fieldThirds clearfix">
+    <label>High School Attended:</label><br>
     <%= f.text_field :hs_attended %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :hs_city %><br />
+    <label>City:</label><br>
     <%= f.text_field :hs_city %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :hs_state %><br />
+    <label>State:</label><br>
     <%= f.text_field :hs_state %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :hs_graduate %><br />
-    <%= f.check_box :hs_graduate %>
+  <div class="fieldThirds clearfix">
+    <label>Did you graduate?</label><br>
+    <%= f.check_box :hs_graduate %> (Check if yes)
   </div>
   <div class="fieldThirds">
-    <%= f.label :hs_class %><br />
+    <label>Year:</label><br>
     <%= f.text_field :hs_class %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :college %><br />
+  <div class="fieldThirds clearfix">
+    <label>College Attended: </label><br>
     <%= f.text_field :college %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :major %><br />
+    <label>Major of Study: </label><br>
     <%= f.text_field :major %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :college_city %><br />
+  <div class="fieldThirds clearfix">
+    <label>City:</label><br>
     <%= f.text_field :college_city %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :college_state %><br />
+    <label>State:</label><br>
     <%= f.text_field :college_state %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :college_graduated %><br />
-    <%= f.check_box :college_graduated %>
+  <div class="fieldThirds clearfix">
+    <label>Did you graduate?</label><br>
+    <%= f.check_box :college_graduated %> (Check if yes)
   </div>
   <div class="fieldThirds">
-    <%= f.label :college_dates_attended %><br />
+    <label>Dates Attended:</label><br>
     <%= f.text_field :college_dates_attended %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :other_schools %><br />
+  <div class="fieldThirds clearfix">
+    <label>Other schools attended, please include pertinent certifications or degrees:</label><br>
     <%= f.text_field :other_schools %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :mission_experience %><br />
+  </fieldset>
+  <fieldset>
+  	<h3>Experience</h3>
+  <div class="field">
+    <label>Have you previously been on a mission trip? If yes, with what organization? </label><br>
     <%= f.text_field :mission_experience %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :mission_city %><br />
+  <div class="fieldThirds clearfix">
+    <label>City:</label><br> 
     <%= f.text_field :mission_city %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :mission_state %><br />
+    <label>State:</label><br> 
     <%= f.text_field :mission_state %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :currently_employed %><br />
-    <%= f.check_box :currently_employed %>
+  <div class="field clearfix">
+    <label>Are you currently employed?</label><br> 
+    <%= f.check_box :currently_employed %> (Check if yes)
   </div>
-  <div class="fieldThirds">
-    <%= f.label :current_employer %><br />
+  <div class="fieldThirds clearfix">
+    <label>Current Employer:</label><br>
     <%= f.text_field :current_employer %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :ce_hired %><br />
-    <%= f.datetime_select :ce_hired %>
+    <label>Date Hired:</label><br>
+    <%= f.date_select :ce_hired %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :ce_position %><br />
+    <label>Position:</label><br>
     <%= f.text_field :ce_position %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ce_city %><br />
+  <div class="fieldThirds clearfix">
+    <label>City:</label><br>
     <%= f.text_field :ce_city %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :ce_state %><br />
+    <label>State:</label><br>
     <%= f.text_field :ce_state %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :ce_phone %><br />
+    <label>Phone:</label><br>
     <%= f.text_field :ce_phone %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :past_employer %><br />
+  <div class="fieldThirds clearfix">
+    <label>Past Employer:</label><br>
     <%= f.text_field :past_employer %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :pe_hired %><br />
+    <label>Dates Employed:</label><br>
     <%= f.text_field :pe_hired %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :pe_position %><br />
+    <label>Position:</label><br>
     <%= f.text_field :pe_position %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :pe_city %><br />
+  <div class="fieldThirds clearfix">
+    <label>City:</label><br>
     <%= f.text_field :pe_city %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :pe_state %><br />
+    <label>State:</label><br>
     <%= f.text_field :pe_state %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :pe_phone %><br />
+    <label>Phone:</label><br>
     <%= f.text_field :pe_phone %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :father_name %><br />
+  </fieldset>
+  
+  <fieldset>
+  	<h3>Family</h3>
+  <div class="fieldHalf">
+    <label>Name of Father or Guardian: </label><br>
     <%= f.text_field :father_name %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :father_address %><br />
+  <div class="fieldHalf">
+    <label>Address: </label><br>
     <%= f.text_field :father_address %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :father_city %><br />
+  <div class="fieldThirds clearfix">
+    <label>City:</label><br>
     <%= f.text_field :father_city %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :father_state %><br />
+    <label>State:</label><br>
     <%= f.text_field :father_state %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :father_phone %><br />
+    <label>Phone:</label><br>
     <%= f.text_field :father_phone %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :father_work_phone %><br />
+  <div class="fieldThirds clearfix">
+    <label>Work Phone:</label><br>
     <%= f.text_field :father_work_phone %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :father_occupation %><br />
+    <label>Occupation:</label><br>
     <%= f.text_field :father_occupation %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :father_denomination %><br />
+    <label>Denominational Preference:</label><br>
     <%= f.text_field :father_denomination %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :father_accepted_Christ %><br />
-    <%= f.check_box :father_accepted_Christ %>
+  <div class="fieldThirds clearfix">
+    <label>Has he accepted Christ?</label><br>
+    <%= f.check_box :father_accepted_Christ %> (Check if yes)
   </div>
-  <div class="fieldThirds">
-    <%= f.label :father_consent %><br />
-    <%= f.check_box :father_consent %>
+  <div class="fieldHalf">
+    <label>Are you applying to this internship with his consent?</label><br>
+    <%= f.check_box :father_consent %> (Check if yes)
   </div>
-  <div class="fieldThirds">
-    <%= f.label :mother_name %><br />
+  <div class="fieldHalf clearfix">
+    <label>Name of Mother or Guardian:</label><br>
     <%= f.text_field :mother_name %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :mother_address %><br />
+  <div class="fieldHalf">
+    <label>Address:</label><br>
     <%= f.text_field :mother_address %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :mother_city %><br />
+  <div class="fieldThirds clearfix">
+    <label>City:</label><br>
     <%= f.text_field :mother_city %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :mother_state %><br />
+    <label>State:</label><br>
     <%= f.text_field :mother_state %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :mother_phone %><br />
+    <label>Phone:</label><br>
     <%= f.text_field :mother_phone %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :mother_work_phone %><br />
+  <div class="fieldThirds clearfix">
+    <label>Work Phone:</label><br>
     <%= f.text_field :mother_work_phone %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :mother_occupation %><br />
+    <label>Occupation:</label><br>
     <%= f.text_field :mother_occupation %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :mother_denomination %><br />
+    <label>Denominational Preference:</label><br>
     <%= f.text_field :mother_denomination %>
   </div>
+  <div class="fieldThirds clearfix">
+    <label>Has she accepted Christ?</label><br>
+    <%= f.check_box :mother_accepted_Christ %> (Check if yes)
+  </div>
+  <div class="fieldHalf">
+    <label>Are you applying to this internship with her consent?</label><br>
+    <%= f.check_box :mother_consent %> (Check if yes)
+  </div>
+  <div class="field clearfix">
+    <label>How many siblings do you have? Please list names and ages:</label><br> 
+    <%= f.text_area :siblings,rows:"4" %>
+  </div>
+  <div class="field">
+    <label>How do your parents feel about you coming into this internship program?</label><br>
+    <%= f.text_area :parent_feelings,rows:"6" %>
+  </div>
+  </fieldset>
+  
+  
+  <fieldset>
+  	<h3>Health</h3>
   <div class="fieldThirds">
-    <%= f.label :mother_accepted_Christ %><br />
-    <%= f.check_box :mother_accepted_Christ %>
+    <label>Do you have health insurance?</label><br>
+    <%= f.check_box :health_insurance %> (Check if yes)
   </div>
   <div class="fieldThirds">
-    <%= f.label :mother_consent %><br />
-    <%= f.check_box :mother_consent %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :siblings %><br />
-    <%= f.text_area :siblings %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :parent_feelings %><br />
-    <%= f.text_area :parent_feelings %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :health_insurance %><br />
-    <%= f.check_box :health_insurance %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :insurance_provider %><br />
+    <label>Insurance Provider:</label><br>
     <%= f.text_field :insurance_provider %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :health_description %><br />
+    <label>How would you describe your health?</label><br>
     <%= f.text_field :health_description %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :physical_limitation %><br />
-    <%= f.text_area :physical_limitation %>
+  <div class="field clearfix">
+    <label>List any physical limitations:</label><br>
+    <%= f.text_area :physical_limitation,rows:"4" %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :medications %><br />
-    <%= f.text_area :medications %>
+  <div class="field clearfix">
+    <label>List any medications you are currently taking:</label><br>
+    <%= f.text_area :medications,rows:"4" %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :drugs %><br />
-    <%= f.text_area :drugs %>
+  <div class="field clearfix">
+    <label>Have you ever taken drugs other than prescribed drugs? If yes, what drug and last date used?</label><br>
+    <%= f.text_area :drugs,rows:"4" %>
   </div>
+  </fieldset>
+  
+  <fieldset>
+  	<h3>Emergency Information</h3>
   <div class="fieldThirds">
-    <%= f.label "Emergency Contact"%><br />
+    <label>Emergency Contact:</label><br>
     <%= f.text_field :emergency_1_name %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :emergency_1_relationship %><br />
+    <label>Relationship:</label><br>
     <%= f.text_field :emergency_1_relationship %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :emergency_1_phone %><br />
+    <label>Phone Number:</label><br>
     <%= f.text_field :emergency_1_phone %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :emergency_2_name %><br />
+  <div class="fieldThirds clearfix">
+    <label>Emergency Contact (not parent):</label><br>
     <%= f.text_field :emergency_2_name %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :emergency_2_relationship %><br />
+    <label>Relationship:</label><br>
     <%= f.text_field :emergency_2_relationship %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :emergency_2_phone %><br />
+    <label>Phone Number:</label><br>
     <%= f.text_field :emergency_2_phone %>
   </div>
+  </fieldset>
+  
+  <fieldset>
+  	<h3>Skills</h3>
   <div class="fieldThirds">
-    <%= f.label :foreign_language %><br />
-    <%= f.check_box :foreign_language %>
+    <label>Do you speak a foreign language?</label><br>
+    <%= f.check_box :foreign_language %> (Check if yes)
   </div>
   <div class="fieldThirds">
-    <%= f.label :what_languages %><br />
+    <label>If yes, which one(s)?</label><br>
     <%= f.text_field :what_languages %>
   </div>
   <div class="fieldThirds">
-    <%= f.label :language_proficiency %><br />
+    <label>Language Proficiency:</label><br>
     <%= f.text_field :language_proficiency %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :cpr_cert %><br />
-    <%= f.check_box :cpr_cert %>
+  <div class="fieldHalf clearfix">
+    <label>Do you have certification in the following?<br> Check all that apply.</label><br>
+    <%= f.check_box :cpr_cert %> CPR
+    <%= f.check_box :firstaid_cert %> First Aid
+    <%= f.check_box :other_cert %> Other
   </div>
-  <div class="fieldThirds">
-    <%= f.label :firstaid_cert %><br />
-    <%= f.check_box :firstaid_cert %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :other_cert %><br />
-    <%= f.check_box :other_cert %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :certifications %><br />
+  <div class="fieldHalf">
+    <label>List other certifications:</label><br>
     <%= f.text_field :certifications %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :child_experience %><br />
-    <%= f.check_box :child_experience %>
+  <div class="field clearfix">
+    <label>Do you have experience in dealing with abused, neglected, or abandoned children?</label><br>
+    <%= f.check_box :child_experience %> (Check if yes)
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ministry_training %><br />
-    <%= f.text_area :ministry_training %>
+  <div class="field">
+    <label>Do you have any vocational or ministry training? If yes, explain:</label><br>
+    <%= f.text_area :ministry_training,rows:"6" %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :tech_training %><br />
-    <%= f.text_area :tech_training %>
+  <div class="field">
+    <label>Do you have any technical skills or training? If yes, explain.</label><br>
+    <%= f.text_area :tech_training,rows:"6" %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ref1_name %><br />
+  </fieldset>
+  
+  <fieldset>
+  	<h3>References</h3>
+  	<p>You will need to secure 4 references to complete the application process.  They need to consist of 2 personal references (not former employers or relatives), 1 work or ministry reference, and 1 pastoral reference.  Please list the 4 people that you will be asking to send in references on your behalf.</p>
+  <div class="fieldHalf">
+    <label>Name:</label><br>
     <%= f.text_field :ref1_name %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ref1_rel %><br />
+  <div class="fieldHalf">
+    <label>Relationship:</label><br>
     <%= f.text_field :ref1_rel %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ref2_name %><br />
+  <div class="fieldHalf">
+    <label>Name:</label><br>
     <%= f.text_field :ref2_name %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ref2_rel %><br />
+  <div class="fieldHalf">
+    <label>Relationship:</label><br>
     <%= f.text_field :ref2_rel %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ref3_name %><br />
+  <div class="fieldHalf">
+    <label>Name:</label><br>
     <%= f.text_field :ref3_name %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ref3_rel %><br />
+  <div class="fieldHalf">
+    <label>Relationship:</label><br>
     <%= f.text_field :ref3_rel %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ref4_name %><br />
+  <div class="fieldHalf">
+    <label>Name:</label><br>
     <%= f.text_field :ref4_name %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :ref4_rel %><br />
+  <div class="fieldHalf">
+    <label>Relationship:</label><br>
     <%= f.text_field :ref4_rel %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :vbs_experience %><br />
-    <%= f.check_box :vbs_experience %>
+  </fieldset>
+  
+  <fieldset>
+  	<h3>Personal Profile</h3>
+  <div class="field">
+  		<label>Do you have any previous experience in working with the following types of people or ministries?<br />Check all that apply.</label><br>
+  		<div style="float:left; width:300px; padding:10px 0 20px 0;">
+    	<%= f.check_box :vbs_experience %> Children - VBS<br>
+    	<%= f.check_box :camp_experience %> Children - Overnight Camp<br>
+    	<%= f.check_box :other_child_experience %> Children - Other<br>
+    	<%= f.check_box :homeless_experience %> Homeless<br>
+  		</div>
+  		<div style="float:left; width:300px; padding:10px 0 20px 0;">
+    	<%= f.check_box :senior_experience %> Senior Citizens<br>
+		<%= f.check_box :worship_team_experience %> Worship Team<br>
+		<%= f.check_box :lighting_experience %> Sound and Lighting<br>
+		<%= f.check_box :photography_experience %> Photography<br>
+		</div>
+	</div>
+  <div class="field clearfix">
+  	<label style="padding:20px 0;">Please check all of the following traits which you think describe your personality.</label><br>
+  		<div style="float:left; width:300px; padding:10px 0 20px 0;">
+    	<%= f.check_box :modest_trait %> Modest<br>
+    	<%= f.check_box :mature_trait %> Mature<br>
+    	<%= f.check_box :kind_trait %> Kind<br>
+    	<%= f.check_box :abrasive_trait %> Abrasive<br>
+    	<%= f.check_box :organized_trait %> Organized<br>
+    	<%= f.check_box :quiet_trait %> Quiet<br>
+    	<%= f.check_box :moody_trait %> Moody<br>
+    	<%= f.check_box :teachable_trait %> Teachable<br>
+    	<%= f.check_box :self_motivated_trait %> Self-Motivated<br>
+    	<%= f.check_box :genuine_trait %> Genuine<br>
+    	<%= f.check_box :detail_oriented_trait %> Detail-Oriented<br>
+    	</div>
+    	<div style="float:left; width:300px; padding:10px 0 20px 0;">
+    	<%= f.check_box :loving_trait %> Loving<br>
+    	<%= f.check_box :sarcastic_trait %> Sarcastic<br>
+    	<%= f.check_box :selfish_trait %> Selfish<br>
+    	<%= f.check_box :trustworthy_trait %> Trustworthy<br>
+    	<%= f.check_box :tactful_trait %> Tactful<br>
+    	<%= f.check_box :compassionate_trait %> Compassionate<br>
+    	<%= f.check_box :hard_working_trait %> Hard-Working<br>
+    	<%= f.check_box :adaptive_trait %> Adaptive<br>
+    	<%= f.check_box :lazy_trait %> Lazy<br>
+    	<%= f.check_box :punctual_trait %> Punctual<br>
+    	</div>
+  		<div style="float:left; width:300px; padding:10px 0 20px 0;">
+    		<%= f.check_box :sensitive_trait %> Sensitive<br>
+    		<%= f.check_box :socially_awkward_trait %> Socially Awkward<br>
+    		<%= f.check_box :patient_trait %> Patient<br>
+    		<%= f.check_box :considerate_trait %> Considerate<br>
+    		<%= f.check_box :motivated_trait %> Motivated<br>
+    		<%= f.check_box :impulsive_trait %> Impulsive<br>
+    		<%= f.check_box :relaxed_trait %> Relaxed<br>
+    		<%= f.check_box :friendly_trait %> Friendly<br>
+    		<%= f.check_box :determined_trait %> Determined<br>
+    		<%= f.check_box :leader_trait %> Leader<br>
+    	</div>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :camp_experience %><br />
-    <%= f.check_box :camp_experience %>
+  
+  <div class="field clearfix">
+    <label>In 75 words or less, how would you present the Gospel to an unbeliever?</label><br>
+    <%= f.text_area :describe_the_Gospel,rows:"6" %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :other_child_experience %><br />
-    <%= f.check_box :other_child_experience %>
+  </fieldset>
+  <fieldset>
+  	<h3>Personal Sketch</h3>
+  
+  <div class="field">
+  	The Mission of Hope Internship Program desires to help its interns in every way possible. In order to do this, it is important for us to have some background information.
+    <br><br>
+    <label>Provide a description of your Christian experience (past and present).</label><br>
+    <%= f.text_area :Christian_experience,rows:"6" %>
+
+    <label>Describe experiences which have significantly influenced your life.</label><br>
+    <%= f.text_area :influential_experiences,rows:"6" %>
+  
+    <label>Provide a statement on why you desire to attend the Internship Program.</label><br>
+    <%= f.text_area :why_intern,rows:"6" %>
+ 
+    <label>Explain why the MOH Internship Program should accept you.</label><br>
+    <%= f.text_area :why_moh_wants,rows:"6" %>
   </div>
-  <div class="fieldThirds">
-    <%= f.label :homeless_experience %><br />
-    <%= f.check_box :homeless_experience %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :senior_experience %><br />
-    <%= f.check_box :senior_experience %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :worship_team_experience %><br />
-    <%= f.check_box :worship_team_experience %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :lighting_experience %><br />
-    <%= f.check_box :lighting_experience %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :photography_experience %><br />
-    <%= f.check_box :photography_experience %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :modest_trait %><br />
-    <%= f.check_box :modest_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :mature_trait %><br />
-    <%= f.check_box :mature_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :kind_trait %><br />
-    <%= f.check_box :kind_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :abrasive_trait %><br />
-    <%= f.check_box :abrasive_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :organized_trait %><br />
-    <%= f.check_box :organized_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label "Quiet" %><br />
-    <%= f.check_box :quiet_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :moody_trait %><br />
-    <%= f.check_box :moody_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :teachable_trait %><br />
-    <%= f.check_box :teachable_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :self_motivated_trait %><br />
-    <%= f.check_box :self_motivated_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :genuine_trait %><br />
-    <%= f.check_box :genuine_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :detail_oriented_trait %><br />
-    <%= f.check_box :detail_oriented_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :loving_trait %><br />
-    <%= f.check_box :loving_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :sarcastic_trait %><br />
-    <%= f.check_box :sarcastic_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :selfish_trait %><br />
-    <%= f.check_box :selfish_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :trustworthy_trait %><br />
-    <%= f.check_box :trustworthy_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :tactful_trait %><br />
-    <%= f.check_box :tactful_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :compassionate_trait %><br />
-    <%= f.check_box :compassionate_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :hard_working_trait %><br />
-    <%= f.check_box :hard_working_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :adaptive_trait %><br />
-    <%= f.check_box :adaptive_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :lazy_trait %><br />
-    <%= f.check_box :lazy_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :punctual_trait %><br />
-    <%= f.check_box :punctual_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :sensitive_trait %><br />
-    <%= f.check_box :sensitive_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :socially_awkward_trait %><br />
-    <%= f.check_box :socially_awkward_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :patient_trait %><br />
-    <%= f.check_box :patient_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :considerate_trait %><br />
-    <%= f.check_box :considerate_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :motivated_trait %><br />
-    <%= f.check_box :motivated_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :impulsive_trait %><br />
-    <%= f.check_box :impulsive_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :relaxed_trait %><br />
-    <%= f.check_box :relaxed_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :friendly_trait %><br />
-    <%= f.check_box :friendly_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :determined_trait %><br />
-    <%= f.check_box :determined_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :leader_trait %><br />
-    <%= f.check_box :leader_trait %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :describe_the_Gospel %><br />
-    <%= f.text_area :describe_the_Gospel %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :Christian_experience %><br />
-    <%= f.text_area :Christian_experience %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :influential_experiences %><br />
-    <%= f.text_area :influential_experiences %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :why_intern %><br />
-    <%= f.text_area :why_intern %>
-  </div>
-  <div class="fieldThirds">
-    <%= f.label :why_moh_wants %><br />
-    <%= f.text_area :why_moh_wants %>
-  </div>
+  </fieldset>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit my request" %>
   </div>
 <% end %>

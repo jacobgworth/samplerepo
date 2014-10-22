@@ -1,3 +1,6 @@
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+	<div id="content" style="padding-top: 50px;">
 <h1>Listing interns</h1>
 
 <table>
@@ -269,7 +272,7 @@
     <td><%= intern.physical_limitation %></td>
     <td><%= intern.medications %></td>
     <td><%= intern.drugs %></td>
-    <td><%= intern.emergency_1 %></td>
+    <td><%= intern.emergency_1_name %></td>
     <td><%= intern.emergency_1_relationship %></td>
     <td><%= intern.emergency_1_phone %></td>
     <td><%= intern.emergency_2_name %></td>
@@ -306,7 +309,7 @@
     <td><%= intern.kind_trait %></td>
     <td><%= intern.abrasive_trait %></td>
     <td><%= intern.organized_trait %></td>
-    <td><%= intern.quiet %></td>
+    <td><%= intern.quiet_trait %></td>
     <td><%= intern.moody_trait %></td>
     <td><%= intern.teachable_trait %></td>
     <td><%= intern.self_motivated_trait %></td>
@@ -347,3 +350,6 @@
 <br />
 
 <%= link_to 'New Intern', new_intern_path %>
+
+	</div>
+</div>
