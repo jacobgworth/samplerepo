@@ -1,40 +1,61 @@
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 	<div id="content" style="padding-top: 50px;">
-<h1>Listing interns</h1>
-
+		<h1>Intern Applications</h1>
+		<h2><a href="/interns.csv" target="_blank">Download CSV file</a></h2>
+		<div>
+			<table>
+				<tr>
+					<td>Image</td>
+					<td>Name</td>
+					<td>Application Date</td>
+					<td>Application</td>
+					<td>Download as CSV</td>
+				</tr>
+				<%@interns.each do |i|%>
+				<tr>
+					<td></td>
+					<td><%=i.firstname%> <%=i.lastname%></td>
+					<td><%=i.created_at.to_date%></td>
+					<td><a href="/interns/<%=i.id%>">View Application</a></td>
+					<td><a href="/interns/<%=i.id%>.csv">Download Application</a></td>
+				</tr>
+				<%end%>
+			</table>
+		</div>
+		<div id="original" style="display:none;">
 <table>
   <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
+    <th>First Name</th>
+    <th>Last Name</th>
     <th>Age</th>
     <th>Birthday</th>
     <th>Gender</th>
-    <th>Termdesired</th>
-    <th>Internship type</th>
+    <th>Term Desired</th>
+    <th>Internship Type</th>
     <th>Address</th>
     <th>City</th>
     <th>State</th>
     <th>Zip</th>
     <th>Marital status</th>
     <th>How long married</th>
-    <th>Spouse name</th>
+    <th>Spouse's name</th>
     <th>Home phone</th>
     <th>Cell phone</th>
-    <th>Can text</th>
+    <th>Can We Text</th>
     <th>Best call time</th>
     <th>Email</th>
     <th>Tshirt size</th>
-    <th>Ever married</th>
-    <th>Ever children</th>
-    <th>Ever arrested</th>
-    <th>Ever criminal convicted</th>
-    <th>Ever explainers</th>
-    <th>Future plans</th>
-    <th>Accepted christ</th>
+    <th>Ever been married</th>
+    <th>Ever had children</th>
+    <th>Ever been arrested</th>
+    <th>Ever had a criminal conviction</th>
+    <th>If yes, explain</th>
+    <th>Future plans after MOH</th>
+    <th>Accepted Christ</th>
     <th>Water baptized</th>
     <th>Attend church</th>
-    <th>Church member</th>
+    <th>Is a church member</th>
     <th>Home church</th>
     <th>Denomination</th>
     <th>Church city</th>
@@ -44,69 +65,69 @@
     <th>Youth pastor</th>
     <th>How long attended</th>
     <th>Highest education level</th>
-    <th>Education other</th>
-    <th>Hs attended</th>
-    <th>Hs city</th>
-    <th>Hs state</th>
-    <th>Hs graduate</th>
-    <th>Hs class</th>
-    <th>College</th>
+    <th>Education (Other)</th>
+    <th>High School Attended</th>
+    <th>HS city</th>
+    <th>HS state</th>
+    <th>HS graduate</th>
+    <th>HS class</th>
+    <th>College Attended</th>
     <th>Major</th>
     <th>College city</th>
     <th>College state</th>
     <th>College graduated</th>
     <th>College dates attended</th>
     <th>Other schools</th>
-    <th>Mission experience</th>
-    <th>Mission city</th>
-    <th>Mission state</th>
+    <th>Prior mission trip experience</th>
+    <th>Mission organization city</th>
+    <th>Mission organization state</th>
     <th>Currently employed</th>
     <th>Current employer</th>
-    <th>Ce hired</th>
-    <th>Ce position</th>
-    <th>Ce city</th>
-    <th>Ce state</th>
-    <th>Ce phone</th>
+    <th>Date hired</th>
+    <th>Position</th>
+    <th>Employer's city</th>
+    <th>Employer's state</th>
+    <th>Employer's phone</th>
     <th>Past employer</th>
-    <th>Pe hired</th>
-    <th>Pe position</th>
-    <th>Pe city</th>
-    <th>Pe state</th>
-    <th>Pe phone</th>
-    <th>Father name</th>
-    <th>Father address</th>
-    <th>Father city</th>
-    <th>Father state</th>
-    <th>Father phone</th>
-    <th>Father work phone</th>
-    <th>Father occupation</th>
-    <th>Father denomination</th>
-    <th>Father accepted christ</th>
-    <th>Father consent</th>
-    <th>Mother name</th>
-    <th>Mother address</th>
-    <th>Mother city</th>
-    <th>Mother state</th>
-    <th>Mother phone</th>
-    <th>Mother work phone</th>
-    <th>Mother occupation</th>
-    <th>Mother denomination</th>
-    <th>Mother accepted christ</th>
-    <th>Mother consent</th>
+    <th>Date hired</th>
+    <th>Position</th>
+    <th>Prior employer's city</th>
+    <th>Prior employer's state</th>
+    <th>Prior employer's phone</th>
+    <th>Father's name</th>
+    <th>Father's address</th>
+    <th>Father's city</th>
+    <th>Father's state</th>
+    <th>Father's phone</th>
+    <th>Father's work phone</th>
+    <th>Father's occupation</th>
+    <th>Father's denomination</th>
+    <th>Has father accepted Christ</th>
+    <th>Father consents to internship</th>
+    <th>Mother's name</th>
+    <th>Mother's address</th>
+    <th>Mother's city</th>
+    <th>Mother's state</th>
+    <th>Mother's phone</th>
+    <th>Mother's work phone</th>
+    <th>Mother's occupation</th>
+    <th>Mother's denomination</th>
+    <th>Has mother accepted Christ</th>
+    <th>Mother consents to internship</th>
     <th>Siblings</th>
-    <th>Parent feelings</th>
-    <th>Health insurance</th>
-    <th>Insurance provider</th>
+    <th>Parents' feelings about internship</th>
+    <th>Have health insurance</th>
+    <th>Heath insurance provider</th>
     <th>Health description</th>
     <th>Physical limitation</th>
     <th>Medications</th>
     <th>Drugs</th>
-    <th>Emergency 1</th>
-    <th>Emergency 1 relationship</th>
-    <th>Emergency 1 phone</th>
-    <th>Emergency 2 name</th>
-    <th>Emergency 2 relationship</th>
-    <th>Emergency 2 phone</th>
+    <th>Emergency Contact</th>
+    <th>Emergency Contact relationship</th>
+    <th>Emergency Contact phone</th>
+    <th>Emergency Contact 2</th>
+    <th>Emergency Contact 2 relationship</th>
+    <th>Emergency Contact 2 phone</th>
     <th>Foreign language</th>
     <th>What languages</th>
     <th>Language proficiency</th>
@@ -179,7 +200,7 @@
     <td><%= intern.firstname %></td>
     <td><%= intern.lastname %></td>
     <td><%= intern.age %></td>
-    <td><%= intern.birthday %></td>
+    <td><%= intern.birthday.to_date %></td>
     <td><%= intern.gender %></td>
     <td><%= intern.termdesired %></td>
     <td><%= intern.internship_type %></td>
@@ -350,6 +371,6 @@
 <br />
 
 <%= link_to 'New Intern', new_intern_path %>
-
+		</div>
 	</div>
 </div>

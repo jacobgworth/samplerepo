@@ -21,6 +21,7 @@ class InternsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+      format.csv #show.csv.erb
       format.json { render json: @intern }
     end
   end
