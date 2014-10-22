@@ -1,0 +1,4 @@
+First Name,Last Name,Age,Birthday,Gender,Term Desired,Internship Type,Address,City,State,Zip,Marital Status,How Long Married,Spouse Name,Home Phone,Cell Phone,Can Text Messgae,Best Call Time,Email,T-Shirt Size,Ever Been Married,Ever Had Children,Ever Been Arrested,Ever Criminal Conviction
+<%@interns.each do |i|%>
+<%=i.firstname%>,<%=i.lastname%>,<%=i.age%>,<%=i.birthday.to_date%>,<%=i.gender%>,<%=i.termdesired%>,<%=i.internship_type%>,<%=i.address%>,<%=i.city%>,<%=i.state%>,<%=i.zip%>,<%=i.marital_status%>,<%=i.how_long_married%>,<%=i.spouse_name%>,<%=i.home_phone%>,<%=i.cell_phone%>,<%=i.can_text%>,<%=i.best_call_time%>,<%=i.email%>,<%=i.tshirt_size%>,<%=i.ever_married%>,<%=i.ever_children%>,<%=i.ever_arrested%>,<%=i.ever_criminal_convicted%>
+<%end%>

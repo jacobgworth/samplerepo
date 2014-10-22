@@ -5,10 +5,11 @@ class InternsController < ApplicationController
   # GET /interns
   # GET /interns.json
   def index
-    @interns = Intern.all
+    @interns = Intern.order("created_at desc")
 
     respond_to do |format|
       format.html # index.html.erb
+      format.csv #{ send_data @interns.as_csv }
       format.json { render json: @interns }
     end
   end
