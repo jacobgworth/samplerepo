@@ -22,11 +22,10 @@
 	</div>
 	<div class="fieldThirds"><label>Internship Type:</label> <br>
 		<select id="intern_internship_type" name="intern[internship_type]">
-			<option value="3Cords">3Cords</option>
-			<option value="Business Development">Business Development</option>
-			<option value="Church Advancement">Church Advancement</option>
+			<option value="3Cords">Mobilization/Group Trips</option>
 			<option value="Medical">Medical</option>
-			<option value="Village of Hope">Village of Hope</option>
+			<option value="Business Development">Child Sponsorship</option>
+			<option value="Church Advancement">Orphanage</option>
 		</select>
 	</div>
   	<div class="fieldThirds clearfix">
@@ -37,11 +36,11 @@
     <label>Last Name:</label><br> 
     <%= f.text_field :lastname %>
   </div>
-  <div class="fieldThirds clearfix">
+  <div class="fieldThirds">
     <label>Age:</label><br> 
     <%= f.text_field :age %>
   </div>
-  <div class="fieldThirds">
+  <div class="fieldThirds shortSelect clearfix">
     <label>Birthday:</label><br>
     <%= f.date_select :birthday,:start_year=>Date.current.year-50,:end_year=>Date.current.year %>
   </div>
@@ -50,11 +49,11 @@
     <input id="intern_gender_1" type="radio" name="intern[gender]" value="male"> Male
 	<input id="intern_gender_2" type="radio" name="intern[gender]" value="female"> Female
   </div>
-  <div class="field clearfix">
+  <div class="fieldHalf">
     <label>Street Address:</label><br>
     <%= f.text_field :address %>
   </div>
-  <div class="fieldThirds">
+  <div class="fieldThirds clearfix">
     <label>City:</label><br>
     <%= f.text_field :city %>
   </div>
@@ -120,11 +119,11 @@
     <%= f.check_box :ever_criminal_convicted %> (Check if yes)
   </div>
   <div class="field clearfix">
-    <label>If you answered "yes" to any of the above, please explain:</label>
+    <label>If you answered "yes" to any of the above, please explain:</label><br>
     <%= f.text_area :ever_explainers, size:"24x6", placeholder:"Enter your reply here." %>
   </div>
-  <div class="field clearfix">
-    <label>What are your plans after this internship?</label>
+  <div class="field">
+    <label>What are your plans after this internship?</label><br>
     <%= f.text_area :future_plans, size:"24x6", placeholder:"Enter your reply here." %>
   </div>
   </fieldset>
@@ -181,7 +180,7 @@
   </fieldset>
   <fieldset>
   	<h3>Education</h3>
-  <div class="fieldThirds">
+  <div class="fieldHalf">
     <label>Highest Level of Education Completed:</label><br>
     <select id="intern_highest_education_level" name="intern[highest_education_level]">
     	<option value="GED">GED</option>
@@ -241,7 +240,7 @@
     <label>Dates Attended:</label><br>
     <%= f.text_field :college_dates_attended %>
   </div>
-  <div class="fieldThirds clearfix">
+  <div class="fields clearfix">
     <label>Other schools attended, please include pertinent certifications or degrees:</label><br>
     <%= f.text_field :other_schools %>
   </div>
@@ -258,21 +257,21 @@
   </div>
   <div class="fieldThirds">
     <label>State:</label><br> 
-    <%= f.text_field :mission_state %>
+    <%= f.text_field :mission_state %><br><br><br>
   </div>
-  <div class="field clearfix">
+  <div class="fieldThirds clearfix">
     <label>Are you currently employed?</label><br> 
     <%= f.check_box :currently_employed %> (Check if yes)
   </div>
-  <div class="fieldThirds clearfix">
+  <div class="fieldHalf">
     <label>Current Employer:</label><br>
     <%= f.text_field :current_employer %>
   </div>
-  <div class="fieldThirds">
+  <div class="fieldThirds shortSelect">
     <label>Date Hired:</label><br>
     <%= f.date_select :ce_hired,:start_year=>Date.current.year-30,:end_year=>Date.current.year %>
   </div>
-  <div class="fieldThirds">
+  <div class="fieldHalf">
     <label>Position:</label><br>
     <%= f.text_field :ce_position %>
   </div>
@@ -316,7 +315,7 @@
   
   <fieldset>
   	<h3>Family</h3>
-  <div class="fieldHalf">
+  <div class="fieldThirds">
     <label>Name of Father or Guardian: </label><br>
     <%= f.text_field :father_name %>
   </div>
@@ -356,7 +355,7 @@
     <label>Are you applying to this internship with his consent?</label><br>
     <%= f.check_box :father_consent %> (Check if yes)
   </div>
-  <div class="fieldHalf clearfix">
+  <div class="fieldThirds clearfix">
     <label>Name of Mother or Guardian:</label><br>
     <%= f.text_field :mother_name %>
   </div>
@@ -413,11 +412,11 @@
     <label>Do you have health insurance?</label><br>
     <%= f.check_box :health_insurance %> (Check if yes)
   </div>
-  <div class="fieldThirds">
+  <div class="fieldHalf">
     <label>Insurance Provider:</label><br>
     <%= f.text_field :insurance_provider %>
   </div>
-  <div class="fieldThirds">
+  <div class="field clearfix">
     <label>How would you describe your health?</label><br>
     <%= f.text_field :health_description %>
   </div>
@@ -608,13 +607,13 @@
   	The Mission of Hope Internship Program desires to help its interns in every way possible. In order to do this, it is important for us to have some background information.
     <br><br>
     <label>Provide a description of your Christian experience (past and present).</label><br>
-    <%= f.text_area :Christian_experience,rows:"6" %>
+    <%= f.text_area :Christian_experience,rows:"6" %><br><br><br>
 
     <label>Describe experiences which have significantly influenced your life.</label><br>
-    <%= f.text_area :influential_experiences,rows:"6" %>
+    <%= f.text_area :influential_experiences,rows:"6" %><br><br><br>
   
-    <label>Provide a statement on why you desire to attend the Internship Program.</label><br>
-    <%= f.text_area :why_intern,rows:"6" %>
+    <label>Provide a statement on why you desire to serve through the Internship Program.</label><br>
+    <%= f.text_area :why_intern,rows:"6" %><br><br><br>
  
     <label>Explain why the MOH Internship Program should accept you.</label><br>
     <%= f.text_area :why_moh_wants,rows:"6" %>
@@ -643,5 +642,6 @@
   </fieldset>
   <div class="actions">
     <%= f.submit "Submit my request" %>
+    <p><!--x--><br><br><br></p>
   </div>
 <% end %>
