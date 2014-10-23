@@ -14,7 +14,7 @@
 				</tr>
 				<%@interns.each do |i|%>
 				<tr>
-					<td></td>
+					<td><img src="<%=i.assets.order('created_at desc').last.asset.url(:thumb) if i.assets.last%>" /></td>
 					<td><%=i.firstname%> <%=i.lastname%></td>
 					<td><%=i.created_at.to_date%></td>
 					<td><a href="/interns/<%=i.id%>">View Application</a></td>

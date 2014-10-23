@@ -43,7 +43,7 @@
   </div>
   <div class="fieldThirds">
     <label>Birthday:</label><br>
-    <%= f.date_select :birthday %>
+    <%= f.date_select :birthday,:start_year=>Date.current.year-50,:end_year=>Date.current.year %>
   </div>
   <div class="fieldThirds">
     <label>Gender:</label><br>
@@ -270,7 +270,7 @@
   </div>
   <div class="fieldThirds">
     <label>Date Hired:</label><br>
-    <%= f.date_select :ce_hired %>
+    <%= f.date_select :ce_hired,:start_year=>Date.current.year-30,:end_year=>Date.current.year %>
   </div>
   <div class="fieldThirds">
     <label>Position:</label><br>
@@ -618,6 +618,27 @@
  
     <label>Explain why the MOH Internship Program should accept you.</label><br>
     <%= f.text_area :why_moh_wants,rows:"6" %>
+  </div>
+  </fieldset>
+  <fieldset>
+  	<h3>Upload a recent picture of yourself</h3>
+  	<div class="field" style="margin-top:15px;"><strong>Add image(s):</strong>
+  <%= f.fields_for :assets do |asset_fields| %>
+  	<% if asset_fields.object.new_record? %>
+  		<p>
+  			
+  			<%= asset_fields.file_field :asset%>
+  		</p>
+  	<% end%>
+  <% end %>
+  <%= f.fields_for :assets do |asset_fields| %>
+  	<% unless asset_fields.object.new_record? %>
+  		<p>
+  			<%= link_to image_tag(asset_fields.object.asset.url(:thumb)),asset_fields.object.asset.url(:large)%>
+  			<%= asset_fields.check_box :_destroy %> Remove Image
+  		</p>
+  	<% end %>
+  <% end %>
   </div>
   </fieldset>
   <div class="actions">

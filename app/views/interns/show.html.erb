@@ -1,5 +1,11 @@
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+	<div id="content" style="padding-top: 50px;">
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+	<img src="<%=@photo.asset.url(:medium)%>" />
+	
 <p>
   <b>Firstname:</b>
   <%= @intern.firstname %>
@@ -823,3 +829,5 @@
 
 <%= link_to 'Edit', edit_intern_path(@intern) %> |
 <%= link_to 'Back', interns_path %>
+</div>
+</div>

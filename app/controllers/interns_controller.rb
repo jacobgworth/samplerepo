@@ -18,6 +18,7 @@ class InternsController < ApplicationController
   # GET /interns/1.json
   def show
     @intern = Intern.find(params[:id])
+    @photo = @intern.assets.order('created_at desc').last
 
     respond_to do |format|
       format.html # show.html.erb
@@ -30,6 +31,7 @@ class InternsController < ApplicationController
   # GET /interns/new.json
   def new
     @intern = Intern.new
+    @intern.assets.build
 
     respond_to do |format|
       format.html # new.html.erb

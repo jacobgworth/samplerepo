@@ -1,6 +1,69 @@
-<h1>Editing intern</h1>
+<% content_for(:head) do %>
+	<%= javascript_include_tag :validate_volunteer %>
+<% end %>
+<style>
 
+.formsLong {
+    background-color: #ccb99a;
+    border: 1px solid #c2b092;
+    padding-left: 20px;
+    padding-right: 47px;
+}
+
+.formsLong h3 {
+	margin-top:20px;
+}
+
+.formsLong label {
+	font-size:1.1em;
+}
+.formsLong input {
+	width:80%;
+	padding:5px;
+	margin-top:5px;
+}
+
+.formsLong input[type="radio"], .formsLong input[type="checkbox"], .formsLong input[type="submit"] {
+	width:auto;
+	margin-top:10px;
+} 
+
+.formsLong select {
+	width:80%;
+	margin-top:5px;
+} 
+
+.formsLong textarea {
+	margin-top:5px;
+}
+.formsLong .field {
+	margin:20px 0;
+}
+.fieldHalf {
+	float:left;
+	width:445px;
+	margin:20px 0;
+}
+.fieldThirds {
+	float:left;
+	width:297px;
+	margin:20px 0;
+}
+
+fieldset {
+	
+}
+
+</style>
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+	<div id="content" style="padding-top: 50px;">
+		<h1>Edit Intern Application</h1>
+		
 <%= render 'form' %>
 
 <%= link_to 'Show', @intern %> |
 <%= link_to 'Back', interns_path %>
+
+	</div>
+</div>
