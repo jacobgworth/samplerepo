@@ -64,8 +64,8 @@ class InternsController < ApplicationController
 
     respond_to do |format|
       if @intern.save
-        format.html { redirect_to @intern, notice: 'Intern was successfully created.' }
-        format.json { render json: @intern, status: :created, location: @intern }
+        format.html { redirect_to "/intern_thank_you", notice: 'Intern was successfully created.' }
+        #format.json { render json: @intern, status: :created, location: @intern }
       else
         format.html { render action: "new" }
         format.json { render json: @intern.errors, status: :unprocessable_entity }
@@ -100,4 +100,6 @@ class InternsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+
 end

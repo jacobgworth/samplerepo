@@ -2,6 +2,7 @@ Mohhaiti::Application.routes.draw do
   
   resources :interns
 
+  get "/intern_thank_you" => "page#intern_thank_you"
 
   resources :subscriptions
   

@@ -334,6 +334,12 @@ class PageController < ApplicationController
     end
   end
   
+  def intern_thank_you
+    respond_to do |format|
+        format.html {render :layout=>"homeLayout"}
+      end
+  end
+  
   def internships
     @title = "Haiti Ministry Internships | Internships at Mission of Hope, Haiti (MOH)"
     @meta = "Mission of Hope, Haiti offers internships to students who have a heart for Haiti and for Christ. Learn more about being an intern MOH Haiti!"

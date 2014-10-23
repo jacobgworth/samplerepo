@@ -57,18 +57,18 @@ fieldset {
 </style>
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
-	<div id="content" style="padding-top: 50px;">
-		<h1 style="font-size: 2em;"><span class="eyebrow">Mission of Hope Haiti</span>
-			<br />
-			Internship Application</h1>
-			<p>
-			If you would like to learn more about how you or a group can serve on a short-term mission trip with Mission of Hope, Haiti, please fill out and submit the form below. Once we have received your request, our Mission Trips Coordinator will be in touch with you.
-			</p>
-			<p>To request more information on Medical Mission Trips, please click <a href="/request_info_medical">here.</a></p>
-		<div class="formsLong">
-			<%= render 'form' %>
+	<div id="content" style="padding-top: 50px;" >
+		<div id="divFrm">
+			<h1 style="font-size: 2em;"><span class="eyebrow">Mission of Hope Haiti</span>
+				<br />
+				Internship Application</h1>
+				<p>
+				If you would like to learn more about how you or a group can serve on a short-term mission trip with Mission of Hope, Haiti, please fill out and submit the form below. Once we have received your request, our Mission Trips Coordinator will be in touch with you.
+				</p>
+				<p>To request more information on Medical Mission Trips, please click <a href="/request_info_medical">here.</a></p>
+			<div class="formsLong">
+				<%= render 'form' %>
+			</div>
 		</div>
-
-<%= link_to 'Back', interns_path %>
 	</div>
 </div>
