@@ -21,9 +21,13 @@ class InternsController < ApplicationController
   # GET /interns/1
   # GET /interns/1.json
   def show
+    @isadmin = is_admin_user?
+    unless @isadmin
+      redirect_to "/" and return
+    end
     @intern = Intern.find(params[:id])
     @photo = @intern.assets.order('created_at desc').last
-    @isadmin = is_admin_user?
+    
 
     respond_to do |format|
       format.html # show.html.erb
