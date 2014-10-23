@@ -6,6 +6,10 @@ class InternsController < ApplicationController
   # GET /interns.json
   def index
     @interns = Intern.order("created_at desc")
+    @isadmin = is_admin_user?
+    unless @isadmin
+      redirect_to "/" and return
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,6 +23,7 @@ class InternsController < ApplicationController
   def show
     @intern = Intern.find(params[:id])
     @photo = @intern.assets.order('created_at desc').last
+    @isadmin = is_admin_user?
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,6 +46,10 @@ class InternsController < ApplicationController
 
   # GET /interns/1/edit
   def edit
+    @isadmin = is_admin_user?
+    unless @isadmin
+      redirect_to "/" and return
+    end
     @intern = Intern.find(params[:id])
   end
 

@@ -826,8 +826,9 @@
   <%= @intern.why_moh_wants %>
 </p>
 
-
-<%= link_to 'Edit', edit_intern_path(@intern) %> |
-<%= link_to 'Back', interns_path %>
+<% if @isadmin%>
+	<%= link_to 'Edit', edit_intern_path(@intern) %> |
+	<%= link_to 'Back', interns_path %>
+<%end%>
 </div>
 </div>
