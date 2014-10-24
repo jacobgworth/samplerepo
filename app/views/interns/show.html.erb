@@ -2,10 +2,10 @@
 	<%= render 'layouts/navBar'%>
 	<div id="content" style="padding-top: 50px;">
 <p id="notice"><%= notice %></p>
-
+<h1>Intern Application</h1>
 <div class="row" style="padding-bottom:25px;">
 	<% if @isadmin%>
-		<h2><a href="/interns/<%=@intern.id%>.csv">Click to Download Application as CSV File</a></h2>
+		<div class="buttonSquareOrange" style="width:50%; margin:20px 0;"><a href="/interns/<%=@intern.id%>.csv">Download Application as CSV File</a></div>
 	<%end%>
 </div>
 
