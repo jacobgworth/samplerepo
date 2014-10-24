@@ -13,6 +13,12 @@ class UserMailer < ActionMailer::Base
     mail(:to => "lindsey@mohhaiti.org", :subject => @subject, :from => @fromaddress, :bcc=>"david.dewhirst@threetwelvecreative.com")
   end
   
+  def new_intern_app_notify(app_id)
+    @intern = Intern.find(app_id)
+    #mail(:to => "dsdewhir@gmail.com", :subject => "New Intern Application Has Been Uploaded", :from => "noreply@mohhaiti.org", :bcc=>"david.dewhirst@threetwelvecreative.com")
+    mail(:to => "internships@mohhaiti.org", :subject => "New Intern Application Has Been Uploaded", :from => "noreply@mohhaiti.org", :bcc=>"david.dewhirst@threetwelvecreative.com")
+  end
+  
   def password_reset(user)
     @user = user
     mail :to => user.email, :subject => "Password Reset"
@@ -22,5 +28,6 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail(:to => @user.email, :subject => "Welcome to Mission of Hope, Haiti", :from => "noreply@mohhaiti.org", :bcc => "investorcare@mohhaiti.org, david@threetwelvecreative.com")
   end
+  
   
 end

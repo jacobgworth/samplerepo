@@ -64,6 +64,7 @@ class InternsController < ApplicationController
 
     respond_to do |format|
       if @intern.save
+        UserMailer.new_intern_app_notify(@intern.id).deliver
         format.html { redirect_to "/intern_thank_you", notice: 'Intern was successfully created.' }
         #format.json { render json: @intern, status: :created, location: @intern }
       else

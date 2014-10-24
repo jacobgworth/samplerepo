@@ -3,9 +3,18 @@
 	<div id="content" style="padding-top: 50px;">
 <p id="notice"><%= notice %></p>
 
+<div class="row" style="padding-bottom:25px;">
+	<% if @isadmin%>
+		<h2><a href="/interns/<%=@intern.id%>.csv">Click to Download Application as CSV File</a></h2>
+	<%end%>
+</div>
+
 <div class="row">
-	<img src="<%=@photo.asset.url(:medium)%>" />
-	
+	<%if @photo%>
+		<img src="<%=@photo.asset.url(:medium)%> " />
+	<%else%>
+		<p><strong>No applicant image uploaded.</strong></p>
+	<%end%>
 <p>
   <b>Firstname:</b>
   <%= @intern.firstname %>

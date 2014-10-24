@@ -1,0 +1,11 @@
+<html>
+	<head></head>
+	<body>
+		<h1>New Intern Application</h1>
+		<div><%=@intern.firstname%> <%=@intern.lastname%> has uploaded an intern application.</div>
+		<div>Cell Phone: <%=@intern.cell_phone%></div>
+		<div>Email: <%=@intern.email%></div>
+		<div><a href="www.mohhaiti.org/interns/<%=@intern.id%>">Click here to view the complete application</a> (Must be logged in as admin)</div>
+		<div><a href="www.mohhaiti.org/interns/">Click here to view all intern applications</a> (Must be logged in as admin)</div>
+	</body>
+</html>
