@@ -53,6 +53,10 @@
     <label>Street Address:</label><br>
     <%= f.text_field :address %>
   </div>
+  <div class="fieldHalf">
+    <label>Apartment Number:</label><br>
+    <%= f.text_field :address %>
+  </div>
   <div class="fieldThirds clearfix">
     <label>City:</label><br>
     <%= f.text_field :city %>
@@ -120,12 +124,9 @@
   </div>
   <div class="field clearfix">
     <label>If you answered "yes" to any of the above, please explain:</label><br>
-    <%= f.text_area :ever_explainers, size:"24x6", placeholder:"Enter your reply here." %>
+    <%= f.text_area :ever_explainers, size:"24x6" %>
   </div>
-  <div class="field">
-    <label>What are your plans after this internship?</label><br>
-    <%= f.text_area :future_plans, size:"24x6", placeholder:"Enter your reply here." %>
-  </div>
+  
   </fieldset>
   <fieldset>
   	<h3>Spirituality</h3>
@@ -248,17 +249,10 @@
   <fieldset>
   	<h3>Experience</h3>
   <div class="field">
-    <label>Have you previously been on a mission trip? If yes, with what organization? </label><br>
+    <label>Have you previously been on a mission trip? If yes, with what organization and to where? </label><br>
     <%= f.text_field :mission_experience %>
   </div>
-  <div class="fieldThirds clearfix">
-    <label>City:</label><br> 
-    <%= f.text_field :mission_city %>
-  </div>
-  <div class="fieldThirds">
-    <label>State:</label><br> 
-    <%= f.text_field :mission_state %><br><br><br>
-  </div>
+  
   <div class="fieldThirds clearfix">
     <label>Are you currently employed?</label><br> 
     <%= f.check_box :currently_employed %> (Check if yes)
@@ -315,12 +309,20 @@
   
   <fieldset>
   	<h3>Family</h3>
-  <div class="fieldThirds">
-    <label>Name of Father or Guardian: </label><br>
+  <div class="fieldHalf">
+    <label>Father/Guardian First Name: </label><br>
     <%= f.text_field :father_name %>
   </div>
   <div class="fieldHalf">
+    <label>Father/Guardian Last Name: </label><br>
+    <%= f.text_field :father_name %>
+  </div>
+  <div class="fieldHalf clearfix">
     <label>Address: </label><br>
+    <%= f.text_field :father_address %>
+  </div>
+  <div class="fieldHalf">
+    <label>Apartment Number: </label><br>
     <%= f.text_field :father_address %>
   </div>
   <div class="fieldThirds clearfix">
@@ -332,14 +334,18 @@
     <%= f.text_field :father_state %>
   </div>
   <div class="fieldThirds">
+    <label>Zip:</label><br>
+    <%= f.text_field :father_state %>
+  </div>
+  <div class="fieldThirds clearfix">
     <label>Phone:</label><br>
     <%= f.text_field :father_phone %>
   </div>
-  <div class="fieldThirds clearfix">
+  <div class="fieldThirds">
     <label>Work Phone:</label><br>
     <%= f.text_field :father_work_phone %>
   </div>
-  <div class="fieldThirds">
+  <div class="fieldThirds clearfix">
     <label>Occupation:</label><br>
     <%= f.text_field :father_occupation %>
   </div>
@@ -356,11 +362,19 @@
     <%= f.check_box :father_consent %> (Check if yes)
   </div>
   <div class="fieldThirds clearfix">
-    <label>Name of Mother or Guardian:</label><br>
+    <label>Mother/Guardian First Name:</label><br>
     <%= f.text_field :mother_name %>
   </div>
-  <div class="fieldHalf">
+   <div class="fieldThirds">
+    <label>Mother/Guardian Last Name:</label><br>
+    <%= f.text_field :mother_name %>
+  </div>
+  <div class="fieldHalf clearfix">
     <label>Address:</label><br>
+    <%= f.text_field :mother_address %>
+  </div>
+  <div class="fieldHalf">
+    <label>Apartment Number:</label><br>
     <%= f.text_field :mother_address %>
   </div>
   <div class="fieldThirds clearfix">
@@ -372,14 +386,18 @@
     <%= f.text_field :mother_state %>
   </div>
   <div class="fieldThirds">
+    <label>Zip:</label><br>
+    <%= f.text_field :mother_state %>
+  </div>
+  <div class="fieldThirds clearfix">
     <label>Phone:</label><br>
     <%= f.text_field :mother_phone %>
   </div>
-  <div class="fieldThirds clearfix">
+  <div class="fieldThirds">
     <label>Work Phone:</label><br>
     <%= f.text_field :mother_work_phone %>
   </div>
-  <div class="fieldThirds">
+  <div class="fieldThirds clearfix">
     <label>Occupation:</label><br>
     <%= f.text_field :mother_occupation %>
   </div>
@@ -503,35 +521,51 @@
   <fieldset>
   	<h3>References</h3>
   	<p>You will need to secure 4 references to complete the application process.  They need to consist of 2 personal references (not former employers or relatives), 1 work or ministry reference, and 1 pastoral reference.  Please list the 4 people that you will be asking to send in references on your behalf.</p>
-  <div class="fieldHalf">
-    <label>Name:</label><br>
+  <div class="fieldThirds">
+    <label>Firs Name:</label><br>
     <%= f.text_field :ref1_name %>
   </div>
-  <div class="fieldHalf">
+   <div class="fieldThirds">
+    <label>Last Name:</label><br>
+    <%= f.text_field :ref1_name %>
+  </div>
+  <div class="fieldThirds">
     <label>Relationship:</label><br>
     <%= f.text_field :ref1_rel %>
   </div>
-  <div class="fieldHalf">
-    <label>Name:</label><br>
+  <div class="fieldThirds">
+    <label>First Name:</label><br>
     <%= f.text_field :ref2_name %>
   </div>
-  <div class="fieldHalf">
+   <div class="fieldThirds">
+    <label>Last Name:</label><br>
+    <%= f.text_field :ref2_name %>
+  </div>
+  <div class="fieldThirds">
     <label>Relationship:</label><br>
     <%= f.text_field :ref2_rel %>
   </div>
-  <div class="fieldHalf">
-    <label>Name:</label><br>
+  <div class="fieldThirds">
+    <label>First Name:</label><br>
     <%= f.text_field :ref3_name %>
   </div>
-  <div class="fieldHalf">
+  <div class="fieldThirds">
+    <label>Last Name:</label><br>
+    <%= f.text_field :ref3_name %>
+  </div>
+  <div class="fieldThirds">
     <label>Relationship:</label><br>
     <%= f.text_field :ref3_rel %>
   </div>
-  <div class="fieldHalf">
-    <label>Name:</label><br>
+  <div class="fieldThirds">
+    <label>First Name:</label><br>
     <%= f.text_field :ref4_name %>
   </div>
-  <div class="fieldHalf">
+  <div class="fieldThirds">
+    <label>Last Name:</label><br>
+    <%= f.text_field :ref4_name %>
+  </div>
+  <div class="fieldThirds">
     <label>Relationship:</label><br>
     <%= f.text_field :ref4_rel %>
   </div>
@@ -617,6 +651,11 @@
  
     <label>Explain why the MOH Internship Program should accept you.</label><br>
     <%= f.text_area :why_moh_wants,rows:"6" %>
+    
+    <div class="field">
+    <label>What are your plans after this internship?</label><br>
+    <%= f.text_area :future_plans, size:"24x6" %>
+  </div>
   </div>
   </fieldset>
   <fieldset>
