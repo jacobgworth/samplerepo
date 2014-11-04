@@ -96,7 +96,11 @@
   </div>
   <div class="fieldHalf">
     <label>Best time to call:</label><br>
-    <%= f.text_field :best_call_time %>
+    <select id="intern_best_call_time" name="intern[best_call_time]" >
+    	<option value="Morning">Morning</option>
+    	<option value="Afternoon">Afternoon</option>
+    	<option value="Evening">Evening</option>
+    </select>
   </div>
   <div class="fieldHalf clearfix">
     <label>Email Address:</label>
@@ -104,7 +108,12 @@
   </div>
   <div class="fieldThirds">
     <label>T-shirt Size:</label>
-    <%= f.text_field :tshirt_size %>
+    <select id="intern_tshirt_size" name="intern[tshirt_size]" >
+    	<option value="Small">Small</option>
+    	<option value="Medium">Medium</option>
+    	<option value="Large">Large</option>
+    	<option value="X-Large">X-Large</option>
+    </select>
   </div>
   <div class="fieldHalf clearfix">
     <label>Have you ever been married?</label><br />
