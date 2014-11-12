@@ -14,6 +14,8 @@ gem "databasedotcom-rails"
 
 gem "newrelic_rpm"
 
+gem "nokogiri", "1.6.3.1"
+
 gem "mail", ">=2.1.3"
 gem "httparty", "0.9.0"
 
