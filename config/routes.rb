@@ -175,6 +175,9 @@ Mohhaiti::Application.routes.draw do
   get "page/meet_our_staff"
   match "/meet_our_staff" => "page#meet_our_staff"
   
+  get "page/orphan_sponsorship"
+  match "/orphan_sponsorship" => "page#orphan_sponsorship"
+  
   get "page/clinic"
   match "/clinic" => "page#clinic"
   

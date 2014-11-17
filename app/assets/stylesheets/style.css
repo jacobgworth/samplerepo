@@ -1501,7 +1501,7 @@ h3.CTA {
 
 }
 
-.staff img, .gift img {
+.staff img, .gift img, .vohChild img {
     border: 5px solid #C2B092;
 }
 
@@ -1510,14 +1510,13 @@ h3.CTA {
     text-transform: none;
 }
 
-.staffBio {
+.staffBio, .vohBio {
     background-color: #C2B092;
     color:#0D5341;
     border-style: solid;
     font-size: 12px;
     text-transform: none;
-        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     display: none;
     left: 0px;
     padding: 20px;
@@ -1525,6 +1524,17 @@ h3.CTA {
     top: 175px;
     width: 300px;
     z-index: 100;
+}
+
+/***VOH Sponsor Child***/
+
+.vohChild {
+    float: left;
+    width: 300px;
+    padding-right: 10px;
+    position: relative;
+    margin-bottom: 40px;
+    min-height: 258px;
 }
 
 .giftLarge {

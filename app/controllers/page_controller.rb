@@ -416,6 +416,14 @@ class PageController < ApplicationController
     end
   end
   
+  def orphan_sponsorship
+    @title = "Village of Hope"
+    @meta = "Sponsor an orphan at Village of Hope."
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+  
   def newsletter_thank_you
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}
