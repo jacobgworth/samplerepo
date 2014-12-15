@@ -221,7 +221,7 @@ class MymohController < ApplicationController
         @photo = nil
 		unless spons.Child__c.nil?
 			@child = Child__c.find_by_Id(spons.Child__c)
-			@photo = Picture__c.find_by_Child__c(@child.Id).Photo__c unless Picture__c.find_by_Child__c(@child.Id).nil?
+			@photo = Picture__c.query("Child__c='" + @child.Id + "' and Primary__c=true").first.Photo__c if Picture__c.query("Child__c='" + @child.Id + "' and Primary__c=true")
 			if @photo.nil?
 			  @attachment = Attachment.find_by_ParentId(@child.Id)
 			  @photo = "<img src='https://c.na12.content.force.com/servlet/servlet.FileDownload?file=" + @attachment.Id.to_s + "' />" unless @attachment.nil?
