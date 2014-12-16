@@ -85,7 +85,7 @@ If you are a Canadian Donor and would like to receive a tax-deductible receipt, 
 						<td>$<%= currency_convert(rec.cv__Last_Payment_Amount__c) || 0 %></td>
 						<td><%= rec.cv__Last_Payment_Date__c ? rec.cv__Last_Payment_Date__c.strftime("%b %-d, %Y") : "N/A"%></td>
 						<td>$<%= rec.AheadBeahind__c < 0 ? "(" + rec.AheadBeahind__c.abs.to_i.to_s + ")" : rec.AheadBeahind__c.to_i %></td>
-						<td><%= rec.cv__Next_Payment_Date__c ? rec.MOH_Bill_Date__c.strftime("%b %-d, %Y") : "N/A"%></td>
+						<td><%= rec.cv__Next_Payment_Date__c ? rec.cv__Next_Payment_Date__c.strftime("%b %-d, %Y") : "N/A"%></td>
 						<td>$<%= currency_convert(rec.cv__Next_Payment_Amount__c) || "N/A"%></td>
 					</tr>
 				<% end %>
