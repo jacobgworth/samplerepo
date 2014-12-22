@@ -64,5 +64,5 @@ end
 group :production do
   # gems specifically for Heroku go here
   gem 'pg'
-  gem ruby '2.1.2'
+  gem ruby '1.9.3'
 end
