@@ -1,7 +1,5 @@
 source 'http://rubygems.org'
 
-"ruby >=2.0.0"
-
 gem 'rails', '3.2.11'
 
 gem 'rack-timeout'
@@ -65,5 +63,6 @@ group :development, :test do
 end
 group :production do
   # gems specifically for Heroku go here
+  ruby "2.1.5"
   gem 'pg'
 end
