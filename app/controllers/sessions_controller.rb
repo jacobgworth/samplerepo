@@ -13,10 +13,19 @@ class SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       cookies[:auth_token] = user.auth_token
+      
+      @token = convio_authtoken_fetch user.email
+      if @token && @token != "Token failure"
+        user.convio_authtoken = @token
+        user.save!
+      end
+    
       if !user.is_admin?
-        redirect_to "/mymoh", :notice => "Logged in!"
+        redirect_to "https://secure3.convio.net/mohh/site/CRConsAPI?method=singleSignOn&api_key=mohhapi&v=1.0&error_redirect=http://www.boomeon.com&success_redirect=http://www.mohhaiti.org/mymoh&sso_auth_token=#{user.convio_authtoken}&remember_me=true"
+        #redirect_to "/mymoh", :notice => "Logged in!"
       else
-        redirect_to "/console"
+        redirect_to "https://secure3.convio.net/mohh/site/CRConsAPI?method=singleSignOn&api_key=mohhapi&v=1.0&error_redirect=http://www.boomeon.com&success_redirect=http://www.mohhaiti.org/console&sso_auth_token=#{user.convio_authtoken}&remember_me=true"
+        #redirect_to "/console"
       end
     else
       flash.now.alert = "Invalid email or password."

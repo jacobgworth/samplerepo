@@ -44,6 +44,8 @@ class PageController < ApplicationController
         format.html { redirect_to "/" }
       end
     else
+      @user = current_user if current_user
+      
       respond_to do |format|
         format.html {render :layout=>"homeLayout"}# console.html.erb
       end

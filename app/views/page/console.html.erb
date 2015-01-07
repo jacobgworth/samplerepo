@@ -3,6 +3,9 @@
 <%= render 'layouts/navBar'%>
 <div style="padding:50px 0px 0px 10px;">
 <h1 style="font-size:1.5em;">Admin Console</h1>
+<%if @user.email=="david@threetwelvecreative.com"%>
+<h3>Welcome, David. Your Convio Authtoken is <%=@user.convio_authtoken%></h3><br />
+<%end%>
 <div>Click a link to add, edit or delete items.
 	<div style="line-height:18px;width:250px;padding-top:10px;">
 		<h2 style="width:250px;border-bottom:solid 2px #58534A;padding-bottom:3px;">Intern Applications</h2>

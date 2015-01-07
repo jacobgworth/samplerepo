@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   helper_method :current_user
+  helper_method :convio_authtoken_fetch
   
   private
   #def current_user
@@ -70,6 +71,34 @@ class ApplicationController < ActionController::Base
     else
       return false
     end
+  end
+  
+  def convio_authtoken_fetch(email)
+    require 'net/http'
+    uri = URI('https://secure3.convio.net/mohh/site/SRConsAPI')
+    
+    @user = User.find_by_email(email)
+    unless @user
+      return ''
+    end
+    req = Net::HTTP::Post.new(uri)
+    
+    #login_name =value & login_password =value & v =value [ & center_id =value ] [ & response_format =xml |json ] [ & source =value ] [ & sub_source =value ] [ & suppress_response_codes =value ] [ & cons_id =value ] [ & member_id =value ]
+    req.set_form_data('method' => 'getSingleSignOnToken', 'api_key' => 'mohhapi', 'login_name'=>'threetwelve','login_password'=>'hope_is_our_mission','v'=>'1.0','response_format'=>'json','cons_id'=>@user.convio_id)
+
+    res = Net::HTTP.start(uri.hostname, uri.port,:use_ssl => uri.scheme == 'https') do |http|
+      http.request(req)
+    end
+
+    case res
+      when Net::HTTPSuccess, Net::HTTPRedirection
+        # OK
+        @token = JSON.parse(res.body)
+        #return @token
+        return @token['getSingleSignOnTokenResponse']['token']
+      else
+        'Token failure'
+      end
   end
   
   def create_convio_contact(last, first, email)
