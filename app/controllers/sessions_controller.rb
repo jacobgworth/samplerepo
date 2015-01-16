@@ -21,10 +21,10 @@ class SessionsController < ApplicationController
       end
     
       if !user.is_admin?
-        redirect_to "https://secure3.convio.net/mohh/site/CRConsAPI?method=singleSignOn&api_key=mohhapi&v=1.0&error_redirect=http://www.boomeon.com&success_redirect=http://www.mohhaiti.org/mymoh&sso_auth_token=#{user.convio_authtoken}&remember_me=true"
+        redirect_to "https://secure3.convio.net/mohh/site/CRConsAPI?method=singleSignOn&api_key=mohhapi&v=1.0&error_redirect=http://mohhaiti.org/mymoh&success_redirect=http://www.mohhaiti.org/mymoh&sso_auth_token=#{user.convio_authtoken}&remember_me=true"
         #redirect_to "/mymoh", :notice => "Logged in!"
       else
-        redirect_to "https://secure3.convio.net/mohh/site/CRConsAPI?method=singleSignOn&api_key=mohhapi&v=1.0&error_redirect=http://www.boomeon.com&success_redirect=http://www.mohhaiti.org/console&sso_auth_token=#{user.convio_authtoken}&remember_me=true"
+        redirect_to "https://secure3.convio.net/mohh/site/CRConsAPI?method=singleSignOn&api_key=mohhapi&v=1.0&error_redirect=http://mohhaiti.org/mymoh&success_redirect=http://www.mohhaiti.org/console&sso_auth_token=#{user.convio_authtoken}&remember_me=true"
         #redirect_to "/console"
       end
     else
