@@ -1,4 +1,4 @@
-<%if @projects.count > 0%>
+<%if @projects.count > 0 && @category && @category.categoryname != "Church Advancement"%>
 <div class="updatesWrapper"><!--Projects-->
 	<h3><span class="eyebrow"><%=@category.categoryname%></span><br />Projects</h3>
 	<div class="speechBubble"><p>projects under way</p></div>	
