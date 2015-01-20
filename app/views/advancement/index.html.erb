@@ -24,8 +24,6 @@
 		<img src="/assets/contentDiv.png" />
 	<div id="contentLeft560">
 		<%= render '/layouts/pup'%>
-	
-	
 	</div>
 	<div id="contentRight300">
 		<%= render 'layouts/churchNav'%>
@@ -48,10 +46,13 @@
 
 			<h3><span class="eyebrow">Learn More About</span><br />Our Reach in Haiti</h3>
 			
-				<h4 class="projectDetailButton iconDetailVillages">Total No. of Villages Served <span class="darkGreen"><%=@villages.count%></span></h4>
-				<h4 class="projectDetailButton iconDetailPopulation">Total Population Reached <span class="darkGreen"><%=@villages.sum('population')%></span></h4>
-				<h4 class="projectDetailButton iconDetailProjects">Total No. of Projects Under Way <span class="darkGreen"><%=@projects.count%></span></h4>
-				<div class="buttonSquareOrange" style="width: 182px; margin-top: 15px;"><a href="/villages">Villages we work in &raquo;</a></div>
+				<h4 class="projectDetailButton iconDetailVillages">Total No. of Villages Served <span class="darkGreen">11
+					<!-- <%=@villages.count%> --></span></h4>
+				<h4 class="projectDetailButton iconDetailPopulation">Total Population Reached <span class="darkGreen">101,300
+					<!-- 
+					<%=@villages.sum('population')%> --></span></h4>
+				<h4 class="projectDetailButton iconDetailProjects" style="display:none;">Total No. of Projects Under Way <span class="darkGreen"><%=@projects.count%></span></h4>
+				<div class="buttonSquareOrange" style="width: 200px; margin-top: 15px;"><a href="/villages">Villages we work in &raquo;</a></div>
 		</div>
 		<div class="contentDiv"></div>
 		<div class="contentRightWrapper">	
