@@ -27,8 +27,100 @@ class InternsController < ApplicationController
     end
     @intern = Intern.find(params[:id])
     @photo = @intern.assets.order('created_at desc').last
-    @traits="No self-selected traits"
-    
+    #Build @traits string with true traits
+    @traits = ""
+    if @intern.modest_trait
+      @traits="Modest,"
+    end
+    if @intern.mature_trait
+      @traits+=" Mature,"
+    end
+    if @intern.kind_trait
+      @traits+=" Kind,"
+    end
+    if @intern.abrasive_trait
+      @traits+=" Abrasive,"
+    end
+    if @intern.organized_trait
+      @traits+=" Organized,"
+    end
+    if @intern.quiet_trait
+      @traits+=" Quiet,"
+    end
+    if @intern.moody_trait
+      @traits+=" Moody,"
+    end
+    if @intern.teachable_trait
+      @traits+=" Teachable,"
+    end
+    if @intern.self_motivated_trait
+      @traits+=" Self-motivated,"
+    end
+    if @intern.genuine_trait
+      @traits+=" Genuine,"
+    end
+    if @intern.detail_oriented_trait
+      @traits+=" Detail-oriented,"
+    end
+    if @intern.loving_trait
+      @traits+=" Loving,"
+    end
+    if @intern.sarcastic_trait
+      @traits+=" Sarcastic,"
+    end
+    if @intern.selfish_trait
+      @traits+=" Selfish,"
+    end
+    if @intern.trustworthy_trait
+      @traits+=" Trustworthy,"
+    end
+    if @intern.tactful_trait
+      @traits+=" Tactful,"
+    end
+    if @intern.compassionate_trait
+      @traits+=" Compassionate,"
+    end
+    if @intern.hard_working_trait
+      @traits+=" Hard-Working,"
+    end
+    if @intern.adaptive_trait
+      @traits+=" Adaptive,"
+    end
+    if @intern.lazy_trait
+      @traits+=" Lazy,"
+    end
+    if @intern.punctual_trait
+      @traits+=" Punctual,"
+    end
+    if @intern.sensitive_trait
+      @traits+=" Sensitive,"
+    end
+    if @intern.socially_awkward_trait
+      @traits+=" Socially awkward,"
+    end
+    if @intern.considerate_trait
+      @traits+=" Considerate,"
+    end
+    if @intern.motivated_trait
+      @traits+=" Motivated,"
+    end
+    if @intern.impulsive_trait
+      @traits+=" Impulsive,"
+    end
+    if @intern.relaxed_trait
+      @traits+=" Relaxed,"
+    end
+    if @intern.friendly_trait
+      @traits+=" Friendly,"
+    end
+    if @intern.determined_trait
+      @traits+=" Determined,"
+    end
+    if @intern.leader_trait
+      @traits+=" Leader,"
+    end
+    @traits = @traits.chop
+    @traits == "" ? "No seld-selected traits" : @traits
 
     respond_to do |format|
       format.html # show.html.erb
