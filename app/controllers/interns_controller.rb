@@ -27,6 +27,7 @@ class InternsController < ApplicationController
     end
     @intern = Intern.find(params[:id])
     @photo = @intern.assets.order('created_at desc').last
+    @traits="No self-selected traits"
     
 
     respond_to do |format|
