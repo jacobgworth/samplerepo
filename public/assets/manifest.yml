@@ -35,6 +35,8 @@ book-helping-hurts.jpg: book-helping-hurts-992cf2ea3a50a734b209befe2080539d.jpg
 book-helping-hurts/index.jpg: book-helping-hurts-992cf2ea3a50a734b209befe2080539d.jpg
 button-holiday-shop.png: button-holiday-shop-93d9f77e0e0a1f1c90ac6fd52b582f5a.png
 button-holiday-shop/index.png: button-holiday-shop-93d9f77e0e0a1f1c90ac6fd52b582f5a.png
+button-market-hope-shop.png: button-market-hope-shop-dc258edb0201d33c30f93b68584eccb5.png
+button-market-hope-shop/index.png: button-market-hope-shop-dc258edb0201d33c30f93b68584eccb5.png
 button-newsletter.png: button-newsletter-ea6503bbd647e0f809545f1186500e17.png
 button-newsletter/index.png: button-newsletter-ea6503bbd647e0f809545f1186500e17.png
 caprojects-inset-bucket.jpg: caprojects-inset-bucket-dceb739c66091e704536274171b21e00.jpg
@@ -149,6 +151,10 @@ hero-village-cabaret.jpg: hero-village-cabaret-54817dbef0afb467ce7084deea1335b9.
 hero-village-cabaret/index.jpg: hero-village-cabaret-54817dbef0afb467ce7084deea1335b9.jpg
 hero-village-turpin.jpg: hero-village-turpin-f0fba94ffb169bcfdd253ef51b7adc25.jpg
 hero-village-turpin/index.jpg: hero-village-turpin-f0fba94ffb169bcfdd253ef51b7adc25.jpg
+hero-villages-williamson.jpg: hero-villages-williamson-273c3a9b88fc57cfce7852e79b913db4.jpg
+hero-villages-williamson/index.jpg: hero-villages-williamson-273c3a9b88fc57cfce7852e79b913db4.jpg
+hero-villages.jpg: hero-villages-80ed654e7f07e08de298a61396954dc9.jpg
+hero-villages/index.jpg: hero-villages-80ed654e7f07e08de298a61396954dc9.jpg
 hero3Cords.jpg: hero3Cords-8c877bb7f232ac473d710a15fbee31ff.jpg
 hero3Cords/index.jpg: hero3Cords-8c877bb7f232ac473d710a15fbee31ff.jpg
 heroAbout.jpg: heroAbout-2b469c0014bcab2e81eca0a00a9182f2.jpg
@@ -861,6 +867,8 @@ updatesNav.png: updatesNav-4b42e3577d190c9cc0d90d075a73f4d7.png
 updatesNav/index.png: updatesNav-4b42e3577d190c9cc0d90d075a73f4d7.png
 videoBG.png: videoBG-301b71a7973251876ad9deb5bad1cf4f.png
 videoBG/index.png: videoBG-301b71a7973251876ad9deb5bad1cf4f.png
+village-williamson-small.jpg: village-williamson-small-c340988741800c9283055246a386c21f.jpg
+village-williamson-small/index.jpg: village-williamson-small-c340988741800c9283055246a386c21f.jpg
 voh-Angelie.jpg: voh-Angelie-fa3617f7155ebccca788d0077575972c.jpg
 voh-Angelie/index.jpg: voh-Angelie-fa3617f7155ebccca788d0077575972c.jpg
 voh-Bernadette.jpg: voh-Bernadette-1a005a853f912994cbcdc04c1d11a0ff.jpg
@@ -1063,8 +1071,8 @@ videos.js: videos-d01e88b2aec7a525f568dafe6b9bc345.js
 videos/index.js: videos-d01e88b2aec7a525f568dafe6b9bc345.js
 advancement.css: advancement-03a3096077f5ee23399113043c574495.css
 advancement/index.css: advancement-03a3096077f5ee23399113043c574495.css
-application.css: application-805f05a2613b012458d26e961003b023.css
-application/index.css: application-805f05a2613b012458d26e961003b023.css
+application.css: application-5c6b8f9e706bfd45ad4ad62be46555da.css
+application/index.css: application-5c6b8f9e706bfd45ad4ad62be46555da.css
 categories.css: categories-03a3096077f5ee23399113043c574495.css
 categories/index.css: categories-03a3096077f5ee23399113043c574495.css
 category.css: category-03a3096077f5ee23399113043c574495.css
@@ -1107,8 +1115,8 @@ sessions.css: sessions-03a3096077f5ee23399113043c574495.css
 sessions/index.css: sessions-03a3096077f5ee23399113043c574495.css
 sponsorship.css: sponsorship-03a3096077f5ee23399113043c574495.css
 sponsorship/index.css: sponsorship-03a3096077f5ee23399113043c574495.css
-style.css: style-de125c496e87129ee429cd017830121d.css
-style/index.css: style-de125c496e87129ee429cd017830121d.css
+style.css: style-19d582c64907158029e1feea552024ae.css
+style/index.css: style-19d582c64907158029e1feea552024ae.css
 subscriptions.css: subscriptions-03a3096077f5ee23399113043c574495.css
 subscriptions/index.css: subscriptions-03a3096077f5ee23399113043c574495.css
 tags.css: tags-03a3096077f5ee23399113043c574495.css
