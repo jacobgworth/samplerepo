@@ -2,7 +2,20 @@
 	label {font-weight:800; color:#0f483b; text-transform: uppercase; float:left; width:30%; padding:10px 10px 0 0; line-height:21px;}
 	span.formData {float:left; width:60%; padding:10px 0; line-height:21px; min-height:21px;}
 	hr {border:1px solid #0F483B; margin:30px 0;}
+	.internPhoto {
+		float:right; width:30%; padding-top:40px;
+	}
+	.internData {float:left; width:70%}
+	
+	@media print {
+		.internPhoto {width:100%;} 
+		.internData {width:100%;}
+		hr {display:none;}
+		label {width:100%;}
+		.formData {width:100%;}
+	}
 </style>
+
 
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
@@ -16,14 +29,14 @@
 </div>
 <div class="clearfix"><!--x--></div>
 <div class="row">
-	<div style="float:right; width:30%; padding-top:40px;">
+	<div class="internPhoto">
 	<%if @photo%>
 		<img src="<%=@photo.asset.url(:medium)%> " />
 	<%else%>
 		<p><strong>No applicant image uploaded.</strong></p>
 	<%end%>
 	</div>
-	<div style="float:left; width:70%">
+	<div class="internData">
 <h2 style="padding:30px 0;">General Information</h2>
 <label>Name:</label>
  <span class="formData"> <%= @intern.firstname %> <%= @intern.lastname %></span><div class="clearfix"><!--x--></div>
