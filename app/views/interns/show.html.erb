@@ -1,499 +1,983 @@
 <style>
-	label {font-weight:800; color:#0f483b; text-transform: uppercase; float:left; width:30%; padding:10px 10px 0 0; line-height:21px;}
-	span.formData {float:left; width:60%; padding:10px 0; line-height:21px; min-height:21px;}
-	hr {border:1px solid #0F483B; margin:30px 0;}
-	.internPhoto {
-		float:right; width:30%; padding-top:40px;
+	label {
+		font-weight: 800;
+		color: #0f483b;
+		text-transform: uppercase;
+		float: left;
+		width: 30%;
+		padding: 10px 10px 0 0;
+		line-height: 21px;
 	}
-	.internData {float:left; width:70%}
-	
+	span.formData {
+		float: left;
+		width: 60%;
+		padding: 10px 0;
+		line-height: 21px;
+		min-height: 21px;
+	}
+	hr {
+		border: 1px solid #0F483B;
+		margin: 30px 0;
+	}
+	.internPhoto {
+		float: right;
+		width: 30%;
+		padding-top: 40px;
+	}
+	.internData {
+		float: left;
+		width: 70%
+	}
+
 	@media print {
-		.internPhoto {width:100%;} 
-		.internData {width:100%;}
-		hr {display:none;}
-		label {width:100%;}
-		.formData {width:100%;}
+		.internPhoto {width:30%; float:right;} 
+		
+		
+		.intern_general, .intern_spirituality, .intern_education, 
+		.intern_experience, .intern_family, .intern_emergency, .intern_skills, 
+		.intern_references, .intern_profile, .intern_sketch {float:left;width:100%;}
+		label {
+			width: 100%;
+		}
+		.formData {
+			width: 100%;
+		}
+		.buttonSquareOrange {
+			display: none;
+		}
+		.hideforprint {
+			display: none;
+		}
+		hr {
+			display: none;
+		}
+		h3 {display:none;}
 	}
 </style>
-
 
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 	<div id="content" style="padding-top: 50px;">
-<p id="notice"><%= notice %></p>
-<h1 style="float:left;">Intern Application</h1>
-<div class="row" style="padding-bottom:25px;">
-	<% if @isadmin%>
-		<div class="buttonSquareOrange" style="float:right; width:300px; margin:0 0 20px 0;"><a href="/interns/<%=@intern.id%>.csv">Download Application as CSV File</a></div>
-	<%end%>
-</div>
-<div class="clearfix"><!--x--></div>
-<div class="row">
-	<div class="internPhoto">
-	<%if @photo%>
-		<img src="<%=@photo.asset.url(:medium)%> " />
-	<%else%>
-		<p><strong>No applicant image uploaded.</strong></p>
-	<%end%>
+		<p id="notice">
+			<%= notice %>
+		</p>
+		<h1 style="float:left;">Intern Application</h1>
+		<div class="row" style="padding-bottom:25px;">
+			<% if @isadmin%>
+			<div class="buttonSquareOrange" style="float:right; width:300px; margin:0 0 20px 0;">
+				<a href="/interns/<%= @intern.id%>.csv">Download Application as CSV File</a>
+			</div>
+			<%end%>
+		</div>
+		<div class="clearfix">
+			<!--x-->
+		</div>
+		<div class="row">
+			<div class="internPhoto">
+				<%if @photo%>
+				<img src="<%= @photo.asset.url(:medium)%> " />
+				<%else%>
+				<p>
+					<strong>No applicant image uploaded.</strong>
+				</p>
+				<%end%>
+			</div>
+			<div class="internData">
+				<div class="intern_general">
+				<h2>General Information</h2>
+				<label>Name:</label>
+				<span class="formData"> <%= @intern.firstname %> <%= @intern.lastname %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Age:</label>
+				<span class="formData"> <%= @intern.age %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Birthday:</label>
+				<span class="formData"> <%= @intern.birthday %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Gender:</label>
+				<span class="formData"> <%= @intern.gender %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Term Desired:</label>
+				<span class="formData"> <%= @intern.termdesired %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Internship Type:</label>
+				<span class="formData"> <%= @intern.internship_type %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Address:</label>
+				<span class="formData"> <%= @intern.address %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Address 2:</label>
+				<span class="formData"> <%= @intern.address2 %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>City:</label>
+				<span class="formData"><%= @intern.city %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>State/Provence</label>
+				<span class="formData"><%= @intern.state %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Postal Code:</label>
+				<span class="formData"><%= @intern.zip %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Marital Status:</label>
+				<span class="formData"> <%= @intern.marital_status %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>How long married:</label>
+				<span class="formData"> <%= @intern.how_long_married %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Spouse's Name:</label>
+				<span class="formData"> <%= @intern.spouse_name %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Home Phone:</label>
+				<span class="formData"> <%= @intern.home_phone %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Cell Phone:</label>
+				<span class="formData"> <%= @intern.cell_phone %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Can Text:</label>
+				<span class="formData"> <%= @intern.can_text %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Best Call Time:</label>
+				<span class="formData"> <%= @intern.best_call_time %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Email:</label>
+				<span class="formData"> <%= @intern.email %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Tshirt Size:</label>
+				<span class="formData"> <%= @intern.tshirt_size %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Ever Married:</label>
+				<span class="formData"> <%= @intern.ever_married %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Ever Had Children:</label>
+				<span class="formData"> <%= @intern.ever_children %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Ever Arrested:</label>
+				<span class="formData"> <%= @intern.ever_arrested %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Ever Criminally Convicted:</label>
+				<span class="formData"> <%= @intern.ever_criminal_convicted %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>If yes, explain:</label>
+				<span class="formData"> <%= @intern.ever_explainers %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<div class="clearfix">
+					<!--x-->
+				</div>
+				<hr />
+				</div><!--end general-->
+				
+				<div class="intern_spirituality">
+				<h2>Spirituality</h2>
+
+				<label>Accepted Christ:</label>
+				<span class="formData"> <%= @intern.accepted_Christ %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Water Baptized:</label>
+				<span class="formData"> <%= @intern.water_baptized %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Attend Church:</label>
+				<span class="formData"> <%= @intern.attend_church %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Church Member:</label>
+				<span class="formData"> <%= @intern.church_member %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Home Church:</label>
+				<span class="formData"> <%= @intern.home_church %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Denomination:</label>
+				<span class="formData"> <%= @intern.denomination %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>City:</label>
+				<span class="formData"> <%= @intern.church_city %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>State/Provence:</label>
+				<span class="formData"> <%= @intern.church_state %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Phone:</label>
+				<span class="formData"> <%= @intern.church_phone %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Senior Pastor:</label>
+				<span class="formData"> <%= @intern.senior_pastor %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Youth Pastor:</label>
+				<span class="formData"> <%= @intern.youth_pastor %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>How long attended:</label>
+				<span class="formData"> <%= @intern.how_long_attended %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<hr />
+				<div class="clearfix">
+					<!--x-->
+				</div>
+</div><!--end spirituality-->
+
+<div class="intern_education">
+				<h2>Education</h2>
+
+				<label>Highest Education Level:</label>
+				<span class="formData"> <%= @intern.highest_education_level %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Education Other:</label>
+				<span class="formData"> <%= @intern.education_other %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<h3>High School</h3>
+				<label>High School Attended:</label>
+				<span class="formData"> <%= @intern.hs_attended %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>City:</label>
+				<span class="formData"> <%= @intern.hs_city %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>State/Provence:</label>
+				<span class="formData"> <%= @intern.hs_state %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Graduate:</label>
+				<span class="formData"> <%= @intern.hs_graduate %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Class:</label>
+				<span class="formData"> <%= @intern.hs_class %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<h3>College</h3>
+				<label>College Attended:</label>
+				<span class="formData"> <%= @intern.college %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Major:</label>
+				<span class="formData"> <%= @intern.major %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>City:</label>
+				<span class="formData"> <%= @intern.college_city %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>State/Provence:</label>
+				<span class="formData"> <%= @intern.college_state %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Graduated:</label>
+				<span class="formData"> <%= @intern.college_graduated %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Dates Attended:</label>
+				<span class="formData"> <%= @intern.college_dates_attended %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<h3>Other</h3>
+				<label>Other Schools Attended:</label>
+				<span class="formData"> <%= @intern.other_schools %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<hr />
+			</div><!--end education-->				
+			<div class="intern_experience">
+				<h2>Experience</h2>
+				<h3>Missions</h3>
+				<label>Mission Experience:</label>
+				<span class="formData"> <%= @intern.mission_experience %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<!--<label>City, ST:</label>
+				<span class="formData"> <%= @intern.mission_city %> <%= @intern.mission_state %></span><div class="clearfix"></div>-->
+				
+				<h3>Employment</h3>
+
+				<label>Currently Employed:</label>
+				<span class="formData"> <%= @intern.currently_employed %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+				<h3>Current</h3>
+				<label>Current Employer:</label>
+				<span class="formData"> <%= @intern.current_employer %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Date Hired:</label>
+				<span class="formData"> <%= @intern.ce_hired %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Position:</label>
+				<span class="formData"> <%= @intern.ce_position %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>City:</label>
+				<span class="formData"> <%= @intern.ce_city %> </span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>State/Provence:</label>
+				<span class="formData"> <%= @intern.ce_state %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Phone:</label>
+				<span class="formData"> <%= @intern.ce_phone %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+				<h3>Past</h3>
+				<label>Past Employer:</label>
+				<span class="formData"> <%= @intern.past_employer %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Hired:</label>
+				<span class="formData"> <%= @intern.pe_hired %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Position:</label>
+				<span class="formData"> <%= @intern.pe_position %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>City:</label>
+				<span class="formData"> <%= @intern.pe_city %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>State/Provence:</label>
+				<span class="formData"> <%= @intern.pe_state %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Phone:</label>
+				<span class="formData"> <%= @intern.pe_phone %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+				<hr />
+				</div><!--experience-->
+				
+				<div class="intern_family">
+				<h2>Family</h2>
+				<h3>Father</h3>
+				<label>Name:</label>
+				<span class="formData"> <%= @intern.father_name %> <%= @intern.father_last_name %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Address:</label>
+				<span class="formData"> <%= @intern.father_address %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Address 2:</label>
+				<span class="formData"> <%= @intern.father_address_2 %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>City:</label>
+				<span class="formData"> <%= @intern.father_city %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>State/Provence:</label>
+				<span class="formData"> <%= @intern.father_state %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Postal Code:</label>
+				<span class="formData"> <%= @intern.father_zip %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Phone:</label>
+				<span class="formData"> <%= @intern.father_phone %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Work Phone:</label>
+				<span class="formData"> <%= @intern.father_work_phone %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Occupation:</label>
+				<span class="formData"> <%= @intern.father_occupation %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Denomination:</label>
+				<span class="formData"> <%= @intern.father_denomination %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Accepted Christ:</label>
+				<span class="formData"> <%= @intern.father_accepted_Christ %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Consent:</label>
+				<span class="formData"> <%= @intern.father_consent %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+				<h3>Mother</h3>
+				<label>Name:</label>
+				<span class="formData"> <%= @intern.mother_name %> <%= @intern.mother_last_name %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Address:</label>
+				<span class="formData"> <%= @intern.mother_address %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Address 2:</label>
+				<span class="formData"> <%= @intern.mother_address_2 %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>City:</label>
+				<span class="formData"> <%= @intern.mother_city %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>State/Provence:</label>
+				<span class="formData"> <%= @intern.mother_state %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Postal Code:</label>
+				<span class="formData"> <%= @intern.mother_zip %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Phone:</label>
+				<span class="formData"> <%= @intern.mother_phone %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Work Phone:</label>
+				<span class="formData"> <%= @intern.mother_work_phone %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Occupation:</label>
+				<span class="formData"> <%= @intern.mother_occupation %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Denomination:</label>
+				<span class="formData"> <%= @intern.mother_denomination %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Accepted Christ:</label>
+				<span class="formData"> <%= @intern.mother_accepted_Christ %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Consent:</label>
+				<span class="formData"> <%= @intern.mother_consent %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<h3>Siblings</h3>
+				<label>Names, Ages:</label>
+				<span class="formData"> <%= @intern.siblings %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<h3>Parent Support</h3>
+				<label>Parent's Feelings:</label>
+				<span class="formData"> <%= @intern.parent_feelings %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<hr />
+</div><!--end family-->
+				<div class="intern_health">
+				<h3>Health</h3>
+				<label>Health Insurance:</label>
+				<span class="formData"> <%= @intern.health_insurance %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Insurance Provider:</label>
+				<span class="formData"> <%= @intern.insurance_provider %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Health Description:</label>
+				<span class="formData"> <%= @intern.health_description %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Physical Limitations:</label>
+				<span class="formData"> <%= @intern.physical_limitation %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Medications:</label>
+				<span class="formData"> <%= @intern.medications %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Drugs:</label>
+				<span class="formData"> <%= @intern.drugs %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+				<hr />
+				</div><!--end health-->
+				
+				<div class="intern_emergency">
+				<h2>Emergency Information</h2>
+				<h3>Emergency Contact 1</h3>
+				<label>Name:</label>
+				<span class="formData"> <%= @intern.emergency_1_name %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Relationship:</label>
+				<span class="formData"> <%= @intern.emergency_1_relationship %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Phone:</label>
+				<span class="formData"> <%= @intern.emergency_1_phone %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+				<h3>Emergency Contact 2</h3>
+				<label>Name:</label>
+				<span class="formData"> <%= @intern.emergency_2_name %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Relationship:</label>
+				<span class="formData"> <%= @intern.emergency_2_relationship %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Phone:</label>
+				<span class="formData"> <%= @intern.emergency_2_phone %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+				<hr />
+				</div><!--end emergency-->
+				
+				<div class="intern_skills">
+				<h2>Skills</h2>
+				<label>Foreign Language:</label>
+				<span class="formData"> <%= @intern.foreign_language %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>What Languages:</label>
+				<span class="formData"> <%= @intern.what_languages %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Language Proficiency:</label>
+				<span class="formData"> <%= @intern.language_proficiency %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>CPR Cert:</label>
+				<span class="formData"> <%= @intern.cpr_cert %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>First Aid Cert:</label>
+				<span class="formData"> <%= @intern.firstaid_cert %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Other Cert:</label>
+				<span class="formData"> <%= @intern.other_cert %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Certifications:</label>
+				<span class="formData"> <%= @intern.certifications %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Child Experience:</label>
+				<span class="formData"> <%= @intern.child_experience %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Ministry Training:</label>
+				<span class="formData"> <%= @intern.ministry_training %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Tech Training:</label>
+				<span class="formData"> <%= @intern.tech_training %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+				<hr />
+				</div><!--end skills-->
+				
+				<div class="intern_references">
+				<h2>References</h2>
+
+				<h3>Reference 1</h3>
+				<label>Name:</label>
+				<span class="formData"> <%= @intern.ref1_name %> <%= @intern.ref1_last_name %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Relationship:</label>
+				<span class="formData"> <%= @intern.ref1_rel %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<h3>Reference 2</h3>
+
+				<label>Name:</label>
+				<span class="formData"> <%= @intern.ref2_name %> <%= @intern.ref2_last_name %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Relationship:</label>
+				<span class="formData"> <%= @intern.ref2_rel %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<h3>Reference 3</h3>
+
+				<label>Name:</label>
+				<span class="formData"> <%= @intern.ref3_name %> <%= @intern.ref3_last_name %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Relationship:</label>
+				<span class="formData"> <%= @intern.ref3_rel %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<h3>Reference 4</h3>
+
+				<label>Name:</label>
+				<span class="formData"> <%= @intern.ref4_name %> <%= @intern.ref4_last_name %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Relationship:</label>
+				<span class="formData"> <%= @intern.ref4_rel %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+				<hr />
+				</div><!--end references-->
+				
+				<div class="intern_profile">
+				<h2>Personal Profile</h2>
+				<label>VBS experience:</label>
+				<span class="formData"> <%= @intern.vbs_experience %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Camp Experience:</label>
+				<span class="formData"> <%= @intern.camp_experience %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Other Child Experience:</label>
+				<span class="formData"> <%= @intern.other_child_experience %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Homeless Experience:</label>
+				<span class="formData"> <%= @intern.homeless_experience %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Senior Experience:</label>
+				<span class="formData"> <%= @intern.senior_experience %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Worship Team Experience:</label>
+				<span class="formData"> <%= @intern.worship_team_experience %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Lighting Experience:</label>
+				<span class="formData"> <%= @intern.lighting_experience %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Photography Experience:</label>
+				<span class="formData"> <%= @intern.photography_experience %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<h3>Self-Identified Traits:</h3>
+				<label>Traits:</label>
+				<span class="formData"><%= @traits%></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Describe the Gospel:</label>
+				<span class="formData"> <%= @intern.describe_the_Gospel %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+				<hr />
+				</div>
+				<div class="intern_sketch">
+				<h2>Personal Sketch</h2>
+				<label>Christian Experience:</label>
+				<span class="formData"> <%= @intern.Christian_experience %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Influential Experiences:</label>
+				<span class="formData"> <%= @intern.influential_experiences %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Why Intern:</label>
+				<span class="formData"> <%= @intern.why_intern %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Why MOH:</label>
+				<span class="formData"> <%= @intern.why_moh_wants %></span>
+				<div class="clearfix">
+					<!--x-->
+				</div>
+
+				<label>Future Plans:</label>
+				<span class="formData"> <%= @intern.future_plans %></span>
+				</div><!--end profile-->
+			</div>
+			<div class="clearfix">
+				<!--x-->
+			</div>
+			<div class="hideforprint">
+				<% if @isadmin%>
+				<%= link_to 'Edit', edit_intern_path(@intern) %> |
+				<%= link_to 'Back', interns_path %>
+				<%end%>
+			</div>
+		</div>
 	</div>
-	<div class="internData">
-<h2 style="padding:30px 0;">General Information</h2>
-<label>Name:</label>
- <span class="formData"> <%= @intern.firstname %> <%= @intern.lastname %></span><div class="clearfix"><!--x--></div>
-
-<label>Age:</label>
- <span class="formData"> <%= @intern.age %></span><div class="clearfix"><!--x--></div>
-
-<label>Birthday:</label>
- <span class="formData"> <%= @intern.birthday %></span><div class="clearfix"><!--x--></div>
-
-<label>Gender:</label>
- <span class="formData"> <%= @intern.gender %></span><div class="clearfix"><!--x--></div>
-
-<label>Term Desired:</label>
- <span class="formData"> <%= @intern.termdesired %></span><div class="clearfix"><!--x--></div>
-
-<label>Internship Type:</label>
- <span class="formData"> <%= @intern.internship_type %></span><div class="clearfix"><!--x--></div>
-
-<label>Address:</label>
- <span class="formData"> <%= @intern.address %></span><div class="clearfix"><!--x--></div>
-
-<label>Address 2:</label>
- <span class="formData"> <%= @intern.address2 %></span><div class="clearfix"><!--x--></div>
- 
-<label>City:</label>
-  <span class="formData"><%= @intern.city %></span>
-<div class="clearfix"><!--x--></div>
-
-<label>State/Provence</label>
-  <span class="formData"><%= @intern.state %></span>
-<div class="clearfix"><!--x--></div>
-
-<label>Postal Code:</label>
-  <span class="formData"><%= @intern.zip %></span>
-<div class="clearfix"><!--x--></div>
-
-<label>Marital Status:</label>
- <span class="formData"> <%= @intern.marital_status %></span><div class="clearfix"><!--x--></div>
-
-<label>How long married:</label>
- <span class="formData"> <%= @intern.how_long_married %></span><div class="clearfix"><!--x--></div>
-
-<label>Spouse's Name:</label>
- <span class="formData"> <%= @intern.spouse_name %></span><div class="clearfix"><!--x--></div>
-
-<label>Home Phone:</label>
- <span class="formData"> <%= @intern.home_phone %></span><div class="clearfix"><!--x--></div>
-
-<label>Cell Phone:</label>
- <span class="formData"> <%= @intern.cell_phone %></span><div class="clearfix"><!--x--></div>
-
-<label>Can Text:</label>
- <span class="formData"> <%= @intern.can_text %></span><div class="clearfix"><!--x--></div>
-
-<label>Best Call Time:</label>
- <span class="formData"> <%= @intern.best_call_time %></span><div class="clearfix"><!--x--></div>
-
-<label>Email:</label>
- <span class="formData"> <%= @intern.email %></span><div class="clearfix"><!--x--></div>
-
-<label>Tshirt Size:</label>
- <span class="formData"> <%= @intern.tshirt_size %></span><div class="clearfix"><!--x--></div>
-
-<label>Ever Married:</label>
- <span class="formData"> <%= @intern.ever_married %></span><div class="clearfix"><!--x--></div>
-
-<label>Ever Had Children:</label>
- <span class="formData"> <%= @intern.ever_children %></span><div class="clearfix"><!--x--></div>
-
-<label>Ever Arrested:</label>
- <span class="formData"> <%= @intern.ever_arrested %></span><div class="clearfix"><!--x--></div>
-
-<label>Ever Criminally Convicted:</label>
- <span class="formData"> <%= @intern.ever_criminal_convicted %></span><div class="clearfix"><!--x--></div>
-
-<label>If yes, explain:</label>
- <span class="formData"> <%= @intern.ever_explainers %></span><div class="clearfix"><!--x--></div>
- 
-<div class="clearfix"><!--x--></div>
-<hr />
-<h2>Spirituality</h2>
-
-<label>Accepted Christ:</label>
- <span class="formData"> <%= @intern.accepted_Christ %></span><div class="clearfix"><!--x--></div>
-
-<label>Water Baptized:</label>
- <span class="formData"> <%= @intern.water_baptized %></span><div class="clearfix"><!--x--></div>
-
-<label>Attend Church:</label>
- <span class="formData"> <%= @intern.attend_church %></span><div class="clearfix"><!--x--></div>
-
-<label>Church Member:</label>
- <span class="formData"> <%= @intern.church_member %></span><div class="clearfix"><!--x--></div>
-
-<label>Home Church:</label>
- <span class="formData"> <%= @intern.home_church %></span><div class="clearfix"><!--x--></div>
-
-<label>Denomination:</label>
- <span class="formData"> <%= @intern.denomination %></span><div class="clearfix"><!--x--></div>
-
-<label>City:</label>
- <span class="formData"> <%= @intern.church_city %></span><div class="clearfix"><!--x--></div>
-
-<label>State/Provence:</label>
- <span class="formData"> <%= @intern.church_state %></span><div class="clearfix"><!--x--></div>
-
-<label>Phone:</label>
- <span class="formData"> <%= @intern.church_phone %></span><div class="clearfix"><!--x--></div>
-
-<label>Senior Pastor:</label>
- <span class="formData"> <%= @intern.senior_pastor %></span><div class="clearfix"><!--x--></div>
-
-<label>Youth Pastor:</label>
- <span class="formData"> <%= @intern.youth_pastor %></span><div class="clearfix"><!--x--></div>
-
-<label>How long attended:</label>
- <span class="formData"> <%= @intern.how_long_attended %></span><div class="clearfix"><!--x--></div>
-
-<hr />
-<h2>Education</h2>
-
-<label>Highest Education Level:</label>
- <span class="formData"> <%= @intern.highest_education_level %></span><div class="clearfix"><!--x--></div>
-
-<label>Education Other:</label>
- <span class="formData"> <%= @intern.education_other %></span><div class="clearfix"><!--x--></div>
-
-<h3>High School</h3>
-<label>High School Attended:</label>
- <span class="formData"> <%= @intern.hs_attended %></span><div class="clearfix"><!--x--></div>
-
-<label>City:</label>
- <span class="formData"> <%= @intern.hs_city %></span><div class="clearfix"><!--x--></div>
-
- <label>State/Provence:</label>
- <span class="formData"> <%= @intern.hs_state %></span><div class="clearfix"><!--x--></div>
-
-<label>Graduate:</label>
- <span class="formData"> <%= @intern.hs_graduate %></span><div class="clearfix"><!--x--></div>
-
-<label>Class:</label>
- <span class="formData"> <%= @intern.hs_class %></span><div class="clearfix"><!--x--></div>
-
-<h3>College</h3>
-<label>College Attended:</label>
- <span class="formData"> <%= @intern.college %></span><div class="clearfix"><!--x--></div>
-
-<label>Major:</label>
- <span class="formData"> <%= @intern.major %></span><div class="clearfix"><!--x--></div>
-
-<label>City:</label>
- <span class="formData"> <%= @intern.college_city %></span><div class="clearfix"><!--x--></div>
- 
- <label>State/Provence:</label>
- <span class="formData"> <%= @intern.college_state %></span><div class="clearfix"><!--x--></div>
-
-<label>Graduated:</label>
- <span class="formData"> <%= @intern.college_graduated %></span><div class="clearfix"><!--x--></div>
-
-<label>Dates Attended:</label>
- <span class="formData"> <%= @intern.college_dates_attended %></span><div class="clearfix"><!--x--></div>
-
-<h3>Other</h3>
-<label>Other Schools Attended:</label>
- <span class="formData"> <%= @intern.other_schools %></span><div class="clearfix"><!--x--></div>
-
-<hr />
-<h2>Experience</h2>
-<h3>Missions</h3>
-<label>Mission Experience:</label>
- <span class="formData"> <%= @intern.mission_experience %></span><div class="clearfix"><!--x--></div>
-
-<!--<label>City, ST:</label>
- <span class="formData"> <%= @intern.mission_city %> <%= @intern.mission_state %></span><div class="clearfix"></div>-->
-<h3>Employment</h3>
-
-<label>Currently Employed:</label>
- <span class="formData"> <%= @intern.currently_employed %></span><div class="clearfix"><!--x--></div>
-<h3>Current</h3>
-<label>Current Employer:</label>
- <span class="formData"> <%= @intern.current_employer %></span><div class="clearfix"><!--x--></div>
-
-<label>Date Hired:</label>
- <span class="formData"> <%= @intern.ce_hired %></span><div class="clearfix"><!--x--></div>
-
-<label>Position:</label>
- <span class="formData"> <%= @intern.ce_position %></span><div class="clearfix"><!--x--></div>
-
-<label>City:</label>
- <span class="formData"> <%= @intern.ce_city %> </span><div class="clearfix"><!--x--></div>
-
-<label>State/Provence:</label>
- <span class="formData"> <%= @intern.ce_state %></span><div class="clearfix"><!--x--></div>
-
-<label>Phone:</label>
- <span class="formData"> <%= @intern.ce_phone %></span><div class="clearfix"><!--x--></div>
-<h3>Past</h3>
-<label>Past Employer:</label>
- <span class="formData"> <%= @intern.past_employer %></span><div class="clearfix"><!--x--></div>
-
-<label>Hired:</label>
- <span class="formData"> <%= @intern.pe_hired %></span><div class="clearfix"><!--x--></div>
-
-<label>Position:</label>
- <span class="formData"> <%= @intern.pe_position %></span><div class="clearfix"><!--x--></div>
-
-<label>City:</label>
- <span class="formData"> <%= @intern.pe_city %></span><div class="clearfix"><!--x--></div>
-
-<label>State/Provence:</label>
- <span class="formData"> <%= @intern.pe_state %></span><div class="clearfix"><!--x--></div>
-
-<label>Phone:</label>
- <span class="formData"> <%= @intern.pe_phone %></span><div class="clearfix"><!--x--></div>
-<hr />
-<h2>Family</h2>
-<h3>Father</h3>
-<label>Name:</label>
- <span class="formData"> <%= @intern.father_name %> <%= @intern.father_last_name %></span><div class="clearfix"><!--x--></div>
-
-<label>Address:</label>
- <span class="formData"> <%= @intern.father_address %></span><div class="clearfix"><!--x--></div>
-
-<label>Address 2:</label>
- <span class="formData"> <%= @intern.father_address_2 %></span><div class="clearfix"><!--x--></div>
-
-<label>City:</label>
- <span class="formData"> <%= @intern.father_city %></span><div class="clearfix"><!--x--></div>
-
-<label>State/Provence:</label>
- <span class="formData"> <%= @intern.father_state %></span><div class="clearfix"><!--x--></div>
-
-<label>Postal Code:</label>
- <span class="formData"> <%= @intern.father_zip %></span><div class="clearfix"><!--x--></div>
-
-<label>Phone:</label>
- <span class="formData"> <%= @intern.father_phone %></span><div class="clearfix"><!--x--></div>
-
-<label>Work Phone:</label>
- <span class="formData"> <%= @intern.father_work_phone %></span><div class="clearfix"><!--x--></div>
-
-<label>Occupation:</label>
- <span class="formData"> <%= @intern.father_occupation %></span><div class="clearfix"><!--x--></div>
-
-<label>Denomination:</label>
- <span class="formData"> <%= @intern.father_denomination %></span><div class="clearfix"><!--x--></div>
-
-<label>Accepted Christ:</label>
- <span class="formData"> <%= @intern.father_accepted_Christ %></span><div class="clearfix"><!--x--></div>
-
-<label>Consent:</label>
- <span class="formData"> <%= @intern.father_consent %></span><div class="clearfix"><!--x--></div>
-<h3>Mother</h3>
-<label>Name:</label>
- <span class="formData"> <%= @intern.mother_name %> <%= @intern.mother_last_name %></span><div class="clearfix"><!--x--></div>
-
-<label>Address:</label>
- <span class="formData"> <%= @intern.mother_address %></span><div class="clearfix"><!--x--></div>
-
-<label>Address 2:</label>
- <span class="formData"> <%= @intern.mother_address_2 %></span><div class="clearfix"><!--x--></div>
-
-<label>City:</label>
- <span class="formData"> <%= @intern.mother_city %></span><div class="clearfix"><!--x--></div>
-
-<label>State/Provence:</label>
- <span class="formData"> <%= @intern.mother_state %></span><div class="clearfix"><!--x--></div>
-
-<label>Postal Code:</label>
- <span class="formData"> <%= @intern.mother_zip %></span><div class="clearfix"><!--x--></div>
-
-<label>Phone:</label>
- <span class="formData"> <%= @intern.mother_phone %></span><div class="clearfix"><!--x--></div>
-
-<label>Work Phone:</label>
- <span class="formData"> <%= @intern.mother_work_phone %></span><div class="clearfix"><!--x--></div>
-
-<label>Occupation:</label>
- <span class="formData"> <%= @intern.mother_occupation %></span><div class="clearfix"><!--x--></div>
-
-<label>Denomination:</label>
- <span class="formData"> <%= @intern.mother_denomination %></span><div class="clearfix"><!--x--></div>
-
-<label>Accepted Christ:</label>
- <span class="formData"> <%= @intern.mother_accepted_Christ %></span><div class="clearfix"><!--x--></div>
-
-<label>Consent:</label>
- <span class="formData"> <%= @intern.mother_consent %></span><div class="clearfix"><!--x--></div>
-
-<h3>Siblings</h3>
-<label>Names, Ages:</label>
- <span class="formData"> <%= @intern.siblings %></span><div class="clearfix"><!--x--></div>
-
-<h3>Parent Support</h3>
-<label>Parent's Feelings:</label>
- <span class="formData"> <%= @intern.parent_feelings %></span><div class="clearfix"><!--x--></div>
-
-<hr />
-
-<h3>Health</h3>
-<label>Health Insurance:</label>
- <span class="formData"> <%= @intern.health_insurance %></span><div class="clearfix"><!--x--></div>
-
-<label>Insurance Provider:</label>
- <span class="formData"> <%= @intern.insurance_provider %></span><div class="clearfix"><!--x--></div>
-
-<label>Health Description:</label>
- <span class="formData"> <%= @intern.health_description %></span><div class="clearfix"><!--x--></div>
-
-<label>Physical Limitations:</label>
- <span class="formData"> <%= @intern.physical_limitation %></span><div class="clearfix"><!--x--></div>
-
-<label>Medications:</label>
- <span class="formData"> <%= @intern.medications %></span><div class="clearfix"><!--x--></div>
-
-<label>Drugs:</label>
- <span class="formData"> <%= @intern.drugs %></span><div class="clearfix"><!--x--></div>
-<hr />
-<h2>Emergency Information</h2>
-<h3>Emergency Contact 1</h3>
-<label>Name:</label>
- <span class="formData"> <%= @intern.emergency_1_name %></span><div class="clearfix"><!--x--></div>
-
-<label>Relationship:</label>
- <span class="formData"> <%= @intern.emergency_1_relationship %></span><div class="clearfix"><!--x--></div>
-
-<label>Phone:</label>
- <span class="formData"> <%= @intern.emergency_1_phone %></span><div class="clearfix"><!--x--></div>
-<h3>Emergency Contact 2</h3>
-<label>Name:</label>
- <span class="formData"> <%= @intern.emergency_2_name %></span><div class="clearfix"><!--x--></div>
-
-<label>Relationship:</label>
- <span class="formData"> <%= @intern.emergency_2_relationship %></span><div class="clearfix"><!--x--></div>
-
-<label>Phone:</label>
- <span class="formData"> <%= @intern.emergency_2_phone %></span><div class="clearfix"><!--x--></div>
-<hr />
-<h2>Skills</h2>
-<label>Foreign Language:</label>
- <span class="formData"> <%= @intern.foreign_language %></span><div class="clearfix"><!--x--></div>
-
-<label>What Languages:</label>
- <span class="formData"> <%= @intern.what_languages %></span><div class="clearfix"><!--x--></div>
-
-<label>Language Proficiency:</label>
- <span class="formData"> <%= @intern.language_proficiency %></span><div class="clearfix"><!--x--></div>
-
-<label>CPR Cert:</label>
- <span class="formData"> <%= @intern.cpr_cert %></span><div class="clearfix"><!--x--></div>
-
-<label>First Aid Cert:</label>
- <span class="formData"> <%= @intern.firstaid_cert %></span><div class="clearfix"><!--x--></div>
-
-<label>Other Cert:</label>
- <span class="formData"> <%= @intern.other_cert %></span><div class="clearfix"><!--x--></div>
-
-<label>Certifications:</label>
- <span class="formData"> <%= @intern.certifications %></span><div class="clearfix"><!--x--></div>
-
-<label>Child Experience:</label>
- <span class="formData"> <%= @intern.child_experience %></span><div class="clearfix"><!--x--></div>
-
-<label>Ministry Training:</label>
- <span class="formData"> <%= @intern.ministry_training %></span><div class="clearfix"><!--x--></div>
-
-<label>Tech Training:</label>
- <span class="formData"> <%= @intern.tech_training %></span><div class="clearfix"><!--x--></div>
-<hr />
-<h2>References</h2>
-
-<h3>Reference 1</h3>
-<label>Name:</label>
- <span class="formData"> <%= @intern.ref1_name %> <%= @intern.ref1_last_name %></span><div class="clearfix"><!--x--></div>
-
-<label>Relationship:</label>
- <span class="formData"> <%= @intern.ref1_rel %></span><div class="clearfix"><!--x--></div>
-
-<h3>Reference 2</h3>
-
-<label>Name:</label>
- <span class="formData"> <%= @intern.ref2_name %> <%= @intern.ref2_last_name %></span><div class="clearfix"><!--x--></div>
-
-<label>Relationship:</label>
- <span class="formData"> <%= @intern.ref2_rel %></span><div class="clearfix"><!--x--></div>
-
-<h3>Reference 3</h3>
-
-<label>Name:</label>
- <span class="formData"> <%= @intern.ref3_name %> <%= @intern.ref3_last_name %></span><div class="clearfix"><!--x--></div>
-
-<label>Relationship:</label>
- <span class="formData"> <%= @intern.ref3_rel %></span><div class="clearfix"><!--x--></div>
-
-<h3>Reference 4</h3>
-
-<label>Name:</label>
- <span class="formData"> <%= @intern.ref4_name %> <%= @intern.ref4_last_name %></span><div class="clearfix"><!--x--></div>
-
-<label>Relationship:</label>
- <span class="formData"> <%= @intern.ref4_rel %></span><div class="clearfix"><!--x--></div>
-<hr />
-<h2>Personal Profile</h2>
-<label>VBS experience:</label>
- <span class="formData"> <%= @intern.vbs_experience %></span><div class="clearfix"><!--x--></div>
-
-<label>Camp Experience:</label>
- <span class="formData"> <%= @intern.camp_experience %></span><div class="clearfix"><!--x--></div>
-
-<label>Other Child Experience:</label>
- <span class="formData"> <%= @intern.other_child_experience %></span><div class="clearfix"><!--x--></div>
-
-<label>Homeless Experience:</label>
- <span class="formData"> <%= @intern.homeless_experience %></span><div class="clearfix"><!--x--></div>
-
-<label>Senior Experience:</label>
- <span class="formData"> <%= @intern.senior_experience %></span><div class="clearfix"><!--x--></div>
-
-<label>Worship Team Experience:</label>
- <span class="formData"> <%= @intern.worship_team_experience %></span><div class="clearfix"><!--x--></div>
-
-<label>Lighting Experience:</label>
- <span class="formData"> <%= @intern.lighting_experience %></span><div class="clearfix"><!--x--></div>
-
-<label>Photography Experience:</label>
- <span class="formData"> <%= @intern.photography_experience %></span><div class="clearfix"><!--x--></div>
-
-<h3>Self-Identified Traits:</h3>
-<label>Traits:</label>
- <span class="formData"><%=@traits%></span><div class="clearfix"><!--x--></div>
-
-
-<label>Describe the Gospel:</label>
- <span class="formData"> <%= @intern.describe_the_Gospel %></span><div class="clearfix"><!--x--></div>
-<hr />
-<h2>Personal Sketch</h2>
-<label>Christian Experience:</label>
- <span class="formData"> <%= @intern.Christian_experience %></span><div class="clearfix"><!--x--></div>
-
-<label>Influential Experiences:</label>
- <span class="formData"> <%= @intern.influential_experiences %></span><div class="clearfix"><!--x--></div>
-
-<label>Why Intern:</label>
- <span class="formData"> <%= @intern.why_intern %></span><div class="clearfix"><!--x--></div>
-
-<label>Why MOH:</label>
- <span class="formData"> <%= @intern.why_moh_wants %></span>
-<div class="clearfix"><!--x--></div>
-
-<label>Future Plans:</label>
-  <span class="formData"> <%= @intern.future_plans %></span>
-</div>
-<div class="clearfix"><!--x--></div>
-<% if @isadmin%>
-	<%= link_to 'Edit', edit_intern_path(@intern) %> |
-	<%= link_to 'Back', interns_path %>
-<%end%>
-</div>
-</div>
