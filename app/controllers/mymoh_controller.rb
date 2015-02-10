@@ -208,29 +208,30 @@ class MymohController < ApplicationController
   end
   
   def sponsorships
-    dbdc_client.materialize("cv__Recurring_Gift__c")
-	#@gifts = Cv__Recurring_Gift__c.find_all_by_cv__Contact__c(current_user.convio_id)
-	@gifts = Cv__Recurring_Gift__c.query("cv__Contact__c = '" + current_user.convio_id + "' AND Child_Status__c = 'Sponsored' and cv__Recurring_Gift_Status__c='Active'")
-    @account = Contact.find_by_Id(current_user.convio_id)
-    #@old_sponsorships = Child_Sponsorship__c.query("Sponsor__c = '" + current_user.convio_id + "' AND Status__c = 'Open'")
-	@sponsorships = @gifts # + @old_sponsorships
-    unless @sponsorships == nil
-      #if we find sponsorships
-      @children = []
-      @sponsorships.each do | spons |
-        @photo = nil
-		unless spons.Child__c.nil?
-			@child = Child__c.find_by_Id(spons.Child__c)
-			@photo = Picture__c.query("Child__c='" + @child.Id + "' and Primary__c=true").first.Photo__c if Picture__c.query("Child__c='" + @child.Id + "' and Primary__c=true")
-			if @photo.nil?
-			  @attachment = Attachment.find_by_ParentId(@child.Id)
-			  @photo = "<img src='https://c.na12.content.force.com/servlet/servlet.FileDownload?file=" + @attachment.Id.to_s + "' />" unless @attachment.nil?
-			end
-			#set an unused variable to carry the photo url
-			@child.LastModifiedById = @photo
-			#add child to array of children
-			@children << @child
-		end
+   dbdc_client.materialize("cv__Recurring_Gift__c")
+	 #@gifts = Cv__Recurring_Gift__c.find_all_by_cv__Contact__c(current_user.convio_id)
+	 @gifts = Cv__Recurring_Gift__c.query("cv__Contact__c = '" + current_user.convio_id + "' AND Child_Status__c = 'Sponsored' and cv__Recurring_Gift_Status__c='Active'")
+	 @account = Contact.find_by_Id(current_user.convio_id)
+   #@old_sponsorships = Child_Sponsorship__c.query("Sponsor__c = '" + current_user.convio_id + "' AND Status__c = 'Open'")
+	 @sponsorships = @gifts # + @old_sponsorships
+	 unless @sponsorships.nil?
+	   #if we find sponsorships
+	   @children = []
+	   @sponsorships.each do | spons |
+	     @photo = nil
+	       unless spons.Child__c.nil?
+			     @child = Child__c.find_by_Id(spons.Child__c)
+			     @photoTest = Picture__c.query("Child__c='" + @child.Id + "' and Primary__c=true").first
+			     @photo = @photoTest.Photo__c if @photoTest
+			     if @photo.nil?
+			       @attachment = Attachment.find_by_ParentId(@child.Id)
+			       @photo = "<img src='https://c.na12.content.force.com/servlet/servlet.FileDownload?file=" + @attachment.Id.to_s + "' />" unless @attachment.nil?
+			     end
+			     #set an unused variable to carry the photo url
+			     @child.LastModifiedById = @photo
+			     #add child to array of children
+			     @children << @child
+		    end
       end
     end
     
