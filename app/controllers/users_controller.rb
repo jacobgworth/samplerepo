@@ -178,7 +178,11 @@ class UsersController < ApplicationController
             rescue
             end
           end
-          format.html { redirect_to "/mymoh/account", notice: 'User was successfully updated.' }
+          if is_admin_user?
+            format.html { redirect_to "/console", notice: 'User was successfully updated.' }
+          else
+            format.html { redirect_to "/mymoh/account", notice: 'User was successfully updated.' }
+          end
           format.json { head :ok }
         else
           format.html { render action: "edit" }
