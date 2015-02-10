@@ -15,16 +15,20 @@
     <%= f.label :email %> *<br />
     <%= f.text_field :email %>
   </div>
-  <% if (@user.email == nil) %>
+  
 	  <div class="field">
+	  	<%if @user%>
+	    <%= f.label :change_password %> *<br />
+	    <%else%>
 	    <%= f.label :password %> *<br />
+		<%end>%>
 	    <%= f.password_field :password %>
 	  </div>
 	  <div class="field">
 	    <%= f.label :password_confirmation %> *<br />
 	    <%= f.password_field :password_confirmation %>
 	  </div>
-  <% end %>
+	 
   <% unless current_user == nil %>
 	  <div class="field">
 	    <%= f.label :first %> *<br />
@@ -409,3 +413,4 @@
     <%= f.submit "Save"%>
   </div>
 <% end %>
+
