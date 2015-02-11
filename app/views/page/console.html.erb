@@ -6,6 +6,7 @@
 <%if @user.email=="david@threetwelvecreative.com"%>
 <h3>Welcome, David. Your Convio Authtoken is <%=@user.convio_authtoken%></h3><br />
 <%end%>
+<p id="notice"><%= notice %></p>
 <div>Click a link to add, edit or delete items.
 	<div style="line-height:18px;width:250px;padding-top:10px;">
 		<h2 style="width:250px;border-bottom:solid 2px #58534A;padding-bottom:3px;">Intern Applications</h2>
@@ -41,6 +42,7 @@
 		<h2 style="width:250px;border-bottom:solid 2px #58534A;padding-bottom:3px;">USERS</h2>
 	<p style="padding-top:3px;"><a href="/users/new/">Add a User</a>
 	<p><a href="/users/">All Users</a></p>
+	<p><a href="/edit_user_information">Edit User Information</a></p>
 	</div>
 	<div style="line-height:18px;width:250px;padding-top:10px;">
 		<h2 style="width:250px;border-bottom:solid 2px #58534A;padding-bottom:3px;">VILLAGES</h2>

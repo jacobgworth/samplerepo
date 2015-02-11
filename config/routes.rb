@@ -347,6 +347,9 @@ Mohhaiti::Application.routes.draw do
   
   get "/stampinup" => "page#stampinup"
   
+  get "/edit_user_information" => "page#edit_user_information"
+  get "/find_user_id_by_email" => "page#find_user_id_by_email"
+  
   #For the custom Content model URLs
   match '*path/:url' => "Contents#show"
   match '*path/:url/delete' => "Contents#delete"

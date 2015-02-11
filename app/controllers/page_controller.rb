@@ -193,6 +193,20 @@ class PageController < ApplicationController
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
   end
+  
+  def edit_user_information
+    unless is_admin_user?
+      respond_to do |format|
+        format.html { redirect_to "/" }
+      end
+    else
+      @user = current_user if current_user
+      
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}# console.html.erb
+      end
+    end
+  end
     
   def education
      @title = "Haiti Education Projects & Solutions from (MOH)"
@@ -228,6 +242,11 @@ class PageController < ApplicationController
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
+  end
+  
+  def find_user_id_by_email
+    @thisuser = User.where("lower(email)=?",params[:email].downcase)
+    render layout: false and return
   end
   
   def gift_store
