@@ -133,7 +133,7 @@ class MymohController < ApplicationController
     @recurring = Cv__Recurring_Gift__c.query("cv__Contact__c = '" + @account.Id + "' AND cv__Recurring_Gift_Status__c = 'Active'")
     query = "cv__Contact__c = '" + current_user.convio_id + "'" 
     @donations = Opportunity.query(query)
-#    @gifts = Opportunity.query("cv__Contact__c = '" + @account.Id + "' order by CreatedDate") crazy natsy fix, may not be 100% good?
+#    @gifts = Opportunity.query("cv__Contact__c = '" + @account.Id + "' order by CreatedDate") crazy nasty fix, may not be 100% good?
     @gifts = @donations
     @gift_status = @gifts.last.StageName if @gifts && @gifts.count > 0
     if @gifts and @gift_status == "Received"
