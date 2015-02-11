@@ -17,7 +17,7 @@
   </div>
   
 	  <div class="field">
-	  	<%if @user%>
+	  	<%if @user && @user.email%>
 	    <%= f.label :change_password %> *<br />
 	    <%else%>
 	    <%= f.label :password %> *<br />

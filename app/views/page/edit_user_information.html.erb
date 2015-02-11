@@ -1,0 +1,31 @@
+
+<div id="wrapper">
+<%= render 'layouts/navBar'%>
+<div style="padding:50px 0px 0px 10px;">
+	<h1 style="font-size:1.5em;">Edit User Information</h1>
+	<p>&nbsp;</p>
+	<form action="">
+		Enter user email address:
+		<input type="text" id="txtUserEmail" name="txtUserEmail" style="width:25%;" />
+		<input type="submit" value="Find User" id="btnSubmit" onclick="return false;">
+	</form>
+</div>
+</div>
+<div class="clearfix" style="height:40px;"><!--x--></div>
+<script>
+	$("document").ready(function(){
+		$("#btnSubmit").click(function(){
+			var varemail = $("#txtUserEmail").val();
+			if(varemail != "")
+			{
+				$.get( "/find_user_id_by_email", { email: varemail } )
+  					.done(function( data ) {
+  						if(data==""){
+  							alert("User not found with that email address.");}
+  						else{
+  							window.location="/users/" + data + "/edit";}
+  					});
+			}
+		});
+	});
+</script>
