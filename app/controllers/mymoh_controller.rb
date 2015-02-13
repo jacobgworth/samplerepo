@@ -134,7 +134,7 @@ class MymohController < ApplicationController
     query = "cv__Contact__c = '" + current_user.convio_id + "'" 
     @donations = Opportunity.query(query)
 #    @gifts = Opportunity.query("cv__Contact__c = '" + @account.Id + "' order by CreatedDate")
-   @gifts = @donations 
+    @gifts = @donations 
     @gift_status = @gifts.last.StageName if @gifts && @gifts.count > 0
     if @gifts and @gift_status == "Received"
       @gift_status = "Received -- Thank you!"
