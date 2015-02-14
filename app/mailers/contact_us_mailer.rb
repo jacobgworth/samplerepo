@@ -116,7 +116,7 @@ class ContactUsMailer < ActionMailer::Base
     @toemail = "medical@mohhaiti.org"
     #@toemail = "david@threetwelvecreative.com" #testing
     
-    mail(:to => @toemail, :subject => "Take a Medical Mission Trip", :from => @fromaddress, :bcc => "david@threetwelvecreative.com")
+    mail(:to => @toemail, :subject => "Take a Medical Mission Trip", :from => @fromaddress)
   end
   
   def take_a_trip(data)
@@ -132,7 +132,7 @@ class ContactUsMailer < ActionMailer::Base
     @toemail = "missiontrips@mohhaiti.org"
     #@toemail = "david@threetwelvecreative.com" #testing
     
-    mail(:to => @toemail, :subject => "Take a Mission Trip", :from => @fromaddress, :bcc => "david@threetwelvecreative.com")
+    mail(:to => @toemail, :subject => "Take a Mission Trip", :from => @fromaddress)
   end
   
   def volunteer(data)
