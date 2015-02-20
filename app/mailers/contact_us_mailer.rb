@@ -24,7 +24,7 @@ class ContactUsMailer < ActionMailer::Base
     @txtcomments = @data[:txtcomments]
     @txtprefs = @data[:txtprefs]
     
-    mail(:to => "churchpartnerships@mohhaiti.org", :subject => "Church Partnership Inquiry", :from => @txtemail)
+    mail(:to => "drew@mohhaiti.org", :subject => "Church Partnership Inquiry", :from => @txtemail)
   end
   
   def contact_us_mail(data,msgbody)
@@ -166,7 +166,7 @@ class ContactUsMailer < ActionMailer::Base
     @txtmessage = @data[:txtmessage]
     @txtdatesinterested = @data[:txtdatesinterested]
     
-    mail(:to => "churchpartnerships@mohhaiti.org", :subject => "Vision Trip Information", :from => @txtemail)
+    mail(:to => "drew@mohhaiti.org", :subject => "Vision Trip Information", :from => @txtemail)
   end
   
   
