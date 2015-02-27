@@ -129,8 +129,7 @@ class ContactUsMailer < ActionMailer::Base
     @fromaddress = @data[:fromaddress]
     @comments = @data[:comments]
     #@medical = @data[:medical]
-#    @toemail = "missiontrips@mohhaiti.org"
-    @toemail = "sean@threetwelvecreative.com"
+    @toemail = "missiontrips@mohhaiti.org"
     #@toemail = "david@threetwelvecreative.com" #testing
     
     mail(:to => @toemail, :subject => "Take a Mission Trip", :from => @fromaddress)
