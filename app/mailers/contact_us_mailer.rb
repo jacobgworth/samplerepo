@@ -77,7 +77,7 @@ class ContactUsMailer < ActionMailer::Base
     if !@attachment.nil?
       attachments[@attachment.original_filename] = @attachment.read
     end
-    @sendto = "Brittany@mohhaiti.org, jesse@threetwelvecreative.com"
+    @sendto = "Brittany@mohhaiti.org"
     #@sendto = "jesse@threetwelvecreative.com"
     
     mail(:to => @sendto, :subject => "Write My Child", :from => @fromaddress)
