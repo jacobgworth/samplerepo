@@ -47,29 +47,29 @@ The schedule usually is as follows:</p>
 
 <p>If you are interested in taking a vision trip please contact <a href="mailto:kendi@mohhaiti.org">kendi@mohhaiti.org</a> for more information. </p>
 
-<div class="forms" id="form" style="margin-top: 15px;">
+<!--div class="forms" id="form" style="margin-top: 15px;">
 	<h2>Sign up For a Vision Trip</h2>
 	<% if @isvalid.nil?%>
 		<p>All fields required.</p>
-				<form>
-						<div class="field">First Name: 			<input type="text" id="txtfirst" name="txtfirst"><br></div>
-						<div class="field">Last Name: 			<input type="text" id="txtlast" name="txtlast"><br></div>
-						<div class="field">Phone number: 		<input type="text" id="txtphone" name="txtphone"><br></div>
-						<div class="field">Email: 				<input type="text" id="txtemail" name="txtemail"></div>
-						<div class="field">Church Address: 		<input type="text" id="txtchurch" name="txtchurch"></div>
-						<div class="field city">City:<br /> 	<input type="text" id="txtcity" name="txtcity"><br></div>
-						<div class="field state">State:<br /> 	<input type="text" id="txtstate" name="txtstate"><br></div>
-						<div class="field zip">Zip:<br /> 		<input type="text" id="txtzip" name="txtzip"><br></div>
-						<div class="field">Dates Interested In: <input type="text" id="txtdatesinterested" name="txtdatesinterested"></div>
-					<h3 style="clear:both;">Additional Comments</h3>
-						<div class="field"><textarea type="textarea" id="txtmessage" name="txtmessage"></textarea></div>
-					 <div class="actions" style="padding-bottom:20px;"><input type="submit" value="Sign Up" onclick="return validate();"></div>
-				</form>
-				<%else%>
-				<script>window.location = window.location.href + "#form";</script>
-				<div style="padding-bottom:20px;"><h3>Thank you for your interest in taking a vision trip! We'll be in touch shortly! </h3></div>
-			<%end%>	
-			</div>
+		<form>
+			<div class="field">First Name: 			<input type="text" id="txtfirst" name="txtfirst"><br></div>
+			<div class="field">Last Name: 			<input type="text" id="txtlast" name="txtlast"><br></div>
+			<div class="field">Phone number: 		<input type="text" id="txtphone" name="txtphone"><br></div>
+			<div class="field">Email: 				<input type="text" id="txtemail" name="txtemail"></div>
+			<div class="field">Church Address: 		<input type="text" id="txtchurch" name="txtchurch"></div>
+			<div class="field city">City:<br /> 	<input type="text" id="txtcity" name="txtcity"><br></div>
+			<div class="field state">State:<br /> 	<input type="text" id="txtstate" name="txtstate"><br></div>
+			<div class="field zip">Zip:<br /> 		<input type="text" id="txtzip" name="txtzip"><br></div>
+			<div class="field">Dates Interested In: <input type="text" id="txtdatesinterested" name="txtdatesinterested"></div>
+			<h3 style="clear:both;">Additional Comments</h3>
+			<div class="field"><textarea type="textarea" id="txtmessage" name="txtmessage"></textarea></div>
+			 <div class="actions" style="padding-bottom:20px;"><input type="submit" value="Sign Up" onclick="return validate();"></div>
+		</form>
+	<%else%>
+		<script>window.location = window.location.href + "#form";</script>
+		<div style="padding-bottom:20px;"><h3>Thank you for your interest in taking a vision trip! We'll be in touch shortly! </h3></div>
+	<%end%>	
+</div-->
 </div>
 <div id="contentRight300">
 		<%= render 'layouts/churchNav'%>
