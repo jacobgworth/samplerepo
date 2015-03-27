@@ -22,7 +22,7 @@
 					<td><a href="/interns/<%=i.id%>">View Application</a></td>
 					<td><a href="/interns/<%=i.id%>.csv">Download Application</a></td>
 					<!--td><%= link_to 'Archive Intern', :controller => "/interns", :id => i.id, :action => "archive", :method => :put, :is_archived => true =%></td-->
-					<td><%= link_to 'Archive Intern\'s Application', intern_archive_path(i.id), :method => :post =%></td>
+					<td><%= link_to 'Archive Intern\'s Application', 'interns/' +i.id.to_s+'/archive', :method => :post, :is_archived => true =%></td>
 				</tr>
 				<%end%>
 				<%end%>
