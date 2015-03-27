@@ -1,8 +1,18 @@
 Mohhaiti::Application.routes.draw do
   
-  resources :interns
+  resources :interns do
 
   get "/intern_thank_you" => "page#intern_thank_you"
+    member do
+      get "archive"
+      put "archive"
+      post "archive"
+    end
+    match "/interns/:id/archive" => "interns#archive"
+    
+  end  
+  
+  get "/archived_interns" => "page#archived_interns"
 
   resources :subscriptions
   

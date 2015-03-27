@@ -21,6 +21,20 @@ class PageController < ApplicationController
     end
   end
 
+  def archived_interns
+    @interns = Intern.order("created_at desc")
+    @isadmin = is_admin_user?
+    unless @isadmin
+      redirect_to "/" and return
+    end
+
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}
+      format.csv #{ send_data @interns.as_csv }
+      format.json { render json: @interns }
+    end
+
+  end
   
   def be_a_partner
     @title = "Become a Mission of Hope, Haiti Partner of Hope"
