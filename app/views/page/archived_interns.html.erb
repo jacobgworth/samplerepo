@@ -3,7 +3,7 @@
 	<div id="content" style="padding-top: 50px;">
 		<h1>Intern Applications</h1>
 		<div class="buttonSquareOrange" style="width:50%; margin:20px 0 40px;"><a href="/interns.csv">Download CSV file of all intern applications</a></div>
-
+		<div class="buttonSquareOrange" style="width:50%; margin:20px 0 40px;"><a href="/interns">View Unarchived Intern Applications	</a></div>
 		<div>
 			<table>
 				<tr>
@@ -14,22 +14,19 @@
 					<td>Download as CSV</td>
 				</tr>
 				<%@interns.each do |i|%>
-				<% unless i.is_archived %>
+				<% if i.is_archived %>
 				<tr>
 					<td><img src="<%=i.assets.order('created_at desc').last.asset.url(:thumb) if i.assets.last%>" /></td>
 					<td><%=i.firstname%> <%=i.lastname%></td>
 					<td><%=i.created_at.to_date%></td>
 					<td><a href="/interns/<%=i.id%>">View Application</a></td>
 					<td><a href="/interns/<%=i.id%>.csv">Download Application</a></td>
-					<!--td><%= link_to 'Archive Intern', :controller => "/interns", :id => i.id, :action => "archive", :method => :put, :is_archived => true =%></td-->
-					<td><%= link_to 'Archive Intern\'s Application', intern_archive_path(i.id), :method => :post =%></td>
+					<td><%= link_to 'Unarchive Intern\'s Application', intern_archive_path(i.id), :method => :post =%></td>
 				</tr>
 				<%end%>
 				<%end%>
 			</table>
 		</div>
-		<div class="buttonSquareOrange" style="width:50%; margin:20px 0 40px;"><a href="/archived_interns">View Archived Intern Applications	</a></div>
-
 		<div id="original" style="display:none;">
 <table>
   <tr>
