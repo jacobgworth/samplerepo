@@ -22,7 +22,7 @@ class PageController < ApplicationController
   end
 
   def archived_interns
-    @interns = Intern.order("created_at desc")
+    @interns = Intern.where("is_archived=true").order("created_at desc")
     @isadmin = is_admin_user?
     unless @isadmin
       redirect_to "/" and return

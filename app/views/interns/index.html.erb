@@ -3,7 +3,7 @@
 	<div id="content" style="padding-top: 50px;">
 		<h1>Intern Applications</h1>
 		<div class="buttonSquareOrange" style="width:50%; margin:20px 0 40px;"><a href="/interns.csv">Download CSV file of all unarchived intern applications</a></div>
-
+		<div class="buttonSquareOrange" style="width:50%; margin:20px 0 40px;"><a href="/archived_interns">View Archived Intern Applications	</a></div>
 		<div>
 			<table>
 				<tr>
@@ -12,9 +12,8 @@
 					<td>Application Date</td>
 					<td>Application</td>
 					<td>Download as CSV</td>
-				</tr>
+				</tr><%=@interns.count%> Count
 				<%@interns.each do |i|%>
-				<% unless i.is_archived %>
 				<tr>
 					<td><img src="<%=i.assets.order('created_at desc').last.asset.url(:thumb) if i.assets.last%>" /></td>
 					<td><%=i.firstname%> <%=i.lastname%></td>
@@ -24,7 +23,6 @@
 					<!--td><%= link_to 'Archive Intern', :controller => "/interns", :id => i.id, :action => "archive", :method => :put, :is_archived => true =%></td-->
 					<td><%= link_to 'Archive Intern\'s Application', 'interns/' +i.id.to_s+'/archive', :method => :post, :is_archived => true =%></td>
 				</tr>
-				<%end%>
 				<%end%>
 			</table>
 		</div>

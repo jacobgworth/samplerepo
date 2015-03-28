@@ -5,7 +5,9 @@ class InternsController < ApplicationController
   # GET /interns
   # GET /interns.json
   def index
-    @interns = Intern.order("created_at desc")
+#    @interns = Intern.where("is_archived=false").order("created_at desc")
+    @interns = Intern.where("is_archived is null or is_archived=false").order("created_at desc")
+
     @isadmin = is_admin_user?
     unless @isadmin
       redirect_to "/" and return
