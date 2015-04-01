@@ -156,7 +156,7 @@ class InternsController < ApplicationController
   # POST /interns.json
   def create
     @intern = Intern.new(params[:intern])
-    @intern.is_archived=nil;
+    @intern[:is_archived]=nil;
 
     respond_to do |format|
       if @intern.save
@@ -203,6 +203,6 @@ class InternsController < ApplicationController
 #    @intern.is_archived=true
     @intern.toggle(:is_archived)
     @intern.save
-    redirect_to "/interns" end#:action => "index"  end
-
-end
+    redirect_to "/interns" end#:action => "index"  
+  end
+  
