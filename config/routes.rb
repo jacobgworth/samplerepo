@@ -1,5 +1,7 @@
 Mohhaiti::Application.routes.draw do
 
+  match "/donate-today" => redirect("https://secure3.convio.net/mohh/site/Donation2?df_id=1600&1600.donation=form1"), :as => :donate_today 
+
   get "/intern_thank_you" => "page#intern_thank_you"
   
   resources :interns do
