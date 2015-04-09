@@ -1,13 +1,17 @@
 <div id="bgHero">
 	<div id="heroImg"><!--x--></div>
-	
 </div>
 <div id="wrapper">
 <%=render 'layouts/navBar'%>
 <div id="superContent">
 	<div id="heroContent">
-		<h1 style="margin-top:110px;"><span class="giantText">Hope</span><br /><span class="largeText1">for every</span><br /><span class="largeText3">man, woman</span><br /><span class="largeText1">and child</span></h1>
-		<a href="http://mohhaiti.force.com/sponsorship"><img style="position: absolute;left: 52%;bottom: 0px;" src="/assets/SayYes.png" alt="Say Yes to Sponsoring a Child Today!"/></a>
+		<!--<h1 style="margin-top:110px;"><span class="giantText">Hope</span><br /><span class="largeText1">for every</span><br /><span class="largeText3">man, woman</span><br /><span class="largeText1">and child</span></h1>-->
+      <h1 style="margin-top:110px; line-height: 50px;">
+        <span class="giantText2">Hope</span><br />
+        <span class="giantText2">for a</span><br />
+        <span class="giantText1">future</span>
+      </h1>
+      <a href="http://mohhaiti.force.com/sponsorship"><img style="position: absolute;left: 52%;bottom: 0px;" src="/assets/SayYes.png" alt="Say Yes to Sponsoring a Child Today!"/></a>
 		<div id="heroRibbon" style="display:none;">
 			<h2>See what we've done today!</h2>
 			<% if @updates != nil && @updates.count > 0
