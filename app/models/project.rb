@@ -20,7 +20,7 @@ class Project < ActiveRecord::Base
   
   accepts_nested_attributes_for :assets, :allow_destroy => true
   
-  validates_length_of :goal, :minimum => 1, :maximum => 100, :allow_blank => true
+  validates_length_of :goal, :minimum => 1, :maximum => 160, :allow_blank => true
   validates :percentcomplete, :numericality => { :only_integer => true },:allow_blank=>true
   
   

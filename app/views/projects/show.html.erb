@@ -14,15 +14,39 @@
 	<%=render 'layouts/navBar'%>
 	<div id="content">
 		<div id="heroContent">
-			<div id="heroLeft">
-				<h1 style="padding-top:40px; width:500px"><span class="largeText4 greenTransBG" style="margin-bottom:15px;"><%= @project.projectname %>
-					<br />
-				</span><span class="largeText6 greenTransBG lowercase"><%= @project.goal%></span></h1>
+
+          <!-- Project id: 15 is a special case -->
+          <% if @project.id == 15 %>
+            <div id="heroLeft">
+              <h1 style="width:500px; margin-left: 400px; line-height: 18px;">
+                <span class="largeText3 greenTransBG" style="margin-bottom:15px; padding: 25px 10px;">
+                  <%= @project.projectname %><br />
+				</span>
+                <span class="largeText6 greenTransBG lowercase" style="padding:10px;">
+                  <%= @project.goal%>
+                </span>
+              </h1>
 				
-				<div class="buttonSquareOrange" style="position:absolute; top:-250px; left:200px; width:280px">
-					<a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1">Support this project &raquo;</a>
-				</div>
-			</div>
+				<div class="buttonSquareOrange" style="position:absolute; top:-250px; left:200px; width:200px; height: 30px; padding-top: 20px; margin-left: 210px;">
+					<a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1" style="font-size: 20px;">Donate today!</a>
+                </div>
+
+                <div class="buttonSquareOrange" style="position:absolute; top:-250px; left:200px; width:260px; height: 30px; padding: 20px 5px 10px 0; margin-left: 440px;">
+                    <a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1" style="font-size: 18px;">Meet our young adults</a>
+                </div>
+            </div>
+
+          <% else %>
+              <div id="heroLeft">
+                <h1 style="padding-top:40px; width:500px"><span class="largeText4 greenTransBG" style="margin-bottom:15px;"><%= @project.projectname %>
+                  <br />
+				</span><span class="largeText6 greenTransBG lowercase"><%= @project.goal%></span></h1>
+
+                <div class="buttonSquareOrange" style="position:absolute; top:-250px; left:200px; width:280px">
+                  <a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1">Support this project &raquo;</a>
+                </div>
+              </div>
+          <% end %>
 			<!--<div class="percentComplete">
 				<h2>Percent Complete
 				<br/>
