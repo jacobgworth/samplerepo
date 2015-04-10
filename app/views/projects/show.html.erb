@@ -78,20 +78,21 @@
             </div>
         <% end %>
 
+      <% if @project.id == 15 %>
+          <div class="buttonSquareOrange" style="float: left; width:350px; height: 30px; padding-top: 20px;">
+            <a href="project15extra" style="font-size: 20px;">Meet our young adults</a>
+          </div>
 
-      <div class="buttonSquareOrange" style="float: left; width:350px; height: 30px; padding-top: 20px;">
-        <a href="project15extra" style="font-size: 20px;">Meet our young adults</a>
-      </div>
+          <div class="buttonSquareOrange" style="float: left; width:250px; height: 30px; padding-top: 20px; margin-left: 30px;">
+            <a href="../MOH_transition_home_project.pdf" target="blank" style="font-size: 20px;">Project Summary</a>
+          </div>
 
-      <div class="buttonSquareOrange" style="float: left; width:250px; height: 30px; padding-top: 20px; margin-left: 30px;">
-        <a href="../MOH_transition_home_project.pdf" target="blank" style="font-size: 20px;">Project Summary</a>
-      </div>
+          <div class="buttonSquareOrange" style="float: left; width:200px; height: 30px; padding-top: 20px; margin-left: 30px;">
+            <a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1" style="font-size: 20px;">Donate Today!</a>
+          </div>
+      <% else %>
 
-      <div class="buttonSquareOrange" style="float: left; width:200px; height: 30px; padding-top: 20px; margin-left: 30px;">
-        <a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1" style="font-size: 20px;">Donate Today!</a>
-      </div>
 
-        <% if @project.id != 15 %>
         <% if !@subscribed || @subscribed.empty? %>
             <div class="subscribe buttonSquareOrange alignRight" style="cursor: pointer">
               Follow this project
