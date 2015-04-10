@@ -27,7 +27,10 @@ Mohhaiti::Application.routes.draw do
   match "/bluetoblock" => "projects#bluetoblock"
   put "/projects/5" => "projects#update", :id => 5
   match "/projects/5" => "projects#bluetoblock"
-  
+
+
+  get "projects/transition_home" => "projects#project15extra"
+  get "projects/project15extra" =>  "projects#project15extra"
   resources :news
 
   resources :videos
