@@ -1400,6 +1400,10 @@ h3.CTA {
     padding: 10px 0;
 }
 
+.contentHeaderWide {
+    width: 860px;
+}
+
 #contentLeft560 ul {
     margin: 5px 20px;
 }
