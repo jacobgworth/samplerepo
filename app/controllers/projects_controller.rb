@@ -162,11 +162,11 @@ class ProjectsController < ApplicationController
       @project = Project.find(params[:id])
       @project.assets.build
       respond_to do |format|
-       format.html {render :layout=>"homeLayout"}# index.html.erb
-       end
+      format.html {render :layout=>"homeLayout"}# index.html.erb
+      end
     else
       respond_to do |format|
-        format.html { redirect_to "/projects" }
+      format.html { redirect_to "/projects" }
       end
     end
   end
