@@ -63,7 +63,7 @@ class ApplicationController < ActionController::Base
   
   def is_admin_user?
     if is_logged_in?
-      if current_user().email == "dsdewhir@gmail.com" ||  current_user().email == "internships@mohhaiti.org"||  current_user().email == "dana.jeffers@me.com" || current_user().email == "david@threetwelvecreative.com" || current_user().email=="cammie@mohhaiti.org" || current_user().email == "elizabeth@mohhaiti.org" || current_user().email == "nmdewhirst@gmail.com" || current_user().email == "lindsey@mohhaiti.org" || current_user().email == "jeremy@mohhaiti.org" || current_user().email == "krista@mohhaiti.org" || current_user().email == "stowers.joshua@live.com"
+      if current_user().email == "dsdewhir@gmail.com" ||  current_user().email == "internships@mohhaiti.org"||  current_user().email == "dana.jeffers@me.com" || current_user().email == "david@threetwelvecreative.com" || current_user().email=="cammie@mohhaiti.org" || current_user().email == "elizabeth@mohhaiti.org" || current_user().email == "nmdewhirst@gmail.com" || current_user().email == "lindsey@mohhaiti.org" || current_user().email == "jeremy@mohhaiti.org" || current_user().email == "krista@mohhaiti.org" || current_user().email == "stowers.joshua@live.com" || current_user().email == "chad@fusionbible.com"
         return true
       else
         return false
