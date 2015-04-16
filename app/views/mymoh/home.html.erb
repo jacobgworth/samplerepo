@@ -66,6 +66,7 @@
 					<% unless @posts.empty? %>
 						<% @posts.each do |post| %>
 							<div class="update960" style="line-height: 1.3em; height=120px;">
+								<% if post.postdate != nil%>
 								<div class="updateDate">
 									<span class="month"><%=post.postdate.strftime('%b')%></span>
 									<br />
@@ -73,6 +74,7 @@
 									<br />
 									<span class="year"><%=post.postdate.strftime('%Y')%></span>
 								</div>
+								<% end %>
 								<div class="updatePost960">
 									<h4><a href="/blog/<%=post.id%>"><%=post.title%></a><br/></h4>
 											<% unless post.assets.last.nil? %>
