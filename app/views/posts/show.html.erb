@@ -6,11 +6,13 @@
 				<%= notice %>
 			</p>
 			<div class="updateDate" style="margin-top:30px;">
+				<% if @post.postdate%>
 				<span class="month"><%= @post.postdate.strftime("%b")%></span>
 				<br />
 				<span class="date"><%= @post.postdate.strftime("%d")%></span>
 				<br />
 				<span class="year"><%= @post.postdate.strftime("%Y")%></span>
+				<%end%>
 			</div>
 			<h2><span class="eyebrow">Mission of Hope Haiti Blog Post</span>
 			<br />
@@ -43,7 +45,9 @@
 			<div class="blogPost">
 
 				<p style="clear:both;">
+					<% if @post.body %>
 					<%= @post.body.html_safe %>
+					<%end%>
 				</p>
 				<div class="clearfix" style="height:40px;">
 					<!--x-->

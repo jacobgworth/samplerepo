@@ -14,10 +14,12 @@
 <% @posts.each do |post| %>
   <div class="postsPage">
   	<div class="updateDate" style="margin-top:20px;">
-		<% if post.postdate %>
+  		<% if @post %>
+		<% if @post.postdate %>
 			<span class="month"><%= post.postdate.strftime("%b")%></span><br />
 			<span class="date"><%= post.postdate.strftime("%d")%></span><br />
 			<span class="year"><%= post.postdate.strftime("%Y")%></span>	
+		<% end %>
 		<% end %>
 	</div>
     <h3 style="padding-bottom:30px;"><a href="/blog/<%=post.id%>"><%= post.title %></a></h3>
