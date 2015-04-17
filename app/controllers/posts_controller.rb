@@ -11,7 +11,11 @@ class PostsController < ApplicationController
     @user = current_user
     @isadmin = is_admin_user?
     @updates = Update.last(3).reverse
-    @postsyear = @posts = Post.order("postdate desc").where("postdate > ?",Time.now.beginning_of_month.months_ago(11))
+#    @postsyear = @posts = Post.order("postdate desc").where("postdate > ?",Time.now.beginning_of_month.months_ago(11))
+#    @postsyear = @posts = @posts.where("postdate is not null")
+#    @postsyear = @posts = @posts.where("body is not null")
+#    @postsyear = @posts = @posts.where("title is not null")
+    @postsyear = @posts = Post.where("id = '1'")
     @postcount = 0
     
     if @cid.nil? && @mid.nil? #no date params
