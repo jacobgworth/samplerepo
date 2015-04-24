@@ -1814,7 +1814,7 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
     height: 125px;
     display: block;
 }
-.projectsFarmToTable a:link {
+.projectsFarmToTable a {
     background: url(/assets/icon-farm-to-table-med.png) bottom center no-repeat;
     text-indent: -9999px;
     width: 125px;
