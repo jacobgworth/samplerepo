@@ -1814,14 +1814,14 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
     height: 125px;
     display: block;
 }
-.projectsFarmToTable a:link {
+a.projectsFarmToTable:link {
     background: url(/assets/icon-farm-to-table-med.png) bottom center no-repeat;
      display:block;
     height:236px;
     width:236px;
     margin:auto;
 }
-.projectsFarmToTable a:hover {
+a.projectsFarmToTable:hover {
     background: url(/assets/icon-farm-to-table-med.png) top center no-repeat;
     text-indent: -9999px;
     width: 125px;
