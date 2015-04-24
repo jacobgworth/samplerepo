@@ -1814,6 +1814,20 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
     height: 125px;
     display: block;
 }
+.projectsFarmToTable a:link {
+    background: url(/assets/icon-projects-farm-to-table-hover.png) bottom center no-repeat;
+    text-indent: -9999px;
+    width: 125px;
+    height: 125px;
+    display: block;
+}
+.projectsFarmToTable a:hover {
+    background: url(/assets/icon-projects-farm-to-table-hover.png) top center no-repeat;
+    text-indent: -9999px;
+    width: 125px;
+    height: 125px;
+    display: block;
+}
 .churchAdvancementMed a:link {
     background: url(/assets/icon-church-advancement-med.png) bottom center  no-repeat;
     text-indent: -9999px;
