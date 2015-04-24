@@ -1814,15 +1814,15 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
     height: 125px;
     display: block;
 }
-.projectsFarmToTable a:link {
-    background: url(/assets/icon-farm-to-table-med.png) bottom center no-repeat;
+.projectsFarmToTable a {
+    background: url(/assets/images/icon-farm-to-table-med.png) bottom center no-repeat;
      display:block;
     height:236px;
     width:236px;
     margin:auto;
 }
 .projectsFarmToTable a:hover {
-    background: url(/assets/icon-farm-to-table-med.png) top center no-repeat;
+    background: url(/assets/images/icon-farm-to-table-med.png) top center no-repeat;
 }
 .churchAdvancementMed a:link {
     background: url(/assets/icon-church-advancement-med.png) bottom center  no-repeat;
