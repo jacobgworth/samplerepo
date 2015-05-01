@@ -57,8 +57,10 @@
     </div>
 
     <div class="contentHeader" style="background: none;">
+  
+          <div class="contentHeaderWide">
+    
           <div class="contentHeaderLeft">
-      <% end %>
         <h1>
           <span class="eyebrow">Mission of Hope Haiti Project</span><br/>
           <%= @project.projectname %>
@@ -198,6 +200,7 @@
       `<% end %>`
         <% if @project.id != 15 %><div class="clearfix"><!--x--></div><% end %>
       </div>
+      <% if @project.id != 15 %>
       <div id="contentLeft560">
         <% if @updates.count > 0 %>
             <div class="updatesWrapper">
@@ -253,6 +256,7 @@
                   </div>
               <% end %>
             </div>
+        <% end %>
 
 
         <!--start posts-->
