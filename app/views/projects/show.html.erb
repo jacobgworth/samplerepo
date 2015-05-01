@@ -195,18 +195,21 @@
           <!-- AddThis Button END -->
        <% end %>   <% if @project.id == 15 %>
           <% unless @project.fundsneeded.nil? || @project.fundsneeded == '' %>
-              <div class="fundsRaised">
-                <h3 class="darkGreen">Funds Raised of <%= number_to_currency(@project.fundsneeded, :unit => "$") %>
-                  Needed</h3>
-                <a href=""><img src="/assets/<%= @fundPercentImage %>"></a>
+            <div class="fundsRaised">
+              <h3 class="darkGreen">Funds Raised of <%= number_to_currency(@project.fundsneeded, :unit => "$") %>
+                Needed</h3>
+              <a href=""><img src="/assets/<%= @fundPercentImage %>"></a>
 
-                <div class="dollarBubble">
-                  <span class="darkGreen"><%= number_to_currency(@project.fundsraised, :unit => "$") %>
-                    <br/>RAISED </span>
-                </div>
+              <div class="dollarBubble">
+                <span class="darkGreen"><%= number_to_currency(@project.fundsraised, :unit => "$") %>
+                  <br/>RAISED </span>
               </div>
+            </div>
           <% end %>
-        <% end %></div>
+        <% end %>
+        </div>
+        <!--End contentHeaderRight-->
+        <% if @project.id != 15 %><div class="clearfix"><!--x--></div><% end %></div>
         <!--End contentHeaderRight-->
 
       </div>
