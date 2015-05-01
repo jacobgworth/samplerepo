@@ -146,9 +146,7 @@
         <% end %>
     <% end %>
         </div>
-    <% if @project.id != 15 %>
         <div class="contentHeaderRight">
-
           <h3 class="projectDetailButton" style="padding-top:20px; background-image: url('/assets/gr-<%=@category.categoryicon%>'); background-repeat:no-repeat; background-position:95% 50%; height:60px;">
             Project Type<br/>
             <span class="darkGreenLarge"><a href=""><%= @category.categoryname %></span>
@@ -198,7 +196,6 @@
         </div>
         <!--End contentHeaderRight-->
       `<% end %>`
-        <% if @project.id != 15 %><div class="clearfix"><!--x--></div><% end %>
       </div>
       <% if @project.id != 15 %>
       <div id="contentLeft560">
