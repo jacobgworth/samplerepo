@@ -147,6 +147,7 @@
     <% end %>
         </div>
         <div class="contentHeaderRight">
+          <% if @project.id != 15 %>
           <h3 class="projectDetailButton" style="padding-top:20px; background-image: url('/assets/gr-<%=@category.categoryicon%>'); background-repeat:no-repeat; background-position:95% 50%; height:60px;">
             Project Type<br/>
             <span class="darkGreenLarge"><a href=""><%= @category.categoryname %></span>
@@ -167,7 +168,6 @@
           </h3>
 
           <div class="clear"></div>
-
           <% unless @project.fundsneeded.nil? || @project.fundsneeded == '' %>
               <div class="fundsRaised">
                 <h3 class="darkGreen">Funds Raised of <%= number_to_currency(@project.fundsneeded, :unit => "$") %>
@@ -193,8 +193,22 @@
           <script type="text/javascript">var addthis_config = {"data_track_addressbar": true};</script>
           <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-506b79724d720237"></script>
           <!-- AddThis Button END -->
-        </div>
+       <% end %>   <% if @project.id == 15 %>
+          <% unless @project.fundsneeded.nil? || @project.fundsneeded == '' %>
+              <div class="fundsRaised">
+                <h3 class="darkGreen">Funds Raised of <%= number_to_currency(@project.fundsneeded, :unit => "$") %>
+                  Needed</h3>
+                <a href=""><img src="/assets/<%= @fundPercentImage %>"></a>
+
+                <div class="dollarBubble">
+                  <span class="darkGreen"><%= number_to_currency(@project.fundsraised, :unit => "$") %>
+                    <br/>RAISED </span>
+                </div>
+              </div>
+          <% end %>
+        <% end %></div>
         <!--End contentHeaderRight-->
+
       </div>
       <% if @project.id != 15 %>
       <div id="contentLeft560">
