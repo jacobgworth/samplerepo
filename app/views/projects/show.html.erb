@@ -170,14 +170,11 @@
           <div class="clear"></div>
           <% unless @project.fundsneeded.nil? || @project.fundsneeded == '' %>
               <div class="fundsRaised">
-                <h3 class="darkGreen">Funds Raised of <%= number_to_currency(@project.fundsneeded, :unit => "$") %>
-                  Needed</h3>
-                <a href=""><img src="/assets/<%= @fundPercentImage %>"></a>
-
-                <div class="dollarBubble">
-                  <span class="darkGreen"><%= number_to_currency(@project.fundsraised, :unit => "$") %>
-                    <br/>RAISED </span>
-                </div>
+                <h3 class="darkGreen" id="b2bh3"><%=@project.fundsraised.to_int%> of <%=@project.fundsneeded.to_int%> funded!</h3>  
+          <a href=""><img src="/assets/<%=@fundPercentImage%>"></a>
+        </div>
+        <a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1"><div class="buttonSquareOrange" style="margin-top: 10px; text-transform: uppercase; font-size: 22px;">Donate Now</div></a>
+        <div class="clearfix">
               </div>
           <% end %>
           <div class="clearfix"><!--x--></div>
