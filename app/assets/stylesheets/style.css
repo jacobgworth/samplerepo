@@ -698,7 +698,7 @@ span.eyebrow {
     letter-spacing: -.06em;
 }
 .largeText3 {
-    font-size: 3.35em;
+    font-size: 3em;
     letter-spacing: -.02em;
 }
 .largeText4_5 {
@@ -1809,6 +1809,20 @@ span.darkGreenLarge a:link, span.darkGreenLarge a:visited, span.darkGreenLarge a
 }
 .projectsMed a:hover {
     background: url(/assets/icon-projects-med.png) top center no-repeat;
+    text-indent: -9999px;
+    width: 125px;
+    height: 125px;
+    display: block;
+}
+.projectsFarmToTable a:link {
+    background: url('/assets/icon-farm-to-table-med.png') bottom center no-repeat;
+    text-indent: -9999px;
+    width: 125px;
+    height: 125px;
+    display: block;
+}
+.projectsFarmToTable a:hover {
+    background: url('/assets/icon-farm-to-table-med.png') top center no-repeat;
     text-indent: -9999px;
     width: 125px;
     height: 125px;

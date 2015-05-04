@@ -57,11 +57,10 @@
     </div>
 
     <div class="contentHeader" style="background: none;">
-      <% if @project.id == 15 %>
+  
           <div class="contentHeaderWide">
-      <% else %>
+    
           <div class="contentHeaderLeft">
-      <% end %>
         <h1>
           <span class="eyebrow">Mission of Hope Haiti Project</span><br/>
           <%= @project.projectname %>
@@ -83,11 +82,11 @@
             <a href="project15extra" style="font-size: 20px;">Meet our young adults</a>
           </div>
 
-          <div class="buttonSquareOrange" style="float: left; width:250px; height: 30px; padding-top: 20px; margin-left: 30px;">
+          <div class="buttonSquareOrange" style="float: left; width:250px; height: 30px; padding-top: 20px; margin-top: 15px;">
             <a href="/MOH_transition_home_project.pdf" target="blank" style="font-size: 20px;">Project Summary</a>
           </div>
 
-          <div class="buttonSquareOrange" style="float: left; width:200px; height: 30px; padding-top: 20px; margin-left: 30px;">
+          <div class="buttonSquareOrange" style="float: left; width:200px; height: 30px; padding-top: 20px; margin-left: 28px; margin-top: 15px">
             <a href="http://mohh.convio.net/site/Donation2?1880.donation=form1&df_id=1880" style="font-size: 20px;">Donate Today!</a>
           </div>
       <% else %>
@@ -147,9 +146,8 @@
         <% end %>
     <% end %>
         </div>
-    <% if @project.id != 15 %>
         <div class="contentHeaderRight">
-
+          <% if @project.id != 15 %>
           <h3 class="projectDetailButton" style="padding-top:20px; background-image: url('/assets/gr-<%=@category.categoryicon%>'); background-repeat:no-repeat; background-position:95% 50%; height:60px;">
             Project Type<br/>
             <span class="darkGreenLarge"><a href=""><%= @category.categoryname %></span>
@@ -170,7 +168,6 @@
           </h3>
 
           <div class="clear"></div>
-
           <% unless @project.fundsneeded.nil? || @project.fundsneeded == '' %>
               <div class="fundsRaised">
                 <h3 class="darkGreen">Funds Raised of <%= number_to_currency(@project.fundsneeded, :unit => "$") %>
@@ -196,10 +193,32 @@
           <script type="text/javascript">var addthis_config = {"data_track_addressbar": true};</script>
           <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-506b79724d720237"></script>
           <!-- AddThis Button END -->
+       <% end %>   <% if @project.id == 15 %>
+          <% unless @project.fundsneeded.nil? || @project.fundsneeded == '' %>
+            <div class="fundsRaised">
+              <h3 class="darkGreen" id="b2bh3"><%= number_to_currency(@project.fundsraised, :unit => "$") %> 
+                of </br> <%= number_to_currency(@project.fundsneeded, :unit => "$") %> funded!</h3>  
+          <a href=""><img src="/assets/<%=@fundPercentImage%>"></a>
+        </div>
+        <a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1"><div class="buttonSquareOrange" style="margin-top: 10px; text-transform: uppercase; font-size: 22px;">Donate Now</div></a>
+        <div class="clearfix">
+          <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+            <h4 style="float:left;">Share This: </h4>
+            <a class="addthis_button_preferred_1"></a>
+            <a class="addthis_button_preferred_2"></a>
+            <a class="addthis_button_preferred_3"></a>
+            <a class="addthis_button_preferred_4"></a>
+
+          </div>
+          <script type="text/javascript">var addthis_config = {"data_track_addressbar": true};</script>
+          <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-506b79724d720237"></script>
+          <% end %>
+        <% end %>
         </div>
         <!--End contentHeaderRight-->
-      `<% end %>`
-        <% if @project.id != 15 %><div class="clearfix"><!--x--></div><% end %>
+        <% if @project.id != 15 %><div class="clearfix"><!--x--></div><% end %></div>
+        <!--End contentHeaderRight-->
+
       </div>
       <% if @project.id != 15 %>
       <div id="contentLeft560">
