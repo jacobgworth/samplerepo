@@ -51,6 +51,69 @@ class PageController < ApplicationController
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
     end
   end 
+
+   def choose_your_project
+    @title = "Request Information About MOH Haiti Medical Mission Trips"
+    @meta = "Use our easy request information form to receive more information on taking a short-term medical mission trip with Mission of Hope, Haiti."
+    @fname = params[:fname]
+    @lname = params[:lname]
+    @comments = params[:letter]
+    @fromaddress = params[:email]
+    @phone = "0000000000"
+    @medical = params[:childnumber]
+    @street = params[:street]
+    @city = params[:city]
+    @state = params[:state]
+    @zip = params[:zip]
+    @church = params[:church]
+    @organization = params[:organization]
+    @participants = params[:participants].to_i
+    @license = params[:license]
+    if !@fname.nil? && @fname != "" && !@fromaddress.nil? && @fromaddress != "" && (params[:formname].nil? || params[:formname].empty?)
+      @isvalid = true
+      @data = {
+        :fname => @fname,
+        :lname => @lname, 
+        :fromaddress => @fromaddress, 
+        :comments => @comments,
+        :phone => @phone,
+        :license => @license,
+        :address => @street,
+        :city => @city,
+        :state => @state,
+        :zip => @zip,
+        :church => @church,
+        :org => @organization,
+        :participants => @participants,
+        :month => params[:trip_month]
+      }
+      ContactUsMailer.take_a_medical_trip(@data).deliver
+      #Save contact to convio
+      @sfcontact = Contact.find_by_Email(params[:email])
+      if @sfcontact.nil?
+        @sfcontact = create_convio_contact(params[:lname], params[:fname], params[:email])
+        @sfcontact = Contact.find_by_Id(@sfcontact.Id)
+        @sfcontact.MailingStreet = @street
+        @sfcontact.MailingCity = @city
+        @sfcontact.MailingState = @state
+        @sfcontact.MailingPostalCode = @zip
+      end
+      @sfcontact.MT_Prospect_Status__c = "Prospect"
+      @sfcontact.MyMOH_Church__c = @church
+      @sfcontact.Organization__c = @organization
+      @sfcontact.Number_of_Trip_Participants__c = @participants
+      @sfcontact.Ideal_Trip_Month__c = params[:trip_month]
+      @sfcontact.Medical_Trip_Prospect__c = true
+      @sfcontact.save
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}
+      end 
+    else
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}
+      end
+    end
+  end
   
   def console
     unless is_admin_user?
