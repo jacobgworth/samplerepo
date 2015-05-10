@@ -1,0 +1,97 @@
+<% content_for(:head) do %>
+	<%= javascript_include_tag :validate_volunteer %>
+<% end %>
+<div id="wrapper">
+	<%= render 'layouts/navBar'%>
+
+	<div id="content" style="padding-top: 50px;">
+		<%unless @isvalid.nil?%>
+			<div style="padding-bottom:20px;"><h3>Thank you for your interest in MOH. We'll be in touch shortly! </h3></div>
+		<%end%>
+		<div id="contentLeft560">
+			<h1 style="font-size: 2em;"><span class="eyebrow">Mission of Hope Haiti</span>
+			<br />
+			Request information about Short-term Medical Mission Trips</h1>
+			<p>
+			If you would like to learn more about how you or a group can serve on a short-term medical mission trip with Mission of Hope, Haiti, please fill out and submit the form below. Once we have received your request, our Medical Mission Trips Coordinator will be in touch with you.
+			</p>
+			<div class="forms">
+				<% if @isvalid.nil?%>
+				<form method="post">
+					<input type="text" name="formname" value="" style="display:none;"/>
+					<div class="field">* First Name: <input id="txtname" type="text" name="fname"><br></div>
+					<div class="field">* Last Name: <input id="txtlname" type="text" name="lname"><br></div>
+					<div class="field">Medical Professional License: 
+						<select name="license">
+							<option value="MD">MD</option>
+							<option value="DO">DO</option>
+							<option value="PA">PA</option>
+							<option value="NP">NP</option>
+							<option value="RN">RN</option>
+							<option value="LPN">LPN</option>
+							<option value="LVN">LVN</option>
+							<option value="EMT">EMT</option>
+							<option value="Paramedic">Paramedic</option>
+							<option value="CAN">CAN</option>
+							<option value="RPh">RPh</option>
+							<option value="PharmD">PharmD</option>
+							<option value="Optometrist">Optometrist</option>
+							<option value="Dentist">Dentist</option>
+							<option value="PT">PT</option>
+							<option value="OT">OT</option>
+							<option value="Chiropractor">Chiropractor</option>
+							<option value="Non-medical Support Staff">Non-medical Support Staff</option>
+							<option value="Student">Student</option>
+						</select>
+					</div>
+					<div class="field">* Email: <input id="txtemail" type="text" name="email"></div>
+					<div class="field">Street Address: <input id="txtstreet" type="text" name="street"><br></div>
+					<div class="field">City: <input id="txtcity" type="text" name="city"><br></div>
+					<div class="field">State: <input id="txtstate" type="text" name="state"><br></div>
+					<div class="field">Zip: <input id="txtzip" type="text" name="zip"><br></div>
+					<div class="field">Organization: <input id="txtorg" type="text" name="organization"><br></div>
+					<div class="field">Church: <input id="txtchurch" type="text" name="church"><br></div>
+					<div class="field">Number of Participants: <input id="txtpart" type="text" name="participants"><br></div>
+					<div class="field">Preferred Trip Month: 
+						<select name="trip_month">
+							<option value="January">January</option>
+							<option value="February">February</option>
+							<option value="March">March</option>
+							<option value="April">April</option>
+							<option value="May">May</option>
+							<option value="June">June</option>
+							<option value="July">July</option>
+							<option value="August">August</option>
+							<option value="September">September</option>
+							<option value="October">October</option>
+							<option value="November">November</option>
+							<option value="December">December</option>
+						</select>
+					</div>
+					<div class="field" style="clear: both; display:none;">Comments: <textarea id="txtmessage" type="textarea" name="letter"></textarea></div>
+					 <div class="actions"><input type="submit" value="Submit My Request" onclick="return validate();"></div>
+				<p>&nbsp;</p>
+				</form>		
+				<%end%>
+				
+			</div>
+		</div><!-- End Content Left -->
+
+		<div id="contentRight300">
+			<%= render 'layouts/missionTripNav'%>
+			<div class="rightBoxGreen">
+				<h2>Contact Us</h2>
+				<p>
+					Email: medical@mohhaiti.org <br />
+					Phone: 239-989-4487
+				</p>
+		</div>
+			<div class="clearfix">
+				<!--x-->
+			</div>
+		</div>
+			<div class="clearfix" style="height:40px;">
+				<!--x-->
+			</div>
+			
+			</div>
