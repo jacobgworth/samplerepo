@@ -124,22 +124,22 @@ class ContactUsMailer < ActionMailer::Base
     
     @data = data
     
-    @fname = @data[:fname]
-    @lname = @data[:lname]
-    @tripdates = @data[:tdates]
-    @tripdates = @data[:tdates 2]
-    @teamname = @data[:tname]
-    @teamleader = @data[:tleader]
-    @optiontree = @data[:opttree]
-    @optionsolar = @data[:optsolar]
-    @optionwaterfilter = @data[:optwaterf]
-    @optiongoats = @data[:optgoats]
-    @optionkidsclub = @data[:optkidsc]
-    @optionhouserestoration = @data[:opthr]
-    @optionroofrepair = @data[:optroofr]
-    @optionbuildlatrines = @data[:optlatrine]
-    @optionbuildhome = @data[:optbuildhome]
-    @fromaddress = "no-repy@mohhaiti.org"
+    @fname = @data[:fname],
+    @lname = @data[:lname],
+    @tripdates = @data[:tdates],
+    @tripdates = @data[:tdates 2],
+    @teamname = @data[:tname],
+    @teamleader = @data[:tleader],
+    @optiontree = @data[:opttree],
+    @optionsolar = @data[:optsolar],
+    @optionwaterfilter = @data[:optwaterf],
+    @optiongoats = @data[:optgoats],
+    @optionkidsclub = @data[:optkidsc],
+    @optionhouserestoration = @data[:opthr],
+    @optionroofrepair = @data[:optroofr],
+    @optionbuildlatrines = @data[:optlatrine],
+    @optionbuildhome = @data[:optbuildhome],
+    @fromaddress = "no-repy@mohhaiti.org",
     @toemail = "jacob@fusionbible.com" 
     #@toemail = "david@threetwelvecreative.com" #testing
     
