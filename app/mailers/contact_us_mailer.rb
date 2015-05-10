@@ -119,7 +119,7 @@ class ContactUsMailer < ActionMailer::Base
     mail(:to => @toemail, :subject => "Take a Medical Mission Trip", :from => @fromaddress)
   end
 
-   def choose_your_project(data)
+   def cyp(data)
     #change this to villageprojects@mohhaiti.org after testing
     
     @data = data

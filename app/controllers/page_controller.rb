@@ -86,7 +86,7 @@ class PageController < ApplicationController
         :participants => @participants,
         :month => params[:trip_month]
       }
-      ContactUsMailer.choose_your_project(@data).deliver
+      ContactUsMailer.cyp(@data).deliver
       #Save contact to convio
       @sfcontact = Contact.find_by_Email(params[:email])
       if @sfcontact.nil?
