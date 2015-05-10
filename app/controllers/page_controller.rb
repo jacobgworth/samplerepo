@@ -53,8 +53,7 @@ class PageController < ApplicationController
   end 
 
    def choose_your_project
-    @title = "Request Information About MOH Haiti Medical Mission Trips"
-    @meta = "Use our easy request information form to receive more information on taking a short-term medical mission trip with Mission of Hope, Haiti."
+    @title = "Choose Your Project"
     @fname = params[:fname]
     @lname = params[:lname]
     @comments = params[:letter]
