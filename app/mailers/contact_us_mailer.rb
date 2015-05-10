@@ -118,22 +118,6 @@ class ContactUsMailer < ActionMailer::Base
     
     mail(:to => @toemail, :subject => "Take a Medical Mission Trip", :from => @fromaddress)
   end
-
-   def cyp(data)
-    #change this to villageprojects@mohhaiti.org after testing
-    
-    @data = data
-    
-    @fullname = @data[:fname :lname]
-    @phone = @data[:phone]
-    @fromaddress = @data[:fromaddress]
-    @comments = @data[:comments]
-    @license = @data[:license]
-    #@toemail = "villageprojects@mohhaiti.org"
-    @toemail = "jacob@fusionbible.com" #testing
-    
-    mail(:to => @toemail, :subject => "Take a Medical Mission Trip", :from => @fromaddress)
-  end
   
   def take_a_trip(data)
     #change this to missiontrips@mohhaiti.org after testing
