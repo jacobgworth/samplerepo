@@ -11,10 +11,10 @@
 		<div id="contentcyp">
 			<h1 style="font-size: 2em;"><span class="eyebrow">Mission of Hope Haiti</span>
 			<br />
-			Request information about Short-term Medical Mission Trips</h1>
-			<p>
+			Choose Your Project</h1>
+			<!-- <p>
 			If you would like to learn more about how you or a group can serve on a short-term medical mission trip with Mission of Hope, Haiti, please fill out and submit the form below. Once we have received your request, our Medical Mission Trips Coordinator will be in touch with you.
-			</p>
+			</p> -->
 			<div class="forms">
 				<% if @isvalid.nil?%>
 				<form method="post">
@@ -22,8 +22,9 @@
 					<div class="field">* First Name: <input id="txtname" type="text" name="fname"><br></div>
 					<div class="field">* Last Name: <input id="txtlname" type="text" name="lname"><br></div>
 					<div class="field">* Email: <input id="txtemail" type="text" name="email"></div>
-					<div class="field">* Trip Dates: <input id="txtdates" type="date" name="tdates"></div>
-					<div class="field">* Email: <input id="txtemail" type="text" name="email"></div>
+					<div class="field">* Trip Date: <input id="txtdates" type="date" name="tdates"></div>
+					<div class="field">* Team Name: <input id="txtteamname" type="text" name="tname"></div>
+					<div class="field">* Team Leader: <input id="txtteamleader" type="text" name="tleader"></div>
 					<!-- <div class="field">Medical Professional License: 
 						<select name="license">
 							<option value="MD">MD</option>
@@ -47,8 +48,11 @@
 							<option value="Student">Student</option>
 						</select>
 					</div>-->
-					
-					<div class="field" style="clear: both; display:none;">Comments: <textarea id="txtmessage" type="textarea" name="letter"></textarea></div>
+					<div>
+						<div class="contentleft">
+							<div class="field">* Tree (1): <input id="opttree" type="checkbox" name="opttree"></div>
+						</div>
+					</div>
 					 <div class="actions"><input type="submit" value="Submit My Request" onclick="return validate();"></div>
 				<p>&nbsp;</p>
 				</form>		
