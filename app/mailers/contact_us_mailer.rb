@@ -124,23 +124,12 @@ class ContactUsMailer < ActionMailer::Base
     
     @data = data
     
-    @fname = @data[:fname],
-    @lname = @data[:lname],
-    @tripdates = @data[:tdates],
-    @tripdates = @data[:tdates 2],
-    @teamname = @data[:tname],
-    @teamleader = @data[:tleader],
-    @optiontree = @data[:opttree],
-    @optionsolar = @data[:optsolar],
-    @optionwaterfilter = @data[:optwaterf],
-    @optiongoats = @data[:optgoats],
-    @optionkidsclub = @data[:optkidsc],
-    @optionhouserestoration = @data[:opthr],
-    @optionroofrepair = @data[:optroofr],
-    @optionbuildlatrines = @data[:optlatrine],
-    @optionbuildhome = @data[:optbuildhome],
-    @fromaddress = "no-repy@mohhaiti.org",
-    @toemail = "jacob@fusionbible.com" 
+    @fullname = @data[:fname]
+    @phone = @data[:phone]
+    @fromaddress = @data[:fromaddress]
+    @comments = @data[:comments]
+    @license = @data[:license]
+    @toemail = "medical@mohhaiti.org"
     #@toemail = "david@threetwelvecreative.com" #testing
     
     mail(:to => @toemail, :subject => "Take a Medical Mission Trip", :from => @fromaddress)
