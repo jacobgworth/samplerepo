@@ -15,9 +15,59 @@
 			<!-- <p>
 			If you would like to learn more about how you or a group can serve on a short-term medical mission trip with Mission of Hope, Haiti, please fill out and submit the form below. Once we have received your request, our Medical Mission Trips Coordinator will be in touch with you.
 			</p> -->
+			<script>
+			 function calculateTotal() {
+			 	//get form variables
+			 var options = new Array();
+				 options["PlantATree"]=20;
+                 options["SolarPannel"]=25;
+                 options["WaterFilter"]=35;
+                 options["PairOfGoats"]=75;
+                 options["KidsClub"]=75;
+                 options["HouseRestoration"]=75;
+                 options["RoofRepair"]=75;
+                 options["BuildLatrines"]=75;
+                 options["BuildAHome"]=75;
+            // getProjectPrice() finds the price based on the project.
+			// Here, we need to take user's the selection from radio button selection
+			function getProjectPrice() {
+    		var ProjectPrice=0;
+    		//Get a reference to the form id="chooseproject"
+    		var theForm = document.forms["chooseproject"];
+    		//Get a reference to the cake the user Chooses name=item":
+    		var item = theForm.elements["item"];
+    		//Here since there are 4 radio buttons item.length = 4
+    		//We loop through each radio buttons
+    		for(var i = 0; i < item.length; i++) {
+       		 //if the radio button is checked
+        	if(item[i].checked) {
+            //we set ProjectPrice to the value of the selected radio button
+            //by using the project_prices array
+            //We get the selected Items value
+            ProjectPrice = project_prices[item[i].value];
+            //If we get a match then we break out of this loop
+            //No reason to continue if we get a match
+            break;
+        }
+    }
+    //We return the ProjectPrice
+    return ProjectPrice;
+}
+
+			 }
+
+			 function getTotal() {
+    		//Here we get the total price by calling our function
+    		//Each function returns a number so by calling them we add the values they return together
+    		var projectPrice = getProjectPrice();
+ 			//display the result
+    		document.getElementById('totalPrice').innerHTML = "Total Price For Project $"+projectPrice; 
+    		}
+
+			 </script>
 			<div class="forms">
 				<% if @isvalid.nil?%>
-				<form method="post">
+				<form method="post" id="chooseproject">
 					<input type="text" name="formname" value="" style="display:none;"/>
 					<div class="field">* First Name: <input id="txtname" type="text" name="fname"><br></div>
 					<div class="field">* Last Name: <input id="txtlname" type="text" name="lname"><br></div>
@@ -49,24 +99,25 @@
 						</select>
 					</div>-->
 					
-					<div class="field">Plant A Tree ($140): <input id="opttree" type="checkbox" name="opttree" value="140.00"></div>
+					<div class="field">Plant A Tree ($140): <input id="opttree" type="checkbox" name="item" value="PlantATree" onclick="calculateTotal()"></div>
 					
-					<div class="field">Solar Pannel ($60): <input id="optsolar" type="checkbox" name="optsolar" value="60.00"></div>
+					<div class="field">Solar Pannel ($60): <input id="optsolar" type="checkbox" name="item" value="SolarPannel" onclick="calculateTotal()"></div>
 				
-					<div class="field">Water Filter ($75): <input id="optwaterf" type="checkbox" name="optwaterf" value="75.00"></div>
+					<div class="field">Water Filter ($75): <input id="optwaterf" type="checkbox" name="item" value="WaterFilter" onclick="calculateTotal()"></div>
 				
-					<div class="field">Pair Of Goats ($125): <input id="optgoats" type="checkbox" name="optgoats"></div>
+					<div class="field">Pair Of Goats ($125): <input id="optgoats" type="checkbox" name="item"  value="PairOfGoats" onclick="calculateTotal()"></div>
 
-					<div class="field">Kids Club ($220): <input id="optkidsc" type="checkbox" name="optkidsc" value="220.00"></div>
+					<div class="field">Kids Club ($220): <input id="optkidsc" type="checkbox" name="item" value="KidsClub" onclick="calculateTotal()"></div>
 		
-					<div class="field">House Restoration ($240): <input id="opthr" type="checkbox" name="opthr" value="240.00"></div>
+					<div class="field">House Restoration ($240): <input id="opthr" type="checkbox" name="item" value="HouseRestoration" onclick="calculateTotal()"></div>
 			
-					<div class="field">Roof Repair ($450): <input id="optroofr" type="checkbox" name="optroofr" value="450.00"></div>
+					<div class="field">Roof Repair ($450): <input id="optroofr" type="checkbox" name="item" value="RoofRepair" onclick="calculateTotal()"></div>
 				
-					<div class="field">Build Latrines ($1,500): <input id="optlatrine" type="checkbox" name="optlatrine" value="1500.00"></div>
+					<div class="field">Build Latrines ($1,500): <input id="optlatrine" type="checkbox" name="item" value="BuildLatrines" onclick="calculateTotal()"></div>
 				
-					<div class="field">Build A Home ($6,600): <input id="optbuildhome" type="checkbox" name="optbuildhome" value="6600.00"></div>
+					<div class="field">Build A Home ($6,600): <input id="optbuildhome" type="checkbox" name="item" value="BuildAHome" onclick="calculateTotal()"></div>
 					
+					<div id="totalPrice"></div>
 					 <div class="actions"><input type="submit" value="Submit My Request" onclick="return validate();"></div>
 				<p>&nbsp;</p>
 				</form>		
