@@ -20,14 +20,15 @@
 			<br />
 			Mission Trips</h1>
 				<p>
-					Every year, Mission of Hope hosts thousands of Mission Trip participants from around the world at our two campuses. They participate in bringing life transformation to every man, woman, and child in Haiti, while personally experiencing God’s transformation in their own lives, and taking that vision back to their own spheres of influence. Whether you are an individual or a person looking to lead a team, serving with MOH in Haiti is a great way to be a part of what God is doing!
-					</p>
-
-				
-<p>
-Regardless of your skills or experience, there are ways for you to serve at Mission of Hope. Your week will include intentional ministry opportunities and evangelism outreach led by local Haitian leadership, or you can choose to fund and participate in Church Advancement projects, chosen by the church leaders in those villages as what could most help bring life transformation to every man, woman, and child in that specific village. Visit this page for a <a href="/caprojects">sample list of village projects and associated costs.</a> If you have medically licensed professionals, their week can be scheduled for a medical outreach focus. You are also encouraged to let your mission trip coordinator know of specific skill sets amongst your team members. Click <a href="/request_info"> here</a> to request more information. 
-</p>
-<div class="buttonSquareOrange" style="margin:20px 0; width:280px"><a href="/request_info">Request More Information &raquo;</a></div>
+					Every year, Mission of Hope hosts thousands of mission trip participants from around the world. Teams participate by serving in one of the 11 villages where we partner with the local Haitian churches. As we work with the local church pastors and Village Champions in each village, we are asking them, “What does your village need to be transformed?” In seeking to meet both the physical and spiritual needs of the villages, two primary strategies have been developed to reach every man, woman, and child – Strategic Village Time and Church Advancement Projects.
+				</p>
+				<p>
+					<b>Strategic Village Time (SVT)</b> – Using basic hygiene training as an entry point to visit with different houses in the villages, teams gather important data about the physical and spiritual needs of the people.  The data collected will allow us to measure our effectiveness in saturating the villages with the gospel and leverage the information for meeting the needs of the people to bring life transformation.  Teams go from house to house training each one in basic hygiene, engaging the residents in normal conversation, assessing the living conditions, collecting important demographic information, sharing the gospel, and obtaining GPS coordinates of the home. SVT allows us to build & maintain meaningful relationships with the Haitian people and equip the local church to meet the needs of their village.
+				</p>
+				<p>
+					<b>Church Advancement Projects (CA Projects)</b> – CA Projects are specific projects that contribute to the physical needs of the village. These projects represent the highest priorities for meeting the physical needs of the village.  Furthermore, they are a part of a continuum of transformation plan that has been developed with the local church pastors and Village Champions.  Your team will have the opportunity to sponsor and participate in these projects during your week.<br>
+					<div class="buttonSquareOrange" style="margin:20px 0; width:280px"><a href="/request_info">Click here to check out the current available projects!</a></div>
+				</p>
 			</div>
 		<div class="contentHeaderRight">
 			<%= render 'layouts/missionTripNav'%>
@@ -36,29 +37,7 @@ Regardless of your skills or experience, there are ways for you to serve at Miss
 				<!--x-->
 			</div>
 		</div>
-			<div class="singleCol">
-			<h2>The Mission Trip Experience</h2>
-			<div style="width:975px; height:100%;">
-<div id="container" class="transitions-enabled clearfix" style="clear:both;">
-<% @experiences.each do |experience| %>
-	<% if experience.photo.exists? %>
-		<div class="item">
-  			<%= image_tag experience.photo.url(:medium),:title=>experience.summary,:alt=>experience.summary  %>
-  			<p><span class="experienceAuthor">Posted by <%= experience.author%>:</span><br />
-  			<%= experience.description %></p>
-			<% if !@user.nil? && @user.is_admin? %>
-  			<%= link_to 'Edit', edit_experience_path(experience)%>
-			<%end%>
-  		</div>
-  	<%end%>
-<% end %>
-</div>
-</div>
-			<div class="clearfix"></div>
-			<div class="buttonSquareOrange clearfix" style="margin-top:40px; float:left;width:400px;"><a href="/experiences">See More Mission Trip Experiences &raquo;</a></div>
-			<div class="buttonSquareOrange" style="width:400px; float:right; margin-bottom: 15px; margin-top:40px;"><a href="/experiences/new/">Share your Mission Trip Experiences &raquo;</a></div>
-		</div>
-
+			
 				<div class="clearfix" style="height:40px;">
 			<!--x-->
 		</div>
