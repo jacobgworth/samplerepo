@@ -118,6 +118,32 @@ class ContactUsMailer < ActionMailer::Base
     
     mail(:to => @toemail, :subject => "Take a Medical Mission Trip", :from => @fromaddress)
   end
+
+  def choose_project(data)
+    #change this to medical@mohhaiti.org after testing
+    
+  @fname = @data[:fname]
+    @lname = @data[:lname]
+    @email = @data[:email]
+    @tripdates = @data[:tdates]
+    @tripdates = @data[:tdates 2]
+    @teamname = @data[:tname]
+    @teamleader = @data[:tleader]
+    @optiontree = @data[:opttree]
+    @optionsolar = @data[:optsolar]
+    @optionwaterfilter = @data[:optwaterf]
+    @optiongoats = @data[:optgoats]
+    @optionkidsclub = @data[:optkidsc]
+    @optionhouserestoration = @data[:opthr]
+    @optionroofrepair = @data[:optroofr]
+    @optionbuildlatrines = @data[:optlatrine]
+    @optionbuildhome = @data[:optbuildhome]
+    @fromaddress = @data[:email]
+    @toemail = "jacob@fusionbible.com" 
+    
+    mail(:to => @toemail, :subject => "Take a Medical Mission Trip", :from => @fromaddress)
+  end
+
   
   def take_a_trip(data)
     #change this to missiontrips@mohhaiti.org after testing
