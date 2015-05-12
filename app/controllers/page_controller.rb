@@ -54,39 +54,44 @@ class PageController < ApplicationController
 
    def choose_your_project
     @title = "Choose Your Project"
-    @fname = params[:fname]
+   @fname = params[:fname]
     @lname = params[:lname]
-    @comments = params[:letter]
-    @fromaddress = params[:email]
-    @phone = "0000000000"
-    @medical = params[:childnumber]
-    @street = params[:street]
-    @city = params[:city]
-    @state = params[:state]
-    @zip = params[:zip]
-    @church = params[:church]
-    @organization = params[:organization]
-    @participants = params[:participants].to_i
-    @license = params[:license]
+    @email = params[:email]
+    @tripdates = params[:tdates]
+    @tripdates2 = params[:tdates2]
+    @teamname = params[:tname]
+    @teamleader = params[:tleader]
+    @optiontree = params[:opttree]
+    @optionsolar = params[:optsolar]
+    @optionwaterfilter = params[:optwaterf]
+    @optiongoats = params[:optgoats]
+    @optionkidsclub = params[:optkidsc]
+    @optionhouserestoration = params[:opthr]
+    @optionroofrepair = params[:optroofr]
+    @optionbuildlatrines = params[:optlatrine]
+    @optionbuildhome = params[:optbuildhome]
+
     if !@fname.nil? && @fname != "" && !@fromaddress.nil? && @fromaddress != "" && (params[:formname].nil? || params[:formname].empty?)
       @isvalid = true
       @data = {
         :fname => @fname,
-        :lname => @lname, 
-        :fromaddress => @fromaddress, 
-        :comments => @comments,
-        :phone => @phone,
-        :license => @license,
-        :address => @street,
-        :city => @city,
-        :state => @state,
-        :zip => @zip,
-        :church => @church,
-        :org => @organization,
-        :participants => @participants,
-        :month => params[:trip_month]
+        :lname => @lname,
+        :email => @email,
+        :tdates => @tripdates, 
+        :tdates2 => @tripdates,
+        :tname => @teamname,
+        :tleader => @teamleader,
+        :opttree => @optiontree,
+        :optsolar => @optionsolar,
+        :optwaterf => @optionwaterfilter,
+        :optgoats => @optiongoats,
+        :optkidsc => @optionkidsclub,
+        :opthr => @optionhouserestoration,
+        :optroofr => @optionroofrepair,
+        :optlatrine => @optionbuildlatrines,
+        :optbuildhome => @optionbuildhome
       }
-      
+
       ContactUsMailer.choose_project(@data).deliver
       #Save contact to convio
       @sfcontact = Contact.find_by_Email(params[:email])
