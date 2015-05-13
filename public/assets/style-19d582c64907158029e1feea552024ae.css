@@ -20,7 +20,6 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
   min-height: 600px;
   padding-bottom: 40px;
   margin: auto;
-  background: url(/assets/contentDiv.png) center bottom no-repeat;
 }
 .td-missions {
 	  padding: 16px 3px 16px 14px !important;
@@ -38,4 +37,12 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.contentmealpacking {
+  width: 960px;
+  padding-top: 250px;
+  min-height: 600px;
+  padding-bottom: 40px;
+  margin: auto;
 }
