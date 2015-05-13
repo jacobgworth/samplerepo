@@ -482,6 +482,14 @@ class PageController < ApplicationController
     end
   end
   
+   def meal_packing
+    @title = "Meal Packing"
+    @user = current_user
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}
+    end
+  end 
+
   def mission_trips
     @title = "Haiti Missions Trips: Take A Missions Trip to Haiti With MOH"
     @meta = "Haiti Missions trips are great ways for Christian families, groups, youth, or adults to get involved with Haiti. Take a short-term missions with MOH today."
