@@ -17,6 +17,10 @@
 			</p> -->
 			
 			<div class="forms">
+				<%= form_tag :method => 'post' :id => 'chooseproject' %>
+					<%= text_field "first", "name", "size" => 20 %>
+					<%= text_field "last", "name", "size" => 20 %>
+					<%= end_form_tag %>
 				<form method="post" id="chooseproject">
 					<input type="text" name="formname" value="" style="display:none;"/>
 					<div class="field">* First Name: <input id="txtname" type="text" name="fname"><br></div>
