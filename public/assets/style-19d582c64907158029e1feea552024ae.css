@@ -50,3 +50,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
+.mpcircle {
+	border-radius: 50%;
+	width: 200px;
+	height: 200px; 
+	color: #0e473a;
+}
