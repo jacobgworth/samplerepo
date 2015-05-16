@@ -32,7 +32,12 @@ class ContactUsMailer < ActionMailer::Base
     @data = data
     
     @name = @data[:name]
-    mail(:to => "jacob@fusionbible.com", :subject => "TEST", :from => "no-reply@mohhaiti.org")
+    @fromaddress = @data[:fromaddress]
+    @tripdates = @data[:tripdates]
+    @teamname = @data[:teamname]
+    @teamleader = @data[:teamleader]
+
+    mail(:to => "jacob@fusionbible.com", :subject => "TEST", :from => @fromaddress)
   end
 
   def contact_us_mail(data,msgbody)

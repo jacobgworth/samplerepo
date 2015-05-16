@@ -170,11 +170,19 @@ class PageController < ApplicationController
   def choose_your_project
     @title = "Choose Your Project"
     @name = params[:name]
+    @fromaddress = params[:email]
+    @tripdates = params[:dates]
+    @teamname = params[:teamname]
+    @teamleader = params[:teamleader]
 
     if !@name.nil?
       @isvalid = true
       @date = {
-        :name => @name
+        :name => @name,
+        :fromaddress => @fromaddress,
+        :tripdates => @tripdates,
+        :teamname => @teamname,
+        :teamleader => @teamleader
       }
     end
     if @isvalid
