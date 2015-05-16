@@ -18,8 +18,7 @@ Mohhaiti::Application.routes.draw do
   get "/archived_interns" => "page#archived_interns"
 
   resources :subscriptions
-  
-  get "chooseproject/index" 'chooseproject#index'
+
   resources :chooseproject
 
 
