@@ -1,4 +1,4 @@
-class ProjectsController < ApplicationController
+class chooseprojectController < ApplicationController
   def new
     @project = Project.new
     @project_types = ProjectType.all
