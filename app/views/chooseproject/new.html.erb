@@ -1,0 +1,29 @@
+<h1>Create a new project</h1>
+
+<%= form_for(@project) do |form| %>
+  <% if @project.errors.any? %>
+  <ul>
+    <% @project.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+  <%# ... More inputs %>
+  <p class="input-group">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </p>
+  <p class="input-group">
+    <%= form.label :team_name %>
+    <%= form.text_field :team_name %>
+  </p>
+  <p class="input-group">
+    <%= form.label :team_leader %>
+    <%= form.text_field :team_leader %>
+  </p>
+  <p class="input-group">
+    <%= form.label :project_type_id %>
+    <%= form.collection_select(:project_type_id, @project_types, :id, :description) %>
+  </p>
+  <%= form.submit %>
+<% end %>
