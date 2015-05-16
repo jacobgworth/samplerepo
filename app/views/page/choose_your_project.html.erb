@@ -1,6 +1,3 @@
-<% content_for(:head) do %>
-	<%= javascript_include_tag :validate_volunteer %>
-<% end %>
 <div id="wrapper">
 	<%= render 'layouts/navBar'%>
 
@@ -41,7 +38,7 @@
 				
 					<div class="field">Build A Home ($6,600): <input id="checkbuild" type="checkbox" name="build" value="BuildAHome"></div>
 					
-					 <div class="actions"><input type="submit" value="Submit My Request" onclick="return validate();"></div>
+					 <div class="actions"><input type="submit" value="Submit My Request"></div>
 				<%end%>
 				</form>		
 				
