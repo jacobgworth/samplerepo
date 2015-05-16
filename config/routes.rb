@@ -19,7 +19,8 @@ Mohhaiti::Application.routes.draw do
 
   resources :subscriptions
   
-    
+  get "chooseproject/index" 'chooseproject#index'
+  resources :chooseproject
 
 
   match "/blog/feed.xml" => "posts#rss", :action => 'rss'
@@ -264,10 +265,6 @@ Mohhaiti::Application.routes.draw do
   
   get "page/request_info_medical"
   match "/request_info_medical" => "page#request_info_medical"
-
-  get "chooseproject/index"
-  match "/choose-project" => "ChooseProject#index"
-  
      
   get "page/trip_costs"
   match "/trip_costs" => "page#trip_costs"

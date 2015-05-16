@@ -1,4 +1,4 @@
-class Project < ActiveRecord::Base
+class ChooseProject < ActiveRecord::Base
   has_one :project_type
 
   # Examples of validations.
