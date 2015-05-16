@@ -12,64 +12,36 @@
 			<h1 style="font-size: 2em;"><span class="eyebrow">Mission of Hope Haiti</span>
 			<br />
 			Choose Your Project</h1>
-			<!-- <p>
-			If you would like to learn more about how you or a group can serve on a short-term medical mission trip with Mission of Hope, Haiti, please fill out and submit the form below. Once we have received your request, our Medical Mission Trips Coordinator will be in touch with you.
-			</p> -->
 			
 			<div class="forms">
 				<% if @isvalid.nil?%>
-				<form method="post" id="chooseproject">
+				<form method="post">
 					<input type="text" name="formname" value="" style="display:none;"/>
 					<div class="field">* Name: <input id="txtname" type="text" name="name"><br></div>
 					<div class="field">* Email: <input id="txtemail" type="text" name="email"></div>
 					<div class="field">* Trip Dates: <br> <input id="txtdates" type="date" name="dates" style="width: 45%;"> - <input id="txtdates" type="date" name="dates" style="width: 45%; margin-left: .5em;"></div>
 					<div class="field">* Team Name: <input id="txtteamname" type="text" name="teamname"></div>
 					<div class="field">* Team Leader: <input id="txtteamleader" type="text" name="teamleader"></div>
-					<!-- <div class="field">Medical Professional License: 
-						<select name="license">
-							<option value="MD">MD</option>
-							<option value="DO">DO</option>
-							<option value="PA">PA</option>
-							<option value="NP">NP</option>
-							<option value="RN">RN</option>
-							<option value="LPN">LPN</option>
-							<option value="LVN">LVN</option>
-							<option value="EMT">EMT</option>
-							<option value="Paramedic">Paramedic</option>
-							<option value="CAN">CAN</option>
-							<option value="RPh">RPh</option>
-							<option value="PharmD">PharmD</option>
-							<option value="Optometrist">Optometrist</option>
-							<option value="Dentist">Dentist</option>
-							<option value="PT">PT</option>
-							<option value="OT">OT</option>
-							<option value="Chiropractor">Chiropractor</option>
-							<option value="Non-medical Support Staff">Non-medical Support Staff</option>
-							<option value="Student">Student</option>
-						</select>
-					</div>-->
 					
-					<div class="field">Plant A Tree ($140): <input id="opttree" type="checkbox" name="item" value="PlantATree" onclick="calculateTotal()"></div>
+					<div class="field">Plant A Tree ($140): <input id="checktree" type="checkbox" name="tree" value="PlantATree" ></div>
 					
-					<div class="field">Solar Pannel ($60): <input id="optsolar" type="checkbox" name="item" value="SolarPannel" onclick="calculateTotal()"></div>
+					<div class="field">Solar Pannel ($60): <input id="checksolar" type="checkbox" name="solar" value="SolarPannel"></div>
 				
-					<div class="field">Water Filter ($75): <input id="optwaterf" type="checkbox" name="item" value="WaterFilter" onclick="calculateTotal()"></div>
+					<div class="field">Water Filter ($75): <input id="checkwater" type="checkbox" name="water" value="WaterFilter"></div>
 				
-					<div class="field">Pair Of Goats ($125): <input id="optgoats" type="checkbox" name="item"  value="PairOfGoats" onclick="calculateTotal()"></div>
+					<div class="field">Pair Of Goats ($125): <input id="checkgoat" type="checkbox" name="goat"  value="PairOfGoats"></div>
 
-					<div class="field">Kids Club ($220): <input id="optkidsc" type="checkbox" name="item" value="KidsClub" onclick="calculateTotal()"></div>
+					<div class="field">Kids Club ($220): <input id="checkkid" type="checkbox" name="kid" value="KidsClub"></div>
 		
-					<div class="field">House Restoration ($240): <input id="opthr" type="checkbox" name="item" value="HouseRestoration" onclick="calculateTotal()"></div>
+					<div class="field">House Restoration ($240): <input id="checkhouse" type="checkbox" name="house" value="HouseRestoration"></div>
 			
-					<div class="field">Roof Repair ($450): <input id="optroofr" type="checkbox" name="item" value="RoofRepair" onclick="calculateTotal()"></div>
+					<div class="field">Roof Repair ($450): <input id="checkroof" type="checkbox" name="roof" value="RoofRepair"></div>
 				
-					<div class="field">Build Latrines ($1,500): <input id="optlatrine" type="checkbox" name="item" value="BuildLatrines" onclick="calculateTotal()"></div>
+					<div class="field">Build Latrines ($1,500): <input id="checklatrine" type="checkbox" name="latrine" value="BuildLatrines"></div>
 				
-					<div class="field">Build A Home ($6,600): <input id="optbuildhome" type="checkbox" name="item" value="BuildAHome" onclick="calculateTotal()"></div>
+					<div class="field">Build A Home ($6,600): <input id="checkbuild" type="checkbox" name="build" value="BuildAHome"></div>
 					
-					<div id="totalPrice"></div>
 					 <div class="actions"><input type="submit" value="Submit My Request" onclick="return validate();"></div>
-				<p>&nbsp;</p>
 				<%end%>
 				</form>		
 				

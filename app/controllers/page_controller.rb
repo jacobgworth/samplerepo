@@ -174,15 +174,33 @@ class PageController < ApplicationController
     @tripdates = params[:dates]
     @teamname = params[:teamname]
     @teamleader = params[:teamleader]
+    @tree = params[:tree]
+    @solar = params[:solar]
+    @water = params[:water]
+    @goat = params[:goat]
+    @kid = params[:kid]
+    @house = params[:house]
+    @roof = params[:roof]
+    @latrine = params[:latrine]
+    @build = params[:build]
 
-    if !@name.nil?
+    if !@name.nil? && !@fromaddress.nil? && !@tripdates.nil? && !@teamname.nil? && !@teamleader.nil? && !@tree.nil? && !@solar.nil? && !@water.nil? && !@goat.nil? && !@kid.nil? && !@house.nil? && !@roof.nil? && !@latrine.nil? && !@build.nil?
       @isvalid = true
       @date = {
         :name => @name,
         :fromaddress => @fromaddress,
         :tripdates => @tripdates,
         :teamname => @teamname,
-        :teamleader => @teamleader
+        :teamleader => @teamleader,
+        :tree => @tree,
+        :solar => @solar,
+        :water => @water,
+        :goat => @goat,
+        :kid => @kid, 
+        :house => @house, 
+        :roof => @roof, 
+        :latrine => @latrine, 
+        :build => @build
       }
     end
     if @isvalid
