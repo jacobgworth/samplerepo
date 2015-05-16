@@ -19,7 +19,8 @@ Mohhaiti::Application.routes.draw do
 
   resources :subscriptions
   
-    
+  get "chooseproject/index" 'chooseproject#index'
+  resources :chooseproject
 
 
   match "/blog/feed.xml" => "posts#rss", :action => 'rss'
