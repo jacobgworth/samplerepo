@@ -27,3 +27,4 @@ class ChooseProjectController < ApplicationController
   def project_params
     params.require(:project).permit(:email, :project_type_id, :team_name, :leader)
   end
+end
