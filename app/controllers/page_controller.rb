@@ -186,7 +186,7 @@ class PageController < ApplicationController
 
     if !@name.nil? && !@fromaddress.nil? && !@tripdates.nil? && !@teamname.nil? && !@teamleader.nil? && !@tree.nil? && !@solar.nil? && !@water.nil? && !@goat.nil? && !@kid.nil? && !@house.nil? && !@roof.nil? && !@latrine.nil? && !@build.nil?
       @isvalid = true
-      @date = {
+      @data = {
         :name => @name,
         :fromaddress => @fromaddress,
         :tripdates => @tripdates,
