@@ -36,6 +36,15 @@ class ContactUsMailer < ActionMailer::Base
     @tripdates = @data[:tripdates]
     @teamname = @data[:teamname]
     @teamleader = @data[:teamleader]
+    @tree = data[:tree]
+    @solar = data[:solar]
+    @water = data[:water]
+    @goat = data[:goat]
+    @kid = data[:kid]
+    @house = data[:house]
+    @roof = data[:roof]
+    @latrine = data[:latrine]
+    @build = data[:build]
 
     mail(:to => "jacob@fusionbible.com", :subject => "TEST", :from => @fromaddress)
   end
