@@ -52,13 +52,6 @@ class PageController < ApplicationController
     end
   end 
 
-   def choose_your_project
-    @title = "Choose Your Project"
-   
-    respond_to do |format|
-      format.html {render :layout=>"homeLayout"}
-    end
-  end
   
   def console
     unless is_admin_user?
@@ -171,6 +164,28 @@ class PageController < ApplicationController
     @updates = Update.joins(:categories).where("category_id=" + @category.id.to_s).last(3).reverse
     respond_to do |format|
       format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
+  end
+
+  def choose_your_project
+    @title = "Choose Your Project"
+    @name = params[:name]
+
+    if !@name.nil?
+      @isvalid = true
+      @date = {
+        :name => @name
+      }
+    end
+    if @isvalid
+      ContactUsMailer.choose_project_mail(@data).deliver
+    respond_to do |format|
+      format.html {render :layout=>"homeLayout"}
+    end
+    else
+      respond_to do |format|
+        format.html {render :layout=>"homeLayout"}# haiti_one.html.erb
+    end
     end
   end
   

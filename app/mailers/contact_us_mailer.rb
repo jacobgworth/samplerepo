@@ -27,6 +27,14 @@ class ContactUsMailer < ActionMailer::Base
     mail(:to => "drew@mohhaiti.org", :subject => "Church Partnership Inquiry", :from => @txtemail)
   end
   
+   def choose_project_mail(data)
+    
+    @data = data
+    
+    @name = @data[:name]
+    mail(:to => "jacob@fusionbible.com", :subject => "TEST", :from => "no-reply@mohhaiti.org")
+  end
+
   def contact_us_mail(data,msgbody)
     
     @data = data
