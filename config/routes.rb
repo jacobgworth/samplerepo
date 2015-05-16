@@ -266,7 +266,7 @@ Mohhaiti::Application.routes.draw do
   match "/request_info_medical" => "page#request_info_medical"
 
   get "chooseproject/index"
-  match "/choose_your_project" => "page#choose_xyour_project"
+  match "/choose_your_project" => "choseproject#index"
   
      
   get "page/trip_costs"
