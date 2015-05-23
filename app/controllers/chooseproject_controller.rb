@@ -1,7 +1,7 @@
 class ChooseProjectController < ApplicationController
   def new
     @project = Project.new
-    @project_types = ProjectType.all
+    @project_types = ChooseProjectType.all
   end
 
   def create
@@ -27,3 +27,4 @@ class ChooseProjectController < ApplicationController
   def project_params
     params.require(:project).permit(:email, :project_type_id, :team_name, :leader)
   end
+end

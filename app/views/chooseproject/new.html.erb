@@ -1,9 +1,9 @@
 <h1>Create a new project</h1>
 
-<%= form_for(@chooseproject) do |form| %>
-  <% if @chooseproject.errors.any? %>
+<%= form_for(@project) do |form| %>
+  <% if @project.errors.any? %>
   <ul>
-    <% @chooseproject.errors.full_messages.each do |msg| %>
+    <% @project.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
   </ul>
